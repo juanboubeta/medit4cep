@@ -1,0 +1,161 @@
+ /*******************************************************************************
+ * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Juan Boubeta-Puig - initial model validation and implementation
+ ******************************************************************************/
+
+context CEPDomain {
+
+	constraint HasDomainName {
+
+	    check : self.domainName.isDefined() and self.domainName.trim().length() > 0
+	
+	    message : "Attribute 'domainName' must be named."
+	    
+	    fix {
+	        
+	    	title : "Set a value for 'domainName'."
+	            
+	        do {
+	        	var name : String;
+	            name = UserInput.prompt("Please enter a value for 'domainName':");
+	            self.domainName = name;
+	        }
+	    }  
+
+  	} 	
+  	  
+    constraint HasEvent {
+    
+        check : self.events.size() > 0
+        
+        message : 'An event must be included.'
+        
+    }	
+    
+}
+
+context Event {
+
+    constraint HasEventName {
+
+        check : self.typeName.isDefined() and self.typeName.trim().length() > 0
+
+        message : 'Event must have a type name.'
+
+        fix {
+        
+            title : "Set a value for 'typeName'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter a value for 'typeName':");
+                self.typeName = name;
+            }
+        }      
+    }
+
+    constraint HasProperty {
+    
+        guard : self.satisfies("HasEventName")
+       
+        check : self.eventProperties.size() > 0
+        
+        message : "Event '" + self.typeName + "' must contain at least one event property." 
+        
+    }    
+    
+}
+
+context EventProperty {
+    
+    constraint HasEventPropertyName {
+    
+        check : self.name.isDefined() and self.name.trim().length() > 0
+
+        message : "Event property must be named."
+
+        fix {
+        
+            title : "Set a value for 'name'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter a value for 'name':");
+                self.name = name;
+            }
+        }      
+    }    
+            
+    constraint HasUniquePropertiesAtTheSameNestedLevel {
+
+		guard : self.satisfies('HasEventPropertyName')
+
+        check {
+        
+         	var properties : OrderedSet; 
+         	var parentName : String; 
+         	
+        	if (self.referencedEvent.isDefined()) {
+        		properties = self.referencedEvent.eventProperties; 
+        		parentName = "Event '" + self.referencedEvent.typeName; 
+        	}
+        	else if (self.referencedEventProperty.isDefined()) {
+             	properties = self.referencedEventProperty.eventProperties;
+             	parentName = "Event property '" + self.referencedEventProperty.name; 
+           	}
+            
+            for (p : EventProperty in properties) {
+                if (not (properties.one(c : EventProperty | c.name == p.name)))
+                    return false; 
+            }        
+                        
+            return true;  
+                  
+        }
+
+        message : parentName + "' must contain unique properties at the same nested level."
+     
+    }        
+    
+    constraint HasPropertyType {
+    
+    	guard : self.satisfies('HasEventPropertyName')
+    
+        check {
+        
+        	var m : String; 
+        	m = "Event property '" + self.name; 
+        	
+        	if (self.eventProperties.size() > 0) { -- It has nested properties
+        	
+        		if (self.type == PropertyTypeValue#Unknown) {
+        			return true; 
+        		}
+        		else {
+        		    m = m + "' cannot have a type because it has nested properties.";
+        			return false;        			
+        		}       
+        	}
+        	else { 
+        	
+        	    if (self.type == PropertyTypeValue#Unknown) {
+        			m = m + "' must have a type.";
+        			return false;        	    
+        		}
+        		else {
+        			return true; 
+        		} 
+        	} 
+        }
+
+        message : m
+      
+    }
+    
+}

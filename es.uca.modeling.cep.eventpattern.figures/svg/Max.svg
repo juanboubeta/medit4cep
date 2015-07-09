@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="30"
+   height="30"
+   id="svg3316"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Max.svg">
+  <defs
+     id="defs3318" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="-23.306023"
+     inkscape:cy="-2.834628"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="942"
+     inkscape:window-height="985"
+     inkscape:window-x="960"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3321">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Daniel González</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Daniel González</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>Daniel González</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-788.54893,-499.52755)">
+    <path
+       transform="matrix(0.22163048,0,0,0.22163048,729.66833,408.45619)"
+       sodipodi:type="arc"
+       style="fill:#a846bd;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="path2985-9-1-2-7"
+       sodipodi:cx="333.35034"
+       sodipodi:cy="478.59555"
+       sodipodi:rx="67.680222"
+       sodipodi:ry="67.680222"
+       d="m 401.03056,478.59555 c 0,37.37875 -30.30146,67.68022 -67.68022,67.68022 -37.37875,0 -67.68022,-30.30147 -67.68022,-67.68022 0,-37.37875 30.30147,-67.68022 67.68022,-67.68022 37.37876,0 67.68022,30.30147 67.68022,67.68022 z"
+       inkscape:export-filename="C:\Users\daninux\Iconos Boubeta\maximo 16x16 px.png"
+       inkscape:export-xdpi="150.27"
+       inkscape:export-ydpi="150.27" />
+    <path
+       id="path3766"
+       d="m 809.83416,509.85372 c -0.83108,0 -1.50471,0.67436 -1.50471,1.50631 0,0.69652 0.47285,1.2798 1.11425,1.45218 -3.85305,6.95596 -8.70871,4.34554 -14.89683,8.55975 l 15.53356,0 0,-8.52667 c 0.71416,-0.11752 1.26143,-0.73708 1.26143,-1.48526 0,-0.83195 -0.67661,-1.50631 -1.5077,-1.50631 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3770-4-7-8"
+       d="m 809.69607,504.42508 c -1.02191,3.19353 -0.79344,3.34171 -0.77537,4.64409 0.54715,-0.19605 1.14709,-0.18564 1.68051,0.0223 -0.036,-1.28307 0.26164,-1.42419 -0.90514,-4.66637 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3768-5-1-9"
+       d="m 815.16513,506.50751 c -1.52037,2.98853 -1.78699,2.93313 -2.71604,3.84602 -0.25093,-0.52426 -0.68464,-0.93892 -1.21002,-1.1664 0.92819,-0.8866 0.81597,-1.19624 3.92606,-2.67962 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path4150-1-5-1-8"
+       d="m 804.41232,506.50751 c 1.52035,2.98853 1.78699,2.93313 2.71602,3.84602 0.25095,-0.52426 0.68466,-0.93892 1.21004,-1.1664 -0.92819,-0.8866 -0.81597,-1.19624 -3.92606,-2.67962 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

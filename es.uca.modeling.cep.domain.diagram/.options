@@ -1,0 +1,7 @@
+# Tracing options for the es.uca.modeling.cep.domain.diagram plug-in
+
+# Common issues
+es.uca.modeling.cep.domain.diagram/debug=false
+
+# Visual IDs
+es.uca.modeling.cep.domain.diagram/debug/visualID=false

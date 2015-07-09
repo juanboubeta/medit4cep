@@ -1,0 +1,45 @@
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/*
+.figure-size-90 {
+	 width: 90%;
+}
+
+.figure-size-80 {
+	 width: 80%;
+}
+
+.figure-size-50 {
+	 width: 50%;
+}
+
+.figure-size-30 {
+	 width: 30%;
+*/
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+tr.separated td,th {
+    border-bottom: 1px solid black;
+} 
+
+table {
+    border-collapse: collapse;
+}
+
+ul.instructions li {
+	 padding-bottom: 1.5em;
+}
+
+ul.instructions li img {
+	 padding-top: 0.5em;
+}

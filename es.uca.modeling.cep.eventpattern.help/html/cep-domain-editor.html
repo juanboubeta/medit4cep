@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">		
+		<title>Graphical Modeling Editor for CEP Domain</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">		
+	</head>
+	<body>
+		<h1>Graphical Modeling Editor for CEP Domain</h1>
+		<h4>Author: Juan Boubeta-Puig (<a href="mailto:juan.boubeta@uca.es">juan.boubeta@uca.es</a>) <br/>
+		Last updated: May 31<sup>st</sup>, 2015.</h4>
+		
+		<h2>Contents</h2>
+		<ul>
+			<li><a href="#introduction">Introduction</a></li>
+			<li><a href="#editor-palette">Editor Palette</a></li>
+			<li><a href="#options-menu">Options menu</a></li>
+		</ul>
+		
+		<h2 id="name">Introduction</h2>
+		<p>
+		In this section, we describe our graphical editor that supports the modeling of CEP domains, hiding the implementation details necessary to define such domains from domain experts. This editor has been implemented by using GMF and the Epsilon project.
+		</p>
+		<p>
+		Thanks to this editor, the domain expert will be able to address the execution of steps 1 and 2 required for defining CEP domains in a user-friendly way, according to <a href="./overview.html">our model-driven approach</a>. Therefore, the editor would facilitate for any user, expert in a particular domain but not in CEP, the description of event types and properties for the domain, the validation and storage of a CEP domain model as well as its exportation and importation in order to share it with others users.
+		</p>
+		<p>The figure below depicts the built editor for CEP domain definition. This editor mainly has four parts: 
+		<ul>
+			<li>A <span class="bold">tool palette</span> (right panel) from which the domain experts can select the elements to be incorporated into their models.</li>
+			<li>A <span class="bold">canvas</span> (central panel) into which users can drag-and-drop event types along with properties for a CEP domain from the palette.</li>
+			<li>A <span class="bold">menu</span> (top menu bar) that allows them to easily select the editor action to be executed.</li>
+			<li>A <span class="bold">property view</span> (lower panel) for adding or editing information related to the different elements of a designed model, for example, the specific type of an event property.</li>
+		</ul>
+		<img src="../img/cep-domain-editor.png" alt="Graphical modeling editor for CEP domain" class="figure-size-90" />
+		
+		<h2 id="editor-palette">Editor Palette</h2>
+		<p>The editor palette has 2 tools for CEP domain design, as depicted in the table below. Although <span class="italic">Event</span> and <span class="italic">EventProperty</span> have been represented as green icons with letters <span class="italic">E</span> and <span class="italic">P</span>, respectively, these icons may be replaced by other images at domain experts' request, indicating the path to the new image. This provides more usability as long as event types and their properties can be easily identified by images of a particular domain.
+		</p>
+		<table class="table">
+			<tr class="separated">
+				<th>Name</th>
+				<th>Description</th>
+				<th>Notation</th>
+			</tr>
+			<tr>
+				<td><span class="italic">Event</span></td>
+				<td>It describes an event type for a concrete CEP domain.</td>
+				<td><img src="../img/Event.png" alt="Event" /></td>
+			</tr>
+			<tr class="separated">
+				<td><span class="italic">EventProperty</span></td>
+				<td>It describes a feature of an event. Nested properties are supported.</td>
+				<td><img src="../img/EventProperty.png" alt="Event Property" /></td>
+			</tr>
+		</table>
+		
+		<p>This editor checks that the user uses the palette correctly; for instance, if he/she tries to drag and drop an event property directly into the canvas, the editor will not allow it since properties must always be added to events.
+		</p>
+
+	    <h2 id="options-menu">Options Menu</h2>
+		<p>The editor's menu bar is available in any Eclipse application. In addition to menus by default, a <span class="italic">CEP Domain</span> menu has been added to increase usability. This menu provides the following options:
+		</p>
+		<ul>
+			<li><span class="bold">New</span>: it creates a new CEP domain.</li>
+			<li><span class="bold">Auto-detect Domain</span>: it automatically creates the CEP domain model from events flowing through a SOA 2.0.</li>
+			<li><span class="bold">Open</span>: it opens one of the modeled CEP domains.</li>
+			<li><span class="bold">Save and Validate</span>: it saves the active domain model and validates it showing encountered problems, if any.</li>
+			<li><span class="bold">Delete</span>: it eliminates one of the existing CEP domains.</li>
+		</ul>
+		<p>Moreover, two more options have been added to the <span class="italic">File</span> menu: 
+		</p>
+		<ul>
+			<li><span class="bold">Import CEP Domain</span>: it allows the importation of previously defined CEP domains.</li>
+			<li><span class="bold">Export CEP Domain</span>: it permits exporting CEP domains modeled by the user if previously validated.</li>
+		</ul>			
+  	</body>
+</html>

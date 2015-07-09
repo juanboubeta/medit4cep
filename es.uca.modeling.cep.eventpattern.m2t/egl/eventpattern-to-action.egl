@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:twitter="http://www.mulesoft.org/schema/mule/twitter"  
+    xmlns:smtps="http://www.mulesoft.org/schema/mule/smtps" 
+    xmlns:smtp="http://www.mulesoft.org/schema/mule/smtp" 
+    xmlns:vm="http://www.mulesoft.org/schema/mule/vm" 
+    xmlns="http://www.mulesoft.org/schema/mule/core" 
+    xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+    xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.4.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd 
+        http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd 
+        http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd 
+        http://www.mulesoft.org/schema/mule/smtps http://www.mulesoft.org/schema/mule/smtps/current/mule-smtps.xsd 
+        http://www.mulesoft.org/schema/mule/twitter http://www.mulesoft.org/schema/mule/twitter/2.4/mule-twitter.xsd">
+
+    <flow name="[%=CEPEventPattern.allInstances.at(0).patternName%]">
+[%
+var actions : Sequence = Action.allInstances();
+
+if (actions.size() > 1) {
+%]
+        <all doc:name="All"> 
+[%
+	for (a : Action in actions) {	
+		if (a.isKindOf(Email)) {   
+%]
+            <processor-chain>
+                <set-payload value="Detected Alert '#[message.inboundProperties['eventPatternName']]': #[payload]" doc:name="Set Email Body"/>
+	            <smtps:outbound-endpoint host="[%=a.host%]" port="[%=a.port%]" user="[%=a.user%]" password="[%=a.password%]" to="[%=a.to%]" from="[%=a.from%]" cc="[%=a.cc%]" subject="[%=a.subject%]" responseTimeout="3000" doc:name="SMTP"/>
+            </processor-chain> 
+[%
+	    }
+	    else if (a.isKindOf(Twitter)) {
+%]	    
+            <twitter:update-status config-ref="Twitter" status="Detected Alert '#[message.inboundProperties['eventPatternName']]' (#[message.id])" doc:name="Twitter"/>
+[%	    
+	    }    
+	}
+%]
+        </all>
+[%
+}
+else {
+    var action1 = actions.at(0);
+	if (action1.isKindOf(Email)) {   
+%]
+        <processor-chain>
+            <set-payload value="Detected Alert '#[message.inboundProperties['eventPatternName']]': #[payload]" doc:name="Set Email Body"/>
+	        <smtps:outbound-endpoint host="[%=action1.host%]" port="[%=action1.port%]" user="[%=action1.user%]" password="[%=action1.password%]" to="[%=action1.to%]" from="[%=action1.from%]" cc="[%=action1.cc%]" subject="[%=action1.subject%]" responseTimeout="3000" doc:name="SMTP"/>
+        </processor-chain> 
+[%
+	}  
+	else if (action1.isKindOf(Twitter)) {
+%]	  
+        <twitter:update-status config-ref="Twitter" status="Detected Alert '#[message.inboundProperties['eventPatternName']]' (#[message.id])" doc:name="Twitter"/>
+[%	    
+    }    	
+}
+%]
+    </flow>
+	
+</mule>

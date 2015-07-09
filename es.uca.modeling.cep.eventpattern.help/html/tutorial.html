@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">		
+		<title>Tutorial</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">		
+	</head>	
+	<body>
+		<h1>Tutorial</h1>
+		<h4>Author: Juan Boubeta-Puig (<a href="mailto:juan.boubeta@uca.es">juan.boubeta@uca.es</a>) <br/>
+		Last updated: May 31<sup>st</sup>, 2015.</h4>
+		<h2>Contents</h2>
+		<ul>
+			<li>Step 1: <a href="#step1">Defining, Validating and Saving a CEP Domain</a></li>
+			<li>Step 2: <a href="#step2">Defining, Validating, Saving and Transforming Event Patterns to Code</a></li>
+			<li>Step 3: <a href="#step3">Duplicating an Existing Event Pattern</a></li>
+			<li>Step 4: <a href="#step4">Creating an Event Pattern Hierarchy</a></li>
+			<li>Step 5: <a href="#step5">Exporting the CEP Domain and Event Patterns</a></li>
+		</ul>
+		
+		
+		<h2 id="step1">Defining, Validating and Saving a CEP Domain</h2>
+		<p>
+		The first step of <a href="./overview.html">our model-driven approach</a> is the CEP domain definition by the domain expert. To cope with this task, two options are possible:
+		</p>
+		<ul>
+			<li>Automatically obtaining the CEP domain graphical model from inferring the types of event flowing the SOA 2.0.</li>
+			<li>Manually designing the CEP domain graphical model by using the CEP domain editor or even the event pattern editor.</li>
+		</ul>
+		<p>
+		In this tutorial, we have chosen the manual design of the CEP domain model for the network security case study:
+		</p>
+		<ul class="instructions">
+			<li>Select <span class="italic">CEP Domain &gt; New...</span>.<br />		
+			<img src="../img/cep-domain-new.png" alt="CEP Domain New" class=".figure-size-50"/></li>
+			<li>Give the CEP Domain the name <span class="italic">network-analysis</span> and the description <span class="italic">CEP domain for the network security case study</span>. Then, click the <span class="italic">OK</span> button.<br />
+			<img src="../img/cep-domain-new-dialog.png" alt="CEP Domain New Dialog" class=".figure-size-50"/></li>		
+			<li>Drag and drop an <span class="italic">Event</span> tool directly into the canvas. <br />
+			<img src="../img/drag-and-drop-event.png" alt="Drag and drop an event" class="figure-size-80"/></li>
+			<li>Give the event type the name <span class="italic">sniffer.header.parsed</span>. <br />
+			<img src="../img/event-type-name.png" alt="Event type name" class="figure-size-80"/></li>	
+			<li>Double-click on the event type name. Then, the property view (lower panel) for adding or editing information related to the <span class="italic">Event</span> will be open.<br />
+			<img src="../img/property-view-event.png" alt="Property view event" class="figure-size-80"/></li>			
+			<li>Customize the event type icon by selecting the path to the new image in the property view.<br />
+			<span class="bold">Make sure that the icon file is readable by the editor. Otherwise, move the icon file to a readable directory and change the path, for example C:\Users\&lt;username&gt;\MEdit4CEP-tutorial\</span>.<br />
+			<img src="../img/image-path-event-dialog.png" alt="Image path event" class="figure-size-50"/><br />
+			<img src="../img/image-path-event-property.png" alt="Image path event" class="figure-size-80"/></li>		
+			<li>Drag and drop an <span class="italic">EventProperty</span> tool into the <span class="italic">sniffer.header.parsed</span> event. <br />
+			<img src="../img/drag-drop-event-property.png" alt="Drag and drop event property" class="figure-size-80"/></li>
+			<li>Give the event property the name <span class="italic">ts</span> and select <span class="italic">Long</span> as its type. <br />
+			<img src="../img/event-property-ts.png" alt="Event type name" class="figure-size-80"/></li>	
+			<li>As explained before, add the following event properties to the <span class="italic">sniffer.header.parsed</span> event: <span class="italic">ipId</span>, <span class="italic">ipVer</span>, <span class="italic">ipSrc</span>, <span class="italic">ipDst</span>, <span class="italic">ipTtl</span>, <span class="italic">ipChecksum</span>, <span class="italic">icmpType</span>, <span class="italic">icmpEchoSeq</span>, <span class="italic">ethSrc</span>, <span class="italic">ethDst</span>, <span class="italic">udpSrc</span>, <span class="italic">udpDst</span>, <span class="italic">arpSourceIp</span>, <span class="italic">arpTargetIp</span>, <span class="italic">arpSourceMac</span>, <span class="italic">arpTargetMac</span>, <span class="italic">arpOpDesc</span>, <span class="italic">tcpSrc</span>, <span class="italic">tcpDst</span>, <span class="italic">tcpAck</span>, <span class="italic">tcpSeq</span>, <span class="italic">tcpFlags</span>, <span class="italic">tcpTsval</span>, <span class="italic">tcpTsecr</span> and <span class="italic">len</span>. <br />
+			<img src="../img/cep-domain-non-validated.png" alt="Cep domain non validated" class="figure-size-80"/></li>
+		</ul>
+		<p>
+		As a result, this domain contains the <span class="italic">sniffer.header.parsed</span> event type along with its event properties: <span class="italic">ts</span> (timestamp for captured packet), <span class="italic">ipSrc</span> (IP source address), <span class="italic">ipDst</span> (IP destination address) and <span class="italic">icmpType</span> (ICMP type: <span class="italic">echo request</span> or <span class="italic">echo reply</span>), among others. Moreover, the domain name has been set to <span class="italic">network-analysis</span>, a textual description has been indicated for the domain and a customized icon has been assigned to the event type, improving usability.
+		</p>
+		<p>
+		Once designed the network analysis domain, it must be automatically validated and stored:
+		</p>
+		<ul class="instructions">
+			<li>Select <span class="italic">CEP Domain &gt; Save and Validate</span>.<br />
+		    <img src="../img/cep-domain-save-validate-option.png" alt="CEP domain save and validate option"/><br /><br />
+			The figure below shows that there are some problems that must be solved before saving the domain.<br />
+			<img src="../img/cep-domain-save-validate.png" alt="CEP domain save and validate" class="figure-size-80"/></li>
+			<li>Select a type for each event property in order to solve these problems: 
+				<span class="italic">Long</span> (<span class="italic">len</span>, <span class="italic">ipVer</span>, <span class="italic">ipId</span>, <span class="italic">ipTtl</span>, <span class="italic">ipChecksum</span>, <span class="italic">icmpEchoSeq</span>, <span class="italic">tcpSrc</span>, <span class="italic">tcpDst</span>, <span class="italic">tcpAck</span>, <span class="italic">tcpSeq</span>, <span class="italic">tcpFlags</span>, <span class="italic">tcpTsval</span>, <span class="italic">tcpTsecr</span>, <span class="italic">udpDst</span>, <span class="italic">udpSrc</span>) and 
+				
+				<span class="italic">String</span> (<span class="italic">ethSrc</span>, <span class="italic">ethDst</span>, <span class="italic">arpOpDesc</span>, <span class="italic">arpTargetMac</span>, <span class="italic">arpTargetIp</span>, <span class="italic">arpSourceMac</span>, <span class="italic">arpSourceIp</span>, <span class="italic">ipSrc</span>, <span class="italic">ipDst</span>, <span class="italic">icmpType</span>). 
+			</li>	
+			<li>Select again <span class="italic">CEP Domain &gt; Save and Validate</span>. If all errors have been corrected, a message will be shown indicating that the domain has been correctly saved and validated.<br />
+			<img src="../img/cep-domain-save-validate-no-errors.png" alt="CEP domain save and validate" class="figure-size-80"/></li>			
+		</ul>
+		
+		
+		<h2 id="step2">Defining, Validating, Saving and Transforming Event Patterns to Code</h2>
+		
+		<p>
+		Once created the network analysis domain, we are going to model the following event pattern for this domain by using the event pattern editor:
+		</p>
+		<ul>
+			<li><span class="bold">Name</span>: <span class="italic">icmp_echo_request</span>.</li>
+			<li><span class="bold">Description</span>: this pattern allows us to detect a control message sent to a host with the purpose of receiving an <span class="italic">echo-reply</span> message from it.</li>
+			<li><span class="bold">Pattern condition</span>: the value of the <span class="italic">icmpType</span> property of a <span class="italic">sniffer.header.parsed</span> event must be equal to the <span class="italic">echo request</span> value.</li>
+			<li><span class="bold">New complex event</span>: <span class="italic">icmp_echo_request</span>. A new complex event will be created with the following properties: <span class="italic">timestamp</span> (the timestamp in nanoseconds &ndash;the <span class="italic">ts</span> property&ndash; of the <span class="italic">sniffer.header.parsed</span> event), <span class="italic">source</span> (its value must equal the <span class="italic">ipSrc</span> property of the <span class="italic">sniffer.header.parsed</span> event) and <span class="italic">destination</span> (its value must equal the <span class="italic">ipDst</span> property of the <span class="italic">sniffer.header.parsed</span> event).</li>
+			<li><span class="bold">Action</span>: <span class="italic">email</span>. Each new <span class="italic">icmp_echo_request</span> complex event, which is created when the event pattern condition is satisfied, will be sent to the email address(es) specified in the <span class="italic">to</span> attribute in the <span class="italic">Email</span> component. To that end, the <span class="italic">from</span> address, host, port, username and password, as well as the subject &ndash;for example, <span class="italic">Alert: ICMP Echo Request</span>&ndash;, must be indicated.</li>
+		</ul>
+		<ul class="instructions">
+			<li>Select <span class="italic">Event Pattern &gt; New...</span>.<br />		
+			<img src="../img/event-pattern-new.png" alt="Event Pattern New" /></li>	
+			<li>Give the event pattern the name <span class="italic">icmp_echo_request</span> and the description <span class="italic">This pattern allows us to detect a control message sent to a host with the purpose of receiving an echo-reply message from it</span>. Then, click the <span class="italic">OK</span> button.<br />
+			<img src="../img/event-pattern-new-dialog.png" alt="Event Pattern New Dialog" /></li>	
+			<li>At this moment, the event pattern editor will be automatically reconfigured for the network analysis domain, i.e. the <span class="italic">sniffer.header.parsed</span> event type will be added as a tool in the <span class="italic">Simple Events</span> category of the editor palette. This means that end users do not have to worry about how to define event types and their properties, since these are graphically represented when dragging and dropping the tool. In addition, they cannot modify given event types, avoiding the creation of incorrect event patterns for the same domain.<br />
+			Then, the <span class="italic">icmp_echo_request</span> event pattern is created.<br />
+			<img src="../img/customized-event-pattern-editor.png" alt="Customized Event Pattern Editor" class="figure-size-80" /></li>
+			<li>Drag and drop the <span class="italic">sniffer.header.parsed</span> simple event directly into the canvas. <br />
+			<img src="../img/icmp-echo-request-1.png" alt="Drag and drop sniffer.header.parsed simple event" class="figure-size-80"/></li> 
+			<li>Select the <span class="italic">Link</span> tool and link the <span class="italic">icmpType</span> property to the <span class="italic">Equal</span> comparison operator. <br />
+			<img src="../img/icmp-echo-request-2.png" alt="Drag and drop Link" class="figure-size-80"/><br />
+			<img src="../img/icmp-echo-request-3.png" alt="Link the icmpType property" class="figure-size-80"/></li>
+			<li>Drag and drop the <span class="italic">Value</span> tool directly into the canvas. Then, give it the value <span class="italic">echo request</span> and select <span class="italic">String</span> as value type.<br />
+			<img src="../img/icmp-echo-request-4.png" alt="Drag and drop the Value" class="figure-size-80"/></li>
+			<li>Link the <span class="italic">Value</span> to the <span class="italic">Equal</span> operator. Notice that link orders have been automatically generated by the editor, but they can be manually modified. <br />
+			<img src="../img/icmp-echo-request-5.png" alt="Link Value To Equal" class="figure-size-80"/></li>
+			<li>Check if the current modeled pattern is correct by selecting <span class="italic">Event Pattern &gt; Save and Validate</span>.<br />
+			<img src="../img/icmp-echo-request-6.png" alt="Event Pattern/Save and Validate"/><br /><br />
+			The figures below indicate that there is a problem that must be solved before saving the event pattern.<br />
+			<img src="../img/icmp-echo-request-7.png" alt="Event pattern non validated"/><br /><br />
+			<img src="../img/icmp-echo-request-8.png" alt="Event pattern errors" class="figure-size-80"/><br />
+			</li>
+			<li>Drag and drop the <span class="italic">New Complex Event</span> tool into the canvas in order to solve the event pattern error.<br />
+			<img src="../img/icmp-echo-request-9.png" alt="Event pattern errors" class="figure-size-80"/><br />
+			</li>
+			<li>Drag and drop a <span class="italic">New Complex Event Property</span> tool into the <span class="italic">New Complex Event</span> per property to be created for this complex event: <span class="italic">timestamp</span>, <span class="italic">source</span> and <span class="italic">destination</span>.<br />
+			<img src="../img/icmp-echo-request-10.png" alt="Drag and drop New Complex Event Property" class="figure-size-80"/><br />
+			</li>
+			<li>Link the <span class="italic">ts</span> property to the first complex event property, link <span class="italic">ipSrc</span> to the second complex event property and link <span class="italic">ipDst</span> to the third complex event property. The figure below shows that the complex event properties have been automatically named. <br />
+			<img src="../img/icmp-echo-request-11.png" alt="Drag and drop New Complex Event Property" class="figure-size-80"/><br />
+			</li>	
+			<li>Rename the complex event properties as follows: <span class="italic">timestamp</span>, <span class="italic">source</span> and <span class="italic">destination</span>.<br />
+			<img src="../img/icmp-echo-request-12.png" alt="Complex Event Properties" class="figure-size-80"/><br />
+			</li>	
+			<li>Drag and drop an <span class="italic">Email</span> tool into the canvas and link the <span class="italic">New Complex Event</span> to the <span class="italic">Email</span>. Then, set value to the <span class="italic">Email</span> properties as shown in the following figure: <br />
+			<img src="../img/icmp-echo-request-13.png" alt="Complex Event Properties" class="figure-size-80"/><br />
+			</li>	
+			<li>Customize the complex event type icon by selecting the path to the new image in the property view.<br />
+			<span class="bold">Make sure that the icon file is readable by the editor. Otherwise, move the icon file to a readable directory and change the path, for example C:\Users\&lt;username&gt;\MEdit4CEP-tutorial\</span>.<br />
+			<img src="../img/icmp-echo-request-14.png" alt="Image path event" class="figure-size-80"/></li>			
+			<li>Check again if the current modeled pattern is correct by selecting <span class="italic">Event Pattern &gt; Save and Validate</span>. The figure below indicates that the event pattern has been correctly validated and saved.<br />
+			<img src="../img/icmp-echo-request-15.png" alt="Event Pattern Save and Validate" class="figure-size-80"/><br />
+			</li>
+			<li>After designing, validating and saving the event pattern, both the EPL code to be added in the Esper CEP engine at runtime as well as the XML code for actions to be carried out in a Mule ESB can be automatically generated by the event pattern editor. To do that, select <span class="italic">Event Pattern &gt; Generate and Deploy Pattern Code</span>.<br />
+			<img src="../img/icmp-echo-request-16.png" alt="Generate and Deploy Pattern Code"/><br />
+			</li>	
+			<li>Choose a folder where to save the generated event pattern EPL code, as shown in the figure below: <br />
+			<img src="../img/icmp-echo-request-17.png" alt="EPL folder"/><br /><br />
+			In addition, choose a folder where to save the generated action code, as shown in the following figure: <br />
+			<img src="../img/icmp-echo-request-18.png" alt="Action folder"/>			
+			</li>
+			<li>As a result, a file <span class="italic">.epl</span> will be created per event pattern and, if the pattern contains actions, another file <span class="italic">.action</span>.<br />
+			<img src="../img/icmp-echo-request-19.png" alt="Generated Pattern Code"/></li>
+		</ul>
+		<p>
+		In order to illustrate the generated files we show those generated for the ICMP echo request pattern in the following lines. The implementation of the ICMP echo request pattern in EPL is as follows: 
+		</p>
+		<pre>
+@Name('icmp_echo_request') 
+insert into icmp_echo_request
+select a1.ts as timestamp, 
+   a1.ipSrc as source, 
+   a1.ipDst as destination
+from sniffer.header.parsed a1
+where a1.icmpType = 'echo request'</pre>
+		<p>		
+		First of all, the <span class="italic">from</span> clause indicates for which event type &ndash;<span class="italic">sniffer.header.parsed</span>&ndash; the pattern condition must be evaluated, assigning the <span class="italic">a1</span> alias to this type. The condition &ndash;the value of the <span class="italic">icmpType</span> property of a <span class="italic">sniffer.header.parsed</span> event must be equal to the <span class="italic">echo request</span> value&ndash; is specified by using the <span class="italic">where</span> clause. Next, event properties to be selected from the events matching the pattern condition are specified: <span class="italic">timestamp</span>, <span class="italic">IP source</span> and <span class="italic">IP destination</span>. Then, a complex event along with its properties &ndash;<span class="italic">icmp_echo_request(timestamp, source, destination)</span>&ndash; is created  and inserted into a new Esper event flow named exactly as the complex event, namely <span class="italic">icmp_echo_request</span>.
+		</p>
+		<p>
+		In addition, the implementation of the action for this pattern in XML is as follows: 
+		</p>
+		<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br/><br/>&lt;mule xmlns:  [...] <br/>      xsi:schemaLocation=  [...] &gt; <br/><br/>    &lt;flow name=&quot;icmp_echo_request&quot;&gt;<br/>        &lt;processor-chain&gt;<br/>            &lt;set-payload value=&quot;Detected Alert '#[message.inboundProperties['eventPatternName']]': <br/>                #[payload]&quot; doc:name=&quot;Set Email Body&quot;/&gt;<br/>	    &lt;smtps:outbound-endpoint host=&quot;smtp.uca.es&quot; port=&quot;465&quot; user=&quot;****&quot; password=&quot;****&quot; <br/>                to=&quot;juan.boubeta@uca.es&quot; from=&quot;juan.boubeta@uca.es&quot; cc=&quot;&quot; subject=&quot;Alert: ICMP Echo Request&quot; <br/>                responseTimeout=&quot;3000&quot; doc:name=&quot;SMTP&quot;/&gt;<br/>        &lt;/processor-chain&gt; <br/>    &lt;/flow&gt;<br/>	<br/>&lt;/mule&gt;</pre>
+		<p>			
+		The first line of this action file is the XML declaration followed by the Mule namespace and XML schema declarations. Next, a new Mule flow named equal to its corresponding event pattern &ndash;<span class="italic">icmp_echo_request</span>&ndash; is presented. This flow is composed of both a set payload transformer for setting the concrete format for the email payload to be sent &ndash;containing the complex event received in the Mule flow called <span class="italic">ComplexEventReceptionAndDecisionMaking</span>&ndash; and a SMTP connector that makes sending complex events (alerts) as emails possible.
+		</p>
+		
+		
+		<h2 id="step3">Duplicating an Existing Event Pattern</h2>
+		
+		<p>
+		In this section, we are going to model the following event pattern for the network analysis domain by using the event pattern editor:
+		</p>
+		<ul>
+			<li><span class="bold">Name</span>: <span class="italic">icmp_echo_reply<span>.</li>
+			<li><span class="bold">Description</span>: this pattern allows us to detect a control message generated as a response to an <span class="italic">echo-request</span> message.</li>
+			<li><span class="bold">Pattern condition</span>: the value of the <span class="italic">icmpType</span> property of a <span class="italic">sniffer.header.parsed</span> event must be equal to the <span class="italic">echo reply</span> value.</li>
+			<li><span class="bold">New complex event</span>: <span class="italic">icmp_echo_reply</span>. A new complex event will be created with the following properties: <span class="italic">timestamp</span> (the timestamp in nanoseconds &ndash;the <span class="italic">ts</span> property&ndash; of the <span class="italic">sniffer.header.parsed</span> event), <span class="italic">source</span> (its value must equal the <span class="italic">ipSrc</span> property of the <span class="italic">sniffer.header.parsed</span> event) and <span class="italic">destination</span> (its value must equal the <span class="italic">ipDst</span> property of the <span class="italic">sniffer.header.parsed</span> event).</li>
+			<li><span class="bold">Action</span>: <span class="italic">email</span>. Each new <span class="italic">icmp_echo_reply</span> complex event will be sent to the email address(es) specified in the <span class="italic">to</span> attribute in the <span class="italic">Email</span> component.</li>
+		</ul>
+
+		<p>Since this event pattern is similar to the <span class="italic">icmp_echo_request</span> pattern designed before, we are not going to create the new pattern from scratch, but to duplicate the existing one and modify it according to its description.
+		</p>
+		<ul class="instructions">
+			<li>Select <span class="italic">Event Pattern &gt; Duplicate Existing Pattern...</span>.<br />		
+			<img src="../img/icmp-echo-reply-1.png" alt="Event Pattern Duplicate" /></li>
+			<li>Give the event pattern the name <span class="italic">icmp_echo_reply</span> and the description <span class="italic">This pattern allows us to detect a control message generated as a response to an echo-request message</span>. Then, click the <span class="italic">OK</span> button.<br />
+			<img src="../img/icmp-echo-reply-2.png" alt="Event Pattern Duplicate Pattern Dialog" class="figure-size-80"/></li>
+			<li>The figure below depicts the duplicated pattern. As it can been seen, the event pattern editor has been automatically reconfigured adding the <span class="italic">icmp_echo_request</span> complex event type as a tool in the <span class="italic">Complex Events</span> category of the editor palette. This allows end users to be able to graphically define an event pattern hierarchy by dragging and dropping previously added tools from the <span class="italic">Complex Events</span> category into a new event pattern model.<br />
+			<img src="../img/icmp-echo-reply-3.png" alt="Duplicated Event Pattern" class="figure-size-80"/><br /></li>
+			<li>Replace <span class="italic">echo request</span> by <span class="italic">echo reply</span> Value, which is linked to the <span class="italic">Equal</span> operator.<br />
+			<img src="../img/icmp-echo-reply-4.png" alt="Modify Value" class="figure-size-80"/><br /></li>
+			<li>Replace <span class="italic">Alert: ICMP Echo Request</span> by <span class="italic">Alert: ICMP Echo Reply</span> email subject.<br />
+			<img src="../img/icmp-echo-reply-5.png" alt="Modify Value" class="figure-size-80"/><br /></li>		
+			<li>Customize the complex event type icon by selecting the path to the new image in the property view.<br />
+			<span class="bold">Make sure that the icon file is readable by the editor. Otherwise, move the icon file to a readable directory and change the path, for example C:\Users\&lt;username&gt;\MEdit4CEP-tutorial\</span>.<br />
+			<img src="../img/icmp-echo-reply-6.png" alt="Image path event" class="figure-size-80"/></li>			
+			<li>Check if the current modeled pattern is correct by selecting <span class="italic">Event Pattern &gt; Save and Validate</span>. The figure below indicates that the event pattern has been correctly validated and saved.<br />
+			<img src="../img/icmp-echo-reply-7.png" alt="Event Pattern Save and Validate" class="figure-size-80"/><br />
+			</li>
+			<li>Select <span class="italic">Event Pattern &gt; Generate and Deploy Pattern Code</span>.<br />
+			<img src="../img/icmp-echo-request-19.png" alt="Generated Pattern Code"/>
+			</li>		
+		</ul>
+		<p>The implementation of the ICMP echo reply pattern in EPL is as follows: 
+		</p>
+		<pre>
+@Name('icmp_echo_reply') 
+insert into icmp_echo_reply
+select a1.ts as timestamp, 
+   a1.ipSrc as source, 
+   a1.ipDst as destination
+from sniffer.header.parsed a1
+where a1.icmpType = 'echo reply'</pre>
+		<p>		
+		<p>
+		Besides, the implementation of the action for this pattern in XML is as follows: 
+		</p>
+		<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br/><br/>&lt;mule xmlns:  [...] <br/>      xsi:schemaLocation=  [...] &gt; <br/><br/>    &lt;flow name=&quot;icmp_echo_reply&quot;&gt;<br/>        &lt;processor-chain&gt;<br/>            &lt;set-payload value=&quot;Detected Alert '#[message.inboundProperties['eventPatternName']]': <br/>                #[payload]&quot; doc:name=&quot;Set Email Body&quot;/&gt;<br/>	    &lt;smtps:outbound-endpoint host=&quot;smtp.uca.es&quot; port=&quot;465&quot; user=&quot;****&quot; password=&quot;****&quot; <br/>                to=&quot;juan.boubeta@uca.es&quot; from=&quot;juan.boubeta@uca.es&quot; cc=&quot;&quot; subject=&quot;Alert: ICMP Echo Reply&quot; <br/>                responseTimeout=&quot;3000&quot; doc:name=&quot;SMTP&quot;/&gt;<br/>        &lt;/processor-chain&gt; <br/>    &lt;/flow&gt;<br/>	<br/>&lt;/mule&gt;</pre>
+		<p>			
+		
+		
+		<h2 id="step4">Creating an Event Pattern Hierarchy</h2>
+		
+		<p>
+		In this section, we are going to model the following event pattern for the network analysis domain by using the event pattern editor:
+		</p>
+		<ul>
+			<li><span class="bold">Name</span>: <span class="italic">icmp_ping_response_time<span>.</li>
+			<li><span class="bold">Description</span>: this pattern allows us to calculate the temporal difference between the occurrence of an <span class="italic">ICMP echo request</span> message and an <span class="italic">ICMP echo reply</span> message.</li>
+			<li><span class="bold">Pattern conditions</span>:
+				<ul>
+					<li>Every <span class="italic">icmp_echo_request</span> complex event &ndash;generated by the <span class="italic">icmp_echo_request</span> pattern&ndash; is followed by an <span class="italic">icmp_echo_reply</span> complex event, generated by the <span class="italic">icmp_echo_reply</span> pattern.</li>
+					<li>Additionally, the value of the <span class="italic">source</span> property of the <span class="italic">icmp_echo_reply</span> complex event is equal to the <span class="italic">destination</span> property of the <span class="italic">icmp_echo_request</span> complex event, and the value of the <span class="italic">destination</span> property of the <span class="italic">icmp_echo_reply</span> event is equal to the <span class="italic">source</span> property of the <span class="italic">icmp_echo_request</span> event.</li>
+				</ul>
+			</li>
+			<li><span class="bold">New complex event</span>: <span class="italic">icmp_ping_response_time</span>. A new complex event will be created with the following properties: <span class="italic">requestTimestamp</span> (the value of the <span class="italic">timestamp</span> property of the <span class="italic">icmp_echo_request</span> complex event), <span class="italic">responseTimestamp</span> (the value of the <span class="italic">timestamp</span> property of the <span class="italic">icmp_echo_reply</span> complex event), <span class="italic">time</span> (the timestamp difference between the <span class="italic">icmp_echo_reply</span> and <span class="italic">icmp_echo_request</span> complex events), <span class="italic">source</span> (the value of the <span class="italic">source</span> property of the <span class="italic">icmp_echo_request</span> complex event) and <span class="italic">destination</span> (the value of the <span class="italic">destination</span> property of the <span class="italic">icmp_echo_request</span> complex event).</li>
+			<li><span class="bold">Action</span>: <span class="italic">email</span>. Each new <span class="italic">icmp_ping_response_time</span> complex event will be sent to the email address(es) specified in the <span class="italic">to</span> attribute in the <span class="italic">Email</span> component.</li>
+		</ul>	
+		<p>Since this event pattern depends on <span class="italic">icmp_echo_request</span> and <span class="italic">icmp_echo_reply</span> patterns, an event pattern hierarchy must be created by using the event pattern editor.
+		<ul class="instructions">
+			<li>Select <span class="italic">Event Pattern &gt; New...</span>.</li>	
+			<li>Give the event pattern the name <span class="italic">icmp_ping_response_time</span> and the description <span class="italic">This pattern allows us to calculate the temporal difference between the occurrence of an ICMP echo request message and an ICMP echo reply message</span>. Then, click the <span class="italic">OK</span> button.<br />
+			<img src="../img/icmp-ping-1.png" alt="Event Pattern New Dialog" /></li>
+			<li>The figure below depicts the new pattern. As it can been seen, the event pattern editor has been automatically reconfigured adding the <span class="italic">icmp_echo_reply</span> complex event type as a tool in the <span class="italic">Complex Events</span> category of the editor palette. This allows end users to be able to graphically define an event pattern hierarchy by dragging and dropping previously added tools from the <span class="italic">Complex Events</span> category into a new event pattern model.<br />
+			<img src="../img/icmp-ping-2.png" alt="Duplicated Event Pattern" class="figure-size-80"/><br /></li>
+			<li>Design the <span class="italic">icmp_ping_response_time</span> pattern by using the palette tools as illustrated in the following figure. Notice that this pattern has been designed thanks to the use of the <span class="italic">icmp_echo_request</span> and <span class="italic">icmp_echo_reply</span> tools that were automatically added to the <span class="italic">Complex Events</span> category after modeling the <span class="italic">icmp_echo_request</span> and <span class="italic">icmp_echo_reply</span> patterns.<br />
+			<img src="../img/icmp-ping-3.png" alt="ICMP Ping Response Time pattern" class="figure-size-80"/><br /></li>
+			<li>Validate, save and transform the pattern to code.</li>
+		</ul>
+		
+		<p>The implementation of the ICMP ping response time pattern in EPL is as follows: 
+		</p>
+		<pre>
+@Name('icmp_ping_response_time') 
+insert into icmp_ping_response_time
+select a1.timestamp as requestTimestamp, 
+   a2.timestamp as responseTimestamp, 
+   (a2.timestamp - a1.timestamp) as time, 
+   a1.source as source, 
+   a1.destination as destination
+from pattern [(every a1 = icmp_echo_request -> 
+   a2 = icmp_echo_reply((a2.source = a1.destination and a2.destination = a1.source)))]</pre>
+		<p>		
+		<p>
+		Moreover, the implementation of the action for this pattern in XML is as follows: 
+		</p>
+		<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br/><br/>&lt;mule xmlns:  [...] <br/>      xsi:schemaLocation=  [...] &gt; <br/><br/>    &lt;flow name=&quot;icmp_ping_response_time&quot;&gt;<br/>        &lt;processor-chain&gt;<br/>            &lt;set-payload value=&quot;Detected Alert '#[message.inboundProperties['eventPatternName']]': <br/>                #[payload]&quot; doc:name=&quot;Set Email Body&quot;/&gt;<br/>	    &lt;smtps:outbound-endpoint host=&quot;smtp.uca.es&quot; port=&quot;465&quot; user=&quot;****&quot; password=&quot;****&quot; <br/>                to=&quot;juan.boubeta@uca.es&quot; from=&quot;juan.boubeta@uca.es&quot; cc=&quot;&quot; subject=&quot;Alert: ICMP Ping Response Time&quot; <br/>                responseTimeout=&quot;3000&quot; doc:name=&quot;SMTP&quot;/&gt;<br/>        &lt;/processor-chain&gt; <br/>    &lt;/flow&gt;<br/>	<br/>&lt;/mule&gt;</pre>
+		<p>					
+		
+		
+		<h2 id="step5">Exporting the CEP Domain and Event Patterns</h2>
+		
+		<p>
+		In this section, we are going to export the modeled CEP domain and event patterns so as to be reused and shared with other users. 
+		</p>	
+
+		<ul class="instructions">
+			<li>Select <span class="italic">File &gt; Export Event Patterns...</span>.<br />
+			<img src="../img/export-1.png" alt="Export Event Patterns Dialog" class="figure-size-30"/></li>
+			<li>Choose a folder where to export the event patterns.<br />
+			<img src="../img/export-2.png" alt="Export Event Patterns" /></li>
+			<li>The figure below indicates that the exportation has been done.<br />
+			<img src="../img/export-3.png" alt="Export Event Patterns" /></li>
+			<li>As a result, the <span class="italic">network-analysis_patterns.zip</span> has been created. It contains the modeled event patterns together with their modeled CEP domain. Notice that these patterns may be imported in the event pattern editor by selecting <span class="italic">File &gt; Import Event Patterns...</span>.</li>
+		</ul>		
+  	</body>
+</html>

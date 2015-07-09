@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="MEdit4CEP" id="es.uca.modeling.cep.eventpattern.product" application="org.eclipse.ui.ide.workbench" version="1.0.0" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-128x128.png"/>
+      <text>
+         Version: 1.0.0
+Date: July 9th, 2015
+URL: https://ucase.uca.es/medit4cep/
+
+Copyright (c) 2011, 2015 Juan Boubeta-Puig
+All rights reserved. This program and the accompanying materials 
+are made available under the terms of the Eclipse Public License v1.0 
+which accompanies this distribution, and is available at 
+http://www.eclipse.org/legal/epl-v10.html
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgs>-XX:PermSize=64M -XX:MaxPermSize=128M -Xms512M -Xmx1024M</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-16x16.png" i32="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-32x32.png" i48="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-48x48.png" i64="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-64x64.png" i128="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-128x128.png"/>
+
+   <splash
+      location="es.uca.modeling.cep.eventpattern.figures" />
+   <launcher name="MEdit4CEP">
+      <solaris/>
+      <win useIco="false">
+         <bmp
+            winSmallHigh="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-16x16-32bit.bmp"
+            winSmallLow="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-16x16-8bit.bmp"
+            winMediumHigh="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-32x32-32bit.bmp"
+            winMediumLow="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-32x32-8bit.bmp"
+            winLargeHigh="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-48x48-32bit.bmp"
+            winLargeLow="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-48x48-8bit.bmp"
+            winExtraLargeHigh="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-256x256-32bit.bmp"/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+   <license>
+        <url>https://ucase.uca.es/medit4cep/</url>
+        <text>
+   MEdit4CEP
+
+Version: 1.0.0
+Date: July 9th, 2015
+
+/*******************************************************************************
+ * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Juan Boubeta-Puig - MEdit4CEP
+ ******************************************************************************/
+         </text>
+   </license>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="es.uca.modeling.cep.eventpattern.feature"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.sdk"/>
+      <feature id="org.eclipse.equinox.p2.core.feature"/>
+      <feature id="org.eclipse.e4.rcp.source"/>
+      <feature id="org.eclipse.equinox.p2.extras.feature.source"/>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.rcp.source"/>
+      <feature id="org.eclipse.pde.source"/>
+      <feature id="org.eclipse.equinox.p2.rcp.feature"/>
+      <feature id="org.eclipse.equinox.p2.user.ui"/>
+      <feature id="org.eclipse.cvs"/>
+      <feature id="org.eclipse.equinox.p2.rcp.feature.source"/>
+      <feature id="org.eclipse.jdt.source"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.jdt"/>
+      <feature id="org.eclipse.cvs.source"/>
+      <feature id="org.eclipse.equinox.p2.user.ui.source"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.platform.source"/>
+      <feature id="org.eclipse.equinox.p2.core.feature.source"/>
+      <feature id="org.eclipse.pde"/>
+      <feature id="org.eclipse.equinox.p2.extras.feature"/>
+      <feature id="org.eclipse.emf.sdk"/>
+      <feature id="org.eclipse.e4.rcp"/>
+      <feature id="org.eclipse.emf.mapping"/>
+      <feature id="org.eclipse.emf.codegen.ecore.ui"/>
+      <feature id="org.eclipse.emf.codegen.ui.source"/>
+      <feature id="org.eclipse.emf.mapping.ui.source"/>
+      <feature id="org.eclipse.emf.doc"/>
+      <feature id="org.eclipse.emf.ecore.edit.source"/>
+      <feature id="org.eclipse.emf.common.ui.source"/>
+      <feature id="org.eclipse.emf.codegen.ui"/>
+      <feature id="org.eclipse.emf.mapping.ecore.editor.source"/>
+      <feature id="org.eclipse.emf.ecore.editor.source"/>
+      <feature id="org.eclipse.emf.edit.source"/>
+      <feature id="org.eclipse.emf"/>
+      <feature id="org.eclipse.emf.source"/>
+      <feature id="org.eclipse.emf.converter.source"/>
+      <feature id="org.eclipse.emf.edit"/>
+      <feature id="org.eclipse.emf.converter"/>
+      <feature id="org.eclipse.emf.mapping.ecore.source"/>
+      <feature id="org.eclipse.emf.databinding.source"/>
+      <feature id="org.eclipse.emf.mapping.source"/>
+      <feature id="org.eclipse.emf.doc.source"/>
+      <feature id="org.eclipse.emf.databinding.edit"/>
+      <feature id="org.eclipse.emf.common.ui"/>
+      <feature id="org.eclipse.emf.ecore.edit"/>
+      <feature id="org.eclipse.emf.mapping.ecore.editor"/>
+      <feature id="org.eclipse.emf.ecore.editor"/>
+      <feature id="org.eclipse.emf.codegen.ecore.source"/>
+      <feature id="org.eclipse.emf.databinding.edit.source"/>
+      <feature id="org.eclipse.emf.codegen.source"/>
+      <feature id="org.eclipse.emf.codegen.ecore"/>
+      <feature id="org.eclipse.emf.databinding"/>
+      <feature id="org.eclipse.emf.edit.ui"/>
+      <feature id="org.eclipse.emf.codegen.ecore.ui.source"/>
+      <feature id="org.eclipse.emf.mapping.ecore"/>
+      <feature id="org.eclipse.emf.mapping.ui"/>
+      <feature id="org.eclipse.emf.edit.ui.source"/>
+      <feature id="org.eclipse.emf.codegen"/>
+      <feature id="org.eclipse.help.source"/>
+      <feature id="org.eclipse.help"/>
+   </features>
+
+
+</product>

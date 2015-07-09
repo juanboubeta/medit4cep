@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="30"
+   height="30"
+   id="svg3316"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="While.svg">
+  <defs
+     id="defs3318" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.839192"
+     inkscape:cx="14.748274"
+     inkscape:cy="12.143754"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="942"
+     inkscape:window-height="985"
+     inkscape:window-x="960"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3321">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-791.40607,-498.09897)">
+    <path
+       transform="matrix(0.22163049,0,0,0.22163049,732.57316,407.03092)"
+       sodipodi:type="arc"
+       style="fill:#266e9f;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="path2985-9-7-2-7"
+       sodipodi:cx="333.35034"
+       sodipodi:cy="478.59555"
+       sodipodi:rx="67.680222"
+       sodipodi:ry="67.680222"
+       d="m 401.03056,478.59555 a 67.680222,67.680222 0 1 1 -135.36044,0 67.680222,67.680222 0 1 1 135.36044,0 z"
+       inkscape:export-filename="C:\Users\daninux\Iconos Boubeta\followed by 16x16 px.png"
+       inkscape:export-xdpi="89.999832"
+       inkscape:export-ydpi="89.999832" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer icon">
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 15.204575,3.0842182 c -1.9294,0 -3.5,1.55242 -3.5,3.4375 0,1.88509 1.5706,3.4062503 3.5,3.4062503 1.23198,0 2.31556,-0.6212799 2.9375,-1.5625003 3.04502,1.1505904 5.21875,4.0257098 5.21875,7.4062488 0,4.39231 -3.66069,7.9375 -8.15625,7.9375 -4.49556,0 -8.125001,-3.54519 -8.125001,-7.9375 0,-1.180149 0.24572,-2.306779 0.7187501,-3.312499 l 2.15625,3.09375 1.3437509,-7.4374998 -7.375001,-1.25 2.03125,2.9375004 c -1.15991,1.7079594 -1.8125,3.7641394 -1.8125,5.9687484 0,5.97812 4.9438801,10.8125 11.062501,10.8125 6.11866,0 11.09375,-4.83438 11.09375,-10.8125 0,-4.847089 -3.28571,-8.9656588 -7.78125,-10.3437488 -0.45771,-1.36395 -1.76347,-2.34375 -3.3125,-2.34375 z m -4.03125,9.5312498 2.09375,6.499999 1.71875,0 1.125,-4.187499 1.15625,4.187499 1.6875,0 2.15625,-6.499999 -1.75,0 -1.28125,4.249999 -1.09375,-4.249999 -1.71875,0 -1.125,4.249999 -1.25,-4.249999 -1.71875,0 z"
+       id="path3258-0" />
+  </g>
+</svg>

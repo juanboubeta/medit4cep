@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="30"
+   height="30"
+   id="svg3316"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Modulus.svg">
+  <defs
+     id="defs3318" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="11.063415"
+     inkscape:cy="-4.2632196"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="942"
+     inkscape:window-height="985"
+     inkscape:window-x="960"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3321">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-791.40608,-498.09896)">
+    <path
+       transform="matrix(0.22163048,0,0,0.22163048,732.52548,407.0276)"
+       sodipodi:type="arc"
+       style="fill:#df915f;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="path2985-0-3-8"
+       sodipodi:cx="333.35034"
+       sodipodi:cy="478.59555"
+       sodipodi:rx="67.680222"
+       sodipodi:ry="67.680222"
+       d="m 401.03056,478.59555 c 0,37.37875 -30.30146,67.68022 -67.68022,67.68022 -37.37875,0 -67.68022,-30.30147 -67.68022,-67.68022 0,-37.37875 30.30147,-67.68022 67.68022,-67.68022 37.37876,0 67.68022,30.30147 67.68022,67.68022 z"
+       inkscape:export-filename="C:\Users\daninux\Iconos Boubeta\adición 16x16 px.png"
+       inkscape:export-xdpi="150.27"
+       inkscape:export-ydpi="150.27" />
+    <g
+       id="g4343"
+       transform="matrix(0.16933334,0,0,0.16933334,1070.2083,211.45959)">
+      <g
+         id="text3755-3-6-3"
+         style="font-size:333.887146px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="matrix(-0.6718998,1.0050945,-0.44511767,-0.39441562,-1499.6038,1318.2995)">
+        <path
+           sodipodi:nodetypes="ccccc"
+           inkscape:connector-curvature="0"
+           id="path4450-6"
+           d="m 276.23735,-339.59261 -8.76167,-22.59654 98.91773,-6.91204 8.79009,22.45452 z" />
+      </g>
+      <text
+         transform="scale(1.199113,0.83394977)"
+         sodipodi:linespacing="125%"
+         id="text4508"
+         y="2130.4473"
+         x="-1344.7279"
+         style="font-size:78.41964722px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+         xml:space="preserve"><tspan
+           y="2130.4473"
+           x="-1344.7279"
+           id="tspan4510"
+           sodipodi:role="line">0</tspan></text>
+      <text
+         transform="scale(1.199113,0.83394977)"
+         sodipodi:linespacing="125%"
+         id="text4508-4"
+         y="2197.0034"
+         x="-1296.7101"
+         style="font-size:78.41964722px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+         xml:space="preserve"><tspan
+           y="2197.0034"
+           x="-1296.7101"
+           id="tspan4510-4"
+           sodipodi:role="line">0</tspan></text>
+    </g>
+  </g>
+</svg>

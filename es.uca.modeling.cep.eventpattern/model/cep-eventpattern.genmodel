@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/es.uca.modeling.cep.eventpattern/src"
+    modelPluginID="es.uca.modeling.cep.eventpattern" modelName="Eventpattern" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>cep-eventpattern.emf</foreignModel>
+  <genPackages prefix="Eventpattern" disposableProviderFactory="true" ecorePackage="cep-eventpattern.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cep-eventpattern.ecore#//PropertyTypeValue">
+      <genEnumLiterals ecoreEnumLiteral="cep-eventpattern.ecore#//PropertyTypeValue/Unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-eventpattern.ecore#//PropertyTypeValue/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-eventpattern.ecore#//PropertyTypeValue/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-eventpattern.ecore#//PropertyTypeValue/Long"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-eventpattern.ecore#//PropertyTypeValue/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-eventpattern.ecore#//PropertyTypeValue/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-eventpattern.ecore#//PropertyTypeValue/String"/>
+    </genEnums>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//CEPEventPattern">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/patternName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/patternDescription"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/domainName"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/patternCreationDate"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/patternDeployed"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/eventPatternElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/complexEvent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Link/order"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//Link/operand"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//Link/operator"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//Operator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//Operator/inboundLink"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//UnaryOperator"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//BinaryOperator"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//NaryOperator"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//Operand">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//Operand/outboundLink"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//EventPatternElement"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//ComplexEvent">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//ComplexEvent/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//ComplexEvent/imagePath"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//ComplexEvent/complexEventProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//ComplexEventProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//ComplexEventProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//ComplexEventProperty/imagePath"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//Action"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//DataWindow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//DataWindow/eventPatternConditions"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//SlidingEventInterval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SlidingEventInterval/size"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//BatchingEventInterval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingEventInterval/size"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//SlidingTimeInterval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SlidingTimeInterval/years"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SlidingTimeInterval/months"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SlidingTimeInterval/weeks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SlidingTimeInterval/days"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SlidingTimeInterval/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SlidingTimeInterval/minutes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SlidingTimeInterval/seconds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SlidingTimeInterval/milliseconds"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//BatchingTimeInterval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/years"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/months"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/weeks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/days"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/minutes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/seconds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/milliseconds"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//EventPatternCondition"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//AggregationOperator"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//ConditionOperator"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//ConditionOperand"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//PatternOperator"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//PatternOperand"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//ArithmeticOperator"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//ComparisonOperator"/>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//LogicalOperator"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Every"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//EveryDistinct"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Repeat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Repeat/count"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Until"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Range">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Range/lowEndpoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Range/highEndpoint"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//FollowedBy"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//While"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//And"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Or"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Not"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Addition"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Subtraction"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Multiplication"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Division"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Modulus"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Equal"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//NotEqual"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//LessThan"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//GreaterThan"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//LessEqual"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//GreaterEqual"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Max"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Min"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Avg"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Count"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Sum"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//WithinTimer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//WithinTimer/years"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//WithinTimer/months"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//WithinTimer/weeks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//WithinTimer/days"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//WithinTimer/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//WithinTimer/minutes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//WithinTimer/seconds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//WithinTimer/milliseconds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//WithinTimer/withinTimerElements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//WithinTimerElement"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//TimeInterval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeInterval/years"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeInterval/months"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeInterval/weeks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeInterval/days"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeInterval/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeInterval/minutes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeInterval/seconds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeInterval/milliseconds"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//TimeSchedule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeSchedule/dayOfWeek"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeSchedule/dayOfMonth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeSchedule/month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeSchedule/hour"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeSchedule/minute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//TimeSchedule/second"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Event">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Event/typeName"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Event/imagePath"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//Event/eventProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//EventProperty">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//EventProperty/name"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//EventProperty/type"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//EventProperty/imagePath"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//EventProperty/referencedEvent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//EventProperty/eventProperties"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//EventProperty/referencedEventProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Value/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Value/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Email">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/to"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/cc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/from"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/subject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/host"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/user"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/password"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//Twitter"/>
+  </genPackages>
+</genmodel:GenModel>

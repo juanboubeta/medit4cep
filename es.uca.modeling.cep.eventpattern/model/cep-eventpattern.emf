@@ -1,0 +1,516 @@
+/*******************************************************************************
+ * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Juan Boubeta-Puig - initial metamodel and implementation
+ ******************************************************************************/
+ 
+@namespace(uri="www.uca.es/modeling/cep/eventpattern", prefix="eventpattern")
+package eventpattern; 
+
+@gmf.diagram(model.extension="pattern", diagram.extension="pattern_diagram")
+class CEPEventPattern {
+   attr String patternName;
+   attr String patternDescription; 
+   attr String domainName; 
+   attr Date patternCreationDate; 
+   attr boolean patternDeployed;
+   
+   val Link[*] links; 
+   val EventPatternElement[*] eventPatternElements;
+   val ComplexEvent[0..1] complexEvent;
+   val Action[*] actions;
+}
+
+@gmf.link(label="order", source="operand", target="operator", 
+	source.constraint="self <> oppositeEnd 
+	and ( 
+	   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))
+	   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or 
+	        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) 
+	        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) 
+	   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))
+	   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) 
+	      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) 
+	         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) 
+	   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        
+	   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) 
+	      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  
+	   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) 
+	      and oppositeEnd.oclIsKindOf(AggregationOperator)) 
+	   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   
+	   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))
+	   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))  
+	)", 
+	target.constraint="self <> oppositeEnd", 
+	source.decoration="none", target.decoration="arrow", color="110,110,110", 
+	tool.name="Link", tool.description="Add a link")
+class Link {
+   attr int order;
+   
+   ref Operand#outboundLink operand; 
+   ref Operator#inboundLink operator; 
+}
+
+abstract class Operator {
+   ref Link[*]#operator inboundLink;
+}
+
+abstract class UnaryOperator extends Operator {
+    
+}
+
+abstract class BinaryOperator extends Operator {
+    
+}
+
+abstract class NaryOperator extends Operator {
+    
+}
+
+abstract class Operand {
+   ref Link[*]#operand outboundLink; 
+}
+
+abstract class EventPatternElement {
+
+}
+
+@gmf.node(figure="rectangle", label="typeName", border.color="110,110,110",
+	label.view.pattern="New Complex Event: {0}", label.readOnly="true", 
+	tool.name="New Complex Event", tool.description="Add a new complex event")
+class ComplexEvent extends Operand {
+   attr String typeName;  
+   attr String imagePath;  
+   
+   @gmf.compartment(layout="list")
+   val ComplexEventProperty[*] complexEventProperties; 
+}
+
+@gmf.node(figure="rectangle", label="name", border.color="110,110,110",
+	tool.name="New Complex Event Property", tool.description="Add a new complex event property")
+class ComplexEventProperty extends UnaryOperator {
+   attr String name = " ";
+   attr String imagePath; 
+}
+
+abstract class Action extends UnaryOperator {
+
+}
+
+
+/* DATA WINDOWS */
+
+abstract class DataWindow extends EventPatternElement {
+   @gmf.compartment
+   val EventPatternCondition[*] eventPatternConditions; 
+}
+
+@gmf.node(figure="rectangle", border.style="dash", label="size", border.color="110,110,110", color="230,230,250",  
+	label.view.pattern="Sliding Event Interval: {0}", 
+	label.edit.pattern="{0, number}",  
+	tool.name="Sliding Event Interval", tool.description="Add a sliding event interval window")
+class SlidingEventInterval extends DataWindow {
+   attr int size;   
+}
+
+@gmf.node(figure="rectangle", border.style="dash", label="size", border.color="110,110,110", color="230,230,250", 
+	label.view.pattern="Batching Event Interval: {0}", 
+	label.edit.pattern="{0, number}",  
+	tool.name="Batching Event Interval", tool.description="Add a batching event interval window")
+class BatchingEventInterval extends DataWindow {
+   attr int size;   
+}
+
+@gmf.node(figure="rectangle", border.style="dash", border.color="110,110,110", color="230,230,250",   
+	label="years, months, weeks, days, hours, minutes, seconds, milliseconds",  
+	label.parser="MessageFormatParser", label.readOnly="true", 
+	label.view.pattern="Sliding Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",    
+	tool.name="Sliding Time Interval", tool.description="Add a sliding time interval window")
+class SlidingTimeInterval extends DataWindow {
+   attr int years;
+   attr int months;
+   attr int weeks;
+   attr int days;
+   attr int hours;
+   attr int minutes;
+   attr int seconds;
+   attr int milliseconds;
+}
+
+@gmf.node(figure="rectangle", border.style="dash", border.color="110,110,110", color="230,230,250",   
+	label="years, months, weeks, days, hours, minutes, seconds, milliseconds",  
+	label.parser="MessageFormatParser", label.readOnly="true", 
+	label.view.pattern="Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",    
+	tool.name="Batching Time Interval", tool.description="Add a batching time interval window")
+class BatchingTimeInterval extends DataWindow {
+   attr int years;
+   attr int months;
+   attr int weeks;
+   attr int days;
+   attr int hours;
+   attr int minutes;
+   attr int seconds;
+   attr int milliseconds;
+}
+
+
+/* EVENT PATTERN CONDITIONS */
+
+abstract class EventPatternCondition extends EventPatternElement {
+
+}
+
+abstract class AggregationOperator extends UnaryOperator, Operand, EventPatternCondition {
+
+}
+
+abstract class ConditionOperator extends Operator, ConditionOperand, EventPatternCondition, WithinTimerElement {
+
+}
+
+abstract class ConditionOperand extends Operand, EventPatternCondition, WithinTimerElement {
+
+}
+
+abstract class PatternOperator extends Operator, PatternOperand, EventPatternCondition, WithinTimerElement {
+   
+}
+
+abstract class PatternOperand extends Operand, EventPatternCondition {
+       
+}
+
+abstract class ArithmeticOperator extends BinaryOperator, ConditionOperator {
+
+}
+
+abstract class ComparisonOperator extends BinaryOperator, ConditionOperator {
+   
+}
+
+abstract class LogicalOperator extends ConditionOperator, PatternOperator {
+   
+}
+
+
+/* PATTERN OPERATORS */
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Every.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Every", tool.description="Add an every operator")
+class Every extends UnaryOperator, PatternOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/EveryDistinct.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Every Distinct", tool.description="Add an every-distinct operator")
+class EveryDistinct extends NaryOperator, PatternOperator {
+
+}
+
+@gmf.node(figure="ellipse", label="count", label.view.pattern="{0}", label.edit.pattern="{0, number}", 
+	border.color="38,110,159", border.width="3", label.icon = "false", color="255,255,255", size="30,30", 
+	resizable="false", tool.name="Repeat", tool.description="Add a repeat operator")
+class Repeat extends UnaryOperator, PatternOperator {
+   attr int count;
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Until.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Until", tool.description="Add an until operator")
+class Until extends BinaryOperator, PatternOperator {
+
+}
+
+@gmf.node(figure="ellipse", label="lowEndpoint, highEndpoint", color="38,110,159", 
+	border.color="38,110,159", border.width="3", label.icon = "false", color="255,255,255", size="30,30",
+	label.view.pattern="[{0, number}:{1, number}]", label.edit.pattern="{0}:{1}", 
+	resizable="false", tool.name="Range", tool.description="Add a range operator")
+class Range extends UnaryOperator, PatternOperator {
+   attr int lowEndpoint; 
+   attr int highEndpoint;
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/FollowedBy.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Followed By", tool.description="Add a followed-by operator")
+class FollowedBy extends NaryOperator, PatternOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/While.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="While", tool.description="Add a while operator")
+class While extends BinaryOperator, PatternOperator {
+
+}
+
+
+/* CONDITION OPERATORS */
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/And.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="And", tool.description="Add an and operator")
+class And extends NaryOperator, LogicalOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Or.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Or", tool.description="Add an or operator")
+class Or extends NaryOperator, LogicalOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Not.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Not", tool.description="Add a not operator")
+class Not extends UnaryOperator, LogicalOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Addition.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Addition", tool.description="Add an addition operator")
+class Addition extends ArithmeticOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Subtraction.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Subtraction", tool.description="Add a subtraction operator")
+class Subtraction extends ArithmeticOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Multiplication.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Multiplication", tool.description="Add a multiplication operator")
+class Multiplication extends ArithmeticOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Division.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Division", tool.description="Add a division operator")
+class Division extends ArithmeticOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Modulus.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Modulus", tool.description="Add a modulus operator")
+class Modulus extends ArithmeticOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Equal.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Equal", tool.description="Add an equal operator")
+class Equal extends ComparisonOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/NotEqual.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Not Equal", tool.description="Add a not-equal operator")
+class NotEqual extends ComparisonOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/LessThan.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Less Than", tool.description="Add a less-than operator")
+class LessThan extends ComparisonOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GreaterThan.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Greater Than", tool.description="Add a greater-than operator")
+class GreaterThan extends ComparisonOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/LessEqual.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Less Equal", tool.description="Add a less-than-or-equal-to operator")
+class LessEqual extends ComparisonOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GreaterEqual.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Greater Equal", tool.description="Add a greater-than-or-equal-to operator")
+class GreaterEqual extends ComparisonOperator {
+
+}
+
+
+/* AGGREGATION OPERATORS */
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Max.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Max", tool.description="Add a max operator")
+class Max extends AggregationOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Min.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Min", tool.description="Add a min operator")
+class Min extends AggregationOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Avg.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Avg", tool.description="Add an avg operator")
+class Avg extends AggregationOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Count.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Count", tool.description="Add a count operator")
+class Count extends AggregationOperator {
+
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Sum.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Sum", tool.description="Add a sum operator")
+class Sum extends AggregationOperator {
+
+}
+
+
+/* PATTERN OPERANDS */
+
+@gmf.node(figure="rounded", color="255,248,220", border.color="110,110,110",
+	label="years, months, weeks, days, hours, minutes, seconds, milliseconds", 
+	label.parser="MessageFormatParser", label.readOnly="true", 
+	label.view.pattern="Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",    
+	tool.name="Within Timer", tool.description="Add a within timer")
+class WithinTimer extends PatternOperand {
+   attr int years;
+   attr int months;
+   attr int weeks;
+   attr int days;
+   attr int hours;
+   attr int minutes;
+   attr int seconds;
+   attr int milliseconds; 
+   
+   @gmf.compartment
+   val WithinTimerElement[*]#referencedWithinTimer withinTimerElements;  
+}
+
+abstract class WithinTimerElement {
+	
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeInterval.svg",
+	size="30,30", resizable="false", margin="0", label.placement="external", label.icon="false",
+	label="years, months, weeks, days, hours, minutes, seconds, milliseconds", 
+	label.parser="MessageFormatParser", label.readOnly="true", margin="0", 
+	label.view.pattern=" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} ",	
+	tool.name="Time Interval", tool.description="Add a time interval")
+class TimeInterval extends PatternOperand {
+   attr int years;
+   attr int months;
+   attr int weeks;
+   attr int days;
+   attr int hours;
+   attr int minutes;
+   attr int seconds;
+   attr int milliseconds;
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeSchedule.svg",
+	size="30,30", resizable="false", margin="0", label.placement="external", label.icon="false",
+	label="dayOfWeek, dayOfMonth, month, hour, minute, second", 
+	label.parser="MessageFormatParser", label.readOnly="true", margin="0", 
+	label.view.pattern=" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} ",
+	tool.name="Time Schedule", tool.description="Add a time schedule")
+class TimeSchedule extends PatternOperand {
+   attr int dayOfWeek = -1;
+   attr int dayOfMonth = -1; 
+   attr int month = -1; 
+   attr int hour = -1; 
+   attr int minute = -1; 
+   attr int second = -1; 
+}
+
+@gmf.node(figure="rectangle", label="typeName", border.color="110,110,110",
+tool.name="Event", tool.description="Add an event", resizable="false", label.readOnly="true")
+class Event extends PatternOperand, WithinTimerElement {
+   attr String typeName;
+   attr String imagePath;  
+    
+   @gmf.compartment(layout="list")
+   val EventProperty[*]#referencedEvent eventProperties;  
+}
+
+
+/* CONDITION OPERANDS */
+
+@gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
+tool.name="Event Property", tool.description="Add an event property", resizable="false", label.readOnly="true")
+class EventProperty extends ConditionOperand {
+   attr String name;
+   attr PropertyTypeValue type; 
+   attr String imagePath;
+   ref Event#eventProperties referencedEvent;
+      
+   @gmf.compartment(layout="list")
+   val EventProperty[*]#referencedEventProperty eventProperties;
+   ref EventProperty#eventProperties referencedEventProperty; 
+}
+
+enum PropertyTypeValue {
+   Unknown;
+   Boolean;
+   Integer;
+   Long;  
+   Double; 
+   Float;
+   String;
+}
+
+@gmf.node(figure="rounded", label="value", label.text="", label.icon="false", margin="0", border.color="110,110,110",
+	border.width="3", size="30,30", tool.name="Value", tool.description="Add a value")
+class Value extends ConditionOperand {
+   attr String value = " ";
+   attr PropertyTypeValue type;
+}
+
+
+/* ACTIONS */
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Email", tool.description="Add an email action")
+class Email extends Action {
+   attr String to; 
+   attr String cc; 
+   attr String from; 
+   attr String subject; 
+   attr String host; 
+   attr int port = 25;
+   attr String user; 
+   attr String password;
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Twitter.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Twitter", tool.description="Add a twitter action")
+class Twitter extends Action {
+
+}

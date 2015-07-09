@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/es.uca.modeling.cep.domain/src"
+    modelPluginID="es.uca.modeling.cep.domain" modelName="Domain" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>cep-domain.emf</foreignModel>
+  <genPackages prefix="Domain" disposableProviderFactory="true" ecorePackage="cep-domain.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cep-domain.ecore#//PropertyTypeValue">
+      <genEnumLiterals ecoreEnumLiteral="cep-domain.ecore#//PropertyTypeValue/Unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-domain.ecore#//PropertyTypeValue/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-domain.ecore#//PropertyTypeValue/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-domain.ecore#//PropertyTypeValue/Long"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-domain.ecore#//PropertyTypeValue/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-domain.ecore#//PropertyTypeValue/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-domain.ecore#//PropertyTypeValue/String"/>
+    </genEnums>
+    <genClasses ecoreClass="cep-domain.ecore#//CEPDomain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-domain.ecore#//CEPDomain/domainName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-domain.ecore#//CEPDomain/domainDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-domain.ecore#//CEPDomain/domainCreationDate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-domain.ecore#//CEPDomain/events"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-domain.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-domain.ecore#//Event/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-domain.ecore#//Event/imagePath"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-domain.ecore#//Event/eventProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-domain.ecore#//EventProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-domain.ecore#//EventProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-domain.ecore#//EventProperty/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-domain.ecore#//EventProperty/imagePath"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-domain.ecore#//EventProperty/referencedEvent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-domain.ecore#//EventProperty/eventProperties"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-domain.ecore#//EventProperty/referencedEventProperty"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

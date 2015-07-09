@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cep-domain -->
+      <package
+            uri="www.uca.es/modeling/cep/domain"
+            class="domain.DomainPackage"/>
+   </extension>
+
+</plugin>

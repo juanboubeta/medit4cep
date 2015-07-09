@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cep-eventpattern -->
+      <package
+            uri="www.uca.es/modeling/cep/eventpattern"
+            class="eventpattern.EventpatternPackage"/>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="MEdit4CEP">
+         <property
+               name="appName"
+               value="MEdit4CEP">
+         </property>
+         <property
+               name="aboutImage"
+               value="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-128x128.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Version: 1.0.0&#x0A;Date: July 9th, 2015&#x0A;URL: https://ucase.uca.es/medit4cep/&#x0A;&#x0A;Copyright (c) 2011, 2015 Juan Boubeta-Puig&#x0A;All rights reserved. This program and the accompanying materials &#x0A;are made available under the terms of the Eclipse Public License v1.0 &#x0A;which accompanies this distribution, and is available at &#x0A;http://www.eclipse.org/legal/epl-v10.html">
+         </property>
+         <property
+               name="windowImages"
+               value="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-16x16.png,platform:/plugin/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-32x32.png,platform:/plugin/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-48x48.png,platform:/plugin/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-64x64.png,platform:/plugin/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-128x128.png">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

@@ -1,0 +1,1097 @@
+ /*******************************************************************************
+ * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Juan Boubeta-Puig - initial model validation and implementation
+ ******************************************************************************/
+
+context CEPEventPattern {
+    
+    constraint HasPatternName {
+
+        check : self.patternName.isDefined() and self.patternName.trim().length() > 0
+                    
+        message : 'The pattern must be named.'
+        
+        fix {
+        
+            title : "Set a value for 'patternName'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'patternName':");
+                self.patternName = name;
+            }
+        }
+    }
+    
+    constraint HasEventOrDataWindow {
+    
+        check {
+            
+            var num : Integer = 0;
+             
+       		for (epe : EventPatternElement in self.eventPatternElements) {
+		    	
+	    		if (epe.isTypeOf(Event) or epe.isKindOf(DataWindow))
+	    			num = num + 1;
+	    	}
+        	
+        	if (num > 0)
+        	 	return true; 
+        	else 
+        		return false;    
+        
+        } 
+        
+        message : 'An event or data window must be included.'
+        
+    }   
+    
+    constraint HasComplexEvent {
+    
+        check : self.complexEvent.isDefined()
+        
+        message : "'NewComplexEvent' must be included."
+        
+    }     
+
+    constraint HasZeroOrOneDataWindowIfPatternOperatorOperandExists {
+    
+        check {
+            
+            var patternOpNum : Integer = 0;
+            var dataWindowNum : Integer = 0;
+            var eventPatternConditionNum : Integer = 0;
+            var m : String;
+            
+            for (epe : EventPatternElement in self.eventPatternElements) {
+				            
+	    		if (epe.isKindOf(DataWindow)) {
+	    		
+	    			dataWindowNum = dataWindowNum + 1;
+	    			
+	    			for (epc : EventPatternCondition in epe.eventPatternConditions) {
+	    				
+	    				if ((epc.isKindOf(PatternOperator) and not epc.isKindOf(LogicalOperator)) 
+	    		           or epc.isTypeOf(TimeInterval) or epc.isTypeOf(TimeSchedule) or epc.isTypeOf(WithinTimer)) {
+	    					patternOpNum = patternOpNum + 1;
+	    				}
+	    			}
+	    		}	
+	    		else if (epe.isKindOf(EventPatternCondition)) { 
+	    			eventPatternConditionNum = eventPatternConditionNum + 1;
+	    		
+		    	    if ((epe.isKindOf(PatternOperator) and not epe.isKindOf(LogicalOperator)) 
+		    		   or epe.isTypeOf(TimeInterval) or epe.isTypeOf(TimeSchedule) or epe.isTypeOf(WithinTimer)) {
+		    			patternOpNum = patternOpNum + 1;
+		    		}    		
+		    	}
+	    	}
+	    	
+	    	if (patternOpNum > 0) {
+	    	
+	        	if (dataWindowNum > 1) {
+	        		m = 'A unique data window must contain the whole event pattern conditions.';
+	        	 	return false; 
+	        	}
+	        	else if (dataWindowNum == 1 and eventPatternConditionNum > 0) {
+	        		m = 'The data window must contain the whole event pattern conditions.';
+	        		return false;   
+	        	}
+	        	return true; 
+	    	}
+	    	else {
+	    		return true; 
+	    	}
+	    	
+        } 
+        
+        message : m
+        
+    }     
+    
+}
+
+context Link {
+
+    constraint LinkDifferentOperandType {
+
+    	check {
+    	
+    		if (self.operand.isDefined() and self.operator.isDefined()) {  
+    	    
+    	    	if (self.operand.type() == self.operator.type() and not self.operator.isKindOf(LogicalOperator) 
+    	    	   and not self.operator.isKindOf(ArithmeticOperator) and not self.operator.isTypeOf(FollowedBy)) {
+    	    		
+    	    		return false; 
+    	    	}
+    	    	else {
+    	    		return true; 
+    	   		}
+    	    }
+    	        
+    	    return true;
+    	}
+                
+        message : "Two operators '" + self.operator.type().name + "' cannot be linked."
+    }  
+	    
+    constraint LinkNotNestedProperties {
+    
+        check {
+
+        	if (self.operand.isTypeOf(EventProperty) and self.operand.eventProperties.size() > 0) { -- It has nested properties
+        		return false; 
+        	}
+        	else { 
+        		return true; 
+        	}  
+		}
+		
+        message : "Event property '" + self.operand.name + "' cannot be linked because it has nested properties."
+        
+    }  
+    	
+}
+
+context ComplexEvent {
+
+    constraint HasComplexEventName {
+
+        check : self.typeName.isDefined() and self.typeName.trim().length() > 0
+
+        message : "'NewComplexEvent' must have a type name."
+
+        fix {
+        
+            title : "Set a value for 'typeName'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'typeName':");
+                self.typeName = name;
+            }
+        }      
+    }
+    
+    constraint HasComplexEventProperty {
+    
+        check : self.complexEventProperties.isEmpty() == false
+                
+        message : "'NewComplexEvent' must contain at least one complex event property."
+      
+ 	}
+ 	
+    constraint HasUniqueProperties {
+
+		guard: self.satisfies('HasComplexEventProperty')
+
+        check {
+        
+            var properties : OrderedSet = self.complexEventProperties;
+                        
+            if (properties.size() > 1) {
+	            for (p : ComplexEventProperty in properties) {
+	                if (not(properties.one(c : ComplexEventProperty | c.name == p.name)))
+	                    return false; 
+	            }    
+            }    
+                        
+            return true;  
+                  
+        }
+
+        message : "'NewComplexEvent' must contain unique complex event properties."
+     
+    }    	
+
+}
+
+context ComplexEventProperty {
+ 	
+    constraint HasComplexEventPropertyName {
+    
+        check : self.name.isDefined() and self.name.trim().length() > 0
+
+        message : "Complex event property must be named."
+
+        fix {
+        
+            title : "Set a value for 'name'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'name':");
+                self.name = name;
+            }
+        }      
+    }	
+    
+    constraint HasCorrectInboundLink {
+    
+        guard : self.satisfies("HasComplexEventPropertyName")    
+        
+        check : self.inboundLink.size() == 1
+        
+        message : "Complex event property '" + self.name + "' must be linked with a property, aggregation or arithmetic operator."
+    }
+
+}
+
+context Event {
+
+    constraint HasEventName {
+
+        check : self.typeName.isDefined() and self.typeName.trim().length() > 0
+
+        message : 'Event must have a type name.'
+
+        fix {
+        
+            title : "Set a value for 'typeName'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'typeName':");
+                self.typeName = name;
+            }
+        }      
+    }
+
+    constraint HasProperty {
+    
+        guard : self.satisfies("HasEventName")
+       
+        check : self.eventProperties.size() > 0
+        
+        message : "Event '" + self.typeName + "' must contain at least one event property." 
+        
+    }    
+    
+}
+
+context EventProperty {
+
+    constraint HasEventPropertyName {
+    
+        check : self.name.isDefined() and self.name.trim().length() > 0
+
+        message : "Event property must be named."
+
+        fix {
+        
+            title : "Set a value for 'name'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'name':");
+                self.name = name;
+            }
+        }      
+    }
+
+    constraint MustBeContainedInEventOrProperty {
+    
+    	guard : self.satisfies('HasEventPropertyName')    
+
+        check {
+         	
+        	if (not self.referencedEvent.isDefined() and not self.referencedEventProperty.isDefined()) {
+        		return false; 
+        	}        
+                        
+            return true;  
+                  
+        }
+
+        message : "Event property '" + self.name + "' must be contained in an event or in other event property."
+     
+    }
+    
+    constraint HasUniquePropertiesAtTheSameNestedLevel {
+
+		guard : self.satisfies('HasEventPropertyName')
+
+        check {
+        
+         	var properties : OrderedSet; 
+         	var parentName : String; 
+         	
+        	if (self.referencedEvent.isDefined()) {
+        		properties = self.referencedEvent.eventProperties; 
+        		parentName = "Event '" + self.referencedEvent.typeName; 
+        	}
+        	else if (self.referencedEventProperty.isDefined()) {
+             	properties = self.referencedEventProperty.eventProperties;
+             	parentName = "Event property '" + self.referencedEventProperty.name; 
+           	}
+            
+            for (p : EventProperty in properties) {
+                if (not (properties.one(c : EventProperty | c.name == p.name)))
+                    return false; 
+            }        
+                        
+            return true;  
+                  
+        }
+
+        message : parentName + "' must contain unique properties at the same nested level."
+     
+    }            
+    
+}
+
+context Operator {
+
+    constraint HasDifferentInboundLinks {
+
+        check {
+           
+            for (op : Operand in self.inboundLink.operand) {
+            
+                if (not (self.inboundLink.operand.one(x : Operand | x == op)))
+                    return false; 
+            }        
+                        
+            return true;  
+                  
+        }
+
+        message : "Operator '" + self.eClass().name + "' cannot have inbound links with the same source."
+     
+    }  
+    
+}       
+
+context UnaryOperator {
+
+	constraint HasOneInboundLink {
+
+	    check : self.inboundLink.size() == 1
+      
+    	message : "'" + self.eClass().name + "' must have one inbound link."
+
+  	}
+  	
+}     
+
+context BinaryOperator {
+
+    constraint HasTwoInboundLinks {
+
+        check : self.inboundLink.size() == 2
+
+        message : "Operator '" + self.eClass().name + "' must have two inbound links."
+
+    }
+    
+    constraint BinaryLinkOrder {
+      
+        guard : self.satisfies("HasTwoInboundLinks")
+      
+        check { 
+        
+            var order1 : Integer;
+            var order2 : Integer; 
+            
+            order1 = self.inboundLink.at(0).order;
+            order2 = self.inboundLink.at(1).order; 
+            
+            if ((order1 == 1 and order2 == 2) or (order1 == 2 and order2 == 1)) {
+            	return true;
+           	}
+            else {
+            	return false;
+            }
+            
+        }
+               
+        message : "Operator '" + self.eClass().name + "' must have inbound links with orders 1 and 2."
+        
+    }      
+    
+}
+
+context NaryOperator {
+
+    constraint HasNInboundLinks {
+    
+        check : self.inboundLink.size() >= 2 
+          
+        message : "Operator '" + self.eClass().name + "' must have at least two inbound links."
+
+    }
+
+    constraint NaryLinkOrder {
+      
+        guard : self.satisfies("HasNInboundLinks")
+      
+        check {
+      
+            var n : Integer = self.inboundLink.size();
+            var operandOrders : Sequence;
+            
+            for (l : Link in self.inboundLink) {
+                operandOrders.add(l.order);
+            }
+                            
+	        for (i in Sequence{1..n}) {
+	        
+	        	if (operandOrders.excludes(i)) {
+	        		return false;
+	            }
+            }	            
+            
+            return true;
+            
+        }
+      
+        message : "Operator '" + self.eClass().name + "' must have inbound links with orders 1, 2...N."
+   }
+
+}
+
+context AggregationOperator {
+    
+    constraint LinkAComplexEventProperty {
+            
+        check {
+              
+            for (l : Link in self.outboundLink) {
+	            
+	        	if (not (l.operator.isTypeOf(ComplexEventProperty))) {
+	            	return false;  
+	            }    
+	        }
+            
+            return true;
+        }
+      
+        message : "Operator '" + self.eClass().name + "' must be linked with a complex event property."
+    }
+
+}
+
+context EveryDistinct {
+
+    constraint HasEvent {
+        
+        guard : self.satisfies("HasNInboundLinks")
+            
+        check {
+        
+        	for (l : Link in self.inboundLink) {
+            	if (l.order == 1 and not l.operand.isTypeOf(Event)) {
+            		return false; 
+            	}
+            }
+            
+            return true; 
+       	}
+                  
+        message : "Link 'event' for operator 'EveryDistinct' must be linked with an event."
+        
+    }
+
+    constraint LinkOneOrMoreProperties {
+    
+        guard : self.satisfies("HasEvent")    
+    
+        check {
+        
+        	for (l : Link in self.inboundLink) {
+            	if (l.order <> 1 and not l.operand.isTypeOf(EventProperty)) {
+            		return false; 
+            	}
+            }
+            
+            return true; 
+       	}
+                  
+        message : "Link 'distinct' for operator 'EveryDistinct' must be linked with an event property."
+  
+  	}
+    
+}
+
+context While {
+
+    constraint HasLogicalOrPatternOperand {
+        
+        guard : self.satisfies("BinaryLinkOrder")
+            
+        check {
+                	                
+        	for (l : Link in self.inboundLink) {
+            	if (l.order == 1 and not l.operand.isKindOf(LogicalOperator) 
+            	   and not l.operand.isTypeOf(Every)
+            	   and not l.operand.isTypeOf(EveryDistinct) 
+            	   and not l.operand.isTypeOf(FollowedBy)) {             	               	   
+            	   
+            	   return false; 
+            	}
+            }
+            
+            return true; 
+       	}
+                  
+        message : "First link for operator 'While' must be linked with a logical, 'Every', 'EveryDistinct' or 'FollowedBy' operator."
+        
+    }
+
+    constraint LinkOneOrMoreProperties {
+
+        guard : self.satisfies("BinaryLinkOrder")    
+        
+        check {        
+        
+        	for (l : Link in self.inboundLink) {
+            	if (l.order == 2 and not l.operand.isKindOf(LogicalOperator) 
+            	  and not l.operand.isKindOf(ComparisonOperator)) {
+            		return false; 
+            	}
+            }
+            
+            return true; 
+       	}
+                  
+        message : "Link 'condition' for operator 'While' must be linked with a logical or comparison operator."     
+  
+  	}
+    
+}
+ 
+context Range {
+
+    constraint HasCorrectNumber {
+
+        check : self.lowEndpoint > 0 and self.highEndpoint > 0 and self.lowEndpoint <= self.highEndpoint
+        
+        message : "'lowEndpoint' for operator 'Range' must be less or equal than 'highEndpoint'."
+    }
+    
+   	constraint HasUntilOperator {
+    
+   		check {
+   		
+   			if (self.outboundLink.isEmpty())
+   				return false; 
+                
+	   		for (l : Link in self.outboundLink) { 
+	   			if (not l.operator.isTypeOf(Until))
+	   				return false; 
+	   		}
+	   		
+	   		return true;
+	   		
+	   	}
+	   	   
+   		message : "Operator 'Range' must be linked with an 'Until' operator."
+            
+ 	}
+ 	
+ 	constraint HasCorrectOrder {
+    
+        guard : self.satisfies("HasUntilOperator")
+    
+   		check {
+   		                
+	   		for (l : Link in self.outboundLink) { 
+	   			if (l.order <> 1)
+	   				return false; 
+	   		}
+	   		
+	   		return true;
+	   		
+	   	}
+	   	   
+   		message : "Operator 'Range' must be linked with an 'Until' operator with order 1."
+            
+ 	}
+
+}
+
+context Repeat {
+
+    constraint HasCorrectNumber {
+
+        check : self.count > 0 
+
+        message : "'count' for operator 'Repeat' must be positive."
+    }
+
+}
+
+context TimeInterval {
+    
+    constraint PositiveTimeIntervalValues {
+    
+        check : self.years >= 0 and self.months >= 0 and self.weeks >= 0 and 
+           self.days >= 0 and self.hours >= 0 and self.minutes >= 0 and 
+           self.seconds >= 0 and self.milliseconds >= 0
+          
+        message : "'TimeInterval' cannot have any attribute set to a negative value."
+      
+    }
+    
+    constraint HasTimeInterval {
+    
+        guard : self.satisfies("PositiveTimeIntervalValues")
+        
+        check : self.years > 0 or self.months > 0 or self.weeks > 0 or 
+           self.days > 0 or self.hours > 0 or self.minutes > 0 or 
+           self.seconds > 0 or self.milliseconds > 0
+        
+        message : "'TimeInterval' must have at least one attribute set to a positive value."
+    
+    }    
+    
+}
+
+context TimeSchedule {
+
+    constraint HasTimeSchedule {
+                
+        check : self.dayOfWeek > -1 or self.dayOfMonth > -1 or self.month > -1 or 
+                self.hour > -1 or self.minute > -1 or self.second > -1
+                  
+        message : "'TimeSchedule' must have at least one attribute set to a positive value."
+      
+  	}
+  	
+  	constraint CorrectDayOfWeek {
+
+        check : self.dayOfWeek >= -1 and self.dayOfWeek <= 6
+        
+        message: "'TimeSchedule' must have attribute 'dayOfWeek' set to a value between 0 (Sunday) and 6 (Saturday), or -1 (not set)."
+    }
+    
+  	constraint CorrectDayOfMonth { 
+
+        check : self.dayOfMonth == -1 or (self.dayOfMonth >= 1 and self.dayOfMonth <= 31)
+        
+        message: "'TimeSchedule' must have attribute 'dayOfMonth' set to a value between 1 and 31, or -1 (not set)."
+    }    
+
+  	constraint CorrectMonth {
+
+        check : self.month == -1 or (self.month >= 1 and self.month <= 12)
+        
+        message: "'TimeSchedule' must have attribute 'month' set to a value between 1 and 12, or -1 (not set)."
+    }    
+
+    constraint CorrectHour {
+
+        check : self.hour >= -1 and self.hour <= 23 
+        
+        message: "'TimeSchedule' must have attribute 'hour' set to a value between 0 and 23, or -1 (not set)."
+    }
+
+    constraint CorrectMinute {
+
+        check : self.minute >= -1 and self.minute <= 59 
+        
+        message: "'TimeSchedule' must have attribute 'minute' set to a value between 0 and 59, or -1 (not set)."
+    }
+    
+    constraint CorrectSecond {
+
+        check : self.second >= -1 and self.second <= 59 
+        
+        message: "'TimeSchedule' must have attribute 'second' set to a value between 0 and 59, or -1 (not set)."
+    }
+    
+}
+
+context WithinTimer {
+
+    constraint PositiveWithinTimerValues {
+    
+        check : self.years >= 0 and self.months >= 0 and self.weeks >= 0 and 
+           self.days >= 0 and self.hours >= 0 and self.minutes >= 0 and 
+           self.seconds >= 0 and self.milliseconds >= 0
+          
+        message : "'WithinTimer' cannot have any attribute set to a negative value."
+      
+    }
+    
+    constraint HasTimeWithin {
+    
+        guard : self.satisfies("PositiveWithinTimerValues")
+        
+        check : self.years > 0 or self.months > 0 or self.weeks > 0 or 
+           self.days > 0 or self.hours > 0 or self.minutes > 0 or 
+           self.seconds > 0 or self.milliseconds > 0
+        
+        message : "'WithinTimer' must have at least one attribute set to a positive value."
+    
+    }
+    
+}
+
+context DataWindow {
+
+    constraint MustContainAtLeastOneEvent {
+
+        check {
+        
+        	var eventNum : Integer = 0; 
+        	
+        	for (epc : EventPatternCondition in self.eventPatternConditions) {
+        	
+        		if (epc.isTypeOf(Event))
+        			eventNum = eventNum + 1;
+        	}
+        	
+        	if (eventNum > 0)
+        	 	return true; 
+        	else 
+        		return false;        
+        		
+        } 
+        	
+        message : "Data window '" + self.eClass().name + "' must contain one or more events."
+      
+	}  	
+
+}
+
+context SlidingEventInterval {
+
+    constraint PositiveSlidingEventIntervalSize {
+    
+        check : self.size > 0 
+          
+        message : "Data window 'SlidingEventInterval' must have attribute 'size' set to a positive value."
+      
+    }
+   
+}
+
+context BatchingEventInterval {
+
+    constraint PositiveBatchingEventIntervalSize {
+    
+        check : self.size > 0 
+          
+        message : "Data window 'BatchingEventInterval' must have attribute 'size' set to a positive value."
+      
+    }
+   
+}
+
+context SlidingTimeInterval {
+
+    constraint PositiveSlidingTimeIntervalValues {
+    
+        check : self.years >= 0 and self.months >= 0 and self.weeks >= 0 and self.days >= 0 and 
+           self.hours >= 0 and self.minutes >= 0 and self.seconds >= 0 and self.milliseconds >= 0
+          
+        message : "Data window 'SlidingTimeInterval' cannot have any attribute set to a negative value."
+      
+    }
+    
+    constraint HasSlidingTimeInterval {
+    
+        guard : self.satisfies("PositiveSlidingTimeIntervalValues")
+        
+        check : self.years > 0 or self.months > 0 or self.weeks > 0 or self.days > 0 or self.hours > 0 or 
+           self.minutes > 0 or self.seconds > 0 or self.milliseconds > 0
+        
+        message : "Data window 'SlidingTimeInterval' must have at least one attribute set to a positive value."
+    
+    }
+    
+}
+
+context BatchingTimeInterval {
+
+    constraint PositiveBatchingTimeIntervalValues {
+    
+        check : self.years >= 0 and self.months >= 0 and self.weeks >= 0 and self.days >= 0 and 
+           self.hours >= 0 and self.minutes >= 0 and self.seconds >= 0 and self.milliseconds >= 0
+          
+        message : "Data window 'BatchingTimeInterval' cannot have any attribute set to a negative value."
+      
+    }
+    
+    constraint HasBatchingTimeInterval {
+    
+        guard : self.satisfies("PositiveBatchingTimeIntervalValues")
+        
+        check : self.years > 0 or self.months > 0 or self.weeks > 0 or self.days > 0 or self.hours > 0 or 
+           self.minutes > 0 or self.seconds > 0 or self.milliseconds > 0
+        
+        message : "Data window 'BatchingTimeInterval' must have at least one attribute set to a positive value."
+    
+    }
+    
+}
+
+context ArithmeticOperator {
+    
+    constraint HasNumericOperands {
+    
+        guard : self.satisfies("BinaryLinkOrder")   
+    
+        check {
+            var oper1 : Operand = self.inboundLink.at(0).operand;
+            var oper2 : Operand = self.inboundLink.at(1).operand;
+            var dataType1 : String;
+            var dataType2 : String;
+            var m : String;
+                       
+            if (oper1.isTypeOf(Value) or oper1.isTypeOf(EventProperty)) {
+               dataType1 = oper1.type.toString();
+                
+               if (dataType1 <> 'Integer' and dataType1 <> 'Double' 
+                  and dataType1 <> 'Float' and dataType1 <> 'Long') {
+                
+	              if (oper1.isTypeOf(Value)) {
+	                 m = "Value '" + oper1.value + "'";
+	              } else { 
+	                 m = oper1.type().name;
+	              }                       
+               }   
+            } 
+            
+            if (oper2.isTypeOf(Value) or oper2.isTypeOf(EventProperty)) {
+               dataType2 = oper2.type.toString();
+                
+               if (dataType2 <> 'Integer' and dataType2 <> 'Double' 
+                  and dataType2 <> 'Float' and dataType2 <> 'Long') {
+
+	              if (m.isDefined())
+	                 m = m + " and ";
+                
+	              if (oper2.isTypeOf(Value)) {
+	                 m = m + "Value '" + oper2.value + "'";
+	              } else { 
+	                 m = m + oper2.type().name;
+	              }                       
+               }   
+            }               
+            
+            if (m.isDefined())
+                return false;
+            else
+                return true;
+        }
+                        
+        message : m + ' must have a numeric type: Integer, Long, Double or Float.'
+        
+    }    
+
+}
+
+context Value {
+
+    constraint HasValue {
+        
+        check : self.value.isDefined()
+        
+        message : 'A value must be set.'
+        
+        fix {
+        
+            title : "Set a value."
+            
+            do {
+                var value : String;
+                value = UserInput.prompt("Please enter a value:");
+                self.value = value;
+            }
+        }      
+    }
+
+    constraint IsACorrectBoolean {
+    
+        guard : self.satisfies("HasValue") and self.type = PropertyTypeValue#Boolean
+      
+        check : self.value == 'true' or self.value == 'false'
+        
+        message : "Boolean value must be 'true' or 'false'."  
+        
+    }
+    
+    constraint IsACorrectInteger {
+   
+        guard : self.satisfies("HasValue") and self.type = PropertyTypeValue#Integer
+      
+        check : self.value.isInteger()
+        
+        message : "'" + self.value + "' is not an integer." 
+        
+    }
+    
+    constraint IsACorrectLong {
+    
+        guard : self.satisfies("HasValue") and self.type = PropertyTypeValue#Long
+      
+        check : self.value.isInteger()
+        
+        message : "'" + self.value + "' is not a long." 
+        
+    }    
+    
+    constraint IsACorrectDouble {
+    
+        guard : self.satisfies("HasValue") and self.type = PropertyTypeValue#Double
+      
+        check : self.value.isReal()
+        
+        message : "'" + self.value + "' is not a double."   
+        
+    }
+
+    constraint IsACorrectFloat {
+    
+        guard : self.satisfies("HasValue") and self.type = PropertyTypeValue#Float
+      
+        check : self.value.isReal()
+        
+        message : "'" + self.value + "' is not a float."  
+        
+    }   
+    
+    constraint HasOutboundLink {
+        
+        check {
+        
+        	if ((self.type <> PropertyTypeValue#String) and self.outboundLink.isEmpty())
+        		return false; 
+        	else         	
+        		return true; 
+        }
+        
+        message : "Value '" + self.value + "' must be linked with a logical, comparison or arithmetic operator."
+           
+    }     
+    
+}
+
+context Email {
+
+    constraint HasCorrectPort {
+
+        check : self.port >= 0 and self.port <= 65535
+
+        message : "'Port' must be greater or equal to 0, and less or equal to 65535. Common ports are: 25, 465, 475, 587 and 2525."  
+    }
+    
+    constraint HasTo {
+
+		-- '.' in the regular expression should be '\.'. However, it does not work using EVL.
+        check : self.to.isDefined() and self.to.matches("^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$")
+        	                    
+        message : "'To' must have a correct email address."
+        
+        fix {
+        
+            title : "Set a value for 'to'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'to':");
+                self.to = name;
+            }
+        }
+    }    
+    
+    constraint HasFrom {
+
+		-- '.' in the regular expression should be '\.'. However, it does not work using EVL.
+        check : self.from.isDefined() and self.from.matches("^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$")
+        	                    
+        message : "'From' must have a correct email address."
+        
+        fix {
+        
+            title : "Set a value for 'from'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'from':");
+                self.to = name;
+            }
+        }
+    }          
+    
+    constraint HasCc {
+
+		-- '.' in the regular expression should be '\.'. However, it does not work using EVL.
+        check : (not self.cc.isDefined()) or (self.cc.isDefined() and self.cc.matches("^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$"))
+                    
+        message : "'Cc' must have a correct email address."
+        
+        fix {
+        
+            title : "Set a value for 'cc'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'cc':");
+                self.from = name;
+            }
+        }
+    }    
+    
+    constraint HasHost {
+
+        check : self.host.isDefined() and self.host.trim().length() > 0
+                    
+        message : "'Host' must be set."
+        
+        fix {
+        
+            title : "Set a value for 'host'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'host':");
+                self.host = name;
+            }
+        }
+    }
+    
+    constraint HasUser {
+
+        check : self.user.isDefined() and self.user.trim().length() > 0
+                    
+        message : "'User' must be set."
+        
+        fix {
+        
+            title : "Set a value for 'user'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'user':");
+                self.user = name;
+            }
+        }
+    }   
+    
+    constraint HasPassword {
+
+        check : self.password.isDefined() and self.password.trim().length() > 0
+                    
+        message : "'Password' must be set."
+        
+        fix {
+        
+            title : "Set a value for 'password'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter the value for 'password':");
+                self.password = name;
+            }
+        }
+    }              
+}

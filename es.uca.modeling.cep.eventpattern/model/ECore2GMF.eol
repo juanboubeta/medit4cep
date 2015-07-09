@@ -1,0 +1,220 @@
+ /*******************************************************************************
+ * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Juan Boubeta-Puig - initial transformation and implementation
+ ******************************************************************************/
+ 
+-- PALETTE CUSTOMISATION
+
+var palette = GmfTool!Palette.all.first();
+var connectionGroup = palette.tools.selectOne(o|o.title='Connections');
+var objectGroup = palette.tools.selectOne(o|o.title='Objects');
+
+var linkTool = connectionGroup.tools.selectOne(o|o.title='Link');
+
+var additionTool = objectGroup.tools.selectOne(o|o.title='Addition');
+var andTool = objectGroup.tools.selectOne(o|o.title='And');
+var avgTool = objectGroup.tools.selectOne(o|o.title='Avg');
+var batchingEventIntervalTool = objectGroup.tools.selectOne(o|o.title='Batching Event Interval');
+var batchingTimeIntervalTool = objectGroup.tools.selectOne(o|o.title='Batching Time Interval');
+var complexEventTool = objectGroup.tools.selectOne(o|o.title='New Complex Event');
+var complexEventPropertyTool = objectGroup.tools.selectOne(o|o.title='New Complex Event Property');
+var countTool = objectGroup.tools.selectOne(o|o.title='Count');
+var divisionTool = objectGroup.tools.selectOne(o|o.title='Division');
+var emailTool = objectGroup.tools.selectOne(o|o.title='Email');
+var equalTool = objectGroup.tools.selectOne(o|o.title='Equal');
+var eventTool = objectGroup.tools.selectOne(o|o.title='Event');
+var eventPropertyTool = objectGroup.tools.selectOne(o|o.title='Event Property');
+var everyTool = objectGroup.tools.selectOne(o|o.title='Every');
+var everyDistinctTool = objectGroup.tools.selectOne(o|o.title='Every Distinct');
+var followedByTool = objectGroup.tools.selectOne(o|o.title='Followed By');
+var greaterEqualTool = objectGroup.tools.selectOne(o|o.title='Greater Equal');
+var greaterThanTool = objectGroup.tools.selectOne(o|o.title='Greater Than');
+var lessEqualTool = objectGroup.tools.selectOne(o|o.title='Less Equal');
+var lessThanTool = objectGroup.tools.selectOne(o|o.title='Less Than');
+var maxTool = objectGroup.tools.selectOne(o|o.title='Max');
+var minTool = objectGroup.tools.selectOne(o|o.title='Min');
+var modulusTool = objectGroup.tools.selectOne(o|o.title='Modulus');
+var multiplicationTool = objectGroup.tools.selectOne(o|o.title='Multiplication');
+var notTool = objectGroup.tools.selectOne(o|o.title='Not');
+var notEqualTool = objectGroup.tools.selectOne(o|o.title='Not Equal');
+var orTool = objectGroup.tools.selectOne(o|o.title='Or');
+var rangeTool = objectGroup.tools.selectOne(o|o.title='Range');
+var repeatTool = objectGroup.tools.selectOne(o|o.title='Repeat');
+var slidingEventIntervalTool = objectGroup.tools.selectOne(o|o.title='Sliding Event Interval');
+var slidingTimeIntervalTool = objectGroup.tools.selectOne(o|o.title='Sliding Time Interval');
+var subtractionTool = objectGroup.tools.selectOne(o|o.title='Subtraction');
+var sumTool = objectGroup.tools.selectOne(o|o.title='Sum');
+var timeIntervalTool = objectGroup.tools.selectOne(o|o.title='Time Interval');
+var timeScheduleTool = objectGroup.tools.selectOne(o|o.title='Time Schedule');
+var twitterTool = objectGroup.tools.selectOne(o|o.title='Twitter');
+var untilTool = objectGroup.tools.selectOne(o|o.title='Until');
+var valueTool = objectGroup.tools.selectOne(o|o.title='Value');
+var whileTool = objectGroup.tools.selectOne(o|o.title='While');
+var withinTimerTool = objectGroup.tools.selectOne(o|o.title='Within Timer');
+
+
+palette.tools.add(linkTool);
+palette.tools.add(valueTool);
+
+--Create simpleEventGroup
+var simpleEventGroup = new GmfTool!ToolGroup; 
+simpleEventGroup.title = 'Simple Events'; 
+simpleEventGroup.collapsible = true;
+palette.tools.add(simpleEventGroup);
+simpleEventGroup.tools.add(eventTool); 
+simpleEventGroup.tools.add(eventPropertyTool);
+
+--Create complexEventGroup
+var complexEventGroup = new GmfTool!ToolGroup; 
+complexEventGroup.title = 'Complex Events'; 
+complexEventGroup.collapsible = true;
+palette.tools.add(complexEventGroup);
+complexEventGroup.tools.add(complexEventTool);
+complexEventGroup.tools.add(complexEventPropertyTool);
+
+--Create patternTimerGroup
+var patternTimerGroup = new GmfTool!ToolGroup; 
+patternTimerGroup.title = 'Pattern Timers'; 
+patternTimerGroup.collapsible = true; 
+palette.tools.add(patternTimerGroup); 
+patternTimerGroup.tools.add(timeIntervalTool);
+patternTimerGroup.tools.add(timeScheduleTool);
+patternTimerGroup.tools.add(withinTimerTool);
+
+--Create patternOperatorGroup
+var patternOperatorGroup = new GmfTool!ToolGroup; 
+patternOperatorGroup.title = 'Pattern Operators'; 
+patternOperatorGroup.collapsible = true; 
+palette.tools.add(patternOperatorGroup); 
+patternOperatorGroup.tools.add(everyTool);
+patternOperatorGroup.tools.add(everyDistinctTool);
+patternOperatorGroup.tools.add(followedByTool);
+patternOperatorGroup.tools.add(rangeTool);
+patternOperatorGroup.tools.add(repeatTool);
+patternOperatorGroup.tools.add(untilTool);
+patternOperatorGroup.tools.add(whileTool);
+
+--Create logicalOperatorGroup
+var logicalOperatorGroup = new GmfTool!ToolGroup; 
+logicalOperatorGroup.title = 'Logical Operators'; 
+logicalOperatorGroup.collapsible = true; 
+palette.tools.add(logicalOperatorGroup); 
+logicalOperatorGroup.tools.add(andTool);
+logicalOperatorGroup.tools.add(notTool);
+logicalOperatorGroup.tools.add(orTool);
+
+--Create comparisonOperatorGroup
+var comparisonOperatorGroup = new GmfTool!ToolGroup; 
+comparisonOperatorGroup.title = 'Comparison Operators'; 
+comparisonOperatorGroup.collapsible = true; 
+palette.tools.add(comparisonOperatorGroup); 
+comparisonOperatorGroup.tools.add(equalTool);
+comparisonOperatorGroup.tools.add(greaterEqualTool);
+comparisonOperatorGroup.tools.add(greaterThanTool);
+comparisonOperatorGroup.tools.add(lessEqualTool);
+comparisonOperatorGroup.tools.add(lessThanTool);
+comparisonOperatorGroup.tools.add(notEqualTool);
+
+--Create arithmeticOperatorGroup
+var arithmeticOperatorGroup = new GmfTool!ToolGroup; 
+arithmeticOperatorGroup.title = 'Arithmetic Operators'; 
+arithmeticOperatorGroup.collapsible = true; 
+palette.tools.add(arithmeticOperatorGroup); 
+arithmeticOperatorGroup.tools.add(additionTool);
+arithmeticOperatorGroup.tools.add(divisionTool);
+arithmeticOperatorGroup.tools.add(modulusTool);
+arithmeticOperatorGroup.tools.add(multiplicationTool);
+arithmeticOperatorGroup.tools.add(subtractionTool);
+
+--Create aggregateOperatorGroup
+var aggregateOperatorGroup = new GmfTool!ToolGroup; 
+aggregateOperatorGroup.title = 'Aggregation Operators'; 
+aggregateOperatorGroup.collapsible = true; 
+palette.tools.add(aggregateOperatorGroup); 
+aggregateOperatorGroup.tools.add(avgTool);
+aggregateOperatorGroup.tools.add(countTool);
+aggregateOperatorGroup.tools.add(maxTool);
+aggregateOperatorGroup.tools.add(minTool);
+aggregateOperatorGroup.tools.add(sumTool);
+
+--Create dataWindowGroup
+var dataWindowGroup = new GmfTool!ToolGroup; 
+dataWindowGroup.title = 'Data Windows'; 
+dataWindowGroup.collapsible = true; 
+palette.tools.add(dataWindowGroup); 
+dataWindowGroup.tools.add(batchingEventIntervalTool);
+dataWindowGroup.tools.add(batchingTimeIntervalTool);
+dataWindowGroup.tools.add(slidingEventIntervalTool);
+dataWindowGroup.tools.add(slidingTimeIntervalTool);
+
+--Create actionGroup
+var actionGroup = new GmfTool!ToolGroup; 
+actionGroup.title = 'Actions'; 
+actionGroup.collapsible = true; 
+palette.tools.add(actionGroup); 
+actionGroup.tools.add(emailTool);
+actionGroup.tools.add(twitterTool);
+
+--Delete default groups 
+palette.tools.remove(objectGroup);
+palette.tools.remove(connectionGroup);
+
+
+-- CUSTOMISATION OF LINK
+
+-- Set the distance between label and link
+var diagramLinkLabel = GmfGraph!Canvas.all.first().labels.selectOne(r|r.name = 'LinkLabel');
+
+-- The label will be placed at the end of the link
+var alignmentFacet = new GmfGraph!AlignmentFacet;
+alignmentFacet.alignment = GmfGraph!Alignment#BEGINNING;
+diagramLinkLabel.facets.add(alignmentFacet);
+
+var labelOffsetFacet = new GmfGraph!LabelOffsetFacet;
+labelOffsetFacet.x = -10;
+labelOffsetFacet.y = -10;
+diagramLinkLabel.facets.add(labelOffsetFacet);
+
+
+-- CUSTOMISATION OF ELLIPSES
+
+var ellipses = GmfGraph!Ellipse.all();
+
+for (e in ellipses) {
+    e.layout = new GmfGraph!GridLayout;
+    var name = e.name; 
+    var labelFigure = name.replace('Figure', 'LabelFigure');
+    var label = GmfGraph!Label.all.selectOne(l|l.name= labelFigure);
+    
+    label.layoutData = new GmfGraph!GridLayoutData;
+    label.layoutData.grabExcessHorizontalSpace = true; 
+    label.layoutData.grabExcessVerticalSpace = true; 
+    label.layoutData.horizontalAlignment = GmfGraph!Alignment#CENTER;
+    label.layoutData.verticalAlignment = GmfGraph!Alignment#CENTER;   
+    
+    var margin = new GmfGraph!MarginBorder();
+	margin.insets = new GmfGraph!Insets();
+	margin.insets.bottom = 0;
+	margin.insets.left = 0;
+	margin.insets.right = 0;
+	margin.insets.top = 0;
+	e.border = margin;
+}
+
+
+-- CUSTOMISATION OF VALUE
+
+var valueFigure = GmfGraph!RoundedRectangle.all.selectOne(r|r.name = 'ValueFigure');
+valueFigure.layout = new GmfGraph!GridLayout;
+var valueLabel = GmfGraph!Label.all.selectOne(l|l.name= 'ValueLabelFigure');
+valueLabel.layoutData = new GmfGraph!GridLayoutData;
+valueLabel.layoutData.grabExcessHorizontalSpace = true; 
+valueLabel.layoutData.grabExcessVerticalSpace = true; 
+valueLabel.layoutData.horizontalAlignment = GmfGraph!Alignment#CENTER;
+valueLabel.layoutData.verticalAlignment = GmfGraph!Alignment#CENTER;

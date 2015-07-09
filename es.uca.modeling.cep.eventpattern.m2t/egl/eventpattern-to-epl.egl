@@ -1,0 +1,826 @@
+@Name('[%=CEPEventPattern.allInstances.at(0).patternName%]') 
+[%
+
+createGlobalVariables();
+
+var insertIntoExpression : String; 
+var selectExpression : String; 
+var fromPatternExpression : String; 
+var fromExpression : String; 
+var whereExpression : String; 
+
+
+// FROM PATTERN expression
+
+var eventPatternElements : Sequence = EventPatternElement.allInstances();
+
+// If the event pattern model has at least one pattern operand or pattern operator. 
+// This means that a FROM PATTERN expression must be generated. 
+if (isFromPatternExpression(eventPatternElements)) {
+    fromPatternExpression = "\nfrom pattern [";  
+    var root; 
+	    
+    // If a Data Window exists, it will contain the whole event pattern conditions.
+    var firstElement = eventPatternElements.at(0);
+    if (firstElement.isKindOf(DataWindow)) {
+    	root = getPatternConditionRoot(firstElement.eventPatternConditions);
+        fromPatternExpression = fromPatternExpression + traversal(root) + "]."; 
+               
+	    if (firstElement.isTypeOf(SlidingEventInterval)) {
+	    	fromPatternExpression = fromPatternExpression + "win:length(" + firstElement.size + ")";
+	    } else if (firstElement.isTypeOf(BatchingEventInterval)) {
+	      	fromPatternExpression = fromPatternExpression + "win:length_batch(" + firstElement.size + ")";         
+	    } else if (firstElement.isTypeOf(SlidingTimeInterval)) {
+	      	fromPatternExpression = fromPatternExpression + "win:time(" + getTimeAttributes(firstElement) + ")";                              
+	    } else if (firstElement.isTypeOf(BatchingTimeInterval)) {
+	      	fromPatternExpression = fromPatternExpression + "win:time_batch(" + getTimeAttributes(firstElement) + ")";                                        
+	    }                 
+	}
+	else {
+    	root = getPatternConditionRoot(eventPatternElements); 
+        fromPatternExpression = fromPatternExpression + traversal(root) + "]";
+    }
+}
+// If the event pattern model has not any pattern operands and pattern operators. 
+// This means that a FROM expression (and maybe a WHERE expression) must be generated. 
+else {
+    fromExpression = "from "; 
+    var eventPatternElements : Sequence = EventPatternElement.allInstances();
+	var firstCondition : Boolean = true;
+	var aliasExpression : String; 
+	var PATTERN = CEPEventPattern.all.first;
+ 
+    for (e in eventPatternElements) {
+        if (e.isKindOf(DataWindow)) {
+  			for (epc in e.eventPatternConditions) {    
+                if (epc.eClass().name == 'Event') {
+                    if (not PATTERN.~eventAlias.containsKey(epc.id)) {
+                    	createNewAlias(PATTERN, epc.id); 
+                    }
+                    aliasExpression = PATTERN.~eventAlias.get(epc.id); 
+            
+                    if (firstCondition) {
+                        fromExpression = fromExpression + epc.typeName;
+                    	firstCondition = false; 
+                    } else {
+                        fromExpression = fromExpression + ", \n   " + epc.typeName;    
+                    } 
+                    
+				    if (e.isTypeOf(SlidingEventInterval)) {
+				    	fromExpression = fromExpression + ".win:length(" + e.size + ") " + aliasExpression;
+				    } else if (e.isTypeOf(BatchingEventInterval)) {
+				      	fromExpression = fromExpression + ".win:length_batch(" + e.size + ") " + aliasExpression;         
+				    } else if (e.isTypeOf(SlidingTimeInterval)) {
+				      	fromExpression = fromExpression + ".win:time(" + getTimeAttributes(e) + ") " + aliasExpression;                              
+				    } else if (e.isTypeOf(BatchingTimeInterval)) {
+				      	fromExpression = fromExpression + ".win:time_batch(" + getTimeAttributes(e) + ") " + aliasExpression;                                        
+				    }                    
+            	} 
+        	}	 
+    	}
+  	}
+  	
+    for (e in eventPatternElements) {
+        if (e.eClass().name == 'Event' and not PATTERN.~eventAlias.containsKey(e.id)) {
+    		createNewAlias(PATTERN, e.id);
+	        aliasExpression = PATTERN.~eventAlias.get(e.id);   
+	              
+	        if (firstCondition) {
+	            fromExpression = fromExpression + e.typeName + ' ' + aliasExpression;
+	            firstCondition = false;             
+	        } else {
+	            fromExpression = fromExpression + ", \n   " + e.typeName + ' ' + aliasExpression;              
+	        }             
+    	}
+	}
+	
+    // WHERE expression
+    var root = getSearchConditionRoot(eventPatternElements);
+    if (root <> null) { // There is at least one operator. So, a WHERE expression must be created.
+    	whereExpression = "where " + traversal(root);
+	}
+}
+
+
+// INSERT INTO expression
+
+var ce : ComplexEvent = ComplexEvent.allInstances().at(0); // A unique complex event must exist in the model
+
+if (ce.typeName <> '') {
+	insertIntoExpression = "insert into " + ce.typeName;
+}
+
+
+// SELECT expression
+
+var firstComplexEventProperty : Boolean = true;  
+selectExpression = "select ";  
+
+for (prop in ce.complexEventProperties) {
+
+    if (firstComplexEventProperty) {   
+        selectExpression = selectExpression + traversal(prop.inboundLink.at(0).operand) + ' as ' + prop.name;
+        firstComplexEventProperty = false;
+    }
+    else {
+        selectExpression = selectExpression + ', \n   ' + traversal(prop.inboundLink.at(0).operand) + ' as ' + prop.name;
+    }           
+}
+
+
+// Print EPL code
+
+if (insertIntoExpression <> null) {
+%][%=insertIntoExpression%]
+[% }  
+
+if (selectExpression <> null) {
+%][%=selectExpression%][% } 
+
+if (fromPatternExpression <> null) {
+%][%=fromPatternExpression%]
+[% } 
+
+if (fromExpression <> null) {
+%][%=fromExpression%]
+[% } 
+
+if (whereExpression <> null) {
+%][%=whereExpression%]
+[% } 
+
+
+-- These variables work as global variables
+operation createGlobalVariables() {   
+	var PATTERN = CEPEventPattern.all.first;
+	PATTERN.~eventAlias = Map {};
+	PATTERN.~aliasCount = Integer;  
+	PATTERN.~aliasCount = 0; 
+} 
+
+
+operation createNewAlias(globalVariable, eventId) {
+	globalVariable.~aliasCount = globalVariable.~aliasCount + 1; 
+    var al : String = "a" + globalVariable.~aliasCount; 
+	globalVariable.~eventAlias.put(eventId, al);
+}
+
+
+operation isFromPatternExpression(eventPatternElements) : Boolean {
+    
+	var patternOpNum : Integer = 0;
+    var dataWindowNum : Integer = 0;
+    var eventPatternConditionNum : Integer = 0;
+              
+    for (epe : EventPatternElement in eventPatternElements) {
+				            
+		if (epe.isKindOf(DataWindow)) {
+	    		
+	    	dataWindowNum = dataWindowNum + 1;
+	    			
+	    	for (epc : EventPatternCondition in epe.eventPatternConditions) {
+	    				
+	    		--if ((epc.isKindOf(PatternOperator) and not epc.isKindOf(LogicalOperator)) 
+	    		if (epc.isKindOf(PatternOperator) 
+	    				or epc.isTypeOf(TimeInterval) or epc.isTypeOf(TimeSchedule) or epc.isTypeOf(WithinTimer)) {
+	    			patternOpNum = patternOpNum + 1;
+	    		}
+	    	}
+	    }	
+	    else if (epe.isKindOf(EventPatternCondition)) { 
+	   		eventPatternConditionNum = eventPatternConditionNum + 1;
+	    		
+		    --if ((epe.isKindOf(PatternOperator) and not epe.isKindOf(LogicalOperator)) 
+		    if (epe.isKindOf(PatternOperator) 
+		    		or epe.isTypeOf(TimeInterval) or epe.isTypeOf(TimeSchedule) or epe.isTypeOf(WithinTimer)) {
+		    	patternOpNum = patternOpNum + 1;
+		    }    		
+		}
+	}
+	    	
+	if (patternOpNum > 0) {
+		return true; 
+	} else { 
+		return false;
+	} 
+}
+
+
+operation getPatternConditionRoot(elements) { 
+
+	var root : Any;
+	--System.out.println("getPatternConditionRoot(elements): " + elements); 
+	
+	root = elements.selectOne(x|x.outboundLink.isEmpty() and x.isTypeOf(FollowedBy));
+	if (root <> null) {
+		--System.out.println("elements.selectOne-priority6: " + root); 
+		return root;
+	}
+
+	root = elements.selectOne(x|x.outboundLink.isEmpty() and (x.isTypeOf(Or) and x.inboundLink.at(0).operand.isTypeOf(Event)));
+	if (root <> null) {
+		--System.out.println("elements.selectOne-priority5: " + root); 
+		return root;
+	}
+	
+	root = elements.selectOne(x|x.outboundLink.isEmpty() and (x.isTypeOf(And) and x.inboundLink.at(0).operand.isTypeOf(Event)));
+	if (root <> null) {
+		--System.out.println("elements.selectOne-priority4: " + root); 
+		return root;
+	}
+	
+	root = elements.selectOne(x|x.outboundLink.isEmpty() and (x.isTypeOf(Until) or x.isTypeOf(Repeat)));
+	if (root <> null) {
+		--System.out.println("elements.selectOne-priority3: " + root); 
+		return root;
+	}
+	
+	root = elements.selectOne(x|x.outboundLink.isEmpty() and (x.isTypeOf(Every) or x.isTypeOf(EveryDistinct) or x.isTypeOf(Not)));
+	if (root <> null) {
+		--System.out.println("elements.selectOne-priority2: " + root); 
+		return root;
+	}
+	
+	root = elements.selectOne(x|x.outboundLink.isEmpty() and x.isTypeOf(While));
+	if (root <> null) {
+		--System.out.println("elements.selectOne-priority1: " + root); 
+		return root;
+	}
+	
+	root = elements.selectOne(x|x.outboundLink.isEmpty() and x.isKindOf(PatternOperand));
+	if (root <> null) {
+		--System.out.println("elements.selectOne-priority0: " + root); 
+		return root;
+	}
+}
+
+
+-- Priority order:
+-- 3º Logical operators
+-- 2º Comparison operators
+-- 1º Arithmetic operators
+-- Since there is a WHERE expression, it implies that there is at least an operator. 
+-- So, operands are not considered in this operation.
+operation getSearchConditionRoot(elements) {
+ 
+ 	var root : Any;
+	
+	root = elements.selectOne(x|(not x.isKindOf(DataWindow)) and x.outboundLink.isEmpty() and x.isKindOf(LogicalOperator));
+	if (root <> null) {
+		--System.out.println("Root-LogicalOperator: " + root); 
+		return root;
+	}
+	
+	root = elements.selectOne(x|(not x.isKindOf(DataWindow)) and x.outboundLink.isEmpty() and x.isKindOf(ComparisonOperator));
+	if (root <> null) {
+		--System.out.println("Root-ComparisonOperator: " + root); 
+		return root;
+	}	
+
+	root = elements.selectOne(x|(not x.isKindOf(DataWindow)) and x.outboundLink.isEmpty() and x.isKindOf(ArithmeticOperator));
+	if (root <> null) {
+		--System.out.println("Root-ArithmeticOperator: " + root); 
+		return root;
+	}	                
+}
+
+
+operation getRootOperator(operator) {
+
+	if (operator.isTypeOf(ComplexEventProperty)) {
+		--System.out.println("operator.isTypeOf(ComplexEventProperty)");
+		return null;
+	}
+	else {
+		if (operator.outboundLink.isEmpty()) {
+			--System.out.println("operator.outboundLink.isEmpty(): " + operator.outboundLink.isEmpty());
+			return operator; 
+		}
+		else {
+			--System.out.println("return getRootOperator(operator.outboundLink.at(0).operator): ");
+			return getRootOperator(operator.outboundLink.at(0).operator);
+		}
+	}
+}
+
+
+operation getEventPropertiesRoot(node) {
+   	var rootOperator = null; 
+   	var links = null;
+    	
+    for (prop : EventProperty in node.eventProperties)	{
+    	--System.out.println("prop : EventProperty in node.eventProperties:" + prop);
+        
+	    links = prop.outboundLink.select(x|x.order=1);
+		
+    	for (l : Link in links) {
+    		rootOperator = getRootOperator(l.operator); 
+    		--System.out.println("l : Link in prop - rootOperator: " + rootOperator);
+    		
+    		if (rootOperator <> null) {
+    			return rootOperator;
+    		}
+    	}
+    	     	 	
+    	// Nested properties    	
+    	for (nestedProp : EventProperty in prop.eventProperties) {
+    	    --System.out.println("nestedProp : EventProperty in prop.eventProperties: " + nestedProp);
+    	
+    	   	links = nestedProp.outboundLink.select(x|x.order=1);
+    	    
+	    	for (l : Link in links) {
+	    		rootOperator = getRootOperator(l.operator); 
+	    		--System.out.println("l : Link in nestedProp - rootOperator: " + rootOperator);
+	    		
+	    		if (rootOperator <> null) {
+	    			return rootOperator;
+	    		}
+	    	}
+    	    
+    	    if (not nestedProp.eventProperties.isEmpty()) {
+    	    	getEventPropertiesRoot(nestedProp);
+    	   	}
+    	}
+    	    	
+    }
+    
+    return null; 
+}
+
+
+operation getOrderedLink(links, numOp) : Sequence {
+    var pos : Sequence; 
+    
+    for (ord in Sequence{1..numOp}) {
+        for (l in links) {
+            if (l.order == ord) {
+	            --System.out.println("ord: " + ord);
+	            --System.out.println("indexOf: " + links.indexOf(l));
+	            pos.add(links.indexOf(l));
+            }
+        }
+    }    
+    return pos;
+}
+
+
+operation getRangeValues(r) {
+    var range : String;
+    
+    if (r.lowEndpoint > 0) {
+        range = range + '[' + r.lowEndpoint + ':';
+    }
+    else {
+        range = range + '[:';
+    }
+    if (r.highEndpoint > 0) {
+        range = range + r.highEndpoint + '] ';
+    }
+    else {
+        range = range + '] ';
+    }
+    
+    return range;
+}
+
+
+operation getTimeScheduleAttributes(t) : String {
+    var attributes : String;
+   
+    if (t.minute > -1) {
+        attributes = attributes + t.minute + ',';
+    } else {
+        attributes = attributes + '*, ';
+    }
+    
+    if (t.hour > -1) {
+        attributes = attributes + t.hour + ', ';
+    } else {
+        attributes = attributes + '*, ';
+    }
+    
+    if (t.dayOfMonth > -1) {
+        attributes = attributes + t.dayOfMonth + ', ';
+    } else {
+        attributes = attributes + '*, ';
+    }
+    
+    if (t.month > -1) {
+        attributes = attributes + t.month + ', ';
+    } else {
+        attributes = attributes + '*, ';
+    }
+    
+    if (t.dayOfWeek > -1) {
+        attributes = attributes + t.dayOfWeek + ', ';
+    } else {
+        attributes = attributes + '*, ';    
+    }
+    
+    if (t.second > -1) {
+        attributes = attributes + t.second;
+    } else {
+        attributes = attributes + '*';
+    }
+    
+    return attributes.trim();
+}
+
+
+operation getTimeAttributes(t) : String {
+    var attributes : String;
+    
+    if (t.years > 0) {
+        attributes = attributes + t.years + ' years ';
+    } 
+    
+    if (t.months > 0) {
+        attributes = attributes + t.months + ' months ';
+    }
+    
+    if (t.weeks > 0) {
+        attributes = attributes + t.weeks + ' weeks ';
+    }
+    
+    if (t.days > 0) {
+        attributes = attributes + t.days + ' days ';
+    }
+    
+    if (t.hours > 0) {
+        attributes = attributes + t.hours + ' hours ';
+    }
+    
+    if (t.minutes > 0) {
+        attributes = attributes + t.minutes + ' minutes ';
+    }
+
+    if (t.seconds > 0) {
+        attributes = attributes + t.seconds + ' seconds ';
+    }    
+
+    if (t.milliseconds > 0) {
+        attributes = attributes + t.milliseconds + ' milliseconds ';
+    }    
+    
+    return attributes.trim();
+}
+
+
+operation getOperand(operator, pos : Integer) {
+    if (operator.inboundLink.isEmpty()) {  
+        return 0;
+    }
+    else {    
+        return operator.inboundLink.at(pos).operand;
+    }
+} 
+
+
+operation getParentEvent(property) {
+    if (property.referencedEvent.isDefined()) {  
+        return property.referencedEvent;
+    }
+    else {    
+        return getParentEvent(property.referencedEventProperty);
+    }
+}
+
+
+operation getFullEventPropertyName(property, name : String) : String {
+    
+    if (property.referencedEvent.isDefined()) {  
+        return name;
+    }
+    else {    
+        return getFullEventPropertyName(property.referencedEventProperty, 
+        	property.referencedEventProperty.name + '.' + name);
+    }
+}
+
+
+operation traversal(r) : String {
+
+    --System.out.println("traversal(r):" + r);
+    var PATTERN = CEPEventPattern.all.first;
+
+    if (r.eClass().name == 'WithinTimer') {
+        --System.out.println("r.eClass().name == 'WithinTimer'");
+        --System.out.println("WithinTimer contains the following elements: " + r.eventPatternConditions);   
+        return traversal(getPatternConditionRoot(r.eventPatternConditions)) + 
+        	' where timer:within(' + getTimeAttributes(r) + ')';
+    }
+        
+    if (r.eClass().name == 'TimeSchedule') {  
+        return 'timer:at(' + getTimeScheduleAttributes(r) + ')';
+    }    
+    
+    if (r.eClass().name == 'TimeInterval') {  
+        return 'timer:interval(' + getTimeAttributes(r) + ')';
+    }        
+    
+    if (r.eClass().name == 'Event') {
+        --System.out.println("r.isTypeOf(Event):" + r.typeName);
+        var aliasExpression : String; 
+                 
+        if (not PATTERN.~eventAlias.containsKey(r.id)) {
+    		createNewAlias(PATTERN, r.id);
+        }
+                
+        aliasExpression = PATTERN.~eventAlias.get(r.id) + " = "; 
+                 
+        var rootOperator = getEventPropertiesRoot(r);
+        --System.out.println("\n rootOperator: " + rootOperator);
+        
+      	if (rootOperator <> null) {
+      		return aliasExpression + r.typeName + '(' + traversal(rootOperator) + ')';
+      	}
+        else {
+        	return aliasExpression + r.typeName; 
+        }    
+    } 
+   
+    if (r.eClass().name == 'EventProperty') {  
+            
+        // The event property is not nested.
+     	if (r.referencedEvent.isDefined()) {
+        
+        	if (not PATTERN.~eventAlias.containsKey(r.referencedEvent.id)) {
+    			createNewAlias(PATTERN, r.referencedEvent.id);
+			}          
+        
+        	return PATTERN.~eventAlias.get(r.referencedEvent.id) + "." + r.name;
+        }
+        // The event property is nested.        
+        else if (r.referencedEventProperty.isDefined()) {
+        	
+        	// Get the parent event of this nested event property. 
+        	var e = getParentEvent(r);
+        	var fullPropertyName : String = getFullEventPropertyName(r, r.name);        	        	
+        	
+        	if (not PATTERN.~eventAlias.containsKey(e.id)) {
+    			createNewAlias(PATTERN, e.id);
+			}            	
+        	            	  	   
+        	return PATTERN.~eventAlias.get(e.id) + "." + fullPropertyName;
+      	}         	        
+    }    
+    
+    if (r.eClass().name == 'Value') {          
+    	if (r.type == PropertyTypeValue#String) { -- It is a string value
+    	    return "'" + r.value + "'";
+        }
+        else { -- It is not a string value
+        	return r.value;
+       	}
+    }
+    
+    // Unary operators
+	if (r.isTypeOf(Every)) {
+    	--System.out.println("r.isTypeOf(Every):" + ' every ');
+        return 'every ' + traversal(getOperand(r, 0));
+    }
+            
+  	if(r.isTypeOf(Range)) {
+        --System.out.println("r.isTypeOf(Range):" + getRangeValues(r));
+        return getRangeValues(r) + traversal(getOperand(r,0));
+    }  
+
+    if(r.isTypeOf(Repeat)) {
+    	--System.out.println("r.isTypeOf(Repeat):" + '[' + r.count + ']');
+        return '[' + r.count + '] ' + traversal(getOperand(r,0));
+    }               
+                                       
+    if(r.isTypeOf(Not)) {
+    	--System.out.println("r.isTypeOf(Not):" + ' not ');
+        return 'not ' + traversal(getOperand(r, 0));
+    }
+            
+    if(r.isTypeOf(Avg)) {
+        --System.out.println("r.isTypeOf(Avg):" + ' avg ');
+        return 'avg(' + traversal(getOperand(r, 0)) + ')';
+    }   
+            
+    if(r.isTypeOf(Count)) {
+        --System.out.println("r.isTypeOf(Count):" + ' count ');
+        return 'count(' + traversal(getOperand(r, 0)) + ')';
+    }   
+            
+    if(r.isTypeOf(Max)) {
+    	--System.out.println("r.isTypeOf(Max):" + ' max ');
+        return 'max(' + traversal(getOperand(r, 0)) + ')';
+    }   
+            
+    if(r.isTypeOf(Min)) {
+        --System.out.println("r.isTypeOf(Min):" + ' min ');
+     	return ' min(' + traversal(getOperand(r, 0)) + ')';
+    }   
+            
+    if(r.isTypeOf(Sum)) {
+    	--System.out.println("r.isTypeOf(Sum):" + ' sum ');
+        return 'sum(' + traversal(getOperand(r, 0)) + ')';
+    }  
+
+    // Binary operators                       
+    if(r.isTypeOf(Equal)) {        
+    	--System.out.println("r.isTypeOf(Equal):" + ' = ');
+       	if (r.inboundLink.at(0).order == 1) { 
+        	return traversal(getOperand(r,0)) + ' = ' + traversal(getOperand(r,1));
+        }
+        else {
+            return traversal(getOperand(r,1)) + ' = ' + traversal(getOperand(r,0));                
+        }
+   	}
+
+    if(r.isTypeOf(NotEqual)) {        
+       	--System.out.println("r.isTypeOf(NotEqual):" + ' != ');
+       	if (r.inboundLink.at(0).order == 1) { 
+           	return traversal(getOperand(r,0)) + ' != ' + traversal(getOperand(r,1));
+        }
+        else {
+            return traversal(getOperand(r,1)) + ' != ' + traversal(getOperand(r,0));                
+        }
+  	}       
+                 
+    if(r.isTypeOf(LessThan)) {        
+        --System.out.println("r.isTypeOf(LessThan):" + ' < ');
+       	if (r.inboundLink.at(0).order == 1) { 
+        	return traversal(getOperand(r,0)) + ' < ' + traversal(getOperand(r,1));
+        }
+        else {
+            return traversal(getOperand(r,1)) + ' < ' + traversal(getOperand(r,0));                
+        }
+   	}    
+
+    if(r.isTypeOf(LessEqual)) {        
+       	--System.out.println("r.isTypeOf(LessEqual):" + ' <= ');
+       	if (r.inboundLink.at(0).order == 1) { 
+        	return traversal(getOperand(r,0)) + ' <= ' + traversal(getOperand(r,1));
+       	}
+        else {
+            return traversal(getOperand(r,1)) + ' <= ' + traversal(getOperand(r,0));                
+        }
+  	}
+                                     
+    if(r.isTypeOf(GreaterThan)) {        
+       	--System.out.println("r.isTypeOf(GreaterThan):" + ' > ');
+       	if (r.inboundLink.at(0).order == 1) { 
+        	return traversal(getOperand(r,0)) + ' > ' + traversal(getOperand(r,1));
+       	}
+        else {
+       		return traversal(getOperand(r,1)) + ' > ' + traversal(getOperand(r,0));                
+        }
+    }
+
+    if(r.isTypeOf(GreaterEqual)) {        
+    	--System.out.println("r.isTypeOf(GreaterEqual):" + ' >= ');
+       	if (r.inboundLink.at(0).order == 1) { 
+        	return traversal(getOperand(r,0)) + ' >= ' + traversal(getOperand(r,1));
+        }
+        else {
+            return traversal(getOperand(r,1)) + ' >= ' + traversal(getOperand(r,0));                
+        }
+   	}   
+             
+    if(r.isTypeOf(Addition)) {        
+    	--System.out.println("r.isTypeOf(Addition):" + ' + ');
+       	if (r.inboundLink.at(0).order == 1) { 
+         	return '(' + traversal(getOperand(r,0)) + ' + ' + traversal(getOperand(r,1)) + ')';
+        }
+        else {
+            return '(' + traversal(getOperand(r,1)) + ' + ' + traversal(getOperand(r,0)) + ')';                
+        }
+    }   
+
+    if(r.isTypeOf(Subtraction)) {        
+ 	   	--System.out.println("r.isTypeOf(Subtraction):" + ' - ');
+    	if (r.inboundLink.at(0).order == 1) { 
+           	return '(' + traversal(getOperand(r,0)) + ' - ' + traversal(getOperand(r,1)) + ')';
+        }
+        else {
+            return '(' + traversal(getOperand(r,1)) + ' - ' + traversal(getOperand(r,0)) + ')';                
+        }
+    }
+
+    if(r.isTypeOf(Multiplication)) {        
+      	--System.out.println("r.isTypeOf(Multiplication):" + ' * ');
+       	if (r.inboundLink.at(0).order == 1) { 
+        	return '(' + traversal(getOperand(r,0)) + ' * ' + traversal(getOperand(r,1)) + ')';
+        }
+        else {
+        	return '(' + traversal(getOperand(r,1)) + ' * ' + traversal(getOperand(r,0)) + ')';                
+        }
+  	}              
+
+    if(r.isTypeOf(Division)) {        
+        --System.out.println("r.isTypeOf(Division):" + ' / ');
+       	if (r.inboundLink.at(0).order == 1) { 
+        	return '(' + traversal(getOperand(r,0)) + ' / ' + traversal(getOperand(r,1)) + ')';
+       	}
+        else {
+            return '(' + traversal(getOperand(r,1)) + ' / ' + traversal(getOperand(r,0)) + ')';                
+        }
+   	}
+
+  	if(r.isTypeOf(Modulus)) {        
+    	--System.out.println("r.isTypeOf(Modulus):" + ' % ');
+       	if (r.inboundLink.at(0).order == 1) { 
+        	return '(' + traversal(getOperand(r,0)) + ' % ' + traversal(getOperand(r,1)) + ')';
+        }
+        else {
+        	return '(' + traversal(getOperand(r,1)) + ' % ' + traversal(getOperand(r,0)) + ')';                
+       	}
+    }
+            
+    if(r.isTypeOf(Until)) {        
+    	--System.out.println("r.isTypeOf(Until):" + ' until ');
+       	if (r.inboundLink.at(0).order == 1) { 
+        	return traversal(getOperand(r,0)) + ' until ' + traversal(getOperand(r,1));
+        }
+        else {
+        	return traversal(getOperand(r,1)) + ' until ' + traversal(getOperand(r,0));                
+        }
+   	}
+            
+    if(r.isTypeOf(While)) {        
+    	--System.out.println("r.isTypeOf(While):" + ' while ');
+     	if (r.inboundLink.at(0).order == 1) { 
+        	return '(' + traversal(getOperand(r,0)) + ')' + ' while ' + '(' + traversal(getOperand(r,1)) + ')';
+        }
+        else {
+        	return '(' + traversal(getOperand(r,1)) + ')' + ' while ' + '(' + traversal(getOperand(r,0)) + ')';      
+        }            
+   	}
+   	
+    // N-ary operators   
+    if(r.isTypeOf(And)) {        
+	    --System.out.println("r.isTypeOf(And):" + ' and ');
+
+	    var numOp : Integer = r.inboundLink.size(); 
+        var orders : new Sequence = getOrderedLink(r.inboundLink, numOp);
+	    var andExpression : String = '(' + traversal(getOperand(r, orders.at(0)));
+
+        var i : Integer = 1;
+        while (i < numOp) {
+        	andExpression = andExpression.concat(' and ' + traversal(getOperand(r, orders.at(i)))); 
+            i = i + 1; 
+        }
+		
+		andExpression = andExpression.concat(')');
+        return andExpression; 
+   	} 
+            
+    if(r.isTypeOf(Or)) {        
+        --System.out.println("r.isTypeOf(Or):" + ' or ');
+                
+        var numOp : Integer = r.inboundLink.size(); 
+        var orders : new Sequence = getOrderedLink(r.inboundLink, numOp);
+        var orExpression : String = '(' + traversal(getOperand(r, orders.at(0)));
+
+        var i : Integer = 1;
+        while (i < numOp) {
+           	orExpression = orExpression.concat(' or ' + traversal(getOperand(r, orders.at(i)))); 
+            i = i + 1; 
+        }
+        
+        orExpression = orExpression.concat(')');
+        return orExpression;         
+  	} 
+            
+    if(r.isTypeOf(FollowedBy)) {        
+   		--System.out.println("r.isTypeOf(FollowedBy):" + ' -> ');
+        
+        var numOp : Integer = r.inboundLink.size(); 
+        var orders : new Sequence = getOrderedLink(r.inboundLink, numOp);        
+        var followedByExpression : String = '(' + traversal(getOperand(r, orders.at(0)));
+
+        var i : Integer = 1;
+        while (i < numOp) {
+        	followedByExpression = followedByExpression.concat(' -> ' + traversal(getOperand(r, orders.at(i)))); 
+            i = i + 1; 
+       	}
+    
+	    followedByExpression = followedByExpression.concat(')');
+   		return followedByExpression;                                 
+                
+	}
+	
+    if(r.isTypeOf(EveryDistinct)) {        
+   		--System.out.println("r.isTypeOf(EveryDistinct):" + ' every-distinct ');
+                
+        var numOp : Integer = r.inboundLink.size(); 
+        var orders : new Sequence = getOrderedLink(r.inboundLink, numOp);        
+        var everyDistinctExpression : String = 'every-distinct(' + traversal(getOperand(r, orders.at(1)));
+
+        var i : Integer = 2;
+        while (i < numOp) {
+        	everyDistinctExpression = everyDistinctExpression.concat(', ' + traversal(getOperand(r, orders.at(i)))); 
+            i = i + 1; 
+       	}
+    
+	    everyDistinctExpression = everyDistinctExpression.concat(') ') + traversal(getOperand(r, orders.at(0)));
+   		return everyDistinctExpression;                                 
+                
+	}	
+}   
+    
+%]

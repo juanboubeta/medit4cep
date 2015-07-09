@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="MEdit4CEP User Guide" topic="html/toc.html">
+   <topic href="html/overview.html" label="MEdit4CEP Overview">
+      <anchor id="medit4cepoverview"/>
+   </topic>
+   <topic href="html/cep-domain-editor.html" label="Graphical Modeling Editor for CEP Domain">
+      <anchor id="graphicalmodelingeditorforcepdomain"/>
+   </topic>
+   <topic href="html/event-pattern-editor.html" label="Graphical Modeling Editor for Event Pattern">
+      <anchor id="graphicalmodelingeditorforeventpattern"/>
+   </topic>
+   <topic href="html/tutorial.html" label="Tutorial">
+      <anchor id="tutorial"/>
+   </topic>
+   <topic href="html/glossary.html" label="Glossary">
+      <anchor id="glossary"/>
+   </topic>
+   <topic href="html/legal.html" label="Legal">
+      <anchor id="legal"/>
+   </topic>
+</toc>

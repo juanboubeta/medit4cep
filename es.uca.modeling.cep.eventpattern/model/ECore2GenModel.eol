@@ -1,0 +1,51 @@
+ /*******************************************************************************
+ * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Juan Boubeta-Puig - initial transformation and implementation
+ ******************************************************************************/
+ 
+-- Disable properties "typeName" and "name" of property sheet, 
+-- except to 'name' of ComplexEventProperty
+var eAttributes = Ecore!EAttribute.all.select(as|as.name="typeName" or as.name="name");
+
+for (eAttr in eAttributes) {
+	
+	if (eAttr.eContainingClass.name <> 'ComplexEventProperty') {
+		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+		feature.property = GenModel!GenPropertyKind#Readonly;
+	}
+}
+
+-- Disable property "type" of EventProperty 
+var eAttributes2 = Ecore!EAttribute.all.select(as|as.name="type");
+
+for (eAttr in eAttributes2) {	
+	if (eAttr.eContainingClass.name == 'EventProperty') {
+		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+		feature.property = GenModel!GenPropertyKind#Readonly;
+	}
+}
+
+-- Disable properties of CEPEventPattern 
+var eAttributes3 = Ecore!EAttribute.all.select(as|as.name="patternName" or as.name="domainName" or as.name="patternCreationDate" or as.name="patternDeployed");
+
+for (eAttr in eAttributes3) {	
+	var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+	feature.property = GenModel!GenPropertyKind#Readonly;
+}
+
+-- Disable property "imagePath" of Event and EventProperty
+var eAttributes4 = Ecore!EAttribute.all.select(as|as.name="imagePath");
+
+for (eAttr in eAttributes4) {
+	
+	if (eAttr.eContainingClass.name == 'Event' or eAttr.eContainingClass.name == 'EventProperty') {
+		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+		feature.property = GenModel!GenPropertyKind#Readonly;
+	}
+}

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <!-- Override Eclipse 'File > Save' Action -->
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateHandler" 
+            commandId="org.eclipse.ui.file.save">
+      	<activeWhen>
+        	<with
+                  variable="selection">
+               <count
+                     value="1">
+               </count>
+            </with>
+         </activeWhen>
+         <!--
+         <activeWhen>
+            <with
+                  variable="activePartId">
+               <equals
+                     value="eventpattern.diagram.part.EventpatternDiagramEditorID">
+               </equals>
+            </with>
+         </activeWhen>
+         -->
+      </handler>                 
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:file">
+         <command
+               commandId="es.uca.modeling.cep.eventpattern.menu.command.ImportDomain"
+               label="Import CEP Domain..."
+               style="push">
+         </command>
+         <command
+               commandId="es.uca.modeling.cep.eventpattern.menu.command.ImportEventPatterns"
+               label="Import Event Patterns..."
+               style="push">
+         </command>
+         <command
+               commandId="es.uca.modeling.cep.eventpattern.menu.command.ExportDomain"
+               label="Export CEP Domain..."
+               style="push">
+         </command>
+         <command
+               commandId="es.uca.modeling.cep.eventpattern.menu.command.ExportEventPatterns"
+               label="Export Event Patterns..."
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=file">
+         <menu
+               id="CEPDomain"
+               label="CEP Domain">
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.NewDomain"
+                  label="New..."
+                  style="push">
+            </command>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.AutodetectDomain"
+                  label="Auto-detect Domain"
+                  style="push">
+            </command>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.OpenDomain"
+                  label="Open"
+                  style="push">
+            </command>
+            
+            <!--
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateDomain"
+                  label="Save and Validate"
+                  style="push">
+            </command>
+            -->
+            <command
+                  commandId="org.eclipse.ui.file.save" 
+                  label="Save and Validate"
+                  style="push">
+            </command>
+                        
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteDomain"
+                  label="Delete"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=CEPDomain">
+         <menu
+               id="EventPattern"
+               label="Event Pattern">
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.NewEventPattern"
+                  label="New..."
+                  style="push">
+            </command>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.DuplicateExistingPattern"
+                  label="Duplicate Existing Pattern..."
+                  style="push">
+            </command>
+            <menu
+                  id="Open"
+                  label="Open">
+               <dynamic
+                     class="es.uca.modeling.cep.eventpattern.menu.dynamic.OpenEventPattern"
+                     id="es.uca.modeling.cep.eventpattern.menu.dynamic.OpenEventPattern">
+               </dynamic>
+            </menu>
+            
+            <!--
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateEventPattern"
+                  label="Save and Validate"
+                  style="push">
+            </command>
+            -->
+            <command
+                  commandId="org.eclipse.ui.file.save" 
+                  label="Save and Validate"
+                  style="push">
+            </command>
+                        
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.GenerateDeployEventPattern"
+                  label="Generate and Deploy Pattern Code"
+                  style="push">
+            </command>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteEventPattern"
+                  label="Delete"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ExitCEPEditorHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.ExitCEPEditor"
+            name="ExitCEPEditor">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.NewDomainHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.NewDomain"
+            name="NewDomain">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.DeleteDomainHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.DeleteDomain"
+            name="DeleteDomain">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ImportDomainHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.ImportDomain"
+            name="ImportDomain">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ExportDomainHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.ExportDomain"
+            name="ExportDomain">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.OpenDomainHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.OpenDomain"
+            name="OpenDomain">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.NewEventPatternHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.NewEventPattern"
+            name="NewEventPattern">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.DuplicateExistingPatternHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.DuplicateExistingPattern"
+            name="DuplicateExistingPattern">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.SaveValidate"
+            name="SaveValidate">
+      </command>      
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateEventPatternHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateEventPattern"
+            name="SaveValidateEventPattern">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.DeleteEventPatternHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.DeleteEventPattern"
+            name="DeleteEventPattern">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.GenerateDeployEventPatternHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.GenerateDeployEventPattern"
+            name="GenerateDeployEventPattern">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateDomainHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateDomain"
+            name="SaveValidateDomain">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ExportEventPatternsHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.ExportEventPatterns"
+            name="ExportEventPatterns">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ImportEventPatternsHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.ImportEventPatterns"
+            name="ImportEventPatterns">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.AutodetectDomainHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.AutodetectDomain"
+            name="AutodetectDomain">
+      </command>
+   </extension>
+
+</plugin>

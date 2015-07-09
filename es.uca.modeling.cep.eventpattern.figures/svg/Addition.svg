@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="30"
+   height="30"
+   id="svg3316"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Addiction.svg">
+  <defs
+     id="defs3318" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="13.920533"
+     inkscape:cy="-4.2632113"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="942"
+     inkscape:window-height="985"
+     inkscape:window-x="960"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3321">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Daniel González</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Daniel González</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>Daniel González</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-788.54896,-498.09897)">
+    <g
+       id="g4561"
+       transform="matrix(0.16933334,0,0,0.16933334,833.79844,456.7974)">
+      <path
+         inkscape:export-ydpi="150.27"
+         inkscape:export-xdpi="150.27"
+         inkscape:export-filename="C:\Users\daninux\Iconos Boubeta\adición 16x16 px.png"
+         d="m 401.03056,478.59555 c 0,37.37875 -30.30146,67.68022 -67.68022,67.68022 -37.37875,0 -67.68022,-30.30147 -67.68022,-67.68022 0,-37.37875 30.30147,-67.68022 67.68022,-67.68022 37.37876,0 67.68022,30.30147 67.68022,67.68022 z"
+         sodipodi:ry="67.680222"
+         sodipodi:rx="67.680222"
+         sodipodi:cy="478.59555"
+         sodipodi:cx="333.35034"
+         id="path2985"
+         style="fill:#df915f;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         sodipodi:type="arc"
+         transform="matrix(1.3088414,0,0,1.3088414,-614.94139,-293.9161)" />
+      <text
+         inkscape:export-ydpi="150.27"
+         inkscape:export-xdpi="150.27"
+         inkscape:export-filename="C:\Users\daninux\Iconos Boubeta\adición 16x16 px.png"
+         sodipodi:linespacing="125%"
+         id="text3755"
+         y="412.92337"
+         x="-245.30455"
+         style="font-size:228.31376648px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="412.92337"
+           x="-245.30455"
+           id="tspan3757"
+           sodipodi:role="line">+</tspan></text>
+    </g>
+  </g>
+</svg>

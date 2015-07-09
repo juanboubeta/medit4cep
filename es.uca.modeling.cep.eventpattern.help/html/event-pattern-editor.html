@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">		
+		<title>Graphical Modeling Editor for Event Pattern</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">				
+	</head>
+	<body>
+		<h1>Graphical Modeling Editor for Event Pattern</h1>
+		<h4>Author: Juan Boubeta-Puig (<a href="mailto:juan.boubeta@uca.es">juan.boubeta@uca.es</a>) <br/>
+		Last updated: May 31<sup>st</sup>, 2015.</h4>
+		
+		<h2>Contents</h2>
+		<ul>
+			<li><a href="#introduction">Introduction</a></li>
+			<li><a href="#editor-palette">Editor Palette</a></li>
+			<li><a href="#options-menu">Options menu</a></li>
+		</ul>	
+		
+		<h2 id="name">Introduction</h2>
+		<p>
+		In this section, we describe our graphical editor that supports the modeling of event patterns &ndash;the situations to be detected in a particular domain and the actions to be notified to interested users by email or social networking services, among others&ndash;. This editor has been implemented using GMF and Epsilon.
+		</p>
+		<p>Thanks to this editor, users will be able to address the execution of steps 3, 4 and 5, essential for defining patterns in an intuitive way, according to <a href="./overview.html">our model-driven approach</a>. Thereby, the editor would provide any user with the description of situations and actions for a domain without knowledge of any concrete EPL or language for implementing actions. Additionally, the editor enables the validation and storage of pattern models, their exportation and importation in order to share them with other users, as well as their transformation into both pattern code to be added to a CEP engine and action code to be deployed into an ESB.
+		</p>
+		<p>The figure below shows the built editor for event pattern definition. This editor has the same four parts as <a href="./cep-domain-editor.html">the CEP domain editor</a>: a tool palette, a canvas, a menu and a property view.
+		</p>
+		
+		<img src="../img/event-pattern-editor.png" alt="Graphical modeling editor for event pattern" class="figure-size-90"/>
+		
+		<h2 id="editor-palette">Editor Palette</h2>
+		<p>The editor palette has 41 tools for designing event patterns, as depicted in the table below. This palette can be dynamically reconfigured from different CEP domain models, enabling users to enjoy a graphical interface adapted to the specific context required.
+		</p>
+		<p>Specifically, the <span class="italic">Simple Events</span> category is customized with all event types provided by a modeled CEP domain whereas <span class="italic">Complex Events</span> is customized with the complex event types defined when designing event patterns for a particular domain. As with the CEP domain editor, this editor allows users to substitute icons with one another and ensures that the tool palette is used correctly. Since the complex event type defined in an event pattern model is automatically incorporated in the palette as a tool in order to reuse it in other pattern models, it will be possible to create an event pattern hierarchy, i.e. a pattern depending on others.
+		</p>
+ 
+		<table>
+			<tr class="separated">
+				<th>Category</th>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Notation</th>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Link</span></td>
+				<td>It defines the graphical representation of one or more relationships between operands and operators.</td>
+				<td><img src="../img/Link.png" alt="Link" /></td>
+			</tr>
+			<tr class="separated">
+				<td></td>
+				<td><span class="italic">Value</span></td>
+				<td>It defines a <span class="italic">Boolean</span>, <span class="italic">Integer</span>, <span class="italic">Long</span>, <span class="italic">Double</span>, <span class="italic">Float</span> or <span class="italic">String</span> value.</td>
+				<td><img src="../img/Value.png" alt="Value" /></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Simple Events</span></td>
+				<td><span class="italic">Event</span></td>
+				<td>It describes an event type for a concrete CEP domain.</td>
+				<td><img src="../img/Event.png" alt="Event" /></td>
+			</tr>
+			<tr class="separated">
+				<td></td>
+				<td><span class="italic">EventProperty</span></td>
+				<td>It describes a feature of an event. Nested properties are supported.</td>
+				<td><img src="../img/EventProperty.png" alt="Event Property" /></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Complex Events</span></td>
+				<td><span class="italic">ComplexEvent</span></td>
+				<td>It describes the complex event type to be created upon pattern detection.</td>
+				<td><img src="../img/ComplexEvent.png" alt="Complex Event" /></td>
+			</tr>
+			<tr class="separated">
+				<td></td>
+				<td><span class="italic">ComplexEvent Property</span></td>
+				<td>It describes a feature of a complex event. Nested properties are supported.</td>
+				<td><img src="../img/ComplexEventProperty.png" alt="Complex Event Property" /></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Pattern Timers</span></td>
+				<td><span class="italic">TimerInterval</span></td>
+				<td>It waits for the specified time period (<span class="italic">years</span>, <span class="italic">months</span>, <span class="italic">weeks</span>, <span class="italic">days</span>, <span class="italic">hours</span>, <span class="italic">minutes</span>, <span class="italic">seconds</span> and <span class="italic">milliseconds</span>) before turning to true.</td>
+				<td><img src="../img/TimeInterval.png" alt="Time Interval" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">TimerSchedule</span></td>
+				<td>It turns into true at a defined time (<span class="italic">dayOfWeek</span>, <span class="italic">dayOfMonth</span>, <span class="italic">month</span>, <span class="italic">hour</span>, <span class="italic">minute</span>, <span class="italic">second</span>).</td>
+				<td><img src="../img/TimeSchedule.png" alt="Time Schedule" /></td>
+			</tr>
+			<tr class="separated">
+				<td>
+				<td><span class="italic">WithinTimer</span></td>
+				<td>It is permanently evaluated to false if the contained pattern expression does not turn to true during the specified time period (<span class="italic">years</span>, <span class="italic">months</span>, <span class="italic">weeks</span>, <span class="italic">days</span>, <span class="italic">hours</span>, <span class="italic">minutes</span>, <span class="italic">seconds</span> and <span class="italic">milliseconds</span>).</td>
+				<td><img src="../img/WithinTimer.png" alt="Within Timer" /></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Pattern Operators</span></td>
+				<td><span class="italic">Every</span></td>
+				<td>It selects every event belonging to the specified type.</td>
+				<td><img src="../img/Every.png" alt="Every" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">EveryDistinct</span></td>
+				<td>It is similar to <span class="italic">Every</span>, but eliminates duplicated results according to a given <span class="italic">distinct-value</span> expression.</td>
+				<td><img src="../img/EveryDistinct.png" alt="Every Distinct" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">FollowedBy</span></td>
+				<td>It determines a pattern expression that must be followed by another.</td>
+				<td><img src="../img/FollowedBy.png" alt="Followed By" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Range</span></td>
+				<td>It specifies the minimum (<span class="italic">lowEndpoint</span>) and maximum (<span class="italic">highEndpoint</span>) number of times a pattern expression must occur.</td>
+				<td><img src="../img/Range.png" alt="Range" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Repeat</span></td>
+				<td>It defines how many times (<span class="italic">count</span>) a pattern expression must occur.</td>
+				<td><img src="../img/Repeat.png" alt="Repeat" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Until</span></td>
+				<td>It checks a pattern expression until the condition (another pattern expression) is evaluated to true.</td>
+				<td><img src="../img/Until.png" alt="Until" /></td>
+			</tr>
+			<tr class="separated">
+				<td></td>
+				<td><span class="italic">While</span></td>
+				<td>It checks a pattern expression while the condition (another pattern expression) is evaluated to true.</td>
+				<td><img src="../img/While.png" alt="While" /></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Logical Operators</span></td>
+				<td><span class="italic">And</span></td>
+				<td>It returns a true value only if all operands are true.</td>
+				<td><img src="../img/And.png" alt="And" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Or</span></td>
+				<td>It returns a true value if at least one operand is true.</td>
+				<td><img src="../img/Or.png" alt="Or" /></td>
+			</tr>
+			<tr class="separated">
+				<td></td>
+				<td><span class="italic">Not</span></td>
+				<td>It returns a true value if the operand is false, and a false value if the operand is true.</td>
+				<td><img src="../img/Not.png" alt="Not" /></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Comparison Operators</span></td>
+				<td><span class="italic">Equal</span></td>
+				<td>It returns a true value if operand1 = operand2.</td>
+				<td><img src="../img/Equal.png" alt="Equal" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">GreaterEqual</span></td>
+				<td>It returns a true value if operand1 &ge; operand2.</td>
+				<td><img src="../img/GreaterEqual.png" alt="Greater Equal" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">GreaterThan</span></td>
+				<td>It returns a true value if operand1 &gt; operand2.</td>
+				<td><img src="../img/GreaterThan.png" alt="Greater Than" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">LessEqual</span></td>
+				<td>It returns a true value if operand1 &le; operand2.</td>
+				<td><img src="../img/LessEqual.png" alt="Less Equal" /></td>
+			</tr>
+			<tr class="separated">
+				<td></td>
+				<td><span class="italic">NotEqual</span></td>
+				<td>It returns a true value if operand1 &ne; operand2.</td>
+				<td><img src="../img/NotEqual.png" alt="Not Equal" /></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Arithmetic Operators</span></td>
+				<td><span class="italic">Addition</span></td>	
+				<td>It adds two numeric values.</td>
+				<td><img src="../img/Addition.png" alt="Addition" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Division</span></td>
+				<td>It divides one numeric value by another.</td>
+				<td><img src="../img/Division.png" alt="Division" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Modulus</span></td>
+				<td>It returns the remainder of dividing one numeric value by another.</td>
+				<td><img src="../img/Modulus.png" alt="Modulus" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Multiplication</span></td>
+				<td>It multiplies two numeric values.</td>
+				<td><img src="../img/Multiplication.png" alt="Multiplication" /></td>
+			</tr>
+			<tr class="separated">
+				<td></td>
+				<td><span class="italic">Subtraction</span></td>
+				<td>It subtracts one numeric value from another.</td>
+				<td><img src="../img/Subtraction.png" alt="Subtraction" /></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Aggregation Operators</span></td>
+				<td><span class="italic">Avg</span></td>
+				<td>It returns the average of the values in an expression.</td>
+				<td><img src="../img/Avg.png" alt="Avg" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Count</span></td>
+				<td>It returns the number of values in an expression.</td>
+				<td><img src="../img/Count.png" alt="Count" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Max</span></td>
+				<td>It returns the highest value in an expression.</td>
+				<td><img src="../img/Max.png" alt="Max" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span class="italic">Min</span></td>
+				<td>It returns the lowest value in an expression.</td>
+				<td><img src="../img/Min.png" alt="Min" /></td>
+			</tr>
+			<tr class="separated">
+				<td></td>
+				<td><span class="italic">Sum</span></td>
+				<td>It adds the values in an expression.</td>
+				<td><img src="../img/Sum.png" alt="Sum" /></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Data Windows</span></td>
+				<td><span class="italic">Batching EventInterval</span></td>
+				<td>Tumbling window up to the specified number of events (<span class="italic">size</span>).</td>
+				<td><img src="../img/BatchingEventInterval.png" alt="Batching Event Interval" /></td>
+			</tr>		
+			<tr>
+				<td></td>
+				<td><span class="italic">Batching TimeInterval</span></td>
+				<td>Tumbling window that batches events and releases them every specified time period (<span class="italic">years</span>, <span class="italic">months</span>, <span class="italic">weeks</span>, <span class="italic">days</span>, <span class="italic">hours</span>, <span class="italic">minutes</span>, <span class="italic">seconds</span>, <span class="italic">milliseconds</span>).</td>
+				<td><img src="../img/BatchingTimeInterval.png" alt="Batching Time Interval" /></td>
+			</tr>	
+			<tr>
+				<td></td>
+				<td><span class="italic">Sliding EventInterval</span></td>
+				<td>Sliding window by the specified number of events (<span class="italic">size</span>).</td>
+				<td><img src="../img/SlidingEventInterval.png" alt="Sliding Event Interval" /></td>
+			</tr>	
+			<tr class="separated">	
+				<td></td>
+				<td><span class="italic">Sliding TimeInterval</span></td>
+				<td>Sliding window by the specified time period (<span class="italic">years</span>, <span class="italic">months</span>, <span class="italic">weeks</span>, <span class="italic">days</span>, <span class="italic">hours</span>, <span class="italic">minutes</span>, <span class="italic">seconds</span>, <span class="italic">milliseconds</span>).</td>
+				<td><img src="../img/SlidingTimeInterval.png" alt="Sliding Time Interval" /></td>
+			</tr>	
+			<tr>
+				<td><span class="italic">Actions</span></td>
+				<td><span class="italic">Email</span></td>
+				<td>It indicates an email must be sent with the complex event created when detecting its corresponding event pattern.</td>
+				<td><img src="../img/Email.png" alt="Email" /></td>
+			</tr>	
+			<tr class="separated">
+				<td></td>
+				<td><span class="italic">Twitter</span></td>
+				<td>It indicates a message must be sent to a Twitter account with the complex event created when detecting its corresponding event pattern.</td>
+				<td><img src="../img/Twitter.png" alt="Twitter" /></td>
+			</tr>				
+
+		</table>
+
+	    <h2 id="options-menu">Options Menu</h2>
+		<p>The editor's menu bar is available in any Eclipse application. In addition to menus by default, a <span class="italic">CEP Domain</span> menu of the domain editor has been added along with a new menu called <span class="italic">Event Pattern</span>: 
+		</p>
+		<ul>
+			<li><span class="bold">New</span>: it creates a new event pattern.</li>
+			<li><span class="bold">Duplicate Existing Pattern</span>: it facilitates the event pattern's creation from another one.</li>
+			<li><span class="bold">Open</span>: it opens one of the previously modeled event patterns.</li>
+			<li><span class="bold">Save and Validate</span>: it saves the active event pattern model and validates it, listing encountered problems, if any.</li>
+			<li><span class="bold">Generate and Deploy Pattern Code</span>: it transforms the chosen validated event pattern model into code.</li>
+			<li><span class="bold">Delete</span>: it eliminates one event pattern.</li>
+		</ul>
+		<p>By integrating the CEP domain editor with the event pattern editor, users are provided with all functionalities in a single editor. In addition to <span class="italic">Import CEP Domain</span> and <span class="italic">Export CEP Domain</span>, two more options have been added to the <span class="italic">File</span> menu: 
+		<ul>
+			<li><span class="bold">Import Event Patterns</span>: it allows the importation of previously defined event patterns. </li>
+			<li><span class="bold">Export Event Patterns</span>: it permits exporting already modeled and validated event patterns together with their CEP domain.</li>
+		</ul>
+		<p>We would like to point out that, in the current version of this editor, transformation rules have been created to automatically transform pattern models into Esper EPL and XML action code. It is important to highlight that our editor can be extended to support other languages since it allows modeling patterns regardless of the language finally used for their implementation. To this end, new transformation rules per EPL or language for implementing actions which is to be incorporated in the editor, in order to transform pattern models to this new language, must be created. 
+		</p>	
+  	</body>
+</html>
