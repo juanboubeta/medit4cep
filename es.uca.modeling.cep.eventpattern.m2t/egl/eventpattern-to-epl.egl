@@ -388,7 +388,7 @@ operation getTimeScheduleAttributes(t) : String {
     var attributes : String;
    
     if (t.minute > -1) {
-        attributes = attributes + t.minute + ',';
+        attributes = attributes + t.minute + ', ';
     } else {
         attributes = attributes + '*, ';
     }
@@ -505,8 +505,8 @@ operation traversal(r) : String {
 
     if (r.eClass().name == 'WithinTimer') {
         --System.out.println("r.eClass().name == 'WithinTimer'");
-        --System.out.println("WithinTimer contains the following elements: " + r.eventPatternConditions);   
-        return traversal(getPatternConditionRoot(r.eventPatternConditions)) + 
+        --System.out.println("WithinTimer contains the following elements: " + r.eventPatternConditions);
+        return traversal(getPatternConditionRoot(r.withinTimerElements)) + 
         	' where timer:within(' + getTimeAttributes(r) + ')';
     }
         
@@ -577,7 +577,7 @@ operation traversal(r) : String {
     // Unary operators
 	if (r.isTypeOf(Every)) {
     	--System.out.println("r.isTypeOf(Every):" + ' every ');
-        return 'every ' + traversal(getOperand(r, 0));
+        return '(every ' + traversal(getOperand(r, 0)) + ')';
     }
             
   	if(r.isTypeOf(Range)) {
@@ -750,7 +750,7 @@ operation traversal(r) : String {
         	return '(' + traversal(getOperand(r,1)) + ')' + ' while ' + '(' + traversal(getOperand(r,0)) + ')';      
         }            
    	}
-   	
+   	   	
     // N-ary operators   
     if(r.isTypeOf(And)) {        
 	    --System.out.println("r.isTypeOf(And):" + ' and ');
