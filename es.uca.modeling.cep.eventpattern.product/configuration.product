@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MEdit4CEP" id="es.uca.modeling.cep.eventpattern.product" application="org.eclipse.ui.ide.workbench" version="1.0.0" useFeatures="true" includeLaunchers="true">
+<product name="MEdit4CEP" id="es.uca.modeling.cep.eventpattern.product" application="org.eclipse.ui.ide.workbench" version="1.0.1" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-128x128.png"/>
       <text>
-         Version: 1.0.0
-Date: July 9th, 2015
+         Version: 1.0.1
+Date: October 6th, 2015
 URL: https://ucase.uca.es/medit4cep/
 
 Copyright (c) 2011, 2015 Juan Boubeta-Puig
@@ -53,8 +53,8 @@ http://www.eclipse.org/legal/epl-v10.html
         <text>
    MEdit4CEP
 
-Version: 1.0.0
-Date: July 9th, 2015
+Version: 1.0.1
+Date: October 6th, 2015
 
 /*******************************************************************************
  * Copyright (c) 2011, 2015 Juan Boubeta-Puig
