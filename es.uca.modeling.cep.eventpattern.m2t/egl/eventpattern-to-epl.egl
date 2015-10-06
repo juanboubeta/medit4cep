@@ -577,7 +577,7 @@ operation traversal(r) : String {
     // Unary operators
 	if (r.isTypeOf(Every)) {
     	--System.out.println("r.isTypeOf(Every):" + ' every ');
-        return '(every ' + traversal(getOperand(r, 0)) + ')'; 
+        return '(every ' + traversal(getOperand(r, 0)) + ')';
     }
             
   	if(r.isTypeOf(Range)) {
