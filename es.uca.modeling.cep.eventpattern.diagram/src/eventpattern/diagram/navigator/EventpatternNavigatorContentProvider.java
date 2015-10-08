@@ -2733,6 +2733,9 @@ public class EventpatternNavigatorContentProvider implements
 		case ComplexEventEditPart.VISUAL_ID: {
 			LinkedList<EventpatternAbstractNavigatorItem> result = new LinkedList<EventpatternAbstractNavigatorItem>();
 			Node sv = (Node) view;
+			EventpatternNavigatorGroup incominglinks = new EventpatternNavigatorGroup(
+					Messages.NavigatorGroupName_ComplexEvent_2038_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			EventpatternNavigatorGroup outgoinglinks = new EventpatternNavigatorGroup(
 					Messages.NavigatorGroupName_ComplexEvent_2038_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -2746,11 +2749,19 @@ public class EventpatternNavigatorContentProvider implements
 							.getType(ComplexEventPropertyEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry
+							.getType(LinkEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry
 							.getType(LinkEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
@@ -4764,6 +4775,11 @@ public class EventpatternNavigatorContentProvider implements
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry
 							.getType(TwitterEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry
+							.getType(ComplexEventEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),

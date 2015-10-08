@@ -5557,6 +5557,18 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
+        child="//@diagram/@topLevelNodes.38"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.38"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
         child="//@diagram/@childNodes.2"
         referenceType="out_target"
         groupName="target"
@@ -7251,7 +7263,7 @@
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self &lt;> oppositeEnd &#xD;&#xA;&#x9;and ( &#xD;&#xA;&#x9;   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))&#xD;&#xA;&#x9;   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or &#xD;&#xA;&#x9;        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) &#xD;&#xA;&#x9;        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) &#xD;&#xA;&#x9;   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))&#xD;&#xA;&#x9;   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) &#xD;&#xA;&#x9;      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) &#xD;&#xA;&#x9;         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) &#xD;&#xA;&#x9;   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        &#xD;&#xA;&#x9;   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) &#xD;&#xA;&#x9;      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  &#xD;&#xA;&#x9;   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) &#xD;&#xA;&#x9;      and oppositeEnd.oclIsKindOf(AggregationOperator)) &#xD;&#xA;&#x9;   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   &#xD;&#xA;&#x9;   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))&#xD;&#xA;&#x9;   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))  &#xD;&#xA;&#x9;)"/>
+          body="self &lt;> oppositeEnd &#xD;&#xA;&#x9;and ( &#xD;&#xA;&#x9;   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))&#xD;&#xA;&#x9;   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or &#xD;&#xA;&#x9;        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) &#xD;&#xA;&#x9;        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) &#xD;&#xA;&#x9;   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))&#xD;&#xA;&#x9;   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) &#xD;&#xA;&#x9;      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) &#xD;&#xA;&#x9;         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) &#xD;&#xA;&#x9;   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        &#xD;&#xA;&#x9;   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) &#xD;&#xA;&#x9;      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  &#xD;&#xA;&#x9;   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) &#xD;&#xA;&#x9;      and oppositeEnd.oclIsKindOf(AggregationOperator)) &#xD;&#xA;&#x9;   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   &#xD;&#xA;&#x9;   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))&#xD;&#xA;&#x9;   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))&#xD;&#xA;&#x9;   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) &#xD;&#xA;&#x9;)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self &lt;> oppositeEnd"/>

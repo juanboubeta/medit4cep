@@ -382,13 +382,22 @@ public interface EventpatternPackage extends EPackage
   int COMPLEX_EVENT__OUTBOUND_LINK = OPERAND__OUTBOUND_LINK;
 
   /**
+   * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPLEX_EVENT__INBOUND_LINK = OPERAND_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Type Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT__TYPE_NAME = OPERAND_FEATURE_COUNT + 0;
+  int COMPLEX_EVENT__TYPE_NAME = OPERAND_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Image Path</b></em>' attribute.
@@ -397,7 +406,7 @@ public interface EventpatternPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT__IMAGE_PATH = OPERAND_FEATURE_COUNT + 1;
+  int COMPLEX_EVENT__IMAGE_PATH = OPERAND_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Complex Event Properties</b></em>' containment reference list.
@@ -406,7 +415,7 @@ public interface EventpatternPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT__COMPLEX_EVENT_PROPERTIES = OPERAND_FEATURE_COUNT + 2;
+  int COMPLEX_EVENT__COMPLEX_EVENT_PROPERTIES = OPERAND_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Complex Event</em>' class.
@@ -415,7 +424,7 @@ public interface EventpatternPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPLEX_EVENT_FEATURE_COUNT = OPERAND_FEATURE_COUNT + 3;
+  int COMPLEX_EVENT_FEATURE_COUNT = OPERAND_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link eventpattern.impl.ComplexEventPropertyImpl <em>Complex Event Property</em>}' class.

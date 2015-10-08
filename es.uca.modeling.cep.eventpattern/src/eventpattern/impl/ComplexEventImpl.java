@@ -6,6 +6,8 @@ import eventpattern.ComplexEvent;
 import eventpattern.ComplexEventProperty;
 import eventpattern.EventpatternPackage;
 
+import eventpattern.Link;
+import eventpattern.Operator;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -28,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link eventpattern.impl.ComplexEventImpl#getInboundLink <em>Inbound Link</em>}</li>
  *   <li>{@link eventpattern.impl.ComplexEventImpl#getTypeName <em>Type Name</em>}</li>
  *   <li>{@link eventpattern.impl.ComplexEventImpl#getImagePath <em>Image Path</em>}</li>
  *   <li>{@link eventpattern.impl.ComplexEventImpl#getComplexEventProperties <em>Complex Event Properties</em>}</li>
@@ -38,6 +42,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ComplexEventImpl extends OperandImpl implements ComplexEvent
 {
+  /**
+   * The cached value of the '{@link #getInboundLink() <em>Inbound Link</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInboundLink()
+   * @generated
+   * @ordered
+   */
+  protected EList<Link> inboundLink;
+
   /**
    * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -114,6 +128,20 @@ public class ComplexEventImpl extends OperandImpl implements ComplexEvent
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Link> getInboundLink()
+  {
+    if (inboundLink == null)
+    {
+      inboundLink = new EObjectWithInverseResolvingEList<Link>(Link.class, this, EventpatternPackage.COMPLEX_EVENT__INBOUND_LINK, EventpatternPackage.LINK__OPERATOR);
+    }
+    return inboundLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getTypeName()
   {
     return typeName;
@@ -174,11 +202,30 @@ public class ComplexEventImpl extends OperandImpl implements ComplexEvent
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
+  @Override
+  public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case EventpatternPackage.COMPLEX_EVENT__INBOUND_LINK:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getInboundLink()).basicAdd(otherEnd, msgs);
+    }
+    return super.eInverseAdd(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
+      case EventpatternPackage.COMPLEX_EVENT__INBOUND_LINK:
+        return ((InternalEList<?>)getInboundLink()).basicRemove(otherEnd, msgs);
       case EventpatternPackage.COMPLEX_EVENT__COMPLEX_EVENT_PROPERTIES:
         return ((InternalEList<?>)getComplexEventProperties()).basicRemove(otherEnd, msgs);
     }
@@ -195,6 +242,8 @@ public class ComplexEventImpl extends OperandImpl implements ComplexEvent
   {
     switch (featureID)
     {
+      case EventpatternPackage.COMPLEX_EVENT__INBOUND_LINK:
+        return getInboundLink();
       case EventpatternPackage.COMPLEX_EVENT__TYPE_NAME:
         return getTypeName();
       case EventpatternPackage.COMPLEX_EVENT__IMAGE_PATH:
@@ -216,6 +265,10 @@ public class ComplexEventImpl extends OperandImpl implements ComplexEvent
   {
     switch (featureID)
     {
+      case EventpatternPackage.COMPLEX_EVENT__INBOUND_LINK:
+        getInboundLink().clear();
+        getInboundLink().addAll((Collection<? extends Link>)newValue);
+        return;
       case EventpatternPackage.COMPLEX_EVENT__TYPE_NAME:
         setTypeName((String)newValue);
         return;
@@ -240,6 +293,9 @@ public class ComplexEventImpl extends OperandImpl implements ComplexEvent
   {
     switch (featureID)
     {
+      case EventpatternPackage.COMPLEX_EVENT__INBOUND_LINK:
+        getInboundLink().clear();
+        return;
       case EventpatternPackage.COMPLEX_EVENT__TYPE_NAME:
         setTypeName(TYPE_NAME_EDEFAULT);
         return;
@@ -263,6 +319,8 @@ public class ComplexEventImpl extends OperandImpl implements ComplexEvent
   {
     switch (featureID)
     {
+      case EventpatternPackage.COMPLEX_EVENT__INBOUND_LINK:
+        return inboundLink != null && !inboundLink.isEmpty();
       case EventpatternPackage.COMPLEX_EVENT__TYPE_NAME:
         return TYPE_NAME_EDEFAULT == null ? typeName != null : !TYPE_NAME_EDEFAULT.equals(typeName);
       case EventpatternPackage.COMPLEX_EVENT__IMAGE_PATH:
@@ -271,6 +329,44 @@ public class ComplexEventImpl extends OperandImpl implements ComplexEvent
         return complexEventProperties != null && !complexEventProperties.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == Operator.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case EventpatternPackage.COMPLEX_EVENT__INBOUND_LINK: return EventpatternPackage.OPERATOR__INBOUND_LINK;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == Operator.class)
+    {
+      switch (baseFeatureID)
+      {
+        case EventpatternPackage.OPERATOR__INBOUND_LINK: return EventpatternPackage.COMPLEX_EVENT__INBOUND_LINK;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

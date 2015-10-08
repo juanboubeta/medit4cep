@@ -246,7 +246,7 @@ public class LinkOrderEditPart extends LabelEditPart implements
 			String superClassName = link.getOperator().getClass()
 					.getSuperclass().getSimpleName();
 
-			// If the operator is unary, aggregation or action, then the label will not be shown.
+			// If the operator is unary, aggregation, action or complex event, then the label will not be shown.
 			if (superClassName.equals("UnaryOperatorImpl")
 					|| superClassName.equals("AggregationOperatorImpl")
 					|| superClassName.equals("ActionImpl")) {
@@ -261,6 +261,8 @@ public class LinkOrderEditPart extends LabelEditPart implements
 					text = "condition";
 				else
 					text = " ";
+			} else if (className.equals("ComplexEventImpl")) {
+				text = "all properties";
 			}
 
 		}

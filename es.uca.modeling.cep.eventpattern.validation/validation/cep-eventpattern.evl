@@ -178,18 +178,8 @@ context ComplexEvent {
             }
         }      
     }
-    
-    constraint HasComplexEventProperty {
-    
-        check : self.complexEventProperties.isEmpty() == false
-                
-        message : "'NewComplexEvent' must contain at least one complex event property."
-      
- 	}
  	
     constraint HasUniqueProperties {
-
-		guard: self.satisfies('HasComplexEventProperty')
 
         check {
         
@@ -208,8 +198,48 @@ context ComplexEvent {
 
         message : "'NewComplexEvent' must contain unique complex event properties."
      
-    }    	
+    }   
+    
+    constraint HasLinkedEventOrProperties {
 
+        check : (self.inboundLink.isEmpty() == false and self.complexEventProperties.isEmpty() == true) or 
+                (self.inboundLink.isEmpty() == true and self.complexEventProperties.isEmpty() == false)
+                
+        message : "'NewComplexEvent' must contain at least one complex event property, or be empty but linked with one event. Both options are not possible."
+     
+    } 
+    
+    constraint HasZeroOrOneInboundLink {
+    
+        guard : self.satisfies("HasLinkedEventOrProperties")    
+        
+        check : not (self.inboundLink.isEmpty() == false and self.inboundLink.size() > 1)
+        
+        message : "'NewComplexEvent' must have zero or one inbound link."
+        
+    }	
+    
+    constraint HasCorrectInboundLink {
+    
+        guard : self.satisfies("HasZeroOrOneInboundLink")    
+        
+        check {
+        	
+        	if (self.inboundLink.size() == 1) {    
+        		for (p : EventProperty in self.inboundLink.at(0).operand.eventProperties) {
+        		
+        			if (p.eventProperties.isEmpty() == false) {
+        				return false; 
+        			}
+        		}
+        	}
+        	return true; 
+        }
+        
+        message : "'NewComplexEvent' cannot be linked with an event that has nested properties. So concrete event properties must be linked with complex event properties."
+        
+    }		
+    
 }
 
 context ComplexEventProperty {

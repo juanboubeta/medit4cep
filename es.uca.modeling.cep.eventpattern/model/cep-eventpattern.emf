@@ -44,7 +44,8 @@ class CEPEventPattern {
 	      and oppositeEnd.oclIsKindOf(AggregationOperator)) 
 	   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   
 	   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))
-	   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))  
+	   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))
+	   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) 
 	)", 
 	target.constraint="self <> oppositeEnd", 
 	source.decoration="none", target.decoration="arrow", color="110,110,110", 
@@ -83,7 +84,7 @@ abstract class EventPatternElement {
 @gmf.node(figure="rectangle", label="typeName", border.color="110,110,110",
 	label.view.pattern="New Complex Event: {0}", label.readOnly="true", 
 	tool.name="New Complex Event", tool.description="Add a new complex event")
-class ComplexEvent extends Operand {
+class ComplexEvent extends Operand, Operator {
    attr String typeName;  
    attr String imagePath;  
    

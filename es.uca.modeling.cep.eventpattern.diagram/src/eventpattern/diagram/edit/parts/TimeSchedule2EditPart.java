@@ -150,7 +150,7 @@ public class TimeSchedule2EditPart extends AbstractBorderedShapeEditPart {
 		if (borderItemEditPart instanceof TimeScheduleDayOfWeekDayOfMonthMont2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-5, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -357,6 +357,9 @@ public class TimeSchedule2EditPart extends AbstractBorderedShapeEditPart {
 		if (targetEditPart instanceof TwitterEditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
+		if (targetEditPart instanceof ComplexEventEditPart) {
+			types.add(EventpatternElementTypes.Link_4001);
+		}
 		if (targetEditPart instanceof And2EditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
@@ -538,6 +541,7 @@ public class TimeSchedule2EditPart extends AbstractBorderedShapeEditPart {
 			types.add(EventpatternElementTypes.Sum_2026);
 			types.add(EventpatternElementTypes.Email_2033);
 			types.add(EventpatternElementTypes.Twitter_2039);
+			types.add(EventpatternElementTypes.ComplexEvent_2038);
 			types.add(EventpatternElementTypes.And_3003);
 			types.add(EventpatternElementTypes.Or_3004);
 			types.add(EventpatternElementTypes.Not_3005);

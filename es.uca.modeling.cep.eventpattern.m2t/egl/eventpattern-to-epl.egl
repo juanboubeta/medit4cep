@@ -113,18 +113,24 @@ if (ce.typeName <> '') {
 
 // SELECT expression
 
-var firstComplexEventProperty : Boolean = true;  
 selectExpression = "select ";  
 
-for (prop in ce.complexEventProperties) {
-
-    if (firstComplexEventProperty) {   
-        selectExpression = selectExpression + traversal(prop.inboundLink.at(0).operand) + ' as ' + prop.name;
-        firstComplexEventProperty = false;
-    }
-    else {
-        selectExpression = selectExpression + ', \n   ' + traversal(prop.inboundLink.at(0).operand) + ' as ' + prop.name;
-    }           
+if (ce.complexEventProperties.isEmpty() == true) {
+	selectExpression = selectExpression + traversal(ce.inboundLink.at(0).operand).split(' =').at(0) + '.*';	
+}
+else {
+	var firstComplexEventProperty : Boolean = true;
+	
+	for (prop in ce.complexEventProperties) {
+	
+	    if (firstComplexEventProperty) {   
+	        selectExpression = selectExpression + traversal(prop.inboundLink.at(0).operand) + ' as ' + prop.name;
+	        firstComplexEventProperty = false;
+	    }
+	    else {
+	        selectExpression = selectExpression + ', \n   ' + traversal(prop.inboundLink.at(0).operand) + ' as ' + prop.name;
+	    }           
+	}
 }
 
 

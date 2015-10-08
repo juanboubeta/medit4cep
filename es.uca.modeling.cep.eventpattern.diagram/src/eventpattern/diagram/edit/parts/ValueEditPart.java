@@ -362,6 +362,9 @@ public class ValueEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof TwitterEditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
+		if (targetEditPart instanceof ComplexEventEditPart) {
+			types.add(EventpatternElementTypes.Link_4001);
+		}
 		if (targetEditPart instanceof And2EditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
@@ -543,6 +546,7 @@ public class ValueEditPart extends ShapeNodeEditPart {
 			types.add(EventpatternElementTypes.Sum_2026);
 			types.add(EventpatternElementTypes.Email_2033);
 			types.add(EventpatternElementTypes.Twitter_2039);
+			types.add(EventpatternElementTypes.ComplexEvent_2038);
 			types.add(EventpatternElementTypes.And_3003);
 			types.add(EventpatternElementTypes.Or_3004);
 			types.add(EventpatternElementTypes.Not_3005);

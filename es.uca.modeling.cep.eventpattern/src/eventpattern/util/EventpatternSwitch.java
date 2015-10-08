@@ -136,6 +136,7 @@ public class EventpatternSwitch<T> extends Switch<T>
         ComplexEvent complexEvent = (ComplexEvent)theEObject;
         T result = caseComplexEvent(complexEvent);
         if (result == null) result = caseOperand(complexEvent);
+        if (result == null) result = caseOperator(complexEvent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

@@ -13,6 +13,7 @@ package es.uca.modeling.cep.eventpattern.menu.command;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Iterator;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -40,6 +41,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import domain.CEPDomain;
 import domain.DomainFactory;
 import domain.DomainPackage;
+import domain.EventProperty;
 import domain.diagram.part.DomainDiagramEditorUtil;
 import eventpattern.ComplexEvent;
 import eventpattern.ComplexEventProperty;
@@ -138,7 +140,7 @@ public class SaveValidateEventPatternHandler extends AbstractHandler {
 			if (!complexEventFile.exists()) {
 				DomainDiagramEditorUtil.createDiagram(complexEventDiagramUri, complexEventModelUri, new NullProgressMonitor());
 			}
-				
+			
 		    ResourceSet resourceSet = new ResourceSetImpl(); 
 		    Resource complexEventModelResource = resourceSet.getResource(complexEventModelUri, true);
 		   	Resource patternModelResource = resourceSet.getResource(activePatternModelUri, true);
@@ -152,7 +154,7 @@ public class SaveValidateEventPatternHandler extends AbstractHandler {
 			DomainFactory factory = DomainFactory.eINSTANCE;
 			
 			domain.Event e = factory.createEvent();
-						
+			
 			for (Iterator iter = EcoreUtil.getAllContents(patternModelResource, true); iter.hasNext();) {
 				EObject eObject = (EObject) iter.next();
 				
@@ -162,49 +164,87 @@ public class SaveValidateEventPatternHandler extends AbstractHandler {
 					
 					e.setTypeName(complexEvent.getTypeName());
 					e.setImagePath(complexEvent.getImagePath());
+					
+					// If the NewComplexEvent is linked with an event, which does not have nested properties 
+					if (complexEvent.getComplexEventProperties().isEmpty()) {
+						
+						for (eventpattern.EventProperty property : ((eventpattern.Event) complexEvent.getInboundLink().
+								get(0).getOperand()).getEventProperties()) {
+							
+							domain.EventProperty p = factory.createEventProperty();
+							p.setImagePath(property.getImagePath());
+							p.setName(property.getName());
+							
+							eventpattern.PropertyTypeValue type;
+							type = property.getType();
+							
+							if (type.compareTo(eventpattern.PropertyTypeValue.STRING) == 0) { 
+								p.setType(domain.PropertyTypeValue.STRING);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.DOUBLE) == 0) { 
+								p.setType(domain.PropertyTypeValue.DOUBLE);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.FLOAT) == 0) { 
+								p.setType(domain.PropertyTypeValue.FLOAT);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.LONG) == 0) { 
+								p.setType(domain.PropertyTypeValue.LONG);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.INTEGER) == 0) { 
+								p.setType(domain.PropertyTypeValue.INTEGER);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.BOOLEAN) == 0) { 
+								p.setType(domain.PropertyTypeValue.BOOLEAN);
+							}
+						
+							e.getEventProperties().add(p);
+						}							
+	
+					}
+					else { // If the NewComplexEvent contains complex event properties linked with event properties.
+						for (ComplexEventProperty complexProperty : complexEvent.getComplexEventProperties()) {
+							domain.EventProperty p = factory.createEventProperty();
+							p.setImagePath(complexProperty.getImagePath());
+							p.setName(complexProperty.getName()); 
+	
+							// Obtain the type of complex event property
+							
+							// complexProperty will only have an inboundLink because it is a unary operator
+							String operandName = complexProperty.getInboundLink().get(0).getOperand().getClass().getSimpleName();
+							eventpattern.PropertyTypeValue type; 
+							
+							if (operandName.equals("ValueImpl")) {
+								 type = ((Value)complexProperty.getInboundLink().get(0).getOperand()).getType();
+							}
+							else if (operandName.equals("EventPropertyImpl")) {
+								 type = ((eventpattern.EventProperty)complexProperty.getInboundLink().get(0).getOperand()).getType();
+							}
+							else { // operand of complex event property is an aggregation or arithmetic operator
+								type = eventpattern.PropertyTypeValue.DOUBLE;
+							}
 										
-					for (ComplexEventProperty complexProperty : complexEvent.getComplexEventProperties()) {
-						domain.EventProperty p = factory.createEventProperty();
-						p.setImagePath(complexProperty.getImagePath());
-						p.setName(complexProperty.getName()); 
-
-						// Obtain the type of complex event property
-						
-						// complexProperty will only have an inboundLink because it is a unary operator
-						String operandName = complexProperty.getInboundLink().get(0).getOperand().getClass().getSimpleName();
-						eventpattern.PropertyTypeValue type; 
-						
-						if (operandName.equals("ValueImpl")) {
-							 type = ((Value)complexProperty.getInboundLink().get(0).getOperand()).getType();
+							
+							if (type.compareTo(eventpattern.PropertyTypeValue.STRING) == 0) { 
+								p.setType(domain.PropertyTypeValue.STRING);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.DOUBLE) == 0) { 
+								p.setType(domain.PropertyTypeValue.DOUBLE);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.FLOAT) == 0) { 
+								p.setType(domain.PropertyTypeValue.FLOAT);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.LONG) == 0) { 
+								p.setType(domain.PropertyTypeValue.LONG);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.INTEGER) == 0) { 
+								p.setType(domain.PropertyTypeValue.INTEGER);
+							}
+							else if (type.compareTo(eventpattern.PropertyTypeValue.BOOLEAN) == 0) { 
+								p.setType(domain.PropertyTypeValue.BOOLEAN);
+							}
+							
+							e.getEventProperties().add(p);
 						}
-						else if (operandName.equals("EventPropertyImpl")) {
-							 type = ((eventpattern.EventProperty)complexProperty.getInboundLink().get(0).getOperand()).getType();
-						}
-						else { // operand of complex event property is an aggregation or arithmetic operator
-							type = eventpattern.PropertyTypeValue.DOUBLE;
-						}
-									
-						
-						if (type.compareTo(eventpattern.PropertyTypeValue.STRING) == 0) { 
-							p.setType(domain.PropertyTypeValue.STRING);
-						}
-						else if (type.compareTo(eventpattern.PropertyTypeValue.DOUBLE) == 0) { 
-							p.setType(domain.PropertyTypeValue.DOUBLE);
-						}
-						else if (type.compareTo(eventpattern.PropertyTypeValue.FLOAT) == 0) { 
-							p.setType(domain.PropertyTypeValue.FLOAT);
-						}
-						else if (type.compareTo(eventpattern.PropertyTypeValue.LONG) == 0) { 
-							p.setType(domain.PropertyTypeValue.LONG);
-						}
-						else if (type.compareTo(eventpattern.PropertyTypeValue.INTEGER) == 0) { 
-							p.setType(domain.PropertyTypeValue.INTEGER);
-						}
-						else if (type.compareTo(eventpattern.PropertyTypeValue.BOOLEAN) == 0) { 
-							p.setType(domain.PropertyTypeValue.BOOLEAN);
-						}
-						
-						e.getEventProperties().add(p);
 					}
 					
 					break;

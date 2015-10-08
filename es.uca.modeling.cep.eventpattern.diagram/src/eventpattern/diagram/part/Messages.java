@@ -1096,6 +1096,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ComplexEvent_2038_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ComplexEvent_2038_outgoinglinks;
 
 	/**

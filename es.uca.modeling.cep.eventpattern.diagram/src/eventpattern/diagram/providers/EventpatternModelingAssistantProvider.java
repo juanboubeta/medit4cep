@@ -752,6 +752,10 @@ public class EventpatternModelingAssistantProvider extends
 		if (targetEditPart instanceof TwitterEditPart) {
 			return ((TwitterEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof ComplexEventEditPart) {
+			return ((ComplexEventEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof And2EditPart) {
 			return ((And2EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
@@ -1407,6 +1411,10 @@ public class EventpatternModelingAssistantProvider extends
 		}
 		if (targetEditPart instanceof TwitterEditPart) {
 			return ((TwitterEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ComplexEventEditPart) {
+			return ((ComplexEventEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof And2EditPart) {

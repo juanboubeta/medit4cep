@@ -242,6 +242,7 @@ public class LinkImpl extends EObjectImpl implements Link
     	
     	if (this.getOperand().eClass().getName().equals("EventProperty")) {
     		((ComplexEventProperty)newOperator).setName(((EventProperty)this.getOperand()).getName());
+    		((ComplexEventProperty)newOperator).setImagePath(((EventProperty)this.getOperand()).getImagePath());
     	}
     }
     

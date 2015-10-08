@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="gmf.node figure='rectangle' label='typeName' border.color='110,110,110' label.view.pattern='New Complex Event: {0}' label.readOnly='true' tool.name='New Complex Event' tool.description='Add a new complex event'"
  * @generated
  */
-public interface ComplexEvent extends Operand
+public interface ComplexEvent extends Operand, Operator
 {
   /**
    * Returns the value of the '<em><b>Type Name</b></em>' attribute.
