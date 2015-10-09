@@ -1,6 +1,14 @@
-/*
+/*******************************************************************************
+ * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
  * 
- */
+ * Contributors:
+ *     Juan Boubeta-Puig - modifications marked as @generated NOT
+ ******************************************************************************/
+
 package eventpattern.diagram.part;
 
 import java.util.Collection;
@@ -5465,37 +5473,37 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
 		/**
-		 * @generated
+		 * Override annotation has been removed.
+		 * @generated NOT
 		 */
-		@Override
 		public List<EventpatternNodeDescriptor> getSemanticChildren(View view) {
 			return EventpatternDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
-		 * @generated
+		 * Override annotation has been removed.
+		 * @generated NOT
 		 */
-		@Override
 		public List<EventpatternLinkDescriptor> getContainedLinks(View view) {
 			return EventpatternDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
-		 * @generated
+		 * Override annotation has been removed.
+		 * @generated NOT
 		 */
-		@Override
 		public List<EventpatternLinkDescriptor> getIncomingLinks(View view) {
 			return EventpatternDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
-		 * @generated
+		 * Override annotation has been removed.
+		 * @generated NOT
 		 */
-		@Override
 		public List<EventpatternLinkDescriptor> getOutgoingLinks(View view) {
 			return EventpatternDiagramUpdater.getOutgoingLinks(view);
 		}

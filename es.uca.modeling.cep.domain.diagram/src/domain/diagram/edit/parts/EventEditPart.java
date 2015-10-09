@@ -440,7 +440,7 @@ public class EventEditPart extends ShapeNodeEditPart {
 		}
 
 	}
-	
+
 	// Open the properties view, when the user has double-clicked on the node.
 	public void performRequest(Request req) {
 

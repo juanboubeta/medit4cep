@@ -1,6 +1,14 @@
-/*
+/*******************************************************************************
+ * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
  * 
- */
+ * Contributors:
+ *     Juan Boubeta-Puig - modifications marked as @generated NOT
+ ******************************************************************************/
+
 package eventpattern.diagram.edit.policies;
 
 import java.util.Collections;
@@ -197,9 +205,9 @@ public class EventpatternTextNonResizableEditPolicy extends
 	}
 
 	/**
-	 * @generated
+	 * Override annotation has been removed.
+	 * @generated NOT
 	 */
-	@Override
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
 		refreshFocusFeedback();

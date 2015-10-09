@@ -679,7 +679,7 @@ public class EventPropertyNameEditPart extends CompartmentEditPart implements
 		// Parent should assign one using setLabel() method
 		return null;
 	}
-	
+
 	// Open the properties view, when the user has double-clicked on the node.
 	public void performRequest(Request req) {
 
@@ -701,6 +701,6 @@ public class EventPropertyNameEditPart extends CompartmentEditPart implements
 				e.printStackTrace();
 			}
 		}
-	}	
+	}
 
 }

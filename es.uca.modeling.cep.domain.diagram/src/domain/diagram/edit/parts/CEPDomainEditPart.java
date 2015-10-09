@@ -103,7 +103,7 @@ public class CEPDomainEditPart extends DiagramEditPart {
 				});
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
-	
+
 	// Open the properties view, when the user has double-clicked on the node.
 	public void performRequest(Request req) {
 
@@ -125,6 +125,6 @@ public class CEPDomainEditPart extends DiagramEditPart {
 				e.printStackTrace();
 			}
 		}
-	}	
+	}
 
 }
