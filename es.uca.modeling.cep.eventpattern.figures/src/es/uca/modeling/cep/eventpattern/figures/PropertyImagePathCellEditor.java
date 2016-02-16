@@ -27,11 +27,23 @@ public class PropertyImagePathCellEditor extends DialogCellEditor  {
 		    
 		    FileDialog dialog = new FileDialog(cellEditorWindow.getShell(), SWT.OPEN);
 			dialog.setText("Select Image");
-			dialog.setFilterExtensions(new String[] { "*.bmp; *.gif; *.ico; *.jpg; *.jpeg; *.png", "*.bmp", "*.gif", "*.ico", "*.jpg; *.jpeg", "*.png" });
+			dialog.setFilterExtensions(new String[] { "*.bmp;*.gif;*.ico;*.jpg;*.jpeg;*.png", "*.bmp", "*.gif", "*.ico", "*.jpg; *.jpeg", "*.png" });
 			dialog.setFilterNames(new String[] { "Image Files", "BMP Images (*.bmp)", "GIF Images (*.gif)", "ICO Icons (*.ico)", "JPEG Images (*.jpg, *.jpeg)", "PNG Images (*.png)" });
 			dialog.open();
-			if (dialog.getFileName() != null && !dialog.getFileName().equals(""))
-				return dialog.getFilterPath() + "\\" + dialog.getFileName();
+			
+			String path = dialog.getFilterPath();
+			String fileName = dialog.getFileName();
+			String OS = System.getProperty("os.name").toLowerCase();
+			
+			if (fileName != null && !fileName.equals("")) {
+				if (OS.indexOf("win") >= 0) {
+					return path + "\\" + fileName;
+				}
+				else {
+					return path + "/" + fileName;
+				}
+			}
+			
 			return getValue();
 	  }
 

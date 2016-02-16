@@ -314,6 +314,11 @@ public class ExportDomainHandler extends AbstractHandler {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		String OS = System.getProperty("os.name").toLowerCase();
+		if (OS.indexOf("win") >= 0) {
+			zipPath = zipPath.replace("/", "\\");
+		}
 			
 		MessageDialog.openInformation(shell, "Export CEP Domain", "Domain '" + domainName + 
 				"' has been exported to " + zipPath);

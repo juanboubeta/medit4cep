@@ -52,8 +52,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import domain.Event;
-import domain.EventProperty;
 import eventpattern.ComplexEvent;
 import eventpattern.ComplexEventProperty;
 import eventpattern.diagram.status.EventPatternsStatus;
@@ -196,6 +194,7 @@ public class ExportEventPatternsHandler extends AbstractHandler {
 				else if (!file.isDirectory() && file.getName().matches(".+domain_diagram")) {
 					
 					File newfile = new File(tempDirPath + "domain/" + file.getName());
+					newfile.getParentFile().mkdirs();
 				
 					URL diagramUrl = new URL(file.toURI().toString());   
 		            InputStream inputStream = diagramUrl.openConnection().getInputStream();
@@ -216,7 +215,7 @@ public class ExportEventPatternsHandler extends AbstractHandler {
 				}
 			}
 			
-			
+
 			// 3º Export complex events
 			
 			if (complexEventProject.exists()) {
@@ -305,6 +304,7 @@ public class ExportEventPatternsHandler extends AbstractHandler {
 					else if (!file.isDirectory() && file.getName().matches(".+domain_diagram")) {
 						
 						File newfile = new File(tempDirPath + domainName + "_complex_events/" + file.getName());
+						newfile.getParentFile().mkdirs();
 					
 						URL diagramUrl = new URL(file.toURI().toString());   
 			            InputStream inputStream = diagramUrl.openConnection().getInputStream();
@@ -410,6 +410,7 @@ public class ExportEventPatternsHandler extends AbstractHandler {
 				else if (!file.isDirectory() && file.getName().matches(".+pattern_diagram")) {
 					
 					File newfile = new File(tempDirPath + domainName + "_patterns/" + file.getName());
+					newfile.getParentFile().mkdirs();
 				
 					URL diagramUrl = new URL(file.toURI().toString());   
 		            InputStream inputStream = diagramUrl.openConnection().getInputStream();
@@ -455,6 +456,10 @@ public class ExportEventPatternsHandler extends AbstractHandler {
 			}
 			tempDir.delete();
 				
+			String OS = System.getProperty("os.name").toLowerCase();
+			if (OS.indexOf("win") >= 0) {
+				zipPath = zipPath.replace("/", "\\");
+			}
 			
 			MessageDialog.openInformation(shell, "Export Event Patterns", "The event patterns of domain '" + domainName + 
 					"' have been exported to " + zipPath);

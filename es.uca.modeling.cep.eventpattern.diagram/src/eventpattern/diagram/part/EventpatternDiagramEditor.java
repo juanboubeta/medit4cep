@@ -120,12 +120,12 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements
 	// It is called every time that a diagram is open using EventpatternDiagramEditorUtil.openDiagram(resource)
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 
-		System.out.println("A new palette has been created.");
+		// System.out.println("A new palette has been created.");
 
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
 
-		System.out.println("this.getTitle(): " + this.getTitle()); // returns xxx.pattern_diagram
-		System.out.println("this.getTitleToolTip(): " + this.getTitleToolTip()); // returns projectName/xxx.pattern_diagram
+		// System.out.println("this.getTitle(): " + this.getTitle()); // returns xxx.pattern_diagram
+		// System.out.println("this.getTitleToolTip(): " + this.getTitleToolTip()); // returns projectName/xxx.pattern_diagram
 
 		EventPatternsStatus.setActivePatternName(this.getTitle().replace(
 				".pattern_diagram", ""));
