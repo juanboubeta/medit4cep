@@ -113,7 +113,7 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 		adapterFactory = createAdapterFactory();
 
 		// Added 
-		System.out.println("Plug-in is started.");
+		System.out.println("Editor is started.");
 
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace()
 				.getRoot();

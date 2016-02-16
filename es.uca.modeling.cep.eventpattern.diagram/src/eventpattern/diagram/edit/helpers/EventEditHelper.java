@@ -222,7 +222,7 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 					String toolName = (String) params
 							.get("clickedComplexEventTool");
 
-					if (toolName != null) {
+					if (toolName != null && domainName != null) {
 						eventpattern.Event customEvent = (eventpattern.Event) o;
 						customEvent.setTypeName(toolName);
 
@@ -310,7 +310,7 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 							.get("clickedComplexEventTool");
 					String patternName = (String) params.get("patternName");
 
-					if (toolName != null && patternName != null) {
+					if (toolName != null && patternName != null && domainName != null) {
 						eventpattern.Event customEvent = (eventpattern.Event) o;
 						customEvent.setTypeName(toolName);
 

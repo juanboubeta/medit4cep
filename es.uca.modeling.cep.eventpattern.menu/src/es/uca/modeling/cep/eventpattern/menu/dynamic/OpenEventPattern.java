@@ -45,55 +45,58 @@ public class OpenEventPattern extends ContributionItem {
 		
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 		String domainName = EventPatternsStatus.getDomainName();
-		final IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
-					
+		
 		try {
 			
-			if (!patternProject.exists()) {
-				patternProject.create(null);
-			}
-							
-			// Open if necessary
-			if (!patternProject.isOpen()) {
-				patternProject.open(null);
-			}
+			if (domainName != null) {
 			
-			File currentDir = new File(patternProject.getLocationURI()); 
-			File[] files = currentDir.listFiles();
-			String fileName; 
-			int menuPos = 0;
-						
-			for (final File file : files) {
+				final IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
 				
-				fileName = file.getName();
-													
-				if (!file.isDirectory() && fileName.matches(".+pattern_diagram")) {	
-			
-					// Create the menu item
-					MenuItem menuItem = new MenuItem(menu, SWT.CHECK, menuPos);
-					menuItem.setText(fileName.replace(".pattern_diagram", ""));
-					
-					menuItem.addSelectionListener(new SelectionAdapter() {
-						public void widgetSelected(SelectionEvent e) {
-							
-							URI diagramUri = URI.createPlatformResourceURI(patternProject
-									.getFile(file.getName()).getFullPath().toString(), false);
-							
-							ResourceSet resourceSet = new ResourceSetImpl();
-							Resource diagramResource = resourceSet.getResource(diagramUri, true);
-							
-							try {
-								EventpatternDiagramEditorUtil.openDiagram(diagramResource);
-							} catch (PartInitException e1) {
-								e1.printStackTrace();
-							}		
-						}
-					});
-					
-					menuPos++;					
+				if (!patternProject.exists()) {
+					patternProject.create(null);
 				}
-			}				
-
+								
+				// Open if necessary
+				if (!patternProject.isOpen()) {
+					patternProject.open(null);
+				}
+				
+				File currentDir = new File(patternProject.getLocationURI()); 
+				File[] files = currentDir.listFiles();
+				String fileName; 
+				int menuPos = 0;
+							
+				for (final File file : files) {
+					
+					fileName = file.getName();
+														
+					if (!file.isDirectory() && fileName.matches(".+pattern_diagram")) {	
+				
+						// Create the menu item
+						MenuItem menuItem = new MenuItem(menu, SWT.CHECK, menuPos);
+						menuItem.setText(fileName.replace(".pattern_diagram", ""));
+						
+						menuItem.addSelectionListener(new SelectionAdapter() {
+							public void widgetSelected(SelectionEvent e) {
+								
+								URI diagramUri = URI.createPlatformResourceURI(patternProject
+										.getFile(file.getName()).getFullPath().toString(), false);
+								
+								ResourceSet resourceSet = new ResourceSetImpl();
+								Resource diagramResource = resourceSet.getResource(diagramUri, true);
+								
+								try {
+									EventpatternDiagramEditorUtil.openDiagram(diagramResource);
+								} catch (PartInitException e1) {
+									e1.printStackTrace();
+								}		
+							}
+						});
+						
+						menuPos++;					
+					}
+				}				
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
