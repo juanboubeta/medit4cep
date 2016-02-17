@@ -56,7 +56,16 @@ public class ImportEventPatternsHandler extends AbstractHandler {
 			
 		    FileDialog dialog = new FileDialog(shell, SWT.OPEN);
 			dialog.setText("Select the Event Patterns to be imported.");
-			dialog.setFilterExtensions(new String[] { "*_patterns.zip" });
+			
+			String OS = System.getProperty("os.name").toLowerCase();
+			
+			if (OS.indexOf("mac") >= 0) {
+				dialog.setFilterExtensions(new String[] { "*.zip" });
+			}
+			else {
+				dialog.setFilterExtensions(new String[] { "*_patterns.zip" });
+			}			
+			
 			dialog.setFilterNames(new String[] { "Event Patterns archive (*_patterns.zip)" });
 			dialog.open();
 	
