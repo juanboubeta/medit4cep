@@ -18,9 +18,12 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -30,6 +33,7 @@ import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
 
@@ -53,11 +57,53 @@ public class NewEventPatternHandler extends AbstractHandler {
 		try {
 			
 			if (!domainProject.exists()) {
-	        	MessageDialog.openError(shell, "New Event Pattern", "A domain must be previously created or imported.");
+	        	MessageDialog.openError(shell, "New Event Pattern", "A CEP domain must be previously created or imported.");
 	        	return null;	
 			}
 			else {
+				
+				// Check if there are some problems which must be solved before creating a new event pattern.
+							
+				// 1º Obtain the active editor's diagram
+				
+				IEditorPart ieditorpart = HandlerUtil.getActiveEditor(event); 
+				
+		        if (ieditorpart == null) {
+		        	OpenDomainHandler domainHandler = new OpenDomainHandler();
+					domainHandler.execute(event);
+					ieditorpart = HandlerUtil.getActiveEditor(event); 
+		        }
+		          
+		        // 2º Save all changes made in the editor       
+		        ieditorpart.doSave(new NullProgressMonitor());
+		        
+				// 3º Check if there are some problems
+			
+				IResource ir = (IResource) HandlerUtil.getActiveEditorInput(event).getAdapter(IResource.class);
+		        IMarker[] problems = null;
+		        int depth = IResource.DEPTH_INFINITE;
+			
+				try {
+					problems = ir.findMarkers(IMarker.PROBLEM, true, depth);
+				} catch (CoreException e1) {
+					e1.printStackTrace();
+				}
+				
+				// problems.length is the number of errors of the active editor (not total errors).
+				if (problems.length > 0) {
+					MessageDialog.openError(shell, "New Event Pattern", "There are some problems that must be solved before creating a new event pattern.");
 					
+					try {
+						HandlerUtil.getActiveWorkbenchWindowChecked(event).getActivePage().showView("org.eclipse.ui.views.ProblemView");
+					} catch (PartInitException e) {
+						e.printStackTrace();
+					}					
+					
+		        	return null; 
+				}			
+				
+				// If there are no errors. 
+				
 				NewPatternDialog dialog = new NewPatternDialog(shell);
 				dialog.create();
 				

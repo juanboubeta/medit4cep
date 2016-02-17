@@ -39,8 +39,6 @@ import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import domain.Event;
-import domain.EventProperty;
 import eventpattern.ComplexEvent;
 import eventpattern.ComplexEventProperty;
 import eventpattern.diagram.status.EventPatternsStatus;

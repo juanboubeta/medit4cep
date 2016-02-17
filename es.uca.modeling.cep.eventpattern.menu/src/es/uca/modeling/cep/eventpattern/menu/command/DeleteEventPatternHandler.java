@@ -50,37 +50,42 @@ public class DeleteEventPatternHandler extends AbstractHandler {
 		
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-			
-		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
 		
-		if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
+		try {
 			
-			MessageDialog.openError(shell, "Delete Event Pattern", "An event pattern must be open.");
-			return null;
-		}
-
-		if (MessageDialog.openConfirm(shell, "Confirm", "Are you sure that you want to permanently delete this pattern?")) {
-						
-			// Obtain the active editor's diagram
-	        EventpatternDiagramEditor patternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
-	        
-	        if (patternDiagramEditor == null || !patternDiagramEditor.getTitle().endsWith("pattern_diagram")) {
-	        	MessageDialog.openError(shell, "Delete Event Pattern", "An event pattern must be open.");
-	        	return null; 
-	        }
-	        
-			String domainName = EventPatternsStatus.getDomainName();
-			String activePatternName = patternDiagramEditor.getTitle().replace(".pattern_diagram","");
-					
+			Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
+			
+			String domainName = EventPatternsStatus.getDomainName();				
 			IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-			IProject complexEventProject = myWorkspaceRoot.getProject(domainName + "_complex_events");
 			IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
-			IFile complexEventFile = complexEventProject.getFile(domainName + "_complex_events" + ".domain_diagram");
-			IFile activePatternModelFile = patternProject.getFile(activePatternName + ".pattern");
-			IFile activePatternDiagramFile = patternProject.getFile(activePatternName + ".pattern_diagram");	
-						
-			try {
+							
+			if (!patternProject.exists()) {
+	        	MessageDialog.openError(shell, "Delete Event Pattern", "There are no event patterns to be deleted.");
+	        	return null;	
+			}		
+			
+			if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
 				
+				MessageDialog.openError(shell, "Delete Event Pattern", "An event pattern must be open.");
+				return null;
+			}
+	
+			if (MessageDialog.openConfirm(shell, "Confirm", "Are you sure that you want to permanently delete this pattern?")) {
+							
+				// Obtain the active editor's diagram
+		        EventpatternDiagramEditor patternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
+		        
+		        if (patternDiagramEditor == null || !patternDiagramEditor.getTitle().endsWith("pattern_diagram")) {
+		        	MessageDialog.openError(shell, "Delete Event Pattern", "An event pattern must be open.");
+		        	return null; 
+		        }
+		        
+				String activePatternName = patternDiagramEditor.getTitle().replace(".pattern_diagram","");
+				IProject complexEventProject = myWorkspaceRoot.getProject(domainName + "_complex_events");
+				IFile complexEventFile = complexEventProject.getFile(domainName + "_complex_events" + ".domain_diagram");
+				IFile activePatternModelFile = patternProject.getFile(activePatternName + ".pattern");
+				IFile activePatternDiagramFile = patternProject.getFile(activePatternName + ".pattern_diagram");	
+												
 				// Open if necessary
 				if (!patternProject.isOpen()) {
 					patternProject.open(null);
@@ -172,12 +177,7 @@ public class DeleteEventPatternHandler extends AbstractHandler {
 							getFile(domainName + "_complex_events" + ".domain").getFullPath().toString(), false);		
 				    
 				    Resource complexEventModelResource = resourceSet.getResource(complexEventModelUri, true);
-				    
-					//URI complexEventDiagramUri = URI.createPlatformResourceURI(complexEventProject.
-					//		getFile(domainName + "_complex_events" + ".domain_diagram").getFullPath().toString(), false);		
-				    
-				    //Resource complexEventDiagramResource = resourceSet.getResource(complexEventDiagramUri, true);
-				    
+				    				    
 				    CEPDomain domainModel = (CEPDomain) complexEventModelResource.getContents().get(0);
 				    				    
 				    // Delete the complex event (corresponding to the pattern to be deleted) from the complex event model
@@ -220,10 +220,10 @@ public class DeleteEventPatternHandler extends AbstractHandler {
 				MessageDialog.openInformation(shell, "Delete Event Pattern", 
 		        		"The pattern has been deleted correctly.");
 				
-			} catch (CoreException | IOException e) {
-				e.printStackTrace();
 			}
-			
+				
+		} catch (CoreException | IOException e) {
+			e.printStackTrace();
 		}
 		
 		return null; 	

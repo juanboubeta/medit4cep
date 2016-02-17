@@ -26,25 +26,24 @@ public class DeleteDomainHandler extends AbstractHandler {
 	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-			
-		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
-		
-		if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("domain.diagram.part.DomainDiagramEditor")) {
-			
-			MessageDialog.openError(shell, "Delete CEP Domain", "The domain must be open.");
-			return null;
-		}
-		
-		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();		
-		IProject domainProject = myWorkspaceRoot.getProject("domain");
 		
 		try {
+			
+			Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
+			IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();		
+			IProject domainProject = myWorkspaceRoot.getProject("domain");
 			
 			if (!domainProject.exists()) {
 	        	MessageDialog.openError(shell, "Delete CEP Domain", "Domain does not exist.");
 	        	return null;	
 			}
 			else {
+				
+				if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("domain.diagram.part.DomainDiagramEditor")) {
+					
+					MessageDialog.openError(shell, "Delete CEP Domain", "The domain must be open.");
+					return null;
+				}
 			
 				// Open if necessary
 				if (!domainProject.isOpen()) {

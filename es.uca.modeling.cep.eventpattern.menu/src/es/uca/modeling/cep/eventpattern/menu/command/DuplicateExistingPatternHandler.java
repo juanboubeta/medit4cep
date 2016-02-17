@@ -49,43 +49,49 @@ public class DuplicateExistingPatternHandler extends AbstractHandler {
 		
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		
-		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
-		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 				
-		if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
+		try {		
+		
+			Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
+			
+			String domainName = EventPatternsStatus.getDomainName();
+			IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+			IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
 						
-			MessageDialog.openError(shell, "Duplicate Existing Pattern", "An event pattern must be open.");
-			return null;
-		}
-		
-		// Obtain the active editor's diagram
-        EventpatternDiagramEditor sourcePatternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
-        String sourcePatternName = sourcePatternDiagramEditor.getTitle().replace(".pattern_diagram","");
-
-        if (sourcePatternDiagramEditor == null || !sourcePatternDiagramEditor.getTitle().endsWith("pattern_diagram")) {
-        	MessageDialog.openError(shell, "Duplicate Existing Pattern", "An event pattern must be open.");
-        	return null; 
-        }		
-            
-        DuplicateExistingPatternDialog dialog = new DuplicateExistingPatternDialog(shell);
-		dialog.create();
-		
-		if (dialog.open() != Window.OK) {
-			return null;
-		}
-		
-		String targetPatternName = dialog.getPatternName();
-		String domainName = EventPatternsStatus.getDomainName();
-		
-		IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
-		
-        String sourcePatternDiagramPath = "/" + sourcePatternDiagramEditor.getTitleToolTip();
-        String sourcePatternPath = sourcePatternDiagramPath.replace("_diagram", "");
-        String targetPatternDiagramPath = sourcePatternDiagramPath.replace(sourcePatternName, targetPatternName);
-        String targetPatternPath = targetPatternDiagramPath.replace("_diagram", "");
+			if (!patternProject.exists()) {
+	        	MessageDialog.openError(shell, "Duplicate Existing Pattern", "There are no event patterns to be duplicated.");
+	        	return null;	
+			}
+					
+			if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
+							
+				MessageDialog.openError(shell, "Duplicate Existing Pattern", "An event pattern must be open.");
+				System.out.println("DuplicateExistingHandler-2: " + domainName);
+				return null;
+			}
+			
+			// Obtain the active editor's diagram
+	        EventpatternDiagramEditor sourcePatternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
+	        String sourcePatternName = sourcePatternDiagramEditor.getTitle().replace(".pattern_diagram","");
+	
+	        if (sourcePatternDiagramEditor == null || !sourcePatternDiagramEditor.getTitle().endsWith("pattern_diagram")) {
+	        	MessageDialog.openError(shell, "Duplicate Existing Pattern", "An event pattern must be open.");
+	        	return null; 
+	        }		
+	            
+	        DuplicateExistingPatternDialog dialog = new DuplicateExistingPatternDialog(shell);
+			dialog.create();
+			
+			if (dialog.open() != Window.OK) {
+				return null;
+			}
+			
+			String targetPatternName = dialog.getPatternName();			
+	        String sourcePatternDiagramPath = "/" + sourcePatternDiagramEditor.getTitleToolTip();
+	        String sourcePatternPath = sourcePatternDiagramPath.replace("_diagram", "");
+	        String targetPatternDiagramPath = sourcePatternDiagramPath.replace(sourcePatternName, targetPatternName);
+	        String targetPatternPath = targetPatternDiagramPath.replace("_diagram", "");
         
-		try {
 			// Open if necessary
 			if (!patternProject.isOpen()) {
 				patternProject.open(null);
@@ -165,7 +171,7 @@ public class DuplicateExistingPatternHandler extends AbstractHandler {
 			else {
 				MessageDialog.openError(shell, "Error", "The pattern '" + targetPatternName + "' already exists.");
 	        	return null;
-			}
+			}System.out.println("DuplicateExistingHandler-3: " + domainName);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

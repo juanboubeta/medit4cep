@@ -21,7 +21,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -45,85 +44,51 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
+			
+		try {		
+			
+			Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
+			
+			String domainName = EventPatternsStatus.getDomainName();				
+			IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+			IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
+							
+			if (!patternProject.exists()) {
+	        	MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "There are no event patterns to be transformed into code.");
+	        	return null;	
+			}		
 		
-		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
-		
-		if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
-						
-			MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "An event pattern must be open.");
-			return null;
-		}
-		
-		// 1º Obtain the active editor's diagram
-        EventpatternDiagramEditor patternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
-        
-        if (patternDiagramEditor == null || !patternDiagramEditor.getTitle().endsWith("pattern_diagram")) {
-        	MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "An event pattern must be open.");
-        	return null; 
-        }
-        
-        // 2º Save all changes made in the editor       
-        patternDiagramEditor.doSave(new NullProgressMonitor());
-        
-		// 3º Check if there are some problems that must be solved
-                
-		IResource ir = (IResource) HandlerUtil.getActiveEditorInput(event).getAdapter(IResource.class);
-        IMarker[] problems = null;
-        int depth = IResource.DEPTH_INFINITE;
-	
-		try {
+			if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
+							
+				MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "An event pattern must be open.");
+				return null;
+			}
+			
+			// 1º Obtain the active editor's diagram
+	        EventpatternDiagramEditor patternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
+	        
+	        if (patternDiagramEditor == null || !patternDiagramEditor.getTitle().endsWith("pattern_diagram")) {
+	        	MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "An event pattern must be open.");
+	        	return null; 
+	        }
+	        
+	        // 2º Save all changes made in the editor       
+	        patternDiagramEditor.doSave(new NullProgressMonitor());
+	        
+			// 3º Check if there are some problems that must be solved
+	                
+			IResource ir = (IResource) HandlerUtil.getActiveEditorInput(event).getAdapter(IResource.class);
+	        IMarker[] problems = null;
+	        int depth = IResource.DEPTH_INFINITE;
 			problems = ir.findMarkers(IMarker.PROBLEM, true, depth);
-		} catch (CoreException e1) {
-			e1.printStackTrace();
-		}
-		
-		// problems.length is the number of errors of the active editor (not total errors).
-		if (problems.length > 0) {
-			MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "There are some problems that must be solved before generating and deploying the code.");
-        	return null; 
-		}
-	 		
-		String domainName = EventPatternsStatus.getDomainName();
-		String activePatternName = patternDiagramEditor.getTitle().replace(".pattern_diagram","");
-		
-		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-		IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
-		
-		// 4º Select the directory to generate the event pattern. 
-		// It should be the 'new-eventpattern' directory in the Mule project where the pattern will be deployed.
-		
-		if (EventPatternsStatus.getGeneratedEventPatternPath() == null) {
-			String selectedDir = null; 
-		    DirectoryDialog dirDialog = new DirectoryDialog(shell);
-		    dirDialog.setText("Choose a folder where to save the generated event pattern code.");
-		    selectedDir = dirDialog.open();
-	    	    
-		    if (selectedDir == null) {
-	        	return null; 	    	
-		    }
-		    else {
-		    	EventPatternsStatus.setGeneratedEventPatternPath(selectedDir);
-		    }
-		}
-		
-		// 5º Select the directory to generate the action for event pattern.
-		// It should be the 'new-action' directory in the Mule project where the action will be deployed.
-		
-		if (EventPatternsStatus.getGeneratedActionPath() == null) {
-			String selectedDir = null; 
-		    DirectoryDialog dirDialog = new DirectoryDialog(shell);
-		    dirDialog.setText("Choose a folder where to save the generated action code.");
-		    selectedDir = dirDialog.open();
-	    	    
-		    if (selectedDir == null) {
-	        	return null; 	    	
-		    }
-		    else {
-		    	EventPatternsStatus.setGeneratedActionPath(selectedDir);
-		    }
-		}		
 				
-		try {
+			// problems.length is the number of errors of the active editor (not total errors).
+			if (problems.length > 0) {
+				MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "There are some problems that must be solved before generating and deploying the code.");
+	        	return null; 
+			}
+		 	
+			String activePatternName = patternDiagramEditor.getTitle().replace(".pattern_diagram","");
 			
 			// Open if necessary
 			if (!patternProject.isOpen()) {
@@ -136,7 +101,41 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 		    ResourceSet resourceSet = new ResourceSetImpl(); 
 		   	Resource patternModelResource = resourceSet.getResource(activePatternModelUri, true);
 		   				
-		    CEPEventPattern eventPatternModel = (CEPEventPattern) patternModelResource.getContents().get(0);	
+		    CEPEventPattern eventPatternModel = (CEPEventPattern) patternModelResource.getContents().get(0);
+			
+			// 4º Select the directory to generate the event pattern. 
+			// It should be the 'new-eventpattern' directory in the Mule project where the pattern will be deployed.
+			
+			if (EventPatternsStatus.getGeneratedEventPatternPath() == null) {
+				String selectedDir = null; 
+			    DirectoryDialog dirDialog = new DirectoryDialog(shell);
+			    dirDialog.setText("Choose a folder where to save the generated event pattern code.");
+			    selectedDir = dirDialog.open();
+		    	    
+			    if (selectedDir == null) {
+		        	return null; 	    	
+			    }
+			    else {
+			    	EventPatternsStatus.setGeneratedEventPatternPath(selectedDir);
+			    }
+			}
+			
+			// 5º Select the directory to generate the actions for the event pattern, if there are actions.
+			// It should be the 'new-action' directory in the Mule project where the actions will be deployed.
+			
+			if (!eventPatternModel.getActions().isEmpty() && EventPatternsStatus.getGeneratedActionPath() == null) {
+				String selectedDir = null; 
+			    DirectoryDialog dirDialog = new DirectoryDialog(shell);
+			    dirDialog.setText("Choose a folder where to save the generated action code.");
+			    selectedDir = dirDialog.open();
+		    	    
+			    if (selectedDir == null) {
+		        	return null; 	    	
+			    }
+			    else {
+			    	EventPatternsStatus.setGeneratedActionPath(selectedDir);
+			    }
+			}			
 		    
 		    // 6º Transform the event pattern (except to actions) to EPL code 
 		    
@@ -145,15 +144,7 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 			sourceModel.setStoredOnDisposal(false);
 			sourceModel.setReadOnLoad(true);
 			
-			final String patternToEplPath = "/egl/eventpattern-to-epl.egl";
-			
-			/*
-			final Path pathToModel = new Path(patternModelResource.getURI().toPlatformString(true));
-			final IFile ifModel = ResourcesPlugin.getWorkspace().getRoot().getFile(pathToModel);
-			final File fModel = ifModel.getLocation().toFile().getCanonicalFile();
-			final File outputFile = new File(fModel.getParentFile(), "event-pattern-code.epl");
-			*/
-			
+			final String patternToEplPath = "/egl/eventpattern-to-epl.egl";			
 			final File outputPatternFile = new File(EventPatternsStatus.getGeneratedEventPatternPath(), 
 					eventPatternModel.getPatternName() + ".epl");		
 			System.out.println("\noutputPatternFile.getAbsolutePath(): " + outputPatternFile.getAbsolutePath());
@@ -163,7 +154,7 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 		    // 7º Transform the actions for the event pattern to Mule flow code 
 			
 			if (!eventPatternModel.getActions().isEmpty()) { // There are actions for the event pattern
-
+	
 				final Model sourceModel2 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
 				sourceModel2.setStoredOnDisposal(false);
 				sourceModel2.setReadOnLoad(true);
@@ -176,14 +167,13 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 				TransformEventPatternToCode.executeEGL(sourceModel2, eventPatternModel, patternToActionPath, outputActionFile);
 			}
 			
+			MessageDialog.openInformation(shell, "Generate and Deploy Pattern Code", 
+		    		"The event pattern has been transformed into code and deployed.");	
+			
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-	    
-		MessageDialog.openInformation(shell, "Generate and Deploy Pattern Code", 
-	    		"The event pattern has been transformed into code and deployed.");	
 				
 		return null;
-		
 	}
 }

@@ -34,6 +34,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import domain.CEPDomain;
 import domain.diagram.part.DomainDiagramEditorUtil;
 import es.uca.modeling.cep.eventpattern.menu.dialog.NewDomainDialog;
+import eventpattern.diagram.status.EventPatternsStatus;
 
 
 public class NewDomainHandler extends AbstractHandler {
@@ -61,7 +62,7 @@ public class NewDomainHandler extends AbstractHandler {
 					
 					String domainName = dialog.getDomainName();
 					String domainDescription = dialog.getDomainDescription();
-									
+					EventPatternsStatus.setDomainName(domainName);				
 					domainProject.create(null);
 					
 					// Open if necessary

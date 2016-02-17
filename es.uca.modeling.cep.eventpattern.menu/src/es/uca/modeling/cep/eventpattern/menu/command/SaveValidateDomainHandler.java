@@ -45,16 +45,7 @@ public class SaveValidateDomainHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
-		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
-		
-		/* It is checked in SaveValidateHandler.java
-		if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("domain.diagram.part.DomainDiagramEditor")) {
-						
-			MessageDialog.openError(shell, "Save and Validate CEP Domain", "The domain must be open.");
-			return null;
-		}
-		*/
-		
+		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();		
 		
 		// 1º Obtain the active editor's diagram
 		

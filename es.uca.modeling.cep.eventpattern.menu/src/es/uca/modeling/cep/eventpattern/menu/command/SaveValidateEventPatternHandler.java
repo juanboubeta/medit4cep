@@ -13,7 +13,6 @@ package es.uca.modeling.cep.eventpattern.menu.command;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Iterator;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -41,7 +40,6 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import domain.CEPDomain;
 import domain.DomainFactory;
 import domain.DomainPackage;
-import domain.EventProperty;
 import domain.diagram.part.DomainDiagramEditorUtil;
 import eventpattern.ComplexEvent;
 import eventpattern.ComplexEventProperty;
@@ -56,16 +54,7 @@ public class SaveValidateEventPatternHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
-		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
-		
-		/* It is checked in SaveValidateHandler.java
-		if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
-						
-			MessageDialog.openError(shell, "Save and Validate Event Pattern", "An event pattern must be open.");
-			return null;
-		}
-		*/
-		
+		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();	
 		
 		// 1º Obtain the active editor's diagram
         EventpatternDiagramEditor patternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
