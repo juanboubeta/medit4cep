@@ -76,7 +76,7 @@ public class ImportDomainHandler extends AbstractHandler {
 				}
 				else {
 					dialog.setFilterExtensions(new String[] { "*_domain.zip" });
-				}
+				} 
 				
 				dialog.setFilterNames(new String[] { "Domain archive (*_domain.zip)" });
 				dialog.open();
