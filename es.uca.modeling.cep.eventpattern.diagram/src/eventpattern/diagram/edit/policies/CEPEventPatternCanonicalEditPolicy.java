@@ -136,6 +136,7 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 		case EventEditPart.VISUAL_ID:
 		case EventPropertyEditPart.VISUAL_ID:
 		case ValueEditPart.VISUAL_ID:
+		case GroupByEditPart.VISUAL_ID:
 		case WithinTimerEditPart.VISUAL_ID:
 		case TimeIntervalEditPart.VISUAL_ID:
 		case TimeScheduleEditPart.VISUAL_ID:
@@ -504,6 +505,13 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ValueEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(EventpatternDiagramUpdater.getValue_2029ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case GroupByEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(EventpatternDiagramUpdater.getGroupBy_2040ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -959,6 +967,13 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 		case Value3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(EventpatternDiagramUpdater.getValue_3055ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case GroupBy2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(EventpatternDiagramUpdater.getGroupBy_3060ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

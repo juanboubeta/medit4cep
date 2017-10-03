@@ -95,6 +95,15 @@ public interface EventpatternFactory extends EFactory
   BatchingTimeInterval createBatchingTimeInterval();
 
   /**
+	 * Returns a new object of class '<em>Group By</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Group By</em>'.
+	 * @generated
+	 */
+	GroupBy createGroupBy();
+
+		/**
 	 * Returns a new object of class '<em>Every</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

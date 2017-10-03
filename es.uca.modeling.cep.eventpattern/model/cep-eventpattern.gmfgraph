@@ -87,6 +87,11 @@
         <accessors accessor="getFigureBatchingTimeIntervalLabelFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.0"/>
         <accessors accessor="getBatchingTimeIntervalEventPatternConditionsCompartmentFigure" figure="/0/@figures.0/@descriptors.5/@actualFigure/@children.1"/>
       </descriptors>
+      <descriptors name="GroupByFigure">
+        <actualFigure xsi:type="gmfgraph:SVGFigure" name="GroupByFigure" documentURI="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GroupBy.svg">
+          <preferredSize dx="30" dy="30"/>
+        </actualFigure>
+      </descriptors>
       <descriptors name="EveryFigure">
         <actualFigure xsi:type="gmfgraph:SVGFigure" name="EveryFigure" documentURI="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Every.svg">
           <preferredSize dx="30" dy="30"/>
@@ -110,7 +115,7 @@
             <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
           </children>
         </actualFigure>
-        <accessors accessor="getFigureRepeatLabelFigure" figure="/0/@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+        <accessors accessor="getFigureRepeatLabelFigure" figure="/0/@figures.0/@descriptors.9/@actualFigure/@children.0"/>
       </descriptors>
       <descriptors name="UntilFigure">
         <actualFigure xsi:type="gmfgraph:SVGFigure" name="UntilFigure" documentURI="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Until.svg">
@@ -130,7 +135,7 @@
             <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
           </children>
         </actualFigure>
-        <accessors accessor="getFigureRangeLabelFigure" figure="/0/@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+        <accessors accessor="getFigureRangeLabelFigure" figure="/0/@figures.0/@descriptors.11/@actualFigure/@children.0"/>
       </descriptors>
       <descriptors name="FollowedByFigure">
         <actualFigure xsi:type="gmfgraph:SVGFigure" name="FollowedByFigure" documentURI="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/FollowedBy.svg">
@@ -249,8 +254,8 @@
           </children>
           <children xsi:type="gmfgraph:Rectangle" name="WithinTimerWithinTimerElementsCompartmentFigure" outline="false"/>
         </actualFigure>
-        <accessors accessor="getFigureWithinTimerLabelFigure" figure="/0/@figures.0/@descriptors.32/@actualFigure/@children.0"/>
-        <accessors accessor="getWithinTimerWithinTimerElementsCompartmentFigure" figure="/0/@figures.0/@descriptors.32/@actualFigure/@children.1"/>
+        <accessors accessor="getFigureWithinTimerLabelFigure" figure="/0/@figures.0/@descriptors.33/@actualFigure/@children.0"/>
+        <accessors accessor="getWithinTimerWithinTimerElementsCompartmentFigure" figure="/0/@figures.0/@descriptors.33/@actualFigure/@children.1"/>
       </descriptors>
       <descriptors name="TimeIntervalFigure">
         <actualFigure xsi:type="gmfgraph:SVGFigure" name="TimeIntervalFigure" documentURI="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeInterval.svg">
@@ -279,8 +284,8 @@
           </children>
           <children xsi:type="gmfgraph:Rectangle" name="EventEventPropertiesCompartmentFigure" outline="false"/>
         </actualFigure>
-        <accessors accessor="getFigureEventLabelFigure" figure="/0/@figures.0/@descriptors.37/@actualFigure/@children.0"/>
-        <accessors accessor="getEventEventPropertiesCompartmentFigure" figure="/0/@figures.0/@descriptors.37/@actualFigure/@children.1"/>
+        <accessors accessor="getFigureEventLabelFigure" figure="/0/@figures.0/@descriptors.38/@actualFigure/@children.0"/>
+        <accessors accessor="getEventEventPropertiesCompartmentFigure" figure="/0/@figures.0/@descriptors.38/@actualFigure/@children.1"/>
       </descriptors>
       <descriptors name="EventPropertyFigure">
         <actualFigure xsi:type="gmfgraph:Rectangle" name="EventPropertyFigure">
@@ -293,8 +298,8 @@
           </children>
           <children xsi:type="gmfgraph:Rectangle" name="EventPropertyEventPropertiesCompartmentFigure" outline="false"/>
         </actualFigure>
-        <accessors accessor="getFigureEventPropertyLabelFigure" figure="/0/@figures.0/@descriptors.38/@actualFigure/@children.0"/>
-        <accessors accessor="getEventPropertyEventPropertiesCompartmentFigure" figure="/0/@figures.0/@descriptors.38/@actualFigure/@children.1"/>
+        <accessors accessor="getFigureEventPropertyLabelFigure" figure="/0/@figures.0/@descriptors.39/@actualFigure/@children.0"/>
+        <accessors accessor="getEventPropertyEventPropertiesCompartmentFigure" figure="/0/@figures.0/@descriptors.39/@actualFigure/@children.1"/>
       </descriptors>
       <descriptors name="ValueFigure">
         <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ValueFigure" lineWidth="3">
@@ -305,7 +310,7 @@
             <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
           </children>
         </actualFigure>
-        <accessors accessor="getFigureValueLabelFigure" figure="/0/@figures.0/@descriptors.39/@actualFigure/@children.0"/>
+        <accessors accessor="getFigureValueLabelFigure" figure="/0/@figures.0/@descriptors.40/@actualFigure/@children.0"/>
       </descriptors>
       <descriptors name="EmailFigure">
         <actualFigure xsi:type="gmfgraph:SVGFigure" name="EmailFigure" documentURI="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg">
@@ -335,6 +340,11 @@
     <nodes name="BatchingEventInterval" figure="BatchingEventIntervalFigure"/>
     <nodes name="SlidingTimeInterval" figure="SlidingTimeIntervalFigure"/>
     <nodes name="BatchingTimeInterval" figure="BatchingTimeIntervalFigure"/>
+    <nodes name="GroupBy" figure="GroupByFigure">
+      <facets xsi:type="gmfgraph:DefaultSizeFacet">
+        <defaultSize dx="30" dy="30"/>
+      </facets>
+    </nodes>
     <nodes name="Every" figure="EveryFigure">
       <facets xsi:type="gmfgraph:DefaultSizeFacet">
         <defaultSize dx="30" dy="30"/>
@@ -499,29 +509,30 @@
     <compartments name="BatchingEventIntervalEventPatternConditionsCompartment" figure="BatchingEventIntervalFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.3/@accessors.1"/>
     <compartments name="SlidingTimeIntervalEventPatternConditionsCompartment" figure="SlidingTimeIntervalFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.4/@accessors.1"/>
     <compartments name="BatchingTimeIntervalEventPatternConditionsCompartment" figure="BatchingTimeIntervalFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.5/@accessors.1"/>
-    <compartments name="WithinTimerWithinTimerElementsCompartment" figure="WithinTimerFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.32/@accessors.1"/>
-    <compartments name="EventEventPropertiesCompartment" figure="EventFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.37/@accessors.1"/>
-    <compartments name="EventPropertyEventPropertiesCompartment" figure="EventPropertyFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.38/@accessors.1"/>
+    <compartments name="WithinTimerWithinTimerElementsCompartment" figure="WithinTimerFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.33/@accessors.1"/>
+    <compartments name="EventEventPropertiesCompartment" figure="EventFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.38/@accessors.1"/>
+    <compartments name="EventPropertyEventPropertiesCompartment" figure="EventPropertyFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.39/@accessors.1"/>
     <labels name="ComplexEventLabel" figure="ComplexEventFigure" accessor="/0/@figures.0/@descriptors.0/@accessors.0"/>
     <labels name="ComplexEventPropertyLabel" figure="ComplexEventPropertyFigure" accessor="/0/@figures.0/@descriptors.1/@accessors.0"/>
     <labels name="SlidingEventIntervalLabel" figure="SlidingEventIntervalFigure" accessor="/0/@figures.0/@descriptors.2/@accessors.0"/>
     <labels name="BatchingEventIntervalLabel" figure="BatchingEventIntervalFigure" accessor="/0/@figures.0/@descriptors.3/@accessors.0"/>
     <labels name="SlidingTimeIntervalLabel" figure="SlidingTimeIntervalFigure" accessor="/0/@figures.0/@descriptors.4/@accessors.0"/>
     <labels name="BatchingTimeIntervalLabel" figure="BatchingTimeIntervalFigure" accessor="/0/@figures.0/@descriptors.5/@accessors.0"/>
-    <labels name="RepeatLabel" figure="RepeatFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.8/@accessors.0"/>
-    <labels name="RangeLabel" figure="RangeFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.10/@accessors.0"/>
-    <labels name="WithinTimerLabel" figure="WithinTimerFigure" accessor="/0/@figures.0/@descriptors.32/@accessors.0"/>
+    <labels name="RepeatLabel" figure="RepeatFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.9/@accessors.0"/>
+    <labels name="RangeLabel" figure="RangeFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.11/@accessors.0"/>
+    <labels name="WithinTimerLabel" figure="WithinTimerFigure" accessor="/0/@figures.0/@descriptors.33/@accessors.0"/>
     <labels name="TimeIntervalLabel" figure="TimeIntervalLabelFigure" elementIcon="false"/>
     <labels name="TimeScheduleLabel" figure="TimeScheduleLabelFigure" elementIcon="false"/>
-    <labels name="EventLabel" figure="EventFigure" accessor="/0/@figures.0/@descriptors.37/@accessors.0"/>
-    <labels name="EventPropertyLabel" figure="EventPropertyFigure" accessor="/0/@figures.0/@descriptors.38/@accessors.0"/>
-    <labels name="ValueLabel" figure="ValueFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.39/@accessors.0"/>
+    <labels name="EventLabel" figure="EventFigure" accessor="/0/@figures.0/@descriptors.38/@accessors.0"/>
+    <labels name="EventPropertyLabel" figure="EventPropertyFigure" accessor="/0/@figures.0/@descriptors.39/@accessors.0"/>
+    <labels name="ValueLabel" figure="ValueFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.40/@accessors.0"/>
     <labels name="EmailLabel" figure="EmailLabelFigure" elementIcon="false"/>
     <labels name="LinkLabel" figure="LinkLabelFigure" elementIcon="false">
       <facets xsi:type="gmfgraph:AlignmentFacet"/>
       <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-10" y="-10"/>
     </labels>
   </gmfgraph:Canvas>
+  <gmfgraph:Label name="GroupByLabelFigure" text="GroupBy"/>
   <gmfgraph:Label name="EveryLabelFigure" text="Every"/>
   <gmfgraph:Label name="EveryDistinctLabelFigure" text="EveryDistinct"/>
   <gmfgraph:Label name="UntilLabelFigure" text="Until"/>

@@ -33,6 +33,7 @@ import eventpattern.EveryDistinct;
 import eventpattern.FollowedBy;
 import eventpattern.GreaterEqual;
 import eventpattern.GreaterThan;
+import eventpattern.GroupBy;
 import eventpattern.LessEqual;
 import eventpattern.LessThan;
 import eventpattern.Link;
@@ -258,6 +259,13 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
   private EClass logicalOperatorEClass = null;
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass groupByEClass = null;
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -1213,6 +1221,15 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGroupBy() {
+		return groupByEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -2149,6 +2166,8 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 
 		logicalOperatorEClass = createEClass(LOGICAL_OPERATOR);
 
+		groupByEClass = createEClass(GROUP_BY);
+
 		everyEClass = createEClass(EVERY);
 
 		everyDistinctEClass = createEClass(EVERY_DISTINCT);
@@ -2333,6 +2352,8 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		comparisonOperatorEClass.getESuperTypes().add(this.getConditionOperator());
 		logicalOperatorEClass.getESuperTypes().add(this.getConditionOperator());
 		logicalOperatorEClass.getESuperTypes().add(this.getPatternOperator());
+		groupByEClass.getESuperTypes().add(this.getNaryOperator());
+		groupByEClass.getESuperTypes().add(this.getEventPatternCondition());
 		everyEClass.getESuperTypes().add(this.getUnaryOperator());
 		everyEClass.getESuperTypes().add(this.getPatternOperator());
 		everyDistinctEClass.getESuperTypes().add(this.getNaryOperator());
@@ -2468,6 +2489,8 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		initEClass(comparisonOperatorEClass, ComparisonOperator.class, "ComparisonOperator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(logicalOperatorEClass, LogicalOperator.class, "LogicalOperator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(groupByEClass, GroupBy.class, "GroupBy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(everyEClass, Every.class, "Every", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2643,7 +2666,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 			 "label", "order",
 			 "source", "operand",
 			 "target", "operator",
-			 "source.constraint", "self <> oppositeEnd \r\n\tand ( \r\n\t   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))\r\n\t   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or \r\n\t        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) \r\n\t        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) \r\n\t   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))\r\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) \r\n\t      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) \r\n\t         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) \r\n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        \r\n\t   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) \r\n\t      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  \r\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) \r\n\t      and oppositeEnd.oclIsKindOf(AggregationOperator)) \r\n\t   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   \r\n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))\r\n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))\r\n\t   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) \r\n\t)",
+			 "source.constraint", "self <> oppositeEnd \r\n\tand ( \r\n\t   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))\r\n\t   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or \r\n\t        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) \r\n\t        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) \r\n\t   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))\r\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) \r\n\t      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) \r\n\t         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) \r\n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        \r\n\t   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) \r\n\t      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  \r\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) \r\n\t      and oppositeEnd.oclIsKindOf(AggregationOperator)) \r\n\t   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   \r\n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))\r\n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))\r\n\t   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) \r\n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(GroupBy))\r\n\t)",
 			 "target.constraint", "self <> oppositeEnd",
 			 "source.decoration", "none",
 			 "target.decoration", "arrow",
@@ -2741,6 +2764,19 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 			 "label.view.pattern", "Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",
 			 "tool.name", "Batching Time Interval",
 			 "tool.description", "Add a batching time interval window"
+		   });	
+		addAnnotation
+		  (groupByEClass, 
+		   source, 
+		   new String[] {
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GroupBy.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Group By",
+			 "tool.description", "Add a group-by operator"
 		   });	
 		addAnnotation
 		  (everyEClass, 

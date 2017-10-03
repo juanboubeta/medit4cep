@@ -1,5 +1,5 @@
  /*******************************************************************************
- * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * Copyright (c) 2011, 2017 Juan Boubeta-Puig
  * All rights reserved. This program and the accompanying materials 
  * are made available under the terms of the Eclipse Public License v1.0 
  * which accompanies this distribution, and is available at 
@@ -29,29 +29,31 @@ context CEPEventPattern {
         }
     }
     
+/*    
     constraint HasEventOrDataWindow {
     
         check {
             
             var num : Integer = 0;
              
-       		for (epe : EventPatternElement in self.eventPatternElements) {
-		    	
-	    		if (epe.isTypeOf(Event) or epe.isKindOf(DataWindow))
-	    			num = num + 1;
-	    	}
-        	
-        	if (num > 0)
-        	 	return true; 
-        	else 
-        		return false;    
+            for (epe : EventPatternElement in self.eventPatternElements) {
+                
+                if (epe.isTypeOf(Event) or epe.isKindOf(DataWindow))
+                    num = num + 1;
+            }
+            
+            if (num > 0)
+                return true; 
+            else 
+                return false;    
         
         } 
         
         message : 'An event or data window must be included.'
         
     }   
-    
+*/    
+
     constraint HasComplexEvent {
     
         check : self.complexEvent.isDefined()
@@ -65,6 +67,7 @@ context CEPEventPattern {
         check {
             
             var patternOpNum : Integer = 0;
+            var groupByNum : Integer = 0;            
             var dataWindowNum : Integer = 0;
             var eventPatternConditionNum : Integer = 0;
             var m : String;
@@ -90,6 +93,9 @@ context CEPEventPattern {
 		    		   or epe.isTypeOf(TimeInterval) or epe.isTypeOf(TimeSchedule) or epe.isTypeOf(WithinTimer)) {
 		    			patternOpNum = patternOpNum + 1;
 		    		}    		
+		    		else if (epe.isTypeOf(GroupBy)) {
+		    			groupByNum = groupByNum + 1;
+		    		} 
 		    	}
 	    	}
 	    	
@@ -99,10 +105,10 @@ context CEPEventPattern {
 	        		m = 'A unique data window must contain the whole event pattern conditions.';
 	        	 	return false; 
 	        	}
-	        	else if (dataWindowNum == 1 and eventPatternConditionNum > 0) {
-	        		m = 'The data window must contain the whole event pattern conditions.';
-	        		return false;   
-	        	}
+	        	--else if (dataWindowNum == 1 and (eventPatternConditionNum - groupByNum) > 0 ) {
+	        	--	m = 'The data window must contain the whole event pattern conditions.';
+	        	--	return false;   
+	        	--}
 	        	return true; 
 	    	}
 	    	else {
@@ -113,7 +119,27 @@ context CEPEventPattern {
         
         message : m
         
-    }     
+    }   
+    
+    constraint HasZeroOrOneGroupBy {
+    
+        check {
+        
+        	var m : String;
+        	var groupByOperators = self.eventPatternElements.select(x|x.isTypeOf(GroupBy)); 
+        	
+        	if (groupByOperators.size() > 1) {
+        		m = "A unique group-by operator can be used.";
+        		return false; 
+        	}
+        	else {
+        		return true; 
+        	} 
+        }
+        
+    	message : m
+        
+    }        
     
 }
 
@@ -451,9 +477,25 @@ context NaryOperator {
 
     constraint HasNInboundLinks {
     
-        check : self.inboundLink.size() >= 2 
+        check {
+        	
+        	var m : String; 
+        	
+        	if (self.eClass().name = 'GroupBy') {
+        		if (self.inboundLink.size() < 1) {
+        			m = "Operator '" + self.eClass().name + "' must have at least one inbound link.";
+        			return false; 
+        		}
+        	}
+        	else if (self.inboundLink.size() < 2) {
+        		m = "Operator '" + self.eClass().name + "' must have at least two inbound links.";
+        		return false; 
+        	}
+        	
+        	return true; 
+    	}
           
-        message : "Operator '" + self.eClass().name + "' must have at least two inbound links."
+        message : m 
 
     }
 
@@ -921,7 +963,16 @@ context ArithmeticOperator {
 
 context Value {
 
+    constraint HasType {
+              
+        check : self.type <> PropertyTypeValue#Unknown
+        
+        message : 'A type must be set.'   
+    }
+
     constraint HasValue {
+        
+        guard : self.satisfies("HasType")
         
         check : self.value.isDefined()
         
@@ -937,7 +988,7 @@ context Value {
                 self.value = value;
             }
         }      
-    }
+    }    
 
     constraint IsACorrectBoolean {
     
@@ -973,9 +1024,9 @@ context Value {
     
         guard : self.satisfies("HasValue") and self.type = PropertyTypeValue#Double
       
-        check : self.value.isReal()
+        check : self.value.isReal() and self.value.matches('^[0-9]+([.][0-9]+)+$')
         
-        message : "'" + self.value + "' is not a double."   
+        message : "'" + self.value + "' must have the following number format: #.#"   
         
     }
 
@@ -983,9 +1034,9 @@ context Value {
     
         guard : self.satisfies("HasValue") and self.type = PropertyTypeValue#Float
       
-        check : self.value.isReal()
+        check : self.value.isReal() and self.value.matches('^[0-9]+([.][0-9]+)+$')
         
-        message : "'" + self.value + "' is not a float."  
+        message : "'" + self.value + "' must have the following number format: #.#"  
         
     }   
     

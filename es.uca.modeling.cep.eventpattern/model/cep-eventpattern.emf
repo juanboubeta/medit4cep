@@ -46,6 +46,7 @@ class CEPEventPattern {
 	   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))
 	   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))
 	   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) 
+	   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(GroupBy))
 	)", 
 	target.constraint="self <> oppositeEnd", 
 	source.decoration="none", target.decoration="arrow", color="110,110,110", 
@@ -157,7 +158,7 @@ class BatchingTimeInterval extends DataWindow {
    attr int minutes;
    attr int seconds;
    attr int milliseconds;
-   attr long startTimestamp;   
+   attr long startTimestamp;
 }
 
 
@@ -197,6 +198,13 @@ abstract class ComparisonOperator extends BinaryOperator, ConditionOperator {
 
 abstract class LogicalOperator extends ConditionOperator, PatternOperator {
    
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GroupBy.svg",
+	size="30,30", label.placement="none", resizable="false", margin="0", 
+	tool.name="Group By", tool.description="Add a group-by operator")
+class GroupBy extends NaryOperator, EventPatternCondition {
+
 }
 
 

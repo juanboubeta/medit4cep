@@ -27,6 +27,7 @@ import eventpattern.diagram.edit.commands.EveryDistinctCreateCommand;
 import eventpattern.diagram.edit.commands.FollowedByCreateCommand;
 import eventpattern.diagram.edit.commands.GreaterEqualCreateCommand;
 import eventpattern.diagram.edit.commands.GreaterThanCreateCommand;
+import eventpattern.diagram.edit.commands.GroupByCreateCommand;
 import eventpattern.diagram.edit.commands.LessEqualCreateCommand;
 import eventpattern.diagram.edit.commands.LessThanCreateCommand;
 import eventpattern.diagram.edit.commands.MaxCreateCommand;
@@ -153,6 +154,9 @@ public class CEPEventPatternItemSemanticEditPolicy extends EventpatternBaseItemS
 		}
 		if (EventpatternElementTypes.Value_2029 == req.getElementType()) {
 			return getGEFWrapper(new ValueCreateCommand(req));
+		}
+		if (EventpatternElementTypes.GroupBy_2040 == req.getElementType()) {
+			return getGEFWrapper(new GroupByCreateCommand(req));
 		}
 		if (EventpatternElementTypes.WithinTimer_2030 == req.getElementType()) {
 			return getGEFWrapper(new WithinTimerCreateCommand(req));

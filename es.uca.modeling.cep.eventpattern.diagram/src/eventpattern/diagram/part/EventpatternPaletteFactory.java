@@ -82,6 +82,7 @@ public class EventpatternPaletteFactory {
 		paletteContainer.setDescription(Messages.Default1Group_desc);
 		paletteContainer.add(createLink1CreationTool());
 		paletteContainer.add(createValue2CreationTool());
+		paletteContainer.add(createGroupBy3CreationTool());
 		return paletteContainer;
 	}
 
@@ -665,6 +666,21 @@ public class EventpatternPaletteFactory {
 				Messages.Value2CreationTool_desc, types);
 		entry.setId("createValue2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Value_2029));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createGroupBy3CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(EventpatternElementTypes.GroupBy_2040);
+		types.add(EventpatternElementTypes.GroupBy_3060);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.GroupBy3CreationTool_title,
+				Messages.GroupBy3CreationTool_desc, types);
+		entry.setId("createGroupBy3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.GroupBy_2040));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

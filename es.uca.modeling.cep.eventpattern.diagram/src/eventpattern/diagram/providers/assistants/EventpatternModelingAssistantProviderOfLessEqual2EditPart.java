@@ -45,6 +45,8 @@ import eventpattern.diagram.edit.parts.GreaterEqualEditPart;
 import eventpattern.diagram.edit.parts.GreaterThan2EditPart;
 import eventpattern.diagram.edit.parts.GreaterThan3EditPart;
 import eventpattern.diagram.edit.parts.GreaterThanEditPart;
+import eventpattern.diagram.edit.parts.GroupBy2EditPart;
+import eventpattern.diagram.edit.parts.GroupByEditPart;
 import eventpattern.diagram.edit.parts.LessEqual2EditPart;
 import eventpattern.diagram.edit.parts.LessEqual3EditPart;
 import eventpattern.diagram.edit.parts.LessEqualEditPart;
@@ -210,6 +212,9 @@ public class EventpatternModelingAssistantProviderOfLessEqual2EditPart extends E
 		if (targetEditPart instanceof SumEditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
+		if (targetEditPart instanceof GroupByEditPart) {
+			types.add(EventpatternElementTypes.Link_4001);
+		}
 		if (targetEditPart instanceof EmailEditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
@@ -360,6 +365,9 @@ public class EventpatternModelingAssistantProviderOfLessEqual2EditPart extends E
 		if (targetEditPart instanceof Sum2EditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
+		if (targetEditPart instanceof GroupBy2EditPart) {
+			types.add(EventpatternElementTypes.Link_4001);
+		}
 		if (targetEditPart instanceof ComplexEventPropertyEditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
@@ -408,6 +416,7 @@ public class EventpatternModelingAssistantProviderOfLessEqual2EditPart extends E
 			types.add(EventpatternElementTypes.Avg_2024);
 			types.add(EventpatternElementTypes.Count_2025);
 			types.add(EventpatternElementTypes.Sum_2026);
+			types.add(EventpatternElementTypes.GroupBy_2040);
 			types.add(EventpatternElementTypes.Email_2033);
 			types.add(EventpatternElementTypes.Twitter_2039);
 			types.add(EventpatternElementTypes.ComplexEvent_2038);
@@ -458,6 +467,7 @@ public class EventpatternModelingAssistantProviderOfLessEqual2EditPart extends E
 			types.add(EventpatternElementTypes.Avg_3050);
 			types.add(EventpatternElementTypes.Count_3051);
 			types.add(EventpatternElementTypes.Sum_3052);
+			types.add(EventpatternElementTypes.GroupBy_3060);
 			types.add(EventpatternElementTypes.ComplexEventProperty_3059);
 		}
 		return types;

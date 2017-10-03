@@ -211,6 +211,9 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 		case TwitterEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?www.uca.es/modeling/cep/eventpattern?Twitter", //$NON-NLS-1$
 					EventpatternElementTypes.Twitter_2039);
+		case GroupByEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?www.uca.es/modeling/cep/eventpattern?GroupBy", //$NON-NLS-1$
+					EventpatternElementTypes.GroupBy_2040);
 		case EventProperty2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?www.uca.es/modeling/cep/eventpattern?EventProperty", //$NON-NLS-1$
 					EventpatternElementTypes.EventProperty_3001);
@@ -386,6 +389,9 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 		case ComplexEventPropertyEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?www.uca.es/modeling/cep/eventpattern?ComplexEventProperty", //$NON-NLS-1$
 					EventpatternElementTypes.ComplexEventProperty_3059);
+		case GroupBy2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/eventpattern?GroupBy", //$NON-NLS-1$
+					EventpatternElementTypes.GroupBy_3060);
 		case LinkEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?www.uca.es/modeling/cep/eventpattern?Link", //$NON-NLS-1$
 					EventpatternElementTypes.Link_4001);
@@ -527,6 +533,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 			return getComplexEvent_2038Text(view);
 		case TwitterEditPart.VISUAL_ID:
 			return getTwitter_2039Text(view);
+		case GroupByEditPart.VISUAL_ID:
+			return getGroupBy_2040Text(view);
 		case EventProperty2EditPart.VISUAL_ID:
 			return getEventProperty_3001Text(view);
 		case EventProperty3EditPart.VISUAL_ID:
@@ -645,6 +653,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 			return getTimeSchedule_3058Text(view);
 		case ComplexEventPropertyEditPart.VISUAL_ID:
 			return getComplexEventProperty_3059Text(view);
+		case GroupBy2EditPart.VISUAL_ID:
+			return getGroupBy_3060Text(view);
 		case LinkEditPart.VISUAL_ID:
 			return getLink_4001Text(view);
 		}
@@ -1061,6 +1071,13 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getTwitter_2039Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	* @generated
+	*/
+	private String getGroupBy_2040Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
@@ -1619,6 +1636,13 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 			EventpatternDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5096); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getGroupBy_3060Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

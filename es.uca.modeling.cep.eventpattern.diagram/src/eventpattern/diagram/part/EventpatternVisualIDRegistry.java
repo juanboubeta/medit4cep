@@ -203,6 +203,9 @@ public class EventpatternVisualIDRegistry {
 			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return ValueEditPart.VISUAL_ID;
 			}
+			if (EventpatternPackage.eINSTANCE.getGroupBy().isSuperTypeOf(domainElement.eClass())) {
+				return GroupByEditPart.VISUAL_ID;
+			}
 			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimerEditPart.VISUAL_ID;
 			}
@@ -426,6 +429,9 @@ public class EventpatternVisualIDRegistry {
 			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value3EditPart.VISUAL_ID;
 			}
+			if (EventpatternPackage.eINSTANCE.getGroupBy().isSuperTypeOf(domainElement.eClass())) {
+				return GroupBy2EditPart.VISUAL_ID;
+			}
 			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimer2EditPart.VISUAL_ID;
 			}
@@ -608,6 +614,9 @@ public class EventpatternVisualIDRegistry {
 			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value3EditPart.VISUAL_ID;
 			}
+			if (EventpatternPackage.eINSTANCE.getGroupBy().isSuperTypeOf(domainElement.eClass())) {
+				return GroupBy2EditPart.VISUAL_ID;
+			}
 			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimer2EditPart.VISUAL_ID;
 			}
@@ -706,6 +715,9 @@ public class EventpatternVisualIDRegistry {
 			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value3EditPart.VISUAL_ID;
 			}
+			if (EventpatternPackage.eINSTANCE.getGroupBy().isSuperTypeOf(domainElement.eClass())) {
+				return GroupBy2EditPart.VISUAL_ID;
+			}
 			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimer2EditPart.VISUAL_ID;
 			}
@@ -803,6 +815,9 @@ public class EventpatternVisualIDRegistry {
 			}
 			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value3EditPart.VISUAL_ID;
+			}
+			if (EventpatternPackage.eINSTANCE.getGroupBy().isSuperTypeOf(domainElement.eClass())) {
+				return GroupBy2EditPart.VISUAL_ID;
 			}
 			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimer2EditPart.VISUAL_ID;
@@ -928,6 +943,9 @@ public class EventpatternVisualIDRegistry {
 				return true;
 			}
 			if (ValueEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (GroupByEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (WithinTimerEditPart.VISUAL_ID == nodeVisualID) {
@@ -1348,6 +1366,9 @@ public class EventpatternVisualIDRegistry {
 			if (Value3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (GroupBy2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (WithinTimer2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -1530,6 +1551,9 @@ public class EventpatternVisualIDRegistry {
 			if (Value3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (GroupBy2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (WithinTimer2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -1628,6 +1652,9 @@ public class EventpatternVisualIDRegistry {
 			if (Value3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (GroupBy2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (WithinTimer2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -1724,6 +1751,9 @@ public class EventpatternVisualIDRegistry {
 				return true;
 			}
 			if (Value3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (GroupBy2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (WithinTimer2EditPart.VISUAL_ID == nodeVisualID) {
@@ -1850,6 +1880,7 @@ public class EventpatternVisualIDRegistry {
 		case TimeScheduleEditPart.VISUAL_ID:
 		case EmailEditPart.VISUAL_ID:
 		case TwitterEditPart.VISUAL_ID:
+		case GroupByEditPart.VISUAL_ID:
 		case And2EditPart.VISUAL_ID:
 		case Or2EditPart.VISUAL_ID:
 		case Not2EditPart.VISUAL_ID:
@@ -1902,6 +1933,7 @@ public class EventpatternVisualIDRegistry {
 		case TimeInterval2EditPart.VISUAL_ID:
 		case TimeSchedule2EditPart.VISUAL_ID:
 		case ComplexEventPropertyEditPart.VISUAL_ID:
+		case GroupBy2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

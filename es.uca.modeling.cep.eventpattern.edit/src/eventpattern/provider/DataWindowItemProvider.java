@@ -138,6 +138,11 @@ public class DataWindowItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(EventpatternPackage.Literals.DATA_WINDOW__EVENT_PATTERN_CONDITIONS,
+				 EventpatternFactory.eINSTANCE.createGroupBy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EventpatternPackage.Literals.DATA_WINDOW__EVENT_PATTERN_CONDITIONS,
 				 EventpatternFactory.eINSTANCE.createEvery()));
 
 		newChildDescriptors.add

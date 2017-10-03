@@ -171,6 +171,10 @@ public class EventpatternAdapterFactory extends AdapterFactoryImpl
 				return createLogicalOperatorAdapter();
 			}
 			@Override
+			public Adapter caseGroupBy(GroupBy object) {
+				return createGroupByAdapter();
+			}
+			@Override
 			public Adapter caseEvery(Every object) {
 				return createEveryAdapter();
 			}
@@ -707,6 +711,20 @@ public class EventpatternAdapterFactory extends AdapterFactoryImpl
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link eventpattern.GroupBy <em>Group By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eventpattern.GroupBy
+	 * @generated
+	 */
+	public Adapter createGroupByAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link eventpattern.Every <em>Every</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;

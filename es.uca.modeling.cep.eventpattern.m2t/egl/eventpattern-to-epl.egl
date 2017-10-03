@@ -1,4 +1,9 @@
-@Name('[%=CEPEventPattern.allInstances.at(0).patternName%]') 
+[%
+var patt : CEPEventPattern = CEPEventPattern.allInstances.at(0);
+%]
+@Name("[%=patt.patternName%]")
+@Description("[%=patt.patternDescription%]")
+@Tag(name="domainName", value="[%=patt.domainName%]")
 [%
 
 createGlobalVariables();
@@ -8,6 +13,7 @@ var selectExpression : String;
 var fromPatternExpression : String; 
 var fromExpression : String; 
 var whereExpression : String; 
+var groupByExpression : String;
 
 
 // FROM PATTERN expression
@@ -21,19 +27,26 @@ if (isFromPatternExpression(eventPatternElements)) {
     var root; 
 	    
     // If a Data Window exists, it will contain the whole event pattern conditions.
-    var firstElement = eventPatternElements.at(0);
-    if (firstElement.isKindOf(DataWindow)) {
-    	root = getPatternConditionRoot(firstElement.eventPatternConditions);
+    var window = eventPatternElements.selectOne(x|x.isKindOf(DataWindow)); 
+    if (window <> null) {
+    	root = getPatternConditionRoot(window.eventPatternConditions);
         fromPatternExpression = fromPatternExpression + traversal(root) + "]."; 
                
-	    if (firstElement.isTypeOf(SlidingEventInterval)) {
-	    	fromPatternExpression = fromPatternExpression + "win:length(" + firstElement.size + ")";
-	    } else if (firstElement.isTypeOf(BatchingEventInterval)) {
-	      	fromPatternExpression = fromPatternExpression + "win:length_batch(" + firstElement.size + ")";         
-	    } else if (firstElement.isTypeOf(SlidingTimeInterval)) {
-	      	fromPatternExpression = fromPatternExpression + "win:time(" + getTimeAttributes(firstElement) + ")";                              
-	    } else if (firstElement.isTypeOf(BatchingTimeInterval)) {
-	      	fromPatternExpression = fromPatternExpression + "win:time_batch(" + getTimeAttributes(firstElement) + ")";                                        
+	    if (window.isTypeOf(SlidingEventInterval)) {
+	    	fromPatternExpression = fromPatternExpression + "win:length(" + window.size + ")";
+	    } else if (window.isTypeOf(BatchingEventInterval)) {
+	      	fromPatternExpression = fromPatternExpression + "win:length_batch(" + window.size + ")";         
+	    } else if (window.isTypeOf(SlidingTimeInterval)) {
+	      	fromPatternExpression = fromPatternExpression + "win:time(" + getTimeAttributes(window) + ")";                              
+	    } else if (window.isTypeOf(BatchingTimeInterval)) {
+	      	//fromPatternExpression = fromPatternExpression + "win:time_batch(" + getTimeAttributes(window) + ")";                                        
+	      	fromPatternExpression = fromPatternExpression + "win:time_batch(" + getTimeAttributes(window); 
+	      	
+	      	if (window.startTimestamp > 0) {
+	      	    fromPatternExpression = fromPatternExpression + ", " + window.startTimestamp + "L";
+	      	}
+	      	
+	      	fromPatternExpression = fromPatternExpression + ")";
 	    }                 
 	}
 	else {
@@ -44,7 +57,7 @@ if (isFromPatternExpression(eventPatternElements)) {
 // If the event pattern model has not any pattern operands and pattern operators. 
 // This means that a FROM expression (and maybe a WHERE expression) must be generated. 
 else {
-    fromExpression = "from "; 
+    fromExpression = "\nfrom "; 
     var eventPatternElements : Sequence = EventPatternElement.allInstances();
 	var firstCondition : Boolean = true;
 	var aliasExpression : String; 
@@ -73,8 +86,15 @@ else {
 				    } else if (e.isTypeOf(SlidingTimeInterval)) {
 				      	fromExpression = fromExpression + ".win:time(" + getTimeAttributes(e) + ") " + aliasExpression;                              
 				    } else if (e.isTypeOf(BatchingTimeInterval)) {
-				      	fromExpression = fromExpression + ".win:time_batch(" + getTimeAttributes(e) + ") " + aliasExpression;                                        
-				    }                    
+				      	//fromExpression = fromExpression + ".win:time_batch(" + getTimeAttributes(e) + ") " + aliasExpression;  
+		      	        fromExpression = fromExpression + ".win:time_batch(" + getTimeAttributes(e); 
+            
+			            if (e.startTimestamp > 0) {
+			                fromExpression = fromExpression + ", " + e.startTimestamp + "L";
+			            }
+			            
+			            fromExpression = fromExpression + ") " + aliasExpression;                                   
+					}		                       
             	} 
         	}	 
     	}
@@ -97,7 +117,7 @@ else {
     // WHERE expression
     var root = getSearchConditionRoot(eventPatternElements);
     if (root <> null) { // There is at least one operator. So, a WHERE expression must be created.
-    	whereExpression = "where " + traversal(root);
+    	whereExpression = "\nwhere " + traversal(root);
 	}
 }
 
@@ -134,6 +154,15 @@ else {
 }
 
 
+// GROUP BY expression
+var eventPatternElements : Sequence = EventPatternElement.allInstances();
+for (e in eventPatternElements) {
+	if (e.isTypeOf(GroupBy)) {
+		groupByExpression = "\ngroup by " + traversal(e);
+	}
+}
+
+
 // Print EPL code
 
 if (insertIntoExpression <> null) {
@@ -141,19 +170,19 @@ if (insertIntoExpression <> null) {
 [% }  
 
 if (selectExpression <> null) {
-%][%=selectExpression%][% } 
+%][%=selectExpression%] [% } 
 
 if (fromPatternExpression <> null) {
-%][%=fromPatternExpression%]
-[% } 
+%][%=fromPatternExpression%] [% } 
 
 if (fromExpression <> null) {
-%][%=fromExpression%]
-[% } 
+%][%=fromExpression%] [% } 
 
 if (whereExpression <> null) {
-%][%=whereExpression%]
-[% } 
+%][%=whereExpression%] [% } 
+
+if (groupByExpression <> null) {
+%][%=groupByExpression%] [% } 
 
 
 -- These variables work as global variables
@@ -215,45 +244,44 @@ operation isFromPatternExpression(eventPatternElements) : Boolean {
 operation getPatternConditionRoot(elements) { 
 
 	var root : Any;
-	--System.out.println("getPatternConditionRoot(elements): " + elements); 
 	
-	root = elements.selectOne(x|x.outboundLink.isEmpty() and x.isTypeOf(FollowedBy));
+	root = elements.selectOne(x|x.isTypeOf(FollowedBy) and x.outboundLink.isEmpty());
 	if (root <> null) {
 		--System.out.println("elements.selectOne-priority6: " + root); 
 		return root;
 	}
 
-	root = elements.selectOne(x|x.outboundLink.isEmpty() and (x.isTypeOf(Or) and x.inboundLink.at(0).operand.isTypeOf(Event)));
+	root = elements.selectOne(x|(x.isTypeOf(Or) and x.inboundLink.at(0).operand.isTypeOf(Event)) and x.outboundLink.isEmpty());
 	if (root <> null) {
 		--System.out.println("elements.selectOne-priority5: " + root); 
 		return root;
 	}
 	
-	root = elements.selectOne(x|x.outboundLink.isEmpty() and (x.isTypeOf(And) and x.inboundLink.at(0).operand.isTypeOf(Event)));
+	root = elements.selectOne(x|(x.isTypeOf(And) and x.inboundLink.at(0).operand.isTypeOf(Event)) and x.outboundLink.isEmpty());
 	if (root <> null) {
 		--System.out.println("elements.selectOne-priority4: " + root); 
 		return root;
 	}
 	
-	root = elements.selectOne(x|x.outboundLink.isEmpty() and (x.isTypeOf(Until) or x.isTypeOf(Repeat)));
+	root = elements.selectOne(x|(x.isTypeOf(Until) or x.isTypeOf(Repeat)) and x.outboundLink.isEmpty());
 	if (root <> null) {
 		--System.out.println("elements.selectOne-priority3: " + root); 
 		return root;
 	}
 	
-	root = elements.selectOne(x|x.outboundLink.isEmpty() and (x.isTypeOf(Every) or x.isTypeOf(EveryDistinct) or x.isTypeOf(Not)));
+	root = elements.selectOne(x|(x.isTypeOf(Every) or x.isTypeOf(EveryDistinct) or x.isTypeOf(Not)) and x.outboundLink.isEmpty());
 	if (root <> null) {
 		--System.out.println("elements.selectOne-priority2: " + root); 
 		return root;
 	}
 	
-	root = elements.selectOne(x|x.outboundLink.isEmpty() and x.isTypeOf(While));
+	root = elements.selectOne(x|x.isTypeOf(While) and x.outboundLink.isEmpty());
 	if (root <> null) {
 		--System.out.println("elements.selectOne-priority1: " + root); 
 		return root;
 	}
 	
-	root = elements.selectOne(x|x.outboundLink.isEmpty() and x.isKindOf(PatternOperand));
+	root = elements.selectOne(x|x.isKindOf(PatternOperand) and x.outboundLink.isEmpty());
 	if (root <> null) {
 		--System.out.println("elements.selectOne-priority0: " + root); 
 		return root;
@@ -271,19 +299,19 @@ operation getSearchConditionRoot(elements) {
  
  	var root : Any;
 	
-	root = elements.selectOne(x|(not x.isKindOf(DataWindow)) and x.outboundLink.isEmpty() and x.isKindOf(LogicalOperator));
+	root = elements.selectOne(x|(not x.isKindOf(DataWindow) and not x.isTypeOf(GroupBy)) and x.outboundLink.isEmpty() and x.isKindOf(LogicalOperator));
 	if (root <> null) {
 		--System.out.println("Root-LogicalOperator: " + root); 
 		return root;
 	}
 	
-	root = elements.selectOne(x|(not x.isKindOf(DataWindow)) and x.outboundLink.isEmpty() and x.isKindOf(ComparisonOperator));
+	root = elements.selectOne(x|(not x.isKindOf(DataWindow) and not x.isTypeOf(GroupBy)) and x.outboundLink.isEmpty() and x.isKindOf(ComparisonOperator));
 	if (root <> null) {
 		--System.out.println("Root-ComparisonOperator: " + root); 
 		return root;
 	}	
 
-	root = elements.selectOne(x|(not x.isKindOf(DataWindow)) and x.outboundLink.isEmpty() and x.isKindOf(ArithmeticOperator));
+	root = elements.selectOne(x|(not x.isKindOf(DataWindow) and not x.isTypeOf(GroupBy)) and x.outboundLink.isEmpty() and x.isKindOf(ArithmeticOperator));
 	if (root <> null) {
 		--System.out.println("Root-ArithmeticOperator: " + root); 
 		return root;
@@ -293,7 +321,7 @@ operation getSearchConditionRoot(elements) {
 
 operation getRootOperator(operator) {
 
-	if (operator.isTypeOf(ComplexEventProperty)) {
+	if (operator.isTypeOf(ComplexEventProperty) or operator.isTypeOf(GroupBy)) {
 		--System.out.println("operator.isTypeOf(ComplexEventProperty)");
 		return null;
 	}
@@ -509,22 +537,22 @@ operation traversal(r) : String {
     --System.out.println("traversal(r):" + r);
     var PATTERN = CEPEventPattern.all.first;
 
-    if (r.eClass().name == 'WithinTimer') {
+    if (r.isTypeOf(WithinTimer)) {
         --System.out.println("r.eClass().name == 'WithinTimer'");
         --System.out.println("WithinTimer contains the following elements: " + r.eventPatternConditions);
         return traversal(getPatternConditionRoot(r.withinTimerElements)) + 
         	' where timer:within(' + getTimeAttributes(r) + ')';
     }
         
-    if (r.eClass().name == 'TimeSchedule') {  
+    if (r.isTypeOf(TimeSchedule)) {  
         return 'timer:at(' + getTimeScheduleAttributes(r) + ')';
     }    
     
-    if (r.eClass().name == 'TimeInterval') {  
+    if (r.isTypeOf(TimeInterval)) {  
         return 'timer:interval(' + getTimeAttributes(r) + ')';
     }        
     
-    if (r.eClass().name == 'Event') {
+    if (r.isTypeOf(Event)) {
         --System.out.println("r.isTypeOf(Event):" + r.typeName);
         var aliasExpression : String; 
                  
@@ -545,7 +573,7 @@ operation traversal(r) : String {
         }    
     } 
    
-    if (r.eClass().name == 'EventProperty') {  
+    if (r.isTypeOf(EventProperty)) {  
             
         // The event property is not nested.
      	if (r.referencedEvent.isDefined()) {
@@ -571,9 +599,14 @@ operation traversal(r) : String {
       	}         	        
     }    
     
-    if (r.eClass().name == 'Value') {          
+    if (r.isTypeOf(Value)) {          
     	if (r.type == PropertyTypeValue#String) { -- It is a string value
-    	    return "'" + r.value + "'";
+    	   if (r.value == "current_timestamp") {
+    	       return r.value + "()";
+    	   }
+    	   else {
+    	       return "'" + r.value + "'";
+    	   }
         }
         else { -- It is not a string value
         	return r.value;
@@ -827,6 +860,21 @@ operation traversal(r) : String {
    		return everyDistinctExpression;                                 
                 
 	}	
+	
+    if(r.isTypeOf(GroupBy)) {        
+
+	    var numOp : Integer = r.inboundLink.size(); 
+        var orders : new Sequence = getOrderedLink(r.inboundLink, numOp);
+	    var groupByExpression : String = traversal(getOperand(r, orders.at(0)));
+
+        var i : Integer = 1;
+        while (i < numOp) {
+        	groupByExpression = groupByExpression.concat(', ' + traversal(getOperand(r, orders.at(i)))); 
+            i = i + 1; 
+        }
+
+        return groupByExpression; 
+   	}
 }   
     
 %]

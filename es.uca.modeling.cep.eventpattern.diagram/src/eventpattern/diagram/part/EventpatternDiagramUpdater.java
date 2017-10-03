@@ -47,6 +47,7 @@ import eventpattern.EveryDistinct;
 import eventpattern.FollowedBy;
 import eventpattern.GreaterEqual;
 import eventpattern.GreaterThan;
+import eventpattern.GroupBy;
 import eventpattern.LessEqual;
 import eventpattern.LessThan;
 import eventpattern.Link;
@@ -258,6 +259,10 @@ public class EventpatternDiagramUpdater {
 				continue;
 			}
 			if (visualID == ValueEditPart.VISUAL_ID) {
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == GroupByEditPart.VISUAL_ID) {
 				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -712,6 +717,10 @@ public class EventpatternDiagramUpdater {
 				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
+			if (visualID == GroupBy2EditPart.VISUAL_ID) {
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+				continue;
+			}
 			if (visualID == WithinTimer2EditPart.VISUAL_ID) {
 				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
@@ -1028,6 +1037,10 @@ public class EventpatternDiagramUpdater {
 				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
+			if (visualID == GroupBy2EditPart.VISUAL_ID) {
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+				continue;
+			}
 			if (visualID == WithinTimer2EditPart.VISUAL_ID) {
 				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
@@ -1174,6 +1187,10 @@ public class EventpatternDiagramUpdater {
 				continue;
 			}
 			if (visualID == Value3EditPart.VISUAL_ID) {
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == GroupBy2EditPart.VISUAL_ID) {
 				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1326,6 +1343,10 @@ public class EventpatternDiagramUpdater {
 				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
+			if (visualID == GroupBy2EditPart.VISUAL_ID) {
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+				continue;
+			}
 			if (visualID == WithinTimer2EditPart.VISUAL_ID) {
 				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
@@ -1432,6 +1453,8 @@ public class EventpatternDiagramUpdater {
 			return getEventProperty_2028ContainedLinks(view);
 		case ValueEditPart.VISUAL_ID:
 			return getValue_2029ContainedLinks(view);
+		case GroupByEditPart.VISUAL_ID:
+			return getGroupBy_2040ContainedLinks(view);
 		case WithinTimerEditPart.VISUAL_ID:
 			return getWithinTimer_2030ContainedLinks(view);
 		case TimeIntervalEditPart.VISUAL_ID:
@@ -1562,6 +1585,8 @@ public class EventpatternDiagramUpdater {
 			return getEventProperty_3054ContainedLinks(view);
 		case Value3EditPart.VISUAL_ID:
 			return getValue_3055ContainedLinks(view);
+		case GroupBy2EditPart.VISUAL_ID:
+			return getGroupBy_3060ContainedLinks(view);
 		case WithinTimer2EditPart.VISUAL_ID:
 			return getWithinTimer_3056ContainedLinks(view);
 		case TimeInterval2EditPart.VISUAL_ID:
@@ -1639,6 +1664,8 @@ public class EventpatternDiagramUpdater {
 			return getEventProperty_2028IncomingLinks(view);
 		case ValueEditPart.VISUAL_ID:
 			return getValue_2029IncomingLinks(view);
+		case GroupByEditPart.VISUAL_ID:
+			return getGroupBy_2040IncomingLinks(view);
 		case WithinTimerEditPart.VISUAL_ID:
 			return getWithinTimer_2030IncomingLinks(view);
 		case TimeIntervalEditPart.VISUAL_ID:
@@ -1769,6 +1796,8 @@ public class EventpatternDiagramUpdater {
 			return getEventProperty_3054IncomingLinks(view);
 		case Value3EditPart.VISUAL_ID:
 			return getValue_3055IncomingLinks(view);
+		case GroupBy2EditPart.VISUAL_ID:
+			return getGroupBy_3060IncomingLinks(view);
 		case WithinTimer2EditPart.VISUAL_ID:
 			return getWithinTimer_3056IncomingLinks(view);
 		case TimeInterval2EditPart.VISUAL_ID:
@@ -1846,6 +1875,8 @@ public class EventpatternDiagramUpdater {
 			return getEventProperty_2028OutgoingLinks(view);
 		case ValueEditPart.VISUAL_ID:
 			return getValue_2029OutgoingLinks(view);
+		case GroupByEditPart.VISUAL_ID:
+			return getGroupBy_2040OutgoingLinks(view);
 		case WithinTimerEditPart.VISUAL_ID:
 			return getWithinTimer_2030OutgoingLinks(view);
 		case TimeIntervalEditPart.VISUAL_ID:
@@ -1976,6 +2007,8 @@ public class EventpatternDiagramUpdater {
 			return getEventProperty_3054OutgoingLinks(view);
 		case Value3EditPart.VISUAL_ID:
 			return getValue_3055OutgoingLinks(view);
+		case GroupBy2EditPart.VISUAL_ID:
+			return getGroupBy_3060OutgoingLinks(view);
 		case WithinTimer2EditPart.VISUAL_ID:
 			return getWithinTimer_3056OutgoingLinks(view);
 		case TimeInterval2EditPart.VISUAL_ID:
@@ -2200,6 +2233,13 @@ public class EventpatternDiagramUpdater {
 	 * @generated
 	 */
 	public static List<EventpatternLinkDescriptor> getValue_2029ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getGroupBy_2040ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -2659,6 +2699,13 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getGroupBy_3060ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<EventpatternLinkDescriptor> getWithinTimer_3056ContainedLinks(View view) {
@@ -3024,6 +3071,18 @@ public class EventpatternDiagramUpdater {
 	 */
 	public static List<EventpatternLinkDescriptor> getValue_2029IncomingLinks(View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getGroupBy_2040IncomingLinks(View view) {
+		GroupBy modelElement = (GroupBy) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -3732,6 +3791,18 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getGroupBy_3060IncomingLinks(View view) {
+		GroupBy modelElement = (GroupBy) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<EventpatternLinkDescriptor> getWithinTimer_3056IncomingLinks(View view) {
@@ -4059,6 +4130,13 @@ public class EventpatternDiagramUpdater {
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
 		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getGroupBy_2040OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
@@ -4691,6 +4769,13 @@ public class EventpatternDiagramUpdater {
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
 		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getGroupBy_3060OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**

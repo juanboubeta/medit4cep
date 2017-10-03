@@ -266,6 +266,29 @@ public class EventpatternItemProviderAdapterFactory extends EventpatternAdapterF
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link eventpattern.GroupBy} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GroupByItemProvider groupByItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link eventpattern.GroupBy}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGroupByAdapter() {
+		if (groupByItemProvider == null) {
+			groupByItemProvider = new GroupByItemProvider(this);
+		}
+
+		return groupByItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link eventpattern.Every} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1197,6 +1220,7 @@ public class EventpatternItemProviderAdapterFactory extends EventpatternAdapterF
 		if (batchingEventIntervalItemProvider != null) batchingEventIntervalItemProvider.dispose();
 		if (slidingTimeIntervalItemProvider != null) slidingTimeIntervalItemProvider.dispose();
 		if (batchingTimeIntervalItemProvider != null) batchingTimeIntervalItemProvider.dispose();
+		if (groupByItemProvider != null) groupByItemProvider.dispose();
 		if (everyItemProvider != null) everyItemProvider.dispose();
 		if (everyDistinctItemProvider != null) everyDistinctItemProvider.dispose();
 		if (repeatItemProvider != null) repeatItemProvider.dispose();

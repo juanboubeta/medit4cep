@@ -159,6 +159,7 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 				case SumEditPart.VISUAL_ID:
 				case EventEditPart.VISUAL_ID:
 				case ValueEditPart.VISUAL_ID:
+				case GroupByEditPart.VISUAL_ID:
 				case WithinTimerEditPart.VISUAL_ID:
 				case TimeIntervalEditPart.VISUAL_ID:
 				case TimeScheduleEditPart.VISUAL_ID:
@@ -226,6 +227,7 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 				case Event3EditPart.VISUAL_ID:
 				case EventProperty5EditPart.VISUAL_ID:
 				case Value3EditPart.VISUAL_ID:
+				case GroupBy2EditPart.VISUAL_ID:
 				case WithinTimer2EditPart.VISUAL_ID:
 				case TimeInterval2EditPart.VISUAL_ID:
 				case TimeSchedule2EditPart.VISUAL_ID:
@@ -253,10 +255,10 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 				|| MinEditPart.VISUAL_ID == visualID || AvgEditPart.VISUAL_ID == visualID
 				|| CountEditPart.VISUAL_ID == visualID || SumEditPart.VISUAL_ID == visualID
 				|| EventEditPart.VISUAL_ID == visualID || EventPropertyEditPart.VISUAL_ID == visualID
-				|| ValueEditPart.VISUAL_ID == visualID || WithinTimerEditPart.VISUAL_ID == visualID
-				|| TimeIntervalEditPart.VISUAL_ID == visualID || TimeScheduleEditPart.VISUAL_ID == visualID
-				|| EmailEditPart.VISUAL_ID == visualID || TwitterEditPart.VISUAL_ID == visualID
-				|| SlidingEventIntervalEditPart.VISUAL_ID == visualID
+				|| ValueEditPart.VISUAL_ID == visualID || GroupByEditPart.VISUAL_ID == visualID
+				|| WithinTimerEditPart.VISUAL_ID == visualID || TimeIntervalEditPart.VISUAL_ID == visualID
+				|| TimeScheduleEditPart.VISUAL_ID == visualID || EmailEditPart.VISUAL_ID == visualID
+				|| TwitterEditPart.VISUAL_ID == visualID || SlidingEventIntervalEditPart.VISUAL_ID == visualID
 				|| BatchingEventIntervalEditPart.VISUAL_ID == visualID
 				|| SlidingTimeIntervalEditPart.VISUAL_ID == visualID
 				|| BatchingTimeIntervalEditPart.VISUAL_ID == visualID || ComplexEventEditPart.VISUAL_ID == visualID
@@ -287,9 +289,9 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 				|| Min2EditPart.VISUAL_ID == visualID || Avg2EditPart.VISUAL_ID == visualID
 				|| Count2EditPart.VISUAL_ID == visualID || Sum2EditPart.VISUAL_ID == visualID
 				|| Event3EditPart.VISUAL_ID == visualID || EventProperty5EditPart.VISUAL_ID == visualID
-				|| Value3EditPart.VISUAL_ID == visualID || WithinTimer2EditPart.VISUAL_ID == visualID
-				|| TimeInterval2EditPart.VISUAL_ID == visualID || TimeSchedule2EditPart.VISUAL_ID == visualID
-				|| ComplexEventPropertyEditPart.VISUAL_ID == visualID;
+				|| Value3EditPart.VISUAL_ID == visualID || GroupBy2EditPart.VISUAL_ID == visualID
+				|| WithinTimer2EditPart.VISUAL_ID == visualID || TimeInterval2EditPart.VISUAL_ID == visualID
+				|| TimeSchedule2EditPart.VISUAL_ID == visualID || ComplexEventPropertyEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -396,6 +398,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 			return createEventProperty_2028(domainElement, containerView, index, persisted, preferencesHint);
 		case ValueEditPart.VISUAL_ID:
 			return createValue_2029(domainElement, containerView, index, persisted, preferencesHint);
+		case GroupByEditPart.VISUAL_ID:
+			return createGroupBy_2040(domainElement, containerView, index, persisted, preferencesHint);
 		case WithinTimerEditPart.VISUAL_ID:
 			return createWithinTimer_2030(domainElement, containerView, index, persisted, preferencesHint);
 		case TimeIntervalEditPart.VISUAL_ID:
@@ -526,6 +530,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 			return createEventProperty_3054(domainElement, containerView, index, persisted, preferencesHint);
 		case Value3EditPart.VISUAL_ID:
 			return createValue_3055(domainElement, containerView, index, persisted, preferencesHint);
+		case GroupBy2EditPart.VISUAL_ID:
+			return createGroupBy_3060(domainElement, containerView, index, persisted, preferencesHint);
 		case WithinTimer2EditPart.VISUAL_ID:
 			return createWithinTimer_3056(domainElement, containerView, index, persisted, preferencesHint);
 		case TimeInterval2EditPart.VISUAL_ID:
@@ -1591,6 +1597,42 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5031 = createLabel(node, EventpatternVisualIDRegistry.getType(ValueValueEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createGroupBy_2040(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(EventpatternVisualIDRegistry.getType(GroupByEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		return node;
 	}
 
@@ -3896,6 +3938,41 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5088 = createLabel(node, EventpatternVisualIDRegistry.getType(ValueValue3EditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createGroupBy_3060(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(EventpatternVisualIDRegistry.getType(GroupBy2EditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		return node;
 	}
 

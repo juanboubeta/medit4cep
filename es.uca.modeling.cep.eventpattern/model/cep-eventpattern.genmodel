@@ -89,6 +89,7 @@
     <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//ArithmeticOperator"/>
     <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//ComparisonOperator"/>
     <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//LogicalOperator"/>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//GroupBy"/>
     <genClasses ecoreClass="cep-eventpattern.ecore#//Every"/>
     <genClasses ecoreClass="cep-eventpattern.ecore#//EveryDistinct"/>
     <genClasses ecoreClass="cep-eventpattern.ecore#//Repeat">

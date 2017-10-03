@@ -184,6 +184,12 @@ public class EventpatternElementTypes {
 	 */
 	public static final IElementType Value_2029 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Value_2029"); //$NON-NLS-1$
 	/**
+	* @generated
+	*/
+	public static final IElementType GroupBy_2040 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.GroupBy_2040"); //$NON-NLS-1$
+
+	/**
 	 * @generated
 	 */
 	public static final IElementType WithinTimer_2030 = getElementType(
@@ -484,6 +490,12 @@ public class EventpatternElementTypes {
 	 */
 	public static final IElementType Value_3055 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Value_3055"); //$NON-NLS-1$
 	/**
+	* @generated
+	*/
+	public static final IElementType GroupBy_3060 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.GroupBy_3060"); //$NON-NLS-1$
+
+	/**
 	 * @generated
 	 */
 	public static final IElementType WithinTimer_3056 = getElementType(
@@ -605,6 +617,8 @@ public class EventpatternElementTypes {
 			elements.put(EventProperty_2028, EventpatternPackage.eINSTANCE.getEventProperty());
 
 			elements.put(Value_2029, EventpatternPackage.eINSTANCE.getValue());
+
+			elements.put(GroupBy_2040, EventpatternPackage.eINSTANCE.getGroupBy());
 
 			elements.put(WithinTimer_2030, EventpatternPackage.eINSTANCE.getWithinTimer());
 
@@ -736,6 +750,8 @@ public class EventpatternElementTypes {
 
 			elements.put(Value_3055, EventpatternPackage.eINSTANCE.getValue());
 
+			elements.put(GroupBy_3060, EventpatternPackage.eINSTANCE.getGroupBy());
+
 			elements.put(WithinTimer_3056, EventpatternPackage.eINSTANCE.getWithinTimer());
 
 			elements.put(TimeInterval_3057, EventpatternPackage.eINSTANCE.getTimeInterval());
@@ -792,6 +808,7 @@ public class EventpatternElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Event_2027);
 			KNOWN_ELEMENT_TYPES.add(EventProperty_2028);
 			KNOWN_ELEMENT_TYPES.add(Value_2029);
+			KNOWN_ELEMENT_TYPES.add(GroupBy_2040);
 			KNOWN_ELEMENT_TYPES.add(WithinTimer_2030);
 			KNOWN_ELEMENT_TYPES.add(TimeInterval_2031);
 			KNOWN_ELEMENT_TYPES.add(TimeSchedule_2032);
@@ -857,6 +874,7 @@ public class EventpatternElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Event_3053);
 			KNOWN_ELEMENT_TYPES.add(EventProperty_3054);
 			KNOWN_ELEMENT_TYPES.add(Value_3055);
+			KNOWN_ELEMENT_TYPES.add(GroupBy_3060);
 			KNOWN_ELEMENT_TYPES.add(WithinTimer_3056);
 			KNOWN_ELEMENT_TYPES.add(TimeInterval_3057);
 			KNOWN_ELEMENT_TYPES.add(TimeSchedule_3058);
@@ -931,6 +949,8 @@ public class EventpatternElementTypes {
 			return EventProperty_2028;
 		case ValueEditPart.VISUAL_ID:
 			return Value_2029;
+		case GroupByEditPart.VISUAL_ID:
+			return GroupBy_2040;
 		case WithinTimerEditPart.VISUAL_ID:
 			return WithinTimer_2030;
 		case TimeIntervalEditPart.VISUAL_ID:
@@ -1061,6 +1081,8 @@ public class EventpatternElementTypes {
 			return EventProperty_3054;
 		case Value3EditPart.VISUAL_ID:
 			return Value_3055;
+		case GroupBy2EditPart.VISUAL_ID:
+			return GroupBy_3060;
 		case WithinTimer2EditPart.VISUAL_ID:
 			return WithinTimer_3056;
 		case TimeInterval2EditPart.VISUAL_ID:

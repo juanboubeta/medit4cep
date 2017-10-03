@@ -69,6 +69,7 @@ public class EventpatternFactoryImpl extends EFactoryImpl implements Eventpatter
 			case EventpatternPackage.BATCHING_EVENT_INTERVAL: return createBatchingEventInterval();
 			case EventpatternPackage.SLIDING_TIME_INTERVAL: return createSlidingTimeInterval();
 			case EventpatternPackage.BATCHING_TIME_INTERVAL: return createBatchingTimeInterval();
+			case EventpatternPackage.GROUP_BY: return createGroupBy();
 			case EventpatternPackage.EVERY: return createEvery();
 			case EventpatternPackage.EVERY_DISTINCT: return createEveryDistinct();
 			case EventpatternPackage.REPEAT: return createRepeat();
@@ -229,6 +230,16 @@ public class EventpatternFactoryImpl extends EFactoryImpl implements Eventpatter
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GroupBy createGroupBy() {
+		GroupByImpl groupBy = new GroupByImpl();
+		return groupBy;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

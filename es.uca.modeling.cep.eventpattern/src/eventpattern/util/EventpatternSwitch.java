@@ -288,6 +288,16 @@ public class EventpatternSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case EventpatternPackage.GROUP_BY: {
+				GroupBy groupBy = (GroupBy)theEObject;
+				T result = caseGroupBy(groupBy);
+				if (result == null) result = caseNaryOperator(groupBy);
+				if (result == null) result = caseEventPatternCondition(groupBy);
+				if (result == null) result = caseOperator(groupBy);
+				if (result == null) result = caseEventPatternElement(groupBy);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case EventpatternPackage.EVERY: {
 				Every every = (Every)theEObject;
 				T result = caseEvery(every);
@@ -1154,6 +1164,21 @@ public class EventpatternSwitch<T> extends Switch<T>
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Group By</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Group By</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGroupBy(GroupBy object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Every</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;

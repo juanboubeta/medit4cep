@@ -25,6 +25,15 @@
           xsi:type="gmftool:DefaultImage"/>
     </tools>
     <tools
+        xsi:type="gmftool:CreationTool"
+        title="Group By"
+        description="Add a group-by operator">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
         xsi:type="gmftool:ToolGroup"
         title="Simple Events"
         collapsible="true">

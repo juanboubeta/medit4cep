@@ -38,6 +38,7 @@ import eventpattern.diagram.edit.parts.EveryDistinct3EditPart;
 import eventpattern.diagram.edit.parts.FollowedBy3EditPart;
 import eventpattern.diagram.edit.parts.GreaterEqual3EditPart;
 import eventpattern.diagram.edit.parts.GreaterThan3EditPart;
+import eventpattern.diagram.edit.parts.GroupBy2EditPart;
 import eventpattern.diagram.edit.parts.LessEqual3EditPart;
 import eventpattern.diagram.edit.parts.LessThan3EditPart;
 import eventpattern.diagram.edit.parts.Max2EditPart;
@@ -144,6 +145,7 @@ public class SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompa
 		case Event3EditPart.VISUAL_ID:
 		case EventProperty5EditPart.VISUAL_ID:
 		case Value3EditPart.VISUAL_ID:
+		case GroupBy2EditPart.VISUAL_ID:
 		case WithinTimer2EditPart.VISUAL_ID:
 		case TimeInterval2EditPart.VISUAL_ID:
 		case TimeSchedule2EditPart.VISUAL_ID:

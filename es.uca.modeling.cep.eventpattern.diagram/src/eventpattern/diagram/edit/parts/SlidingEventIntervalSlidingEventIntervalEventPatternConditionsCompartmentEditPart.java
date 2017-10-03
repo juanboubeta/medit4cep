@@ -180,6 +180,9 @@ public class SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompa
 			if (type == EventpatternElementTypes.Value_3055) {
 				return this;
 			}
+			if (type == EventpatternElementTypes.GroupBy_3060) {
+				return this;
+			}
 			if (type == EventpatternElementTypes.WithinTimer_3056) {
 				return this;
 			}

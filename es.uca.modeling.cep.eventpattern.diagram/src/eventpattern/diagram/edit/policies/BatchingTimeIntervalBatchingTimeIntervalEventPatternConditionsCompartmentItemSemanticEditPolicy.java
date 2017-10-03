@@ -19,6 +19,7 @@ import eventpattern.diagram.edit.commands.EveryDistinct3CreateCommand;
 import eventpattern.diagram.edit.commands.FollowedBy3CreateCommand;
 import eventpattern.diagram.edit.commands.GreaterEqual3CreateCommand;
 import eventpattern.diagram.edit.commands.GreaterThan3CreateCommand;
+import eventpattern.diagram.edit.commands.GroupBy2CreateCommand;
 import eventpattern.diagram.edit.commands.LessEqual3CreateCommand;
 import eventpattern.diagram.edit.commands.LessThan3CreateCommand;
 import eventpattern.diagram.edit.commands.Max2CreateCommand;
@@ -143,6 +144,9 @@ public class BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompa
 		}
 		if (EventpatternElementTypes.Value_3055 == req.getElementType()) {
 			return getGEFWrapper(new Value3CreateCommand(req));
+		}
+		if (EventpatternElementTypes.GroupBy_3060 == req.getElementType()) {
+			return getGEFWrapper(new GroupBy2CreateCommand(req));
 		}
 		if (EventpatternElementTypes.WithinTimer_3056 == req.getElementType()) {
 			return getGEFWrapper(new WithinTimer2CreateCommand(req));

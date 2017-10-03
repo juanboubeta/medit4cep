@@ -320,6 +320,9 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 					EventpatternVisualIDRegistry.getType(ValueEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry.getType(GroupByEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry.getType(WithinTimerEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
@@ -1402,6 +1405,11 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
 					SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
+					EventpatternVisualIDRegistry.getType(GroupBy2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
+					SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
 					EventpatternVisualIDRegistry.getType(WithinTimer2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
@@ -1565,6 +1573,11 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 					BatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
 					EventpatternVisualIDRegistry.getType(Value3EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
+					BatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					EventpatternVisualIDRegistry.getType(GroupBy2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
 					BatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID));
@@ -1736,6 +1749,11 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
 					SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
+					EventpatternVisualIDRegistry.getType(GroupBy2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
+					SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
 					EventpatternVisualIDRegistry.getType(WithinTimer2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
@@ -1903,6 +1921,11 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
 					BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
+					EventpatternVisualIDRegistry.getType(GroupBy2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
+					BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
 					EventpatternVisualIDRegistry.getType(WithinTimer2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry.getType(
@@ -1953,6 +1976,22 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			Node sv = (Node) view;
 			EventpatternNavigatorGroup incominglinks = new EventpatternNavigatorGroup(
 					Messages.NavigatorGroupName_Twitter_2039_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry.getType(LinkEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case GroupByEditPart.VISUAL_ID: {
+			LinkedList<EventpatternAbstractNavigatorItem> result = new LinkedList<EventpatternAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			EventpatternNavigatorGroup incominglinks = new EventpatternNavigatorGroup(
+					Messages.NavigatorGroupName_GroupBy_2040_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
@@ -3481,6 +3520,22 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			return result.toArray();
 		}
 
+		case GroupBy2EditPart.VISUAL_ID: {
+			LinkedList<EventpatternAbstractNavigatorItem> result = new LinkedList<EventpatternAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			EventpatternNavigatorGroup incominglinks = new EventpatternNavigatorGroup(
+					Messages.NavigatorGroupName_GroupBy_3060_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry.getType(LinkEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
 		case LinkEditPart.VISUAL_ID: {
 			LinkedList<EventpatternAbstractNavigatorItem> result = new LinkedList<EventpatternAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
@@ -3566,6 +3621,9 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry.getType(SumEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry.getType(GroupByEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry.getType(EmailEditPart.VISUAL_ID));
@@ -3716,6 +3774,9 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry.getType(Sum2EditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry.getType(GroupBy2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry.getType(ComplexEventPropertyEditPart.VISUAL_ID));

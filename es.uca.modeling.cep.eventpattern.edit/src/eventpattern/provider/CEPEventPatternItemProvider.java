@@ -322,6 +322,11 @@ public class CEPEventPatternItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(EventpatternPackage.Literals.CEP_EVENT_PATTERN__EVENT_PATTERN_ELEMENTS,
+				 EventpatternFactory.eINSTANCE.createGroupBy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EventpatternPackage.Literals.CEP_EVENT_PATTERN__EVENT_PATTERN_ELEMENTS,
 				 EventpatternFactory.eINSTANCE.createEvery()));
 
 		newChildDescriptors.add

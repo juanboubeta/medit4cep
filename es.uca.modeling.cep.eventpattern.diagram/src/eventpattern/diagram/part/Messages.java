@@ -484,6 +484,16 @@ public class Messages extends NLS {
 	public static String Value2CreationTool_desc;
 
 	/**
+	* @generated
+	*/
+	public static String GroupBy3CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String GroupBy3CreationTool_desc;
+
+	/**
 	 * @generated
 	 */
 	public static String Event1CreationTool_title;
@@ -1109,6 +1119,11 @@ public class Messages extends NLS {
 	public static String NavigatorGroupName_Twitter_2039_incominglinks;
 
 	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_GroupBy_2040_incominglinks;
+
+	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_EventProperty_3001_outgoinglinks;
@@ -1637,6 +1652,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ComplexEventProperty_3059_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_GroupBy_3060_incominglinks;
 
 	/**
 	 * @generated

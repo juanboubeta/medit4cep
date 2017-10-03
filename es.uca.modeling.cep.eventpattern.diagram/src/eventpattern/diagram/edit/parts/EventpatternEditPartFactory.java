@@ -130,6 +130,9 @@ public class EventpatternEditPartFactory implements EditPartFactory {
 			case ValueValueEditPart.VISUAL_ID:
 				return new ValueValueEditPart(view);
 
+			case GroupByEditPart.VISUAL_ID:
+				return new GroupByEditPart(view);
+
 			case WithinTimerEditPart.VISUAL_ID:
 				return new WithinTimerEditPart(view);
 
@@ -387,6 +390,9 @@ public class EventpatternEditPartFactory implements EditPartFactory {
 
 			case ValueValue3EditPart.VISUAL_ID:
 				return new ValueValue3EditPart(view);
+
+			case GroupBy2EditPart.VISUAL_ID:
+				return new GroupBy2EditPart(view);
 
 			case WithinTimer2EditPart.VISUAL_ID:
 				return new WithinTimer2EditPart(view);

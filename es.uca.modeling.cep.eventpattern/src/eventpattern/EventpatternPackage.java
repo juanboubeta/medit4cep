@@ -1109,6 +1109,34 @@ public interface EventpatternPackage extends EPackage
   int LOGICAL_OPERATOR_FEATURE_COUNT = CONDITION_OPERATOR_FEATURE_COUNT + 0;
 
   /**
+	 * The meta object id for the '{@link eventpattern.impl.GroupByImpl <em>Group By</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eventpattern.impl.GroupByImpl
+	 * @see eventpattern.impl.EventpatternPackageImpl#getGroupBy()
+	 * @generated
+	 */
+	int GROUP_BY = 25;
+
+		/**
+	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_BY__INBOUND_LINK = NARY_OPERATOR__INBOUND_LINK;
+
+		/**
+	 * The number of structural features of the '<em>Group By</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_BY_FEATURE_COUNT = NARY_OPERATOR_FEATURE_COUNT + 0;
+
+		/**
 	 * The meta object id for the '{@link eventpattern.impl.EveryImpl <em>Every</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1116,7 +1144,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getEvery()
 	 * @generated
 	 */
-  int EVERY = 25;
+  int EVERY = 26;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1153,7 +1181,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getEveryDistinct()
 	 * @generated
 	 */
-  int EVERY_DISTINCT = 26;
+  int EVERY_DISTINCT = 27;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1190,7 +1218,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getRepeat()
 	 * @generated
 	 */
-  int REPEAT = 27;
+  int REPEAT = 28;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1236,7 +1264,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getUntil()
 	 * @generated
 	 */
-  int UNTIL = 28;
+  int UNTIL = 29;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1273,7 +1301,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getRange()
 	 * @generated
 	 */
-  int RANGE = 29;
+  int RANGE = 30;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1328,7 +1356,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getFollowedBy()
 	 * @generated
 	 */
-  int FOLLOWED_BY = 30;
+  int FOLLOWED_BY = 31;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1365,7 +1393,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getWhile()
 	 * @generated
 	 */
-  int WHILE = 31;
+  int WHILE = 32;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1402,7 +1430,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getAnd()
 	 * @generated
 	 */
-  int AND = 32;
+  int AND = 33;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1439,7 +1467,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getOr()
 	 * @generated
 	 */
-  int OR = 33;
+  int OR = 34;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1476,7 +1504,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getNot()
 	 * @generated
 	 */
-  int NOT = 34;
+  int NOT = 35;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1513,7 +1541,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getAddition()
 	 * @generated
 	 */
-  int ADDITION = 35;
+  int ADDITION = 36;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1550,7 +1578,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getSubtraction()
 	 * @generated
 	 */
-  int SUBTRACTION = 36;
+  int SUBTRACTION = 37;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1587,7 +1615,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getMultiplication()
 	 * @generated
 	 */
-  int MULTIPLICATION = 37;
+  int MULTIPLICATION = 38;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1624,7 +1652,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getDivision()
 	 * @generated
 	 */
-  int DIVISION = 38;
+  int DIVISION = 39;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1661,7 +1689,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getModulus()
 	 * @generated
 	 */
-  int MODULUS = 39;
+  int MODULUS = 40;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1698,7 +1726,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getEqual()
 	 * @generated
 	 */
-  int EQUAL = 40;
+  int EQUAL = 41;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1735,7 +1763,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getNotEqual()
 	 * @generated
 	 */
-  int NOT_EQUAL = 41;
+  int NOT_EQUAL = 42;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1772,7 +1800,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getLessThan()
 	 * @generated
 	 */
-  int LESS_THAN = 42;
+  int LESS_THAN = 43;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1809,7 +1837,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getGreaterThan()
 	 * @generated
 	 */
-  int GREATER_THAN = 43;
+  int GREATER_THAN = 44;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1846,7 +1874,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getLessEqual()
 	 * @generated
 	 */
-  int LESS_EQUAL = 44;
+  int LESS_EQUAL = 45;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1883,7 +1911,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getGreaterEqual()
 	 * @generated
 	 */
-  int GREATER_EQUAL = 45;
+  int GREATER_EQUAL = 46;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1920,7 +1948,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getMax()
 	 * @generated
 	 */
-  int MAX = 46;
+  int MAX = 47;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1957,7 +1985,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getMin()
 	 * @generated
 	 */
-  int MIN = 47;
+  int MIN = 48;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -1994,7 +2022,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getAvg()
 	 * @generated
 	 */
-  int AVG = 48;
+  int AVG = 49;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -2031,7 +2059,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getCount()
 	 * @generated
 	 */
-  int COUNT = 49;
+  int COUNT = 50;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -2068,7 +2096,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getSum()
 	 * @generated
 	 */
-  int SUM = 50;
+  int SUM = 51;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -2105,7 +2133,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getWithinTimer()
 	 * @generated
 	 */
-  int WITHIN_TIMER = 51;
+  int WITHIN_TIMER = 52;
 
   /**
 	 * The feature id for the '<em><b>Outbound Link</b></em>' reference list.
@@ -2214,7 +2242,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getWithinTimerElement()
 	 * @generated
 	 */
-  int WITHIN_TIMER_ELEMENT = 52;
+  int WITHIN_TIMER_ELEMENT = 53;
 
   /**
 	 * The number of structural features of the '<em>Within Timer Element</em>' class.
@@ -2233,7 +2261,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getTimeInterval()
 	 * @generated
 	 */
-  int TIME_INTERVAL = 53;
+  int TIME_INTERVAL = 54;
 
   /**
 	 * The feature id for the '<em><b>Outbound Link</b></em>' reference list.
@@ -2333,7 +2361,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getTimeSchedule()
 	 * @generated
 	 */
-  int TIME_SCHEDULE = 54;
+  int TIME_SCHEDULE = 55;
 
   /**
 	 * The feature id for the '<em><b>Outbound Link</b></em>' reference list.
@@ -2415,7 +2443,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getEvent()
 	 * @generated
 	 */
-  int EVENT = 55;
+  int EVENT = 56;
 
   /**
 	 * The feature id for the '<em><b>Outbound Link</b></em>' reference list.
@@ -2470,7 +2498,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getEventProperty()
 	 * @generated
 	 */
-  int EVENT_PROPERTY = 56;
+  int EVENT_PROPERTY = 57;
 
   /**
 	 * The feature id for the '<em><b>Outbound Link</b></em>' reference list.
@@ -2552,7 +2580,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getValue()
 	 * @generated
 	 */
-  int VALUE = 57;
+  int VALUE = 58;
 
   /**
 	 * The feature id for the '<em><b>Outbound Link</b></em>' reference list.
@@ -2598,7 +2626,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getEmail()
 	 * @generated
 	 */
-  int EMAIL = 58;
+  int EMAIL = 59;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -2707,7 +2735,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getTwitter()
 	 * @generated
 	 */
-  int TWITTER = 59;
+  int TWITTER = 60;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -2735,7 +2763,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getPropertyTypeValue()
 	 * @generated
 	 */
-  int PROPERTY_TYPE_VALUE = 60;
+  int PROPERTY_TYPE_VALUE = 61;
 
 
   /**
@@ -3418,6 +3446,16 @@ public interface EventpatternPackage extends EPackage
   EClass getLogicalOperator();
 
   /**
+	 * Returns the meta object for class '{@link eventpattern.GroupBy <em>Group By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Group By</em>'.
+	 * @see eventpattern.GroupBy
+	 * @generated
+	 */
+	EClass getGroupBy();
+
+		/**
 	 * Returns the meta object for class '{@link eventpattern.Every <em>Every</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4869,6 +4907,16 @@ public interface EventpatternPackage extends EPackage
     EClass LOGICAL_OPERATOR = eINSTANCE.getLogicalOperator();
 
     /**
+		 * The meta object literal for the '{@link eventpattern.impl.GroupByImpl <em>Group By</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eventpattern.impl.GroupByImpl
+		 * @see eventpattern.impl.EventpatternPackageImpl#getGroupBy()
+		 * @generated
+		 */
+		EClass GROUP_BY = eINSTANCE.getGroupBy();
+
+				/**
 		 * The meta object literal for the '{@link eventpattern.impl.EveryImpl <em>Every</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
