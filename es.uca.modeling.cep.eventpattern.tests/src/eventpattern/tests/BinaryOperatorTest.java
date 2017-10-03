@@ -14,26 +14,26 @@ public abstract class BinaryOperatorTest extends OperatorTest
 {
 
   /**
-   * Constructs a new Binary Operator test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Binary Operator test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public BinaryOperatorTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Binary Operator test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Binary Operator test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected BinaryOperator getFixture()
   {
-    return (BinaryOperator)fixture;
-  }
+		return (BinaryOperator)fixture;
+	}
 
 } //BinaryOperatorTest

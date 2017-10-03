@@ -17,60 +17,60 @@ public class AdditionTest extends ArithmeticOperatorTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(AdditionTest.class);
-  }
+		TestRunner.run(AdditionTest.class);
+	}
 
   /**
-   * Constructs a new Addition test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Addition test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AdditionTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Addition test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Addition test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected Addition getFixture()
   {
-    return (Addition)fixture;
-  }
+		return (Addition)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createAddition());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createAddition());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //AdditionTest

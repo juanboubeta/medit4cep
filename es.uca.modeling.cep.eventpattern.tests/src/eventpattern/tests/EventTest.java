@@ -17,60 +17,60 @@ public class EventTest extends PatternOperandTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(EventTest.class);
-  }
+		TestRunner.run(EventTest.class);
+	}
 
   /**
-   * Constructs a new Event test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Event test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EventTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Event test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Event test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected Event getFixture()
   {
-    return (Event)fixture;
-  }
+		return (Event)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createEvent());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createEvent());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //EventTest

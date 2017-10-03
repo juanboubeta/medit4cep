@@ -16,44 +16,44 @@ public abstract class EventPatternElementTest extends TestCase
 {
 
   /**
-   * The fixture for this Event Pattern Element test case.
-   * <!-- begin-user-doc -->
+	 * The fixture for this Event Pattern Element test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected EventPatternElement fixture = null;
 
   /**
-   * Constructs a new Event Pattern Element test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Event Pattern Element test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EventPatternElementTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Sets the fixture for this Event Pattern Element test case.
-   * <!-- begin-user-doc -->
+	 * Sets the fixture for this Event Pattern Element test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void setFixture(EventPatternElement fixture)
   {
-    this.fixture = fixture;
-  }
+		this.fixture = fixture;
+	}
 
   /**
-   * Returns the fixture for this Event Pattern Element test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Event Pattern Element test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected EventPatternElement getFixture()
   {
-    return fixture;
-  }
+		return fixture;
+	}
 
 } //EventPatternElementTest

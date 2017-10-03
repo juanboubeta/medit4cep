@@ -9,8 +9,7 @@ import org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider;
 /**
  * @generated
  */
-public class EventpatternIconProvider extends DefaultElementTypeIconProvider
-		implements IIconProvider {
+public class EventpatternIconProvider extends DefaultElementTypeIconProvider implements IIconProvider {
 
 	/**
 	 * @generated

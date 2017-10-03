@@ -16,44 +16,44 @@ public abstract class WithinTimerElementTest extends TestCase
 {
 
   /**
-   * The fixture for this Within Timer Element test case.
-   * <!-- begin-user-doc -->
+	 * The fixture for this Within Timer Element test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected WithinTimerElement fixture = null;
 
   /**
-   * Constructs a new Within Timer Element test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Within Timer Element test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public WithinTimerElementTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Sets the fixture for this Within Timer Element test case.
-   * <!-- begin-user-doc -->
+	 * Sets the fixture for this Within Timer Element test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void setFixture(WithinTimerElement fixture)
   {
-    this.fixture = fixture;
-  }
+		this.fixture = fixture;
+	}
 
   /**
-   * Returns the fixture for this Within Timer Element test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Within Timer Element test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected WithinTimerElement getFixture()
   {
-    return fixture;
-  }
+		return fixture;
+	}
 
 } //WithinTimerElementTest

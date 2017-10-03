@@ -121,8 +121,7 @@ import eventpattern.diagram.part.EventpatternVisualIDRegistry;
 /**
  * @generated
  */
-public class EventpatternParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class EventpatternParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -134,8 +133,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRepeatCount_5017Parser() {
 		if (repeatCount_5017Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getRepeat_Count() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRepeat_Count() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("{0}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0, number}"); //$NON-NLS-1$
@@ -155,8 +153,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRangeLowEndpointHighEndpoint_5019Parser() {
 		if (rangeLowEndpointHighEndpoint_5019Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE.getRange_LowEndpoint(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRange_LowEndpoint(),
 					EventpatternPackage.eINSTANCE.getRange_HighEndpoint() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("[{0, number}:{1, number}]"); //$NON-NLS-1$
@@ -177,8 +174,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventTypeName_5029Parser() {
 		if (eventTypeName_5029Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getEvent_TypeName() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEvent_TypeName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventTypeName_5029Parser = parser;
 		}
@@ -195,8 +191,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventPropertyName_5030Parser() {
 		if (eventPropertyName_5030Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getEventProperty_Name() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventPropertyName_5030Parser = parser;
 		}
@@ -213,8 +208,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getValueValue_5031Parser() {
 		if (valueValue_5031Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getValue_Value() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getValue_Value() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			valueValue_5031Parser = parser;
 		}
@@ -231,8 +225,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getWithinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5056Parser() {
 		if (withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5056Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE.getWithinTimer_Years(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getWithinTimer_Years(),
 					EventpatternPackage.eINSTANCE.getWithinTimer_Months(),
 					EventpatternPackage.eINSTANCE.getWithinTimer_Weeks(),
 					EventpatternPackage.eINSTANCE.getWithinTimer_Days(),
@@ -241,9 +234,12 @@ public class EventpatternParserProvider extends AbstractProvider implements
 					EventpatternPackage.eINSTANCE.getWithinTimer_Seconds(),
 					EventpatternPackage.eINSTANCE.getWithinTimer_Milliseconds() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern("Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
-			parser.setEditorPattern("Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
-			parser.setEditPattern("Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setViewPattern(
+					"Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setEditorPattern(
+					"Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setEditPattern(
+					"Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
 			withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5056Parser = parser;
 		}
 		return withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5056Parser;
@@ -259,20 +255,21 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5057Parser() {
 		if (timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5057Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE.getTimeInterval_Years(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getTimeInterval_Years(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Months(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Weeks(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Days(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Hours(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Minutes(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Seconds(),
-					EventpatternPackage.eINSTANCE
-							.getTimeInterval_Milliseconds() };
+					EventpatternPackage.eINSTANCE.getTimeInterval_Milliseconds() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern(" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
-			parser.setEditorPattern(" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
-			parser.setEditPattern(" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
+			parser.setViewPattern(
+					" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
+			parser.setEditorPattern(
+					" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
+			parser.setEditPattern(
+					" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
 			timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5057Parser = parser;
 		}
 		return timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5057Parser;
@@ -288,17 +285,19 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getTimeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser() {
 		if (timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE.getTimeSchedule_DayOfWeek(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getTimeSchedule_DayOfWeek(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_DayOfMonth(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_Month(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_Hour(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_Minute(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_Second() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern(" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
-			parser.setEditorPattern(" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
-			parser.setEditPattern(" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
+			parser.setViewPattern(
+					" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
+			parser.setEditorPattern(
+					" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
+			parser.setEditPattern(
+					" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
 			timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser = parser;
 		}
 		return timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser;
@@ -314,8 +313,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getSlidingEventIntervalSize_5092Parser() {
 		if (slidingEventIntervalSize_5092Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getSlidingEventInterval_Size() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getSlidingEventInterval_Size() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Sliding Event Interval: {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0, number}"); //$NON-NLS-1$
@@ -335,8 +333,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getBatchingEventIntervalSize_5093Parser() {
 		if (batchingEventIntervalSize_5093Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getBatchingEventInterval_Size() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getBatchingEventInterval_Size() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Batching Event Interval: {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0, number}"); //$NON-NLS-1$
@@ -356,26 +353,21 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getSlidingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5094Parser() {
 		if (slidingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5094Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE
-							.getSlidingTimeInterval_Years(),
-					EventpatternPackage.eINSTANCE
-							.getSlidingTimeInterval_Months(),
-					EventpatternPackage.eINSTANCE
-							.getSlidingTimeInterval_Weeks(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getSlidingTimeInterval_Years(),
+					EventpatternPackage.eINSTANCE.getSlidingTimeInterval_Months(),
+					EventpatternPackage.eINSTANCE.getSlidingTimeInterval_Weeks(),
 					EventpatternPackage.eINSTANCE.getSlidingTimeInterval_Days(),
-					EventpatternPackage.eINSTANCE
-							.getSlidingTimeInterval_Hours(),
-					EventpatternPackage.eINSTANCE
-							.getSlidingTimeInterval_Minutes(),
-					EventpatternPackage.eINSTANCE
-							.getSlidingTimeInterval_Seconds(),
-					EventpatternPackage.eINSTANCE
-							.getSlidingTimeInterval_Milliseconds() };
+					EventpatternPackage.eINSTANCE.getSlidingTimeInterval_Hours(),
+					EventpatternPackage.eINSTANCE.getSlidingTimeInterval_Minutes(),
+					EventpatternPackage.eINSTANCE.getSlidingTimeInterval_Seconds(),
+					EventpatternPackage.eINSTANCE.getSlidingTimeInterval_Milliseconds() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern("Sliding Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
-			parser.setEditorPattern("Sliding Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
-			parser.setEditPattern("Sliding Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setViewPattern(
+					"Sliding Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setEditorPattern(
+					"Sliding Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setEditPattern(
+					"Sliding Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
 			slidingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5094Parser = parser;
 		}
 		return slidingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5094Parser;
@@ -391,27 +383,21 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getBatchingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5095Parser() {
 		if (batchingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5095Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE
-							.getBatchingTimeInterval_Years(),
-					EventpatternPackage.eINSTANCE
-							.getBatchingTimeInterval_Months(),
-					EventpatternPackage.eINSTANCE
-							.getBatchingTimeInterval_Weeks(),
-					EventpatternPackage.eINSTANCE
-							.getBatchingTimeInterval_Days(),
-					EventpatternPackage.eINSTANCE
-							.getBatchingTimeInterval_Hours(),
-					EventpatternPackage.eINSTANCE
-							.getBatchingTimeInterval_Minutes(),
-					EventpatternPackage.eINSTANCE
-							.getBatchingTimeInterval_Seconds(),
-					EventpatternPackage.eINSTANCE
-							.getBatchingTimeInterval_Milliseconds() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getBatchingTimeInterval_Years(),
+					EventpatternPackage.eINSTANCE.getBatchingTimeInterval_Months(),
+					EventpatternPackage.eINSTANCE.getBatchingTimeInterval_Weeks(),
+					EventpatternPackage.eINSTANCE.getBatchingTimeInterval_Days(),
+					EventpatternPackage.eINSTANCE.getBatchingTimeInterval_Hours(),
+					EventpatternPackage.eINSTANCE.getBatchingTimeInterval_Minutes(),
+					EventpatternPackage.eINSTANCE.getBatchingTimeInterval_Seconds(),
+					EventpatternPackage.eINSTANCE.getBatchingTimeInterval_Milliseconds() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern("Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
-			parser.setEditorPattern("Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
-			parser.setEditPattern("Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setViewPattern(
+					"Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setEditorPattern(
+					"Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setEditPattern(
+					"Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
 			batchingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5095Parser = parser;
 		}
 		return batchingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5095Parser;
@@ -427,8 +413,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getComplexEventTypeName_5097Parser() {
 		if (complexEventTypeName_5097Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getComplexEvent_TypeName() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getComplexEvent_TypeName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("New Complex Event: {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("New Complex Event: {0}"); //$NON-NLS-1$
@@ -448,8 +433,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventPropertyName_5028Parser() {
 		if (eventPropertyName_5028Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getEventProperty_Name() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventPropertyName_5028Parser = parser;
 		}
@@ -466,8 +450,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventPropertyName_5027Parser() {
 		if (eventPropertyName_5027Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getEventProperty_Name() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventPropertyName_5027Parser = parser;
 		}
@@ -484,8 +467,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRepeatCount_5048Parser() {
 		if (repeatCount_5048Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getRepeat_Count() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRepeat_Count() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("{0}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0, number}"); //$NON-NLS-1$
@@ -505,8 +487,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRangeLowEndpointHighEndpoint_5050Parser() {
 		if (rangeLowEndpointHighEndpoint_5050Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE.getRange_LowEndpoint(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRange_LowEndpoint(),
 					EventpatternPackage.eINSTANCE.getRange_HighEndpoint() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("[{0, number}:{1, number}]"); //$NON-NLS-1$
@@ -527,8 +508,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventTypeName_5053Parser() {
 		if (eventTypeName_5053Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getEvent_TypeName() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEvent_TypeName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventTypeName_5053Parser = parser;
 		}
@@ -545,8 +525,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventPropertyName_5054Parser() {
 		if (eventPropertyName_5054Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getEventProperty_Name() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventPropertyName_5054Parser = parser;
 		}
@@ -563,8 +542,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getValueValue_5055Parser() {
 		if (valueValue_5055Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getValue_Value() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getValue_Value() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			valueValue_5055Parser = parser;
 		}
@@ -581,8 +559,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRepeatCount_5076Parser() {
 		if (repeatCount_5076Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getRepeat_Count() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRepeat_Count() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("{0}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0, number}"); //$NON-NLS-1$
@@ -602,8 +579,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRangeLowEndpointHighEndpoint_5078Parser() {
 		if (rangeLowEndpointHighEndpoint_5078Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE.getRange_LowEndpoint(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRange_LowEndpoint(),
 					EventpatternPackage.eINSTANCE.getRange_HighEndpoint() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("[{0, number}:{1, number}]"); //$NON-NLS-1$
@@ -624,8 +600,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventTypeName_5086Parser() {
 		if (eventTypeName_5086Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getEvent_TypeName() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEvent_TypeName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventTypeName_5086Parser = parser;
 		}
@@ -642,8 +617,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventPropertyName_5087Parser() {
 		if (eventPropertyName_5087Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getEventProperty_Name() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventPropertyName_5087Parser = parser;
 		}
@@ -660,8 +634,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getValueValue_5088Parser() {
 		if (valueValue_5088Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getValue_Value() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getValue_Value() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			valueValue_5088Parser = parser;
 		}
@@ -678,8 +651,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getWithinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5089Parser() {
 		if (withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5089Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE.getWithinTimer_Years(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getWithinTimer_Years(),
 					EventpatternPackage.eINSTANCE.getWithinTimer_Months(),
 					EventpatternPackage.eINSTANCE.getWithinTimer_Weeks(),
 					EventpatternPackage.eINSTANCE.getWithinTimer_Days(),
@@ -688,9 +660,12 @@ public class EventpatternParserProvider extends AbstractProvider implements
 					EventpatternPackage.eINSTANCE.getWithinTimer_Seconds(),
 					EventpatternPackage.eINSTANCE.getWithinTimer_Milliseconds() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern("Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
-			parser.setEditorPattern("Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
-			parser.setEditPattern("Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setViewPattern(
+					"Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setEditorPattern(
+					"Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
+			parser.setEditPattern(
+					"Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}"); //$NON-NLS-1$
 			withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5089Parser = parser;
 		}
 		return withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5089Parser;
@@ -706,20 +681,21 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5090Parser() {
 		if (timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5090Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE.getTimeInterval_Years(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getTimeInterval_Years(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Months(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Weeks(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Days(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Hours(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Minutes(),
 					EventpatternPackage.eINSTANCE.getTimeInterval_Seconds(),
-					EventpatternPackage.eINSTANCE
-							.getTimeInterval_Milliseconds() };
+					EventpatternPackage.eINSTANCE.getTimeInterval_Milliseconds() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern(" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
-			parser.setEditorPattern(" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
-			parser.setEditPattern(" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
+			parser.setViewPattern(
+					" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
+			parser.setEditorPattern(
+					" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
+			parser.setEditPattern(
+					" {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} "); //$NON-NLS-1$
 			timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5090Parser = parser;
 		}
 		return timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5090Parser;
@@ -735,17 +711,19 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getTimeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5091Parser() {
 		if (timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5091Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					EventpatternPackage.eINSTANCE.getTimeSchedule_DayOfWeek(),
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getTimeSchedule_DayOfWeek(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_DayOfMonth(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_Month(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_Hour(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_Minute(),
 					EventpatternPackage.eINSTANCE.getTimeSchedule_Second() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			parser.setViewPattern(" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
-			parser.setEditorPattern(" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
-			parser.setEditPattern(" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
+			parser.setViewPattern(
+					" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
+			parser.setEditorPattern(
+					" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
+			parser.setEditPattern(
+					" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} "); //$NON-NLS-1$
 			timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5091Parser = parser;
 		}
 		return timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5091Parser;
@@ -761,8 +739,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getComplexEventPropertyName_5096Parser() {
 		if (complexEventPropertyName_5096Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getComplexEventProperty_Name() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getComplexEventProperty_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			complexEventPropertyName_5096Parser = parser;
 		}
@@ -779,8 +756,7 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 */
 	private IParser getLinkOrder_6001Parser() {
 		if (linkOrder_6001Parser == null) {
-			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE
-					.getLink_Order() };
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getLink_Order() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			linkOrder_6001Parser = parser;
 		}
@@ -860,10 +836,8 @@ public class EventpatternParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**

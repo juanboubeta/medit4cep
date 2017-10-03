@@ -11,32 +11,30 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Equal</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class EqualImpl extends ComparisonOperatorImpl implements Equal
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected EqualImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return EventpatternPackage.Literals.EQUAL;
-  }
+		return EventpatternPackage.Literals.EQUAL;
+	}
 
 } //EqualImpl

@@ -73,12 +73,10 @@ public class EventpatternNavigatorActionProvider extends CommonActionProvider {
 		if (!myContribute) {
 			return;
 		}
-		IStructuredSelection selection = (IStructuredSelection) getContext()
-				.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) getContext().getSelection();
 		myOpenDiagramAction.selectionChanged(selection);
 		if (myOpenDiagramAction.isEnabled()) {
-			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN,
-					myOpenDiagramAction);
+			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, myOpenDiagramAction);
 		}
 	}
 
@@ -119,17 +117,13 @@ public class EventpatternNavigatorActionProvider extends CommonActionProvider {
 			if (selection.size() == 1) {
 				Object selectedElement = selection.getFirstElement();
 				if (selectedElement instanceof EventpatternNavigatorItem) {
-					selectedElement = ((EventpatternNavigatorItem) selectedElement)
-							.getView();
+					selectedElement = ((EventpatternNavigatorItem) selectedElement).getView();
 				} else if (selectedElement instanceof IAdaptable) {
-					selectedElement = ((IAdaptable) selectedElement)
-							.getAdapter(View.class);
+					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (CEPEventPatternEditPart.MODEL_ID
-							.equals(EventpatternVisualIDRegistry
-									.getModelID(diagram))) {
+					if (CEPEventPatternEditPart.MODEL_ID.equals(EventpatternVisualIDRegistry.getModelID(diagram))) {
 						myDiagram = diagram;
 					}
 				}
@@ -150,8 +144,7 @@ public class EventpatternNavigatorActionProvider extends CommonActionProvider {
 			try {
 				page.openEditor(editorInput, EventpatternDiagramEditor.ID);
 			} catch (PartInitException e) {
-				EventpatternDiagramEditorPlugin.getInstance().logError(
-						"Exception while openning diagram", e); //$NON-NLS-1$
+				EventpatternDiagramEditorPlugin.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 
@@ -162,16 +155,14 @@ public class EventpatternNavigatorActionProvider extends CommonActionProvider {
 			Resource diagramResource = diagram.eResource();
 			for (EObject nextEObject : diagramResource.getContents()) {
 				if (nextEObject == diagram) {
-					return new FileEditorInput(
-							WorkspaceSynchronizer.getFile(diagramResource));
+					return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 				}
 				if (nextEObject instanceof Diagram) {
 					break;
 				}
 			}
 			URI uri = EcoreUtil.getURI(diagram);
-			String editorName = uri.lastSegment() + '#'
-					+ diagram.eResource().getContents().indexOf(diagram);
+			String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 			IEditorInput editorInput = new URIEditorInput(uri, editorName);
 			return editorInput;
 		}

@@ -78,6 +78,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/minutes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/seconds"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/milliseconds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//BatchingTimeInterval/startTimestamp"/>
     </genClasses>
     <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//EventPatternCondition"/>
     <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//AggregationOperator"/>

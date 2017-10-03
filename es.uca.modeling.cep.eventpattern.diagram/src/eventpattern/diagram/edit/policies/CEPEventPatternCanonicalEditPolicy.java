@@ -69,12 +69,9 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE
-					.getCEPEventPattern_EventPatternElements());
-			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE
-					.getCEPEventPattern_Actions());
-			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE
-					.getCEPEventPattern_ComplexEvent());
+			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE.getCEPEventPattern_EventPatternElements());
+			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE.getCEPEventPattern_Actions());
+			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE.getCEPEventPattern_ComplexEvent());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -97,13 +94,11 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
 		if (isShortcut(view)) {
 			return EventpatternDiagramUpdater.isShortcutOrphaned(view);
 		}
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
@@ -172,8 +167,7 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<EventpatternNodeDescriptor> childDescriptors = EventpatternDiagramUpdater
-				.getCEPEventPattern_1000SemanticChildren((View) getHost()
-						.getModel());
+				.getCEPEventPattern_1000SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours and not shortcuts
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -193,11 +187,10 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<EventpatternNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
+		for (Iterator<EventpatternNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
 			EventpatternNodeDescriptor next = descriptorsIterator.next();
-			String hint = EventpatternVisualIDRegistry.getType(next
-					.getVisualID());
+			String hint = EventpatternVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -223,13 +216,10 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
 		for (EventpatternNodeDescriptor next : childDescriptors) {
-			String hint = EventpatternVisualIDRegistry.getType(next
-					.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			String hint = EventpatternVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -238,10 +228,10 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -253,8 +243,8 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 
@@ -268,17 +258,13 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<EventpatternLinkDescriptor> linkDescriptors = collectAllLinks(
-				getDiagram(), domain2NotationMap);
+		Collection<EventpatternLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
-				.hasNext();) {
+		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = EventpatternVisualIDRegistry
-					.getVisualID(nextDiagramLink);
+			int diagramLinkVisualID = EventpatternVisualIDRegistry.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
-				if (nextDiagramLink.getSource() != null
-						&& nextDiagramLink.getTarget() != null) {
+				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
 				}
 				continue;
@@ -288,14 +274,11 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
 			for (Iterator<EventpatternLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 					.iterator(); linkDescriptorsIterator.hasNext();) {
-				EventpatternLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
-						.next();
+				EventpatternLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
 				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 						&& diagramLinkSrc == nextLinkDescriptor.getSource()
-						&& diagramLinkDst == nextLinkDescriptor
-								.getDestination()
-						&& diagramLinkVisualID == nextLinkDescriptor
-								.getVisualID()) {
+						&& diagramLinkDst == nextLinkDescriptor.getDestination()
+						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
 					linksIterator.remove();
 					linkDescriptorsIterator.remove();
 					break;
@@ -309,823 +292,718 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<EventpatternLinkDescriptor> collectAllLinks(View view,
-			Domain2Notation domain2NotationMap) {
-		if (!CEPEventPatternEditPart.MODEL_ID
-				.equals(EventpatternVisualIDRegistry.getModelID(view))) {
+	private Collection<EventpatternLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+		if (!CEPEventPatternEditPart.MODEL_ID.equals(EventpatternVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
 		}
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		switch (EventpatternVisualIDRegistry.getVisualID(view)) {
 		case CEPEventPatternEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getCEPEventPattern_1000ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getCEPEventPattern_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AndEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getAnd_2001ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getAnd_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case OrEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getOr_2002ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getOr_2002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NotEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getNot_2003ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getNot_2003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AdditionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getAddition_2004ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getAddition_2004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case SubtractionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getSubtraction_2005ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getSubtraction_2005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MultiplicationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getMultiplication_2006ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getMultiplication_2006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case DivisionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getDivision_2007ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getDivision_2007ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ModulusEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getModulus_2008ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getModulus_2008ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EqualEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEqual_2009ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEqual_2009ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NotEqualEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getNotEqual_2010ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getNotEqual_2010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case LessThanEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getLessThan_2011ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getLessThan_2011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case GreaterThanEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getGreaterThan_2012ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getGreaterThan_2012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case LessEqualEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getLessEqual_2013ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getLessEqual_2013ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case GreaterEqualEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getGreaterEqual_2014ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getGreaterEqual_2014ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EveryEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEvery_2015ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEvery_2015ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EveryDistinctEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEveryDistinct_2016ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEveryDistinct_2016ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case RepeatEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getRepeat_2017ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getRepeat_2017ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case UntilEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getUntil_2018ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getUntil_2018ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case RangeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getRange_2019ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getRange_2019ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case FollowedByEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getFollowedBy_2020ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getFollowedBy_2020ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case WhileEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getWhile_2021ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getWhile_2021ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MaxEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getMax_2022ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getMax_2022ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case MinEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getMin_2023ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getMin_2023ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case AvgEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getAvg_2024ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getAvg_2024ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case CountEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getCount_2025ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getCount_2025ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case SumEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getSum_2026ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getSum_2026ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EventEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEvent_2027ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEvent_2027ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EventPropertyEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEventProperty_2028ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEventProperty_2028ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ValueEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getValue_2029ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getValue_2029ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case WithinTimerEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getWithinTimer_2030ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getWithinTimer_2030ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TimeIntervalEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getTimeInterval_2031ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getTimeInterval_2031ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TimeScheduleEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getTimeSchedule_2032ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getTimeSchedule_2032ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EmailEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEmail_2033ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEmail_2033ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TwitterEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getTwitter_2039ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getTwitter_2039ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case SlidingEventIntervalEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getSlidingEventInterval_2034ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getSlidingEventInterval_2034ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case BatchingEventIntervalEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getBatchingEventInterval_2035ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getBatchingEventInterval_2035ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case SlidingTimeIntervalEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getSlidingTimeInterval_2036ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getSlidingTimeInterval_2036ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case BatchingTimeIntervalEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getBatchingTimeInterval_2037ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getBatchingTimeInterval_2037ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComplexEventEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getComplexEvent_2038ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getComplexEvent_2038ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EventProperty2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEventProperty_3001ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEventProperty_3001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EventProperty3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEventProperty_3002ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEventProperty_3002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case And2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getAnd_3003ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getAnd_3003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Or2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getOr_3004ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getOr_3004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Not2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getNot_3005ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getNot_3005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Addition2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getAddition_3006ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getAddition_3006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Subtraction2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getSubtraction_3007ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getSubtraction_3007ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Multiplication2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getMultiplication_3008ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getMultiplication_3008ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Division2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getDivision_3009ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getDivision_3009ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Modulus2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getModulus_3010ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getModulus_3010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Equal2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEqual_3011ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEqual_3011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NotEqual2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getNotEqual_3012ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getNotEqual_3012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case LessThan2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getLessThan_3013ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getLessThan_3013ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case GreaterThan2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getGreaterThan_3014ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getGreaterThan_3014ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case LessEqual2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getLessEqual_3015ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getLessEqual_3015ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case GreaterEqual2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getGreaterEqual_3016ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getGreaterEqual_3016ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Every2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEvery_3017ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEvery_3017ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EveryDistinct2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEveryDistinct_3018ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEveryDistinct_3018ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Repeat2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getRepeat_3019ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getRepeat_3019ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Until2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getUntil_3020ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getUntil_3020ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Range2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getRange_3021ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getRange_3021ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case FollowedBy2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getFollowedBy_3022ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getFollowedBy_3022ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case While2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getWhile_3023ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getWhile_3023ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Event2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEvent_3024ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEvent_3024ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EventProperty4EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEventProperty_3025ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEventProperty_3025ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Value2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getValue_3026ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getValue_3026ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case And3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getAnd_3027ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getAnd_3027ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Or3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getOr_3028ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getOr_3028ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Not3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getNot_3029ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getNot_3029ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Addition3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getAddition_3030ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getAddition_3030ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Subtraction3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getSubtraction_3031ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getSubtraction_3031ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Multiplication3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getMultiplication_3032ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getMultiplication_3032ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Division3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getDivision_3033ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getDivision_3033ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Modulus3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getModulus_3034ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getModulus_3034ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Equal3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEqual_3035ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEqual_3035ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NotEqual3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getNotEqual_3036ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getNotEqual_3036ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case LessThan3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getLessThan_3037ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getLessThan_3037ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case GreaterThan3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getGreaterThan_3038ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getGreaterThan_3038ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case LessEqual3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getLessEqual_3039ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getLessEqual_3039ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case GreaterEqual3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getGreaterEqual_3040ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getGreaterEqual_3040ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Every3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEvery_3041ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEvery_3041ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EveryDistinct3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEveryDistinct_3042ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEveryDistinct_3042ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Repeat3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getRepeat_3043ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getRepeat_3043ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Until3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getUntil_3044ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getUntil_3044ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Range3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getRange_3045ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getRange_3045ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case FollowedBy3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getFollowedBy_3046ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getFollowedBy_3046ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case While3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getWhile_3047ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getWhile_3047ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Max2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getMax_3048ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getMax_3048ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Min2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getMin_3049ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getMin_3049ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Avg2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getAvg_3050ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getAvg_3050ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Count2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getCount_3051ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getCount_3051ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Sum2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getSum_3052ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getSum_3052ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Event3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEvent_3053ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEvent_3053ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case EventProperty5EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getEventProperty_3054ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getEventProperty_3054ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case Value3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getValue_3055ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getValue_3055ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case WithinTimer2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getWithinTimer_3056ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getWithinTimer_3056ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TimeInterval2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getTimeInterval_3057ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getTimeInterval_3057ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case TimeSchedule2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getTimeSchedule_3058ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getTimeSchedule_3058ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComplexEventPropertyEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getComplexEventProperty_3059ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getComplexEventProperty_3059ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case LinkEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(EventpatternDiagramUpdater
-						.getLink_4001ContainedLinks(view));
+				result.addAll(EventpatternDiagramUpdater.getLink_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
-		for (Iterator children = view.getChildren().iterator(); children
-				.hasNext();) {
-			result.addAll(collectAllLinks((View) children.next(),
-					domain2NotationMap));
+		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
 		}
 		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-			result.addAll(collectAllLinks((View) edges.next(),
-					domain2NotationMap));
+			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
 		}
 		return result;
 	}
@@ -1133,26 +1011,20 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<IAdaptable> createConnections(
-			Collection<EventpatternLinkDescriptor> linkDescriptors,
+	private Collection<IAdaptable> createConnections(Collection<EventpatternLinkDescriptor> linkDescriptors,
 			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (EventpatternLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
-					domain2NotationMap);
-			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
-					domain2NotationMap);
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					EventpatternVisualIDRegistry.getType(nextLinkDescriptor
-							.getVisualID()), ViewUtil.APPEND, false,
-					((IGraphicalEditPart) getHost())
-							.getDiagramPreferencesHint());
-			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(
-					descriptor);
+					EventpatternVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false,
+					((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
@@ -1173,12 +1045,10 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}
@@ -1193,29 +1063,26 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
-			Domain2Notation domain2NotationMap) {
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected final EditPart getHintedEditPart(EObject domainModelElement,
-			Domain2Notation domain2NotationMap, int hintVisualId) {
+	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap,
+			int hintVisualId) {
 		View view = (View) domain2NotationMap.getHinted(domainModelElement,
 				EventpatternVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry()
-					.get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		}
 		return null;
 	}

@@ -11,32 +11,30 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Nary Operator</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public abstract class NaryOperatorImpl extends OperatorImpl implements NaryOperator
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected NaryOperatorImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return EventpatternPackage.Literals.NARY_OPERATOR;
-  }
+		return EventpatternPackage.Literals.NARY_OPERATOR;
+	}
 
 } //NaryOperatorImpl

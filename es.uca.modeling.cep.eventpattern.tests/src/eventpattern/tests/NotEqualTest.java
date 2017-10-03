@@ -17,60 +17,60 @@ public class NotEqualTest extends ComparisonOperatorTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(NotEqualTest.class);
-  }
+		TestRunner.run(NotEqualTest.class);
+	}
 
   /**
-   * Constructs a new Not Equal test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Not Equal test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotEqualTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Not Equal test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Not Equal test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected NotEqual getFixture()
   {
-    return (NotEqual)fixture;
-  }
+		return (NotEqual)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createNotEqual());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createNotEqual());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //NotEqualTest

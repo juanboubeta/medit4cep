@@ -11,32 +11,30 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Condition Operand</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public abstract class ConditionOperandImpl extends OperandImpl implements ConditionOperand
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ConditionOperandImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return EventpatternPackage.Literals.CONDITION_OPERAND;
-  }
+		return EventpatternPackage.Literals.CONDITION_OPERAND;
+	}
 
 } //ConditionOperandImpl

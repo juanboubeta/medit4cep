@@ -17,60 +17,60 @@ public class MinTest extends AggregationOperatorTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(MinTest.class);
-  }
+		TestRunner.run(MinTest.class);
+	}
 
   /**
-   * Constructs a new Min test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Min test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MinTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Min test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Min test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected Min getFixture()
   {
-    return (Min)fixture;
-  }
+		return (Min)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createMin());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createMin());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //MinTest

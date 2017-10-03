@@ -18,11 +18,9 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = EventpatternDiagramEditorPlugin
-				.getInstance().getElementInitializers();
+		ElementInitializers cached = EventpatternDiagramEditorPlugin.getInstance().getElementInitializers();
 		if (cached == null) {
-			EventpatternDiagramEditorPlugin.getInstance()
-					.setElementInitializers(cached = new ElementInitializers());
+			EventpatternDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

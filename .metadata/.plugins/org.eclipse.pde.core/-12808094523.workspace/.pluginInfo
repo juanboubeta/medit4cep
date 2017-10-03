@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="1028" class="es.uca.modeling.cep.domain.figures.Activator" localization="OSGI-INF/l10n/bundle" name="Figures" project="es.uca.modeling.cep.domain.figures"/>
+	<bundle bundleID="1029" class="es.uca.modeling.cep.eventpattern.menu.Activator" localization="OSGI-INF/l10n/bundle" name="Menu" project="es.uca.modeling.cep.eventpattern.menu"/>
+	<bundle bundleID="1030" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.domain" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1031" class="eventpattern.diagram.part.EventpatternDiagramEditorPlugin" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.eventpattern.diagram" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1032" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.domain.tests" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1033" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.eventpattern.tests" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1034" class="domain.diagram.part.DomainDiagramEditorPlugin" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.domain.diagram" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1035" localization="OSGI-INF/l10n/bundle" name="es.uca.modeling.cep.domain.validation" project="es.uca.modeling.cep.domain.validation"/>
+	<bundle bundleID="1036" class="domain.presentation.DomainEditorPlugin$Implementation" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.domain.editor" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1037" class="eventpattern.presentation.EventpatternEditorPlugin$Implementation" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.eventpattern.editor" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1038" class="es.uca.modeling.cep.eventpattern.m2t.Activator" localization="OSGI-INF/l10n/bundle" name="M2t" project="es.uca.modeling.cep.eventpattern.m2t"/>
+	<bundle bundleID="1039" localization="OSGI-INF/l10n/bundle" name="es.uca.modeling.cep.eventpattern.validation" project="es.uca.modeling.cep.eventpattern.validation"/>
+	<bundle bundleID="1040" class="domain.provider.DomainEditPlugin$Implementation" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.domain.edit" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1041" localization="OSGI-INF/l10n/bundle" name="Product" project="es.uca.modeling.cep.eventpattern.product"/>
+	<bundle bundleID="1042" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.eventpattern" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1043" class="eventpattern.provider.EventpatternEditPlugin$Implementation" localization="plugin" name="%pluginName" project="es.uca.modeling.cep.eventpattern.edit" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1044" class="es.uca.modeling.cep.eventpattern.figures.Activator" localization="OSGI-INF/l10n/bundle" name="Figures" project="es.uca.modeling.cep.eventpattern.figures"/>
+	<bundle bundleID="1045" class="es.uca.modeling.cep.eventpattern.help.Activator" localization="OSGI-INF/l10n/bundle" name="Help" project="es.uca.modeling.cep.eventpattern.help"/>
+</map>

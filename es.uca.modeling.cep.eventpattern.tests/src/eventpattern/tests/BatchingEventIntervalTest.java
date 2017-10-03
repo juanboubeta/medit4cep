@@ -17,60 +17,60 @@ public class BatchingEventIntervalTest extends DataWindowTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(BatchingEventIntervalTest.class);
-  }
+		TestRunner.run(BatchingEventIntervalTest.class);
+	}
 
   /**
-   * Constructs a new Batching Event Interval test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Batching Event Interval test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public BatchingEventIntervalTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Batching Event Interval test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Batching Event Interval test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected BatchingEventInterval getFixture()
   {
-    return (BatchingEventInterval)fixture;
-  }
+		return (BatchingEventInterval)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createBatchingEventInterval());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createBatchingEventInterval());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //BatchingEventIntervalTest

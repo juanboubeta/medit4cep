@@ -26,8 +26,7 @@ public class ComplexEventComplexEventComplexEventPropertiesCompartmentItemSemant
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (EventpatternElementTypes.ComplexEventProperty_3059 == req
-				.getElementType()) {
+		if (EventpatternElementTypes.ComplexEventProperty_3059 == req.getElementType()) {
 			return getGEFWrapper(new ComplexEventPropertyCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

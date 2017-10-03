@@ -22,634 +22,628 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 public class EventpatternFactoryImpl extends EFactoryImpl implements EventpatternFactory
 {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static EventpatternFactory init()
   {
-    try
-    {
-      EventpatternFactory theEventpatternFactory = (EventpatternFactory)EPackage.Registry.INSTANCE.getEFactory(EventpatternPackage.eNS_URI);
-      if (theEventpatternFactory != null)
-      {
-        return theEventpatternFactory;
-      }
-    }
-    catch (Exception exception)
-    {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new EventpatternFactoryImpl();
-  }
+		try {
+			EventpatternFactory theEventpatternFactory = (EventpatternFactory)EPackage.Registry.INSTANCE.getEFactory(EventpatternPackage.eNS_URI);
+			if (theEventpatternFactory != null) {
+				return theEventpatternFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new EventpatternFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EventpatternFactoryImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass)
   {
-    switch (eClass.getClassifierID())
-    {
-      case EventpatternPackage.CEP_EVENT_PATTERN: return createCEPEventPattern();
-      case EventpatternPackage.LINK: return createLink();
-      case EventpatternPackage.COMPLEX_EVENT: return createComplexEvent();
-      case EventpatternPackage.COMPLEX_EVENT_PROPERTY: return createComplexEventProperty();
-      case EventpatternPackage.SLIDING_EVENT_INTERVAL: return createSlidingEventInterval();
-      case EventpatternPackage.BATCHING_EVENT_INTERVAL: return createBatchingEventInterval();
-      case EventpatternPackage.SLIDING_TIME_INTERVAL: return createSlidingTimeInterval();
-      case EventpatternPackage.BATCHING_TIME_INTERVAL: return createBatchingTimeInterval();
-      case EventpatternPackage.EVERY: return createEvery();
-      case EventpatternPackage.EVERY_DISTINCT: return createEveryDistinct();
-      case EventpatternPackage.REPEAT: return createRepeat();
-      case EventpatternPackage.UNTIL: return createUntil();
-      case EventpatternPackage.RANGE: return createRange();
-      case EventpatternPackage.FOLLOWED_BY: return createFollowedBy();
-      case EventpatternPackage.WHILE: return createWhile();
-      case EventpatternPackage.AND: return createAnd();
-      case EventpatternPackage.OR: return createOr();
-      case EventpatternPackage.NOT: return createNot();
-      case EventpatternPackage.ADDITION: return createAddition();
-      case EventpatternPackage.SUBTRACTION: return createSubtraction();
-      case EventpatternPackage.MULTIPLICATION: return createMultiplication();
-      case EventpatternPackage.DIVISION: return createDivision();
-      case EventpatternPackage.MODULUS: return createModulus();
-      case EventpatternPackage.EQUAL: return createEqual();
-      case EventpatternPackage.NOT_EQUAL: return createNotEqual();
-      case EventpatternPackage.LESS_THAN: return createLessThan();
-      case EventpatternPackage.GREATER_THAN: return createGreaterThan();
-      case EventpatternPackage.LESS_EQUAL: return createLessEqual();
-      case EventpatternPackage.GREATER_EQUAL: return createGreaterEqual();
-      case EventpatternPackage.MAX: return createMax();
-      case EventpatternPackage.MIN: return createMin();
-      case EventpatternPackage.AVG: return createAvg();
-      case EventpatternPackage.COUNT: return createCount();
-      case EventpatternPackage.SUM: return createSum();
-      case EventpatternPackage.WITHIN_TIMER: return createWithinTimer();
-      case EventpatternPackage.TIME_INTERVAL: return createTimeInterval();
-      case EventpatternPackage.TIME_SCHEDULE: return createTimeSchedule();
-      case EventpatternPackage.EVENT: return createEvent();
-      case EventpatternPackage.EVENT_PROPERTY: return createEventProperty();
-      case EventpatternPackage.VALUE: return createValue();
-      case EventpatternPackage.EMAIL: return createEmail();
-      case EventpatternPackage.TWITTER: return createTwitter();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case EventpatternPackage.CEP_EVENT_PATTERN: return createCEPEventPattern();
+			case EventpatternPackage.LINK: return createLink();
+			case EventpatternPackage.COMPLEX_EVENT: return createComplexEvent();
+			case EventpatternPackage.COMPLEX_EVENT_PROPERTY: return createComplexEventProperty();
+			case EventpatternPackage.SLIDING_EVENT_INTERVAL: return createSlidingEventInterval();
+			case EventpatternPackage.BATCHING_EVENT_INTERVAL: return createBatchingEventInterval();
+			case EventpatternPackage.SLIDING_TIME_INTERVAL: return createSlidingTimeInterval();
+			case EventpatternPackage.BATCHING_TIME_INTERVAL: return createBatchingTimeInterval();
+			case EventpatternPackage.EVERY: return createEvery();
+			case EventpatternPackage.EVERY_DISTINCT: return createEveryDistinct();
+			case EventpatternPackage.REPEAT: return createRepeat();
+			case EventpatternPackage.UNTIL: return createUntil();
+			case EventpatternPackage.RANGE: return createRange();
+			case EventpatternPackage.FOLLOWED_BY: return createFollowedBy();
+			case EventpatternPackage.WHILE: return createWhile();
+			case EventpatternPackage.AND: return createAnd();
+			case EventpatternPackage.OR: return createOr();
+			case EventpatternPackage.NOT: return createNot();
+			case EventpatternPackage.ADDITION: return createAddition();
+			case EventpatternPackage.SUBTRACTION: return createSubtraction();
+			case EventpatternPackage.MULTIPLICATION: return createMultiplication();
+			case EventpatternPackage.DIVISION: return createDivision();
+			case EventpatternPackage.MODULUS: return createModulus();
+			case EventpatternPackage.EQUAL: return createEqual();
+			case EventpatternPackage.NOT_EQUAL: return createNotEqual();
+			case EventpatternPackage.LESS_THAN: return createLessThan();
+			case EventpatternPackage.GREATER_THAN: return createGreaterThan();
+			case EventpatternPackage.LESS_EQUAL: return createLessEqual();
+			case EventpatternPackage.GREATER_EQUAL: return createGreaterEqual();
+			case EventpatternPackage.MAX: return createMax();
+			case EventpatternPackage.MIN: return createMin();
+			case EventpatternPackage.AVG: return createAvg();
+			case EventpatternPackage.COUNT: return createCount();
+			case EventpatternPackage.SUM: return createSum();
+			case EventpatternPackage.WITHIN_TIMER: return createWithinTimer();
+			case EventpatternPackage.TIME_INTERVAL: return createTimeInterval();
+			case EventpatternPackage.TIME_SCHEDULE: return createTimeSchedule();
+			case EventpatternPackage.EVENT: return createEvent();
+			case EventpatternPackage.EVENT_PROPERTY: return createEventProperty();
+			case EventpatternPackage.VALUE: return createValue();
+			case EventpatternPackage.EMAIL: return createEmail();
+			case EventpatternPackage.TWITTER: return createTwitter();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object createFromString(EDataType eDataType, String initialValue)
   {
-    switch (eDataType.getClassifierID())
-    {
-      case EventpatternPackage.PROPERTY_TYPE_VALUE:
-        return createPropertyTypeValueFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case EventpatternPackage.PROPERTY_TYPE_VALUE:
+				return createPropertyTypeValueFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue)
   {
-    switch (eDataType.getClassifierID())
-    {
-      case EventpatternPackage.PROPERTY_TYPE_VALUE:
-        return convertPropertyTypeValueToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case EventpatternPackage.PROPERTY_TYPE_VALUE:
+				return convertPropertyTypeValueToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CEPEventPattern createCEPEventPattern()
   {
-    CEPEventPatternImpl cepEventPattern = new CEPEventPatternImpl();
-    return cepEventPattern;
-  }
+		CEPEventPatternImpl cepEventPattern = new CEPEventPatternImpl();
+		return cepEventPattern;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Link createLink()
   {
-    LinkImpl link = new LinkImpl();
-    return link;
-  }
+		LinkImpl link = new LinkImpl();
+		return link;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ComplexEvent createComplexEvent()
   {
-    ComplexEventImpl complexEvent = new ComplexEventImpl();
-    return complexEvent;
-  }
+		ComplexEventImpl complexEvent = new ComplexEventImpl();
+		return complexEvent;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ComplexEventProperty createComplexEventProperty()
   {
-    ComplexEventPropertyImpl complexEventProperty = new ComplexEventPropertyImpl();
-    return complexEventProperty;
-  }
+		ComplexEventPropertyImpl complexEventProperty = new ComplexEventPropertyImpl();
+		return complexEventProperty;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SlidingEventInterval createSlidingEventInterval()
   {
-    SlidingEventIntervalImpl slidingEventInterval = new SlidingEventIntervalImpl();
-    return slidingEventInterval;
-  }
+		SlidingEventIntervalImpl slidingEventInterval = new SlidingEventIntervalImpl();
+		return slidingEventInterval;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public BatchingEventInterval createBatchingEventInterval()
   {
-    BatchingEventIntervalImpl batchingEventInterval = new BatchingEventIntervalImpl();
-    return batchingEventInterval;
-  }
+		BatchingEventIntervalImpl batchingEventInterval = new BatchingEventIntervalImpl();
+		return batchingEventInterval;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SlidingTimeInterval createSlidingTimeInterval()
   {
-    SlidingTimeIntervalImpl slidingTimeInterval = new SlidingTimeIntervalImpl();
-    return slidingTimeInterval;
-  }
+		SlidingTimeIntervalImpl slidingTimeInterval = new SlidingTimeIntervalImpl();
+		return slidingTimeInterval;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public BatchingTimeInterval createBatchingTimeInterval()
   {
-    BatchingTimeIntervalImpl batchingTimeInterval = new BatchingTimeIntervalImpl();
-    return batchingTimeInterval;
-  }
+		BatchingTimeIntervalImpl batchingTimeInterval = new BatchingTimeIntervalImpl();
+		return batchingTimeInterval;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Every createEvery()
   {
-    EveryImpl every = new EveryImpl();
-    return every;
-  }
+		EveryImpl every = new EveryImpl();
+		return every;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EveryDistinct createEveryDistinct()
   {
-    EveryDistinctImpl everyDistinct = new EveryDistinctImpl();
-    return everyDistinct;
-  }
+		EveryDistinctImpl everyDistinct = new EveryDistinctImpl();
+		return everyDistinct;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Repeat createRepeat()
   {
-    RepeatImpl repeat = new RepeatImpl();
-    return repeat;
-  }
+		RepeatImpl repeat = new RepeatImpl();
+		return repeat;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Until createUntil()
   {
-    UntilImpl until = new UntilImpl();
-    return until;
-  }
+		UntilImpl until = new UntilImpl();
+		return until;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Range createRange()
   {
-    RangeImpl range = new RangeImpl();
-    return range;
-  }
+		RangeImpl range = new RangeImpl();
+		return range;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public FollowedBy createFollowedBy()
   {
-    FollowedByImpl followedBy = new FollowedByImpl();
-    return followedBy;
-  }
+		FollowedByImpl followedBy = new FollowedByImpl();
+		return followedBy;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public While createWhile()
   {
-    WhileImpl while_ = new WhileImpl();
-    return while_;
-  }
+		WhileImpl while_ = new WhileImpl();
+		return while_;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public And createAnd()
   {
-    AndImpl and = new AndImpl();
-    return and;
-  }
+		AndImpl and = new AndImpl();
+		return and;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Or createOr()
   {
-    OrImpl or = new OrImpl();
-    return or;
-  }
+		OrImpl or = new OrImpl();
+		return or;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Not createNot()
   {
-    NotImpl not = new NotImpl();
-    return not;
-  }
+		NotImpl not = new NotImpl();
+		return not;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Addition createAddition()
   {
-    AdditionImpl addition = new AdditionImpl();
-    return addition;
-  }
+		AdditionImpl addition = new AdditionImpl();
+		return addition;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Subtraction createSubtraction()
   {
-    SubtractionImpl subtraction = new SubtractionImpl();
-    return subtraction;
-  }
+		SubtractionImpl subtraction = new SubtractionImpl();
+		return subtraction;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Multiplication createMultiplication()
   {
-    MultiplicationImpl multiplication = new MultiplicationImpl();
-    return multiplication;
-  }
+		MultiplicationImpl multiplication = new MultiplicationImpl();
+		return multiplication;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Division createDivision()
   {
-    DivisionImpl division = new DivisionImpl();
-    return division;
-  }
+		DivisionImpl division = new DivisionImpl();
+		return division;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Modulus createModulus()
   {
-    ModulusImpl modulus = new ModulusImpl();
-    return modulus;
-  }
+		ModulusImpl modulus = new ModulusImpl();
+		return modulus;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Equal createEqual()
   {
-    EqualImpl equal = new EqualImpl();
-    return equal;
-  }
+		EqualImpl equal = new EqualImpl();
+		return equal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotEqual createNotEqual()
   {
-    NotEqualImpl notEqual = new NotEqualImpl();
-    return notEqual;
-  }
+		NotEqualImpl notEqual = new NotEqualImpl();
+		return notEqual;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public LessThan createLessThan()
   {
-    LessThanImpl lessThan = new LessThanImpl();
-    return lessThan;
-  }
+		LessThanImpl lessThan = new LessThanImpl();
+		return lessThan;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public GreaterThan createGreaterThan()
   {
-    GreaterThanImpl greaterThan = new GreaterThanImpl();
-    return greaterThan;
-  }
+		GreaterThanImpl greaterThan = new GreaterThanImpl();
+		return greaterThan;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public LessEqual createLessEqual()
   {
-    LessEqualImpl lessEqual = new LessEqualImpl();
-    return lessEqual;
-  }
+		LessEqualImpl lessEqual = new LessEqualImpl();
+		return lessEqual;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public GreaterEqual createGreaterEqual()
   {
-    GreaterEqualImpl greaterEqual = new GreaterEqualImpl();
-    return greaterEqual;
-  }
+		GreaterEqualImpl greaterEqual = new GreaterEqualImpl();
+		return greaterEqual;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Max createMax()
   {
-    MaxImpl max = new MaxImpl();
-    return max;
-  }
+		MaxImpl max = new MaxImpl();
+		return max;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Min createMin()
   {
-    MinImpl min = new MinImpl();
-    return min;
-  }
+		MinImpl min = new MinImpl();
+		return min;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Avg createAvg()
   {
-    AvgImpl avg = new AvgImpl();
-    return avg;
-  }
+		AvgImpl avg = new AvgImpl();
+		return avg;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Count createCount()
   {
-    CountImpl count = new CountImpl();
-    return count;
-  }
+		CountImpl count = new CountImpl();
+		return count;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Sum createSum()
   {
-    SumImpl sum = new SumImpl();
-    return sum;
-  }
+		SumImpl sum = new SumImpl();
+		return sum;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public WithinTimer createWithinTimer()
   {
-    WithinTimerImpl withinTimer = new WithinTimerImpl();
-    return withinTimer;
-  }
+		WithinTimerImpl withinTimer = new WithinTimerImpl();
+		return withinTimer;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public TimeInterval createTimeInterval()
   {
-    TimeIntervalImpl timeInterval = new TimeIntervalImpl();
-    return timeInterval;
-  }
+		TimeIntervalImpl timeInterval = new TimeIntervalImpl();
+		return timeInterval;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public TimeSchedule createTimeSchedule()
   {
-    TimeScheduleImpl timeSchedule = new TimeScheduleImpl();
-    return timeSchedule;
-  }
+		TimeScheduleImpl timeSchedule = new TimeScheduleImpl();
+		return timeSchedule;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Event createEvent()
   {
-    EventImpl event = new EventImpl();
-    return event;
-  }
+		EventImpl event = new EventImpl();
+		return event;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EventProperty createEventProperty()
   {
-    EventPropertyImpl eventProperty = new EventPropertyImpl();
-    return eventProperty;
-  }
+		EventPropertyImpl eventProperty = new EventPropertyImpl();
+		return eventProperty;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Value createValue()
   {
-    ValueImpl value = new ValueImpl();
-    return value;
-  }
+		ValueImpl value = new ValueImpl();
+		return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Email createEmail()
   {
-    EmailImpl email = new EmailImpl();
-    return email;
-  }
+		EmailImpl email = new EmailImpl();
+		return email;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Twitter createTwitter()
   {
-    TwitterImpl twitter = new TwitterImpl();
-    return twitter;
-  }
+		TwitterImpl twitter = new TwitterImpl();
+		return twitter;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public PropertyTypeValue createPropertyTypeValueFromString(EDataType eDataType, String initialValue)
   {
-    PropertyTypeValue result = PropertyTypeValue.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		PropertyTypeValue result = PropertyTypeValue.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertPropertyTypeValueToString(EDataType eDataType, Object instanceValue)
   {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EventpatternPackage getEventpatternPackage()
   {
-    return (EventpatternPackage)getEPackage();
-  }
+		return (EventpatternPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static EventpatternPackage getPackage()
   {
-    return EventpatternPackage.eINSTANCE;
-  }
+		return EventpatternPackage.eINSTANCE;
+	}
 
 } //EventpatternFactoryImpl

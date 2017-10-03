@@ -14,26 +14,26 @@ public abstract class EventPatternConditionTest extends EventPatternElementTest
 {
 
   /**
-   * Constructs a new Event Pattern Condition test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Event Pattern Condition test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EventPatternConditionTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Event Pattern Condition test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Event Pattern Condition test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EventPatternCondition getFixture()
   {
-    return (EventPatternCondition)fixture;
-  }
+		return (EventPatternCondition)fixture;
+	}
 
 } //EventPatternConditionTest

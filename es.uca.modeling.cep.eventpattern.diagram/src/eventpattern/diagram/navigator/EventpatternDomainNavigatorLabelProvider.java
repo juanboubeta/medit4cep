@@ -15,15 +15,13 @@ import eventpattern.diagram.part.EventpatternDiagramEditorPlugin;
 /**
  * @generated
  */
-public class EventpatternDomainNavigatorLabelProvider implements
-		ICommonLabelProvider {
+public class EventpatternDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-			EventpatternDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			EventpatternDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -36,9 +34,7 @@ public class EventpatternDomainNavigatorLabelProvider implements
 	 */
 	public Image getImage(Object element) {
 		if (element instanceof EventpatternDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getImage(((EventpatternDomainNavigatorItem) element)
-							.getEObject());
+			return myAdapterFactoryLabelProvider.getImage(((EventpatternDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -48,9 +44,7 @@ public class EventpatternDomainNavigatorLabelProvider implements
 	 */
 	public String getText(Object element) {
 		if (element instanceof EventpatternDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getText(((EventpatternDomainNavigatorItem) element)
-							.getEObject());
+			return myAdapterFactoryLabelProvider.getText(((EventpatternDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}

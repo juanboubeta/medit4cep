@@ -30,8 +30,7 @@ public class EventpatternValidationProvider {
 	/**
 	 * @generated
 	 */
-	public static void runWithConstraints(
-			TransactionalEditingDomain editingDomain, Runnable operation) {
+	public static void runWithConstraints(TransactionalEditingDomain editingDomain, Runnable operation) {
 		final Runnable op = operation;
 		Runnable task = new Runnable() {
 			public void run() {
@@ -47,8 +46,7 @@ public class EventpatternValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				EventpatternDiagramEditorPlugin.getInstance().logError(
-						"Validation failed", e); //$NON-NLS-1$
+				EventpatternDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -64,9 +62,7 @@ public class EventpatternValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& CEPEventPatternEditPart.MODEL_ID
-							.equals(EventpatternVisualIDRegistry
-									.getModelID((View) object));
+					&& CEPEventPatternEditPart.MODEL_ID.equals(EventpatternVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

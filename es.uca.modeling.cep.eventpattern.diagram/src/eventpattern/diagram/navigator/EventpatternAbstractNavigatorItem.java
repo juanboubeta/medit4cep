@@ -23,23 +23,20 @@ public abstract class EventpatternAbstractNavigatorItem extends PlatformObject {
 				return "es.uca.modeling.cep.eventpattern.diagram"; //$NON-NLS-1$
 			}
 		};
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof eventpattern.diagram.navigator.EventpatternAbstractNavigatorItem
-								&& adapterType == ITabbedPropertySheetPageContributor.class) {
-							return propertySheetPageContributor;
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof eventpattern.diagram.navigator.EventpatternAbstractNavigatorItem
+						&& adapterType == ITabbedPropertySheetPageContributor.class) {
+					return propertySheetPageContributor;
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				eventpattern.diagram.navigator.EventpatternAbstractNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, eventpattern.diagram.navigator.EventpatternAbstractNavigatorItem.class);
 	}
 
 	/**

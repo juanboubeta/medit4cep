@@ -20,8 +20,7 @@ public class EventpatternDomainNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
-		final Class[] supportedTypes = new Class[] { EObject.class,
-				IPropertySource.class };
+		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
@@ -32,8 +31,7 @@ public class EventpatternDomainNavigatorItem extends PlatformObject {
 						return eObject;
 					}
 					if (adapterType == IPropertySource.class) {
-						return domainNavigatorItem.getPropertySourceProvider()
-								.getPropertySource(eObject);
+						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
 					}
 				}
 
@@ -97,11 +95,8 @@ public class EventpatternDomainNavigatorItem extends PlatformObject {
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof eventpattern.diagram.navigator.EventpatternDomainNavigatorItem) {
-			return EcoreUtil
-					.getURI(getEObject())
-					.equals(EcoreUtil
-							.getURI(((eventpattern.diagram.navigator.EventpatternDomainNavigatorItem) obj)
-									.getEObject()));
+			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil
+					.getURI(((eventpattern.diagram.navigator.EventpatternDomainNavigatorItem) obj).getEObject()));
 		}
 		return super.equals(obj);
 	}

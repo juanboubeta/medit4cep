@@ -68,12 +68,9 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new SlidingEventIntervalItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new SlidingEventIntervalItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(EditPolicyRoles.OPEN_ROLE,
-				new OpenDiagramEditPolicy());
-		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy()); // XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
@@ -84,8 +81,7 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -123,13 +119,11 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof SlidingEventIntervalSizeEditPart) {
 			((SlidingEventIntervalSizeEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureSlidingEventIntervalLabelFigure());
+					.setLabel(getPrimaryShape().getFigureSlidingEventIntervalLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getSlidingEventIntervalEventPatternConditionsCompartmentFigure();
+			IFigure pane = getPrimaryShape().getSlidingEventIntervalEventPatternConditionsCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -146,10 +140,10 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getSlidingEventIntervalEventPatternConditionsCompartmentFigure();
-			pane.remove(((SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart) childEditPart)
-					.getFigure());
+			IFigure pane = getPrimaryShape().getSlidingEventIntervalEventPatternConditionsCompartmentFigure();
+			pane.remove(
+					((SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		return false;
@@ -180,8 +174,7 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart) {
-			return getPrimaryShape()
-					.getSlidingEventIntervalEventPatternConditionsCompartmentFigure();
+			return getPrimaryShape().getSlidingEventIntervalEventPatternConditionsCompartmentFigure();
 		}
 		return getContentPane();
 	}
@@ -276,8 +269,7 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(EventpatternVisualIDRegistry
-				.getType(SlidingEventIntervalSizeEditPart.VISUAL_ID));
+		return getChildBySemanticHint(EventpatternVisualIDRegistry.getType(SlidingEventIntervalSizeEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -285,8 +277,7 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations()
-						.equals(event.getFeature())) {
+				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
 			handleMajorSemanticChange();
 		} else {
 			super.handleNotificationEvent(event);
@@ -314,8 +305,7 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(THIS_FORE);
 			this.setBackgroundColor(THIS_BACK);
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 			createContents();
 		}
@@ -327,18 +317,15 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 
 			fFigureSlidingEventIntervalLabelFigure = new WrappingLabel();
 
+			fFigureSlidingEventIntervalLabelFigure.setText("SlidingEventInterval");
 			fFigureSlidingEventIntervalLabelFigure
-					.setText("SlidingEventInterval");
-			fFigureSlidingEventIntervalLabelFigure
-					.setMaximumSize(new Dimension(getMapMode().DPtoLP(10000),
-							getMapMode().DPtoLP(50)));
+					.setMaximumSize(new Dimension(getMapMode().DPtoLP(10000), getMapMode().DPtoLP(50)));
 
 			this.add(fFigureSlidingEventIntervalLabelFigure);
 
 			fSlidingEventIntervalEventPatternConditionsCompartmentFigure = new RectangleFigure();
 
-			fSlidingEventIntervalEventPatternConditionsCompartmentFigure
-					.setOutline(false);
+			fSlidingEventIntervalEventPatternConditionsCompartmentFigure.setOutline(false);
 
 			this.add(fSlidingEventIntervalEventPatternConditionsCompartmentFigure);
 
@@ -381,8 +368,7 @@ public class SlidingEventIntervalEditPart extends ShapeNodeEditPart {
 	}
 
 	protected void mouseDoubleClick() {
-		IWorkbenchPage page = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage();
+		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 
 		if (page != null) {
 			try {

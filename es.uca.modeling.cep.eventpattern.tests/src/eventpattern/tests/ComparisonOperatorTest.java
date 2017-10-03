@@ -14,26 +14,26 @@ public abstract class ComparisonOperatorTest extends BinaryOperatorTest
 {
 
   /**
-   * Constructs a new Comparison Operator test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Comparison Operator test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ComparisonOperatorTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Comparison Operator test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Comparison Operator test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected ComparisonOperator getFixture()
   {
-    return (ComparisonOperator)fixture;
-  }
+		return (ComparisonOperator)fixture;
+	}
 
 } //ComparisonOperatorTest

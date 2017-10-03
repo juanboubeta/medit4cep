@@ -12,8 +12,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class EventpatternNavigatorItem extends
-		EventpatternAbstractNavigatorItem {
+public class EventpatternNavigatorItem extends EventpatternAbstractNavigatorItem {
 
 	/**
 	 * @generated
@@ -25,8 +24,7 @@ public class EventpatternNavigatorItem extends
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
 				if (adaptableObject instanceof eventpattern.diagram.navigator.EventpatternNavigatorItem
 						&& (adapterType == View.class || adapterType == EObject.class)) {
-					return ((eventpattern.diagram.navigator.EventpatternNavigatorItem) adaptableObject)
-							.getView();
+					return ((eventpattern.diagram.navigator.EventpatternNavigatorItem) adaptableObject).getView();
 				}
 				return null;
 			}
@@ -75,11 +73,8 @@ public class EventpatternNavigatorItem extends
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof eventpattern.diagram.navigator.EventpatternNavigatorItem) {
-			return EcoreUtil
-					.getURI(getView())
-					.equals(EcoreUtil
-							.getURI(((eventpattern.diagram.navigator.EventpatternNavigatorItem) obj)
-									.getView()));
+			return EcoreUtil.getURI(getView()).equals(
+					EcoreUtil.getURI(((eventpattern.diagram.navigator.EventpatternNavigatorItem) obj).getView()));
 		}
 		return super.equals(obj);
 	}

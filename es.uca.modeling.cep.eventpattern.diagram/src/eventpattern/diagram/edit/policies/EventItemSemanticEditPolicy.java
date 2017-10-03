@@ -29,8 +29,7 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 /**
  * @generated
  */
-public class EventItemSemanticEditPolicy extends
-		EventpatternBaseItemSemanticEditPolicy {
+public class EventItemSemanticEditPolicy extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -44,14 +43,12 @@ public class EventItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
 			if (EventpatternVisualIDRegistry.getVisualID(outgoingLink) == LinkEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						outgoingLink.getElement(), false);
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
@@ -79,27 +76,21 @@ public class EventItemSemanticEditPolicy extends
 			Node node = (Node) nit.next();
 			switch (EventpatternVisualIDRegistry.getVisualID(node)) {
 			case EventEventEventPropertiesCompartmentEditPart.VISUAL_ID:
-				for (Iterator<?> cit = node.getChildren().iterator(); cit
-						.hasNext();) {
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (EventpatternVisualIDRegistry.getVisualID(cnode)) {
 					case EventProperty2EditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
-								.hasNext();) {
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
-							if (EventpatternVisualIDRegistry
-									.getVisualID(outgoingLink) == LinkEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										outgoingLink.getElement(), false);
+							if (EventpatternVisualIDRegistry.getVisualID(outgoingLink) == LinkEditPart.VISUAL_ID) {
+								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
+								cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 								continue;
 							}
 						}
 						cmd.add(new DestroyElementCommand(
-								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+								new DestroyElementRequest(getEditingDomain(), cnode.getElement(), false))); // directlyOwned: true
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
@@ -116,18 +107,15 @@ public class EventItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (EventpatternElementTypes.Link_4001 == req.getElementType()) {
-			return getGEFWrapper(new LinkCreateCommand(req, req.getSource(),
-					req.getTarget()));
+			return getGEFWrapper(new LinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -135,8 +123,7 @@ public class EventItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (EventpatternElementTypes.Link_4001 == req.getElementType()) {
 			return null;
 		}
@@ -149,8 +136,7 @@ public class EventItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case LinkEditPart.VISUAL_ID:
 			return getGEFWrapper(new LinkReorientCommand(req));

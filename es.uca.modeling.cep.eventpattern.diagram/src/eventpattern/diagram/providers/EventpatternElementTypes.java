@@ -41,8 +41,7 @@ public class EventpatternElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			EventpatternDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			EventpatternDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -52,7 +51,8 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CEPEventPattern_1000 = getElementType("es.uca.modeling.cep.eventpattern.diagram.CEPEventPattern_1000"); //$NON-NLS-1$
+	public static final IElementType CEPEventPattern_1000 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.CEPEventPattern_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -68,23 +68,28 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Addition_2004 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Addition_2004"); //$NON-NLS-1$
+	public static final IElementType Addition_2004 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Addition_2004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Subtraction_2005 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Subtraction_2005"); //$NON-NLS-1$
+	public static final IElementType Subtraction_2005 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Subtraction_2005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Multiplication_2006 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Multiplication_2006"); //$NON-NLS-1$
+	public static final IElementType Multiplication_2006 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Multiplication_2006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Division_2007 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Division_2007"); //$NON-NLS-1$
+	public static final IElementType Division_2007 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Division_2007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Modulus_2008 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Modulus_2008"); //$NON-NLS-1$
+	public static final IElementType Modulus_2008 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Modulus_2008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -92,23 +97,28 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType NotEqual_2010 = getElementType("es.uca.modeling.cep.eventpattern.diagram.NotEqual_2010"); //$NON-NLS-1$
+	public static final IElementType NotEqual_2010 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.NotEqual_2010"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LessThan_2011 = getElementType("es.uca.modeling.cep.eventpattern.diagram.LessThan_2011"); //$NON-NLS-1$
+	public static final IElementType LessThan_2011 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.LessThan_2011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType GreaterThan_2012 = getElementType("es.uca.modeling.cep.eventpattern.diagram.GreaterThan_2012"); //$NON-NLS-1$
+	public static final IElementType GreaterThan_2012 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.GreaterThan_2012"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LessEqual_2013 = getElementType("es.uca.modeling.cep.eventpattern.diagram.LessEqual_2013"); //$NON-NLS-1$
+	public static final IElementType LessEqual_2013 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.LessEqual_2013"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType GreaterEqual_2014 = getElementType("es.uca.modeling.cep.eventpattern.diagram.GreaterEqual_2014"); //$NON-NLS-1$
+	public static final IElementType GreaterEqual_2014 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.GreaterEqual_2014"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -116,11 +126,13 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EveryDistinct_2016 = getElementType("es.uca.modeling.cep.eventpattern.diagram.EveryDistinct_2016"); //$NON-NLS-1$
+	public static final IElementType EveryDistinct_2016 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.EveryDistinct_2016"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Repeat_2017 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Repeat_2017"); //$NON-NLS-1$
+	public static final IElementType Repeat_2017 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Repeat_2017"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -132,7 +144,8 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType FollowedBy_2020 = getElementType("es.uca.modeling.cep.eventpattern.diagram.FollowedBy_2020"); //$NON-NLS-1$
+	public static final IElementType FollowedBy_2020 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.FollowedBy_2020"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -164,7 +177,8 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventProperty_2028 = getElementType("es.uca.modeling.cep.eventpattern.diagram.EventProperty_2028"); //$NON-NLS-1$
+	public static final IElementType EventProperty_2028 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_2028"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -172,15 +186,18 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType WithinTimer_2030 = getElementType("es.uca.modeling.cep.eventpattern.diagram.WithinTimer_2030"); //$NON-NLS-1$
+	public static final IElementType WithinTimer_2030 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.WithinTimer_2030"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType TimeInterval_2031 = getElementType("es.uca.modeling.cep.eventpattern.diagram.TimeInterval_2031"); //$NON-NLS-1$
+	public static final IElementType TimeInterval_2031 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.TimeInterval_2031"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType TimeSchedule_2032 = getElementType("es.uca.modeling.cep.eventpattern.diagram.TimeSchedule_2032"); //$NON-NLS-1$
+	public static final IElementType TimeSchedule_2032 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.TimeSchedule_2032"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -188,36 +205,44 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Twitter_2039 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Twitter_2039"); //$NON-NLS-1$
+	public static final IElementType Twitter_2039 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Twitter_2039"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType SlidingEventInterval_2034 = getElementType("es.uca.modeling.cep.eventpattern.diagram.SlidingEventInterval_2034"); //$NON-NLS-1$
+	public static final IElementType SlidingEventInterval_2034 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.SlidingEventInterval_2034"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType BatchingEventInterval_2035 = getElementType("es.uca.modeling.cep.eventpattern.diagram.BatchingEventInterval_2035"); //$NON-NLS-1$
+	public static final IElementType BatchingEventInterval_2035 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.BatchingEventInterval_2035"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType SlidingTimeInterval_2036 = getElementType("es.uca.modeling.cep.eventpattern.diagram.SlidingTimeInterval_2036"); //$NON-NLS-1$
+	public static final IElementType SlidingTimeInterval_2036 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.SlidingTimeInterval_2036"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType BatchingTimeInterval_2037 = getElementType("es.uca.modeling.cep.eventpattern.diagram.BatchingTimeInterval_2037"); //$NON-NLS-1$
+	public static final IElementType BatchingTimeInterval_2037 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.BatchingTimeInterval_2037"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComplexEvent_2038 = getElementType("es.uca.modeling.cep.eventpattern.diagram.ComplexEvent_2038"); //$NON-NLS-1$
+	public static final IElementType ComplexEvent_2038 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.ComplexEvent_2038"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventProperty_3001 = getElementType("es.uca.modeling.cep.eventpattern.diagram.EventProperty_3001"); //$NON-NLS-1$
+	public static final IElementType EventProperty_3001 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventProperty_3002 = getElementType("es.uca.modeling.cep.eventpattern.diagram.EventProperty_3002"); //$NON-NLS-1$
+	public static final IElementType EventProperty_3002 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_3002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -233,23 +258,28 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Addition_3006 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Addition_3006"); //$NON-NLS-1$
+	public static final IElementType Addition_3006 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Addition_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Subtraction_3007 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Subtraction_3007"); //$NON-NLS-1$
+	public static final IElementType Subtraction_3007 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Subtraction_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Multiplication_3008 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Multiplication_3008"); //$NON-NLS-1$
+	public static final IElementType Multiplication_3008 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Multiplication_3008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Division_3009 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Division_3009"); //$NON-NLS-1$
+	public static final IElementType Division_3009 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Division_3009"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Modulus_3010 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Modulus_3010"); //$NON-NLS-1$
+	public static final IElementType Modulus_3010 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Modulus_3010"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -257,23 +287,28 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType NotEqual_3012 = getElementType("es.uca.modeling.cep.eventpattern.diagram.NotEqual_3012"); //$NON-NLS-1$
+	public static final IElementType NotEqual_3012 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.NotEqual_3012"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LessThan_3013 = getElementType("es.uca.modeling.cep.eventpattern.diagram.LessThan_3013"); //$NON-NLS-1$
+	public static final IElementType LessThan_3013 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.LessThan_3013"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType GreaterThan_3014 = getElementType("es.uca.modeling.cep.eventpattern.diagram.GreaterThan_3014"); //$NON-NLS-1$
+	public static final IElementType GreaterThan_3014 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.GreaterThan_3014"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LessEqual_3015 = getElementType("es.uca.modeling.cep.eventpattern.diagram.LessEqual_3015"); //$NON-NLS-1$
+	public static final IElementType LessEqual_3015 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.LessEqual_3015"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType GreaterEqual_3016 = getElementType("es.uca.modeling.cep.eventpattern.diagram.GreaterEqual_3016"); //$NON-NLS-1$
+	public static final IElementType GreaterEqual_3016 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.GreaterEqual_3016"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -281,11 +316,13 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EveryDistinct_3018 = getElementType("es.uca.modeling.cep.eventpattern.diagram.EveryDistinct_3018"); //$NON-NLS-1$
+	public static final IElementType EveryDistinct_3018 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.EveryDistinct_3018"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Repeat_3019 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Repeat_3019"); //$NON-NLS-1$
+	public static final IElementType Repeat_3019 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Repeat_3019"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -297,7 +334,8 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType FollowedBy_3022 = getElementType("es.uca.modeling.cep.eventpattern.diagram.FollowedBy_3022"); //$NON-NLS-1$
+	public static final IElementType FollowedBy_3022 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.FollowedBy_3022"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -309,7 +347,8 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventProperty_3025 = getElementType("es.uca.modeling.cep.eventpattern.diagram.EventProperty_3025"); //$NON-NLS-1$
+	public static final IElementType EventProperty_3025 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_3025"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -329,23 +368,28 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Addition_3030 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Addition_3030"); //$NON-NLS-1$
+	public static final IElementType Addition_3030 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Addition_3030"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Subtraction_3031 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Subtraction_3031"); //$NON-NLS-1$
+	public static final IElementType Subtraction_3031 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Subtraction_3031"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Multiplication_3032 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Multiplication_3032"); //$NON-NLS-1$
+	public static final IElementType Multiplication_3032 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Multiplication_3032"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Division_3033 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Division_3033"); //$NON-NLS-1$
+	public static final IElementType Division_3033 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Division_3033"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Modulus_3034 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Modulus_3034"); //$NON-NLS-1$
+	public static final IElementType Modulus_3034 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Modulus_3034"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -353,23 +397,28 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType NotEqual_3036 = getElementType("es.uca.modeling.cep.eventpattern.diagram.NotEqual_3036"); //$NON-NLS-1$
+	public static final IElementType NotEqual_3036 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.NotEqual_3036"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LessThan_3037 = getElementType("es.uca.modeling.cep.eventpattern.diagram.LessThan_3037"); //$NON-NLS-1$
+	public static final IElementType LessThan_3037 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.LessThan_3037"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType GreaterThan_3038 = getElementType("es.uca.modeling.cep.eventpattern.diagram.GreaterThan_3038"); //$NON-NLS-1$
+	public static final IElementType GreaterThan_3038 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.GreaterThan_3038"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LessEqual_3039 = getElementType("es.uca.modeling.cep.eventpattern.diagram.LessEqual_3039"); //$NON-NLS-1$
+	public static final IElementType LessEqual_3039 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.LessEqual_3039"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType GreaterEqual_3040 = getElementType("es.uca.modeling.cep.eventpattern.diagram.GreaterEqual_3040"); //$NON-NLS-1$
+	public static final IElementType GreaterEqual_3040 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.GreaterEqual_3040"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -377,11 +426,13 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EveryDistinct_3042 = getElementType("es.uca.modeling.cep.eventpattern.diagram.EveryDistinct_3042"); //$NON-NLS-1$
+	public static final IElementType EveryDistinct_3042 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.EveryDistinct_3042"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Repeat_3043 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Repeat_3043"); //$NON-NLS-1$
+	public static final IElementType Repeat_3043 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.Repeat_3043"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -393,7 +444,8 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType FollowedBy_3046 = getElementType("es.uca.modeling.cep.eventpattern.diagram.FollowedBy_3046"); //$NON-NLS-1$
+	public static final IElementType FollowedBy_3046 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.FollowedBy_3046"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -425,7 +477,8 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventProperty_3054 = getElementType("es.uca.modeling.cep.eventpattern.diagram.EventProperty_3054"); //$NON-NLS-1$
+	public static final IElementType EventProperty_3054 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_3054"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -433,19 +486,23 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType WithinTimer_3056 = getElementType("es.uca.modeling.cep.eventpattern.diagram.WithinTimer_3056"); //$NON-NLS-1$
+	public static final IElementType WithinTimer_3056 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.WithinTimer_3056"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType TimeInterval_3057 = getElementType("es.uca.modeling.cep.eventpattern.diagram.TimeInterval_3057"); //$NON-NLS-1$
+	public static final IElementType TimeInterval_3057 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.TimeInterval_3057"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType TimeSchedule_3058 = getElementType("es.uca.modeling.cep.eventpattern.diagram.TimeSchedule_3058"); //$NON-NLS-1$
+	public static final IElementType TimeSchedule_3058 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.TimeSchedule_3058"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComplexEventProperty_3059 = getElementType("es.uca.modeling.cep.eventpattern.diagram.ComplexEventProperty_3059"); //$NON-NLS-1$
+	public static final IElementType ComplexEventProperty_3059 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.ComplexEventProperty_3059"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -489,8 +546,7 @@ public class EventpatternElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(CEPEventPattern_1000,
-					EventpatternPackage.eINSTANCE.getCEPEventPattern());
+			elements.put(CEPEventPattern_1000, EventpatternPackage.eINSTANCE.getCEPEventPattern());
 
 			elements.put(And_2001, EventpatternPackage.eINSTANCE.getAnd());
 
@@ -498,42 +554,31 @@ public class EventpatternElementTypes {
 
 			elements.put(Not_2003, EventpatternPackage.eINSTANCE.getNot());
 
-			elements.put(Addition_2004,
-					EventpatternPackage.eINSTANCE.getAddition());
+			elements.put(Addition_2004, EventpatternPackage.eINSTANCE.getAddition());
 
-			elements.put(Subtraction_2005,
-					EventpatternPackage.eINSTANCE.getSubtraction());
+			elements.put(Subtraction_2005, EventpatternPackage.eINSTANCE.getSubtraction());
 
-			elements.put(Multiplication_2006,
-					EventpatternPackage.eINSTANCE.getMultiplication());
+			elements.put(Multiplication_2006, EventpatternPackage.eINSTANCE.getMultiplication());
 
-			elements.put(Division_2007,
-					EventpatternPackage.eINSTANCE.getDivision());
+			elements.put(Division_2007, EventpatternPackage.eINSTANCE.getDivision());
 
-			elements.put(Modulus_2008,
-					EventpatternPackage.eINSTANCE.getModulus());
+			elements.put(Modulus_2008, EventpatternPackage.eINSTANCE.getModulus());
 
 			elements.put(Equal_2009, EventpatternPackage.eINSTANCE.getEqual());
 
-			elements.put(NotEqual_2010,
-					EventpatternPackage.eINSTANCE.getNotEqual());
+			elements.put(NotEqual_2010, EventpatternPackage.eINSTANCE.getNotEqual());
 
-			elements.put(LessThan_2011,
-					EventpatternPackage.eINSTANCE.getLessThan());
+			elements.put(LessThan_2011, EventpatternPackage.eINSTANCE.getLessThan());
 
-			elements.put(GreaterThan_2012,
-					EventpatternPackage.eINSTANCE.getGreaterThan());
+			elements.put(GreaterThan_2012, EventpatternPackage.eINSTANCE.getGreaterThan());
 
-			elements.put(LessEqual_2013,
-					EventpatternPackage.eINSTANCE.getLessEqual());
+			elements.put(LessEqual_2013, EventpatternPackage.eINSTANCE.getLessEqual());
 
-			elements.put(GreaterEqual_2014,
-					EventpatternPackage.eINSTANCE.getGreaterEqual());
+			elements.put(GreaterEqual_2014, EventpatternPackage.eINSTANCE.getGreaterEqual());
 
 			elements.put(Every_2015, EventpatternPackage.eINSTANCE.getEvery());
 
-			elements.put(EveryDistinct_2016,
-					EventpatternPackage.eINSTANCE.getEveryDistinct());
+			elements.put(EveryDistinct_2016, EventpatternPackage.eINSTANCE.getEveryDistinct());
 
 			elements.put(Repeat_2017, EventpatternPackage.eINSTANCE.getRepeat());
 
@@ -541,8 +586,7 @@ public class EventpatternElementTypes {
 
 			elements.put(Range_2019, EventpatternPackage.eINSTANCE.getRange());
 
-			elements.put(FollowedBy_2020,
-					EventpatternPackage.eINSTANCE.getFollowedBy());
+			elements.put(FollowedBy_2020, EventpatternPackage.eINSTANCE.getFollowedBy());
 
 			elements.put(While_2021, EventpatternPackage.eINSTANCE.getWhile());
 
@@ -558,45 +602,33 @@ public class EventpatternElementTypes {
 
 			elements.put(Event_2027, EventpatternPackage.eINSTANCE.getEvent());
 
-			elements.put(EventProperty_2028,
-					EventpatternPackage.eINSTANCE.getEventProperty());
+			elements.put(EventProperty_2028, EventpatternPackage.eINSTANCE.getEventProperty());
 
 			elements.put(Value_2029, EventpatternPackage.eINSTANCE.getValue());
 
-			elements.put(WithinTimer_2030,
-					EventpatternPackage.eINSTANCE.getWithinTimer());
+			elements.put(WithinTimer_2030, EventpatternPackage.eINSTANCE.getWithinTimer());
 
-			elements.put(TimeInterval_2031,
-					EventpatternPackage.eINSTANCE.getTimeInterval());
+			elements.put(TimeInterval_2031, EventpatternPackage.eINSTANCE.getTimeInterval());
 
-			elements.put(TimeSchedule_2032,
-					EventpatternPackage.eINSTANCE.getTimeSchedule());
+			elements.put(TimeSchedule_2032, EventpatternPackage.eINSTANCE.getTimeSchedule());
 
 			elements.put(Email_2033, EventpatternPackage.eINSTANCE.getEmail());
 
-			elements.put(Twitter_2039,
-					EventpatternPackage.eINSTANCE.getTwitter());
+			elements.put(Twitter_2039, EventpatternPackage.eINSTANCE.getTwitter());
 
-			elements.put(SlidingEventInterval_2034,
-					EventpatternPackage.eINSTANCE.getSlidingEventInterval());
+			elements.put(SlidingEventInterval_2034, EventpatternPackage.eINSTANCE.getSlidingEventInterval());
 
-			elements.put(BatchingEventInterval_2035,
-					EventpatternPackage.eINSTANCE.getBatchingEventInterval());
+			elements.put(BatchingEventInterval_2035, EventpatternPackage.eINSTANCE.getBatchingEventInterval());
 
-			elements.put(SlidingTimeInterval_2036,
-					EventpatternPackage.eINSTANCE.getSlidingTimeInterval());
+			elements.put(SlidingTimeInterval_2036, EventpatternPackage.eINSTANCE.getSlidingTimeInterval());
 
-			elements.put(BatchingTimeInterval_2037,
-					EventpatternPackage.eINSTANCE.getBatchingTimeInterval());
+			elements.put(BatchingTimeInterval_2037, EventpatternPackage.eINSTANCE.getBatchingTimeInterval());
 
-			elements.put(ComplexEvent_2038,
-					EventpatternPackage.eINSTANCE.getComplexEvent());
+			elements.put(ComplexEvent_2038, EventpatternPackage.eINSTANCE.getComplexEvent());
 
-			elements.put(EventProperty_3001,
-					EventpatternPackage.eINSTANCE.getEventProperty());
+			elements.put(EventProperty_3001, EventpatternPackage.eINSTANCE.getEventProperty());
 
-			elements.put(EventProperty_3002,
-					EventpatternPackage.eINSTANCE.getEventProperty());
+			elements.put(EventProperty_3002, EventpatternPackage.eINSTANCE.getEventProperty());
 
 			elements.put(And_3003, EventpatternPackage.eINSTANCE.getAnd());
 
@@ -604,42 +636,31 @@ public class EventpatternElementTypes {
 
 			elements.put(Not_3005, EventpatternPackage.eINSTANCE.getNot());
 
-			elements.put(Addition_3006,
-					EventpatternPackage.eINSTANCE.getAddition());
+			elements.put(Addition_3006, EventpatternPackage.eINSTANCE.getAddition());
 
-			elements.put(Subtraction_3007,
-					EventpatternPackage.eINSTANCE.getSubtraction());
+			elements.put(Subtraction_3007, EventpatternPackage.eINSTANCE.getSubtraction());
 
-			elements.put(Multiplication_3008,
-					EventpatternPackage.eINSTANCE.getMultiplication());
+			elements.put(Multiplication_3008, EventpatternPackage.eINSTANCE.getMultiplication());
 
-			elements.put(Division_3009,
-					EventpatternPackage.eINSTANCE.getDivision());
+			elements.put(Division_3009, EventpatternPackage.eINSTANCE.getDivision());
 
-			elements.put(Modulus_3010,
-					EventpatternPackage.eINSTANCE.getModulus());
+			elements.put(Modulus_3010, EventpatternPackage.eINSTANCE.getModulus());
 
 			elements.put(Equal_3011, EventpatternPackage.eINSTANCE.getEqual());
 
-			elements.put(NotEqual_3012,
-					EventpatternPackage.eINSTANCE.getNotEqual());
+			elements.put(NotEqual_3012, EventpatternPackage.eINSTANCE.getNotEqual());
 
-			elements.put(LessThan_3013,
-					EventpatternPackage.eINSTANCE.getLessThan());
+			elements.put(LessThan_3013, EventpatternPackage.eINSTANCE.getLessThan());
 
-			elements.put(GreaterThan_3014,
-					EventpatternPackage.eINSTANCE.getGreaterThan());
+			elements.put(GreaterThan_3014, EventpatternPackage.eINSTANCE.getGreaterThan());
 
-			elements.put(LessEqual_3015,
-					EventpatternPackage.eINSTANCE.getLessEqual());
+			elements.put(LessEqual_3015, EventpatternPackage.eINSTANCE.getLessEqual());
 
-			elements.put(GreaterEqual_3016,
-					EventpatternPackage.eINSTANCE.getGreaterEqual());
+			elements.put(GreaterEqual_3016, EventpatternPackage.eINSTANCE.getGreaterEqual());
 
 			elements.put(Every_3017, EventpatternPackage.eINSTANCE.getEvery());
 
-			elements.put(EveryDistinct_3018,
-					EventpatternPackage.eINSTANCE.getEveryDistinct());
+			elements.put(EveryDistinct_3018, EventpatternPackage.eINSTANCE.getEveryDistinct());
 
 			elements.put(Repeat_3019, EventpatternPackage.eINSTANCE.getRepeat());
 
@@ -647,15 +668,13 @@ public class EventpatternElementTypes {
 
 			elements.put(Range_3021, EventpatternPackage.eINSTANCE.getRange());
 
-			elements.put(FollowedBy_3022,
-					EventpatternPackage.eINSTANCE.getFollowedBy());
+			elements.put(FollowedBy_3022, EventpatternPackage.eINSTANCE.getFollowedBy());
 
 			elements.put(While_3023, EventpatternPackage.eINSTANCE.getWhile());
 
 			elements.put(Event_3024, EventpatternPackage.eINSTANCE.getEvent());
 
-			elements.put(EventProperty_3025,
-					EventpatternPackage.eINSTANCE.getEventProperty());
+			elements.put(EventProperty_3025, EventpatternPackage.eINSTANCE.getEventProperty());
 
 			elements.put(Value_3026, EventpatternPackage.eINSTANCE.getValue());
 
@@ -665,42 +684,31 @@ public class EventpatternElementTypes {
 
 			elements.put(Not_3029, EventpatternPackage.eINSTANCE.getNot());
 
-			elements.put(Addition_3030,
-					EventpatternPackage.eINSTANCE.getAddition());
+			elements.put(Addition_3030, EventpatternPackage.eINSTANCE.getAddition());
 
-			elements.put(Subtraction_3031,
-					EventpatternPackage.eINSTANCE.getSubtraction());
+			elements.put(Subtraction_3031, EventpatternPackage.eINSTANCE.getSubtraction());
 
-			elements.put(Multiplication_3032,
-					EventpatternPackage.eINSTANCE.getMultiplication());
+			elements.put(Multiplication_3032, EventpatternPackage.eINSTANCE.getMultiplication());
 
-			elements.put(Division_3033,
-					EventpatternPackage.eINSTANCE.getDivision());
+			elements.put(Division_3033, EventpatternPackage.eINSTANCE.getDivision());
 
-			elements.put(Modulus_3034,
-					EventpatternPackage.eINSTANCE.getModulus());
+			elements.put(Modulus_3034, EventpatternPackage.eINSTANCE.getModulus());
 
 			elements.put(Equal_3035, EventpatternPackage.eINSTANCE.getEqual());
 
-			elements.put(NotEqual_3036,
-					EventpatternPackage.eINSTANCE.getNotEqual());
+			elements.put(NotEqual_3036, EventpatternPackage.eINSTANCE.getNotEqual());
 
-			elements.put(LessThan_3037,
-					EventpatternPackage.eINSTANCE.getLessThan());
+			elements.put(LessThan_3037, EventpatternPackage.eINSTANCE.getLessThan());
 
-			elements.put(GreaterThan_3038,
-					EventpatternPackage.eINSTANCE.getGreaterThan());
+			elements.put(GreaterThan_3038, EventpatternPackage.eINSTANCE.getGreaterThan());
 
-			elements.put(LessEqual_3039,
-					EventpatternPackage.eINSTANCE.getLessEqual());
+			elements.put(LessEqual_3039, EventpatternPackage.eINSTANCE.getLessEqual());
 
-			elements.put(GreaterEqual_3040,
-					EventpatternPackage.eINSTANCE.getGreaterEqual());
+			elements.put(GreaterEqual_3040, EventpatternPackage.eINSTANCE.getGreaterEqual());
 
 			elements.put(Every_3041, EventpatternPackage.eINSTANCE.getEvery());
 
-			elements.put(EveryDistinct_3042,
-					EventpatternPackage.eINSTANCE.getEveryDistinct());
+			elements.put(EveryDistinct_3042, EventpatternPackage.eINSTANCE.getEveryDistinct());
 
 			elements.put(Repeat_3043, EventpatternPackage.eINSTANCE.getRepeat());
 
@@ -708,8 +716,7 @@ public class EventpatternElementTypes {
 
 			elements.put(Range_3045, EventpatternPackage.eINSTANCE.getRange());
 
-			elements.put(FollowedBy_3046,
-					EventpatternPackage.eINSTANCE.getFollowedBy());
+			elements.put(FollowedBy_3046, EventpatternPackage.eINSTANCE.getFollowedBy());
 
 			elements.put(While_3047, EventpatternPackage.eINSTANCE.getWhile());
 
@@ -725,22 +732,17 @@ public class EventpatternElementTypes {
 
 			elements.put(Event_3053, EventpatternPackage.eINSTANCE.getEvent());
 
-			elements.put(EventProperty_3054,
-					EventpatternPackage.eINSTANCE.getEventProperty());
+			elements.put(EventProperty_3054, EventpatternPackage.eINSTANCE.getEventProperty());
 
 			elements.put(Value_3055, EventpatternPackage.eINSTANCE.getValue());
 
-			elements.put(WithinTimer_3056,
-					EventpatternPackage.eINSTANCE.getWithinTimer());
+			elements.put(WithinTimer_3056, EventpatternPackage.eINSTANCE.getWithinTimer());
 
-			elements.put(TimeInterval_3057,
-					EventpatternPackage.eINSTANCE.getTimeInterval());
+			elements.put(TimeInterval_3057, EventpatternPackage.eINSTANCE.getTimeInterval());
 
-			elements.put(TimeSchedule_3058,
-					EventpatternPackage.eINSTANCE.getTimeSchedule());
+			elements.put(TimeSchedule_3058, EventpatternPackage.eINSTANCE.getTimeSchedule());
 
-			elements.put(ComplexEventProperty_3059,
-					EventpatternPackage.eINSTANCE.getComplexEventProperty());
+			elements.put(ComplexEventProperty_3059, EventpatternPackage.eINSTANCE.getComplexEventProperty());
 
 			elements.put(Link_4001, EventpatternPackage.eINSTANCE.getLink());
 		}
@@ -1076,35 +1078,33 @@ public class EventpatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
-			return eventpattern.diagram.providers.EventpatternElementTypes
-					.isKnownElementType(elementType);
+			return eventpattern.diagram.providers.EventpatternElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return eventpattern.diagram.providers.EventpatternElementTypes
-					.getElementType(visualID);
+			return eventpattern.diagram.providers.EventpatternElementTypes.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
-			return eventpattern.diagram.providers.EventpatternElementTypes
-					.getElement(elementTypeAdapter);
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
+			return eventpattern.diagram.providers.EventpatternElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

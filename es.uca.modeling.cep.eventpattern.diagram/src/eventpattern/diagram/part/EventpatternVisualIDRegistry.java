@@ -39,8 +39,7 @@ public class EventpatternVisualIDRegistry {
 				return -1;
 			}
 		}
-		return eventpattern.diagram.part.EventpatternVisualIDRegistry
-				.getVisualID(view.getType());
+		return eventpattern.diagram.part.EventpatternVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -65,11 +64,9 @@ public class EventpatternVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(
-					Platform.getDebugOption(DEBUG_KEY))) {
-				EventpatternDiagramEditorPlugin.getInstance().logError(
-						"Unable to parse view type as a visualID number: "
-								+ type);
+			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
+				EventpatternDiagramEditorPlugin.getInstance()
+						.logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -89,8 +86,7 @@ public class EventpatternVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (EventpatternPackage.eINSTANCE.getCEPEventPattern().isSuperTypeOf(
-				domainElement.eClass())
+		if (EventpatternPackage.eINSTANCE.getCEPEventPattern().isSuperTypeOf(domainElement.eClass())
 				&& isDiagram((CEPEventPattern) domainElement)) {
 			return CEPEventPatternEditPart.VISUAL_ID;
 		}
@@ -104,16 +100,13 @@ public class EventpatternVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		String containerModelID = eventpattern.diagram.part.EventpatternVisualIDRegistry
-				.getModelID(containerView);
-		if (!CEPEventPatternEditPart.MODEL_ID.equals(containerModelID)
-				&& !"pattern".equals(containerModelID)) { //$NON-NLS-1$
+		String containerModelID = eventpattern.diagram.part.EventpatternVisualIDRegistry.getModelID(containerView);
+		if (!CEPEventPatternEditPart.MODEL_ID.equals(containerModelID) && !"pattern".equals(containerModelID)) { //$NON-NLS-1$
 			return -1;
 		}
 		int containerVisualID;
 		if (CEPEventPatternEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = eventpattern.diagram.part.EventpatternVisualIDRegistry
-					.getVisualID(containerView);
+			containerVisualID = eventpattern.diagram.part.EventpatternVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = CEPEventPatternEditPart.VISUAL_ID;
@@ -123,930 +116,706 @@ public class EventpatternVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case CEPEventPatternEditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(domainElement.eClass())) {
 				return AndEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(domainElement.eClass())) {
 				return OrEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(domainElement.eClass())) {
 				return NotEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(domainElement.eClass())) {
 				return AdditionEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(domainElement.eClass())) {
 				return SubtractionEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMultiplication()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMultiplication().isSuperTypeOf(domainElement.eClass())) {
 				return MultiplicationEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(domainElement.eClass())) {
 				return DivisionEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(domainElement.eClass())) {
 				return ModulusEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(domainElement.eClass())) {
 				return EqualEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(domainElement.eClass())) {
 				return NotEqualEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(domainElement.eClass())) {
 				return LessThanEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterThanEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(domainElement.eClass())) {
 				return LessEqualEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterEqualEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(domainElement.eClass())) {
 				return EveryEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(domainElement.eClass())) {
 				return EveryDistinctEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(domainElement.eClass())) {
 				return RepeatEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(domainElement.eClass())) {
 				return UntilEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(domainElement.eClass())) {
 				return RangeEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(domainElement.eClass())) {
 				return FollowedByEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(domainElement.eClass())) {
 				return WhileEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(domainElement.eClass())) {
 				return MaxEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(domainElement.eClass())) {
 				return MinEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(domainElement.eClass())) {
 				return AvgEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(domainElement.eClass())) {
 				return CountEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(domainElement.eClass())) {
 				return SumEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(domainElement.eClass())) {
 				return EventEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventPropertyEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return ValueEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimerEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(domainElement.eClass())) {
 				return TimeIntervalEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(domainElement.eClass())) {
 				return TimeScheduleEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEmail().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEmail().isSuperTypeOf(domainElement.eClass())) {
 				return EmailEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTwitter().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTwitter().isSuperTypeOf(domainElement.eClass())) {
 				return TwitterEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSlidingEventInterval()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSlidingEventInterval().isSuperTypeOf(domainElement.eClass())) {
 				return SlidingEventIntervalEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getBatchingEventInterval()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getBatchingEventInterval().isSuperTypeOf(domainElement.eClass())) {
 				return BatchingEventIntervalEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSlidingTimeInterval()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSlidingTimeInterval().isSuperTypeOf(domainElement.eClass())) {
 				return SlidingTimeIntervalEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getBatchingTimeInterval()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getBatchingTimeInterval().isSuperTypeOf(domainElement.eClass())) {
 				return BatchingTimeIntervalEditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getComplexEvent().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getComplexEvent().isSuperTypeOf(domainElement.eClass())) {
 				return ComplexEventEditPart.VISUAL_ID;
 			}
 			break;
 		case EventEventEventPropertiesCompartmentEditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty2EditPart.VISUAL_ID;
 			}
 			break;
 		case EventPropertyEventPropertyEventPropertiesCompartmentEditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty3EditPart.VISUAL_ID;
 			}
 			break;
 		case EventPropertyEventPropertyEventPropertiesCompartment2EditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty3EditPart.VISUAL_ID;
 			}
 			break;
 		case EventPropertyEventPropertyEventPropertiesCompartment3EditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty3EditPart.VISUAL_ID;
 			}
 			break;
 		case WithinTimerWithinTimerWithinTimerElementsCompartmentEditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(domainElement.eClass())) {
 				return And2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(domainElement.eClass())) {
 				return Or2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(domainElement.eClass())) {
 				return Not2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(domainElement.eClass())) {
 				return Addition2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(domainElement.eClass())) {
 				return Subtraction2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMultiplication()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMultiplication().isSuperTypeOf(domainElement.eClass())) {
 				return Multiplication2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(domainElement.eClass())) {
 				return Division2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(domainElement.eClass())) {
 				return Modulus2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(domainElement.eClass())) {
 				return Equal2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(domainElement.eClass())) {
 				return NotEqual2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(domainElement.eClass())) {
 				return LessThan2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterThan2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(domainElement.eClass())) {
 				return LessEqual2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterEqual2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(domainElement.eClass())) {
 				return Every2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(domainElement.eClass())) {
 				return EveryDistinct2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(domainElement.eClass())) {
 				return Repeat2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(domainElement.eClass())) {
 				return Until2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(domainElement.eClass())) {
 				return Range2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(domainElement.eClass())) {
 				return FollowedBy2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(domainElement.eClass())) {
 				return While2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(domainElement.eClass())) {
 				return Event2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty4EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value2EditPart.VISUAL_ID;
 			}
 			break;
 		case EventEventEventPropertiesCompartment2EditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty2EditPart.VISUAL_ID;
 			}
 			break;
 		case EventPropertyEventPropertyEventPropertiesCompartment4EditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty3EditPart.VISUAL_ID;
 			}
 			break;
 		case SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(domainElement.eClass())) {
 				return And3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(domainElement.eClass())) {
 				return Or3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(domainElement.eClass())) {
 				return Not3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(domainElement.eClass())) {
 				return Addition3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(domainElement.eClass())) {
 				return Subtraction3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMultiplication()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMultiplication().isSuperTypeOf(domainElement.eClass())) {
 				return Multiplication3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(domainElement.eClass())) {
 				return Division3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(domainElement.eClass())) {
 				return Modulus3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(domainElement.eClass())) {
 				return Equal3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(domainElement.eClass())) {
 				return NotEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(domainElement.eClass())) {
 				return LessThan3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterThan3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(domainElement.eClass())) {
 				return LessEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(domainElement.eClass())) {
 				return Every3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(domainElement.eClass())) {
 				return EveryDistinct3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(domainElement.eClass())) {
 				return Repeat3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(domainElement.eClass())) {
 				return Until3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(domainElement.eClass())) {
 				return Range3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(domainElement.eClass())) {
 				return FollowedBy3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(domainElement.eClass())) {
 				return While3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(domainElement.eClass())) {
 				return Max2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(domainElement.eClass())) {
 				return Min2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(domainElement.eClass())) {
 				return Avg2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(domainElement.eClass())) {
 				return Count2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(domainElement.eClass())) {
 				return Sum2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(domainElement.eClass())) {
 				return Event3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty5EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimer2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(domainElement.eClass())) {
 				return TimeInterval2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(domainElement.eClass())) {
 				return TimeSchedule2EditPart.VISUAL_ID;
 			}
 			break;
 		case EventEventEventPropertiesCompartment3EditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty2EditPart.VISUAL_ID;
 			}
 			break;
 		case EventPropertyEventPropertyEventPropertiesCompartment5EditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty3EditPart.VISUAL_ID;
 			}
 			break;
 		case WithinTimerWithinTimerWithinTimerElementsCompartment2EditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(domainElement.eClass())) {
 				return And2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(domainElement.eClass())) {
 				return Or2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(domainElement.eClass())) {
 				return Not2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(domainElement.eClass())) {
 				return Addition2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(domainElement.eClass())) {
 				return Subtraction2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMultiplication()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMultiplication().isSuperTypeOf(domainElement.eClass())) {
 				return Multiplication2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(domainElement.eClass())) {
 				return Division2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(domainElement.eClass())) {
 				return Modulus2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(domainElement.eClass())) {
 				return Equal2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(domainElement.eClass())) {
 				return NotEqual2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(domainElement.eClass())) {
 				return LessThan2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterThan2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(domainElement.eClass())) {
 				return LessEqual2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterEqual2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(domainElement.eClass())) {
 				return Every2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(domainElement.eClass())) {
 				return EveryDistinct2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(domainElement.eClass())) {
 				return Repeat2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(domainElement.eClass())) {
 				return Until2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(domainElement.eClass())) {
 				return Range2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(domainElement.eClass())) {
 				return FollowedBy2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(domainElement.eClass())) {
 				return While2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(domainElement.eClass())) {
 				return Event2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty4EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value2EditPart.VISUAL_ID;
 			}
 			break;
 		case BatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(domainElement.eClass())) {
 				return And3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(domainElement.eClass())) {
 				return Or3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(domainElement.eClass())) {
 				return Not3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(domainElement.eClass())) {
 				return Addition3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(domainElement.eClass())) {
 				return Subtraction3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMultiplication()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMultiplication().isSuperTypeOf(domainElement.eClass())) {
 				return Multiplication3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(domainElement.eClass())) {
 				return Division3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(domainElement.eClass())) {
 				return Modulus3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(domainElement.eClass())) {
 				return Equal3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(domainElement.eClass())) {
 				return NotEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(domainElement.eClass())) {
 				return LessThan3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterThan3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(domainElement.eClass())) {
 				return LessEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(domainElement.eClass())) {
 				return Every3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(domainElement.eClass())) {
 				return EveryDistinct3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(domainElement.eClass())) {
 				return Repeat3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(domainElement.eClass())) {
 				return Until3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(domainElement.eClass())) {
 				return Range3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(domainElement.eClass())) {
 				return FollowedBy3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(domainElement.eClass())) {
 				return While3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(domainElement.eClass())) {
 				return Max2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(domainElement.eClass())) {
 				return Min2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(domainElement.eClass())) {
 				return Avg2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(domainElement.eClass())) {
 				return Count2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(domainElement.eClass())) {
 				return Sum2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(domainElement.eClass())) {
 				return Event3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty5EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimer2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(domainElement.eClass())) {
 				return TimeInterval2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(domainElement.eClass())) {
 				return TimeSchedule2EditPart.VISUAL_ID;
 			}
 			break;
 		case SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(domainElement.eClass())) {
 				return And3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(domainElement.eClass())) {
 				return Or3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(domainElement.eClass())) {
 				return Not3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(domainElement.eClass())) {
 				return Addition3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(domainElement.eClass())) {
 				return Subtraction3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMultiplication()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMultiplication().isSuperTypeOf(domainElement.eClass())) {
 				return Multiplication3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(domainElement.eClass())) {
 				return Division3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(domainElement.eClass())) {
 				return Modulus3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(domainElement.eClass())) {
 				return Equal3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(domainElement.eClass())) {
 				return NotEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(domainElement.eClass())) {
 				return LessThan3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterThan3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(domainElement.eClass())) {
 				return LessEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(domainElement.eClass())) {
 				return Every3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(domainElement.eClass())) {
 				return EveryDistinct3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(domainElement.eClass())) {
 				return Repeat3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(domainElement.eClass())) {
 				return Until3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(domainElement.eClass())) {
 				return Range3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(domainElement.eClass())) {
 				return FollowedBy3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(domainElement.eClass())) {
 				return While3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(domainElement.eClass())) {
 				return Max2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(domainElement.eClass())) {
 				return Min2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(domainElement.eClass())) {
 				return Avg2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(domainElement.eClass())) {
 				return Count2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(domainElement.eClass())) {
 				return Sum2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(domainElement.eClass())) {
 				return Event3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty5EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimer2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(domainElement.eClass())) {
 				return TimeInterval2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(domainElement.eClass())) {
 				return TimeSchedule2EditPart.VISUAL_ID;
 			}
 			break;
 		case BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAnd().isSuperTypeOf(domainElement.eClass())) {
 				return And3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getOr().isSuperTypeOf(domainElement.eClass())) {
 				return Or3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNot().isSuperTypeOf(domainElement.eClass())) {
 				return Not3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAddition().isSuperTypeOf(domainElement.eClass())) {
 				return Addition3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSubtraction().isSuperTypeOf(domainElement.eClass())) {
 				return Subtraction3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMultiplication()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMultiplication().isSuperTypeOf(domainElement.eClass())) {
 				return Multiplication3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getDivision().isSuperTypeOf(domainElement.eClass())) {
 				return Division3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getModulus().isSuperTypeOf(domainElement.eClass())) {
 				return Modulus3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEqual().isSuperTypeOf(domainElement.eClass())) {
 				return Equal3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getNotEqual().isSuperTypeOf(domainElement.eClass())) {
 				return NotEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessThan().isSuperTypeOf(domainElement.eClass())) {
 				return LessThan3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterThan().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterThan3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getLessEqual().isSuperTypeOf(domainElement.eClass())) {
 				return LessEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getGreaterEqual().isSuperTypeOf(domainElement.eClass())) {
 				return GreaterEqual3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvery().isSuperTypeOf(domainElement.eClass())) {
 				return Every3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEveryDistinct().isSuperTypeOf(domainElement.eClass())) {
 				return EveryDistinct3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRepeat().isSuperTypeOf(domainElement.eClass())) {
 				return Repeat3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getUntil().isSuperTypeOf(domainElement.eClass())) {
 				return Until3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getRange().isSuperTypeOf(domainElement.eClass())) {
 				return Range3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getFollowedBy().isSuperTypeOf(domainElement.eClass())) {
 				return FollowedBy3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWhile().isSuperTypeOf(domainElement.eClass())) {
 				return While3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMax().isSuperTypeOf(domainElement.eClass())) {
 				return Max2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getMin().isSuperTypeOf(domainElement.eClass())) {
 				return Min2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getAvg().isSuperTypeOf(domainElement.eClass())) {
 				return Avg2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getCount().isSuperTypeOf(domainElement.eClass())) {
 				return Count2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getSum().isSuperTypeOf(domainElement.eClass())) {
 				return Sum2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEvent().isSuperTypeOf(domainElement.eClass())) {
 				return Event3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty5EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getValue().isSuperTypeOf(domainElement.eClass())) {
 				return Value3EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getWithinTimer().isSuperTypeOf(domainElement.eClass())) {
 				return WithinTimer2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeInterval().isSuperTypeOf(domainElement.eClass())) {
 				return TimeInterval2EditPart.VISUAL_ID;
 			}
-			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getTimeSchedule().isSuperTypeOf(domainElement.eClass())) {
 				return TimeSchedule2EditPart.VISUAL_ID;
 			}
 			break;
 		case ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart.VISUAL_ID:
-			if (EventpatternPackage.eINSTANCE.getComplexEventProperty()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (EventpatternPackage.eINSTANCE.getComplexEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return ComplexEventPropertyEditPart.VISUAL_ID;
 			}
 			break;
@@ -1058,16 +827,13 @@ public class EventpatternVisualIDRegistry {
 	 * @generated
 	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
-		String containerModelID = eventpattern.diagram.part.EventpatternVisualIDRegistry
-				.getModelID(containerView);
-		if (!CEPEventPatternEditPart.MODEL_ID.equals(containerModelID)
-				&& !"pattern".equals(containerModelID)) { //$NON-NLS-1$
+		String containerModelID = eventpattern.diagram.part.EventpatternVisualIDRegistry.getModelID(containerView);
+		if (!CEPEventPatternEditPart.MODEL_ID.equals(containerModelID) && !"pattern".equals(containerModelID)) { //$NON-NLS-1$
 			return false;
 		}
 		int containerVisualID;
 		if (CEPEventPatternEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = eventpattern.diagram.part.EventpatternVisualIDRegistry
-					.getVisualID(containerView);
+			containerVisualID = eventpattern.diagram.part.EventpatternVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = CEPEventPatternEditPart.VISUAL_ID;
@@ -1986,8 +1752,7 @@ public class EventpatternVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (EventpatternPackage.eINSTANCE.getLink().isSuperTypeOf(
-				domainElement.eClass())) {
+		if (EventpatternPackage.eINSTANCE.getLink().isSuperTypeOf(domainElement.eClass())) {
 			return LinkEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -2006,8 +1771,7 @@ public class EventpatternVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	public static boolean checkNodeVisualID(View containerView,
-			EObject domainElement, int candidate) {
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -2145,58 +1909,58 @@ public class EventpatternVisualIDRegistry {
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getVisualID(View view) {
-			return eventpattern.diagram.part.EventpatternVisualIDRegistry
-					.getVisualID(view);
+			return eventpattern.diagram.part.EventpatternVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public String getModelID(View view) {
-			return eventpattern.diagram.part.EventpatternVisualIDRegistry
-					.getModelID(view);
+			return eventpattern.diagram.part.EventpatternVisualIDRegistry.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return eventpattern.diagram.part.EventpatternVisualIDRegistry
-					.getNodeVisualID(containerView, domainElement);
+			return eventpattern.diagram.part.EventpatternVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public boolean checkNodeVisualID(View containerView,
-				EObject domainElement, int candidate) {
-			return eventpattern.diagram.part.EventpatternVisualIDRegistry
-					.checkNodeVisualID(containerView, domainElement, candidate);
+
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return eventpattern.diagram.part.EventpatternVisualIDRegistry.checkNodeVisualID(containerView,
+					domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isCompartmentVisualID(int visualID) {
-			return eventpattern.diagram.part.EventpatternVisualIDRegistry
-					.isCompartmentVisualID(visualID);
+			return eventpattern.diagram.part.EventpatternVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isSemanticLeafVisualID(int visualID) {
-			return eventpattern.diagram.part.EventpatternVisualIDRegistry
-					.isSemanticLeafVisualID(visualID);
+			return eventpattern.diagram.part.EventpatternVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 	};
 

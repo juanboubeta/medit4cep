@@ -56,42 +56,34 @@ public class EventpatternNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	public EventpatternNewDiagramFileWizard(URI domainModelURI,
-			EObject diagramRoot, TransactionalEditingDomain editingDomain) {
+	public EventpatternNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot,
+			TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage(
-				Messages.EventpatternNewDiagramFileWizard_CreationPageName,
+		myFileCreationPage = new WizardNewFileCreationPage(Messages.EventpatternNewDiagramFileWizard_CreationPageName,
 				StructuredSelection.EMPTY);
-		myFileCreationPage
-				.setTitle(Messages.EventpatternNewDiagramFileWizard_CreationPageTitle);
-		myFileCreationPage
-				.setDescription(NLS
-						.bind(Messages.EventpatternNewDiagramFileWizard_CreationPageDescription,
-								CEPEventPatternEditPart.MODEL_ID));
+		myFileCreationPage.setTitle(Messages.EventpatternNewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage.setDescription(NLS.bind(Messages.EventpatternNewDiagramFileWizard_CreationPageDescription,
+				CEPEventPatternEditPart.MODEL_ID));
 		IPath filePath;
-		String fileName = URI.decode(domainModelURI.trimFileExtension()
-				.lastSegment());
+		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if (domainModelURI.isPlatformResource()) {
-			filePath = new Path(domainModelURI.trimSegments(1)
-					.toPlatformString(true));
+			filePath = new Path(domainModelURI.trimSegments(1).toPlatformString(true));
 		} else if (domainModelURI.isFile()) {
 			filePath = new Path(domainModelURI.trimSegments(1).toFileString());
 		} else {
 			// TODO : use some default path
-			throw new IllegalArgumentException(
-					"Unsupported URI: " + domainModelURI); //$NON-NLS-1$
+			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
-		myFileCreationPage.setFileName(EventpatternDiagramEditorUtil
-				.getUniqueFileName(filePath, fileName, "pattern_diagram")); //$NON-NLS-1$
+		myFileCreationPage
+				.setFileName(EventpatternDiagramEditorUtil.getUniqueFileName(filePath, fileName, "pattern_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				Messages.EventpatternNewDiagramFileWizard_RootSelectionPageName);
-		diagramRootElementSelectionPage
-				.setTitle(Messages.EventpatternNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage.setTitle(Messages.EventpatternNewDiagramFileWizard_RootSelectionPageTitle);
 		diagramRootElementSelectionPage
 				.setDescription(Messages.EventpatternNewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
@@ -115,51 +107,36 @@ public class EventpatternNewDiagramFileWizard extends Wizard {
 		IFile diagramFile = myFileCreationPage.createNewFile();
 		EventpatternDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
-		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile
-				.getFullPath().toString(), true);
+		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
-		final Resource diagramResource = resourceSet
-				.createResource(diagramModelURI);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
-				myEditingDomain,
-				Messages.EventpatternNewDiagramFileWizard_InitDiagramCommand,
-				affectedFiles) {
+		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain,
+				Messages.EventpatternNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 				int diagramVID = EventpatternVisualIDRegistry
-						.getDiagramVisualID(diagramRootElementSelectionPage
-								.getModelElement());
+						.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
 				if (diagramVID != CEPEventPatternEditPart.VISUAL_ID) {
 					return CommandResult
 							.newErrorCommandResult(Messages.EventpatternNewDiagramFileWizard_IncorrectRootError);
 				}
-				Diagram diagram = ViewService
-						.createDiagram(
-								diagramRootElementSelectionPage
-										.getModelElement(),
-								CEPEventPatternEditPart.MODEL_ID,
-								EventpatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(),
+						CEPEventPatternEditPart.MODEL_ID, EventpatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		try {
-			OperationHistoryFactory.getOperationHistory().execute(command,
-					new NullProgressMonitor(), null);
-			diagramResource
-					.save(EventpatternDiagramEditorUtil.getSaveOptions());
+			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
+			diagramResource.save(EventpatternDiagramEditorUtil.getSaveOptions());
 			EventpatternDiagramEditorUtil.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
-			EventpatternDiagramEditorPlugin.getInstance().logError(
-					"Unable to create model and diagram", e); //$NON-NLS-1$
+			EventpatternDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			EventpatternDiagramEditorPlugin.getInstance().logError(
-					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
+			EventpatternDiagramEditorPlugin.getInstance().logError("Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		} catch (PartInitException ex) {
-			EventpatternDiagramEditorPlugin.getInstance().logError(
-					"Unable to open editor", ex); //$NON-NLS-1$
+			EventpatternDiagramEditorPlugin.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
 	}
@@ -167,8 +144,7 @@ public class EventpatternNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private static class DiagramRootElementSelectionPage extends
-			ModelElementSelectionPage {
+	private static class DiagramRootElementSelectionPage extends ModelElementSelectionPage {
 
 		/**
 		 * @generated
@@ -192,15 +168,12 @@ public class EventpatternNewDiagramFileWizard extends Wizard {
 				setErrorMessage(Messages.EventpatternNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
-			boolean result = ViewService
-					.getInstance()
-					.provides(
-							new CreateDiagramViewOperation(
-									new EObjectAdapter(getModelElement()),
-									CEPEventPatternEditPart.MODEL_ID,
-									EventpatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-			setErrorMessage(result ? null
-					: Messages.EventpatternNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
+			boolean result = ViewService.getInstance()
+					.provides(new CreateDiagramViewOperation(new EObjectAdapter(getModelElement()),
+							CEPEventPatternEditPart.MODEL_ID,
+							EventpatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+			setErrorMessage(
+					result ? null : Messages.EventpatternNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
 		}
 	}

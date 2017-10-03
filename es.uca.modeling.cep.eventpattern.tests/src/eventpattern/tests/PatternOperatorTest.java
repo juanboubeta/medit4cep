@@ -14,26 +14,26 @@ public abstract class PatternOperatorTest extends OperatorTest
 {
 
   /**
-   * Constructs a new Pattern Operator test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Pattern Operator test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public PatternOperatorTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Pattern Operator test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Pattern Operator test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected PatternOperator getFixture()
   {
-    return (PatternOperator)fixture;
-  }
+		return (PatternOperator)fixture;
+	}
 
 } //PatternOperatorTest

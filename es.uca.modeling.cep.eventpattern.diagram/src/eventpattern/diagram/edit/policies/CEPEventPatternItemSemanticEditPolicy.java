@@ -54,8 +54,7 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 /**
  * @generated
  */
-public class CEPEventPatternItemSemanticEditPolicy extends
-		EventpatternBaseItemSemanticEditPolicy {
+public class CEPEventPatternItemSemanticEditPolicy extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -83,8 +82,7 @@ public class CEPEventPatternItemSemanticEditPolicy extends
 		if (EventpatternElementTypes.Subtraction_2005 == req.getElementType()) {
 			return getGEFWrapper(new SubtractionCreateCommand(req));
 		}
-		if (EventpatternElementTypes.Multiplication_2006 == req
-				.getElementType()) {
+		if (EventpatternElementTypes.Multiplication_2006 == req.getElementType()) {
 			return getGEFWrapper(new MultiplicationCreateCommand(req));
 		}
 		if (EventpatternElementTypes.Division_2007 == req.getElementType()) {
@@ -171,20 +169,16 @@ public class CEPEventPatternItemSemanticEditPolicy extends
 		if (EventpatternElementTypes.Twitter_2039 == req.getElementType()) {
 			return getGEFWrapper(new TwitterCreateCommand(req));
 		}
-		if (EventpatternElementTypes.SlidingEventInterval_2034 == req
-				.getElementType()) {
+		if (EventpatternElementTypes.SlidingEventInterval_2034 == req.getElementType()) {
 			return getGEFWrapper(new SlidingEventIntervalCreateCommand(req));
 		}
-		if (EventpatternElementTypes.BatchingEventInterval_2035 == req
-				.getElementType()) {
+		if (EventpatternElementTypes.BatchingEventInterval_2035 == req.getElementType()) {
 			return getGEFWrapper(new BatchingEventIntervalCreateCommand(req));
 		}
-		if (EventpatternElementTypes.SlidingTimeInterval_2036 == req
-				.getElementType()) {
+		if (EventpatternElementTypes.SlidingTimeInterval_2036 == req.getElementType()) {
 			return getGEFWrapper(new SlidingTimeIntervalCreateCommand(req));
 		}
-		if (EventpatternElementTypes.BatchingTimeInterval_2037 == req
-				.getElementType()) {
+		if (EventpatternElementTypes.BatchingTimeInterval_2037 == req.getElementType()) {
 			return getGEFWrapper(new BatchingTimeIntervalCreateCommand(req));
 		}
 		if (EventpatternElementTypes.ComplexEvent_2038 == req.getElementType()) {
@@ -197,26 +191,20 @@ public class CEPEventPatternItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost())
-				.getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class DuplicateAnythingCommand extends
-			DuplicateEObjectsCommand {
+	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
 		 * @generated
 		 */
-		public DuplicateAnythingCommand(
-				TransactionalEditingDomain editingDomain,
-				DuplicateElementsRequest req) {
-			super(editingDomain, req.getLabel(), req
-					.getElementsToBeDuplicated(), req
-					.getAllDuplicatedElementsMap());
+		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
+			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}
 
 	}

@@ -17,60 +17,60 @@ public class ComplexEventPropertyTest extends UnaryOperatorTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(ComplexEventPropertyTest.class);
-  }
+		TestRunner.run(ComplexEventPropertyTest.class);
+	}
 
   /**
-   * Constructs a new Complex Event Property test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Complex Event Property test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ComplexEventPropertyTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Complex Event Property test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Complex Event Property test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected ComplexEventProperty getFixture()
   {
-    return (ComplexEventProperty)fixture;
-  }
+		return (ComplexEventProperty)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createComplexEventProperty());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createComplexEventProperty());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //ComplexEventPropertyTest

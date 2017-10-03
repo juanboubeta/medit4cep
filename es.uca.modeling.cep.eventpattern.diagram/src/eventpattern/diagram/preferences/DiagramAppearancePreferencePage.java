@@ -16,7 +16,6 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	 * @generated
 	 */
 	public DiagramAppearancePreferencePage() {
-		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance()
-				.getPreferenceStore());
+		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

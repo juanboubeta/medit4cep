@@ -24,142 +24,136 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link eventpattern.impl.DataWindowImpl#getEventPatternConditions <em>Event Pattern Conditions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public abstract class DataWindowImpl extends EventPatternElementImpl implements DataWindow
 {
   /**
-   * The cached value of the '{@link #getEventPatternConditions() <em>Event Pattern Conditions</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEventPatternConditions() <em>Event Pattern Conditions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEventPatternConditions()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEventPatternConditions()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<EventPatternCondition> eventPatternConditions;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DataWindowImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return EventpatternPackage.Literals.DATA_WINDOW;
-  }
+		return EventpatternPackage.Literals.DATA_WINDOW;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<EventPatternCondition> getEventPatternConditions()
   {
-    if (eventPatternConditions == null)
-    {
-      eventPatternConditions = new EObjectContainmentEList<EventPatternCondition>(EventPatternCondition.class, this, EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS);
-    }
-    return eventPatternConditions;
-  }
+		if (eventPatternConditions == null) {
+			eventPatternConditions = new EObjectContainmentEList<EventPatternCondition>(EventPatternCondition.class, this, EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS);
+		}
+		return eventPatternConditions;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
-        return ((InternalEList<?>)getEventPatternConditions()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
+				return ((InternalEList<?>)getEventPatternConditions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
-        return getEventPatternConditions();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
+				return getEventPatternConditions();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
-        getEventPatternConditions().clear();
-        getEventPatternConditions().addAll((Collection<? extends EventPatternCondition>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
+				getEventPatternConditions().clear();
+				getEventPatternConditions().addAll((Collection<? extends EventPatternCondition>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
-        getEventPatternConditions().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
+				getEventPatternConditions().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
-        return eventPatternConditions != null && !eventPatternConditions.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case EventpatternPackage.DATA_WINDOW__EVENT_PATTERN_CONDITIONS:
+				return eventPatternConditions != null && !eventPatternConditions.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //DataWindowImpl

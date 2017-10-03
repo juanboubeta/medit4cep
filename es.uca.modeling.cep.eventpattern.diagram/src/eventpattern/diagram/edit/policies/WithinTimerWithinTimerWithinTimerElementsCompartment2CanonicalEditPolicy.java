@@ -56,8 +56,7 @@ import eventpattern.diagram.part.EventpatternVisualIDRegistry;
 /**
  * @generated
  */
-public class WithinTimerWithinTimerWithinTimerElementsCompartment2CanonicalEditPolicy
-		extends CanonicalEditPolicy {
+public class WithinTimerWithinTimerWithinTimerElementsCompartment2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -75,8 +74,7 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartment2CanonicalEditP
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return EventpatternPackage.eINSTANCE
-				.getWithinTimer_WithinTimerElements();
+		return EventpatternPackage.eINSTANCE.getWithinTimer_WithinTimerElements();
 	}
 
 	/**
@@ -97,10 +95,8 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartment2CanonicalEditP
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
@@ -147,8 +143,8 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartment2CanonicalEditP
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<EventpatternNodeDescriptor> childDescriptors = EventpatternDiagramUpdater
-				.getWithinTimerWithinTimerWithinTimerElementsCompartment_7011SemanticChildren((View) getHost()
-						.getModel());
+				.getWithinTimerWithinTimerWithinTimerElementsCompartment_7011SemanticChildren(
+						(View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -162,11 +158,10 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartment2CanonicalEditP
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<EventpatternNodeDescriptor> descriptorsIterator = childDescriptors
-				.iterator(); descriptorsIterator.hasNext();) {
+		for (Iterator<EventpatternNodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator
+				.hasNext();) {
 			EventpatternNodeDescriptor next = descriptorsIterator.next();
-			String hint = EventpatternVisualIDRegistry.getType(next
-					.getVisualID());
+			String hint = EventpatternVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -192,13 +187,10 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartment2CanonicalEditP
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
 		for (EventpatternNodeDescriptor next : childDescriptors) {
-			String hint = EventpatternVisualIDRegistry.getType(next
-					.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			String hint = EventpatternVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -207,10 +199,10 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartment2CanonicalEditP
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -219,8 +211,8 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartment2CanonicalEditP
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

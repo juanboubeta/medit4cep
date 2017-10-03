@@ -14,26 +14,26 @@ public abstract class AggregationOperatorTest extends UnaryOperatorTest
 {
 
   /**
-   * Constructs a new Aggregation Operator test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Aggregation Operator test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AggregationOperatorTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Aggregation Operator test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Aggregation Operator test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected AggregationOperator getFixture()
   {
-    return (AggregationOperator)fixture;
-  }
+		return (AggregationOperator)fixture;
+	}
 
 } //AggregationOperatorTest

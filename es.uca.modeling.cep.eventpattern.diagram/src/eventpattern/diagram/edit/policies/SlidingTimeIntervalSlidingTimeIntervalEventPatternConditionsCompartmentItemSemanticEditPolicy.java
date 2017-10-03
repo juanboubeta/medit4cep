@@ -72,8 +72,7 @@ public class SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompart
 		if (EventpatternElementTypes.Subtraction_3031 == req.getElementType()) {
 			return getGEFWrapper(new Subtraction3CreateCommand(req));
 		}
-		if (EventpatternElementTypes.Multiplication_3032 == req
-				.getElementType()) {
+		if (EventpatternElementTypes.Multiplication_3032 == req.getElementType()) {
 			return getGEFWrapper(new Multiplication3CreateCommand(req));
 		}
 		if (EventpatternElementTypes.Division_3033 == req.getElementType()) {

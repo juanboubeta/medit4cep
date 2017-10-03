@@ -41,20 +41,17 @@ public class ComplexEventEditHelper extends EventpatternBaseEditHelper {
 				return this.getCommandResult();
 			}
 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 
 				Object o = req.getElementToConfigure();
 				eventpattern.ComplexEvent complexEvent = (eventpattern.ComplexEvent) o;
-				complexEvent.setTypeName(EventPatternsStatus
-						.getActivePatternName());
+				complexEvent.setTypeName(EventPatternsStatus.getActivePatternName());
 
 				return this.getCommandResult();
 			}
 		};
 
-		return CompositeCommand.compose(configureCommand,
-				super.getConfigureCommand(req));
+		return CompositeCommand.compose(configureCommand, super.getConfigureCommand(req));
 	}
 }

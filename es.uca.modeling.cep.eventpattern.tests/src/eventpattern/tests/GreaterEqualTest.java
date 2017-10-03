@@ -17,60 +17,60 @@ public class GreaterEqualTest extends ComparisonOperatorTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(GreaterEqualTest.class);
-  }
+		TestRunner.run(GreaterEqualTest.class);
+	}
 
   /**
-   * Constructs a new Greater Equal test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Greater Equal test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public GreaterEqualTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Greater Equal test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Greater Equal test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected GreaterEqual getFixture()
   {
-    return (GreaterEqual)fixture;
-  }
+		return (GreaterEqual)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createGreaterEqual());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createGreaterEqual());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //GreaterEqualTest

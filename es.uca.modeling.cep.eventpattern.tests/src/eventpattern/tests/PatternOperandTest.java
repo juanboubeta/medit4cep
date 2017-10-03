@@ -14,26 +14,26 @@ public abstract class PatternOperandTest extends OperandTest
 {
 
   /**
-   * Constructs a new Pattern Operand test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Pattern Operand test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public PatternOperandTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Pattern Operand test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Pattern Operand test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected PatternOperand getFixture()
   {
-    return (PatternOperand)fixture;
-  }
+		return (PatternOperand)fixture;
+	}
 
 } //PatternOperandTest

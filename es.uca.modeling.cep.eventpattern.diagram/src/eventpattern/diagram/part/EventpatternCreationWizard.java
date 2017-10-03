@@ -83,8 +83,7 @@ public class EventpatternCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	public void setOpenNewlyCreatedDiagramEditor(
-			boolean openNewlyCreatedDiagramEditor) {
+	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
 		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
 	}
 
@@ -95,8 +94,8 @@ public class EventpatternCreationWizard extends Wizard implements INewWizard {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(Messages.EventpatternCreationWizardTitle);
-		setDefaultPageImageDescriptor(EventpatternDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewEventpatternWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				EventpatternDiagramEditorPlugin.getBundledImageDescriptor("icons/wizban/NewEventpatternWizard.gif")); //$NON-NLS-1$
 		setNeedsProgressMonitor(true);
 	}
 
@@ -104,33 +103,26 @@ public class EventpatternCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		diagramModelFilePage = new EventpatternCreationWizardPage(
-				"DiagramModelFile", getSelection(), "pattern_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
-		diagramModelFilePage
-				.setTitle(Messages.EventpatternCreationWizard_DiagramModelFilePageTitle);
-		diagramModelFilePage
-				.setDescription(Messages.EventpatternCreationWizard_DiagramModelFilePageDescription);
+		diagramModelFilePage = new EventpatternCreationWizardPage("DiagramModelFile", getSelection(), //$NON-NLS-1$
+				"pattern_diagram"); //$NON-NLS-1$
+		diagramModelFilePage.setTitle(Messages.EventpatternCreationWizard_DiagramModelFilePageTitle);
+		diagramModelFilePage.setDescription(Messages.EventpatternCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new EventpatternCreationWizardPage(
-				"DomainModelFile", getSelection(), "pattern") { //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new EventpatternCreationWizardPage("DomainModelFile", getSelection(), "pattern") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length()
-							- ".pattern_diagram".length()); //$NON-NLS-1$
-					setFileName(EventpatternDiagramEditorUtil
-							.getUniqueFileName(getContainerFullPath(),
-									fileName, "pattern")); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".pattern_diagram".length()); //$NON-NLS-1$
+					setFileName(EventpatternDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName,
+							"pattern")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}
 		};
-		domainModelFilePage
-				.setTitle(Messages.EventpatternCreationWizard_DomainModelFilePageTitle);
-		domainModelFilePage
-				.setDescription(Messages.EventpatternCreationWizard_DomainModelFilePageDescription);
+		domainModelFilePage.setTitle(Messages.EventpatternCreationWizard_DomainModelFilePageTitle);
+		domainModelFilePage.setDescription(Messages.EventpatternCreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
 	}
 
@@ -140,20 +132,15 @@ public class EventpatternCreationWizard extends Wizard implements INewWizard {
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
-			protected void execute(IProgressMonitor monitor)
-					throws CoreException, InterruptedException {
-				diagram = EventpatternDiagramEditorUtil.createDiagram(
-						diagramModelFilePage.getURI(),
+			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
+				diagram = EventpatternDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(),
 						domainModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
 						EventpatternDiagramEditorUtil.openDiagram(diagram);
 					} catch (PartInitException e) {
-						ErrorDialog
-								.openError(
-										getContainer().getShell(),
-										Messages.EventpatternCreationWizardOpenEditorError,
-										null, e.getStatus());
+						ErrorDialog.openError(getContainer().getShell(),
+								Messages.EventpatternCreationWizardOpenEditorError, null, e.getStatus());
 					}
 				}
 			}
@@ -164,12 +151,11 @@ public class EventpatternCreationWizard extends Wizard implements INewWizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			if (e.getTargetException() instanceof CoreException) {
-				ErrorDialog.openError(getContainer().getShell(),
-						Messages.EventpatternCreationWizardCreationError, null,
+				ErrorDialog.openError(getContainer().getShell(), Messages.EventpatternCreationWizardCreationError, null,
 						((CoreException) e.getTargetException()).getStatus());
 			} else {
-				EventpatternDiagramEditorPlugin.getInstance().logError(
-						"Error creating diagram", e.getTargetException()); //$NON-NLS-1$
+				EventpatternDiagramEditorPlugin.getInstance().logError("Error creating diagram", //$NON-NLS-1$
+						e.getTargetException());
 			}
 			return false;
 		}

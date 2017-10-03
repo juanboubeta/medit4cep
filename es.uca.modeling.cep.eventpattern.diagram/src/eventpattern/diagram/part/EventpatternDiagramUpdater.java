@@ -85,8 +85,7 @@ public class EventpatternDiagramUpdater {
 	 * @generated
 	 */
 	public static boolean isShortcutOrphaned(View view) {
-		return !view.isSetElement() || view.getElement() == null
-				|| view.getElement().eIsProxy();
+		return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
 	}
 
 	/**
@@ -111,7 +110,8 @@ public class EventpatternDiagramUpdater {
 		case EventPropertyEventPropertyEventPropertiesCompartment4EditPart.VISUAL_ID:
 			return getEventPropertyEventPropertyEventPropertiesCompartment_7007SemanticChildren(view);
 		case SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-			return getSlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartment_7008SemanticChildren(view);
+			return getSlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartment_7008SemanticChildren(
+					view);
 		case EventEventEventPropertiesCompartment3EditPart.VISUAL_ID:
 			return getEventEventEventPropertiesCompartment_7009SemanticChildren(view);
 		case EventPropertyEventPropertyEventPropertiesCompartment5EditPart.VISUAL_ID:
@@ -119,11 +119,14 @@ public class EventpatternDiagramUpdater {
 		case WithinTimerWithinTimerWithinTimerElementsCompartment2EditPart.VISUAL_ID:
 			return getWithinTimerWithinTimerWithinTimerElementsCompartment_7011SemanticChildren(view);
 		case BatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-			return getBatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartment_7012SemanticChildren(view);
+			return getBatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartment_7012SemanticChildren(
+					view);
 		case SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-			return getSlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartment_7013SemanticChildren(view);
+			return getSlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartment_7013SemanticChildren(
+					view);
 		case BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-			return getBatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartment_7014SemanticChildren(view);
+			return getBatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartment_7014SemanticChildren(
+					view);
 		case ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart.VISUAL_ID:
 			return getComplexEventComplexEventComplexEventPropertiesCompartment_7015SemanticChildren(view);
 		}
@@ -133,222 +136,177 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternNodeDescriptor> getCEPEventPattern_1000SemanticChildren(
-			View view) {
+	public static List<EventpatternNodeDescriptor> getCEPEventPattern_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
 		CEPEventPattern modelElement = (CEPEventPattern) view.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventPatternElements().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventPatternElements().iterator(); it.hasNext();) {
 			EventPatternElement childElement = (EventPatternElement) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == AndEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == OrEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == NotEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == AdditionEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == SubtractionEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == MultiplicationEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == DivisionEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == ModulusEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EqualEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == NotEqualEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessThanEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterThanEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessEqualEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterEqualEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EveryEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EveryDistinctEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == RepeatEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == UntilEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == RangeEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == FollowedByEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == WhileEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == MaxEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == MinEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == AvgEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == CountEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == SumEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EventEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EventPropertyEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == ValueEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == WithinTimerEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeIntervalEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeScheduleEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == SlidingEventIntervalEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == BatchingEventIntervalEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == SlidingTimeIntervalEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == BatchingTimeIntervalEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getActions().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getActions().iterator(); it.hasNext();) {
 			Action childElement = (Action) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EmailEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TwitterEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
 		{
 			ComplexEvent childElement = modelElement.getComplexEvent();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ComplexEventEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 			}
 		}
 		return result;
@@ -368,14 +326,11 @@ public class EventpatternDiagramUpdater {
 		}
 		Event modelElement = (Event) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -396,14 +351,11 @@ public class EventpatternDiagramUpdater {
 		}
 		EventProperty modelElement = (EventProperty) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -424,14 +376,11 @@ public class EventpatternDiagramUpdater {
 		}
 		EventProperty modelElement = (EventProperty) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -452,14 +401,11 @@ public class EventpatternDiagramUpdater {
 		}
 		EventProperty modelElement = (EventProperty) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -480,129 +426,103 @@ public class EventpatternDiagramUpdater {
 		}
 		WithinTimer modelElement = (WithinTimer) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getWithinTimerElements().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getWithinTimerElements().iterator(); it.hasNext();) {
 			WithinTimerElement childElement = (WithinTimerElement) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == And2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Or2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Not2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Addition2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Subtraction2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Multiplication2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Division2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Modulus2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Equal2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == NotEqual2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessThan2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterThan2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessEqual2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterEqual2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Every2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EveryDistinct2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Repeat2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Until2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Range2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == FollowedBy2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == While2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Event2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EventProperty4EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Value2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -623,14 +543,11 @@ public class EventpatternDiagramUpdater {
 		}
 		Event modelElement = (Event) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -651,14 +568,11 @@ public class EventpatternDiagramUpdater {
 		}
 		EventProperty modelElement = (EventProperty) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -677,173 +591,137 @@ public class EventpatternDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		SlidingEventInterval modelElement = (SlidingEventInterval) containerView
-				.getElement();
+		SlidingEventInterval modelElement = (SlidingEventInterval) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventPatternConditions()
-				.iterator(); it.hasNext();) {
-			EventPatternCondition childElement = (EventPatternCondition) it
-					.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+		for (Iterator<?> it = modelElement.getEventPatternConditions().iterator(); it.hasNext();) {
+			EventPatternCondition childElement = (EventPatternCondition) it.next();
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == And3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Or3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Not3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Addition3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Subtraction3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Multiplication3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Division3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Modulus3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Equal3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == NotEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessThan3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterThan3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Every3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EveryDistinct3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Repeat3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Until3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Range3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == FollowedBy3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == While3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Max2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Min2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Avg2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Count2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Sum2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Event3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EventProperty5EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Value3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == WithinTimer2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeInterval2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeSchedule2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -864,14 +742,11 @@ public class EventpatternDiagramUpdater {
 		}
 		Event modelElement = (Event) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -892,14 +767,11 @@ public class EventpatternDiagramUpdater {
 		}
 		EventProperty modelElement = (EventProperty) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -920,129 +792,103 @@ public class EventpatternDiagramUpdater {
 		}
 		WithinTimer modelElement = (WithinTimer) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getWithinTimerElements().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getWithinTimerElements().iterator(); it.hasNext();) {
 			WithinTimerElement childElement = (WithinTimerElement) it.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == And2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Or2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Not2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Addition2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Subtraction2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Multiplication2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Division2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Modulus2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Equal2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == NotEqual2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessThan2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterThan2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessEqual2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterEqual2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Every2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EveryDistinct2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Repeat2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Until2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Range2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == FollowedBy2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == While2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Event2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EventProperty4EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Value2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -1061,173 +907,137 @@ public class EventpatternDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		BatchingEventInterval modelElement = (BatchingEventInterval) containerView
-				.getElement();
+		BatchingEventInterval modelElement = (BatchingEventInterval) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventPatternConditions()
-				.iterator(); it.hasNext();) {
-			EventPatternCondition childElement = (EventPatternCondition) it
-					.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+		for (Iterator<?> it = modelElement.getEventPatternConditions().iterator(); it.hasNext();) {
+			EventPatternCondition childElement = (EventPatternCondition) it.next();
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == And3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Or3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Not3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Addition3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Subtraction3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Multiplication3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Division3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Modulus3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Equal3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == NotEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessThan3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterThan3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Every3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EveryDistinct3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Repeat3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Until3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Range3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == FollowedBy3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == While3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Max2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Min2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Avg2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Count2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Sum2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Event3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EventProperty5EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Value3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == WithinTimer2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeInterval2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeSchedule2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -1246,173 +1056,137 @@ public class EventpatternDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		SlidingTimeInterval modelElement = (SlidingTimeInterval) containerView
-				.getElement();
+		SlidingTimeInterval modelElement = (SlidingTimeInterval) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventPatternConditions()
-				.iterator(); it.hasNext();) {
-			EventPatternCondition childElement = (EventPatternCondition) it
-					.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+		for (Iterator<?> it = modelElement.getEventPatternConditions().iterator(); it.hasNext();) {
+			EventPatternCondition childElement = (EventPatternCondition) it.next();
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == And3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Or3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Not3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Addition3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Subtraction3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Multiplication3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Division3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Modulus3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Equal3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == NotEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessThan3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterThan3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Every3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EveryDistinct3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Repeat3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Until3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Range3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == FollowedBy3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == While3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Max2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Min2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Avg2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Count2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Sum2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Event3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EventProperty5EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Value3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == WithinTimer2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeInterval2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeSchedule2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -1431,173 +1205,137 @@ public class EventpatternDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		BatchingTimeInterval modelElement = (BatchingTimeInterval) containerView
-				.getElement();
+		BatchingTimeInterval modelElement = (BatchingTimeInterval) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventPatternConditions()
-				.iterator(); it.hasNext();) {
-			EventPatternCondition childElement = (EventPatternCondition) it
-					.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+		for (Iterator<?> it = modelElement.getEventPatternConditions().iterator(); it.hasNext();) {
+			EventPatternCondition childElement = (EventPatternCondition) it.next();
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == And3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Or3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Not3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Addition3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Subtraction3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Multiplication3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Division3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Modulus3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Equal3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == NotEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessThan3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterThan3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LessEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == GreaterEqual3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Every3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EveryDistinct3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Repeat3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Until3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Range3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == FollowedBy3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == While3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Max2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Min2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Avg2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Count2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Sum2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Event3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EventProperty5EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Value3EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == WithinTimer2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeInterval2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == TimeSchedule2EditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -1618,15 +1356,11 @@ public class EventpatternDiagramUpdater {
 		}
 		ComplexEvent modelElement = (ComplexEvent) containerView.getElement();
 		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getComplexEventProperties()
-				.iterator(); it.hasNext();) {
-			ComplexEventProperty childElement = (ComplexEventProperty) it
-					.next();
-			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+		for (Iterator<?> it = modelElement.getComplexEventProperties().iterator(); it.hasNext();) {
+			ComplexEventProperty childElement = (ComplexEventProperty) it.next();
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ComplexEventPropertyEditPart.VISUAL_ID) {
-				result.add(new EventpatternNodeDescriptor(childElement,
-						visualID));
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -2259,8 +1993,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getCEPEventPattern_1000ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getCEPEventPattern_1000ContainedLinks(View view) {
 		CEPEventPattern modelElement = (CEPEventPattern) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Link_4001(modelElement));
@@ -2270,2055 +2003,1778 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAnd_2001ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAnd_2001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getOr_2002ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getOr_2002ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNot_2003ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNot_2003ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAddition_2004ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAddition_2004ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSubtraction_2005ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSubtraction_2005ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMultiplication_2006ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMultiplication_2006ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getDivision_2007ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getDivision_2007ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getModulus_2008ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getModulus_2008ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEqual_2009ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEqual_2009ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNotEqual_2010ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNotEqual_2010ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessThan_2011ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessThan_2011ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterThan_2012ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterThan_2012ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessEqual_2013ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessEqual_2013ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterEqual_2014ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterEqual_2014ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvery_2015ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvery_2015ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEveryDistinct_2016ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEveryDistinct_2016ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRepeat_2017ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRepeat_2017ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getUntil_2018ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getUntil_2018ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRange_2019ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRange_2019ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getFollowedBy_2020ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getFollowedBy_2020ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWhile_2021ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWhile_2021ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMax_2022ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMax_2022ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMin_2023ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMin_2023ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAvg_2024ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAvg_2024ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getCount_2025ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getCount_2025ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSum_2026ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSum_2026ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvent_2027ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvent_2027ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_2028ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_2028ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getValue_2029ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getValue_2029ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWithinTimer_2030ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWithinTimer_2030ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeInterval_2031ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeInterval_2031ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeSchedule_2032ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeSchedule_2032ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEmail_2033ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEmail_2033ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTwitter_2039ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTwitter_2039ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSlidingEventInterval_2034ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSlidingEventInterval_2034ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getBatchingEventInterval_2035ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getBatchingEventInterval_2035ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSlidingTimeInterval_2036ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSlidingTimeInterval_2036ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getBatchingTimeInterval_2037ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getBatchingTimeInterval_2037ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getComplexEvent_2038ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getComplexEvent_2038ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3001ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3002ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3002ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAnd_3003ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAnd_3003ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getOr_3004ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getOr_3004ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNot_3005ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNot_3005ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAddition_3006ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAddition_3006ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSubtraction_3007ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSubtraction_3007ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMultiplication_3008ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMultiplication_3008ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getDivision_3009ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getDivision_3009ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getModulus_3010ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getModulus_3010ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEqual_3011ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEqual_3011ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNotEqual_3012ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNotEqual_3012ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessThan_3013ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessThan_3013ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterThan_3014ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterThan_3014ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessEqual_3015ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessEqual_3015ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterEqual_3016ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterEqual_3016ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvery_3017ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvery_3017ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEveryDistinct_3018ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEveryDistinct_3018ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRepeat_3019ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRepeat_3019ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getUntil_3020ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getUntil_3020ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRange_3021ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRange_3021ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getFollowedBy_3022ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getFollowedBy_3022ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWhile_3023ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWhile_3023ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvent_3024ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvent_3024ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3025ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3025ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getValue_3026ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getValue_3026ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAnd_3027ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAnd_3027ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getOr_3028ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getOr_3028ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNot_3029ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNot_3029ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAddition_3030ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAddition_3030ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSubtraction_3031ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSubtraction_3031ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMultiplication_3032ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMultiplication_3032ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getDivision_3033ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getDivision_3033ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getModulus_3034ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getModulus_3034ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEqual_3035ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEqual_3035ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNotEqual_3036ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNotEqual_3036ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessThan_3037ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessThan_3037ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterThan_3038ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterThan_3038ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessEqual_3039ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessEqual_3039ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterEqual_3040ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterEqual_3040ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvery_3041ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvery_3041ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEveryDistinct_3042ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEveryDistinct_3042ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRepeat_3043ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRepeat_3043ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getUntil_3044ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getUntil_3044ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRange_3045ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRange_3045ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getFollowedBy_3046ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getFollowedBy_3046ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWhile_3047ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWhile_3047ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMax_3048ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMax_3048ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMin_3049ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMin_3049ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAvg_3050ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAvg_3050ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getCount_3051ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getCount_3051ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSum_3052ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSum_3052ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvent_3053ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvent_3053ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3054ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3054ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getValue_3055ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getValue_3055ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWithinTimer_3056ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWithinTimer_3056ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeInterval_3057ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeInterval_3057ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeSchedule_3058ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeSchedule_3058ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getComplexEventProperty_3059ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getComplexEventProperty_3059ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLink_4001ContainedLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLink_4001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAnd_2001IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAnd_2001IncomingLinks(View view) {
 		And modelElement = (And) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getOr_2002IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getOr_2002IncomingLinks(View view) {
 		Or modelElement = (Or) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNot_2003IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNot_2003IncomingLinks(View view) {
 		Not modelElement = (Not) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAddition_2004IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAddition_2004IncomingLinks(View view) {
 		Addition modelElement = (Addition) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSubtraction_2005IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSubtraction_2005IncomingLinks(View view) {
 		Subtraction modelElement = (Subtraction) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMultiplication_2006IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMultiplication_2006IncomingLinks(View view) {
 		Multiplication modelElement = (Multiplication) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getDivision_2007IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getDivision_2007IncomingLinks(View view) {
 		Division modelElement = (Division) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getModulus_2008IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getModulus_2008IncomingLinks(View view) {
 		Modulus modelElement = (Modulus) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEqual_2009IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEqual_2009IncomingLinks(View view) {
 		Equal modelElement = (Equal) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNotEqual_2010IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNotEqual_2010IncomingLinks(View view) {
 		NotEqual modelElement = (NotEqual) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessThan_2011IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessThan_2011IncomingLinks(View view) {
 		LessThan modelElement = (LessThan) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterThan_2012IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterThan_2012IncomingLinks(View view) {
 		GreaterThan modelElement = (GreaterThan) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessEqual_2013IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessEqual_2013IncomingLinks(View view) {
 		LessEqual modelElement = (LessEqual) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterEqual_2014IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterEqual_2014IncomingLinks(View view) {
 		GreaterEqual modelElement = (GreaterEqual) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvery_2015IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvery_2015IncomingLinks(View view) {
 		Every modelElement = (Every) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEveryDistinct_2016IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEveryDistinct_2016IncomingLinks(View view) {
 		EveryDistinct modelElement = (EveryDistinct) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRepeat_2017IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRepeat_2017IncomingLinks(View view) {
 		Repeat modelElement = (Repeat) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getUntil_2018IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getUntil_2018IncomingLinks(View view) {
 		Until modelElement = (Until) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRange_2019IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRange_2019IncomingLinks(View view) {
 		Range modelElement = (Range) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getFollowedBy_2020IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getFollowedBy_2020IncomingLinks(View view) {
 		FollowedBy modelElement = (FollowedBy) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWhile_2021IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWhile_2021IncomingLinks(View view) {
 		While modelElement = (While) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMax_2022IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMax_2022IncomingLinks(View view) {
 		Max modelElement = (Max) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMin_2023IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMin_2023IncomingLinks(View view) {
 		Min modelElement = (Min) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAvg_2024IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAvg_2024IncomingLinks(View view) {
 		Avg modelElement = (Avg) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getCount_2025IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getCount_2025IncomingLinks(View view) {
 		Count modelElement = (Count) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSum_2026IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSum_2026IncomingLinks(View view) {
 		Sum modelElement = (Sum) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvent_2027IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvent_2027IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_2028IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_2028IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getValue_2029IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getValue_2029IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWithinTimer_2030IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWithinTimer_2030IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeInterval_2031IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeInterval_2031IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeSchedule_2032IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeSchedule_2032IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEmail_2033IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEmail_2033IncomingLinks(View view) {
 		Email modelElement = (Email) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTwitter_2039IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTwitter_2039IncomingLinks(View view) {
 		Twitter modelElement = (Twitter) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSlidingEventInterval_2034IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSlidingEventInterval_2034IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getBatchingEventInterval_2035IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getBatchingEventInterval_2035IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSlidingTimeInterval_2036IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSlidingTimeInterval_2036IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getBatchingTimeInterval_2037IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getBatchingTimeInterval_2037IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getComplexEvent_2038IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getComplexEvent_2038IncomingLinks(View view) {
 		ComplexEvent modelElement = (ComplexEvent) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3001IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3001IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3002IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3002IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAnd_3003IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAnd_3003IncomingLinks(View view) {
 		And modelElement = (And) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getOr_3004IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getOr_3004IncomingLinks(View view) {
 		Or modelElement = (Or) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNot_3005IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNot_3005IncomingLinks(View view) {
 		Not modelElement = (Not) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAddition_3006IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAddition_3006IncomingLinks(View view) {
 		Addition modelElement = (Addition) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSubtraction_3007IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSubtraction_3007IncomingLinks(View view) {
 		Subtraction modelElement = (Subtraction) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMultiplication_3008IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMultiplication_3008IncomingLinks(View view) {
 		Multiplication modelElement = (Multiplication) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getDivision_3009IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getDivision_3009IncomingLinks(View view) {
 		Division modelElement = (Division) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getModulus_3010IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getModulus_3010IncomingLinks(View view) {
 		Modulus modelElement = (Modulus) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEqual_3011IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEqual_3011IncomingLinks(View view) {
 		Equal modelElement = (Equal) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNotEqual_3012IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNotEqual_3012IncomingLinks(View view) {
 		NotEqual modelElement = (NotEqual) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessThan_3013IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessThan_3013IncomingLinks(View view) {
 		LessThan modelElement = (LessThan) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterThan_3014IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterThan_3014IncomingLinks(View view) {
 		GreaterThan modelElement = (GreaterThan) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessEqual_3015IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessEqual_3015IncomingLinks(View view) {
 		LessEqual modelElement = (LessEqual) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterEqual_3016IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterEqual_3016IncomingLinks(View view) {
 		GreaterEqual modelElement = (GreaterEqual) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvery_3017IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvery_3017IncomingLinks(View view) {
 		Every modelElement = (Every) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEveryDistinct_3018IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEveryDistinct_3018IncomingLinks(View view) {
 		EveryDistinct modelElement = (EveryDistinct) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRepeat_3019IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRepeat_3019IncomingLinks(View view) {
 		Repeat modelElement = (Repeat) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getUntil_3020IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getUntil_3020IncomingLinks(View view) {
 		Until modelElement = (Until) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRange_3021IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRange_3021IncomingLinks(View view) {
 		Range modelElement = (Range) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getFollowedBy_3022IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getFollowedBy_3022IncomingLinks(View view) {
 		FollowedBy modelElement = (FollowedBy) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWhile_3023IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWhile_3023IncomingLinks(View view) {
 		While modelElement = (While) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvent_3024IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvent_3024IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3025IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3025IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getValue_3026IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getValue_3026IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAnd_3027IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAnd_3027IncomingLinks(View view) {
 		And modelElement = (And) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getOr_3028IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getOr_3028IncomingLinks(View view) {
 		Or modelElement = (Or) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNot_3029IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNot_3029IncomingLinks(View view) {
 		Not modelElement = (Not) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAddition_3030IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAddition_3030IncomingLinks(View view) {
 		Addition modelElement = (Addition) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSubtraction_3031IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSubtraction_3031IncomingLinks(View view) {
 		Subtraction modelElement = (Subtraction) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMultiplication_3032IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMultiplication_3032IncomingLinks(View view) {
 		Multiplication modelElement = (Multiplication) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getDivision_3033IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getDivision_3033IncomingLinks(View view) {
 		Division modelElement = (Division) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getModulus_3034IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getModulus_3034IncomingLinks(View view) {
 		Modulus modelElement = (Modulus) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEqual_3035IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEqual_3035IncomingLinks(View view) {
 		Equal modelElement = (Equal) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNotEqual_3036IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNotEqual_3036IncomingLinks(View view) {
 		NotEqual modelElement = (NotEqual) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessThan_3037IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessThan_3037IncomingLinks(View view) {
 		LessThan modelElement = (LessThan) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterThan_3038IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterThan_3038IncomingLinks(View view) {
 		GreaterThan modelElement = (GreaterThan) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessEqual_3039IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessEqual_3039IncomingLinks(View view) {
 		LessEqual modelElement = (LessEqual) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterEqual_3040IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterEqual_3040IncomingLinks(View view) {
 		GreaterEqual modelElement = (GreaterEqual) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvery_3041IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvery_3041IncomingLinks(View view) {
 		Every modelElement = (Every) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEveryDistinct_3042IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEveryDistinct_3042IncomingLinks(View view) {
 		EveryDistinct modelElement = (EveryDistinct) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRepeat_3043IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRepeat_3043IncomingLinks(View view) {
 		Repeat modelElement = (Repeat) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getUntil_3044IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getUntil_3044IncomingLinks(View view) {
 		Until modelElement = (Until) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRange_3045IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRange_3045IncomingLinks(View view) {
 		Range modelElement = (Range) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getFollowedBy_3046IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getFollowedBy_3046IncomingLinks(View view) {
 		FollowedBy modelElement = (FollowedBy) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWhile_3047IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWhile_3047IncomingLinks(View view) {
 		While modelElement = (While) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMax_3048IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMax_3048IncomingLinks(View view) {
 		Max modelElement = (Max) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMin_3049IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMin_3049IncomingLinks(View view) {
 		Min modelElement = (Min) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAvg_3050IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAvg_3050IncomingLinks(View view) {
 		Avg modelElement = (Avg) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getCount_3051IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getCount_3051IncomingLinks(View view) {
 		Count modelElement = (Count) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSum_3052IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSum_3052IncomingLinks(View view) {
 		Sum modelElement = (Sum) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvent_3053IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvent_3053IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3054IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3054IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getValue_3055IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getValue_3055IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWithinTimer_3056IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWithinTimer_3056IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeInterval_3057IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeInterval_3057IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeSchedule_3058IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeSchedule_3058IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getComplexEventProperty_3059IncomingLinks(
-			View view) {
-		ComplexEventProperty modelElement = (ComplexEventProperty) view
-				.getElement();
+	public static List<EventpatternLinkDescriptor> getComplexEventProperty_3059IncomingLinks(View view) {
+		ComplexEventProperty modelElement = (ComplexEventProperty) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLink_4001IncomingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLink_4001IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAnd_2001OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAnd_2001OutgoingLinks(View view) {
 		And modelElement = (And) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4328,8 +3784,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getOr_2002OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getOr_2002OutgoingLinks(View view) {
 		Or modelElement = (Or) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4339,8 +3794,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNot_2003OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNot_2003OutgoingLinks(View view) {
 		Not modelElement = (Not) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4350,8 +3804,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAddition_2004OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAddition_2004OutgoingLinks(View view) {
 		Addition modelElement = (Addition) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4361,8 +3814,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSubtraction_2005OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSubtraction_2005OutgoingLinks(View view) {
 		Subtraction modelElement = (Subtraction) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4372,8 +3824,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMultiplication_2006OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMultiplication_2006OutgoingLinks(View view) {
 		Multiplication modelElement = (Multiplication) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4383,8 +3834,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getDivision_2007OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getDivision_2007OutgoingLinks(View view) {
 		Division modelElement = (Division) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4394,8 +3844,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getModulus_2008OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getModulus_2008OutgoingLinks(View view) {
 		Modulus modelElement = (Modulus) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4405,8 +3854,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEqual_2009OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEqual_2009OutgoingLinks(View view) {
 		Equal modelElement = (Equal) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4416,8 +3864,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNotEqual_2010OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNotEqual_2010OutgoingLinks(View view) {
 		NotEqual modelElement = (NotEqual) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4427,8 +3874,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessThan_2011OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessThan_2011OutgoingLinks(View view) {
 		LessThan modelElement = (LessThan) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4438,8 +3884,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterThan_2012OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterThan_2012OutgoingLinks(View view) {
 		GreaterThan modelElement = (GreaterThan) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4449,8 +3894,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessEqual_2013OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessEqual_2013OutgoingLinks(View view) {
 		LessEqual modelElement = (LessEqual) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4460,8 +3904,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterEqual_2014OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterEqual_2014OutgoingLinks(View view) {
 		GreaterEqual modelElement = (GreaterEqual) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4471,8 +3914,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvery_2015OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvery_2015OutgoingLinks(View view) {
 		Every modelElement = (Every) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4482,8 +3924,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEveryDistinct_2016OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEveryDistinct_2016OutgoingLinks(View view) {
 		EveryDistinct modelElement = (EveryDistinct) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4493,8 +3934,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRepeat_2017OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRepeat_2017OutgoingLinks(View view) {
 		Repeat modelElement = (Repeat) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4504,8 +3944,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getUntil_2018OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getUntil_2018OutgoingLinks(View view) {
 		Until modelElement = (Until) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4515,8 +3954,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRange_2019OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRange_2019OutgoingLinks(View view) {
 		Range modelElement = (Range) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4526,8 +3964,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getFollowedBy_2020OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getFollowedBy_2020OutgoingLinks(View view) {
 		FollowedBy modelElement = (FollowedBy) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4537,8 +3974,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWhile_2021OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWhile_2021OutgoingLinks(View view) {
 		While modelElement = (While) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4548,8 +3984,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMax_2022OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMax_2022OutgoingLinks(View view) {
 		Max modelElement = (Max) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4559,8 +3994,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMin_2023OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMin_2023OutgoingLinks(View view) {
 		Min modelElement = (Min) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4570,8 +4004,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAvg_2024OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAvg_2024OutgoingLinks(View view) {
 		Avg modelElement = (Avg) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4581,8 +4014,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getCount_2025OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getCount_2025OutgoingLinks(View view) {
 		Count modelElement = (Count) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4592,8 +4024,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSum_2026OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSum_2026OutgoingLinks(View view) {
 		Sum modelElement = (Sum) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4603,8 +4034,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvent_2027OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvent_2027OutgoingLinks(View view) {
 		Event modelElement = (Event) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4614,8 +4044,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_2028OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_2028OutgoingLinks(View view) {
 		EventProperty modelElement = (EventProperty) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4625,8 +4054,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getValue_2029OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getValue_2029OutgoingLinks(View view) {
 		Value modelElement = (Value) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4636,8 +4064,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWithinTimer_2030OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWithinTimer_2030OutgoingLinks(View view) {
 		WithinTimer modelElement = (WithinTimer) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4647,8 +4074,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeInterval_2031OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeInterval_2031OutgoingLinks(View view) {
 		TimeInterval modelElement = (TimeInterval) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4658,8 +4084,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeSchedule_2032OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeSchedule_2032OutgoingLinks(View view) {
 		TimeSchedule modelElement = (TimeSchedule) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4669,56 +4094,49 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEmail_2033OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEmail_2033OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTwitter_2039OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTwitter_2039OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSlidingEventInterval_2034OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSlidingEventInterval_2034OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getBatchingEventInterval_2035OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getBatchingEventInterval_2035OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSlidingTimeInterval_2036OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSlidingTimeInterval_2036OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getBatchingTimeInterval_2037OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getBatchingTimeInterval_2037OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getComplexEvent_2038OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getComplexEvent_2038OutgoingLinks(View view) {
 		ComplexEvent modelElement = (ComplexEvent) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4728,8 +4146,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3001OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3001OutgoingLinks(View view) {
 		EventProperty modelElement = (EventProperty) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4739,8 +4156,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3002OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3002OutgoingLinks(View view) {
 		EventProperty modelElement = (EventProperty) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4750,8 +4166,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAnd_3003OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAnd_3003OutgoingLinks(View view) {
 		And modelElement = (And) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4761,8 +4176,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getOr_3004OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getOr_3004OutgoingLinks(View view) {
 		Or modelElement = (Or) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4772,8 +4186,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNot_3005OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNot_3005OutgoingLinks(View view) {
 		Not modelElement = (Not) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4783,8 +4196,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAddition_3006OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAddition_3006OutgoingLinks(View view) {
 		Addition modelElement = (Addition) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4794,8 +4206,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSubtraction_3007OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSubtraction_3007OutgoingLinks(View view) {
 		Subtraction modelElement = (Subtraction) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4805,8 +4216,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMultiplication_3008OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMultiplication_3008OutgoingLinks(View view) {
 		Multiplication modelElement = (Multiplication) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4816,8 +4226,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getDivision_3009OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getDivision_3009OutgoingLinks(View view) {
 		Division modelElement = (Division) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4827,8 +4236,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getModulus_3010OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getModulus_3010OutgoingLinks(View view) {
 		Modulus modelElement = (Modulus) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4838,8 +4246,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEqual_3011OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEqual_3011OutgoingLinks(View view) {
 		Equal modelElement = (Equal) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4849,8 +4256,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNotEqual_3012OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNotEqual_3012OutgoingLinks(View view) {
 		NotEqual modelElement = (NotEqual) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4860,8 +4266,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessThan_3013OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessThan_3013OutgoingLinks(View view) {
 		LessThan modelElement = (LessThan) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4871,8 +4276,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterThan_3014OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterThan_3014OutgoingLinks(View view) {
 		GreaterThan modelElement = (GreaterThan) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4882,8 +4286,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessEqual_3015OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessEqual_3015OutgoingLinks(View view) {
 		LessEqual modelElement = (LessEqual) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4893,8 +4296,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterEqual_3016OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterEqual_3016OutgoingLinks(View view) {
 		GreaterEqual modelElement = (GreaterEqual) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4904,8 +4306,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvery_3017OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvery_3017OutgoingLinks(View view) {
 		Every modelElement = (Every) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4915,8 +4316,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEveryDistinct_3018OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEveryDistinct_3018OutgoingLinks(View view) {
 		EveryDistinct modelElement = (EveryDistinct) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4926,8 +4326,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRepeat_3019OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRepeat_3019OutgoingLinks(View view) {
 		Repeat modelElement = (Repeat) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4937,8 +4336,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getUntil_3020OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getUntil_3020OutgoingLinks(View view) {
 		Until modelElement = (Until) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4948,8 +4346,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRange_3021OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRange_3021OutgoingLinks(View view) {
 		Range modelElement = (Range) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4959,8 +4356,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getFollowedBy_3022OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getFollowedBy_3022OutgoingLinks(View view) {
 		FollowedBy modelElement = (FollowedBy) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4970,8 +4366,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWhile_3023OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWhile_3023OutgoingLinks(View view) {
 		While modelElement = (While) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4981,8 +4376,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvent_3024OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvent_3024OutgoingLinks(View view) {
 		Event modelElement = (Event) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -4992,8 +4386,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3025OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3025OutgoingLinks(View view) {
 		EventProperty modelElement = (EventProperty) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5003,8 +4396,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getValue_3026OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getValue_3026OutgoingLinks(View view) {
 		Value modelElement = (Value) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5014,8 +4406,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAnd_3027OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAnd_3027OutgoingLinks(View view) {
 		And modelElement = (And) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5025,8 +4416,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getOr_3028OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getOr_3028OutgoingLinks(View view) {
 		Or modelElement = (Or) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5036,8 +4426,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNot_3029OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNot_3029OutgoingLinks(View view) {
 		Not modelElement = (Not) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5047,8 +4436,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAddition_3030OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAddition_3030OutgoingLinks(View view) {
 		Addition modelElement = (Addition) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5058,8 +4446,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSubtraction_3031OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSubtraction_3031OutgoingLinks(View view) {
 		Subtraction modelElement = (Subtraction) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5069,8 +4456,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMultiplication_3032OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMultiplication_3032OutgoingLinks(View view) {
 		Multiplication modelElement = (Multiplication) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5080,8 +4466,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getDivision_3033OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getDivision_3033OutgoingLinks(View view) {
 		Division modelElement = (Division) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5091,8 +4476,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getModulus_3034OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getModulus_3034OutgoingLinks(View view) {
 		Modulus modelElement = (Modulus) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5102,8 +4486,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEqual_3035OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEqual_3035OutgoingLinks(View view) {
 		Equal modelElement = (Equal) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5113,8 +4496,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getNotEqual_3036OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getNotEqual_3036OutgoingLinks(View view) {
 		NotEqual modelElement = (NotEqual) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5124,8 +4506,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessThan_3037OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessThan_3037OutgoingLinks(View view) {
 		LessThan modelElement = (LessThan) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5135,8 +4516,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterThan_3038OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterThan_3038OutgoingLinks(View view) {
 		GreaterThan modelElement = (GreaterThan) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5146,8 +4526,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLessEqual_3039OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLessEqual_3039OutgoingLinks(View view) {
 		LessEqual modelElement = (LessEqual) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5157,8 +4536,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getGreaterEqual_3040OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getGreaterEqual_3040OutgoingLinks(View view) {
 		GreaterEqual modelElement = (GreaterEqual) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5168,8 +4546,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvery_3041OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvery_3041OutgoingLinks(View view) {
 		Every modelElement = (Every) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5179,8 +4556,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEveryDistinct_3042OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEveryDistinct_3042OutgoingLinks(View view) {
 		EveryDistinct modelElement = (EveryDistinct) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5190,8 +4566,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRepeat_3043OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRepeat_3043OutgoingLinks(View view) {
 		Repeat modelElement = (Repeat) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5201,8 +4576,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getUntil_3044OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getUntil_3044OutgoingLinks(View view) {
 		Until modelElement = (Until) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5212,8 +4586,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getRange_3045OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getRange_3045OutgoingLinks(View view) {
 		Range modelElement = (Range) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5223,8 +4596,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getFollowedBy_3046OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getFollowedBy_3046OutgoingLinks(View view) {
 		FollowedBy modelElement = (FollowedBy) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5234,8 +4606,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWhile_3047OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWhile_3047OutgoingLinks(View view) {
 		While modelElement = (While) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5245,8 +4616,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMax_3048OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMax_3048OutgoingLinks(View view) {
 		Max modelElement = (Max) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5256,8 +4626,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getMin_3049OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getMin_3049OutgoingLinks(View view) {
 		Min modelElement = (Min) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5267,8 +4636,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getAvg_3050OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getAvg_3050OutgoingLinks(View view) {
 		Avg modelElement = (Avg) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5278,8 +4646,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getCount_3051OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getCount_3051OutgoingLinks(View view) {
 		Count modelElement = (Count) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5289,8 +4656,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getSum_3052OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getSum_3052OutgoingLinks(View view) {
 		Sum modelElement = (Sum) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5300,8 +4666,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEvent_3053OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEvent_3053OutgoingLinks(View view) {
 		Event modelElement = (Event) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5311,8 +4676,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getEventProperty_3054OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getEventProperty_3054OutgoingLinks(View view) {
 		EventProperty modelElement = (EventProperty) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5322,8 +4686,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getValue_3055OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getValue_3055OutgoingLinks(View view) {
 		Value modelElement = (Value) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5333,8 +4696,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getWithinTimer_3056OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getWithinTimer_3056OutgoingLinks(View view) {
 		WithinTimer modelElement = (WithinTimer) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5344,8 +4706,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeInterval_3057OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeInterval_3057OutgoingLinks(View view) {
 		TimeInterval modelElement = (TimeInterval) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5355,8 +4716,7 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getTimeSchedule_3058OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getTimeSchedule_3058OutgoingLinks(View view) {
 		TimeSchedule modelElement = (TimeSchedule) view.getElement();
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
@@ -5366,16 +4726,14 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getComplexEventProperty_3059OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getComplexEventProperty_3059OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<EventpatternLinkDescriptor> getLink_4001OutgoingLinks(
-			View view) {
+	public static List<EventpatternLinkDescriptor> getLink_4001OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -5385,21 +4743,19 @@ public class EventpatternDiagramUpdater {
 	private static Collection<EventpatternLinkDescriptor> getContainedTypeModelFacetLinks_Link_4001(
 			CEPEventPattern container) {
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		for (Iterator<?> links = container.getLinks().iterator(); links
-				.hasNext();) {
+		for (Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Link) {
 				continue;
 			}
 			Link link = (Link) linkObject;
-			if (LinkEditPart.VISUAL_ID != EventpatternVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
+			if (LinkEditPart.VISUAL_ID != EventpatternVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			Operator dst = link.getOperator();
 			Operand src = link.getOperand();
-			result.add(new EventpatternLinkDescriptor(src, dst, link,
-					EventpatternElementTypes.Link_4001, LinkEditPart.VISUAL_ID));
+			result.add(new EventpatternLinkDescriptor(src, dst, link, EventpatternElementTypes.Link_4001,
+					LinkEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -5407,26 +4763,22 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<EventpatternLinkDescriptor> getIncomingTypeModelFacetLinks_Link_4001(
-			Operator target,
+	private static Collection<EventpatternLinkDescriptor> getIncomingTypeModelFacetLinks_Link_4001(Operator target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != EventpatternPackage.eINSTANCE
-					.getLink_Operator()
+			if (setting.getEStructuralFeature() != EventpatternPackage.eINSTANCE.getLink_Operator()
 					|| false == setting.getEObject() instanceof Link) {
 				continue;
 			}
 			Link link = (Link) setting.getEObject();
-			if (LinkEditPart.VISUAL_ID != EventpatternVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
+			if (LinkEditPart.VISUAL_ID != EventpatternVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			Operand src = link.getOperand();
-			result.add(new EventpatternLinkDescriptor(src, target, link,
-					EventpatternElementTypes.Link_4001, LinkEditPart.VISUAL_ID));
+			result.add(new EventpatternLinkDescriptor(src, target, link, EventpatternElementTypes.Link_4001,
+					LinkEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -5434,14 +4786,12 @@ public class EventpatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<EventpatternLinkDescriptor> getOutgoingTypeModelFacetLinks_Link_4001(
-			Operand source) {
+	private static Collection<EventpatternLinkDescriptor> getOutgoingTypeModelFacetLinks_Link_4001(Operand source) {
 		CEPEventPattern container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null && container == null; element = element
-				.eContainer()) {
+		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
 			if (element instanceof CEPEventPattern) {
 				container = (CEPEventPattern) element;
 			}
@@ -5450,15 +4800,13 @@ public class EventpatternDiagramUpdater {
 			return Collections.emptyList();
 		}
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
-		for (Iterator<?> links = container.getLinks().iterator(); links
-				.hasNext();) {
+		for (Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Link) {
 				continue;
 			}
 			Link link = (Link) linkObject;
-			if (LinkEditPart.VISUAL_ID != EventpatternVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
+			if (LinkEditPart.VISUAL_ID != EventpatternVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			Operator dst = link.getOperator();
@@ -5466,8 +4814,8 @@ public class EventpatternDiagramUpdater {
 			if (src != source) {
 				continue;
 			}
-			result.add(new EventpatternLinkDescriptor(src, dst, link,
-					EventpatternElementTypes.Link_4001, LinkEditPart.VISUAL_ID));
+			result.add(new EventpatternLinkDescriptor(src, dst, link, EventpatternElementTypes.Link_4001,
+					LinkEditPart.VISUAL_ID));
 		}
 		return result;
 	}

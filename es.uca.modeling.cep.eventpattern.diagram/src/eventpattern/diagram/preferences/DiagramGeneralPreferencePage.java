@@ -16,7 +16,6 @@ public class DiagramGeneralPreferencePage extends DiagramsPreferencePage {
 	 * @generated
 	 */
 	public DiagramGeneralPreferencePage() {
-		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance()
-				.getPreferenceStore());
+		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

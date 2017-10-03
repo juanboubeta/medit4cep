@@ -14,16 +14,15 @@ public class EventpatternLinkDescriptor extends UpdaterLinkDescriptor {
 	/**
 	 * @generated
 	 */
-	public EventpatternLinkDescriptor(EObject source, EObject destination,
-			IElementType elementType, int linkVID) {
+	public EventpatternLinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
 		super(source, destination, elementType, linkVID);
 	}
 
 	/**
 	 * @generated
 	 */
-	public EventpatternLinkDescriptor(EObject source, EObject destination,
-			EObject linkElement, IElementType elementType, int linkVID) {
+	public EventpatternLinkDescriptor(EObject source, EObject destination, EObject linkElement,
+			IElementType elementType, int linkVID) {
 		super(source, destination, linkElement, elementType, linkVID);
 	}
 

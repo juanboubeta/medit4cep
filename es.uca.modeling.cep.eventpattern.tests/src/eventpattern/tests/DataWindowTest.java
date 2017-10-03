@@ -14,26 +14,26 @@ public abstract class DataWindowTest extends EventPatternElementTest
 {
 
   /**
-   * Constructs a new Data Window test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Data Window test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DataWindowTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Data Window test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Data Window test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected DataWindow getFixture()
   {
-    return (DataWindow)fixture;
-  }
+		return (DataWindow)fixture;
+	}
 
 } //DataWindowTest

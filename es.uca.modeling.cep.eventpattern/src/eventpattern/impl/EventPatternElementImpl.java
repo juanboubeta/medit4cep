@@ -13,32 +13,30 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Event Pattern Element</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public abstract class EventPatternElementImpl extends EObjectImpl implements EventPatternElement
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected EventPatternElementImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return EventpatternPackage.Literals.EVENT_PATTERN_ELEMENT;
-  }
+		return EventpatternPackage.Literals.EVENT_PATTERN_ELEMENT;
+	}
 
 } //EventPatternElementImpl

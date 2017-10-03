@@ -22,8 +22,7 @@ import eventpattern.diagram.edit.policies.LinkItemSemanticEditPolicy;
 /**
  * @generated
  */
-public class LinkEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class LinkEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -42,8 +41,7 @@ public class LinkEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new LinkItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LinkItemSemanticEditPolicy());
 	}
 
 	/**
@@ -106,8 +104,7 @@ public class LinkEditPart extends ConnectionNodeEditPart implements
 	}
 
 	protected void mouseDoubleClick() {
-		IWorkbenchPage page = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage();
+		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 
 		if (page != null) {
 			try {

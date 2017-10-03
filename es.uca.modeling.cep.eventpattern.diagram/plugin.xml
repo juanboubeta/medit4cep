@@ -288,109 +288,502 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="eventpattern.diagram.providers.EventpatternModelingAssistantProvider">
+      <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfCEPEventPatternEditPart">
          <Priority name="Lowest"/>
          <object class="eventpattern.diagram.edit.parts.CEPEventPatternEditPart" id="CEPEventPattern_1000"/>
-         <object class="eventpattern.diagram.edit.parts.AndEditPart" id="And_2001"/>
-         <object class="eventpattern.diagram.edit.parts.OrEditPart" id="Or_2002"/>
-         <object class="eventpattern.diagram.edit.parts.NotEditPart" id="Not_2003"/>
-         <object class="eventpattern.diagram.edit.parts.AdditionEditPart" id="Addition_2004"/>
-         <object class="eventpattern.diagram.edit.parts.SubtractionEditPart" id="Subtraction_2005"/>
-         <object class="eventpattern.diagram.edit.parts.MultiplicationEditPart" id="Multiplication_2006"/>
-         <object class="eventpattern.diagram.edit.parts.DivisionEditPart" id="Division_2007"/>
-         <object class="eventpattern.diagram.edit.parts.ModulusEditPart" id="Modulus_2008"/>
-         <object class="eventpattern.diagram.edit.parts.EqualEditPart" id="Equal_2009"/>
-         <object class="eventpattern.diagram.edit.parts.NotEqualEditPart" id="NotEqual_2010"/>
-         <object class="eventpattern.diagram.edit.parts.LessThanEditPart" id="LessThan_2011"/>
-         <object class="eventpattern.diagram.edit.parts.GreaterThanEditPart" id="GreaterThan_2012"/>
-         <object class="eventpattern.diagram.edit.parts.LessEqualEditPart" id="LessEqual_2013"/>
-         <object class="eventpattern.diagram.edit.parts.GreaterEqualEditPart" id="GreaterEqual_2014"/>
-         <object class="eventpattern.diagram.edit.parts.EveryEditPart" id="Every_2015"/>
-         <object class="eventpattern.diagram.edit.parts.EveryDistinctEditPart" id="EveryDistinct_2016"/>
-         <object class="eventpattern.diagram.edit.parts.RepeatEditPart" id="Repeat_2017"/>
-         <object class="eventpattern.diagram.edit.parts.UntilEditPart" id="Until_2018"/>
-         <object class="eventpattern.diagram.edit.parts.RangeEditPart" id="Range_2019"/>
-         <object class="eventpattern.diagram.edit.parts.FollowedByEditPart" id="FollowedBy_2020"/>
-         <object class="eventpattern.diagram.edit.parts.WhileEditPart" id="While_2021"/>
-         <object class="eventpattern.diagram.edit.parts.MaxEditPart" id="Max_2022"/>
-         <object class="eventpattern.diagram.edit.parts.MinEditPart" id="Min_2023"/>
-         <object class="eventpattern.diagram.edit.parts.AvgEditPart" id="Avg_2024"/>
-         <object class="eventpattern.diagram.edit.parts.CountEditPart" id="Count_2025"/>
-         <object class="eventpattern.diagram.edit.parts.SumEditPart" id="Sum_2026"/>
-         <object class="eventpattern.diagram.edit.parts.EventEditPart" id="Event_2027"/>
-         <object class="eventpattern.diagram.edit.parts.EventPropertyEditPart" id="EventProperty_2028"/>
-         <object class="eventpattern.diagram.edit.parts.ValueEditPart" id="Value_2029"/>
-         <object class="eventpattern.diagram.edit.parts.WithinTimerEditPart" id="WithinTimer_2030"/>
-         <object class="eventpattern.diagram.edit.parts.TimeIntervalEditPart" id="TimeInterval_2031"/>
-         <object class="eventpattern.diagram.edit.parts.TimeScheduleEditPart" id="TimeSchedule_2032"/>
-         <object class="eventpattern.diagram.edit.parts.EmailEditPart" id="Email_2033"/>
-         <object class="eventpattern.diagram.edit.parts.TwitterEditPart" id="Twitter_2039"/>
-         <object class="eventpattern.diagram.edit.parts.SlidingEventIntervalEditPart" id="SlidingEventInterval_2034"/>
-         <object class="eventpattern.diagram.edit.parts.BatchingEventIntervalEditPart" id="BatchingEventInterval_2035"/>
-         <object class="eventpattern.diagram.edit.parts.SlidingTimeIntervalEditPart" id="SlidingTimeInterval_2036"/>
-         <object class="eventpattern.diagram.edit.parts.BatchingTimeIntervalEditPart" id="BatchingTimeInterval_2037"/>
-         <object class="eventpattern.diagram.edit.parts.ComplexEventEditPart" id="ComplexEvent_2038"/>
-         <object class="eventpattern.diagram.edit.parts.EventProperty2EditPart" id="EventProperty_3001"/>
-         <object class="eventpattern.diagram.edit.parts.EventProperty3EditPart" id="EventProperty_3002"/>
-         <object class="eventpattern.diagram.edit.parts.And2EditPart" id="And_3003"/>
-         <object class="eventpattern.diagram.edit.parts.Or2EditPart" id="Or_3004"/>
-         <object class="eventpattern.diagram.edit.parts.Not2EditPart" id="Not_3005"/>
-         <object class="eventpattern.diagram.edit.parts.Addition2EditPart" id="Addition_3006"/>
-         <object class="eventpattern.diagram.edit.parts.Subtraction2EditPart" id="Subtraction_3007"/>
-         <object class="eventpattern.diagram.edit.parts.Multiplication2EditPart" id="Multiplication_3008"/>
-         <object class="eventpattern.diagram.edit.parts.Division2EditPart" id="Division_3009"/>
-         <object class="eventpattern.diagram.edit.parts.Modulus2EditPart" id="Modulus_3010"/>
-         <object class="eventpattern.diagram.edit.parts.Equal2EditPart" id="Equal_3011"/>
-         <object class="eventpattern.diagram.edit.parts.NotEqual2EditPart" id="NotEqual_3012"/>
-         <object class="eventpattern.diagram.edit.parts.LessThan2EditPart" id="LessThan_3013"/>
-         <object class="eventpattern.diagram.edit.parts.GreaterThan2EditPart" id="GreaterThan_3014"/>
-         <object class="eventpattern.diagram.edit.parts.LessEqual2EditPart" id="LessEqual_3015"/>
-         <object class="eventpattern.diagram.edit.parts.GreaterEqual2EditPart" id="GreaterEqual_3016"/>
-         <object class="eventpattern.diagram.edit.parts.Every2EditPart" id="Every_3017"/>
-         <object class="eventpattern.diagram.edit.parts.EveryDistinct2EditPart" id="EveryDistinct_3018"/>
-         <object class="eventpattern.diagram.edit.parts.Repeat2EditPart" id="Repeat_3019"/>
-         <object class="eventpattern.diagram.edit.parts.Until2EditPart" id="Until_3020"/>
-         <object class="eventpattern.diagram.edit.parts.Range2EditPart" id="Range_3021"/>
-         <object class="eventpattern.diagram.edit.parts.FollowedBy2EditPart" id="FollowedBy_3022"/>
-         <object class="eventpattern.diagram.edit.parts.While2EditPart" id="While_3023"/>
-         <object class="eventpattern.diagram.edit.parts.Event2EditPart" id="Event_3024"/>
-         <object class="eventpattern.diagram.edit.parts.EventProperty4EditPart" id="EventProperty_3025"/>
-         <object class="eventpattern.diagram.edit.parts.Value2EditPart" id="Value_3026"/>
-         <object class="eventpattern.diagram.edit.parts.And3EditPart" id="And_3027"/>
-         <object class="eventpattern.diagram.edit.parts.Or3EditPart" id="Or_3028"/>
-         <object class="eventpattern.diagram.edit.parts.Not3EditPart" id="Not_3029"/>
-         <object class="eventpattern.diagram.edit.parts.Addition3EditPart" id="Addition_3030"/>
-         <object class="eventpattern.diagram.edit.parts.Subtraction3EditPart" id="Subtraction_3031"/>
-         <object class="eventpattern.diagram.edit.parts.Multiplication3EditPart" id="Multiplication_3032"/>
-         <object class="eventpattern.diagram.edit.parts.Division3EditPart" id="Division_3033"/>
-         <object class="eventpattern.diagram.edit.parts.Modulus3EditPart" id="Modulus_3034"/>
-         <object class="eventpattern.diagram.edit.parts.Equal3EditPart" id="Equal_3035"/>
-         <object class="eventpattern.diagram.edit.parts.NotEqual3EditPart" id="NotEqual_3036"/>
-         <object class="eventpattern.diagram.edit.parts.LessThan3EditPart" id="LessThan_3037"/>
-         <object class="eventpattern.diagram.edit.parts.GreaterThan3EditPart" id="GreaterThan_3038"/>
-         <object class="eventpattern.diagram.edit.parts.LessEqual3EditPart" id="LessEqual_3039"/>
-         <object class="eventpattern.diagram.edit.parts.GreaterEqual3EditPart" id="GreaterEqual_3040"/>
-         <object class="eventpattern.diagram.edit.parts.Every3EditPart" id="Every_3041"/>
-         <object class="eventpattern.diagram.edit.parts.EveryDistinct3EditPart" id="EveryDistinct_3042"/>
-         <object class="eventpattern.diagram.edit.parts.Repeat3EditPart" id="Repeat_3043"/>
-         <object class="eventpattern.diagram.edit.parts.Until3EditPart" id="Until_3044"/>
-         <object class="eventpattern.diagram.edit.parts.Range3EditPart" id="Range_3045"/>
-         <object class="eventpattern.diagram.edit.parts.FollowedBy3EditPart" id="FollowedBy_3046"/>
-         <object class="eventpattern.diagram.edit.parts.While3EditPart" id="While_3047"/>
-         <object class="eventpattern.diagram.edit.parts.Max2EditPart" id="Max_3048"/>
-         <object class="eventpattern.diagram.edit.parts.Min2EditPart" id="Min_3049"/>
-         <object class="eventpattern.diagram.edit.parts.Avg2EditPart" id="Avg_3050"/>
-         <object class="eventpattern.diagram.edit.parts.Count2EditPart" id="Count_3051"/>
-         <object class="eventpattern.diagram.edit.parts.Sum2EditPart" id="Sum_3052"/>
-         <object class="eventpattern.diagram.edit.parts.Event3EditPart" id="Event_3053"/>
-         <object class="eventpattern.diagram.edit.parts.EventProperty5EditPart" id="EventProperty_3054"/>
-         <object class="eventpattern.diagram.edit.parts.Value3EditPart" id="Value_3055"/>
-         <object class="eventpattern.diagram.edit.parts.WithinTimer2EditPart" id="WithinTimer_3056"/>
-         <object class="eventpattern.diagram.edit.parts.TimeInterval2EditPart" id="TimeInterval_3057"/>
-         <object class="eventpattern.diagram.edit.parts.TimeSchedule2EditPart" id="TimeSchedule_3058"/>
-         <object class="eventpattern.diagram.edit.parts.ComplexEventPropertyEditPart" id="ComplexEventProperty_3059"/>
-         <context elements="CEPEventPattern_1000,And_2001,Or_2002,Not_2003,Addition_2004,Subtraction_2005,Multiplication_2006,Division_2007,Modulus_2008,Equal_2009,NotEqual_2010,LessThan_2011,GreaterThan_2012,LessEqual_2013,GreaterEqual_2014,Every_2015,EveryDistinct_2016,Repeat_2017,Until_2018,Range_2019,FollowedBy_2020,While_2021,Max_2022,Min_2023,Avg_2024,Count_2025,Sum_2026,Event_2027,EventProperty_2028,Value_2029,WithinTimer_2030,TimeInterval_2031,TimeSchedule_2032,Email_2033,Twitter_2039,SlidingEventInterval_2034,BatchingEventInterval_2035,SlidingTimeInterval_2036,BatchingTimeInterval_2037,ComplexEvent_2038,EventProperty_3001,EventProperty_3002,And_3003,Or_3004,Not_3005,Addition_3006,Subtraction_3007,Multiplication_3008,Division_3009,Modulus_3010,Equal_3011,NotEqual_3012,LessThan_3013,GreaterThan_3014,LessEqual_3015,GreaterEqual_3016,Every_3017,EveryDistinct_3018,Repeat_3019,Until_3020,Range_3021,FollowedBy_3022,While_3023,Event_3024,EventProperty_3025,Value_3026,And_3027,Or_3028,Not_3029,Addition_3030,Subtraction_3031,Multiplication_3032,Division_3033,Modulus_3034,Equal_3035,NotEqual_3036,LessThan_3037,GreaterThan_3038,LessEqual_3039,GreaterEqual_3040,Every_3041,EveryDistinct_3042,Repeat_3043,Until_3044,Range_3045,FollowedBy_3046,While_3047,Max_3048,Min_3049,Avg_3050,Count_3051,Sum_3052,Event_3053,EventProperty_3054,Value_3055,WithinTimer_3056,TimeInterval_3057,TimeSchedule_3058,ComplexEventProperty_3059"/>
+         <context elements="CEPEventPattern_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfAndEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.AndEditPart" id="And_2001"/>
+         <context elements="And_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfOrEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.OrEditPart" id="Or_2002"/>
+         <context elements="Or_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfNotEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.NotEditPart" id="Not_2003"/>
+         <context elements="Not_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfAdditionEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.AdditionEditPart" id="Addition_2004"/>
+         <context elements="Addition_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfSubtractionEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.SubtractionEditPart" id="Subtraction_2005"/>
+         <context elements="Subtraction_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfMultiplicationEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.MultiplicationEditPart" id="Multiplication_2006"/>
+         <context elements="Multiplication_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfDivisionEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.DivisionEditPart" id="Division_2007"/>
+         <context elements="Division_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfModulusEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.ModulusEditPart" id="Modulus_2008"/>
+         <context elements="Modulus_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEqualEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EqualEditPart" id="Equal_2009"/>
+         <context elements="Equal_2009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfNotEqualEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.NotEqualEditPart" id="NotEqual_2010"/>
+         <context elements="NotEqual_2010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfLessThanEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.LessThanEditPart" id="LessThan_2011"/>
+         <context elements="LessThan_2011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfGreaterThanEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.GreaterThanEditPart" id="GreaterThan_2012"/>
+         <context elements="GreaterThan_2012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfLessEqualEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.LessEqualEditPart" id="LessEqual_2013"/>
+         <context elements="LessEqual_2013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfGreaterEqualEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.GreaterEqualEditPart" id="GreaterEqual_2014"/>
+         <context elements="GreaterEqual_2014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEveryEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EveryEditPart" id="Every_2015"/>
+         <context elements="Every_2015"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEveryDistinctEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EveryDistinctEditPart" id="EveryDistinct_2016"/>
+         <context elements="EveryDistinct_2016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfRepeatEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.RepeatEditPart" id="Repeat_2017"/>
+         <context elements="Repeat_2017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfUntilEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.UntilEditPart" id="Until_2018"/>
+         <context elements="Until_2018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfRangeEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.RangeEditPart" id="Range_2019"/>
+         <context elements="Range_2019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfFollowedByEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.FollowedByEditPart" id="FollowedBy_2020"/>
+         <context elements="FollowedBy_2020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfWhileEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.WhileEditPart" id="While_2021"/>
+         <context elements="While_2021"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfMaxEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.MaxEditPart" id="Max_2022"/>
+         <context elements="Max_2022"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfMinEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.MinEditPart" id="Min_2023"/>
+         <context elements="Min_2023"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfAvgEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.AvgEditPart" id="Avg_2024"/>
+         <context elements="Avg_2024"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfCountEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.CountEditPart" id="Count_2025"/>
+         <context elements="Count_2025"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfSumEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.SumEditPart" id="Sum_2026"/>
+         <context elements="Sum_2026"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEventEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EventEditPart" id="Event_2027"/>
+         <context elements="Event_2027"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEventPropertyEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EventPropertyEditPart" id="EventProperty_2028"/>
+         <context elements="EventProperty_2028"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfValueEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.ValueEditPart" id="Value_2029"/>
+         <context elements="Value_2029"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfWithinTimerEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.WithinTimerEditPart" id="WithinTimer_2030"/>
+         <context elements="WithinTimer_2030"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfTimeIntervalEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.TimeIntervalEditPart" id="TimeInterval_2031"/>
+         <context elements="TimeInterval_2031"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfTimeScheduleEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.TimeScheduleEditPart" id="TimeSchedule_2032"/>
+         <context elements="TimeSchedule_2032"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEmailEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EmailEditPart" id="Email_2033"/>
+         <context elements="Email_2033"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfTwitterEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.TwitterEditPart" id="Twitter_2039"/>
+         <context elements="Twitter_2039"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfSlidingEventIntervalEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.SlidingEventIntervalEditPart" id="SlidingEventInterval_2034"/>
+         <context elements="SlidingEventInterval_2034"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfBatchingEventIntervalEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.BatchingEventIntervalEditPart" id="BatchingEventInterval_2035"/>
+         <context elements="BatchingEventInterval_2035"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfSlidingTimeIntervalEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.SlidingTimeIntervalEditPart" id="SlidingTimeInterval_2036"/>
+         <context elements="SlidingTimeInterval_2036"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfBatchingTimeIntervalEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.BatchingTimeIntervalEditPart" id="BatchingTimeInterval_2037"/>
+         <context elements="BatchingTimeInterval_2037"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfComplexEventEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.ComplexEventEditPart" id="ComplexEvent_2038"/>
+         <context elements="ComplexEvent_2038"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEventProperty2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EventProperty2EditPart" id="EventProperty_3001"/>
+         <context elements="EventProperty_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEventProperty3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EventProperty3EditPart" id="EventProperty_3002"/>
+         <context elements="EventProperty_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfAnd2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.And2EditPart" id="And_3003"/>
+         <context elements="And_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfOr2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Or2EditPart" id="Or_3004"/>
+         <context elements="Or_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfNot2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Not2EditPart" id="Not_3005"/>
+         <context elements="Not_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfAddition2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Addition2EditPart" id="Addition_3006"/>
+         <context elements="Addition_3006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfSubtraction2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Subtraction2EditPart" id="Subtraction_3007"/>
+         <context elements="Subtraction_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfMultiplication2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Multiplication2EditPart" id="Multiplication_3008"/>
+         <context elements="Multiplication_3008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfDivision2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Division2EditPart" id="Division_3009"/>
+         <context elements="Division_3009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfModulus2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Modulus2EditPart" id="Modulus_3010"/>
+         <context elements="Modulus_3010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEqual2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Equal2EditPart" id="Equal_3011"/>
+         <context elements="Equal_3011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfNotEqual2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.NotEqual2EditPart" id="NotEqual_3012"/>
+         <context elements="NotEqual_3012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfLessThan2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.LessThan2EditPart" id="LessThan_3013"/>
+         <context elements="LessThan_3013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfGreaterThan2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.GreaterThan2EditPart" id="GreaterThan_3014"/>
+         <context elements="GreaterThan_3014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfLessEqual2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.LessEqual2EditPart" id="LessEqual_3015"/>
+         <context elements="LessEqual_3015"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfGreaterEqual2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.GreaterEqual2EditPart" id="GreaterEqual_3016"/>
+         <context elements="GreaterEqual_3016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEvery2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Every2EditPart" id="Every_3017"/>
+         <context elements="Every_3017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEveryDistinct2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EveryDistinct2EditPart" id="EveryDistinct_3018"/>
+         <context elements="EveryDistinct_3018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfRepeat2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Repeat2EditPart" id="Repeat_3019"/>
+         <context elements="Repeat_3019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfUntil2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Until2EditPart" id="Until_3020"/>
+         <context elements="Until_3020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfRange2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Range2EditPart" id="Range_3021"/>
+         <context elements="Range_3021"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfFollowedBy2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.FollowedBy2EditPart" id="FollowedBy_3022"/>
+         <context elements="FollowedBy_3022"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfWhile2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.While2EditPart" id="While_3023"/>
+         <context elements="While_3023"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEvent2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Event2EditPart" id="Event_3024"/>
+         <context elements="Event_3024"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEventProperty4EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EventProperty4EditPart" id="EventProperty_3025"/>
+         <context elements="EventProperty_3025"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfValue2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Value2EditPart" id="Value_3026"/>
+         <context elements="Value_3026"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfAnd3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.And3EditPart" id="And_3027"/>
+         <context elements="And_3027"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfOr3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Or3EditPart" id="Or_3028"/>
+         <context elements="Or_3028"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfNot3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Not3EditPart" id="Not_3029"/>
+         <context elements="Not_3029"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfAddition3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Addition3EditPart" id="Addition_3030"/>
+         <context elements="Addition_3030"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfSubtraction3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Subtraction3EditPart" id="Subtraction_3031"/>
+         <context elements="Subtraction_3031"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfMultiplication3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Multiplication3EditPart" id="Multiplication_3032"/>
+         <context elements="Multiplication_3032"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfDivision3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Division3EditPart" id="Division_3033"/>
+         <context elements="Division_3033"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfModulus3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Modulus3EditPart" id="Modulus_3034"/>
+         <context elements="Modulus_3034"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEqual3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Equal3EditPart" id="Equal_3035"/>
+         <context elements="Equal_3035"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfNotEqual3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.NotEqual3EditPart" id="NotEqual_3036"/>
+         <context elements="NotEqual_3036"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfLessThan3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.LessThan3EditPart" id="LessThan_3037"/>
+         <context elements="LessThan_3037"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfGreaterThan3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.GreaterThan3EditPart" id="GreaterThan_3038"/>
+         <context elements="GreaterThan_3038"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfLessEqual3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.LessEqual3EditPart" id="LessEqual_3039"/>
+         <context elements="LessEqual_3039"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfGreaterEqual3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.GreaterEqual3EditPart" id="GreaterEqual_3040"/>
+         <context elements="GreaterEqual_3040"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEvery3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Every3EditPart" id="Every_3041"/>
+         <context elements="Every_3041"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEveryDistinct3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EveryDistinct3EditPart" id="EveryDistinct_3042"/>
+         <context elements="EveryDistinct_3042"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfRepeat3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Repeat3EditPart" id="Repeat_3043"/>
+         <context elements="Repeat_3043"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfUntil3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Until3EditPart" id="Until_3044"/>
+         <context elements="Until_3044"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfRange3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Range3EditPart" id="Range_3045"/>
+         <context elements="Range_3045"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfFollowedBy3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.FollowedBy3EditPart" id="FollowedBy_3046"/>
+         <context elements="FollowedBy_3046"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfWhile3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.While3EditPart" id="While_3047"/>
+         <context elements="While_3047"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfMax2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Max2EditPart" id="Max_3048"/>
+         <context elements="Max_3048"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfMin2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Min2EditPart" id="Min_3049"/>
+         <context elements="Min_3049"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfAvg2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Avg2EditPart" id="Avg_3050"/>
+         <context elements="Avg_3050"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfCount2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Count2EditPart" id="Count_3051"/>
+         <context elements="Count_3051"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfSum2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Sum2EditPart" id="Sum_3052"/>
+         <context elements="Sum_3052"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEvent3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Event3EditPart" id="Event_3053"/>
+         <context elements="Event_3053"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEventProperty5EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.EventProperty5EditPart" id="EventProperty_3054"/>
+         <context elements="EventProperty_3054"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfValue3EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.Value3EditPart" id="Value_3055"/>
+         <context elements="Value_3055"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfWithinTimer2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.WithinTimer2EditPart" id="WithinTimer_3056"/>
+         <context elements="WithinTimer_3056"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfTimeInterval2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.TimeInterval2EditPart" id="TimeInterval_3057"/>
+         <context elements="TimeInterval_3057"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfTimeSchedule2EditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.TimeSchedule2EditPart" id="TimeSchedule_3058"/>
+         <context elements="TimeSchedule_3058"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfComplexEventPropertyEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.ComplexEventPropertyEditPart" id="ComplexEventProperty_3059"/>
+         <context elements="ComplexEventProperty_3059"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">

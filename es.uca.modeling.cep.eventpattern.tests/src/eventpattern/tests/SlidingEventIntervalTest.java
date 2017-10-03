@@ -17,60 +17,60 @@ public class SlidingEventIntervalTest extends DataWindowTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(SlidingEventIntervalTest.class);
-  }
+		TestRunner.run(SlidingEventIntervalTest.class);
+	}
 
   /**
-   * Constructs a new Sliding Event Interval test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Sliding Event Interval test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SlidingEventIntervalTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Sliding Event Interval test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Sliding Event Interval test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected SlidingEventInterval getFixture()
   {
-    return (SlidingEventInterval)fixture;
-  }
+		return (SlidingEventInterval)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createSlidingEventInterval());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createSlidingEventInterval());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //SlidingEventIntervalTest

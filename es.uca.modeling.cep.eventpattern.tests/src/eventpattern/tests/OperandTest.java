@@ -16,44 +16,44 @@ public abstract class OperandTest extends TestCase
 {
 
   /**
-   * The fixture for this Operand test case.
-   * <!-- begin-user-doc -->
+	 * The fixture for this Operand test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Operand fixture = null;
 
   /**
-   * Constructs a new Operand test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Operand test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public OperandTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Sets the fixture for this Operand test case.
-   * <!-- begin-user-doc -->
+	 * Sets the fixture for this Operand test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void setFixture(Operand fixture)
   {
-    this.fixture = fixture;
-  }
+		this.fixture = fixture;
+	}
 
   /**
-   * Returns the fixture for this Operand test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Operand test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Operand getFixture()
   {
-    return fixture;
-  }
+		return fixture;
+	}
 
 } //OperandTest

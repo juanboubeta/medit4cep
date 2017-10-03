@@ -17,60 +17,60 @@ public class EveryDistinctTest extends NaryOperatorTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(EveryDistinctTest.class);
-  }
+		TestRunner.run(EveryDistinctTest.class);
+	}
 
   /**
-   * Constructs a new Every Distinct test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Every Distinct test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EveryDistinctTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Every Distinct test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Every Distinct test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EveryDistinct getFixture()
   {
-    return (EveryDistinct)fixture;
-  }
+		return (EveryDistinct)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createEveryDistinct());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createEveryDistinct());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //EveryDistinctTest

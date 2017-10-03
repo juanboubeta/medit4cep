@@ -30,6 +30,7 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -52,10 +53,14 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 	public static final String ID = "es.uca.modeling.cep.eventpattern.diagram"; //$NON-NLS-1$
 
 	/**
+	* @generated
+	*/
+	private LogHelper myLogHelper;
+
+	/**
 	 * @generated
 	 */
-	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(
-			ID);
+	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(ID);
 
 	/**
 	 * @generated
@@ -108,15 +113,13 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
-		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
-				getPreferenceStore());
+		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		adapterFactory = createAdapterFactory();
 
 		// Added 
 		System.out.println("Editor is started.");
 
-		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace()
-				.getRoot();
+		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 		IProject domainProject = myWorkspaceRoot.getProject("domain");
 
 		try {
@@ -133,11 +136,9 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 
 				for (File file : files) {
 
-					if (!file.isDirectory()
-							&& file.getName().matches(".+domain")) {
+					if (!file.isDirectory() && file.getName().matches(".+domain")) {
 
-						String domainName = file.getName().replace(".domain",
-								"");
+						String domainName = file.getName().replace(".domain", "");
 						EventPatternsStatus.setDomainName(domainName);
 					}
 				}
@@ -196,11 +197,9 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public ImageDescriptor getItemImageDescriptor(Object item) {
-		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory
-				.adapt(item, IItemLabelProvider.class);
+		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item, IItemLabelProvider.class);
 		if (labelProvider != null) {
-			return ExtendedImageRegistry.getInstance().getImageDescriptor(
-					labelProvider.getImage(item));
+			return ExtendedImageRegistry.getInstance().getImageDescriptor(labelProvider.getImage(item));
 		}
 		return null;
 	}
@@ -229,8 +228,8 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 	public static ImageDescriptor findImageDescriptor(String path) {
 		final IPath p = new Path(path);
 		if (p.isAbsolute() && p.segmentCount() > 1) {
-			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p
-					.removeFirstSegments(1).makeAbsolute().toString());
+			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0),
+					p.removeFirstSegments(1).makeAbsolute().toString());
 		} else {
 			return getBundledImageDescriptor(p.makeAbsolute().toString());
 		}
@@ -282,8 +281,7 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public void setLinkConstraints(
-			EventpatternBaseItemSemanticEditPolicy.LinkConstraints lc) {
+	public void setLinkConstraints(EventpatternBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
@@ -319,54 +317,34 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void logError(String error) {
-		logError(error, null);
+		getLogHelper().logError(error, null);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logError(String error, Throwable throwable) {
-		if (error == null && throwable != null) {
-			error = throwable.getMessage();
-		}
-		getLog().log(
-				new Status(IStatus.ERROR, EventpatternDiagramEditorPlugin.ID,
-						IStatus.OK, error, throwable));
-		debug(error, throwable);
+		getLogHelper().logError(error, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message) {
-		logInfo(message, null);
+		getLogHelper().logInfo(message, null);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message, Throwable throwable) {
-		if (message == null && throwable != null) {
-			message = throwable.getMessage();
-		}
-		getLog().log(
-				new Status(IStatus.INFO, EventpatternDiagramEditorPlugin.ID,
-						IStatus.OK, message, throwable));
-		debug(message, throwable);
+		getLogHelper().logInfo(message, throwable);
 	}
 
 	/**
-	 * @generated
-	 */
-	private void debug(String message, Throwable throwable) {
-		if (!isDebugging()) {
-			return;
-		}
-		if (message != null) {
-			System.err.println(message);
-		}
-		if (throwable != null) {
-			throwable.printStackTrace();
-		}
+	* @generated
+	*/
+	public LogHelper getLogHelper() {
+		return myLogHelper;
 	}
 }

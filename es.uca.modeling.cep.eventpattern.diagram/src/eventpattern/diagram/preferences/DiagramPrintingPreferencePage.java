@@ -16,7 +16,6 @@ public class DiagramPrintingPreferencePage extends PrintingPreferencePage {
 	 * @generated
 	 */
 	public DiagramPrintingPreferencePage() {
-		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance()
-				.getPreferenceStore());
+		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

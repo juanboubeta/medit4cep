@@ -14,26 +14,26 @@ public abstract class UnaryOperatorTest extends OperatorTest
 {
 
   /**
-   * Constructs a new Unary Operator test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Unary Operator test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public UnaryOperatorTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Unary Operator test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Unary Operator test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected UnaryOperator getFixture()
   {
-    return (UnaryOperator)fixture;
-  }
+		return (UnaryOperator)fixture;
+	}
 
 } //UnaryOperatorTest

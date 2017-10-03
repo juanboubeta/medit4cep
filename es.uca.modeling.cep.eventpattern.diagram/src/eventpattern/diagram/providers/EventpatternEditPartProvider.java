@@ -18,8 +18,7 @@ public class EventpatternEditPartProvider extends DefaultEditPartProvider {
 	 * @generated
 	 */
 	public EventpatternEditPartProvider() {
-		super(new EventpatternEditPartFactory(),
-				EventpatternVisualIDRegistry.TYPED_INSTANCE,
+		super(new EventpatternEditPartFactory(), EventpatternVisualIDRegistry.TYPED_INSTANCE,
 				CEPEventPatternEditPart.MODEL_ID);
 	}
 

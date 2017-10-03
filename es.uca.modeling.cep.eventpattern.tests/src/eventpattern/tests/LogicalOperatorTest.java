@@ -14,26 +14,26 @@ public abstract class LogicalOperatorTest extends ConditionOperatorTest
 {
 
   /**
-   * Constructs a new Logical Operator test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Logical Operator test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public LogicalOperatorTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Logical Operator test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Logical Operator test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected LogicalOperator getFixture()
   {
-    return (LogicalOperator)fixture;
-  }
+		return (LogicalOperator)fixture;
+	}
 
 } //LogicalOperatorTest

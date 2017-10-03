@@ -13,32 +13,30 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Within Timer Element</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public abstract class WithinTimerElementImpl extends EObjectImpl implements WithinTimerElement
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected WithinTimerElementImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return EventpatternPackage.Literals.WITHIN_TIMER_ELEMENT;
-  }
+		return EventpatternPackage.Literals.WITHIN_TIMER_ELEMENT;
+	}
 
 } //WithinTimerElementImpl

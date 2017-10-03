@@ -12,8 +12,7 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 /**
  * @generated
  */
-public class LinkItemSemanticEditPolicy extends
-		EventpatternBaseItemSemanticEditPolicy {
+public class LinkItemSemanticEditPolicy extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

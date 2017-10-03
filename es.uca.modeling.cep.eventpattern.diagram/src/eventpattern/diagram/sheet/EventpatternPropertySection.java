@@ -33,8 +33,7 @@ import eventpattern.EventProperty;
 /**
  * @generated
  */
-public class EventpatternPropertySection extends DefaultPropertySection
-		implements IPropertySourceProvider {
+public class EventpatternPropertySection extends DefaultPropertySection implements IPropertySourceProvider {
 
 	/**
 	 * Modify/unwrap selection.
@@ -55,28 +54,23 @@ public class EventpatternPropertySection extends DefaultPropertySection
 		}
 		AdapterFactory af = getAdapterFactory(object);
 		if (af != null) {
-			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
-					IItemPropertySource.class);
+			IItemPropertySource ips = (IItemPropertySource) af.adapt(object, IItemPropertySource.class);
 
 			if (ips != null) {
 
-				if (object instanceof EventProperty || object instanceof Event
-						|| object instanceof ComplexEvent
+				if (object instanceof EventProperty || object instanceof Event || object instanceof ComplexEvent
 						|| object instanceof ComplexEventProperty) {
 
 					return new PropertySource(object, ips) {
 						protected IPropertyDescriptor createPropertyDescriptor(
 								IItemPropertyDescriptor itemPropertyDescriptor) {
 
-							EStructuralFeature feature = (EStructuralFeature) itemPropertyDescriptor
-									.getFeature(object);
+							EStructuralFeature feature = (EStructuralFeature) itemPropertyDescriptor.getFeature(object);
 
 							if (feature.getName().equalsIgnoreCase("imagePath")) {
-								return new PropertyImagePathPropertyDescriptor(
-										object, itemPropertyDescriptor, "Misc");
+								return new PropertyImagePathPropertyDescriptor(object, itemPropertyDescriptor, "Misc");
 							} else {
-								return new EMFCompositeSourcePropertyDescriptor(
-										object, itemPropertyDescriptor, "Misc");
+								return new EMFCompositeSourcePropertyDescriptor(object, itemPropertyDescriptor, "Misc");
 							}
 						}
 					};
@@ -86,8 +80,7 @@ public class EventpatternPropertySection extends DefaultPropertySection
 			}
 		}
 		if (object instanceof IAdaptable) {
-			return (IPropertySource) ((IAdaptable) object)
-					.getAdapter(IPropertySource.class);
+			return (IPropertySource) ((IAdaptable) object).getAdapter(IPropertySource.class);
 		}
 		return null;
 	}

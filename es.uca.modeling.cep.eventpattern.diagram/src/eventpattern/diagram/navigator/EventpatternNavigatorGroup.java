@@ -9,8 +9,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class EventpatternNavigatorGroup extends
-		EventpatternAbstractNavigatorItem {
+public class EventpatternNavigatorGroup extends EventpatternAbstractNavigatorItem {
 
 	/**
 	 * @generated

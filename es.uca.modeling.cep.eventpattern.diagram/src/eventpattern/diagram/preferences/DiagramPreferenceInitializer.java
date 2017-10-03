@@ -30,7 +30,6 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	 * @generated
 	 */
 	protected IPreferenceStore getPreferenceStore() {
-		return EventpatternDiagramEditorPlugin.getInstance()
-				.getPreferenceStore();
+		return EventpatternDiagramEditorPlugin.getInstance().getPreferenceStore();
 	}
 }

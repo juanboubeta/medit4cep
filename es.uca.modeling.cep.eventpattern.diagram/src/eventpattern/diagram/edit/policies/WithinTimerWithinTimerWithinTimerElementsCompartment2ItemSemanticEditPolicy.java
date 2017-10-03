@@ -64,8 +64,7 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartment2ItemSemanticEd
 		if (EventpatternElementTypes.Subtraction_3007 == req.getElementType()) {
 			return getGEFWrapper(new Subtraction2CreateCommand(req));
 		}
-		if (EventpatternElementTypes.Multiplication_3008 == req
-				.getElementType()) {
+		if (EventpatternElementTypes.Multiplication_3008 == req.getElementType()) {
 			return getGEFWrapper(new Multiplication2CreateCommand(req));
 		}
 		if (EventpatternElementTypes.Division_3009 == req.getElementType()) {

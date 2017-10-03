@@ -36,8 +36,7 @@ public class ComplexEventCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -59,10 +58,8 @@ public class ComplexEventCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		ComplexEvent newElement = EventpatternFactory.eINSTANCE
-				.createComplexEvent();
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		ComplexEvent newElement = EventpatternFactory.eINSTANCE.createComplexEvent();
 
 		CEPEventPattern owner = (CEPEventPattern) getElementToEdit();
 		owner.setComplexEvent(newElement);
@@ -76,18 +73,13 @@ public class ComplexEventCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(ComplexEvent newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	protected void doConfigure(ComplexEvent newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

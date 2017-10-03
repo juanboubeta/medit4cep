@@ -26,159 +26,152 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link eventpattern.impl.OperandImpl#getOutboundLink <em>Outbound Link</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public abstract class OperandImpl extends EObjectImpl implements Operand
 {
   /**
-   * The cached value of the '{@link #getOutboundLink() <em>Outbound Link</em>}' reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOutboundLink() <em>Outbound Link</em>}' reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOutboundLink()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOutboundLink()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Link> outboundLink;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected OperandImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return EventpatternPackage.Literals.OPERAND;
-  }
+		return EventpatternPackage.Literals.OPERAND;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Link> getOutboundLink()
   {
-    if (outboundLink == null)
-    {
-      outboundLink = new EObjectWithInverseResolvingEList<Link>(Link.class, this, EventpatternPackage.OPERAND__OUTBOUND_LINK, EventpatternPackage.LINK__OPERAND);
-    }
-    return outboundLink;
-  }
+		if (outboundLink == null) {
+			outboundLink = new EObjectWithInverseResolvingEList<Link>(Link.class, this, EventpatternPackage.OPERAND__OUTBOUND_LINK, EventpatternPackage.LINK__OPERAND);
+		}
+		return outboundLink;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.OPERAND__OUTBOUND_LINK:
-        return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutboundLink()).basicAdd(otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case EventpatternPackage.OPERAND__OUTBOUND_LINK:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutboundLink()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.OPERAND__OUTBOUND_LINK:
-        return ((InternalEList<?>)getOutboundLink()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case EventpatternPackage.OPERAND__OUTBOUND_LINK:
+				return ((InternalEList<?>)getOutboundLink()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.OPERAND__OUTBOUND_LINK:
-        return getOutboundLink();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case EventpatternPackage.OPERAND__OUTBOUND_LINK:
+				return getOutboundLink();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.OPERAND__OUTBOUND_LINK:
-        getOutboundLink().clear();
-        getOutboundLink().addAll((Collection<? extends Link>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case EventpatternPackage.OPERAND__OUTBOUND_LINK:
+				getOutboundLink().clear();
+				getOutboundLink().addAll((Collection<? extends Link>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.OPERAND__OUTBOUND_LINK:
-        getOutboundLink().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case EventpatternPackage.OPERAND__OUTBOUND_LINK:
+				getOutboundLink().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case EventpatternPackage.OPERAND__OUTBOUND_LINK:
-        return outboundLink != null && !outboundLink.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case EventpatternPackage.OPERAND__OUTBOUND_LINK:
+				return outboundLink != null && !outboundLink.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //OperandImpl

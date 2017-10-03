@@ -18,8 +18,7 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 /**
  * @generated
  */
-public class EventpatternSheetLabelProvider extends BaseLabelProvider implements
-		ILabelProvider {
+public class EventpatternSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -75,8 +74,7 @@ public class EventpatternSheetLabelProvider extends BaseLabelProvider implements
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

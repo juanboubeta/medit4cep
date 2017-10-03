@@ -14,26 +14,26 @@ public abstract class NaryOperatorTest extends OperatorTest
 {
 
   /**
-   * Constructs a new Nary Operator test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Nary Operator test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NaryOperatorTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Nary Operator test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Nary Operator test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected NaryOperator getFixture()
   {
-    return (NaryOperator)fixture;
-  }
+		return (NaryOperator)fixture;
+	}
 
 } //NaryOperatorTest

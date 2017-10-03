@@ -170,15 +170,13 @@ public class EventpatternEditPartFactory implements EditPartFactory {
 				return new SlidingTimeIntervalEditPart(view);
 
 			case SlidingTimeIntervalYearsMonthsWeeksDaysHouEditPart.VISUAL_ID:
-				return new SlidingTimeIntervalYearsMonthsWeeksDaysHouEditPart(
-						view);
+				return new SlidingTimeIntervalYearsMonthsWeeksDaysHouEditPart(view);
 
 			case BatchingTimeIntervalEditPart.VISUAL_ID:
 				return new BatchingTimeIntervalEditPart(view);
 
 			case BatchingTimeIntervalYearsMonthsWeeksDaysHouEditPart.VISUAL_ID:
-				return new BatchingTimeIntervalYearsMonthsWeeksDaysHouEditPart(
-						view);
+				return new BatchingTimeIntervalYearsMonthsWeeksDaysHouEditPart(view);
 
 			case ComplexEventEditPart.VISUAL_ID:
 				return new ComplexEventEditPart(view);
@@ -415,58 +413,46 @@ public class EventpatternEditPartFactory implements EditPartFactory {
 				return new EventEventEventPropertiesCompartmentEditPart(view);
 
 			case EventPropertyEventPropertyEventPropertiesCompartmentEditPart.VISUAL_ID:
-				return new EventPropertyEventPropertyEventPropertiesCompartmentEditPart(
-						view);
+				return new EventPropertyEventPropertyEventPropertiesCompartmentEditPart(view);
 
 			case EventPropertyEventPropertyEventPropertiesCompartment2EditPart.VISUAL_ID:
-				return new EventPropertyEventPropertyEventPropertiesCompartment2EditPart(
-						view);
+				return new EventPropertyEventPropertyEventPropertiesCompartment2EditPart(view);
 
 			case EventPropertyEventPropertyEventPropertiesCompartment3EditPart.VISUAL_ID:
-				return new EventPropertyEventPropertyEventPropertiesCompartment3EditPart(
-						view);
+				return new EventPropertyEventPropertyEventPropertiesCompartment3EditPart(view);
 
 			case WithinTimerWithinTimerWithinTimerElementsCompartmentEditPart.VISUAL_ID:
-				return new WithinTimerWithinTimerWithinTimerElementsCompartmentEditPart(
-						view);
+				return new WithinTimerWithinTimerWithinTimerElementsCompartmentEditPart(view);
 
 			case EventEventEventPropertiesCompartment2EditPart.VISUAL_ID:
 				return new EventEventEventPropertiesCompartment2EditPart(view);
 
 			case EventPropertyEventPropertyEventPropertiesCompartment4EditPart.VISUAL_ID:
-				return new EventPropertyEventPropertyEventPropertiesCompartment4EditPart(
-						view);
+				return new EventPropertyEventPropertyEventPropertiesCompartment4EditPart(view);
 
 			case SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-				return new SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart(
-						view);
+				return new SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart(view);
 
 			case EventEventEventPropertiesCompartment3EditPart.VISUAL_ID:
 				return new EventEventEventPropertiesCompartment3EditPart(view);
 
 			case EventPropertyEventPropertyEventPropertiesCompartment5EditPart.VISUAL_ID:
-				return new EventPropertyEventPropertyEventPropertiesCompartment5EditPart(
-						view);
+				return new EventPropertyEventPropertyEventPropertiesCompartment5EditPart(view);
 
 			case WithinTimerWithinTimerWithinTimerElementsCompartment2EditPart.VISUAL_ID:
-				return new WithinTimerWithinTimerWithinTimerElementsCompartment2EditPart(
-						view);
+				return new WithinTimerWithinTimerWithinTimerElementsCompartment2EditPart(view);
 
 			case BatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-				return new BatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartmentEditPart(
-						view);
+				return new BatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartmentEditPart(view);
 
 			case SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-				return new SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartmentEditPart(
-						view);
+				return new SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartmentEditPart(view);
 
 			case BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
-				return new BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart(
-						view);
+				return new BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart(view);
 
 			case ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart.VISUAL_ID:
-				return new ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart(
-						view);
+				return new ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart(view);
 
 			case LinkEditPart.VISUAL_ID:
 				return new LinkEditPart(view);
@@ -490,10 +476,8 @@ public class EventpatternEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }

@@ -59,17 +59,14 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 				return this.getCommandResult();
 			}
 
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 
 				Object o = req.getElementToConfigure();
 				Map params = req.getParameters();
 
-				String domainName = eventpattern.diagram.status.EventPatternsStatus
-						.getDomainName();
-				IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace()
-						.getRoot();
+				String domainName = eventpattern.diagram.status.EventPatternsStatus.getDomainName();
+				IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 
 				EcoreUtil.Copier domainEventTocustomEventCopier = new EcoreUtil.Copier() {
 
@@ -83,8 +80,7 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 							return EventpatternPackage.Literals.EVENT;
 						}
 
-						if (e.getInstanceClassName().equals(
-								"domain.EventProperty")) {
+						if (e.getInstanceClassName().equals("domain.EventProperty")) {
 
 							// return EClass for "eventpattern.Property"
 							return EventpatternPackage.Literals.EVENT_PROPERTY;
@@ -93,38 +89,29 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 						return super.getTarget(e);
 					}
 
-					protected EStructuralFeature getTarget(
-							EStructuralFeature eStructuralFeature) {
+					protected EStructuralFeature getTarget(EStructuralFeature eStructuralFeature) {
 
-						EClass eClass = getTarget(eStructuralFeature
-								.getEContainingClass());
-						EStructuralFeature targetEFeature = eClass
-								.getEStructuralFeature(eStructuralFeature
-										.getName());
+						EClass eClass = getTarget(eStructuralFeature.getEContainingClass());
+						EStructuralFeature targetEFeature = eClass.getEStructuralFeature(eStructuralFeature.getName());
 						return targetEFeature;
 
 					}
 
-					protected void copyAttribute(EAttribute eAttribute,
-							EObject eObject, EObject copyEObject) {
+					protected void copyAttribute(EAttribute eAttribute, EObject eObject, EObject copyEObject) {
 
 						// EEnum must be copied manually
 						if (eAttribute.getEType() instanceof EEnum) {
 
-							if (eAttribute.getEType().getInstanceClassName()
-									.equals("domain.PropertyTypeValue")) {
+							if (eAttribute.getEType().getInstanceClassName().equals("domain.PropertyTypeValue")) {
 
-								Enumerator value = (Enumerator) eObject
-										.eGet(eAttribute);
+								Enumerator value = (Enumerator) eObject.eGet(eAttribute);
 
 								copyEObject.eSet(getTarget(eAttribute),
-										eventpattern.PropertyTypeValue
-												.getByName(value.getLiteral()));
+										eventpattern.PropertyTypeValue.getByName(value.getLiteral()));
 							}
 
 						} else {
-							copyEObject.eSet(getTarget(eAttribute),
-									eObject.eGet(eAttribute));
+							copyEObject.eSet(getTarget(eAttribute), eObject.eGet(eAttribute));
 						}
 					}
 
@@ -139,8 +126,7 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 						customEvent.setTypeName(toolName);
 
 						// Location where the domain model is
-						IProject domainProject = myWorkspaceRoot
-								.getProject("domain");
+						IProject domainProject = myWorkspaceRoot.getProject("domain");
 
 						if (domainProject.exists()) {
 
@@ -157,33 +143,21 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 
 							if (domainProject.getFile(domainName + ".domain") != null) {
 
-								URI domainModelUri = URI
-										.createPlatformResourceURI(
-												domainProject
-														.getFile(
-																domainName
-																		+ ".domain")
-														.getFullPath()
-														.toString(), false);
+								URI domainModelUri = URI.createPlatformResourceURI(
+										domainProject.getFile(domainName + ".domain").getFullPath().toString(), false);
 
-								Resource domainModelResource = resourceSet
-										.getResource(domainModelUri, true);
+								Resource domainModelResource = resourceSet.getResource(domainModelUri, true);
 
 								// Find the equivalent event to the event dropped onto the canvas in the "domain" model					         						    
-								for (Iterator iter = EcoreUtil.getAllContents(
-										domainModelResource.getContents()
-												.get(0), true); iter.hasNext();) {
+								for (Iterator iter = EcoreUtil.getAllContents(domainModelResource.getContents().get(0),
+										true); iter.hasNext();) {
 
 									EObject eObject = (EObject) iter.next();
 
-									if (eObject.getClass().getSimpleName()
-											.equals("EventImpl")
-											&& ((domain.Event) eObject)
-													.getTypeName().equals(
-															toolName)) {
+									if (eObject.getClass().getSimpleName().equals("EventImpl")
+											&& ((domain.Event) eObject).getTypeName().equals(toolName)) {
 
-										Resource customResource = customEvent
-												.eResource();
+										Resource customResource = customEvent.eResource();
 										eventpattern.CEPEventPattern customDomain = (eventpattern.CEPEventPattern) customResource
 												.getContents().get(0);
 
@@ -193,17 +167,14 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 
 										// Find the event dropped onto the canvas in the "eventpattern" model 
 										// where properties must be added.
-										for (Iterator iter2 = EcoreUtil
-												.getAllContents(customDomain,
-														true); iter.hasNext();) {
+										for (Iterator iter2 = EcoreUtil.getAllContents(customDomain, true); iter
+												.hasNext();) {
 
-											EObject eObject2 = (EObject) iter2
-													.next();
+											EObject eObject2 = (EObject) iter2.next();
 
 											if (eObject2.equals(customEvent)) {
 
-												EcoreUtil.replace(eObject2,
-														customEventCopy);
+												EcoreUtil.replace(eObject2, customEventCopy);
 												break;
 											}
 										}
@@ -219,16 +190,14 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 
 				else if (params.containsKey("clickedComplexEventTool")) {
 
-					String toolName = (String) params
-							.get("clickedComplexEventTool");
+					String toolName = (String) params.get("clickedComplexEventTool");
 
 					if (toolName != null && domainName != null) {
 						eventpattern.Event customEvent = (eventpattern.Event) o;
 						customEvent.setTypeName(toolName);
 
 						// Location where the domain model is
-						IProject domainProject = myWorkspaceRoot
-								.getProject(domainName + "_complex_events");
+						IProject domainProject = myWorkspaceRoot.getProject(domainName + "_complex_events");
 
 						if (domainProject.exists()) {
 
@@ -243,36 +212,24 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 
 							ResourceSet resourceSet = new ResourceSetImpl();
 
-							if (domainProject.getFile(domainName
-									+ "_complex_events.domain") != null) {
+							if (domainProject.getFile(domainName + "_complex_events.domain") != null) {
 
-								URI domainModelUri = URI
-										.createPlatformResourceURI(
-												domainProject
-														.getFile(
-																domainName
-																		+ "_complex_events.domain")
-														.getFullPath()
-														.toString(), false);
+								URI domainModelUri = URI.createPlatformResourceURI(domainProject
+										.getFile(domainName + "_complex_events.domain").getFullPath().toString(),
+										false);
 
-								Resource domainModelResource = resourceSet
-										.getResource(domainModelUri, true);
+								Resource domainModelResource = resourceSet.getResource(domainModelUri, true);
 
 								// Find the equivalent event to the event dropped onto the canvas in the "domain" model					         						    
-								for (Iterator iter = EcoreUtil.getAllContents(
-										domainModelResource.getContents()
-												.get(0), true); iter.hasNext();) {
+								for (Iterator iter = EcoreUtil.getAllContents(domainModelResource.getContents().get(0),
+										true); iter.hasNext();) {
 
 									EObject eObject = (EObject) iter.next();
 
-									if (eObject.getClass().getSimpleName()
-											.equals("EventImpl")
-											&& ((domain.Event) eObject)
-													.getTypeName().equals(
-															toolName)) {
+									if (eObject.getClass().getSimpleName().equals("EventImpl")
+											&& ((domain.Event) eObject).getTypeName().equals(toolName)) {
 
-										Resource customResource = customEvent
-												.eResource();
+										Resource customResource = customEvent.eResource();
 										eventpattern.CEPEventPattern customDomain = (eventpattern.CEPEventPattern) customResource
 												.getContents().get(0);
 
@@ -282,17 +239,14 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 
 										// Find the event dropped onto the canvas in the "eventpattern" model 
 										// where properties must be added.
-										for (Iterator iter2 = EcoreUtil
-												.getAllContents(customDomain,
-														true); iter.hasNext();) {
+										for (Iterator iter2 = EcoreUtil.getAllContents(customDomain, true); iter
+												.hasNext();) {
 
-											EObject eObject2 = (EObject) iter2
-													.next();
+											EObject eObject2 = (EObject) iter2.next();
 
 											if (eObject2.equals(customEvent)) {
 
-												EcoreUtil.replace(eObject2,
-														customEventCopy);
+												EcoreUtil.replace(eObject2, customEventCopy);
 												break;
 											}
 										}
@@ -306,8 +260,7 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 					}
 				} else if (params.containsKey("clickedComplexEventTool")) {
 
-					String toolName = (String) params
-							.get("clickedComplexEventTool");
+					String toolName = (String) params.get("clickedComplexEventTool");
 					String patternName = (String) params.get("patternName");
 
 					if (toolName != null && patternName != null && domainName != null) {
@@ -315,8 +268,7 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 						customEvent.setTypeName(toolName);
 
 						// Location where the pattern model is
-						IProject patternProject = myWorkspaceRoot
-								.getProject(domainName + "_patterns");
+						IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
 
 						if (patternProject.exists()) {
 
@@ -331,45 +283,31 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 
 							ResourceSet resourceSet = new ResourceSetImpl();
 
-							if (patternProject
-									.getFile(patternName + ".pattern") != null) {
+							if (patternProject.getFile(patternName + ".pattern") != null) {
 
-								URI patternModelUri = URI
-										.createPlatformResourceURI(
-												patternProject
-														.getFile(
-																patternName
-																		+ ".pattern")
-														.getFullPath()
-														.toString(), false);
+								URI patternModelUri = URI.createPlatformResourceURI(
+										patternProject.getFile(patternName + ".pattern").getFullPath().toString(),
+										false);
 
-								Resource patternModelResource = resourceSet
-										.getResource(patternModelUri, true);
+								Resource patternModelResource = resourceSet.getResource(patternModelUri, true);
 
 								EventpatternPackage.eINSTANCE.eClass();
 								// Get the default factory singleton
 								EventpatternFactory factory = EventpatternFactory.eINSTANCE;
 
 								// Set the same properties of the complex event to the dropped event					         						    
-								for (TreeIterator iter = EcoreUtil
-										.getAllContents(patternModelResource
-												.getContents().get(0), true); iter
-										.hasNext();) {
+								for (TreeIterator iter = EcoreUtil.getAllContents(
+										patternModelResource.getContents().get(0), true); iter.hasNext();) {
 
 									EObject eObject = (EObject) iter.next();
 
-									if (eObject.getClass().getSimpleName()
-											.equals("ComplexEventPropertyImpl")) {
+									if (eObject.getClass().getSimpleName().equals("ComplexEventPropertyImpl")) {
 
-										eventpattern.EventProperty property = factory
-												.createEventProperty();
-										property.setName(((ComplexEventProperty) eObject)
-												.getName());
-										property.setImagePath(((ComplexEventProperty) eObject)
-												.getImagePath());
+										eventpattern.EventProperty property = factory.createEventProperty();
+										property.setName(((ComplexEventProperty) eObject).getName());
+										property.setImagePath(((ComplexEventProperty) eObject).getImagePath());
 
-										customEvent.getEventProperties().add(
-												property);
+										customEvent.getEventProperties().add(property);
 
 										iter.prune();
 									}
@@ -383,7 +321,6 @@ public class EventEditHelper extends EventpatternBaseEditHelper {
 			}
 		};
 
-		return CompositeCommand.compose(configureCommand,
-				super.getConfigureCommand(req));
+		return CompositeCommand.compose(configureCommand, super.getConfigureCommand(req));
 	}
 }

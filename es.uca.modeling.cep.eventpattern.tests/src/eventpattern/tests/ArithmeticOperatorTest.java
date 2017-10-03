@@ -14,26 +14,26 @@ public abstract class ArithmeticOperatorTest extends BinaryOperatorTest
 {
 
   /**
-   * Constructs a new Arithmetic Operator test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Arithmetic Operator test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ArithmeticOperatorTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Arithmetic Operator test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Arithmetic Operator test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected ArithmeticOperator getFixture()
   {
-    return (ArithmeticOperator)fixture;
-  }
+		return (ArithmeticOperator)fixture;
+	}
 
 } //ArithmeticOperatorTest

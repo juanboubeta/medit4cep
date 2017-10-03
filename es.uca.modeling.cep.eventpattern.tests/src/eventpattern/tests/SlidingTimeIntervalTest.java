@@ -17,60 +17,60 @@ public class SlidingTimeIntervalTest extends DataWindowTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(SlidingTimeIntervalTest.class);
-  }
+		TestRunner.run(SlidingTimeIntervalTest.class);
+	}
 
   /**
-   * Constructs a new Sliding Time Interval test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Sliding Time Interval test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SlidingTimeIntervalTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Sliding Time Interval test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Sliding Time Interval test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected SlidingTimeInterval getFixture()
   {
-    return (SlidingTimeInterval)fixture;
-  }
+		return (SlidingTimeInterval)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createSlidingTimeInterval());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createSlidingTimeInterval());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //SlidingTimeIntervalTest

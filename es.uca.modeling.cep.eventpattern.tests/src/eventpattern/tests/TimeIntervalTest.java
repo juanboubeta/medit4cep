@@ -17,60 +17,60 @@ public class TimeIntervalTest extends PatternOperandTest
 {
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static void main(String[] args)
   {
-    TestRunner.run(TimeIntervalTest.class);
-  }
+		TestRunner.run(TimeIntervalTest.class);
+	}
 
   /**
-   * Constructs a new Time Interval test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Time Interval test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public TimeIntervalTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Time Interval test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Time Interval test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected TimeInterval getFixture()
   {
-    return (TimeInterval)fixture;
-  }
+		return (TimeInterval)fixture;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#setUp()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
   @Override
   protected void setUp() throws Exception
   {
-    setFixture(EventpatternFactory.eINSTANCE.createTimeInterval());
-  }
+		setFixture(EventpatternFactory.eINSTANCE.createTimeInterval());
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see junit.framework.TestCase#tearDown()
-   * @generated
-   */
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
   @Override
   protected void tearDown() throws Exception
   {
-    setFixture(null);
-  }
+		setFixture(null);
+	}
 
 } //TimeIntervalTest

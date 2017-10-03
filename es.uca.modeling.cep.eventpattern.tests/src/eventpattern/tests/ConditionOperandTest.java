@@ -14,26 +14,26 @@ public abstract class ConditionOperandTest extends OperandTest
 {
 
   /**
-   * Constructs a new Condition Operand test case with the given name.
-   * <!-- begin-user-doc -->
+	 * Constructs a new Condition Operand test case with the given name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ConditionOperandTest(String name)
   {
-    super(name);
-  }
+		super(name);
+	}
 
   /**
-   * Returns the fixture for this Condition Operand test case.
-   * <!-- begin-user-doc -->
+	 * Returns the fixture for this Condition Operand test case.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected ConditionOperand getFixture()
   {
-    return (ConditionOperand)fixture;
-  }
+		return (ConditionOperand)fixture;
+	}
 
 } //ConditionOperandTest

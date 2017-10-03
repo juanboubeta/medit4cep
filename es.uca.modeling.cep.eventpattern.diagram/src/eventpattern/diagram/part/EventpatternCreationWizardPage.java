@@ -24,8 +24,7 @@ public class EventpatternCreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
-	public EventpatternCreationWizardPage(String pageName,
-			IStructuredSelection selection, String fileExtension) {
+	public EventpatternCreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
 	}
@@ -66,8 +65,8 @@ public class EventpatternCreationWizardPage extends WizardNewFileCreationPage {
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(EventpatternDiagramEditorUtil.getUniqueFileName(
-				getContainerFullPath(), getFileName(), getExtension()));
+		setFileName(
+				EventpatternDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -79,11 +78,8 @@ public class EventpatternCreationWizardPage extends WizardNewFileCreationPage {
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null
-				&& !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS.bind(
-					Messages.EventpatternCreationWizardPageExtensionError,
-					extension));
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS.bind(Messages.EventpatternCreationWizardPageExtensionError, extension));
 			return false;
 		}
 		return true;

@@ -16,7 +16,6 @@ public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage 
 	 * @generated
 	 */
 	public DiagramRulersAndGridPreferencePage() {
-		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance()
-				.getPreferenceStore());
+		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

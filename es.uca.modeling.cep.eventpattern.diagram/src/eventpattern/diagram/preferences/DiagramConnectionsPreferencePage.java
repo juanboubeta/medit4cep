@@ -16,7 +16,6 @@ public class DiagramConnectionsPreferencePage extends ConnectionsPreferencePage 
 	 * @generated
 	 */
 	public DiagramConnectionsPreferencePage() {
-		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance()
-				.getPreferenceStore());
+		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }
