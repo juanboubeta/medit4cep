@@ -62,6 +62,7 @@ public class EmailItemProvider
 			addPortPropertyDescriptor(object);
 			addUserPropertyDescriptor(object);
 			addPasswordPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -251,6 +252,28 @@ public class EmailItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Email_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Email_description_feature", "_UI_Email_type"),
+				 EventpatternPackage.Literals.EMAIL__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This returns Email.gif.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -298,6 +321,7 @@ public class EmailItemProvider
 			case EventpatternPackage.EMAIL__PORT:
 			case EventpatternPackage.EMAIL__USER:
 			case EventpatternPackage.EMAIL__PASSWORD:
+			case EventpatternPackage.EMAIL__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

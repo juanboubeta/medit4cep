@@ -312,6 +312,9 @@
           <preferredSize dx="30" dy="30"/>
         </actualFigure>
       </descriptors>
+      <descriptors name="EmailLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="EmailLabelFigure" text="Email"/>
+      </descriptors>
       <descriptors name="TwitterFigure">
         <actualFigure xsi:type="gmfgraph:SVGFigure" name="TwitterFigure" documentURI="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Twitter.svg">
           <preferredSize dx="30" dy="30"/>
@@ -513,6 +516,7 @@
     <labels name="EventLabel" figure="EventFigure" accessor="/0/@figures.0/@descriptors.37/@accessors.0"/>
     <labels name="EventPropertyLabel" figure="EventPropertyFigure" accessor="/0/@figures.0/@descriptors.38/@accessors.0"/>
     <labels name="ValueLabel" figure="ValueFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.39/@accessors.0"/>
+    <labels name="EmailLabel" figure="EmailLabelFigure" elementIcon="false"/>
     <labels name="LinkLabel" figure="LinkLabelFigure" elementIcon="false">
       <facets xsi:type="gmfgraph:AlignmentFacet"/>
       <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-10" y="-10"/>
@@ -542,6 +546,5 @@
   <gmfgraph:Label name="AvgLabelFigure" text="Avg"/>
   <gmfgraph:Label name="CountLabelFigure" text="Count"/>
   <gmfgraph:Label name="SumLabelFigure" text="Sum"/>
-  <gmfgraph:Label name="EmailLabelFigure" text="Email"/>
   <gmfgraph:Label name="TwitterLabelFigure" text="Twitter"/>
 </xmi:XMI>

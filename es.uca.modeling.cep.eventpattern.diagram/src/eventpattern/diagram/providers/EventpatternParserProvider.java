@@ -17,6 +17,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import eventpattern.EventpatternPackage;
+import eventpattern.diagram.edit.parts.*;
 import eventpattern.diagram.edit.parts.AdditionName2EditPart;
 import eventpattern.diagram.edit.parts.AdditionName3EditPart;
 import eventpattern.diagram.edit.parts.AdditionNameEditPart;
@@ -301,6 +302,23 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 			timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser = parser;
 		}
 		return timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser emailDescription_5098Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getEmailDescription_5098Parser() {
+		if (emailDescription_5098Parser == null) {
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEmail_Description() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			emailDescription_5098Parser = parser;
+		}
+		return emailDescription_5098Parser;
 	}
 
 	/**
@@ -784,6 +802,8 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 			return getTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5057Parser();
 		case TimeScheduleDayOfWeekDayOfMonthMontEditPart.VISUAL_ID:
 			return getTimeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser();
+		case EmailDescriptionEditPart.VISUAL_ID:
+			return getEmailDescription_5098Parser();
 		case SlidingEventIntervalSizeEditPart.VISUAL_ID:
 			return getSlidingEventIntervalSize_5092Parser();
 		case BatchingEventIntervalSizeEditPart.VISUAL_ID:

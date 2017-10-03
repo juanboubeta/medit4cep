@@ -2003,6 +2003,15 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEmail_Description() {
+		return (EAttribute)emailEClass.getEStructuralFeatures().get(8);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -2252,6 +2261,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		createEAttribute(emailEClass, EMAIL__PORT);
 		createEAttribute(emailEClass, EMAIL__USER);
 		createEAttribute(emailEClass, EMAIL__PASSWORD);
+		createEAttribute(emailEClass, EMAIL__DESCRIPTION);
 
 		twitterEClass = createEClass(TWITTER);
 
@@ -2571,6 +2581,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		initEAttribute(getEmail_Port(), ecorePackage.getEInt(), "port", "25", 0, 1, Email.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmail_User(), ecorePackage.getEString(), "user", null, 0, 1, Email.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEmail_Password(), ecorePackage.getEString(), "password", null, 0, 1, Email.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEmail_Description(), ecorePackage.getEString(), "description", " ", 0, 1, Email.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(twitterEClass, Twitter.class, "Twitter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3173,7 +3184,9 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 			 "figure", "svg",
 			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg",
 			 "size", "30,30",
-			 "label.placement", "none",
+			 "label", "description",
+			 "label.icon", "false",
+			 "label.placement", "external",
 			 "resizable", "false",
 			 "margin", "0",
 			 "tool.name", "Email",

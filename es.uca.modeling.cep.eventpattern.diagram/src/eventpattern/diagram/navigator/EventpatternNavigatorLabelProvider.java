@@ -965,12 +965,14 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getEmail_2033Text(View view) {
-		Email domainModelElement = (Email) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getTo();
+		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Email_2033,
+				view.getElement() != null ? view.getElement() : view,
+				EventpatternVisualIDRegistry.getType(EmailDescriptionEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
-			EventpatternDiagramEditorPlugin.getInstance()
-					.logError("No domain element for view with visualID = " + 2033); //$NON-NLS-1$
+			EventpatternDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5098); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

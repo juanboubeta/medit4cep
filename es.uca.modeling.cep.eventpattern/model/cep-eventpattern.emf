@@ -497,7 +497,7 @@ class Value extends ConditionOperand {
 /* ACTIONS */
 
 @gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg",
-	size="30,30", label.placement="none", resizable="false", margin="0", 
+	size="30,30", label="description", label.icon = "false", label.placement="external", resizable="false", margin="0", 
 	tool.name="Email", tool.description="Add an email action")
 class Email extends Action {
    attr String to; 
@@ -508,6 +508,7 @@ class Email extends Action {
    attr int port = 25;
    attr String user; 
    attr String password;
+   attr String description = " ";
 }
 
 @gmf.node(figure="svg", svg.uri="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Twitter.svg",

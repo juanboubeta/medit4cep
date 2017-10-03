@@ -712,6 +712,13 @@
     <ownedChild>
       <domainMetaElement
           href="cep-eventpattern.ecore#//Email"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="cep-eventpattern.gmfgraph#EmailLabel"/>
+        <features
+            href="cep-eventpattern.ecore#//Email/description"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="cep-eventpattern.gmftool#//@palette/@tools.11/@tools.0"/>

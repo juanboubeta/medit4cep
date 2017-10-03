@@ -652,7 +652,9 @@
       <details key="figure" value="svg"/>
       <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg"/>
       <details key="size" value="30,30"/>
-      <details key="label.placement" value="none"/>
+      <details key="label" value="description"/>
+      <details key="label.icon" value="false"/>
+      <details key="label.placement" value="external"/>
       <details key="resizable" value="false"/>
       <details key="margin" value="0"/>
       <details key="tool.name" value="Email"/>
@@ -667,6 +669,8 @@
         defaultValueLiteral="25"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=" "/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Twitter" eSuperTypes="#//Action">
     <eAnnotations source="gmf.node">

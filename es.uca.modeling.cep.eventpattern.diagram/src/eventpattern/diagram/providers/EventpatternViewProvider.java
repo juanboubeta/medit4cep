@@ -1747,6 +1747,11 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5098 = createLabel(node, EventpatternVisualIDRegistry.getType(EmailDescriptionEditPart.VISUAL_ID));
+		label5098.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5098 = (Location) label5098.getLayoutConstraint();
+		location5098.setX(0);
+		location5098.setY(5);
 		return node;
 	}
 

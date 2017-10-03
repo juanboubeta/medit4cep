@@ -2682,13 +2682,22 @@ public interface EventpatternPackage extends EPackage
   int EMAIL__PASSWORD = ACTION_FEATURE_COUNT + 7;
 
   /**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMAIL__DESCRIPTION = ACTION_FEATURE_COUNT + 8;
+
+		/**
 	 * The number of structural features of the '<em>Email</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int EMAIL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 8;
+  int EMAIL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 9;
 
   /**
 	 * The meta object id for the '{@link eventpattern.impl.TwitterImpl <em>Twitter</em>}' class.
@@ -4244,6 +4253,17 @@ public interface EventpatternPackage extends EPackage
   EAttribute getEmail_Password();
 
   /**
+	 * Returns the meta object for the attribute '{@link eventpattern.Email#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see eventpattern.Email#getDescription()
+	 * @see #getEmail()
+	 * @generated
+	 */
+	EAttribute getEmail_Description();
+
+		/**
 	 * Returns the meta object for class '{@link eventpattern.Twitter <em>Twitter</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5549,6 +5569,14 @@ public interface EventpatternPackage extends EPackage
     EAttribute EMAIL__PASSWORD = eINSTANCE.getEmail_Password();
 
     /**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EMAIL__DESCRIPTION = eINSTANCE.getEmail_Description();
+
+				/**
 		 * The meta object literal for the '{@link eventpattern.impl.TwitterImpl <em>Twitter</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

@@ -1010,6 +1010,11 @@ public class EventpatternVisualIDRegistry {
 				return true;
 			}
 			break;
+		case EmailEditPart.VISUAL_ID:
+			if (EmailDescriptionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case SlidingEventIntervalEditPart.VISUAL_ID:
 			if (SlidingEventIntervalSizeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;

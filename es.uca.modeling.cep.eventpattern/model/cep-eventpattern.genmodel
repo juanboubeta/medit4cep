@@ -176,6 +176,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/port"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/user"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/password"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/description"/>
     </genClasses>
     <genClasses ecoreClass="cep-eventpattern.ecore#//Twitter"/>
   </genPackages>

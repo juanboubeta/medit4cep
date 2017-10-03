@@ -151,6 +151,9 @@ public class EventpatternEditPartFactory implements EditPartFactory {
 			case EmailEditPart.VISUAL_ID:
 				return new EmailEditPart(view);
 
+			case EmailDescriptionEditPart.VISUAL_ID:
+				return new EmailDescriptionEditPart(view);
+
 			case TwitterEditPart.VISUAL_ID:
 				return new TwitterEditPart(view);
 

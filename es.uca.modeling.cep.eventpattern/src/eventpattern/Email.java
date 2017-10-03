@@ -20,10 +20,11 @@ package eventpattern;
  *   <li>{@link eventpattern.Email#getPort <em>Port</em>}</li>
  *   <li>{@link eventpattern.Email#getUser <em>User</em>}</li>
  *   <li>{@link eventpattern.Email#getPassword <em>Password</em>}</li>
+ *   <li>{@link eventpattern.Email#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see eventpattern.EventpatternPackage#getEmail()
- * @model annotation="gmf.node figure='svg' svg.uri='platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg' size='30,30' label.placement='none' resizable='false' margin='0' tool.name='Email' tool.description='Add an email action'"
+ * @model annotation="gmf.node figure='svg' svg.uri='platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg' size='30,30' label='description' label.icon='false' label.placement='external' resizable='false' margin='0' tool.name='Email' tool.description='Add an email action'"
  * @generated
  */
 public interface Email extends Action
@@ -236,5 +237,32 @@ public interface Email extends Action
 	 * @generated
 	 */
   void setPassword(String value);
+
+		/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * The default value is <code>" "</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see eventpattern.EventpatternPackage#getEmail_Description()
+	 * @model default=" "
+	 * @generated
+	 */
+	String getDescription();
+
+		/**
+	 * Sets the value of the '{@link eventpattern.Email#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
 
 } // Email
