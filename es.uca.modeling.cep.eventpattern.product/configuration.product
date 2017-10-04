@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="MEdit4CEP" id="es.uca.modeling.cep.eventpattern.product" application="org.eclipse.ui.ide.workbench" version="1.1" useFeatures="true" includeLaunchers="true">
+<product name="MEdit4CEP" id="es.uca.modeling.cep.eventpattern.product" application="org.eclipse.ui.ide.workbench" version="1.2.0" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-128x128.png"/>
       <text>
-         Version: 1.1
-Date: February 19th, 2016
+         Version: 1.2.0
+Date: October 4th, 2017
 URL: https://ucase.uca.es/medit4cep/
 
-Copyright (c) 2011, 2016 Juan Boubeta-Puig
+Copyright (c) 2011, 2017 Juan Boubeta-Puig
 All rights reserved. This program and the accompanying materials 
 are made available under the terms of the Eclipse Public License v1.0 
 which accompanies this distribution, and is available at 
@@ -22,8 +22,10 @@ http://www.eclipse.org/legal/epl-v10.html
    </configIni>
 
    <launcherArgs>
-      <vmArgs>-Xms512M -Xmx1024M</vmArgs>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+      <vmArgs>-Xms512M -Xmx1024M
+      </vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
    </launcherArgs>
 
    <windowImages i16="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-16x16.png" i32="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-32x32.png" i48="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-48x48.png" i64="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-64x64.png" i128="/es.uca.modeling.cep.eventpattern.figures/icons/MEdit4CEP-icon-128x128.png"/>
@@ -53,11 +55,11 @@ http://www.eclipse.org/legal/epl-v10.html
         <text>
    MEdit4CEP
 
-Version: 1.1
-Date: February 19th, 2016
+Version: 1.2.0
+Date: October 4th, 2017
 
 /*******************************************************************************
- * Copyright (c) 2011, 2016 Juan Boubeta-Puig
+ * Copyright (c) 2011, 2017 Juan Boubeta-Puig
  * All rights reserved. This program and the accompanying materials 
  * are made available under the terms of the Eclipse Public License v1.0 
  * which accompanies this distribution, and is available at 
@@ -138,7 +140,28 @@ Date: February 19th, 2016
       <feature id="org.eclipse.emf.codegen"/>
       <feature id="org.eclipse.help.source"/>
       <feature id="org.eclipse.help"/>
+      <feature id="org.eclipse.ecf.filetransfer.httpclient4.feature"/>
+      <feature id="org.eclipse.ecf.core.ssl.feature"/>
+      <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/>
+      <feature id="org.eclipse.ecf.core.ssl.source.feature"/>
+      <feature id="org.eclipse.ecf.core.source.feature"/>
+      <feature id="org.eclipse.emf.common.source"/>
+      <feature id="org.eclipse.ecf.filetransfer.feature"/>
+      <feature id="org.eclipse.emf.ecore.source"/>
+      <feature id="org.eclipse.ecf.filetransfer.source.feature"/>
+      <feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature"/>
+      <feature id="org.eclipse.ecf.filetransfer.ssl.source.feature"/>
+      <feature id="org.eclipse.ecf.core.feature"/>
+      <feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.source.feature"/>
+      <feature id="org.eclipse.ecf.filetransfer.httpclient4.source.feature"/>
    </features>
 
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
 
 </product>

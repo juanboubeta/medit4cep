@@ -886,7 +886,7 @@ context BatchingTimeInterval {
     constraint PositiveBatchingTimeIntervalValues {
     
         check : self.years >= 0 and self.months >= 0 and self.weeks >= 0 and self.days >= 0 and 
-           self.hours >= 0 and self.minutes >= 0 and self.seconds >= 0 and self.milliseconds >= 0
+           self.hours >= 0 and self.minutes >= 0 and self.seconds >= 0 and self.milliseconds >= 0 and self.startTimestamp >= 0
           
         message : "Data window 'BatchingTimeInterval' cannot have any attribute set to a negative value."
       
@@ -956,6 +956,37 @@ context ArithmeticOperator {
         }
                         
         message : m + ' must have a numeric type: Integer, Long, Double or Float.'
+        
+    }    
+
+}
+
+context ComparisonOperator {
+    
+    constraint HasSameOperandTypes {
+    
+        guard : self.satisfies("BinaryLinkOrder")   
+    
+        check {
+            var oper1 : Operand = self.inboundLink.at(0).operand;
+            var oper2 : Operand = self.inboundLink.at(1).operand;
+
+            var m : String;
+                       
+            if ((oper1.isTypeOf(Value) or oper1.isTypeOf(EventProperty)) and (oper2.isTypeOf(Value) or oper2.isTypeOf(EventProperty))) {
+               
+                if (oper1.type == oper2.type) {
+                    return true;                       
+                }
+                else {
+                    m = "The operands of '" + self.eClass().name + "' must have the same type.";
+                    return false; 
+                }
+            }
+            return true;    
+        }
+                        
+        message : m
         
     }    
 
@@ -1042,17 +1073,28 @@ context Value {
     
     constraint HasOutboundLink {
         
+        guard : self.satisfies("HasValue")
+        
         check {
         
-        	if ((self.type <> PropertyTypeValue#String) and self.outboundLink.isEmpty())
+        	var m1 : String;
+        
+        	if (self.outboundLink.isEmpty()) {
+        		
+        		if (self.type == PropertyTypeValue#String) 
+        			m1 = "Value '" + self.value + "' must be linked with a comparison operator or complex event property.";
+        		else 
+        			m1 = "Value '" + self.value + "' must be linked with a logical, comparison or arithmetic operator, or complex event property.";
+        		
         		return false; 
+    		}
         	else         	
         		return true; 
         }
         
-        message : "Value '" + self.value + "' must be linked with a logical, comparison or arithmetic operator."
+        message : m1
            
-    }     
+    }    
     
 }
 
