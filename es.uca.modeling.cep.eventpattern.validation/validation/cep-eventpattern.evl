@@ -54,6 +54,14 @@ context CEPEventPattern {
     }   
 */    
 
+    constraint PositivePriority {
+    
+        check : self.patternPriority >= 0
+          
+        message : "The pattern priority must have a positive value."
+      
+    }
+
     constraint HasComplexEvent {
     
         check : self.complexEvent.isDefined()

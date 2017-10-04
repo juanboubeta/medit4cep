@@ -18,6 +18,7 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/patternName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/patternDescription"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/domainName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/patternPriority"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/patternCreationDate"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//CEPEventPattern/patternDeployed"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/links"/>

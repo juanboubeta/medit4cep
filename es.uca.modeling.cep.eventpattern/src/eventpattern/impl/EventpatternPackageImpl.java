@@ -622,20 +622,19 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getCEPEventPattern_PatternCreationDate()
-  {
+	public EAttribute getCEPEventPattern_PatternPriority() {
 		return (EAttribute)cepEventPatternEClass.getEStructuralFeatures().get(3);
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getCEPEventPattern_PatternDeployed()
+  public EAttribute getCEPEventPattern_PatternCreationDate()
   {
 		return (EAttribute)cepEventPatternEClass.getEStructuralFeatures().get(4);
 	}
@@ -645,9 +644,9 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getCEPEventPattern_Links()
+  public EAttribute getCEPEventPattern_PatternDeployed()
   {
-		return (EReference)cepEventPatternEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)cepEventPatternEClass.getEStructuralFeatures().get(5);
 	}
 
   /**
@@ -655,7 +654,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getCEPEventPattern_EventPatternElements()
+  public EReference getCEPEventPattern_Links()
   {
 		return (EReference)cepEventPatternEClass.getEStructuralFeatures().get(6);
 	}
@@ -665,7 +664,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getCEPEventPattern_ComplexEvent()
+  public EReference getCEPEventPattern_EventPatternElements()
   {
 		return (EReference)cepEventPatternEClass.getEStructuralFeatures().get(7);
 	}
@@ -675,9 +674,19 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getCEPEventPattern_Actions()
+  public EReference getCEPEventPattern_ComplexEvent()
   {
 		return (EReference)cepEventPatternEClass.getEStructuralFeatures().get(8);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getCEPEventPattern_Actions()
+  {
+		return (EReference)cepEventPatternEClass.getEStructuralFeatures().get(9);
 	}
 
   /**
@@ -2081,6 +2090,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		createEAttribute(cepEventPatternEClass, CEP_EVENT_PATTERN__PATTERN_NAME);
 		createEAttribute(cepEventPatternEClass, CEP_EVENT_PATTERN__PATTERN_DESCRIPTION);
 		createEAttribute(cepEventPatternEClass, CEP_EVENT_PATTERN__DOMAIN_NAME);
+		createEAttribute(cepEventPatternEClass, CEP_EVENT_PATTERN__PATTERN_PRIORITY);
 		createEAttribute(cepEventPatternEClass, CEP_EVENT_PATTERN__PATTERN_CREATION_DATE);
 		createEAttribute(cepEventPatternEClass, CEP_EVENT_PATTERN__PATTERN_DEPLOYED);
 		createEReference(cepEventPatternEClass, CEP_EVENT_PATTERN__LINKS);
@@ -2405,6 +2415,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		initEAttribute(getCEPEventPattern_PatternName(), ecorePackage.getEString(), "patternName", null, 0, 1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCEPEventPattern_PatternDescription(), ecorePackage.getEString(), "patternDescription", null, 0, 1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCEPEventPattern_DomainName(), ecorePackage.getEString(), "domainName", null, 0, 1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCEPEventPattern_PatternPriority(), ecorePackage.getEIntegerObject(), "patternPriority", "0", 0, 1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCEPEventPattern_PatternCreationDate(), ecorePackage.getEDate(), "patternCreationDate", null, 0, 1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCEPEventPattern_PatternDeployed(), ecorePackage.getEBoolean(), "patternDeployed", null, 0, 1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCEPEventPattern_Links(), this.getLink(), null, "links", null, 0, -1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

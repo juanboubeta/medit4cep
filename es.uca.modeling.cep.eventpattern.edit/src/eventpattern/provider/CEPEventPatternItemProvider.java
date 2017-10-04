@@ -69,6 +69,7 @@ public class CEPEventPatternItemProvider
 			addPatternNamePropertyDescriptor(object);
 			addPatternDescriptionPropertyDescriptor(object);
 			addDomainNamePropertyDescriptor(object);
+			addPatternPriorityPropertyDescriptor(object);
 			addPatternCreationDatePropertyDescriptor(object);
 			addPatternDeployedPropertyDescriptor(object);
 		}
@@ -145,6 +146,28 @@ public class CEPEventPatternItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Pattern Priority feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPatternPriorityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CEPEventPattern_patternPriority_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CEPEventPattern_patternPriority_feature", "_UI_CEPEventPattern_type"),
+				 EventpatternPackage.Literals.CEP_EVENT_PATTERN__PATTERN_PRIORITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Pattern Creation Date feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -268,6 +291,7 @@ public class CEPEventPatternItemProvider
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_NAME:
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_DESCRIPTION:
 			case EventpatternPackage.CEP_EVENT_PATTERN__DOMAIN_NAME:
+			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_PRIORITY:
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_CREATION_DATE:
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_DEPLOYED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

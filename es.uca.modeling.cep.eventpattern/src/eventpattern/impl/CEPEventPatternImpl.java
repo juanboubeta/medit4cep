@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getPatternName <em>Pattern Name</em>}</li>
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getPatternDescription <em>Pattern Description</em>}</li>
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getDomainName <em>Domain Name</em>}</li>
+ *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getPatternPriority <em>Pattern Priority</em>}</li>
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getPatternCreationDate <em>Pattern Creation Date</em>}</li>
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#isPatternDeployed <em>Pattern Deployed</em>}</li>
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getLinks <em>Links</em>}</li>
@@ -110,6 +111,26 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
   protected String domainName = DOMAIN_NAME_EDEFAULT;
 
   /**
+	 * The default value of the '{@link #getPatternPriority() <em>Pattern Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPatternPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Integer PATTERN_PRIORITY_EDEFAULT = new Integer(0);
+
+		/**
+	 * The cached value of the '{@link #getPatternPriority() <em>Pattern Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPatternPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected Integer patternPriority = PATTERN_PRIORITY_EDEFAULT;
+
+		/**
 	 * The default value of the '{@link #getPatternCreationDate() <em>Pattern Creation Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -281,6 +302,27 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integer getPatternPriority() {
+		return patternPriority;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPatternPriority(Integer newPatternPriority) {
+		Integer oldPatternPriority = patternPriority;
+		patternPriority = newPatternPriority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_PRIORITY, oldPatternPriority, patternPriority));
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -446,6 +488,8 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 				return getPatternDescription();
 			case EventpatternPackage.CEP_EVENT_PATTERN__DOMAIN_NAME:
 				return getDomainName();
+			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_PRIORITY:
+				return getPatternPriority();
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_CREATION_DATE:
 				return getPatternCreationDate();
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_DEPLOYED:
@@ -480,6 +524,9 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 				return;
 			case EventpatternPackage.CEP_EVENT_PATTERN__DOMAIN_NAME:
 				setDomainName((String)newValue);
+				return;
+			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_PRIORITY:
+				setPatternPriority((Integer)newValue);
 				return;
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_CREATION_DATE:
 				setPatternCreationDate((Date)newValue);
@@ -524,6 +571,9 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 			case EventpatternPackage.CEP_EVENT_PATTERN__DOMAIN_NAME:
 				setDomainName(DOMAIN_NAME_EDEFAULT);
 				return;
+			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_PRIORITY:
+				setPatternPriority(PATTERN_PRIORITY_EDEFAULT);
+				return;
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_CREATION_DATE:
 				setPatternCreationDate(PATTERN_CREATION_DATE_EDEFAULT);
 				return;
@@ -561,6 +611,8 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 				return PATTERN_DESCRIPTION_EDEFAULT == null ? patternDescription != null : !PATTERN_DESCRIPTION_EDEFAULT.equals(patternDescription);
 			case EventpatternPackage.CEP_EVENT_PATTERN__DOMAIN_NAME:
 				return DOMAIN_NAME_EDEFAULT == null ? domainName != null : !DOMAIN_NAME_EDEFAULT.equals(domainName);
+			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_PRIORITY:
+				return PATTERN_PRIORITY_EDEFAULT == null ? patternPriority != null : !PATTERN_PRIORITY_EDEFAULT.equals(patternPriority);
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_CREATION_DATE:
 				return PATTERN_CREATION_DATE_EDEFAULT == null ? patternCreationDate != null : !PATTERN_CREATION_DATE_EDEFAULT.equals(patternCreationDate);
 			case EventpatternPackage.CEP_EVENT_PATTERN__PATTERN_DEPLOYED:
@@ -594,6 +646,8 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 		result.append(patternDescription);
 		result.append(", domainName: ");
 		result.append(domainName);
+		result.append(", patternPriority: ");
+		result.append(patternPriority);
 		result.append(", patternCreationDate: ");
 		result.append(patternCreationDate);
 		result.append(", patternDeployed: ");

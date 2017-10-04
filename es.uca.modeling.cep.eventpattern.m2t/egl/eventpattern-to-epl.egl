@@ -2,9 +2,20 @@
 var patt : CEPEventPattern = CEPEventPattern.allInstances.at(0);
 %]
 @Name("[%=patt.patternName%]")
+[%
+if (patt.patternDescription.isDefined() and patt.patternDescription.trim().length() > 0) {
+%]
 @Description("[%=patt.patternDescription%]")
+[%
+}
+%]
 @Tag(name="domainName", value="[%=patt.domainName%]")
 [%
+if (patt.patternPriority > 0) {
+%]
+@Priority([%=patt.patternPriority%])
+[%
+}
 
 createGlobalVariables();
 

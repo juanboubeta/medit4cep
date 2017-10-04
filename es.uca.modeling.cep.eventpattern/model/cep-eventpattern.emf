@@ -17,6 +17,7 @@ class CEPEventPattern {
    attr String patternName;
    attr String patternDescription; 
    attr String domainName; 
+   attr Integer patternPriority = 0; 
    attr Date patternCreationDate; 
    attr boolean patternDeployed;
    

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eventpattern.CEPEventPattern#getPatternName <em>Pattern Name</em>}</li>
  *   <li>{@link eventpattern.CEPEventPattern#getPatternDescription <em>Pattern Description</em>}</li>
  *   <li>{@link eventpattern.CEPEventPattern#getDomainName <em>Domain Name</em>}</li>
+ *   <li>{@link eventpattern.CEPEventPattern#getPatternPriority <em>Pattern Priority</em>}</li>
  *   <li>{@link eventpattern.CEPEventPattern#getPatternCreationDate <em>Pattern Creation Date</em>}</li>
  *   <li>{@link eventpattern.CEPEventPattern#isPatternDeployed <em>Pattern Deployed</em>}</li>
  *   <li>{@link eventpattern.CEPEventPattern#getLinks <em>Links</em>}</li>
@@ -113,6 +114,33 @@ public interface CEPEventPattern extends EObject
   void setDomainName(String value);
 
   /**
+	 * Returns the value of the '<em><b>Pattern Priority</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pattern Priority</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pattern Priority</em>' attribute.
+	 * @see #setPatternPriority(Integer)
+	 * @see eventpattern.EventpatternPackage#getCEPEventPattern_PatternPriority()
+	 * @model default="0"
+	 * @generated
+	 */
+	Integer getPatternPriority();
+
+		/**
+	 * Sets the value of the '{@link eventpattern.CEPEventPattern#getPatternPriority <em>Pattern Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pattern Priority</em>' attribute.
+	 * @see #getPatternPriority()
+	 * @generated
+	 */
+	void setPatternPriority(Integer value);
+
+		/**
 	 * Returns the value of the '<em><b>Pattern Creation Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <p>

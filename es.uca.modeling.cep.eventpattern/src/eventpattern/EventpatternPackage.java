@@ -95,13 +95,22 @@ public interface EventpatternPackage extends EPackage
   int CEP_EVENT_PATTERN__DOMAIN_NAME = 2;
 
   /**
+	 * The feature id for the '<em><b>Pattern Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CEP_EVENT_PATTERN__PATTERN_PRIORITY = 3;
+
+		/**
 	 * The feature id for the '<em><b>Pattern Creation Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int CEP_EVENT_PATTERN__PATTERN_CREATION_DATE = 3;
+  int CEP_EVENT_PATTERN__PATTERN_CREATION_DATE = 4;
 
   /**
 	 * The feature id for the '<em><b>Pattern Deployed</b></em>' attribute.
@@ -110,7 +119,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int CEP_EVENT_PATTERN__PATTERN_DEPLOYED = 4;
+  int CEP_EVENT_PATTERN__PATTERN_DEPLOYED = 5;
 
   /**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -119,7 +128,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int CEP_EVENT_PATTERN__LINKS = 5;
+  int CEP_EVENT_PATTERN__LINKS = 6;
 
   /**
 	 * The feature id for the '<em><b>Event Pattern Elements</b></em>' containment reference list.
@@ -128,7 +137,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int CEP_EVENT_PATTERN__EVENT_PATTERN_ELEMENTS = 6;
+  int CEP_EVENT_PATTERN__EVENT_PATTERN_ELEMENTS = 7;
 
   /**
 	 * The feature id for the '<em><b>Complex Event</b></em>' containment reference.
@@ -137,7 +146,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int CEP_EVENT_PATTERN__COMPLEX_EVENT = 7;
+  int CEP_EVENT_PATTERN__COMPLEX_EVENT = 8;
 
   /**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -146,7 +155,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int CEP_EVENT_PATTERN__ACTIONS = 8;
+  int CEP_EVENT_PATTERN__ACTIONS = 9;
 
   /**
 	 * The number of structural features of the '<em>CEP Event Pattern</em>' class.
@@ -155,7 +164,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int CEP_EVENT_PATTERN_FEATURE_COUNT = 9;
+  int CEP_EVENT_PATTERN_FEATURE_COUNT = 10;
 
   /**
 	 * The meta object id for the '{@link eventpattern.impl.LinkImpl <em>Link</em>}' class.
@@ -2810,6 +2819,17 @@ public interface EventpatternPackage extends EPackage
   EAttribute getCEPEventPattern_DomainName();
 
   /**
+	 * Returns the meta object for the attribute '{@link eventpattern.CEPEventPattern#getPatternPriority <em>Pattern Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pattern Priority</em>'.
+	 * @see eventpattern.CEPEventPattern#getPatternPriority()
+	 * @see #getCEPEventPattern()
+	 * @generated
+	 */
+	EAttribute getCEPEventPattern_PatternPriority();
+
+		/**
 	 * Returns the meta object for the attribute '{@link eventpattern.CEPEventPattern#getPatternCreationDate <em>Pattern Creation Date</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4379,6 +4399,14 @@ public interface EventpatternPackage extends EPackage
     EAttribute CEP_EVENT_PATTERN__DOMAIN_NAME = eINSTANCE.getCEPEventPattern_DomainName();
 
     /**
+		 * The meta object literal for the '<em><b>Pattern Priority</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CEP_EVENT_PATTERN__PATTERN_PRIORITY = eINSTANCE.getCEPEventPattern_PatternPriority();
+
+				/**
 		 * The meta object literal for the '<em><b>Pattern Creation Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
