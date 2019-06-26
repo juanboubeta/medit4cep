@@ -33,34 +33,34 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class EventPropertyEventPropertyEventPropertiesCompartment2EditPart extends ListCompartmentEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 7003;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EventPropertyEventPropertyEventPropertiesCompartment2EditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean hasModelChildrenChanged(Notification evt) {
 		return false;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getCompartmentName() {
 		return Messages.EventPropertyEventPropertyEventPropertiesCompartment2EditPart_title;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
@@ -68,8 +68,8 @@ public class EventPropertyEventPropertyEventPropertiesCompartment2EditPart exten
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
@@ -83,8 +83,8 @@ public class EventPropertyEventPropertyEventPropertiesCompartment2EditPart exten
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setRatio(Double ratio) {
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);

@@ -1,0 +1,73 @@
+/*******************************************************************************
+ * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Juan Boubeta-Puig - initial metamodel and implementation
+ ******************************************************************************/
+
+@namespace(uri="www.uca.es/modeling/smartcontract", prefix="smartcontract")
+package smartcontract; 
+
+@gmf.diagram(model.extension="smartc", diagram.extension="smartc_diagram")
+class SmartContracts {
+   attr String name; 
+   attr String description; 
+   attr Date creationDate; 
+   val SmartContract[*] smartcontracts;  
+}
+
+@gmf.node(figure="rectangle", label="typeName", border.color="110,110,110",
+tool.name="SmartContract", tool.description="Add a SmartContract", resizable="false")
+class SmartContract {
+   attr String typeName;
+   attr String imagePath;  
+    
+   @gmf.compartment(layout="list")
+   val ContractFunction[*]#referencedSmartContract SmartContractProperties;  
+}
+
+@gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
+tool.name="Contract Function", tool.description="Add a Contract Function", resizable="false")
+class ContractFunction {
+   attr String name;
+   attr String imagePath;
+   ref SmartContract#SmartContractProperties referencedSmartContract;
+      
+   @gmf.compartment(layout="list")
+   val InputParameter[*]#InputReferencedFunction InputParametersFunction; 
+
+   @gmf.compartment(layout="list")
+   val OutputParameter[0..1]#OutputReferencedFunction OutputParametersFunction;
+    
+}
+
+abstract class Parameter {
+	attr String name;
+   	attr PropertyTypeValue type;
+}
+
+@gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
+tool.name="Input Parameter", tool.description="Add an Input Parameter", resizable="false")
+class InputParameter extends Parameter{
+   ref ContractFunction#InputParametersFunction InputReferencedFunction;
+}
+
+@gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
+tool.name="Output Parameter", tool.description="Add an Output Parameter", resizable="false")
+class OutputParameter extends Parameter{
+   ref ContractFunction#OutputParametersFunction OutputReferencedFunction;
+}
+
+enum PropertyTypeValue {
+   Unknown;
+   Boolean;
+   Integer;
+   Long; 
+   Double;
+   Float; 
+   String;
+}

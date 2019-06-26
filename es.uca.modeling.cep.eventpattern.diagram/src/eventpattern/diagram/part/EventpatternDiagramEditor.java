@@ -1,14 +1,6 @@
-/*******************************************************************************
- * Copyright (c) 2011, 2015 Juan Boubeta-Puig
- * All rights reserved. This program and the accompanying materials 
- * are made available under the terms of the Eclipse Public License v1.0 
- * which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     Juan Boubeta-Puig - modifications marked as @generated NOT
- ******************************************************************************/
-
+/*
+* 
+*/
 package eventpattern.diagram.part;
 
 import java.util.ArrayList;
@@ -34,8 +26,6 @@ import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.EditPartViewer;
-import org.eclipse.gef.palette.PaletteContainer;
-import org.eclipse.gef.palette.PaletteEntry;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
@@ -47,6 +37,7 @@ import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentPro
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.part.LastClickPositionProvider;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -72,162 +63,60 @@ import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
 
 import eventpattern.diagram.navigator.EventpatternNavigatorItem;
-import eventpattern.diagram.status.EventPatternsStatus;
 
 /**
- * @generated NOT
+ * @generated
  */
 public class EventpatternDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final String ID = "eventpattern.diagram.part.EventpatternDiagramEditorID"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final String CONTEXT_ID = "eventpattern.diagram.ui.diagramContext"; //$NON-NLS-1$
 
-	// Added
-	private EventpatternPaletteFactory paletteFactory;
+	/**
+	* @generated
+	*/
+	private LastClickPositionProvider myLastClickPositionProvider;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EventpatternDiagramEditor() {
 		super(true);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected String getContextID() {
 		return CONTEXT_ID;
 	}
 
 	/**
-	 * @generated NOT
-	 */
-	/*
+	* @generated
+	*/
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
 		new EventpatternPaletteFactory().fillPalette(root);
 		return root;
 	}
-	 */
-	// It is called every time that a diagram is open using EventpatternDiagramEditorUtil.openDiagram(resource)
-	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
-
-		// System.out.println("A new palette has been created.");
-
-		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-
-		// System.out.println("this.getTitle(): " + this.getTitle()); // returns xxx.pattern_diagram
-		// System.out.println("this.getTitleToolTip(): " + this.getTitleToolTip()); // returns projectName/xxx.pattern_diagram
-
-		EventPatternsStatus.setActivePatternName(this.getTitle().replace(".pattern_diagram", ""));
-
-		paletteFactory = new EventpatternPaletteFactory();
-		paletteFactory.fillPalette(root);
-
-		return root;
-	}
-
-	// Added
-	public void refreshPaletteComplexEvent() {
-
-		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
-		EventPatternsStatus.setActivePatternName(this.getTitle().replace(".pattern_diagram", ""));
-
-		clearPaletteComplexEvent(paletteRoot);
-
-		List<Object> containers = new ArrayList<Object>();
-		containers.addAll(paletteRoot.getChildren());
-
-		for (Object container : containers) {
-			PaletteContainer paletteContainer = (PaletteContainer) container;
-
-			if (paletteContainer.getLabel().equals("Complex Events")) {
-				paletteFactory.addComplexEventTools(paletteContainer);
-			}
-		}
-	}
-
-	// Added
-	private void clearPaletteComplexEvent(PaletteRoot paletteRoot) {
-
-		List<Object> containers = new ArrayList<Object>();
-		containers.addAll(paletteRoot.getChildren());
-
-		for (Object container : containers) {
-			PaletteContainer paletteContainer = (PaletteContainer) container;
-
-			if (paletteContainer.getLabel().equals("Complex Events")) {
-				List<Object> complexEventEntries = new ArrayList<Object>();
-				complexEventEntries.addAll(paletteContainer.getChildren());
-
-				for (Object complexEventEntry : complexEventEntries) {
-					PaletteEntry entry = (PaletteEntry) complexEventEntry;
-
-					if (!entry.getLabel().equals("New Complex Event Property")) {
-						paletteContainer.remove(entry);
-					}
-				}
-			}
-		}
-	}
-
-	// Added
-	public void refreshPaletteSimpleEvent() {
-
-		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
-
-		clearPaletteSimpleEvent(paletteRoot);
-
-		List<Object> containers = new ArrayList<Object>();
-		containers.addAll(paletteRoot.getChildren());
-
-		for (Object container : containers) {
-			PaletteContainer paletteContainer = (PaletteContainer) container;
-
-			if (paletteContainer.getLabel().equals("Simple Events")) {
-				paletteFactory.addSimpleEventTools(paletteContainer);
-			}
-		}
-	}
-
-	// Added
-	private void clearPaletteSimpleEvent(PaletteRoot paletteRoot) {
-
-		List<Object> containers = new ArrayList<Object>();
-		containers.addAll(paletteRoot.getChildren());
-
-		for (Object container : containers) {
-			PaletteContainer paletteContainer = (PaletteContainer) container;
-
-			if (paletteContainer.getLabel().equals("Simple Events")) {
-				List<Object> simpleEventEntries = new ArrayList<Object>();
-				simpleEventEntries.addAll(paletteContainer.getChildren());
-
-				for (Object simpleEventEntry : simpleEventEntries) {
-					PaletteEntry entry = (PaletteEntry) simpleEventEntry;
-					paletteContainer.remove(entry);
-				}
-			}
-		}
-	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected PreferencesHint getPreferencesHint() {
 		return EventpatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getContributorId() {
 		return EventpatternDiagramEditorPlugin.ID;
 	}
@@ -248,8 +137,8 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
 			return EventpatternDiagramEditorPlugin.getInstance().getDocumentProvider();
@@ -258,8 +147,8 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public TransactionalEditingDomain getEditingDomain() {
 		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
@@ -269,8 +158,8 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
 			setDocumentProvider(EventpatternDiagramEditorPlugin.getInstance().getDocumentProvider());
@@ -280,29 +169,29 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void gotoMarker(IMarker marker) {
 		MarkerNavigationService.getInstance().gotoMarker(this, marker);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean isSaveAsAllowed() {
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
@@ -373,15 +262,15 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ShowInContext getShowInContext() {
 		return new ShowInContext(getEditorInput(), getNavigatorSelection());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ISelection getNavigatorSelection() {
 		IDiagramDocument document = getDiagramDocument();
 		if (document == null) {
@@ -400,8 +289,8 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
 		DiagramEditorContextMenuProvider provider = new DiagramEditorContextMenuProvider(this,
@@ -411,8 +300,8 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void initializeGraphicalViewer() {
 		super.initializeGraphicalViewer();
 		getDiagramGraphicalViewer().addDropTargetListener(
@@ -431,23 +320,54 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 					}
 
 				});
+		startupLastClickPositionProvider();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
+	protected void startupLastClickPositionProvider() {
+		if (myLastClickPositionProvider == null) {
+			myLastClickPositionProvider = new LastClickPositionProvider(this);
+			myLastClickPositionProvider.attachToService();
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	protected void shutDownLastClickPositionProvider() {
+		if (myLastClickPositionProvider != null) {
+			myLastClickPositionProvider.detachFromService();
+			myLastClickPositionProvider.dispose();
+			myLastClickPositionProvider = null;
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+	public void dispose() {
+		shutDownLastClickPositionProvider();
+		super.dispose();
+	}
+
+	/**
+	* @generated
+	*/
 	private abstract class DropTargetListener extends DiagramDropTargetListener {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public DropTargetListener(EditPartViewer viewer, Transfer xfer) {
 			super(viewer, xfer);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		protected List getObjectsBeingDropped() {
 			TransferData data = getCurrentEvent().currentDataType;
 			HashSet<URI> uris = new HashSet<URI>();
@@ -481,8 +401,8 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		protected abstract Object getJavaObject(TransferData data);
 
 	}

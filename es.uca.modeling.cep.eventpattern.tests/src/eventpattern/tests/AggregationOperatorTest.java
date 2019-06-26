@@ -10,29 +10,26 @@ import eventpattern.AggregationOperator;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class AggregationOperatorTest extends UnaryOperatorTest
-{
+public abstract class AggregationOperatorTest extends UnaryOperatorTest {
 
-  /**
+	/**
 	 * Constructs a new Aggregation Operator test case with the given name.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AggregationOperatorTest(String name)
-  {
+	public AggregationOperatorTest(String name) {
 		super(name);
 	}
 
-  /**
+	/**
 	 * Returns the fixture for this Aggregation Operator test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected AggregationOperator getFixture()
-  {
+	@Override
+	protected AggregationOperator getFixture() {
 		return (AggregationOperator)fixture;
 	}
 

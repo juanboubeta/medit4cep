@@ -13,63 +13,57 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RangeTest extends UnaryOperatorTest
-{
+public class RangeTest extends UnaryOperatorTest {
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static void main(String[] args)
-  {
+	public static void main(String[] args) {
 		TestRunner.run(RangeTest.class);
 	}
 
-  /**
+	/**
 	 * Constructs a new Range test case with the given name.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public RangeTest(String name)
-  {
+	public RangeTest(String name) {
 		super(name);
 	}
 
-  /**
+	/**
 	 * Returns the fixture for this Range test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected Range getFixture()
-  {
+	@Override
+	protected Range getFixture() {
 		return (Range)fixture;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-  @Override
-  protected void setUp() throws Exception
-  {
+	@Override
+	protected void setUp() throws Exception {
 		setFixture(EventpatternFactory.eINSTANCE.createRange());
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-  @Override
-  protected void tearDown() throws Exception
-  {
+	@Override
+	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
 

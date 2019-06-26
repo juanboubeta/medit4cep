@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
@@ -39,15 +39,15 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartment2ItemSemanticEd
 		extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public WithinTimerWithinTimerWithinTimerElementsCompartment2ItemSemanticEditPolicy() {
 		super(EventpatternElementTypes.WithinTimer_3056);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (EventpatternElementTypes.And_3003 == req.getElementType()) {
 			return getGEFWrapper(new And2CreateCommand(req));

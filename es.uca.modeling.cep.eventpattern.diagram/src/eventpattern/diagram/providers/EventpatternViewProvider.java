@@ -54,8 +54,8 @@ import eventpattern.diagram.part.EventpatternVisualIDRegistry;
 public class EventpatternViewProvider extends AbstractProvider implements IViewProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public final boolean provides(IOperation operation) {
 		if (operation instanceof CreateViewForKindOperation) {
 			return provides((CreateViewForKindOperation) operation);
@@ -72,29 +72,29 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-		    if (op.getViewKind() == Node.class)
-		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		    if (op.getViewKind() == Edge.class)
-		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Node.class)
+					return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+				if (op.getViewKind() == Edge.class)
+					return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
 		*/
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean provides(CreateDiagramViewOperation op) {
 		return CEPEventPatternEditPart.MODEL_ID.equals(op.getSemanticHint())
 				&& EventpatternVisualIDRegistry.getDiagramVisualID(getSemanticElement(op.getSemanticAdapter())) != -1;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean provides(CreateNodeViewOperation op) {
 		if (op.getContainerView() == null) {
 			return false;
@@ -295,8 +295,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean provides(CreateEdgeViewOperation op) {
 		IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
 		if (!EventpatternElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
@@ -316,8 +316,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
@@ -328,8 +328,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createNode(IAdaptable semanticAdapter, View containerView, String semanticHint, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		final EObject domainElement = getSemanticElement(semanticAdapter);
@@ -546,8 +546,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
@@ -562,8 +562,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createAnd_2001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -598,8 +598,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createOr_2002(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -634,8 +634,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createNot_2003(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -670,8 +670,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createAddition_2004(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -706,8 +706,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createSubtraction_2005(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -742,8 +742,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createMultiplication_2006(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -778,8 +778,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createDivision_2007(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -814,8 +814,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createModulus_2008(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -850,8 +850,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEqual_2009(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -886,8 +886,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createNotEqual_2010(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -922,8 +922,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createLessThan_2011(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -958,8 +958,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createGreaterThan_2012(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -994,8 +994,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createLessEqual_2013(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1030,8 +1030,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createGreaterEqual_2014(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1066,8 +1066,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEvery_2015(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1102,8 +1102,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEveryDistinct_2016(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1138,8 +1138,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createRepeat_2017(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1168,8 +1168,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createUntil_2018(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1204,8 +1204,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createRange_2019(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1235,8 +1235,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createFollowedBy_2020(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1271,8 +1271,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createWhile_2021(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1307,8 +1307,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createMax_2022(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1343,8 +1343,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createMin_2023(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1379,8 +1379,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createAvg_2024(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1415,8 +1415,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createCount_2025(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1451,8 +1451,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createSum_2026(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1487,8 +1487,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEvent_2027(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1526,8 +1526,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEventProperty_2028(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1566,8 +1566,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createValue_2029(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1637,8 +1637,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createWithinTimer_2030(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1673,8 +1673,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createTimeInterval_2031(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1715,8 +1715,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createTimeSchedule_2032(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1757,8 +1757,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEmail_2033(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1798,8 +1798,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createTwitter_2039(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1834,8 +1834,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createSlidingEventInterval_2034(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1870,8 +1870,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createBatchingEventInterval_2035(EObject domainElement, View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1906,8 +1906,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createSlidingTimeInterval_2036(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1942,8 +1942,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createBatchingTimeInterval_2037(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -1978,8 +1978,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createComplexEvent_2038(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -2019,8 +2019,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEventProperty_3001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -2058,8 +2058,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEventProperty_3002(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -2097,8 +2097,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createAnd_3003(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2132,8 +2132,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createOr_3004(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2167,8 +2167,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createNot_3005(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2202,8 +2202,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createAddition_3006(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2237,8 +2237,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createSubtraction_3007(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2272,8 +2272,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createMultiplication_3008(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2307,8 +2307,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createDivision_3009(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2342,8 +2342,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createModulus_3010(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2377,8 +2377,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEqual_3011(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2412,8 +2412,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createNotEqual_3012(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2447,8 +2447,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createLessThan_3013(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2482,8 +2482,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createGreaterThan_3014(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2517,8 +2517,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createLessEqual_3015(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2552,8 +2552,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createGreaterEqual_3016(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2587,8 +2587,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEvery_3017(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2622,8 +2622,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEveryDistinct_3018(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2657,8 +2657,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createRepeat_3019(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -2686,8 +2686,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createUntil_3020(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2721,8 +2721,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createRange_3021(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -2751,8 +2751,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createFollowedBy_3022(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2786,8 +2786,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createWhile_3023(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2821,8 +2821,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEvent_3024(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -2859,8 +2859,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEventProperty_3025(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -2898,8 +2898,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createValue_3026(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -2932,8 +2932,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createAnd_3027(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -2967,8 +2967,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createOr_3028(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3002,8 +3002,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createNot_3029(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3037,8 +3037,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createAddition_3030(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3072,8 +3072,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createSubtraction_3031(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3107,8 +3107,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createMultiplication_3032(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3142,8 +3142,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createDivision_3033(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3177,8 +3177,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createModulus_3034(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3212,8 +3212,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEqual_3035(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3247,8 +3247,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createNotEqual_3036(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3282,8 +3282,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createLessThan_3037(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3317,8 +3317,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createGreaterThan_3038(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3352,8 +3352,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createLessEqual_3039(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3387,8 +3387,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createGreaterEqual_3040(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3422,8 +3422,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEvery_3041(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3457,8 +3457,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEveryDistinct_3042(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3492,8 +3492,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createRepeat_3043(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -3521,8 +3521,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createUntil_3044(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3556,8 +3556,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createRange_3045(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -3586,8 +3586,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createFollowedBy_3046(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3621,8 +3621,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createWhile_3047(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3656,8 +3656,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createMax_3048(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3691,8 +3691,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createMin_3049(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3726,8 +3726,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createAvg_3050(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3761,8 +3761,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createCount_3051(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3796,8 +3796,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createSum_3052(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -3831,8 +3831,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEvent_3053(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -3869,8 +3869,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createEventProperty_3054(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -3908,8 +3908,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createValue_3055(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -3977,8 +3977,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createWithinTimer_3056(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -4012,8 +4012,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createTimeInterval_3057(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -4053,8 +4053,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createTimeSchedule_3058(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -4094,8 +4094,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Node createComplexEventProperty_3059(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -4129,8 +4129,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Edge createLink_4001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
@@ -4171,8 +4171,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void stampShortcut(View containerView, Node target) {
 		if (!CEPEventPatternEditPart.MODEL_ID.equals(EventpatternVisualIDRegistry.getModelID(containerView))) {
 			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
@@ -4183,8 +4183,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Node createLabel(View owner, String hint) {
 		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
 		rv.setType(hint);
@@ -4193,8 +4193,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Node createCompartment(View owner, String hint, boolean canCollapse, boolean hasTitle, boolean canSort,
 			boolean canFilter) {
 		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
@@ -4223,8 +4223,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private EObject getSemanticElement(IAdaptable semanticAdapter) {
 		if (semanticAdapter == null) {
 			return null;

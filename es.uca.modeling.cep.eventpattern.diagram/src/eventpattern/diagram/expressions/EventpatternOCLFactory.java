@@ -27,29 +27,29 @@ import eventpattern.diagram.part.EventpatternDiagramEditorPlugin;
 public class EventpatternOCLFactory {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EventpatternAbstractExpression[] expressions;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final String[] expressionBodies;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected EventpatternOCLFactory() {
 		this.expressions = new EventpatternAbstractExpression[2];
 		this.expressionBodies = new String[] {
-				"self <> oppositeEnd \r\n\tand ( \r\n\t   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))\r\n\t   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or \r\n\t        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) \r\n\t        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) \r\n\t   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))\r\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) \r\n\t      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) \r\n\t         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) \r\n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        \r\n\t   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) \r\n\t      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  \r\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) \r\n\t      and oppositeEnd.oclIsKindOf(AggregationOperator)) \r\n\t   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   \r\n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))\r\n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))\r\n\t   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) \r\n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(GroupBy))\r\n\t)", //$NON-NLS-1$
+				"self <> oppositeEnd \n\tand ( \n\t   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))\n\t   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or \n\t        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) \n\t        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) \n\t   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) \n\t      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) \n\t         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) \n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        \n\t   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) \n\t      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  \n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) \n\t      and oppositeEnd.oclIsKindOf(AggregationOperator)) \n\t   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   \n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))\n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))\n\t   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) \n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(GroupBy))\n\t)", //$NON-NLS-1$
 				"self <> oppositeEnd", //$NON-NLS-1$
 		};
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static EventpatternOCLFactory getInstance() {
 		EventpatternOCLFactory instance = EventpatternDiagramEditorPlugin.getInstance().getEventpatternOCLFactory();
 		if (instance == null) {
@@ -60,15 +60,15 @@ public class EventpatternOCLFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String getExpressionBody(int index) {
 		return getInstance().expressionBodies[index];
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static EventpatternAbstractExpression getExpression(int index, EClassifier context,
 			Map<String, EClassifier> environment) {
 		EventpatternOCLFactory cached = getInstance();
@@ -83,40 +83,40 @@ public class EventpatternOCLFactory {
 	}
 
 	/**
-	 * This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
-	 * @generated
-	 */
+	* This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
+	* @generated
+	*/
 	public static EventpatternAbstractExpression getExpression(String body, EClassifier context,
 			Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
 	/**
-	 * This method will become private in the next release
-	 * @generated
-	 */
+	* This method will become private in the next release
+	* @generated
+	*/
 	public static EventpatternAbstractExpression getExpression(String body, EClassifier context) {
 		return getExpression(body, context, Collections.<String, EClassifier>emptyMap());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static class Expression extends EventpatternAbstractExpression {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private final org.eclipse.ocl.ecore.OCL oclInstance;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private OCLExpression oclExpression;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
 			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
@@ -132,8 +132,8 @@ public class EventpatternOCLFactory {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@SuppressWarnings("rawtypes")
 		protected Object doEvaluate(Object context, Map env) {
 			if (oclExpression == null) {
@@ -155,8 +155,8 @@ public class EventpatternOCLFactory {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv,
 				Map<String, EClassifier> environment) {
 			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
@@ -169,8 +169,8 @@ public class EventpatternOCLFactory {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv,
 				String name, EClassifier type) {
 			Variable var = EcoreFactory.eINSTANCE.createVariable();

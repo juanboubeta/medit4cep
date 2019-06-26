@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.part;
 
 import org.eclipse.emf.ecore.EObject;
@@ -11,8 +11,8 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterNodeDescriptor;
  */
 public class EventpatternNodeDescriptor extends UpdaterNodeDescriptor {
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EventpatternNodeDescriptor(EObject modelElement, int visualID) {
 		super(modelElement, visualID);
 	}

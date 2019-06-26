@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Validation
+Bundle-SymbolicName: es.uca.modeling.cep.smartcontract.validation
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: es.uca.modeling.blockchain.domain.validation
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

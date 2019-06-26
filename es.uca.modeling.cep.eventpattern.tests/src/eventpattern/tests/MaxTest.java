@@ -13,63 +13,57 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MaxTest extends AggregationOperatorTest
-{
+public class MaxTest extends AggregationOperatorTest {
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static void main(String[] args)
-  {
+	public static void main(String[] args) {
 		TestRunner.run(MaxTest.class);
 	}
 
-  /**
+	/**
 	 * Constructs a new Max test case with the given name.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public MaxTest(String name)
-  {
+	public MaxTest(String name) {
 		super(name);
 	}
 
-  /**
+	/**
 	 * Returns the fixture for this Max test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected Max getFixture()
-  {
+	@Override
+	protected Max getFixture() {
 		return (Max)fixture;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-  @Override
-  protected void setUp() throws Exception
-  {
+	@Override
+	protected void setUp() throws Exception {
 		setFixture(EventpatternFactory.eINSTANCE.createMax());
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-  @Override
-  protected void tearDown() throws Exception
-  {
+	@Override
+	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
 

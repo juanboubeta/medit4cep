@@ -433,7 +433,7 @@ public class LinkImpl extends EObjectImpl implements Link
   {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (order: ");
 		result.append(order);
 		result.append(')');

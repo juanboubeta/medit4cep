@@ -12,47 +12,43 @@ import junit.framework.TestCase;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class OperandTest extends TestCase
-{
+public abstract class OperandTest extends TestCase {
 
-  /**
+	/**
 	 * The fixture for this Operand test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected Operand fixture = null;
+	protected Operand fixture = null;
 
-  /**
+	/**
 	 * Constructs a new Operand test case with the given name.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public OperandTest(String name)
-  {
+	public OperandTest(String name) {
 		super(name);
 	}
 
-  /**
+	/**
 	 * Sets the fixture for this Operand test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected void setFixture(Operand fixture)
-  {
+	protected void setFixture(Operand fixture) {
 		this.fixture = fixture;
 	}
 
-  /**
+	/**
 	 * Returns the fixture for this Operand test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected Operand getFixture()
-  {
+	protected Operand getFixture() {
 		return fixture;
 	}
 

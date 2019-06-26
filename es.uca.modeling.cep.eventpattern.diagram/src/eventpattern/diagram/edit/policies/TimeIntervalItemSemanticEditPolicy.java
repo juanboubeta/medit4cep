@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.edit.policies;
 
 import java.util.Iterator;
@@ -28,15 +28,15 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class TimeIntervalItemSemanticEditPolicy extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public TimeIntervalItemSemanticEditPolicy() {
 		super(EventpatternElementTypes.TimeInterval_2031);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);

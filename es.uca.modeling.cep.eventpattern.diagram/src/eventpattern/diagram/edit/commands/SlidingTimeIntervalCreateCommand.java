@@ -25,16 +25,16 @@ import eventpattern.SlidingTimeInterval;
 public class SlidingTimeIntervalCreateCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public SlidingTimeIntervalCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
-	 * FIXME: replace with setElementToEdit()
-	 * @generated
-	 */
+	* FIXME: replace with setElementToEdit()
+	* @generated
+	*/
 	protected EObject getElementToEdit() {
 		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
@@ -44,16 +44,16 @@ public class SlidingTimeIntervalCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		return true;
 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		SlidingTimeInterval newElement = EventpatternFactory.eINSTANCE.createSlidingTimeInterval();
 
@@ -67,8 +67,8 @@ public class SlidingTimeIntervalCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void doConfigure(SlidingTimeInterval newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();

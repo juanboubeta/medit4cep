@@ -21,7 +21,7 @@ package eventpattern;
  * </ul>
  *
  * @see eventpattern.EventpatternPackage#getTimeSchedule()
- * @model annotation="gmf.node figure='svg' svg.uri='platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeSchedule.svg' size='30,30' resizable='false' margin='0' label.placement='external' label.icon='false' label='dayOfWeek, dayOfMonth, month, hour, minute, second' label.parser='MessageFormatParser' label.readOnly='true' label.view.pattern=' {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} ' tool.name='Time Schedule' tool.description='Add a time schedule'"
+ * @model annotation="gmf.node figure='svg' svg.uri='platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeSchedule.svg' size='30,30' resizable='false' margin='0' label.placement='external' label.icon='false' label='dayOfWeek, dayOfMonth, month, hour, minute, second' label.parser='MessageFormatParser' label.readOnly='true' label.view.pattern=' {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0&lt;{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1&lt; {3,number}:}{4,choice,-1#mm:|-1&lt;{4,number}:}{5,choice,-1#ss|-1&lt;{5,number}} ' tool.name='Time Schedule' tool.description='Add a time schedule'"
  * @generated
  */
 public interface TimeSchedule extends PatternOperand

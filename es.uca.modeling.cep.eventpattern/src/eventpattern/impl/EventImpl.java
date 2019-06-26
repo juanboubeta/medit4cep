@@ -293,7 +293,7 @@ public class EventImpl extends PatternOperandImpl implements Event
   {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (typeName: ");
 		result.append(typeName);
 		result.append(", imagePath: ");

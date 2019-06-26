@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/es.uca.modeling.cep.smartcontract/src"
+    modelPluginID="es.uca.modeling.cep.smartcontract" modelName="Smartcontract" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>smartcontract.emf</foreignModel>
+  <genPackages prefix="Smartcontract" disposableProviderFactory="true" ecorePackage="smartcontract.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="smartcontract.ecore#//PropertyTypeValue">
+      <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Long"/>
+      <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/String"/>
+    </genEnums>
+    <genClasses ecoreClass="smartcontract.ecore#//SmartContracts">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//SmartContracts/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//SmartContracts/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//SmartContracts/creationDate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//SmartContracts/smartcontracts"/>
+    </genClasses>
+    <genClasses ecoreClass="smartcontract.ecore#//SmartContract">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//SmartContract/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//SmartContract/imagePath"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//SmartContract/SmartContractProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="smartcontract.ecore#//ContractFunction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//ContractFunction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//ContractFunction/imagePath"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smartcontract.ecore#//ContractFunction/referencedSmartContract"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//ContractFunction/InputParametersFunction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//ContractFunction/OutputParametersFunction"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="smartcontract.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//Parameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//Parameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="smartcontract.ecore#//InputParameter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smartcontract.ecore#//InputParameter/InputReferencedFunction"/>
+    </genClasses>
+    <genClasses ecoreClass="smartcontract.ecore#//OutputParameter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smartcontract.ecore#//OutputParameter/OutputReferencedFunction"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

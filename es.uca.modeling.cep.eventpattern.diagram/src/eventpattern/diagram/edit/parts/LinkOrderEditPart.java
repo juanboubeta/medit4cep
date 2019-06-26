@@ -1,14 +1,6 @@
-/*******************************************************************************
- * Copyright (c) 2011, 2015 Juan Boubeta-Puig
- * All rights reserved. This program and the accompanying materials 
- * are made available under the terms of the Eclipse Public License v1.0 
- * which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
+/*
  * 
- * Contributors:
- *     Juan Boubeta-Puig - modifications marked as @generated NOT
- ******************************************************************************/
-
+ */
 package eventpattern.diagram.edit.parts;
 
 import java.util.Collections;
@@ -45,7 +37,6 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.tooling.runtime.directedit.TextDirectEditManager2;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
 import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultLinkLabelDragPolicy;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
@@ -57,7 +48,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 
-import eventpattern.Link;
 import eventpattern.diagram.edit.policies.EventpatternTextSelectionEditPolicy;
 import eventpattern.diagram.part.EventpatternVisualIDRegistry;
 import eventpattern.diagram.providers.EventpatternElementTypes;
@@ -69,38 +59,38 @@ import eventpattern.diagram.providers.EventpatternParserProvider;
 public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 6001;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private DirectEditManager manager;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private List<?> parserElements;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String defaultText;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ILabelDelegate labelDelegate;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	static {
 		registerSnapBackPosition(
 				EventpatternVisualIDRegistry.getType(eventpattern.diagram.edit.parts.LinkOrderEditPart.VISUAL_ID),
@@ -108,15 +98,15 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public LinkOrderEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
@@ -125,15 +115,15 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public int getKeyPoint() {
 		return ConnectionLocator.SOURCE;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected String getLabelTextHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getText();
@@ -145,8 +135,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLabelTextHelper(IFigure figure, String text) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setText(text);
@@ -158,8 +148,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Image getLabelIconHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getIcon();
@@ -171,8 +161,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setIcon(icon);
@@ -186,8 +176,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void setLabel(IFigure figure) {
 		unregisterVisuals();
 		setFigure(figure);
@@ -197,85 +187,60 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected EObject getParserElement() {
 		return resolveSemanticElement();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Image getLabelIcon() {
 		return null;
 	}
 
 	/**
-	 * @generated NOT
-	 */
+	* @generated
+	*/
 	protected String getLabelText() {
 		String text = null;
 		EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
 			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
-
-			Link link = (Link) parserElement;
-			String className = link.getOperator().getClass().getSimpleName();
-			String superClassName = link.getOperator().getClass().getSuperclass().getSimpleName();
-
-			// If the operator is unary, aggregation, action or complex event, then the label will not be shown.
-			if (superClassName.equals("UnaryOperatorImpl") || superClassName.equals("AggregationOperatorImpl")
-					|| superClassName.equals("ActionImpl")) {
-				text = " ";
-			} else if (className.equals("EveryDistinctImpl")) {
-				if (link.getOrder() == 1)
-					text = "event";
-				else
-					text = "distinct";
-			} else if (className.equals("WhileImpl")) {
-				if (link.getOrder() == 2)
-					text = "condition";
-				else
-					text = " ";
-			} else if (className.equals("ComplexEventImpl")) {
-				text = "all properties";
-			}
-
 		}
-
 		if (text == null || text.length() == 0) {
 			text = defaultText;
 		}
-
 		return text;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		refreshSelectionFeedback();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getEditText() {
 		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
@@ -284,15 +249,15 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean isEditable() {
 		return getParser() != null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ICellEditorValidator getEditTextValidator() {
 		return new ICellEditorValidator() {
 
@@ -322,8 +287,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IContentAssistProcessor getCompletionProcessor() {
 		if (getParserElement() == null || getParser() == null) {
 			return null;
@@ -332,15 +297,15 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ParserOptions getParserOptions() {
 		return ParserOptions.NONE;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IParser getParser() {
 		if (parser == null) {
 			parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Link_4001, getParserElement(),
@@ -350,8 +315,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected DirectEditManager getManager() {
 		if (manager == null) {
 			setManager(
@@ -361,22 +326,22 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setManager(DirectEditManager manager) {
 		this.manager = manager;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void performDirectEdit() {
 		getManager().show();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void performDirectEdit(Point eventLocation) {
 		if (getManager().getClass() == TextDirectEditManager.class) {
 			((TextDirectEditManager) getManager()).show(eventLocation.getSWTPoint());
@@ -384,8 +349,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
@@ -396,8 +361,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void performDirectEditRequest(Request request) {
 		final Request theRequest = request;
 		try {
@@ -426,8 +391,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		refreshLabel();
@@ -438,8 +403,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
@@ -447,8 +412,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshUnderline() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null && getFigure() instanceof WrappingLabel) {
@@ -457,8 +422,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshStrikeThrough() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null && getFigure() instanceof WrappingLabel) {
@@ -467,8 +432,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshFont() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null) {
@@ -479,16 +444,16 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void refreshSelectionFeedback() {
 		requestEditPolicyFeedbackRefresh(EditPolicy.PRIMARY_DRAG_ROLE);
 		requestEditPolicyFeedbackRefresh(EditPolicy.SELECTION_FEEDBACK_ROLE);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void requestEditPolicyFeedbackRefresh(String editPolicyKey) {
 		Object editPolicy = getEditPolicy(editPolicyKey);
 		if (editPolicy instanceof IRefreshableFeedbackEditPolicy) {
@@ -497,15 +462,15 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setFontColor(Color color) {
 		getFigure().setForegroundColor(color);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void addSemanticListeners() {
 		if (getParser() instanceof ISemanticParser) {
 			EObject element = resolveSemanticElement();
@@ -519,8 +484,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void removeSemanticListeners() {
 		if (parserElements != null) {
 			for (int i = 0; i < parserElements.size(); i++) {
@@ -532,8 +497,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected AccessibleEditPart getAccessibleEditPart() {
 		if (accessibleEP == null) {
 			accessibleEP = new AccessibleGraphicalEditPart() {
@@ -547,15 +512,15 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ILabelDelegate getLabelDelegate() {
 		if (labelDelegate == null) {
 			IFigure label = getFigure();
@@ -569,8 +534,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {
@@ -580,8 +545,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
@@ -615,8 +580,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createFigure() {
 		IFigure label = createFigurePrim();
 		defaultText = getLabelTextHelper(label);
@@ -624,8 +589,8 @@ public class LinkOrderEditPart extends LabelEditPart implements ITextAwareEditPa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createFigurePrim() {
 		return new LinkLabelFigure();
 	}

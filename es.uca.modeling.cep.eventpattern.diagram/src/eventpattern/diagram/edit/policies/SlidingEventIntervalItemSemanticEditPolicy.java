@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.edit.policies;
 
 import java.util.Iterator;
@@ -60,15 +60,15 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class SlidingEventIntervalItemSemanticEditPolicy extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public SlidingEventIntervalItemSemanticEditPolicy() {
 		super(EventpatternElementTypes.SlidingEventInterval_2034);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
@@ -87,8 +87,8 @@ public class SlidingEventIntervalItemSemanticEditPolicy extends EventpatternBase
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void addDestroyChildNodesCommand(ICompositeCommand cmd) {
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {

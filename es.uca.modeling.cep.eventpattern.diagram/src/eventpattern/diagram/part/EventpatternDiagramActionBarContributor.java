@@ -19,22 +19,22 @@ import org.eclipse.ui.IWorkbenchPage;
 public class EventpatternDiagramActionBarContributor extends DiagramActionBarContributor {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Class getEditorClass() {
 		return EventpatternDiagramEditor.class;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected String getEditorId() {
 		return EventpatternDiagramEditor.ID;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
 		// print preview

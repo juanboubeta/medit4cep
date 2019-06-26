@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.navigator;
 
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -18,20 +18,20 @@ import eventpattern.diagram.part.EventpatternDiagramEditorPlugin;
 public class EventpatternDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
 			EventpatternDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init(ICommonContentExtensionSite aConfig) {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Image getImage(Object element) {
 		if (element instanceof EventpatternDomainNavigatorItem) {
 			return myAdapterFactoryLabelProvider.getImage(((EventpatternDomainNavigatorItem) element).getEObject());
@@ -40,8 +40,8 @@ public class EventpatternDomainNavigatorLabelProvider implements ICommonLabelPro
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getText(Object element) {
 		if (element instanceof EventpatternDomainNavigatorItem) {
 			return myAdapterFactoryLabelProvider.getText(((EventpatternDomainNavigatorItem) element).getEObject());
@@ -50,36 +50,36 @@ public class EventpatternDomainNavigatorLabelProvider implements ICommonLabelPro
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void addListener(ILabelProviderListener listener) {
 		myAdapterFactoryLabelProvider.addListener(listener);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void dispose() {
 		myAdapterFactoryLabelProvider.dispose();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean isLabelProperty(Object element, String property) {
 		return myAdapterFactoryLabelProvider.isLabelProperty(element, property);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void removeListener(ILabelProviderListener listener) {
 		myAdapterFactoryLabelProvider.removeListener(listener);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void restoreState(IMemento aMemento) {
 	}
 
@@ -90,8 +90,8 @@ public class EventpatternDomainNavigatorLabelProvider implements ICommonLabelPro
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getDescription(Object anElement) {
 		return null;
 	}

@@ -1,22 +1,7 @@
-/*******************************************************************************
- * Copyright (c) 2011, 2015 Juan Boubeta-Puig
- * All rights reserved. This program and the accompanying materials 
- * are made available under the terms of the Eclipse Public License v1.0 
- * which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
+/*
  * 
- * Contributors:
- *     Juan Boubeta-Puig - modifications marked as @generated NOT
- ******************************************************************************/
-
+ */
 package eventpattern.diagram.edit.parts;
-
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
@@ -25,9 +10,6 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -48,13 +30,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
 
 import eventpattern.diagram.edit.policies.Event2ItemSemanticEditPolicy;
 import eventpattern.diagram.edit.policies.OpenDiagramEditPolicy;
@@ -67,30 +43,30 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class Event2EditPart extends ShapeNodeEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 3024;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure contentPane;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure primaryShape;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Event2EditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(EventpatternVisualIDRegistry.TYPED_INSTANCE));
@@ -102,8 +78,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
@@ -127,22 +103,22 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createNodeShape() {
 		return primaryShape = new EventFigure();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EventFigure getPrimaryShape() {
 		return (EventFigure) primaryShape;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof EventTypeName2EditPart) {
 			((EventTypeName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureEventLabelFigure());
@@ -158,8 +134,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof EventTypeName2EditPart) {
 			return true;
@@ -173,8 +149,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
@@ -183,8 +159,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
@@ -193,8 +169,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof EventEventEventPropertiesCompartment2EditPart) {
 			return getPrimaryShape().getEventEventPropertiesCompartmentFigure();
@@ -203,16 +179,16 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPolicy getPrimaryDragEditPolicy() {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
 		if (result instanceof ResizableEditPolicy) {
@@ -223,13 +199,13 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * Creates figure for this edit part.
-	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
-	 * @generated
-	 */
+	* Creates figure for this edit part.
+	* 
+	* Body of this method does not depend on settings in generation model
+	* so you may safely remove <i>generated</i> tag and modify it.
+	* 
+	* @generated
+	*/
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -240,11 +216,11 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
-	 * @generated
-	 */
+	* Default implementation treats passed figure as content pane.
+	* Respects layout one may have set for generated figure.
+	* @param nodeShape instance of generated figure class
+	* @generated
+	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
@@ -255,8 +231,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure getContentPane() {
 		if (contentPane != null) {
 			return contentPane;
@@ -265,8 +241,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setForegroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
@@ -274,8 +250,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setBackgroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setBackgroundColor(color);
@@ -283,8 +259,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineWidth(width);
@@ -292,8 +268,8 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLineType(int style) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
@@ -301,15 +277,15 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(EventpatternVisualIDRegistry.getType(EventTypeName2EditPart.VISUAL_ID));
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
@@ -388,67 +364,4 @@ public class Event2EditPart extends ShapeNodeEditPart {
 	 */
 	static final Color THIS_FORE = new Color(null, 110, 110, 110);
 
-	/**
-	 * This method will show the icon image when the attribute imagePath of 
-	 * an Event node is changed.
-	 * @generated NOT
-	 */
-	protected void handleNotificationEvent(Notification event) {
-		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
-			handleMajorSemanticChange();
-		} else {
-			if (event.getFeature() instanceof EAttribute) {
-				EAttribute eAttribute = (EAttribute) event.getFeature();
-
-				if (eAttribute.getName().equalsIgnoreCase("imagePath")) {
-					EventFigure figure = (EventFigure) this.getPrimaryShape();
-
-					Image image;
-					String elementName = event.getNewStringValue();
-
-					if (elementName != null && !elementName.equals("") && new File(elementName).exists()) {
-						try {
-							File file = new File(elementName);
-							URL url = file.toURI().toURL();
-							image = ImageDescriptor.createFromURL(url).createImage();
-						} catch (MalformedURLException e) {
-							e.printStackTrace();
-							image = null;
-						}
-
-						Image scaledImage;
-
-						scaledImage = new Image(Display.getDefault(), image.getImageData().scaledTo(20, 20));
-
-						figure.getFigureEventLabelFigure().setIcon(scaledImage);
-					}
-				}
-			}
-
-			super.handleNotificationEvent(event);
-		}
-	}
-
-	// Open the properties view, when the user has double-clicked on the node.
-	public void performRequest(Request req) {
-
-		if (req.getType() == REQ_OPEN) {
-			mouseDoubleClick();
-		} else {
-			super.performRequest(req);
-		}
-	}
-
-	protected void mouseDoubleClick() {
-		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-
-		if (page != null) {
-			try {
-				page.showView("org.eclipse.ui.views.PropertySheet");
-			} catch (PartInitException e) {
-				e.printStackTrace();
-			}
-		}
-	}
 }

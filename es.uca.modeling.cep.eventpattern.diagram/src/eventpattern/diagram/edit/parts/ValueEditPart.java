@@ -3,10 +3,6 @@
  */
 package eventpattern.diagram.edit.parts;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -28,18 +24,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
 
 import eventpattern.diagram.edit.policies.ValueItemSemanticEditPolicy;
 import eventpattern.diagram.part.EventpatternVisualIDRegistry;
-import eventpattern.diagram.providers.EventpatternElementTypes;
 
 /**
  * @generated
@@ -47,30 +38,30 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class ValueEditPart extends ShapeNodeEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 2029;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure contentPane;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure primaryShape;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ValueEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ValueItemSemanticEditPolicy());
@@ -80,8 +71,8 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
@@ -105,22 +96,22 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createNodeShape() {
 		return primaryShape = new ValueFigure();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ValueFigure getPrimaryShape() {
 		return (ValueFigure) primaryShape;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ValueValueEditPart) {
 			((ValueValueEditPart) childEditPart).setLabel(getPrimaryShape().getFigureValueLabelFigure());
@@ -130,8 +121,8 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ValueValueEditPart) {
 			return true;
@@ -140,8 +131,8 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
@@ -150,8 +141,8 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
@@ -160,28 +151,28 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		return getContentPane();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(30, 30);
 		return result;
 	}
 
 	/**
-	 * Creates figure for this edit part.
-	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
-	 * @generated
-	 */
+	* Creates figure for this edit part.
+	* 
+	* Body of this method does not depend on settings in generation model
+	* so you may safely remove <i>generated</i> tag and modify it.
+	* 
+	* @generated
+	*/
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -192,11 +183,11 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
-	 * @generated
-	 */
+	* Default implementation treats passed figure as content pane.
+	* Respects layout one may have set for generated figure.
+	* @param nodeShape instance of generated figure class
+	* @generated
+	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
@@ -207,8 +198,8 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure getContentPane() {
 		if (contentPane != null) {
 			return contentPane;
@@ -217,8 +208,8 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setForegroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
@@ -226,8 +217,8 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setBackgroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setBackgroundColor(color);
@@ -235,8 +226,8 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineWidth(width);
@@ -244,8 +235,8 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLineType(int style) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
@@ -253,15 +244,15 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(EventpatternVisualIDRegistry.getType(ValueValueEditPart.VISUAL_ID));
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
 				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
@@ -333,25 +324,4 @@ public class ValueEditPart extends ShapeNodeEditPart {
 	 */
 	static final Color THIS_FORE = new Color(null, 110, 110, 110);
 
-	// Open the properties view, when the user has double-clicked on the node.
-	public void performRequest(Request req) {
-
-		if (req.getType() == REQ_OPEN) {
-			mouseDoubleClick();
-		} else {
-			super.performRequest(req);
-		}
-	}
-
-	protected void mouseDoubleClick() {
-		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-
-		if (page != null) {
-			try {
-				page.showView("org.eclipse.ui.views.PropertySheet");
-			} catch (PartInitException e) {
-				e.printStackTrace();
-			}
-		}
-	}
 }

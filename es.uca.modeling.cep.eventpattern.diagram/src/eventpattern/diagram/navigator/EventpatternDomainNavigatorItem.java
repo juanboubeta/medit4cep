@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.navigator;
 
 import org.eclipse.core.runtime.IAdapterFactory;
@@ -17,8 +17,8 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 public class EventpatternDomainNavigatorItem extends PlatformObject {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	static {
 		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
@@ -45,23 +45,23 @@ public class EventpatternDomainNavigatorItem extends PlatformObject {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Object myParent;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private EObject myEObject;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IPropertySourceProvider myPropertySourceProvider;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EventpatternDomainNavigatorItem(EObject eObject, Object parent,
 			IPropertySourceProvider propertySourceProvider) {
 		myParent = parent;
@@ -70,29 +70,29 @@ public class EventpatternDomainNavigatorItem extends PlatformObject {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Object getParent() {
 		return myParent;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EObject getEObject() {
 		return myEObject;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IPropertySourceProvider getPropertySourceProvider() {
 		return myPropertySourceProvider;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean equals(Object obj) {
 		if (obj instanceof eventpattern.diagram.navigator.EventpatternDomainNavigatorItem) {
 			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil
@@ -102,8 +102,8 @@ public class EventpatternDomainNavigatorItem extends PlatformObject {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public int hashCode() {
 		return EcoreUtil.getURI(getEObject()).hashCode();
 	}

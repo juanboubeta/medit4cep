@@ -12,8 +12,8 @@ import org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider;
 public class EventpatternIconProvider extends DefaultElementTypeIconProvider implements IIconProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EventpatternIconProvider() {
 		super(EventpatternElementTypes.TYPED_INSTANCE);
 	}

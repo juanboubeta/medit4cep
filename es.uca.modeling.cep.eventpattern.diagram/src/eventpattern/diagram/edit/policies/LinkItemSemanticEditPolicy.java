@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
@@ -15,15 +15,15 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class LinkItemSemanticEditPolicy extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public LinkItemSemanticEditPolicy() {
 		super(EventpatternElementTypes.Link_4001);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
 	}

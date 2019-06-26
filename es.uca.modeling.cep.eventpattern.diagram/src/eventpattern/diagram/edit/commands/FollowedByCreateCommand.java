@@ -25,16 +25,16 @@ import eventpattern.FollowedBy;
 public class FollowedByCreateCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public FollowedByCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
-	 * FIXME: replace with setElementToEdit()
-	 * @generated
-	 */
+	* FIXME: replace with setElementToEdit()
+	* @generated
+	*/
 	protected EObject getElementToEdit() {
 		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
@@ -44,16 +44,16 @@ public class FollowedByCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		return true;
 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		FollowedBy newElement = EventpatternFactory.eINSTANCE.createFollowedBy();
 
@@ -67,8 +67,8 @@ public class FollowedByCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void doConfigure(FollowedBy newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();

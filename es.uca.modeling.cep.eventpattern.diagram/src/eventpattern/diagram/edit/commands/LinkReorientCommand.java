@@ -23,23 +23,23 @@ import eventpattern.diagram.edit.policies.EventpatternBaseItemSemanticEditPolicy
 public class LinkReorientCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final int reorientDirection;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject oldEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private final EObject newEnd;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public LinkReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
@@ -48,8 +48,8 @@ public class LinkReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		if (false == getElementToEdit() instanceof Link) {
 			return false;
@@ -64,8 +64,8 @@ public class LinkReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientSource() {
 		if (!(oldEnd instanceof Operand && newEnd instanceof Operand)) {
 			return false;
@@ -80,8 +80,8 @@ public class LinkReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean canReorientTarget() {
 		if (!(oldEnd instanceof Operator && newEnd instanceof Operator)) {
 			return false;
@@ -96,8 +96,8 @@ public class LinkReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
@@ -112,52 +112,52 @@ public class LinkReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientSource() throws ExecutionException {
 		getLink().setOperand(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult reorientTarget() throws ExecutionException {
 		getLink().setOperator(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Link getLink() {
 		return (Link) getElementToEdit();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Operand getOldSource() {
 		return (Operand) oldEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Operand getNewSource() {
 		return (Operand) newEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Operator getOldTarget() {
 		return (Operator) oldEnd;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Operator getNewTarget() {
 		return (Operator) newEnd;
 	}

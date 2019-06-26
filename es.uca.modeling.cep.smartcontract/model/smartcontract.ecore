@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smartcontract" nsURI="www.uca.es/modeling/smartcontract" nsPrefix="smartcontract">
+  <eClassifiers xsi:type="ecore:EClass" name="SmartContracts">
+    <eAnnotations source="gmf.diagram">
+      <details key="model.extension" value="smartc"/>
+      <details key="diagram.extension" value="smartc_diagram"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="smartcontracts" upperBound="-1"
+        eType="#//SmartContract" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SmartContract">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="typeName"/>
+      <details key="border.color" value="110,110,110"/>
+      <details key="tool.name" value="SmartContract"/>
+      <details key="tool.description" value="Add a SmartContract"/>
+      <details key="resizable" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SmartContractProperties"
+        upperBound="-1" eType="#//ContractFunction" containment="true" eOpposite="#//ContractFunction/referencedSmartContract">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContractFunction">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="name"/>
+      <details key="border.color" value="110,110,110"/>
+      <details key="tool.name" value="Contract Function"/>
+      <details key="tool.description" value="Add a Contract Function"/>
+      <details key="resizable" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedSmartContract"
+        eType="#//SmartContract" eOpposite="#//SmartContract/SmartContractProperties"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="InputParametersFunction"
+        upperBound="-1" eType="#//InputParameter" containment="true" eOpposite="#//InputParameter/InputReferencedFunction">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="OutputParametersFunction"
+        eType="#//OutputParameter" containment="true" eOpposite="#//OutputParameter/OutputReferencedFunction">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PropertyTypeValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputParameter" eSuperTypes="#//Parameter">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="name"/>
+      <details key="border.color" value="110,110,110"/>
+      <details key="tool.name" value="Input Parameter"/>
+      <details key="tool.description" value="Add an Input Parameter"/>
+      <details key="resizable" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="InputReferencedFunction"
+        eType="#//ContractFunction" eOpposite="#//ContractFunction/InputParametersFunction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputParameter" eSuperTypes="#//Parameter">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="name"/>
+      <details key="border.color" value="110,110,110"/>
+      <details key="tool.name" value="Output Parameter"/>
+      <details key="tool.description" value="Add an Output Parameter"/>
+      <details key="resizable" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="OutputReferencedFunction"
+        eType="#//ContractFunction" eOpposite="#//ContractFunction/OutputParametersFunction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PropertyTypeValue">
+    <eLiterals name="Unknown"/>
+    <eLiterals name="Boolean" value="1"/>
+    <eLiterals name="Integer" value="2"/>
+    <eLiterals name="Long" value="3"/>
+    <eLiterals name="Double" value="4"/>
+    <eLiterals name="Float" value="5"/>
+    <eLiterals name="String" value="6"/>
+  </eClassifiers>
+</ecore:EPackage>

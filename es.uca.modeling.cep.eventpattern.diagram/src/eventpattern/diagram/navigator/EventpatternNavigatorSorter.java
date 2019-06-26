@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.navigator;
 
 import org.eclipse.jface.viewers.ViewerSorter;
@@ -13,18 +13,18 @@ import eventpattern.diagram.part.EventpatternVisualIDRegistry;
 public class EventpatternNavigatorSorter extends ViewerSorter {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static final int GROUP_CATEGORY = 7017;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static final int SHORTCUTS_CATEGORY = 7016;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public int category(Object element) {
 		if (element instanceof EventpatternNavigatorItem) {
 			EventpatternNavigatorItem item = (EventpatternNavigatorItem) element;

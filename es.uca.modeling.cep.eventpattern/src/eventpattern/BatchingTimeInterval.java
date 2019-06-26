@@ -24,7 +24,7 @@ package eventpattern;
  * </ul>
  *
  * @see eventpattern.EventpatternPackage#getBatchingTimeInterval()
- * @model annotation="gmf.node figure='rectangle' border.style='dash' border.color='110,110,110' color='230,230,250' label='years, months, weeks, days, hours, minutes, seconds, milliseconds' label.parser='MessageFormatParser' label.readOnly='true' label.view.pattern='Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}' tool.name='Batching Time Interval' tool.description='Add a batching time interval window'"
+ * @model annotation="gmf.node figure='rectangle' border.style='dash' border.color='110,110,110' color='230,230,250' label='years, months, weeks, days, hours, minutes, seconds, milliseconds' label.parser='MessageFormatParser' label.readOnly='true' label.view.pattern='Batching Time Interval: {0,choice,0#|0&lt;{0,number}y }{1,choice,0#|0&lt;{1,number}m }{2,choice,0#|0&lt;{2,number}w }{3,choice,0#|0&lt;{3,number}d }{4,choice,0#|0&lt;{4,number}h }{5,choice,0#|0&lt;{5,number}min }{6,choice,0#|0&lt;{6,number}s }{7,choice,0#|0&lt;{7,number}ms}' tool.name='Batching Time Interval' tool.description='Add a batching time interval window'"
  * @generated
  */
 public interface BatchingTimeInterval extends DataWindow

@@ -1,14 +1,6 @@
-/*******************************************************************************
- * Copyright (c) 2011, 2015 Juan Boubeta-Puig
- * All rights reserved. This program and the accompanying materials 
- * are made available under the terms of the Eclipse Public License v1.0 
- * which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     Juan Boubeta-Puig - modifications marked as @generated NOT
- ******************************************************************************/
-
+/*
+* 
+*/
 package eventpattern.diagram.part;
 
 import java.util.Collection;
@@ -83,15 +75,15 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class EventpatternDiagramUpdater {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static boolean isShortcutOrphaned(View view) {
 		return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getSemanticChildren(View view) {
 		switch (EventpatternVisualIDRegistry.getVisualID(view)) {
 		case CEPEventPatternEditPart.VISUAL_ID:
@@ -135,8 +127,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getCEPEventPattern_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -318,8 +310,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getEventEventEventPropertiesCompartment_7001SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -343,8 +335,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getEventPropertyEventPropertyEventPropertiesCompartment_7002SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -368,8 +360,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getEventPropertyEventPropertyEventPropertiesCompartment_7003SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -393,8 +385,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getEventPropertyEventPropertyEventPropertiesCompartment_7004SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -418,8 +410,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getWithinTimerWithinTimerWithinTimerElementsCompartment_7005SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -535,8 +527,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getEventEventEventPropertiesCompartment_7006SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -560,8 +552,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getEventPropertyEventPropertyEventPropertiesCompartment_7007SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -585,8 +577,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getSlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartment_7008SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -738,8 +730,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getEventEventEventPropertiesCompartment_7009SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -763,8 +755,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getEventPropertyEventPropertyEventPropertiesCompartment_7010SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -788,8 +780,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getWithinTimerWithinTimerWithinTimerElementsCompartment_7011SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -905,8 +897,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getBatchingEventIntervalBatchingEventIntervalEventPatternConditionsCompartment_7012SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -1058,8 +1050,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getSlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartment_7013SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -1211,8 +1203,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getBatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartment_7014SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -1364,8 +1356,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternNodeDescriptor> getComplexEventComplexEventComplexEventPropertiesCompartment_7015SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -1389,8 +1381,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternLinkDescriptor> getContainedLinks(View view) {
 		switch (EventpatternVisualIDRegistry.getVisualID(view)) {
 		case CEPEventPatternEditPart.VISUAL_ID:
@@ -1602,8 +1594,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternLinkDescriptor> getIncomingLinks(View view) {
 		switch (EventpatternVisualIDRegistry.getVisualID(view)) {
 		case AndEditPart.VISUAL_ID:
@@ -1813,8 +1805,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static List<EventpatternLinkDescriptor> getOutgoingLinks(View view) {
 		switch (EventpatternVisualIDRegistry.getVisualID(view)) {
 		case AndEditPart.VISUAL_ID:
@@ -2237,8 +2229,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<EventpatternLinkDescriptor> getGroupBy_2040ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -2699,8 +2691,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<EventpatternLinkDescriptor> getGroupBy_3060ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -3074,8 +3066,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<EventpatternLinkDescriptor> getGroupBy_2040IncomingLinks(View view) {
 		GroupBy modelElement = (GroupBy) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
@@ -3791,8 +3783,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<EventpatternLinkDescriptor> getGroupBy_3060IncomingLinks(View view) {
 		GroupBy modelElement = (GroupBy) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
@@ -4133,8 +4125,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<EventpatternLinkDescriptor> getGroupBy_2040OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -4772,8 +4764,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<EventpatternLinkDescriptor> getGroupBy_3060OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -4823,8 +4815,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Collection<EventpatternLinkDescriptor> getContainedTypeModelFacetLinks_Link_4001(
 			CEPEventPattern container) {
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
@@ -4869,8 +4861,8 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Collection<EventpatternLinkDescriptor> getOutgoingTypeModelFacetLinks_Link_4001(Operand source) {
 		CEPEventPattern container = null;
 		// Find container element for the link.
@@ -4906,37 +4898,41 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
-	 * @generated NOT
-	 */
+	* @generated
+	*/
 	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
 		/**
-		 * Override annotation has been removed.
-		 * @generated NOT
-		 */
+		* @generated
+		*/
+		@Override
+
 		public List<EventpatternNodeDescriptor> getSemanticChildren(View view) {
 			return EventpatternDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
-		 * Override annotation has been removed.
-		 * @generated NOT
-		 */
+		* @generated
+		*/
+		@Override
+
 		public List<EventpatternLinkDescriptor> getContainedLinks(View view) {
 			return EventpatternDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
-		 * Override annotation has been removed.
-		 * @generated NOT
-		 */
+		* @generated
+		*/
+		@Override
+
 		public List<EventpatternLinkDescriptor> getIncomingLinks(View view) {
 			return EventpatternDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
-		 * Override annotation has been removed.
-		 * @generated NOT
-		 */
+		* @generated
+		*/
+		@Override
+
 		public List<EventpatternLinkDescriptor> getOutgoingLinks(View view) {
 			return EventpatternDiagramUpdater.getOutgoingLinks(view);
 		}

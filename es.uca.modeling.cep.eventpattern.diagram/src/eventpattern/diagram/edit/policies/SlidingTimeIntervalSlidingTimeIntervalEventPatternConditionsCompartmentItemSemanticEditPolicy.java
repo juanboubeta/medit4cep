@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
@@ -48,15 +48,15 @@ public class SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompart
 		extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartmentItemSemanticEditPolicy() {
 		super(EventpatternElementTypes.SlidingTimeInterval_2036);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (EventpatternElementTypes.And_3027 == req.getElementType()) {
 			return getGEFWrapper(new And3CreateCommand(req));

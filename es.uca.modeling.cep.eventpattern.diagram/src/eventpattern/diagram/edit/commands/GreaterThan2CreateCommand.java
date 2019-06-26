@@ -25,16 +25,16 @@ import eventpattern.WithinTimer;
 public class GreaterThan2CreateCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public GreaterThan2CreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
-	 * FIXME: replace with setElementToEdit()
-	 * @generated
-	 */
+	* FIXME: replace with setElementToEdit()
+	* @generated
+	*/
 	protected EObject getElementToEdit() {
 		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
@@ -44,16 +44,16 @@ public class GreaterThan2CreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		return true;
 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		GreaterThan newElement = EventpatternFactory.eINSTANCE.createGreaterThan();
 
@@ -67,8 +67,8 @@ public class GreaterThan2CreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void doConfigure(GreaterThan newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();

@@ -34,27 +34,27 @@ public class SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompa
 		extends ShapeCompartmentEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 7008;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getCompartmentName() {
 		return Messages.SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompartmentEditPart_title;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
@@ -62,8 +62,8 @@ public class SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
@@ -77,8 +77,8 @@ public class SlidingEventIntervalSlidingEventIntervalEventPatternConditionsCompa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setRatio(Double ratio) {
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);

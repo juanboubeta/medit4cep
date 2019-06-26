@@ -33,27 +33,27 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class WithinTimerWithinTimerWithinTimerElementsCompartmentEditPart extends ShapeCompartmentEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 7005;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public WithinTimerWithinTimerWithinTimerElementsCompartmentEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getCompartmentName() {
 		return Messages.WithinTimerWithinTimerWithinTimerElementsCompartmentEditPart_title;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
@@ -61,8 +61,8 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartmentEditPart extend
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
@@ -76,8 +76,8 @@ public class WithinTimerWithinTimerWithinTimerElementsCompartmentEditPart extend
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setRatio(Double ratio) {
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);

@@ -8,7 +8,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
@@ -20,9 +19,6 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
 
 import eventpattern.diagram.edit.commands.EventpatternCreateShortcutDecorationsCommand;
 import eventpattern.diagram.edit.policies.CEPEventPatternCanonicalEditPolicy;
@@ -35,25 +31,25 @@ import eventpattern.diagram.part.EventpatternVisualIDRegistry;
 public class CEPEventPatternEditPart extends DiagramEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public final static String MODEL_ID = "Eventpattern"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 1000;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public CEPEventPatternEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CEPEventPatternItemSemanticEditPolicy());
@@ -87,25 +83,4 @@ public class CEPEventPatternEditPart extends DiagramEditPart {
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 
-	// Open the properties view, when the user has double-clicked on the node.
-	public void performRequest(Request req) {
-
-		if (req.getType() == REQ_OPEN) {
-			mouseDoubleClick();
-		} else {
-			super.performRequest(req);
-		}
-	}
-
-	protected void mouseDoubleClick() {
-		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-
-		if (page != null) {
-			try {
-				page.showView("org.eclipse.ui.views.PropertySheet");
-			} catch (PartInitException e) {
-				e.printStackTrace();
-			}
-		}
-	}
 }

@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.edit.policies;
 
 import org.eclipse.gef.commands.Command;
@@ -15,15 +15,15 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class EventEventEventPropertiesCompartmentItemSemanticEditPolicy extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EventEventEventPropertiesCompartmentItemSemanticEditPolicy() {
 		super(EventpatternElementTypes.Event_2027);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (EventpatternElementTypes.EventProperty_3001 == req.getElementType()) {
 			return getGEFWrapper(new EventProperty2CreateCommand(req));

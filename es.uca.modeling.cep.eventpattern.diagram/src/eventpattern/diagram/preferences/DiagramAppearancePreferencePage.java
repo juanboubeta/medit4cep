@@ -13,8 +13,8 @@ import eventpattern.diagram.part.EventpatternDiagramEditorPlugin;
 public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public DiagramAppearancePreferencePage() {
 		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}

@@ -13,63 +13,57 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MultiplicationTest extends ArithmeticOperatorTest
-{
+public class MultiplicationTest extends ArithmeticOperatorTest {
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static void main(String[] args)
-  {
+	public static void main(String[] args) {
 		TestRunner.run(MultiplicationTest.class);
 	}
 
-  /**
+	/**
 	 * Constructs a new Multiplication test case with the given name.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public MultiplicationTest(String name)
-  {
+	public MultiplicationTest(String name) {
 		super(name);
 	}
 
-  /**
+	/**
 	 * Returns the fixture for this Multiplication test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected Multiplication getFixture()
-  {
+	@Override
+	protected Multiplication getFixture() {
 		return (Multiplication)fixture;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-  @Override
-  protected void setUp() throws Exception
-  {
+	@Override
+	protected void setUp() throws Exception {
 		setFixture(EventpatternFactory.eINSTANCE.createMultiplication());
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-  @Override
-  protected void tearDown() throws Exception
-  {
+	@Override
+	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
 

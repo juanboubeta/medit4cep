@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.edit.policies;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -58,15 +58,15 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class CEPEventPatternItemSemanticEditPolicy extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public CEPEventPatternItemSemanticEditPolicy() {
 		super(EventpatternElementTypes.CEPEventPattern_1000);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (EventpatternElementTypes.And_2001 == req.getElementType()) {
 			return getGEFWrapper(new AndCreateCommand(req));
@@ -192,21 +192,21 @@ public class CEPEventPatternItemSemanticEditPolicy extends EventpatternBaseItemS
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
 			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}

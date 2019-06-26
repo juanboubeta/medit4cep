@@ -34,34 +34,34 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 7015;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean hasModelChildrenChanged(Notification evt) {
 		return false;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getCompartmentName() {
 		return Messages.ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart_title;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
@@ -69,8 +69,8 @@ public class ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart e
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
@@ -84,8 +84,8 @@ public class ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart e
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setRatio(Double ratio) {
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);

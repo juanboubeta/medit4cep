@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.navigator;
 
 import org.eclipse.core.resources.IFile;
@@ -34,8 +34,8 @@ import eventpattern.diagram.part.EventpatternDiagramEditorPlugin;
 public class EventpatternNavigatorLinkHelper implements ILinkHelper {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static IEditorInput getEditorInput(Diagram diagram) {
 		Resource diagramResource = diagram.eResource();
 		for (EObject nextEObject : diagramResource.getContents()) {
@@ -53,8 +53,8 @@ public class EventpatternNavigatorLinkHelper implements ILinkHelper {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IStructuredSelection findSelection(IEditorInput anInput) {
 		IDiagramDocument document = EventpatternDiagramEditorPlugin.getInstance().getDocumentProvider()
 				.getDiagramDocument(anInput);
@@ -74,8 +74,8 @@ public class EventpatternNavigatorLinkHelper implements ILinkHelper {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void activateEditor(IWorkbenchPage aPage, IStructuredSelection aSelection) {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;

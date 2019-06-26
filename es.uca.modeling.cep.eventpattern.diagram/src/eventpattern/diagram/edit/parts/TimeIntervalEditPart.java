@@ -3,16 +3,10 @@
  */
 package eventpattern.diagram.edit.parts;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.draw2d.Ellipse;
-import org.eclipse.draw2d.GridData;
-import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -31,26 +25,17 @@ import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.lite.svg.SVGFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.PlatformUI;
 
 import eventpattern.diagram.edit.policies.TimeIntervalItemSemanticEditPolicy;
 import eventpattern.diagram.part.EventpatternVisualIDRegistry;
-import eventpattern.diagram.providers.EventpatternElementTypes;
 
 /**
  * @generated
@@ -58,30 +43,30 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 2031;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure contentPane;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure primaryShape;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public TimeIntervalEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new TimeIntervalItemSemanticEditPolicy());
@@ -91,8 +76,8 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
@@ -128,26 +113,26 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createNodeShape() {
 		return primaryShape = new TimeIntervalFigure();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public TimeIntervalFigure getPrimaryShape() {
 		return (TimeIntervalFigure) primaryShape;
 	}
 
 	/**
-	 * @generated NOT
-	 */
+	* @generated
+	*/
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof TimeIntervalYearsMonthsWeeksDaysHouEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-5, -5));
+			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
 			super.addBorderItem(borderItemContainer, borderItemEditPart);
@@ -155,16 +140,16 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(30, 30);
 		return result;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPolicy getPrimaryDragEditPolicy() {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
 		if (result instanceof ResizableEditPolicy) {
@@ -175,13 +160,13 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * Creates figure for this edit part.
-	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
-	 * @generated
-	 */
+	* Creates figure for this edit part.
+	* 
+	* Body of this method does not depend on settings in generation model
+	* so you may safely remove <i>generated</i> tag and modify it.
+	* 
+	* @generated
+	*/
 	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -192,18 +177,18 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
-	 * @generated
-	 */
+	* Default implementation treats passed figure as content pane.
+	* Respects layout one may have set for generated figure.
+	* @param nodeShape instance of generated figure class
+	* @generated
+	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure getContentPane() {
 		if (contentPane != null) {
 			return contentPane;
@@ -212,8 +197,8 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setForegroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
@@ -221,8 +206,8 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setBackgroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setBackgroundColor(color);
@@ -230,8 +215,8 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineWidth(width);
@@ -239,8 +224,8 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLineType(int style) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
@@ -248,16 +233,16 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(
 				EventpatternVisualIDRegistry.getType(TimeIntervalYearsMonthsWeeksDaysHouEditPart.VISUAL_ID));
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
 				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
@@ -282,25 +267,4 @@ public class TimeIntervalEditPart extends AbstractBorderedShapeEditPart {
 
 	}
 
-	// Open the properties view, when the user has double-clicked on the node.
-	public void performRequest(Request req) {
-
-		if (req.getType() == REQ_OPEN) {
-			mouseDoubleClick();
-		} else {
-			super.performRequest(req);
-		}
-	}
-
-	protected void mouseDoubleClick() {
-		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-
-		if (page != null) {
-			try {
-				page.showView("org.eclipse.ui.views.PropertySheet");
-			} catch (PartInitException e) {
-				e.printStackTrace();
-			}
-		}
-	}
 }

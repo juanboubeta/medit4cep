@@ -13,63 +13,57 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SumTest extends AggregationOperatorTest
-{
+public class SumTest extends AggregationOperatorTest {
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static void main(String[] args)
-  {
+	public static void main(String[] args) {
 		TestRunner.run(SumTest.class);
 	}
 
-  /**
+	/**
 	 * Constructs a new Sum test case with the given name.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public SumTest(String name)
-  {
+	public SumTest(String name) {
 		super(name);
 	}
 
-  /**
+	/**
 	 * Returns the fixture for this Sum test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected Sum getFixture()
-  {
+	@Override
+	protected Sum getFixture() {
 		return (Sum)fixture;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-  @Override
-  protected void setUp() throws Exception
-  {
+	@Override
+	protected void setUp() throws Exception {
 		setFixture(EventpatternFactory.eINSTANCE.createSum());
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-  @Override
-  protected void tearDown() throws Exception
-  {
+	@Override
+	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
 

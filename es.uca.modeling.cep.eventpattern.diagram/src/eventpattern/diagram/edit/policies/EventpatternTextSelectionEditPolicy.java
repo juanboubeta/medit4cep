@@ -1,14 +1,6 @@
-/*******************************************************************************
- * Copyright (c) 2011, 2015 Juan Boubeta-Puig
- * All rights reserved. This program and the accompanying materials 
- * are made available under the terms of the Eclipse Public License v1.0 
- * which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
+/*
  * 
- * Contributors:
- *     Juan Boubeta-Puig - modifications marked as @generated NOT
- ******************************************************************************/
-
+ */
 package eventpattern.diagram.edit.policies;
 
 import org.eclipse.draw2d.ColorConstants;
@@ -29,23 +21,23 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedback
 public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy implements IRefreshableFeedbackEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IFigure selectionFeedbackFigure;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IFigure focusFeedbackFigure;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private FigureListener hostPositionListener;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void showPrimarySelection() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setSelected(true);
@@ -57,8 +49,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void showSelection() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setSelected(true);
@@ -73,8 +65,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void hideSelection() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setSelected(false);
@@ -90,8 +82,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void showFocus() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setFocus(true);
@@ -103,8 +95,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void hideFocus() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setFocus(false);
@@ -117,8 +109,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Rectangle getFeedbackBounds() {
 		Rectangle bounds;
 		if (getHostFigure() instanceof Label) {
@@ -133,8 +125,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createSelectionFeedbackFigure() {
 		if (getHostFigure() instanceof Label) {
 			Label feedbackFigure = new Label();
@@ -150,8 +142,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createFocusFeedbackFigure() {
 		return new Figure() {
 
@@ -162,8 +154,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void updateLabel(Label target) {
 		Label source = (Label) getHostFigure();
 		target.setText(source.getText());
@@ -172,8 +164,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshSelectionFeedback() {
 		if (selectionFeedbackFigure != null) {
 			if (selectionFeedbackFigure instanceof Label) {
@@ -186,8 +178,8 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshFocusFeedback() {
 		if (focusFeedbackFigure != null) {
 			focusFeedbackFigure.setBounds(getFeedbackBounds());
@@ -195,17 +187,17 @@ public class EventpatternTextSelectionEditPolicy extends SelectionEditPolicy imp
 	}
 
 	/**
-	 * Override annotation has been removed.
-	 * @generated NOT
-	 */
+	* @generated
+	*/
+	@Override
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
 		refreshFocusFeedback();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private FigureListener getHostPositionListener() {
 		if (hostPositionListener == null) {
 			hostPositionListener = new FigureListener() {

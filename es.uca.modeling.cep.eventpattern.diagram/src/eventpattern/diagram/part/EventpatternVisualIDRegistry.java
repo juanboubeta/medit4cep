@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.part;
 
 import org.eclipse.core.runtime.Platform;
@@ -24,13 +24,13 @@ import eventpattern.diagram.edit.parts.*;
 public class EventpatternVisualIDRegistry {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static final String DEBUG_KEY = "es.uca.modeling.cep.eventpattern.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
 			if (CEPEventPatternEditPart.MODEL_ID.equals(view.getType())) {
@@ -43,8 +43,8 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String getModelID(View view) {
 		View diagram = view.getDiagram();
 		while (view != diagram) {
@@ -58,8 +58,8 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static int getVisualID(String type) {
 		try {
 			return Integer.parseInt(type);
@@ -73,15 +73,15 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String getType(int visualID) {
 		return Integer.toString(visualID);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static int getDiagramVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
@@ -94,8 +94,8 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static int getNodeVisualID(View containerView, EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
@@ -839,8 +839,8 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = eventpattern.diagram.part.EventpatternVisualIDRegistry.getModelID(containerView);
 		if (!CEPEventPatternEditPart.MODEL_ID.equals(containerModelID) && !"pattern".equals(containerModelID)) { //$NON-NLS-1$
@@ -1781,8 +1781,8 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static int getLinkWithClassVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
@@ -1794,18 +1794,18 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * User can change implementation of this method to handle some specific
-	 * situations not covered by default logic.
-	 * 
-	 * @generated
-	 */
+	* User can change implementation of this method to handle some specific
+	* situations not covered by default logic.
+	* 
+	* @generated
+	*/
 	private static boolean isDiagram(CEPEventPattern element) {
 		return true;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
@@ -1816,8 +1816,8 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
 		case EventEventEventPropertiesCompartmentEditPart.VISUAL_ID:
@@ -1843,8 +1843,8 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
 		case CEPEventPatternEditPart.VISUAL_ID:
@@ -1942,8 +1942,8 @@ public class EventpatternVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
 		* @generated

@@ -27,532 +27,529 @@ import eventpattern.diagram.part.EventpatternDiagramEditorPlugin;
 public class EventpatternElementTypes {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private EventpatternElementTypes() {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Map<IElementType, ENamedElement> elements;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
 			EventpatternDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType CEPEventPattern_1000 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.CEPEventPattern_1000"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType And_2001 = getElementType("es.uca.modeling.cep.eventpattern.diagram.And_2001"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Or_2002 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Or_2002"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Not_2003 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Not_2003"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Addition_2004 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Addition_2004"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Subtraction_2005 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Subtraction_2005"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Multiplication_2006 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Multiplication_2006"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Division_2007 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Division_2007"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Modulus_2008 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Modulus_2008"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Equal_2009 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Equal_2009"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType NotEqual_2010 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.NotEqual_2010"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType LessThan_2011 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.LessThan_2011"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType GreaterThan_2012 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.GreaterThan_2012"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType LessEqual_2013 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.LessEqual_2013"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType GreaterEqual_2014 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.GreaterEqual_2014"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Every_2015 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Every_2015"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType EveryDistinct_2016 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.EveryDistinct_2016"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Repeat_2017 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Repeat_2017"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Until_2018 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Until_2018"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Range_2019 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Range_2019"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType FollowedBy_2020 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.FollowedBy_2020"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType While_2021 = getElementType("es.uca.modeling.cep.eventpattern.diagram.While_2021"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Max_2022 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Max_2022"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Min_2023 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Min_2023"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Avg_2024 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Avg_2024"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Count_2025 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Count_2025"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Sum_2026 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Sum_2026"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Event_2027 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Event_2027"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType EventProperty_2028 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_2028"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Value_2029 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Value_2029"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType GroupBy_2040 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.GroupBy_2040"); //$NON-NLS-1$
-
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType WithinTimer_2030 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.WithinTimer_2030"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType TimeInterval_2031 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.TimeInterval_2031"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType TimeSchedule_2032 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.TimeSchedule_2032"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Email_2033 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Email_2033"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Twitter_2039 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Twitter_2039"); //$NON-NLS-1$
-
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType SlidingEventInterval_2034 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.SlidingEventInterval_2034"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType BatchingEventInterval_2035 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.BatchingEventInterval_2035"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType SlidingTimeInterval_2036 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.SlidingTimeInterval_2036"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType BatchingTimeInterval_2037 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.BatchingTimeInterval_2037"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType ComplexEvent_2038 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.ComplexEvent_2038"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType EventProperty_3001 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_3001"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType EventProperty_3002 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_3002"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType And_3003 = getElementType("es.uca.modeling.cep.eventpattern.diagram.And_3003"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Or_3004 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Or_3004"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Not_3005 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Not_3005"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Addition_3006 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Addition_3006"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Subtraction_3007 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Subtraction_3007"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Multiplication_3008 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Multiplication_3008"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Division_3009 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Division_3009"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Modulus_3010 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Modulus_3010"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Equal_3011 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Equal_3011"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType NotEqual_3012 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.NotEqual_3012"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType LessThan_3013 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.LessThan_3013"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType GreaterThan_3014 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.GreaterThan_3014"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType LessEqual_3015 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.LessEqual_3015"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType GreaterEqual_3016 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.GreaterEqual_3016"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Every_3017 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Every_3017"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType EveryDistinct_3018 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.EveryDistinct_3018"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Repeat_3019 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Repeat_3019"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Until_3020 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Until_3020"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Range_3021 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Range_3021"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType FollowedBy_3022 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.FollowedBy_3022"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType While_3023 = getElementType("es.uca.modeling.cep.eventpattern.diagram.While_3023"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Event_3024 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Event_3024"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType EventProperty_3025 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_3025"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Value_3026 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Value_3026"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType And_3027 = getElementType("es.uca.modeling.cep.eventpattern.diagram.And_3027"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Or_3028 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Or_3028"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Not_3029 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Not_3029"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Addition_3030 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Addition_3030"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Subtraction_3031 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Subtraction_3031"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Multiplication_3032 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Multiplication_3032"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Division_3033 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Division_3033"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Modulus_3034 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Modulus_3034"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Equal_3035 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Equal_3035"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType NotEqual_3036 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.NotEqual_3036"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType LessThan_3037 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.LessThan_3037"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType GreaterThan_3038 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.GreaterThan_3038"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType LessEqual_3039 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.LessEqual_3039"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType GreaterEqual_3040 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.GreaterEqual_3040"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Every_3041 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Every_3041"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType EveryDistinct_3042 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.EveryDistinct_3042"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Repeat_3043 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.Repeat_3043"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Until_3044 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Until_3044"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Range_3045 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Range_3045"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType FollowedBy_3046 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.FollowedBy_3046"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType While_3047 = getElementType("es.uca.modeling.cep.eventpattern.diagram.While_3047"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Max_3048 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Max_3048"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Min_3049 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Min_3049"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Avg_3050 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Avg_3050"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Count_3051 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Count_3051"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Sum_3052 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Sum_3052"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Event_3053 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Event_3053"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType EventProperty_3054 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.EventProperty_3054"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Value_3055 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Value_3055"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType GroupBy_3060 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.GroupBy_3060"); //$NON-NLS-1$
-
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType WithinTimer_3056 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.WithinTimer_3056"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType TimeInterval_3057 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.TimeInterval_3057"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType TimeSchedule_3058 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.TimeSchedule_3058"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType ComplexEventProperty_3059 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.ComplexEventProperty_3059"); //$NON-NLS-1$
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final IElementType Link_4001 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Link_4001"); //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static Image getImage(ENamedElement element) {
 		return elementTypeImages.getImage(element);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static ImageDescriptor getImageDescriptor(IAdaptable hint) {
 		return getImageDescriptor(getElement(hint));
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static Image getImage(IAdaptable hint) {
 		return getImage(getElement(hint));
 	}
 
 	/**
-	 * Returns 'type' of the ecore object associated with the hint.
-	 * 
-	 * @generated
-	 */
+	* Returns 'type' of the ecore object associated with the hint.
+	* 
+	* @generated
+	*/
 	public static ENamedElement getElement(IAdaptable hint) {
 		Object type = hint.getAdapter(IElementType.class);
 		if (elements == null) {
@@ -766,15 +763,15 @@ public class EventpatternElementTypes {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static IElementType getElementType(String id) {
 		return ElementTypeRegistry.getInstance().getType(id);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static boolean isKnownElementType(IElementType elementType) {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
@@ -885,8 +882,8 @@ public class EventpatternElementTypes {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
 		case CEPEventPatternEditPart.VISUAL_ID:
@@ -1098,8 +1095,8 @@ public class EventpatternElementTypes {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**

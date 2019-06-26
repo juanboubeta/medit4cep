@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.edit.policies;
 
 import java.util.ArrayList;
@@ -36,8 +36,8 @@ import eventpattern.diagram.part.EventpatternVisualIDRegistry;
 public class EventPropertyEventPropertyEventPropertiesCompartment2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -48,16 +48,17 @@ public class EventPropertyEventPropertyEventPropertiesCompartment2CanonicalEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return EventpatternPackage.eINSTANCE.getEventProperty_EventProperties();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@SuppressWarnings("rawtypes")
+
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
@@ -70,22 +71,22 @@ public class EventPropertyEventPropertyEventPropertiesCompartment2CanonicalEditP
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
 		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean isMyDiagramElement(View view) {
 		return EventProperty3EditPart.VISUAL_ID == EventpatternVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshSemantic() {
 		if (resolveSemanticElement() == null) {
 			return;

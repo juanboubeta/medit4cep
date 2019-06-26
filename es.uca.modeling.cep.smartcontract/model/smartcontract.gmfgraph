@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="smartcontract">
+  <figures name="Default">
+    <descriptors name="SmartContractFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="SmartContractFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="SmartContractLabelFigure" text="SmartContract">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="SmartContractSmartContractPropertiesCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureSmartContractLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getSmartContractSmartContractPropertiesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ContractFunctionFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ContractFunctionFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ContractFunctionLabelFigure" text="ContractFunction">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ContractFunctionInputParametersFunctionCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ContractFunctionOutputParametersFunctionCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureContractFunctionLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getContractFunctionInputParametersFunctionCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors accessor="getContractFunctionOutputParametersFunctionCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="InputParameterFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="InputParameterFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="InputParameterLabelFigure" text="InputParameter"/>
+      </actualFigure>
+      <accessors accessor="getFigureInputParameterLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="OutputParameterFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="OutputParameterFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="OutputParameterLabelFigure" text="OutputParameter"/>
+      </actualFigure>
+      <accessors accessor="getFigureOutputParameterLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="SmartContract" figure="SmartContractFigure"/>
+  <nodes name="ContractFunction" figure="ContractFunctionFigure"/>
+  <nodes name="InputParameter" figure="InputParameterFigure"/>
+  <nodes name="OutputParameter" figure="OutputParameterFigure"/>
+  <compartments name="SmartContractSmartContractPropertiesCompartment" figure="SmartContractFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="ContractFunctionInputParametersFunctionCompartment" figure="ContractFunctionFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments name="ContractFunctionOutputParametersFunctionCompartment" figure="ContractFunctionFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <labels name="SmartContractLabel" figure="SmartContractFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ContractFunctionLabel" figure="ContractFunctionFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="InputParameterLabel" figure="InputParameterFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="OutputParameterLabel" figure="OutputParameterFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+</gmfgraph:Canvas>

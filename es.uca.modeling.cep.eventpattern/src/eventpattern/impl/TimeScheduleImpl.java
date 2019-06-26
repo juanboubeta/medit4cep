@@ -432,7 +432,7 @@ public class TimeScheduleImpl extends PatternOperandImpl implements TimeSchedule
   {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (dayOfWeek: ");
 		result.append(dayOfWeek);
 		result.append(", dayOfMonth: ");

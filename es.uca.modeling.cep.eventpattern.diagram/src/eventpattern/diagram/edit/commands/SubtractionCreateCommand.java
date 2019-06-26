@@ -25,16 +25,16 @@ import eventpattern.Subtraction;
 public class SubtractionCreateCommand extends EditElementCommand {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public SubtractionCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
-	 * FIXME: replace with setElementToEdit()
-	 * @generated
-	 */
+	* FIXME: replace with setElementToEdit()
+	* @generated
+	*/
 	protected EObject getElementToEdit() {
 		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
@@ -44,16 +44,16 @@ public class SubtractionCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean canExecute() {
 		return true;
 
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Subtraction newElement = EventpatternFactory.eINSTANCE.createSubtraction();
 
@@ -67,8 +67,8 @@ public class SubtractionCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void doConfigure(Subtraction newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();

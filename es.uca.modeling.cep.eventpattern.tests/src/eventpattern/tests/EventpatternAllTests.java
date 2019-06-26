@@ -13,37 +13,33 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EventpatternAllTests extends TestSuite
-{
+public class EventpatternAllTests extends TestSuite {
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static void main(String[] args)
-  {
+	public static void main(String[] args) {
 		TestRunner.run(suite());
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static Test suite()
-  {
+	public static Test suite() {
 		TestSuite suite = new EventpatternAllTests("Eventpattern Tests");
 		return suite;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EventpatternAllTests(String name)
-  {
+	public EventpatternAllTests(String name) {
 		super(name);
 	}
 

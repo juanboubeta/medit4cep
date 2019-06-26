@@ -1,53 +1,21 @@
-/*******************************************************************************
- * Copyright (c) 2011, 2015 Juan Boubeta-Puig
- * All rights reserved. This program and the accompanying materials 
- * are made available under the terms of the Eclipse Public License v1.0 
- * which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     Juan Boubeta-Puig - modifications marked as @generated NOT
- ******************************************************************************/
 
+/*
+ * 
+ */
 package eventpattern.diagram.part;
 
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.gef.Request;
-import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
-import org.eclipse.gmf.runtime.diagram.ui.tools.CreationTool;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
-import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Display;
 
-import eventpattern.diagram.status.EventPatternsStatus;
-import eventpattern.diagram.part.Messages;
 import eventpattern.diagram.providers.EventpatternElementTypes;
 
 /**
@@ -56,8 +24,8 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class EventpatternPaletteFactory {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createDefault1Group());
 		paletteRoot.add(createSimpleEvents2Group());
@@ -73,9 +41,9 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * Creates "Default" palette tool group
-	 * @generated
-	 */
+	* Creates "Default" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createDefault1Group() {
 		PaletteGroup paletteContainer = new PaletteGroup(Messages.Default1Group_title);
 		paletteContainer.setId("createDefault1Group"); //$NON-NLS-1$
@@ -87,215 +55,33 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * Creates "Simple Events" palette tool group
-	 * @generated NOT
-	 */
-	/*
+	* Creates "Simple Events" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createSimpleEvents2Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				Messages.SimpleEvents2Group_title);
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.SimpleEvents2Group_title);
 		paletteContainer.setId("createSimpleEvents2Group"); //$NON-NLS-1$
 		paletteContainer.add(createEvent1CreationTool());
 		paletteContainer.add(createEventProperty2CreationTool());
 		return paletteContainer;
 	}
-	 */
-	private PaletteContainer createSimpleEvents2Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.SimpleEvents2Group_title);
-		paletteContainer.setId("createSimpleEvents2Group"); //$NON-NLS-1$
-
-		// Added
-		addSimpleEventTools(paletteContainer);
-
-		return paletteContainer;
-	}
-
-	protected void addSimpleEventTools(PaletteContainer paletteContainer) {
-
-		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-		IProject domainProject = myWorkspaceRoot.getProject("domain");
-
-		try {
-
-			if (domainProject.exists()) {
-
-				if (!domainProject.isOpen()) {
-					domainProject.open(null);
-				}
-
-				String domainName = EventPatternsStatus.getDomainName();
-
-				if (domainProject.getFile(domainName + ".domain") != null) {
-
-					URI modelUri = URI.createPlatformResourceURI(
-							domainProject.getFile(domainName + ".domain").getFullPath().toString(), false);
-
-					ResourceSet resourceSet = new ResourceSetImpl();
-					Resource modelResource = resourceSet.getResource(modelUri, true);
-					String toolName = null;
-					String imagePath = null;
-
-					for (TreeIterator iter = EcoreUtil.getAllContents(modelResource, true); iter.hasNext();) {
-						EObject eObject = (EObject) iter.next();
-
-						if (eObject.getClass().getSimpleName().equals("EventImpl")) {
-
-							toolName = ((domain.Event) eObject).getTypeName().toString();
-							imagePath = ((domain.Event) eObject).getImagePath();
-							paletteContainer.add(createCustomisedEventCreationTool(toolName, imagePath));
-
-							iter.prune(); // Causes the following next() call to skip over any children of the current node								
-
-						}
-					}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	// Added
-	private ToolEntry createCustomisedEventCreationTool(String toolName, String imagePath) {
-
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(EventpatternElementTypes.Event_2027);
-		types.add(EventpatternElementTypes.Event_3024);
-		types.add(EventpatternElementTypes.Event_3053);
-
-		NodeToolEntry entry = new NodeToolEntry(toolName, "Add " + toolName, types);
-		entry.setId("create" + toolName + "CreationTool");
-
-		if (imagePath == null || imagePath.equals("") || !(new File(imagePath).exists())) {
-			entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Event_2027));
-		} else {
-			try {
-				File file = new File(imagePath);
-				URL url = file.toURI().toURL();
-				Image scaledImage = new Image(Display.getDefault(),
-						ImageDescriptor.createFromURL(url).getImageData().scaledTo(20, 20));
-
-				entry.setSmallIcon(ImageDescriptor.createFromURL(url).createFromImage(scaledImage));
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			}
-		}
-
-		entry.setLargeIcon(entry.getSmallIcon());
-
-		return entry;
-	}
 
 	/**
-	 * Creates "Complex Events" palette tool group
-	 * @generated NOT
-	 */
-	/*
-	private PaletteContainer createComplexEvents3Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				Messages.ComplexEvents3Group_title);
-		paletteContainer.setId("createComplexEvents3Group"); //$NON-NLS-1$
-		paletteContainer.add(createNewComplexEvent1CreationTool());
-		paletteContainer.add(createNewComplexEventProperty2CreationTool());
-		return paletteContainer;
-	}
-	 */
+	* Creates "Complex Events" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createComplexEvents3Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComplexEvents3Group_title);
 		paletteContainer.setId("createComplexEvents3Group"); //$NON-NLS-1$
 		paletteContainer.add(createNewComplexEvent1CreationTool());
 		paletteContainer.add(createNewComplexEventProperty2CreationTool());
-
-		// Added
-		addComplexEventTools(paletteContainer);
-
 		return paletteContainer;
 	}
 
-	protected void addComplexEventTools(PaletteContainer paletteContainer) {
-
-		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-
-		String activePatternName = EventPatternsStatus.getActivePatternName();
-		String domainName = EventPatternsStatus.getDomainName();
-
-		IProject complexEventProject = myWorkspaceRoot.getProject(domainName + "_complex_events");
-
-		try {
-
-			if (complexEventProject.exists()) {
-
-				if (!complexEventProject.isOpen()) {
-					complexEventProject.open(null);
-				}
-
-				if (complexEventProject.getFile(domainName + "_complex_events.domain") != null) {
-
-					URI modelUri = URI.createPlatformResourceURI(
-							complexEventProject.getFile(domainName + "_complex_events.domain").getFullPath().toString(),
-							false);
-
-					ResourceSet resourceSet = new ResourceSetImpl();
-					Resource modelResource = resourceSet.getResource(modelUri, true);
-					String toolName = null;
-					String imagePath = null;
-
-					for (TreeIterator iter = EcoreUtil.getAllContents(modelResource, true); iter.hasNext();) {
-						EObject eObject = (EObject) iter.next();
-
-						if (eObject.getClass().getSimpleName().equals("EventImpl")) {
-
-							toolName = ((domain.Event) eObject).getTypeName().toString();
-							imagePath = ((domain.Event) eObject).getImagePath();
-
-							// If the complex event tool to be created is different to the complex event 
-							// defined in the active pattern
-							if (!toolName.equals(activePatternName))
-								paletteContainer.add(createCustomisedComplexEventCreationTool(toolName, imagePath,
-										activePatternName));
-
-							iter.prune(); // Causes the following next() call to skip over any children of the current node								
-
-						}
-					}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	// Added
-	private ToolEntry createCustomisedComplexEventCreationTool(String toolName, String imagePath, String patternName) {
-
-		NodeToolEntry entry = new NodeToolEntry(toolName, "Add " + toolName,
-				Collections.singletonList(EventpatternElementTypes.ComplexEvent_2038), patternName);
-		entry.setId("create" + toolName + "CreationTool");
-
-		if (imagePath == null || imagePath.equals("") || !(new File(imagePath).exists())) {
-			entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.ComplexEvent_2038));
-		} else {
-			try {
-				File file = new File(imagePath);
-				URL url = file.toURI().toURL();
-				Image scaledImage = new Image(Display.getDefault(),
-						ImageDescriptor.createFromURL(url).getImageData().scaledTo(20, 20));
-
-				entry.setSmallIcon(ImageDescriptor.createFromURL(url).createFromImage(scaledImage));
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			}
-		}
-
-		entry.setLargeIcon(entry.getSmallIcon());
-
-		return entry;
-	}
-
 	/**
-	 * Creates "Pattern Timers" palette tool group
-	 * @generated
-	 */
+	* Creates "Pattern Timers" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createPatternTimers4Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.PatternTimers4Group_title);
 		paletteContainer.setId("createPatternTimers4Group"); //$NON-NLS-1$
@@ -306,9 +92,9 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * Creates "Pattern Operators" palette tool group
-	 * @generated
-	 */
+	* Creates "Pattern Operators" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createPatternOperators5Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.PatternOperators5Group_title);
 		paletteContainer.setId("createPatternOperators5Group"); //$NON-NLS-1$
@@ -323,9 +109,9 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * Creates "Logical Operators" palette tool group
-	 * @generated
-	 */
+	* Creates "Logical Operators" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createLogicalOperators6Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.LogicalOperators6Group_title);
 		paletteContainer.setId("createLogicalOperators6Group"); //$NON-NLS-1$
@@ -336,9 +122,9 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * Creates "Comparison Operators" palette tool group
-	 * @generated
-	 */
+	* Creates "Comparison Operators" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createComparisonOperators7Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComparisonOperators7Group_title);
 		paletteContainer.setId("createComparisonOperators7Group"); //$NON-NLS-1$
@@ -352,9 +138,9 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * Creates "Arithmetic Operators" palette tool group
-	 * @generated
-	 */
+	* Creates "Arithmetic Operators" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createArithmeticOperators8Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ArithmeticOperators8Group_title);
 		paletteContainer.setId("createArithmeticOperators8Group"); //$NON-NLS-1$
@@ -367,9 +153,9 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * Creates "Aggregation Operators" palette tool group
-	 * @generated
-	 */
+	* Creates "Aggregation Operators" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createAggregationOperators9Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.AggregationOperators9Group_title);
 		paletteContainer.setId("createAggregationOperators9Group"); //$NON-NLS-1$
@@ -382,9 +168,9 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * Creates "Data Windows" palette tool group
-	 * @generated
-	 */
+	* Creates "Data Windows" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createDataWindows10Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.DataWindows10Group_title);
 		paletteContainer.setId("createDataWindows10Group"); //$NON-NLS-1$
@@ -396,9 +182,9 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * Creates "Actions" palette tool group
-	 * @generated
-	 */
+	* Creates "Actions" palette tool group
+	* @generated
+	*/
 	private PaletteContainer createActions11Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Actions11Group_title);
 		paletteContainer.setId("createActions11Group"); //$NON-NLS-1$
@@ -408,243 +194,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
-	private ToolEntry createAddition1CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(EventpatternElementTypes.Addition_2004);
-		types.add(EventpatternElementTypes.Addition_3006);
-		types.add(EventpatternElementTypes.Addition_3030);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Addition1CreationTool_title,
-				Messages.Addition1CreationTool_desc, types);
-		entry.setId("createAddition1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Addition_2004));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createDivision2CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(EventpatternElementTypes.Division_2007);
-		types.add(EventpatternElementTypes.Division_3009);
-		types.add(EventpatternElementTypes.Division_3033);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Division2CreationTool_title,
-				Messages.Division2CreationTool_desc, types);
-		entry.setId("createDivision2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Division_2007));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createModulus3CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(EventpatternElementTypes.Modulus_2008);
-		types.add(EventpatternElementTypes.Modulus_3010);
-		types.add(EventpatternElementTypes.Modulus_3034);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Modulus3CreationTool_title,
-				Messages.Modulus3CreationTool_desc, types);
-		entry.setId("createModulus3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Modulus_2008));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createMultiplication4CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(EventpatternElementTypes.Multiplication_2006);
-		types.add(EventpatternElementTypes.Multiplication_3008);
-		types.add(EventpatternElementTypes.Multiplication_3032);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Multiplication4CreationTool_title,
-				Messages.Multiplication4CreationTool_desc, types);
-		entry.setId("createMultiplication4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Multiplication_2006));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createSubtraction5CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(EventpatternElementTypes.Subtraction_2005);
-		types.add(EventpatternElementTypes.Subtraction_3007);
-		types.add(EventpatternElementTypes.Subtraction_3031);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Subtraction5CreationTool_title,
-				Messages.Subtraction5CreationTool_desc, types);
-		entry.setId("createSubtraction5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Subtraction_2005));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createAvg1CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(EventpatternElementTypes.Avg_2024);
-		types.add(EventpatternElementTypes.Avg_3050);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Avg1CreationTool_title,
-				Messages.Avg1CreationTool_desc, types);
-		entry.setId("createAvg1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Avg_2024));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createCount2CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(EventpatternElementTypes.Count_2025);
-		types.add(EventpatternElementTypes.Count_3051);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Count2CreationTool_title,
-				Messages.Count2CreationTool_desc, types);
-		entry.setId("createCount2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Count_2025));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createMax3CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(EventpatternElementTypes.Max_2022);
-		types.add(EventpatternElementTypes.Max_3048);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Max3CreationTool_title,
-				Messages.Max3CreationTool_desc, types);
-		entry.setId("createMax3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Max_2022));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createMin4CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(EventpatternElementTypes.Min_2023);
-		types.add(EventpatternElementTypes.Min_3049);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Min4CreationTool_title,
-				Messages.Min4CreationTool_desc, types);
-		entry.setId("createMin4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Min_2023));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createSum5CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(EventpatternElementTypes.Sum_2026);
-		types.add(EventpatternElementTypes.Sum_3052);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Sum5CreationTool_title,
-				Messages.Sum5CreationTool_desc, types);
-		entry.setId("createSum5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Sum_2026));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createBatchingEventInterval1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.BatchingEventInterval1CreationTool_title,
-				Messages.BatchingEventInterval1CreationTool_desc,
-				Collections.singletonList(EventpatternElementTypes.BatchingEventInterval_2035));
-		entry.setId("createBatchingEventInterval1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.BatchingEventInterval_2035));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createBatchingTimeInterval2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.BatchingTimeInterval2CreationTool_title,
-				Messages.BatchingTimeInterval2CreationTool_desc,
-				Collections.singletonList(EventpatternElementTypes.BatchingTimeInterval_2037));
-		entry.setId("createBatchingTimeInterval2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.BatchingTimeInterval_2037));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createSlidingEventInterval3CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.SlidingEventInterval3CreationTool_title,
-				Messages.SlidingEventInterval3CreationTool_desc,
-				Collections.singletonList(EventpatternElementTypes.SlidingEventInterval_2034));
-		entry.setId("createSlidingEventInterval3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.SlidingEventInterval_2034));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createSlidingTimeInterval4CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.SlidingTimeInterval4CreationTool_title,
-				Messages.SlidingTimeInterval4CreationTool_desc,
-				Collections.singletonList(EventpatternElementTypes.SlidingTimeInterval_2036));
-		entry.setId("createSlidingTimeInterval4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(
-				EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.SlidingTimeInterval_2036));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createEmail1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Email1CreationTool_title,
-				Messages.Email1CreationTool_desc, Collections.singletonList(EventpatternElementTypes.Email_2033));
-		entry.setId("createEmail1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Email_2033));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createTwitter2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Twitter2CreationTool_title,
-				Messages.Twitter2CreationTool_desc, Collections.singletonList(EventpatternElementTypes.Twitter_2039));
-		entry.setId("createTwitter2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Twitter_2039));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createLink1CreationTool() {
 		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.Link1CreationTool_title,
 				Messages.Link1CreationTool_desc, Collections.singletonList(EventpatternElementTypes.Link_4001));
@@ -655,8 +206,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createValue2CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.Value_2029);
@@ -686,8 +237,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createEvent1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.Event_2027);
@@ -702,8 +253,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createEventProperty2CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(5);
 		types.add(EventpatternElementTypes.EventProperty_3001);
@@ -720,8 +271,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createNewComplexEvent1CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.NewComplexEvent1CreationTool_title,
 				Messages.NewComplexEvent1CreationTool_desc,
@@ -733,8 +284,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createNewComplexEventProperty2CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.NewComplexEventProperty2CreationTool_title,
 				Messages.NewComplexEventProperty2CreationTool_desc,
@@ -747,8 +298,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createTimeInterval1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(EventpatternElementTypes.TimeInterval_2031);
@@ -762,8 +313,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createTimeSchedule2CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(EventpatternElementTypes.TimeSchedule_2032);
@@ -777,8 +328,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createWithinTimer3CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(EventpatternElementTypes.WithinTimer_2030);
@@ -792,8 +343,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createEvery1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.Every_2015);
@@ -808,8 +359,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createEveryDistinct2CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.EveryDistinct_2016);
@@ -824,8 +375,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createFollowedBy3CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.FollowedBy_2020);
@@ -840,8 +391,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createRange4CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.Range_2019);
@@ -856,8 +407,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createRepeat5CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.Repeat_2017);
@@ -872,8 +423,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createUntil6CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.Until_2018);
@@ -888,8 +439,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createWhile7CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.While_2021);
@@ -904,8 +455,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createAnd1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.And_2001);
@@ -920,8 +471,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createNot2CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.Not_2003);
@@ -936,8 +487,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createOr3CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.Or_2002);
@@ -952,8 +503,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createEqual1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.Equal_2009);
@@ -968,8 +519,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createGreaterEqual2CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.GreaterEqual_2014);
@@ -984,8 +535,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createGreaterThan3CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.GreaterThan_2012);
@@ -1000,8 +551,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createLessEqual4CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.LessEqual_2013);
@@ -1016,8 +567,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createLessThan5CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.LessThan_2011);
@@ -1032,8 +583,8 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ToolEntry createNotEqual6CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(EventpatternElementTypes.NotEqual_2010);
@@ -1048,139 +599,238 @@ public class EventpatternPaletteFactory {
 	}
 
 	/**
-	 * @generated NOT
-	 */
-	/*
-	private static class NodeToolEntry extends ToolEntry {
-	
-		private final List<IElementType> elementTypes;
-	
-		private NodeToolEntry(String title, String description,
-				List<IElementType> elementTypes) {
-			super(title, description, null, null);
-			this.elementTypes = elementTypes;
-		}
-	
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
+	* @generated
+	*/
+	private ToolEntry createAddition1CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(EventpatternElementTypes.Addition_2004);
+		types.add(EventpatternElementTypes.Addition_3006);
+		types.add(EventpatternElementTypes.Addition_3030);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Addition1CreationTool_title,
+				Messages.Addition1CreationTool_desc, types);
+		entry.setId("createAddition1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Addition_2004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
-	 */
 
-	private static class NodeToolEntry extends ToolEntry {
-
-		/**
-		 * @generated NOT
-		 */
-		private final List<IElementType> elementTypes;
-		//Added
-		private String patternName = null;
-
-		/**
-		 * @generated NOT
-		 */
-		private NodeToolEntry(String title, String description, List<IElementType> elementTypes) {
-			super(title, description, null, null);
-			this.elementTypes = elementTypes;
-		}
-
-		// Added
-		public NodeToolEntry(String title, String description, List<IElementType> elementTypes, String patternName) {
-			super(title, description, null, null);
-			this.elementTypes = elementTypes;
-			this.patternName = patternName;
-		}
-
-		/**
-		 * @generated NOT
-		 */
-		public Tool createTool() {
-
-			Tool tool;
-
-			if (elementTypes.contains(EventpatternElementTypes.Event_2027)
-					|| elementTypes.contains(EventpatternElementTypes.Event_3024)
-					|| elementTypes.contains(EventpatternElementTypes.Event_3053)) {
-
-				tool = new CustomisedEventTypeCreationTool(elementTypes, this.getLabel());
-
-			} else if (elementTypes.contains(EventpatternElementTypes.ComplexEvent_2038)
-					&& !this.getLabel().equals("New Complex Event")) { // except to "New Complex Event" component
-				ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-				types.add(EventpatternElementTypes.Event_2027);
-				types.add(EventpatternElementTypes.Event_3024);
-				types.add(EventpatternElementTypes.Event_3053);
-
-				// Complex Event Tools will have the same type as the Event Tools 
-				// because when we use Complex Event Tools into canvas they will 
-				// be considered as Events in order to create new complexer Complex Events.
-				tool = new CustomisedComplexEventTypeCreationTool(types, this.getLabel(), patternName);
-			} else {
-				tool = new UnspecifiedTypeCreationTool(elementTypes);
-			}
-
-			tool.setProperties(getToolProperties());
-
-			return tool;
-		}
-
-		/* Add class
-		 * 
-		 * @see eventpattern.diagram.edit.helpers.EventEditHelper
-		 */
-		public class CustomisedEventTypeCreationTool extends CreationTool {
-
-			protected String node;
-			private List elementTypes;
-
-			public CustomisedEventTypeCreationTool(List elementTypes, String node) {
-				super();
-				this.node = node;
-				this.elementTypes = elementTypes;
-			}
-
-			protected Request createTargetRequest() {
-
-				CreateUnspecifiedTypeRequest request = new CreateUnspecifiedTypeRequest(elementTypes,
-						getPreferencesHint());
-
-				request.getExtendedData().put("clickedEventTool", node);
-
-				return request;
-			}
-		}
-
-		/* Add class
-		 * 
-		 * @see eventpattern.diagram.edit.helpers.EventEditHelper
-		 */
-		public class CustomisedComplexEventTypeCreationTool extends CreationTool {
-
-			protected String node;
-			private List elementTypes;
-
-			// Added
-			private String patternName;
-
-			public CustomisedComplexEventTypeCreationTool(List elementTypes, String node, String patternName) {
-				super();
-				this.node = node;
-				this.elementTypes = elementTypes;
-				this.patternName = patternName;
-			}
-
-			protected Request createTargetRequest() {
-
-				CreateUnspecifiedTypeRequest request = new CreateUnspecifiedTypeRequest(elementTypes,
-						getPreferencesHint());
-
-				request.getExtendedData().put("clickedComplexEventTool", node);
-				request.getExtendedData().put("patternName", patternName);
-
-				return request;
-			}
-		}
+	/**
+	* @generated
+	*/
+	private ToolEntry createDivision2CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(EventpatternElementTypes.Division_2007);
+		types.add(EventpatternElementTypes.Division_3009);
+		types.add(EventpatternElementTypes.Division_3033);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Division2CreationTool_title,
+				Messages.Division2CreationTool_desc, types);
+		entry.setId("createDivision2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Division_2007));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createModulus3CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(EventpatternElementTypes.Modulus_2008);
+		types.add(EventpatternElementTypes.Modulus_3010);
+		types.add(EventpatternElementTypes.Modulus_3034);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Modulus3CreationTool_title,
+				Messages.Modulus3CreationTool_desc, types);
+		entry.setId("createModulus3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Modulus_2008));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createMultiplication4CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(EventpatternElementTypes.Multiplication_2006);
+		types.add(EventpatternElementTypes.Multiplication_3008);
+		types.add(EventpatternElementTypes.Multiplication_3032);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Multiplication4CreationTool_title,
+				Messages.Multiplication4CreationTool_desc, types);
+		entry.setId("createMultiplication4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Multiplication_2006));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createSubtraction5CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(EventpatternElementTypes.Subtraction_2005);
+		types.add(EventpatternElementTypes.Subtraction_3007);
+		types.add(EventpatternElementTypes.Subtraction_3031);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Subtraction5CreationTool_title,
+				Messages.Subtraction5CreationTool_desc, types);
+		entry.setId("createSubtraction5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Subtraction_2005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createAvg1CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(EventpatternElementTypes.Avg_2024);
+		types.add(EventpatternElementTypes.Avg_3050);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Avg1CreationTool_title,
+				Messages.Avg1CreationTool_desc, types);
+		entry.setId("createAvg1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Avg_2024));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createCount2CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(EventpatternElementTypes.Count_2025);
+		types.add(EventpatternElementTypes.Count_3051);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Count2CreationTool_title,
+				Messages.Count2CreationTool_desc, types);
+		entry.setId("createCount2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Count_2025));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createMax3CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(EventpatternElementTypes.Max_2022);
+		types.add(EventpatternElementTypes.Max_3048);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Max3CreationTool_title,
+				Messages.Max3CreationTool_desc, types);
+		entry.setId("createMax3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Max_2022));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createMin4CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(EventpatternElementTypes.Min_2023);
+		types.add(EventpatternElementTypes.Min_3049);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Min4CreationTool_title,
+				Messages.Min4CreationTool_desc, types);
+		entry.setId("createMin4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Min_2023));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createSum5CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(EventpatternElementTypes.Sum_2026);
+		types.add(EventpatternElementTypes.Sum_3052);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Sum5CreationTool_title,
+				Messages.Sum5CreationTool_desc, types);
+		entry.setId("createSum5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Sum_2026));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createBatchingEventInterval1CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.BatchingEventInterval1CreationTool_title,
+				Messages.BatchingEventInterval1CreationTool_desc,
+				Collections.singletonList(EventpatternElementTypes.BatchingEventInterval_2035));
+		entry.setId("createBatchingEventInterval1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.BatchingEventInterval_2035));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createBatchingTimeInterval2CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.BatchingTimeInterval2CreationTool_title,
+				Messages.BatchingTimeInterval2CreationTool_desc,
+				Collections.singletonList(EventpatternElementTypes.BatchingTimeInterval_2037));
+		entry.setId("createBatchingTimeInterval2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.BatchingTimeInterval_2037));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createSlidingEventInterval3CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.SlidingEventInterval3CreationTool_title,
+				Messages.SlidingEventInterval3CreationTool_desc,
+				Collections.singletonList(EventpatternElementTypes.SlidingEventInterval_2034));
+		entry.setId("createSlidingEventInterval3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.SlidingEventInterval_2034));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createSlidingTimeInterval4CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.SlidingTimeInterval4CreationTool_title,
+				Messages.SlidingTimeInterval4CreationTool_desc,
+				Collections.singletonList(EventpatternElementTypes.SlidingTimeInterval_2036));
+		entry.setId("createSlidingTimeInterval4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(
+				EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.SlidingTimeInterval_2036));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createEmail1CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Email1CreationTool_title,
+				Messages.Email1CreationTool_desc, Collections.singletonList(EventpatternElementTypes.Email_2033));
+		entry.setId("createEmail1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Email_2033));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createTwitter2CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Twitter2CreationTool_title,
+				Messages.Twitter2CreationTool_desc, Collections.singletonList(EventpatternElementTypes.Twitter_2039));
+		entry.setId("createTwitter2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Twitter_2039));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
 }

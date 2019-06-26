@@ -13,8 +13,8 @@ import eventpattern.diagram.part.EventpatternDiagramEditorPlugin;
 public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public DiagramRulersAndGridPreferencePage() {
 		setPreferenceStore(EventpatternDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}

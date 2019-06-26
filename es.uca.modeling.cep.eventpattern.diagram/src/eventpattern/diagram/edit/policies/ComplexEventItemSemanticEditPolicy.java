@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.edit.policies;
 
 import java.util.Iterator;
@@ -32,15 +32,15 @@ import eventpattern.diagram.providers.EventpatternElementTypes;
 public class ComplexEventItemSemanticEditPolicy extends EventpatternBaseItemSemanticEditPolicy {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ComplexEventItemSemanticEditPolicy() {
 		super(EventpatternElementTypes.ComplexEvent_2038);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
@@ -77,8 +77,8 @@ public class ComplexEventItemSemanticEditPolicy extends EventpatternBaseItemSema
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void addDestroyChildNodesCommand(ICompositeCommand cmd) {
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {

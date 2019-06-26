@@ -13,63 +13,57 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BatchingEventIntervalTest extends DataWindowTest
-{
+public class BatchingEventIntervalTest extends DataWindowTest {
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static void main(String[] args)
-  {
+	public static void main(String[] args) {
 		TestRunner.run(BatchingEventIntervalTest.class);
 	}
 
-  /**
+	/**
 	 * Constructs a new Batching Event Interval test case with the given name.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public BatchingEventIntervalTest(String name)
-  {
+	public BatchingEventIntervalTest(String name) {
 		super(name);
 	}
 
-  /**
+	/**
 	 * Returns the fixture for this Batching Event Interval test case.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected BatchingEventInterval getFixture()
-  {
+	@Override
+	protected BatchingEventInterval getFixture() {
 		return (BatchingEventInterval)fixture;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-  @Override
-  protected void setUp() throws Exception
-  {
+	@Override
+	protected void setUp() throws Exception {
 		setFixture(EventpatternFactory.eINSTANCE.createBatchingEventInterval());
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-  @Override
-  protected void tearDown() throws Exception
-  {
+	@Override
+	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
 

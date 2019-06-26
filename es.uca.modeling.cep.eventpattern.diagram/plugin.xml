@@ -286,6 +286,7 @@
       </editpartProvider>
    </extension>
 
+   
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfCEPEventPatternEditPart">
@@ -795,6 +796,7 @@
       </modelingAssistantProvider>
       
    </extension>
+
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>

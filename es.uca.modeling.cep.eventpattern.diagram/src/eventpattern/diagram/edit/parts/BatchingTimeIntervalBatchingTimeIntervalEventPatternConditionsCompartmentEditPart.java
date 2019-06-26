@@ -34,27 +34,27 @@ public class BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompa
 		extends ShapeCompartmentEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final int VISUAL_ID = 7014;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getCompartmentName() {
 		return Messages.BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart_title;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
@@ -62,8 +62,8 @@ public class BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
@@ -77,8 +77,8 @@ public class BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompa
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setRatio(Double ratio) {
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);

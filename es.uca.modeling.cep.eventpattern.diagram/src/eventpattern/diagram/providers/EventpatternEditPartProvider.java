@@ -15,8 +15,8 @@ import eventpattern.diagram.part.EventpatternVisualIDRegistry;
 public class EventpatternEditPartProvider extends DefaultEditPartProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public EventpatternEditPartProvider() {
 		super(new EventpatternEditPartFactory(), EventpatternVisualIDRegistry.TYPED_INSTANCE,
 				CEPEventPatternEditPart.MODEL_ID);

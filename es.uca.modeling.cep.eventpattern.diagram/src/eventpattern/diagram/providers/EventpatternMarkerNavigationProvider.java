@@ -25,13 +25,13 @@ import eventpattern.diagram.part.EventpatternDiagramEditorUtil;
 public class EventpatternMarkerNavigationProvider extends AbstractModelMarkerNavigationProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static final String MARKER_TYPE = EventpatternDiagramEditorPlugin.ID + ".diagnostic"; //$NON-NLS-1$
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void doGotoMarker(IMarker marker) {
 		String elementId = marker.getAttribute(org.eclipse.gmf.runtime.common.core.resources.IMarker.ELEMENT_ID, null);
 		if (elementId == null || !(getEditor() instanceof DiagramEditor)) {
@@ -51,8 +51,8 @@ public class EventpatternMarkerNavigationProvider extends AbstractModelMarkerNav
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static void deleteMarkers(IResource resource) {
 		try {
 			resource.deleteMarkers(MARKER_TYPE, true, IResource.DEPTH_ZERO);
@@ -62,8 +62,8 @@ public class EventpatternMarkerNavigationProvider extends AbstractModelMarkerNav
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static IMarker addMarker(IFile file, String elementId, String location, String message, int statusSeverity) {
 		IMarker marker = null;
 		try {

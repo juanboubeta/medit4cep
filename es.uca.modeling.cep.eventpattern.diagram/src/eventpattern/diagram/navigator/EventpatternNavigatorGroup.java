@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.navigator;
 
 import java.util.Collection;
@@ -12,23 +12,23 @@ import java.util.LinkedList;
 public class EventpatternNavigatorGroup extends EventpatternAbstractNavigatorItem {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String myGroupName;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String myIcon;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Collection myChildren = new LinkedList();
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	EventpatternNavigatorGroup(String groupName, String icon, Object parent) {
 		super(parent);
 		myGroupName = groupName;
@@ -36,50 +36,50 @@ public class EventpatternNavigatorGroup extends EventpatternAbstractNavigatorIte
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getGroupName() {
 		return myGroupName;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getIcon() {
 		return myIcon;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Object[] getChildren() {
 		return myChildren.toArray();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void addChildren(Collection children) {
 		myChildren.addAll(children);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void addChild(Object child) {
 		myChildren.add(child);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean isEmpty() {
 		return myChildren.size() == 0;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean equals(Object obj) {
 		if (obj instanceof eventpattern.diagram.navigator.EventpatternNavigatorGroup) {
 			eventpattern.diagram.navigator.EventpatternNavigatorGroup anotherGroup = (eventpattern.diagram.navigator.EventpatternNavigatorGroup) obj;
@@ -91,8 +91,8 @@ public class EventpatternNavigatorGroup extends EventpatternAbstractNavigatorIte
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public int hashCode() {
 		return getGroupName().hashCode();
 	}

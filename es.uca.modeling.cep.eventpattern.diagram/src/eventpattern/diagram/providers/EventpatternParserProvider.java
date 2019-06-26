@@ -17,28 +17,11 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import eventpattern.EventpatternPackage;
-import eventpattern.diagram.edit.parts.*;
-import eventpattern.diagram.edit.parts.AdditionName2EditPart;
-import eventpattern.diagram.edit.parts.AdditionName3EditPart;
-import eventpattern.diagram.edit.parts.AdditionNameEditPart;
-import eventpattern.diagram.edit.parts.AndName2EditPart;
-import eventpattern.diagram.edit.parts.AndName3EditPart;
-import eventpattern.diagram.edit.parts.AndNameEditPart;
-import eventpattern.diagram.edit.parts.AvgName2EditPart;
-import eventpattern.diagram.edit.parts.AvgNameEditPart;
 import eventpattern.diagram.edit.parts.BatchingEventIntervalSizeEditPart;
 import eventpattern.diagram.edit.parts.BatchingTimeIntervalYearsMonthsWeeksDaysHouEditPart;
 import eventpattern.diagram.edit.parts.ComplexEventPropertyNameEditPart;
 import eventpattern.diagram.edit.parts.ComplexEventTypeNameEditPart;
-import eventpattern.diagram.edit.parts.CountName2EditPart;
-import eventpattern.diagram.edit.parts.CountNameEditPart;
-import eventpattern.diagram.edit.parts.DivisionName2EditPart;
-import eventpattern.diagram.edit.parts.DivisionName3EditPart;
-import eventpattern.diagram.edit.parts.DivisionNameEditPart;
-import eventpattern.diagram.edit.parts.EmailNameEditPart;
-import eventpattern.diagram.edit.parts.EqualName2EditPart;
-import eventpattern.diagram.edit.parts.EqualName3EditPart;
-import eventpattern.diagram.edit.parts.EqualNameEditPart;
+import eventpattern.diagram.edit.parts.EmailDescriptionEditPart;
 import eventpattern.diagram.edit.parts.EventPropertyName2EditPart;
 import eventpattern.diagram.edit.parts.EventPropertyName3EditPart;
 import eventpattern.diagram.edit.parts.EventPropertyName4EditPart;
@@ -47,47 +30,7 @@ import eventpattern.diagram.edit.parts.EventPropertyNameEditPart;
 import eventpattern.diagram.edit.parts.EventTypeName2EditPart;
 import eventpattern.diagram.edit.parts.EventTypeName3EditPart;
 import eventpattern.diagram.edit.parts.EventTypeNameEditPart;
-import eventpattern.diagram.edit.parts.EveryDistinctName2EditPart;
-import eventpattern.diagram.edit.parts.EveryDistinctName3EditPart;
-import eventpattern.diagram.edit.parts.EveryDistinctNameEditPart;
-import eventpattern.diagram.edit.parts.EveryName2EditPart;
-import eventpattern.diagram.edit.parts.EveryName3EditPart;
-import eventpattern.diagram.edit.parts.EveryNameEditPart;
-import eventpattern.diagram.edit.parts.FollowedByName2EditPart;
-import eventpattern.diagram.edit.parts.FollowedByName3EditPart;
-import eventpattern.diagram.edit.parts.FollowedByNameEditPart;
-import eventpattern.diagram.edit.parts.GreaterEqualName2EditPart;
-import eventpattern.diagram.edit.parts.GreaterEqualName3EditPart;
-import eventpattern.diagram.edit.parts.GreaterEqualNameEditPart;
-import eventpattern.diagram.edit.parts.GreaterThanName2EditPart;
-import eventpattern.diagram.edit.parts.GreaterThanName3EditPart;
-import eventpattern.diagram.edit.parts.GreaterThanNameEditPart;
-import eventpattern.diagram.edit.parts.LessEqualName2EditPart;
-import eventpattern.diagram.edit.parts.LessEqualName3EditPart;
-import eventpattern.diagram.edit.parts.LessEqualNameEditPart;
-import eventpattern.diagram.edit.parts.LessThanName2EditPart;
-import eventpattern.diagram.edit.parts.LessThanName3EditPart;
-import eventpattern.diagram.edit.parts.LessThanNameEditPart;
 import eventpattern.diagram.edit.parts.LinkOrderEditPart;
-import eventpattern.diagram.edit.parts.MaxName2EditPart;
-import eventpattern.diagram.edit.parts.MaxNameEditPart;
-import eventpattern.diagram.edit.parts.MinName2EditPart;
-import eventpattern.diagram.edit.parts.MinNameEditPart;
-import eventpattern.diagram.edit.parts.ModulusName2EditPart;
-import eventpattern.diagram.edit.parts.ModulusName3EditPart;
-import eventpattern.diagram.edit.parts.ModulusNameEditPart;
-import eventpattern.diagram.edit.parts.MultiplicationName2EditPart;
-import eventpattern.diagram.edit.parts.MultiplicationName3EditPart;
-import eventpattern.diagram.edit.parts.MultiplicationNameEditPart;
-import eventpattern.diagram.edit.parts.NotEqualName2EditPart;
-import eventpattern.diagram.edit.parts.NotEqualName3EditPart;
-import eventpattern.diagram.edit.parts.NotEqualNameEditPart;
-import eventpattern.diagram.edit.parts.NotName2EditPart;
-import eventpattern.diagram.edit.parts.NotName3EditPart;
-import eventpattern.diagram.edit.parts.NotNameEditPart;
-import eventpattern.diagram.edit.parts.OrName2EditPart;
-import eventpattern.diagram.edit.parts.OrName3EditPart;
-import eventpattern.diagram.edit.parts.OrNameEditPart;
 import eventpattern.diagram.edit.parts.RangeLowEndpointHighEndpoint2EditPart;
 import eventpattern.diagram.edit.parts.RangeLowEndpointHighEndpoint3EditPart;
 import eventpattern.diagram.edit.parts.RangeLowEndpointHighEndpointEditPart;
@@ -96,24 +39,13 @@ import eventpattern.diagram.edit.parts.RepeatCount3EditPart;
 import eventpattern.diagram.edit.parts.RepeatCountEditPart;
 import eventpattern.diagram.edit.parts.SlidingEventIntervalSizeEditPart;
 import eventpattern.diagram.edit.parts.SlidingTimeIntervalYearsMonthsWeeksDaysHouEditPart;
-import eventpattern.diagram.edit.parts.SubtractionName2EditPart;
-import eventpattern.diagram.edit.parts.SubtractionName3EditPart;
-import eventpattern.diagram.edit.parts.SubtractionNameEditPart;
-import eventpattern.diagram.edit.parts.SumName2EditPart;
-import eventpattern.diagram.edit.parts.SumNameEditPart;
 import eventpattern.diagram.edit.parts.TimeIntervalYearsMonthsWeeksDaysHou2EditPart;
 import eventpattern.diagram.edit.parts.TimeIntervalYearsMonthsWeeksDaysHouEditPart;
 import eventpattern.diagram.edit.parts.TimeScheduleDayOfWeekDayOfMonthMont2EditPart;
 import eventpattern.diagram.edit.parts.TimeScheduleDayOfWeekDayOfMonthMontEditPart;
-import eventpattern.diagram.edit.parts.UntilName2EditPart;
-import eventpattern.diagram.edit.parts.UntilName3EditPart;
-import eventpattern.diagram.edit.parts.UntilNameEditPart;
 import eventpattern.diagram.edit.parts.ValueValue2EditPart;
 import eventpattern.diagram.edit.parts.ValueValue3EditPart;
 import eventpattern.diagram.edit.parts.ValueValueEditPart;
-import eventpattern.diagram.edit.parts.WhileName2EditPart;
-import eventpattern.diagram.edit.parts.WhileName3EditPart;
-import eventpattern.diagram.edit.parts.WhileNameEditPart;
 import eventpattern.diagram.edit.parts.WithinTimerYearsMonthsWeeksDaysHou2EditPart;
 import eventpattern.diagram.edit.parts.WithinTimerYearsMonthsWeeksDaysHouEditPart;
 import eventpattern.diagram.parsers.MessageFormatParser;
@@ -125,13 +57,13 @@ import eventpattern.diagram.part.EventpatternVisualIDRegistry;
 public class EventpatternParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser repeatCount_5017Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getRepeatCount_5017Parser() {
 		if (repeatCount_5017Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRepeat_Count() };
@@ -145,13 +77,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser rangeLowEndpointHighEndpoint_5019Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getRangeLowEndpointHighEndpoint_5019Parser() {
 		if (rangeLowEndpointHighEndpoint_5019Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRange_LowEndpoint(),
@@ -166,13 +98,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser eventTypeName_5029Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getEventTypeName_5029Parser() {
 		if (eventTypeName_5029Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEvent_TypeName() };
@@ -183,13 +115,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser eventPropertyName_5030Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getEventPropertyName_5030Parser() {
 		if (eventPropertyName_5030Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
@@ -200,13 +132,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser valueValue_5031Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getValueValue_5031Parser() {
 		if (valueValue_5031Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getValue_Value() };
@@ -217,13 +149,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5056Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getWithinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5056Parser() {
 		if (withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5056Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getWithinTimer_Years(),
@@ -247,13 +179,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5057Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5057Parser() {
 		if (timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5057Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getTimeInterval_Years(),
@@ -277,13 +209,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getTimeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser() {
 		if (timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5058Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getTimeSchedule_DayOfWeek(),
@@ -322,13 +254,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser slidingEventIntervalSize_5092Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getSlidingEventIntervalSize_5092Parser() {
 		if (slidingEventIntervalSize_5092Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getSlidingEventInterval_Size() };
@@ -342,13 +274,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser batchingEventIntervalSize_5093Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getBatchingEventIntervalSize_5093Parser() {
 		if (batchingEventIntervalSize_5093Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getBatchingEventInterval_Size() };
@@ -362,13 +294,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser slidingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5094Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getSlidingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5094Parser() {
 		if (slidingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5094Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getSlidingTimeInterval_Years(),
@@ -392,13 +324,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser batchingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5095Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getBatchingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5095Parser() {
 		if (batchingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5095Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getBatchingTimeInterval_Years(),
@@ -422,13 +354,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser complexEventTypeName_5097Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getComplexEventTypeName_5097Parser() {
 		if (complexEventTypeName_5097Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getComplexEvent_TypeName() };
@@ -442,13 +374,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser eventPropertyName_5028Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getEventPropertyName_5028Parser() {
 		if (eventPropertyName_5028Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
@@ -459,13 +391,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser eventPropertyName_5027Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getEventPropertyName_5027Parser() {
 		if (eventPropertyName_5027Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
@@ -476,13 +408,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser repeatCount_5048Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getRepeatCount_5048Parser() {
 		if (repeatCount_5048Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRepeat_Count() };
@@ -496,13 +428,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser rangeLowEndpointHighEndpoint_5050Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getRangeLowEndpointHighEndpoint_5050Parser() {
 		if (rangeLowEndpointHighEndpoint_5050Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRange_LowEndpoint(),
@@ -517,13 +449,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser eventTypeName_5053Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getEventTypeName_5053Parser() {
 		if (eventTypeName_5053Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEvent_TypeName() };
@@ -534,13 +466,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser eventPropertyName_5054Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getEventPropertyName_5054Parser() {
 		if (eventPropertyName_5054Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
@@ -551,13 +483,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser valueValue_5055Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getValueValue_5055Parser() {
 		if (valueValue_5055Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getValue_Value() };
@@ -568,13 +500,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser repeatCount_5076Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getRepeatCount_5076Parser() {
 		if (repeatCount_5076Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRepeat_Count() };
@@ -588,13 +520,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser rangeLowEndpointHighEndpoint_5078Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getRangeLowEndpointHighEndpoint_5078Parser() {
 		if (rangeLowEndpointHighEndpoint_5078Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getRange_LowEndpoint(),
@@ -609,13 +541,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser eventTypeName_5086Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getEventTypeName_5086Parser() {
 		if (eventTypeName_5086Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEvent_TypeName() };
@@ -626,13 +558,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser eventPropertyName_5087Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getEventPropertyName_5087Parser() {
 		if (eventPropertyName_5087Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getEventProperty_Name() };
@@ -643,13 +575,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser valueValue_5088Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getValueValue_5088Parser() {
 		if (valueValue_5088Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getValue_Value() };
@@ -660,13 +592,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5089Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getWithinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5089Parser() {
 		if (withinTimerYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5089Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getWithinTimer_Years(),
@@ -690,13 +622,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5090Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5090Parser() {
 		if (timeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5090Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getTimeInterval_Years(),
@@ -720,13 +652,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5091Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getTimeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5091Parser() {
 		if (timeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5091Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getTimeSchedule_DayOfWeek(),
@@ -748,13 +680,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser complexEventPropertyName_5096Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getComplexEventPropertyName_5096Parser() {
 		if (complexEventPropertyName_5096Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getComplexEventProperty_Name() };
@@ -765,13 +697,13 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser linkOrder_6001Parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser getLinkOrder_6001Parser() {
 		if (linkOrder_6001Parser == null) {
 			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getLink_Order() };
@@ -782,8 +714,8 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case RepeatCountEditPart.VISUAL_ID:
@@ -853,16 +785,16 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * Utility method that consults ParserService
-	 * @generated
-	 */
+	* Utility method that consults ParserService
+	* @generated
+	*/
 	public static IParser getParser(IElementType type, EObject object, String parserHint) {
 		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
@@ -876,8 +808,8 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
@@ -890,18 +822,18 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static class HintAdapter extends ParserHintAdapter {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private final IElementType elementType;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public HintAdapter(IElementType type, EObject object, String parserHint) {
 			super(object, parserHint);
 			assert type != null;
@@ -909,8 +841,8 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public Object getAdapter(Class adapter) {
 			if (IElementType.class.equals(adapter)) {
 				return elementType;

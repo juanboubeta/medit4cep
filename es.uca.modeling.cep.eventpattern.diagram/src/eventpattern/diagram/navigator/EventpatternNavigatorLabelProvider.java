@@ -1,6 +1,6 @@
 /*
- * 
- */
+* 
+*/
 package eventpattern.diagram.navigator;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -21,8 +21,6 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import eventpattern.CEPEventPattern;
-import eventpattern.Email;
-import eventpattern.Twitter;
 import eventpattern.diagram.edit.parts.*;
 import eventpattern.diagram.part.EventpatternDiagramEditorPlugin;
 import eventpattern.diagram.part.EventpatternVisualIDRegistry;
@@ -36,8 +34,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 		implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	static {
 		EventpatternDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", //$NON-NLS-1$
 				ImageDescriptor.getMissingImageDescriptor());
@@ -46,8 +44,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
 		if (element instanceof EventpatternNavigatorItem
@@ -59,8 +57,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Image getImage(Object element) {
 		if (element instanceof EventpatternNavigatorGroup) {
 			EventpatternNavigatorGroup group = (EventpatternNavigatorGroup) element;
@@ -87,8 +85,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public Image getImage(View view) {
 		switch (EventpatternVisualIDRegistry.getVisualID(view)) {
 		case CEPEventPatternEditPart.VISUAL_ID:
@@ -400,8 +398,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private Image getImage(String key, IElementType elementType) {
 		ImageRegistry imageRegistry = EventpatternDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
@@ -418,8 +416,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getText(Object element) {
 		if (element instanceof EventpatternNavigatorGroup) {
 			EventpatternNavigatorGroup group = (EventpatternNavigatorGroup) element;
@@ -446,8 +444,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getText(View view) {
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
@@ -662,8 +660,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getCEPEventPattern_1000Text(View view) {
 		CEPEventPattern domainModelElement = (CEPEventPattern) view.getElement();
 		if (domainModelElement != null) {
@@ -676,120 +674,120 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getAnd_2001Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getOr_2002Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getNot_2003Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getAddition_2004Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getSubtraction_2005Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getMultiplication_2006Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getDivision_2007Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getModulus_2008Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEqual_2009Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getNotEqual_2010Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getLessThan_2011Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getGreaterThan_2012Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getLessEqual_2013Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getGreaterEqual_2014Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEvery_2015Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEveryDistinct_2016Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getRepeat_2017Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Repeat_2017,
 				view.getElement() != null ? view.getElement() : view,
@@ -804,15 +802,15 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getUntil_2018Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getRange_2019Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Range_2019,
 				view.getElement() != null ? view.getElement() : view,
@@ -827,57 +825,57 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getFollowedBy_2020Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getWhile_2021Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getMax_2022Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getMin_2023Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getAvg_2024Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getCount_2025Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getSum_2026Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEvent_2027Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Event_2027,
 				view.getElement() != null ? view.getElement() : view,
@@ -892,8 +890,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEventProperty_2028Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.EventProperty_2028,
 				view.getElement() != null ? view.getElement() : view,
@@ -908,8 +906,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getValue_2029Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Value_2029,
 				view.getElement() != null ? view.getElement() : view,
@@ -924,8 +922,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getWithinTimer_2030Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.WithinTimer_2030,
 				view.getElement() != null ? view.getElement() : view,
@@ -940,8 +938,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getTimeInterval_2031Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.TimeInterval_2031,
 				view.getElement() != null ? view.getElement() : view,
@@ -956,8 +954,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getTimeSchedule_2032Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.TimeSchedule_2032,
 				view.getElement() != null ? view.getElement() : view,
@@ -972,8 +970,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEmail_2033Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Email_2033,
 				view.getElement() != null ? view.getElement() : view,
@@ -988,8 +986,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getSlidingEventInterval_2034Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.SlidingEventInterval_2034,
 				view.getElement() != null ? view.getElement() : view,
@@ -1004,8 +1002,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getBatchingEventInterval_2035Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.BatchingEventInterval_2035,
 				view.getElement() != null ? view.getElement() : view,
@@ -1020,8 +1018,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getSlidingTimeInterval_2036Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.SlidingTimeInterval_2036,
 				view.getElement() != null ? view.getElement() : view,
@@ -1036,8 +1034,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getBatchingTimeInterval_2037Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.BatchingTimeInterval_2037,
 				view.getElement() != null ? view.getElement() : view,
@@ -1052,8 +1050,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getComplexEvent_2038Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.ComplexEvent_2038,
 				view.getElement() != null ? view.getElement() : view,
@@ -1068,8 +1066,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getTwitter_2039Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
@@ -1082,8 +1080,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEventProperty_3001Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.EventProperty_3001,
 				view.getElement() != null ? view.getElement() : view,
@@ -1098,8 +1096,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEventProperty_3002Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.EventProperty_3002,
 				view.getElement() != null ? view.getElement() : view,
@@ -1114,120 +1112,120 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getAnd_3003Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getOr_3004Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getNot_3005Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getAddition_3006Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getSubtraction_3007Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getMultiplication_3008Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getDivision_3009Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getModulus_3010Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEqual_3011Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getNotEqual_3012Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getLessThan_3013Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getGreaterThan_3014Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getLessEqual_3015Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getGreaterEqual_3016Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEvery_3017Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEveryDistinct_3018Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getRepeat_3019Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Repeat_3019,
 				view.getElement() != null ? view.getElement() : view,
@@ -1242,15 +1240,15 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getUntil_3020Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getRange_3021Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Range_3021,
 				view.getElement() != null ? view.getElement() : view,
@@ -1265,22 +1263,22 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getFollowedBy_3022Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getWhile_3023Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEvent_3024Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Event_3024,
 				view.getElement() != null ? view.getElement() : view,
@@ -1295,8 +1293,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEventProperty_3025Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.EventProperty_3025,
 				view.getElement() != null ? view.getElement() : view,
@@ -1311,8 +1309,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getValue_3026Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Value_3026,
 				view.getElement() != null ? view.getElement() : view,
@@ -1327,120 +1325,120 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getAnd_3027Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getOr_3028Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getNot_3029Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getAddition_3030Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getSubtraction_3031Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getMultiplication_3032Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getDivision_3033Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getModulus_3034Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEqual_3035Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getNotEqual_3036Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getLessThan_3037Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getGreaterThan_3038Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getLessEqual_3039Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getGreaterEqual_3040Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEvery_3041Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEveryDistinct_3042Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getRepeat_3043Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Repeat_3043,
 				view.getElement() != null ? view.getElement() : view,
@@ -1455,15 +1453,15 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getUntil_3044Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getRange_3045Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Range_3045,
 				view.getElement() != null ? view.getElement() : view,
@@ -1478,57 +1476,57 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getFollowedBy_3046Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getWhile_3047Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getMax_3048Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getMin_3049Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getAvg_3050Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getCount_3051Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getSum_3052Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEvent_3053Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Event_3053,
 				view.getElement() != null ? view.getElement() : view,
@@ -1543,8 +1541,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getEventProperty_3054Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.EventProperty_3054,
 				view.getElement() != null ? view.getElement() : view,
@@ -1559,8 +1557,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getValue_3055Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Value_3055,
 				view.getElement() != null ? view.getElement() : view,
@@ -1575,8 +1573,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getWithinTimer_3056Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.WithinTimer_3056,
 				view.getElement() != null ? view.getElement() : view,
@@ -1591,8 +1589,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getTimeInterval_3057Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.TimeInterval_3057,
 				view.getElement() != null ? view.getElement() : view,
@@ -1607,8 +1605,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getTimeSchedule_3058Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.TimeSchedule_3058,
 				view.getElement() != null ? view.getElement() : view,
@@ -1623,8 +1621,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getComplexEventProperty_3059Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.ComplexEventProperty_3059,
 				view.getElement() != null ? view.getElement() : view,
@@ -1646,8 +1644,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getLink_4001Text(View view) {
 		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.Link_4001,
 				view.getElement() != null ? view.getElement() : view,
@@ -1662,47 +1660,47 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getUnknownElementText(View view) {
 		return "<UnknownElement Visual_ID = " + view.getType() + ">"; //$NON-NLS-1$  //$NON-NLS-2$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String getUnresolvedDomainElementProxyText(View view) {
 		return "<Unresolved domain element Visual_ID = " + view.getType() + ">"; //$NON-NLS-1$  //$NON-NLS-2$
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void init(ICommonContentExtensionSite aConfig) {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void restoreState(IMemento aMemento) {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void saveState(IMemento aMemento) {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getDescription(Object anElement) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private boolean isOwnView(View view) {
 		return CEPEventPatternEditPart.MODEL_ID.equals(EventpatternVisualIDRegistry.getModelID(view));
 	}
