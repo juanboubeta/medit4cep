@@ -21,7 +21,7 @@ class SmartContracts {
 }
 
 @gmf.node(figure="rectangle", label="typeName", border.color="110,110,110",
-tool.name="SmartContract", tool.description="Add a SmartContract", resizable="false")
+tool.name="Smart Contract", tool.description="Add a SmartContract", resizable="false")
 class SmartContract {
    attr String typeName;
    attr String imagePath;

@@ -83,10 +83,10 @@ public class NewSmartContractHandler extends AbstractHandler {
 							// Set model's attributes
 					        ResourceSet resourceSet = new ResourceSetImpl();         
 					        Resource modelResource = resourceSet.getResource(modelUri, true);
-					        SmartContracts domain = ((SmartContracts) modelResource.getContents().get(0)); 
-					        domain.setName(name);
-					        domain.setCreationDate(new Date());
-					        domain.setDescription(description);
+					        SmartContracts smartcontract = ((SmartContracts) modelResource.getContents().get(0)); 
+					        smartcontract.setName(name);
+					        smartcontract.setCreationDate(new Date());
+					        smartcontract.setDescription(description);
 					        
 					        modelResource.save(null);
 					        

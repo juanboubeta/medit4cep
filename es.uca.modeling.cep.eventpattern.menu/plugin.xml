@@ -39,18 +39,28 @@
                style="push">
          </command>
          <command
-               commandId="es.uca.modeling.cep.eventpattern.menu.command.ImportEventPatterns"
-               label="Import Event Patterns..."
-               style="push">
-         </command>
-         <command
                commandId="es.uca.modeling.cep.eventpattern.menu.command.ExportDomain"
                label="Export CEP Domain..."
                style="push">
          </command>
          <command
+               commandId="es.uca.modeling.cep.eventpattern.menu.command.ImportEventPatterns"
+               label="Import Event Patterns..."
+               style="push">
+         </command>
+         <command
                commandId="es.uca.modeling.cep.eventpattern.menu.command.ExportEventPatterns"
                label="Export Event Patterns..."
+               style="push">
+         </command>
+         <command
+               commandId="es.uca.modeling.cep.eventpattern.menu.command.ImportSmartContract"
+               label="Import Smart Contracts..."
+               style="push">
+         </command>
+         <command
+               commandId="es.uca.modeling.cep.eventpattern.menu.command.ExportSmartContract"
+               label="Export Smart Contracts..."
                style="push">
          </command>
       </menuContribution>
@@ -157,6 +167,21 @@
                   label="New..."
                   style="push">
             </command>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.OpenSmartContract"
+                  label="Open"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.file.save"
+                  label="Save and Validate"
+                  style="push">
+            </command>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteSmartContract"
+                  label="Delete"
+                  style="push">
+            </command>
          </menu>
       </menuContribution>
    </extension>
@@ -228,19 +253,49 @@
             name="SaveValidateDomain">
       </command>
       <command
-            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ExportEventPatternsHandler"
-            id="es.uca.modeling.cep.eventpattern.menu.command.ExportEventPatterns"
-            name="ExportEventPatterns">
-      </command>
-      <command
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ImportEventPatternsHandler"
             id="es.uca.modeling.cep.eventpattern.menu.command.ImportEventPatterns"
             name="ImportEventPatterns">
       </command>
       <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ExportEventPatternsHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.ExportEventPatterns"
+            name="ExportEventPatterns">
+      </command>
+      <command
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.AutodetectDomainHandler"
             id="es.uca.modeling.cep.eventpattern.menu.command.AutodetectDomain"
             name="AutodetectDomain">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.NewSmartContractHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.NewSmartContract"
+            name="NewSmartContract">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.OpenSmartContractHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.OpenSmartContract"
+            name="OpenSmartContract">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateSmartContractHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateSmartContract"
+            name="SaveValidateSmartContract">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.DeleteSmartContractHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.DeleteSmartContract"
+            name="DeleteSmartContract">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ImportSmartContractHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.ImportSmartContract"
+            name="ImportSmartContracts">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ExportSmartContractHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.ExportSmartContract"
+            name="ExportSmartContracts">
       </command>
    </extension>
 
