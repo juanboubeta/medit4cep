@@ -23,7 +23,7 @@ package eventpattern;
  * </ul>
  *
  * @see eventpattern.EventpatternPackage#getTimeInterval()
- * @model annotation="gmf.node figure='svg' svg.uri='platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeInterval.svg' size='30,30' resizable='false' margin='0' label.placement='external' label.icon='false' label='years, months, weeks, days, hours, minutes, seconds, milliseconds' label.parser='MessageFormatParser' label.readOnly='true' label.view.pattern=' {0,choice,0#|0&lt;{0,number}y }{1,choice,0#|0&lt;{1,number}m }{2,choice,0#|0&lt;{2,number}w }{3,choice,0#|0&lt;{3,number}d }{4,choice,0#|0&lt;{4,number}h }{5,choice,0#|0&lt;{5,number}min }{6,choice,0#|0&lt;{6,number}s }{7,choice,0#|0&lt;{7,number}ms} ' tool.name='Time Interval' tool.description='Add a time interval'"
+ * @model annotation="gmf.node figure='svg' svg.uri='platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeInterval.svg' size='30,30' resizable='false' margin='0' label.placement='external' label.icon='false' label='years, months, weeks, days, hours, minutes, seconds, milliseconds' label.parser='MessageFormatParser' label.readOnly='true' label.view.pattern=' {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} ' tool.name='Time Interval' tool.description='Add a time interval'"
  * @generated
  */
 public interface TimeInterval extends PatternOperand

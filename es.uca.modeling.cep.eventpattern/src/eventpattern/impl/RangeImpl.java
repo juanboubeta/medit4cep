@@ -383,7 +383,7 @@ public class RangeImpl extends UnaryOperatorImpl implements Range
   {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (lowEndpoint: ");
 		result.append(lowEndpoint);
 		result.append(", highEndpoint: ");

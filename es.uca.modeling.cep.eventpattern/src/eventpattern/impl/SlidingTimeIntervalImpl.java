@@ -540,7 +540,7 @@ public class SlidingTimeIntervalImpl extends DataWindowImpl implements SlidingTi
   {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (years: ");
 		result.append(years);
 		result.append(", months: ");

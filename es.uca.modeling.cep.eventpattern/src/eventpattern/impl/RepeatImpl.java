@@ -329,7 +329,7 @@ public class RepeatImpl extends UnaryOperatorImpl implements Repeat
   {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (count: ");
 		result.append(count);
 		result.append(')');

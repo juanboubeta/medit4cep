@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see eventpattern.EventpatternPackage#getWithinTimer()
- * @model annotation="gmf.node figure='rounded' color='255,248,220' border.color='110,110,110' label='years, months, weeks, days, hours, minutes, seconds, milliseconds' label.parser='MessageFormatParser' label.readOnly='true' label.view.pattern='Within Timer: {0,choice,0#|0&lt;{0,number}y }{1,choice,0#|0&lt;{1,number}m }{2,choice,0#|0&lt;{2,number}w }{3,choice,0#|0&lt;{3,number}d }{4,choice,0#|0&lt;{4,number}h }{5,choice,0#|0&lt;{5,number}min }{6,choice,0#|0&lt;{6,number}s }{7,choice,0#|0&lt;{7,number}ms}' tool.name='Within Timer' tool.description='Add a within timer'"
+ * @model annotation="gmf.node figure='rounded' color='255,248,220' border.color='110,110,110' label='years, months, weeks, days, hours, minutes, seconds, milliseconds' label.parser='MessageFormatParser' label.readOnly='true' label.view.pattern='Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}' tool.name='Within Timer' tool.description='Add a within timer'"
  * @generated
  */
 public interface WithinTimer extends PatternOperand

@@ -590,7 +590,7 @@ public class EmailImpl extends ActionImpl implements Email
   {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (to: ");
 		result.append(to);
 		result.append(", cc: ");

@@ -367,7 +367,7 @@ public class ComplexEventImpl extends OperandImpl implements ComplexEvent
   {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (typeName: ");
 		result.append(typeName);
 		result.append(", imagePath: ");

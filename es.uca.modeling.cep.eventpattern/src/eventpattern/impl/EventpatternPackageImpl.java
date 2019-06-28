@@ -546,7 +546,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 
   /**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link EventpatternPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -561,8 +561,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		if (isInited) return (EventpatternPackage)EPackage.Registry.INSTANCE.getEPackage(EventpatternPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredEventpatternPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		EventpatternPackageImpl theEventpatternPackage = registeredEventpatternPackage instanceof EventpatternPackageImpl ? (EventpatternPackageImpl)registeredEventpatternPackage : new EventpatternPackageImpl();
+		EventpatternPackageImpl theEventpatternPackage = (EventpatternPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EventpatternPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EventpatternPackageImpl());
 
 		isInited = true;
 
@@ -575,6 +574,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		// Mark meta-data to indicate it can't be changed
 		theEventpatternPackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(EventpatternPackage.eNS_URI, theEventpatternPackage);
 		return theEventpatternPackage;
@@ -2651,13 +2651,13 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 	 */
   protected void createGmfAnnotations()
   {
-		String source = "gmf.diagram";
+		String source = "gmf.diagram";	
 		addAnnotation
-		  (cepEventPatternEClass,
-		   source,
+		  (cepEventPatternEClass, 
+		   source, 
 		   new String[] {
-			   "model.extension", "pattern",
-			   "diagram.extension", "pattern_diagram"
+			 "model.extension", "pattern",
+			 "diagram.extension", "pattern_diagram"
 		   });
 	}
 
@@ -2669,21 +2669,21 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 	 */
   protected void createGmf_1Annotations()
   {
-		String source = "gmf.link";
+		String source = "gmf.link";	
 		addAnnotation
-		  (linkEClass,
-		   source,
+		  (linkEClass, 
+		   source, 
 		   new String[] {
-			   "label", "order",
-			   "source", "operand",
-			   "target", "operator",
-			   "source.constraint", "self <> oppositeEnd \n\tand ( \n\t   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))\n\t   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or \n\t        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) \n\t        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) \n\t   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) \n\t      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) \n\t         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) \n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        \n\t   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) \n\t      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  \n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) \n\t      and oppositeEnd.oclIsKindOf(AggregationOperator)) \n\t   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   \n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))\n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))\n\t   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) \n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(GroupBy))\n\t)",
-			   "target.constraint", "self <> oppositeEnd",
-			   "source.decoration", "none",
-			   "target.decoration", "arrow",
-			   "color", "110,110,110",
-			   "tool.name", "Link",
-			   "tool.description", "Add a link"
+			 "label", "order",
+			 "source", "operand",
+			 "target", "operator",
+			 "source.constraint", "self <> oppositeEnd \r\n\tand ( \r\n\t   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))\r\n\t   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or \r\n\t        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) \r\n\t        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) \r\n\t   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))\r\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) \r\n\t      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) \r\n\t         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) \r\n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        \r\n\t   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) \r\n\t      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  \r\n\t   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) \r\n\t      and oppositeEnd.oclIsKindOf(AggregationOperator)) \r\n\t   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   \r\n\t   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))\r\n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))\r\n\t   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) \r\n\t   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(GroupBy))\r\n\t)",
+			 "target.constraint", "self <> oppositeEnd",
+			 "source.decoration", "none",
+			 "target.decoration", "arrow",
+			 "color", "110,110,110",
+			 "tool.name", "Link",
+			 "tool.description", "Add a link"
 		   });
 	}
 
@@ -2695,562 +2695,562 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 	 */
   protected void createGmf_2Annotations()
   {
-		String source = "gmf.node";
+		String source = "gmf.node";	
 		addAnnotation
-		  (complexEventEClass,
-		   source,
+		  (complexEventEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rectangle",
-			   "label", "typeName",
-			   "border.color", "110,110,110",
-			   "label.view.pattern", "New Complex Event: {0}",
-			   "label.readOnly", "true",
-			   "tool.name", "New Complex Event",
-			   "tool.description", "Add a new complex event"
-		   });
+			 "figure", "rectangle",
+			 "label", "typeName",
+			 "border.color", "110,110,110",
+			 "label.view.pattern", "New Complex Event: {0}",
+			 "label.readOnly", "true",
+			 "tool.name", "New Complex Event",
+			 "tool.description", "Add a new complex event"
+		   });	
 		addAnnotation
-		  (complexEventPropertyEClass,
-		   source,
+		  (complexEventPropertyEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rectangle",
-			   "label", "name",
-			   "border.color", "110,110,110",
-			   "tool.name", "New Complex Event Property",
-			   "tool.description", "Add a new complex event property"
-		   });
+			 "figure", "rectangle",
+			 "label", "name",
+			 "border.color", "110,110,110",
+			 "tool.name", "New Complex Event Property",
+			 "tool.description", "Add a new complex event property"
+		   });	
 		addAnnotation
-		  (slidingEventIntervalEClass,
-		   source,
+		  (slidingEventIntervalEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rectangle",
-			   "border.style", "dash",
-			   "label", "size",
-			   "border.color", "110,110,110",
-			   "color", "230,230,250",
-			   "label.view.pattern", "Sliding Event Interval: {0}",
-			   "label.edit.pattern", "{0, number}",
-			   "tool.name", "Sliding Event Interval",
-			   "tool.description", "Add a sliding event interval window"
-		   });
+			 "figure", "rectangle",
+			 "border.style", "dash",
+			 "label", "size",
+			 "border.color", "110,110,110",
+			 "color", "230,230,250",
+			 "label.view.pattern", "Sliding Event Interval: {0}",
+			 "label.edit.pattern", "{0, number}",
+			 "tool.name", "Sliding Event Interval",
+			 "tool.description", "Add a sliding event interval window"
+		   });	
 		addAnnotation
-		  (batchingEventIntervalEClass,
-		   source,
+		  (batchingEventIntervalEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rectangle",
-			   "border.style", "dash",
-			   "label", "size",
-			   "border.color", "110,110,110",
-			   "color", "230,230,250",
-			   "label.view.pattern", "Batching Event Interval: {0}",
-			   "label.edit.pattern", "{0, number}",
-			   "tool.name", "Batching Event Interval",
-			   "tool.description", "Add a batching event interval window"
-		   });
+			 "figure", "rectangle",
+			 "border.style", "dash",
+			 "label", "size",
+			 "border.color", "110,110,110",
+			 "color", "230,230,250",
+			 "label.view.pattern", "Batching Event Interval: {0}",
+			 "label.edit.pattern", "{0, number}",
+			 "tool.name", "Batching Event Interval",
+			 "tool.description", "Add a batching event interval window"
+		   });	
 		addAnnotation
-		  (slidingTimeIntervalEClass,
-		   source,
+		  (slidingTimeIntervalEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rectangle",
-			   "border.style", "dash",
-			   "border.color", "110,110,110",
-			   "color", "230,230,250",
-			   "label", "years, months, weeks, days, hours, minutes, seconds, milliseconds",
-			   "label.parser", "MessageFormatParser",
-			   "label.readOnly", "true",
-			   "label.view.pattern", "Sliding Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",
-			   "tool.name", "Sliding Time Interval",
-			   "tool.description", "Add a sliding time interval window"
-		   });
+			 "figure", "rectangle",
+			 "border.style", "dash",
+			 "border.color", "110,110,110",
+			 "color", "230,230,250",
+			 "label", "years, months, weeks, days, hours, minutes, seconds, milliseconds",
+			 "label.parser", "MessageFormatParser",
+			 "label.readOnly", "true",
+			 "label.view.pattern", "Sliding Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",
+			 "tool.name", "Sliding Time Interval",
+			 "tool.description", "Add a sliding time interval window"
+		   });	
 		addAnnotation
-		  (batchingTimeIntervalEClass,
-		   source,
+		  (batchingTimeIntervalEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rectangle",
-			   "border.style", "dash",
-			   "border.color", "110,110,110",
-			   "color", "230,230,250",
-			   "label", "years, months, weeks, days, hours, minutes, seconds, milliseconds",
-			   "label.parser", "MessageFormatParser",
-			   "label.readOnly", "true",
-			   "label.view.pattern", "Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",
-			   "tool.name", "Batching Time Interval",
-			   "tool.description", "Add a batching time interval window"
-		   });
+			 "figure", "rectangle",
+			 "border.style", "dash",
+			 "border.color", "110,110,110",
+			 "color", "230,230,250",
+			 "label", "years, months, weeks, days, hours, minutes, seconds, milliseconds",
+			 "label.parser", "MessageFormatParser",
+			 "label.readOnly", "true",
+			 "label.view.pattern", "Batching Time Interval: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",
+			 "tool.name", "Batching Time Interval",
+			 "tool.description", "Add a batching time interval window"
+		   });	
 		addAnnotation
-		  (groupByEClass,
-		   source,
+		  (groupByEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GroupBy.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Group By",
-			   "tool.description", "Add a group-by operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GroupBy.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Group By",
+			 "tool.description", "Add a group-by operator"
+		   });	
 		addAnnotation
-		  (everyEClass,
-		   source,
+		  (everyEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Every.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Every",
-			   "tool.description", "Add an every operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Every.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Every",
+			 "tool.description", "Add an every operator"
+		   });	
 		addAnnotation
-		  (everyDistinctEClass,
-		   source,
+		  (everyDistinctEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/EveryDistinct.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Every Distinct",
-			   "tool.description", "Add an every-distinct operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/EveryDistinct.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Every Distinct",
+			 "tool.description", "Add an every-distinct operator"
+		   });	
 		addAnnotation
-		  (repeatEClass,
-		   source,
+		  (repeatEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "ellipse",
-			   "label", "count",
-			   "label.view.pattern", "{0}",
-			   "label.edit.pattern", "{0, number}",
-			   "border.color", "38,110,159",
-			   "border.width", "3",
-			   "label.icon", "false",
-			   "color", "255,255,255",
-			   "size", "30,30",
-			   "resizable", "false",
-			   "tool.name", "Repeat",
-			   "tool.description", "Add a repeat operator"
-		   });
+			 "figure", "ellipse",
+			 "label", "count",
+			 "label.view.pattern", "{0}",
+			 "label.edit.pattern", "{0, number}",
+			 "border.color", "38,110,159",
+			 "border.width", "3",
+			 "label.icon", "false",
+			 "color", "255,255,255",
+			 "size", "30,30",
+			 "resizable", "false",
+			 "tool.name", "Repeat",
+			 "tool.description", "Add a repeat operator"
+		   });	
 		addAnnotation
-		  (untilEClass,
-		   source,
+		  (untilEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Until.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Until",
-			   "tool.description", "Add an until operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Until.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Until",
+			 "tool.description", "Add an until operator"
+		   });	
 		addAnnotation
-		  (rangeEClass,
-		   source,
+		  (rangeEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "ellipse",
-			   "label", "lowEndpoint, highEndpoint",
-			   "color", "255,255,255",
-			   "border.color", "38,110,159",
-			   "border.width", "3",
-			   "label.icon", "false",
-			   "size", "30,30",
-			   "label.view.pattern", "[{0, number}:{1, number}]",
-			   "label.edit.pattern", "{0}:{1}",
-			   "resizable", "false",
-			   "tool.name", "Range",
-			   "tool.description", "Add a range operator"
-		   });
+			 "figure", "ellipse",
+			 "label", "lowEndpoint, highEndpoint",
+			 "color", "255,255,255",
+			 "border.color", "38,110,159",
+			 "border.width", "3",
+			 "label.icon", "false",
+			 "size", "30,30",
+			 "label.view.pattern", "[{0, number}:{1, number}]",
+			 "label.edit.pattern", "{0}:{1}",
+			 "resizable", "false",
+			 "tool.name", "Range",
+			 "tool.description", "Add a range operator"
+		   });	
 		addAnnotation
-		  (followedByEClass,
-		   source,
+		  (followedByEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/FollowedBy.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Followed By",
-			   "tool.description", "Add a followed-by operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/FollowedBy.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Followed By",
+			 "tool.description", "Add a followed-by operator"
+		   });	
 		addAnnotation
-		  (whileEClass,
-		   source,
+		  (whileEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/While.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "While",
-			   "tool.description", "Add a while operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/While.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "While",
+			 "tool.description", "Add a while operator"
+		   });	
 		addAnnotation
-		  (andEClass,
-		   source,
+		  (andEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/And.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "And",
-			   "tool.description", "Add an and operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/And.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "And",
+			 "tool.description", "Add an and operator"
+		   });	
 		addAnnotation
-		  (orEClass,
-		   source,
+		  (orEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Or.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Or",
-			   "tool.description", "Add an or operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Or.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Or",
+			 "tool.description", "Add an or operator"
+		   });	
 		addAnnotation
-		  (notEClass,
-		   source,
+		  (notEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Not.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Not",
-			   "tool.description", "Add a not operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Not.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Not",
+			 "tool.description", "Add a not operator"
+		   });	
 		addAnnotation
-		  (additionEClass,
-		   source,
+		  (additionEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Addition.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Addition",
-			   "tool.description", "Add an addition operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Addition.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Addition",
+			 "tool.description", "Add an addition operator"
+		   });	
 		addAnnotation
-		  (subtractionEClass,
-		   source,
+		  (subtractionEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Subtraction.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Subtraction",
-			   "tool.description", "Add a subtraction operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Subtraction.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Subtraction",
+			 "tool.description", "Add a subtraction operator"
+		   });	
 		addAnnotation
-		  (multiplicationEClass,
-		   source,
+		  (multiplicationEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Multiplication.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Multiplication",
-			   "tool.description", "Add a multiplication operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Multiplication.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Multiplication",
+			 "tool.description", "Add a multiplication operator"
+		   });	
 		addAnnotation
-		  (divisionEClass,
-		   source,
+		  (divisionEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Division.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Division",
-			   "tool.description", "Add a division operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Division.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Division",
+			 "tool.description", "Add a division operator"
+		   });	
 		addAnnotation
-		  (modulusEClass,
-		   source,
+		  (modulusEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Modulus.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Modulus",
-			   "tool.description", "Add a modulus operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Modulus.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Modulus",
+			 "tool.description", "Add a modulus operator"
+		   });	
 		addAnnotation
-		  (equalEClass,
-		   source,
+		  (equalEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Equal.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Equal",
-			   "tool.description", "Add an equal operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Equal.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Equal",
+			 "tool.description", "Add an equal operator"
+		   });	
 		addAnnotation
-		  (notEqualEClass,
-		   source,
+		  (notEqualEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/NotEqual.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Not Equal",
-			   "tool.description", "Add a not-equal operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/NotEqual.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Not Equal",
+			 "tool.description", "Add a not-equal operator"
+		   });	
 		addAnnotation
-		  (lessThanEClass,
-		   source,
+		  (lessThanEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/LessThan.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Less Than",
-			   "tool.description", "Add a less-than operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/LessThan.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Less Than",
+			 "tool.description", "Add a less-than operator"
+		   });	
 		addAnnotation
-		  (greaterThanEClass,
-		   source,
+		  (greaterThanEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GreaterThan.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Greater Than",
-			   "tool.description", "Add a greater-than operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GreaterThan.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Greater Than",
+			 "tool.description", "Add a greater-than operator"
+		   });	
 		addAnnotation
-		  (lessEqualEClass,
-		   source,
+		  (lessEqualEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/LessEqual.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Less Equal",
-			   "tool.description", "Add a less-than-or-equal-to operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/LessEqual.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Less Equal",
+			 "tool.description", "Add a less-than-or-equal-to operator"
+		   });	
 		addAnnotation
-		  (greaterEqualEClass,
-		   source,
+		  (greaterEqualEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GreaterEqual.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Greater Equal",
-			   "tool.description", "Add a greater-than-or-equal-to operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/GreaterEqual.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Greater Equal",
+			 "tool.description", "Add a greater-than-or-equal-to operator"
+		   });	
 		addAnnotation
-		  (maxEClass,
-		   source,
+		  (maxEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Max.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Max",
-			   "tool.description", "Add a max operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Max.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Max",
+			 "tool.description", "Add a max operator"
+		   });	
 		addAnnotation
-		  (minEClass,
-		   source,
+		  (minEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Min.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Min",
-			   "tool.description", "Add a min operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Min.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Min",
+			 "tool.description", "Add a min operator"
+		   });	
 		addAnnotation
-		  (avgEClass,
-		   source,
+		  (avgEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Avg.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Avg",
-			   "tool.description", "Add an avg operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Avg.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Avg",
+			 "tool.description", "Add an avg operator"
+		   });	
 		addAnnotation
-		  (countEClass,
-		   source,
+		  (countEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Count.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Count",
-			   "tool.description", "Add a count operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Count.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Count",
+			 "tool.description", "Add a count operator"
+		   });	
 		addAnnotation
-		  (sumEClass,
-		   source,
+		  (sumEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Sum.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Sum",
-			   "tool.description", "Add a sum operator"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Sum.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Sum",
+			 "tool.description", "Add a sum operator"
+		   });	
 		addAnnotation
-		  (withinTimerEClass,
-		   source,
+		  (withinTimerEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rounded",
-			   "color", "255,248,220",
-			   "border.color", "110,110,110",
-			   "label", "years, months, weeks, days, hours, minutes, seconds, milliseconds",
-			   "label.parser", "MessageFormatParser",
-			   "label.readOnly", "true",
-			   "label.view.pattern", "Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",
-			   "tool.name", "Within Timer",
-			   "tool.description", "Add a within timer"
-		   });
+			 "figure", "rounded",
+			 "color", "255,248,220",
+			 "border.color", "110,110,110",
+			 "label", "years, months, weeks, days, hours, minutes, seconds, milliseconds",
+			 "label.parser", "MessageFormatParser",
+			 "label.readOnly", "true",
+			 "label.view.pattern", "Within Timer: {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms}",
+			 "tool.name", "Within Timer",
+			 "tool.description", "Add a within timer"
+		   });	
 		addAnnotation
-		  (timeIntervalEClass,
-		   source,
+		  (timeIntervalEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeInterval.svg",
-			   "size", "30,30",
-			   "resizable", "false",
-			   "margin", "0",
-			   "label.placement", "external",
-			   "label.icon", "false",
-			   "label", "years, months, weeks, days, hours, minutes, seconds, milliseconds",
-			   "label.parser", "MessageFormatParser",
-			   "label.readOnly", "true",
-			   "label.view.pattern", " {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} ",
-			   "tool.name", "Time Interval",
-			   "tool.description", "Add a time interval"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeInterval.svg",
+			 "size", "30,30",
+			 "resizable", "false",
+			 "margin", "0",
+			 "label.placement", "external",
+			 "label.icon", "false",
+			 "label", "years, months, weeks, days, hours, minutes, seconds, milliseconds",
+			 "label.parser", "MessageFormatParser",
+			 "label.readOnly", "true",
+			 "label.view.pattern", " {0,choice,0#|0<{0,number}y }{1,choice,0#|0<{1,number}m }{2,choice,0#|0<{2,number}w }{3,choice,0#|0<{3,number}d }{4,choice,0#|0<{4,number}h }{5,choice,0#|0<{5,number}min }{6,choice,0#|0<{6,number}s }{7,choice,0#|0<{7,number}ms} ",
+			 "tool.name", "Time Interval",
+			 "tool.description", "Add a time interval"
+		   });	
 		addAnnotation
-		  (timeScheduleEClass,
-		   source,
+		  (timeScheduleEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeSchedule.svg",
-			   "size", "30,30",
-			   "resizable", "false",
-			   "margin", "0",
-			   "label.placement", "external",
-			   "label.icon", "false",
-			   "label", "dayOfWeek, dayOfMonth, month, hour, minute, second",
-			   "label.parser", "MessageFormatParser",
-			   "label.readOnly", "true",
-			   "label.view.pattern", " {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} ",
-			   "tool.name", "Time Schedule",
-			   "tool.description", "Add a time schedule"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/TimeSchedule.svg",
+			 "size", "30,30",
+			 "resizable", "false",
+			 "margin", "0",
+			 "label.placement", "external",
+			 "label.icon", "false",
+			 "label", "dayOfWeek, dayOfMonth, month, hour, minute, second",
+			 "label.parser", "MessageFormatParser",
+			 "label.readOnly", "true",
+			 "label.view.pattern", " {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0<{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1< {3,number}:}{4,choice,-1#mm:|-1<{4,number}:}{5,choice,-1#ss|-1<{5,number}} ",
+			 "tool.name", "Time Schedule",
+			 "tool.description", "Add a time schedule"
+		   });	
 		addAnnotation
-		  (eventEClass,
-		   source,
+		  (eventEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rectangle",
-			   "label", "typeName",
-			   "border.color", "110,110,110",
-			   "tool.name", "Event",
-			   "tool.description", "Add an event",
-			   "resizable", "false",
-			   "label.readOnly", "true"
-		   });
+			 "figure", "rectangle",
+			 "label", "typeName",
+			 "border.color", "110,110,110",
+			 "tool.name", "Event",
+			 "tool.description", "Add an event",
+			 "resizable", "false",
+			 "label.readOnly", "true"
+		   });	
 		addAnnotation
-		  (eventPropertyEClass,
-		   source,
+		  (eventPropertyEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rectangle",
-			   "label", "name",
-			   "border.color", "110,110,110",
-			   "tool.name", "Event Property",
-			   "tool.description", "Add an event property",
-			   "resizable", "false",
-			   "label.readOnly", "true"
-		   });
+			 "figure", "rectangle",
+			 "label", "name",
+			 "border.color", "110,110,110",
+			 "tool.name", "Event Property",
+			 "tool.description", "Add an event property",
+			 "resizable", "false",
+			 "label.readOnly", "true"
+		   });	
 		addAnnotation
-		  (valueEClass,
-		   source,
+		  (valueEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "rounded",
-			   "label", "value",
-			   "label.text", "",
-			   "label.icon", "false",
-			   "margin", "0",
-			   "border.color", "110,110,110",
-			   "border.width", "3",
-			   "size", "30,30",
-			   "tool.name", "Value",
-			   "tool.description", "Add a value"
-		   });
+			 "figure", "rounded",
+			 "label", "value",
+			 "label.text", "",
+			 "label.icon", "false",
+			 "margin", "0",
+			 "border.color", "110,110,110",
+			 "border.width", "3",
+			 "size", "30,30",
+			 "tool.name", "Value",
+			 "tool.description", "Add a value"
+		   });	
 		addAnnotation
-		  (emailEClass,
-		   source,
+		  (emailEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg",
-			   "size", "30,30",
-			   "label", "description",
-			   "label.icon", "false",
-			   "label.placement", "external",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Email",
-			   "tool.description", "Add an email action"
-		   });
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg",
+			 "size", "30,30",
+			 "label", "description",
+			 "label.icon", "false",
+			 "label.placement", "external",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Email",
+			 "tool.description", "Add an email action"
+		   });	
 		addAnnotation
-		  (twitterEClass,
-		   source,
+		  (twitterEClass, 
+		   source, 
 		   new String[] {
-			   "figure", "svg",
-			   "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Twitter.svg",
-			   "size", "30,30",
-			   "label.placement", "none",
-			   "resizable", "false",
-			   "margin", "0",
-			   "tool.name", "Twitter",
-			   "tool.description", "Add a twitter action"
+			 "figure", "svg",
+			 "svg.uri", "platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Twitter.svg",
+			 "size", "30,30",
+			 "label.placement", "none",
+			 "resizable", "false",
+			 "margin", "0",
+			 "tool.name", "Twitter",
+			 "tool.description", "Add a twitter action"
 		   });
 	}
 
@@ -3262,34 +3262,34 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 	 */
   protected void createGmf_3Annotations()
   {
-		String source = "gmf.compartment";
+		String source = "gmf.compartment";	
 		addAnnotation
-		  (getComplexEvent_ComplexEventProperties(),
-		   source,
+		  (getComplexEvent_ComplexEventProperties(), 
+		   source, 
 		   new String[] {
-			   "layout", "list"
-		   });
+			 "layout", "list"
+		   });	
 		addAnnotation
-		  (getDataWindow_EventPatternConditions(),
-		   source,
+		  (getDataWindow_EventPatternConditions(), 
+		   source, 
 		   new String[] {
-		   });
+		   });	
 		addAnnotation
-		  (getWithinTimer_WithinTimerElements(),
-		   source,
+		  (getWithinTimer_WithinTimerElements(), 
+		   source, 
 		   new String[] {
-		   });
+		   });	
 		addAnnotation
-		  (getEvent_EventProperties(),
-		   source,
+		  (getEvent_EventProperties(), 
+		   source, 
 		   new String[] {
-			   "layout", "list"
-		   });
+			 "layout", "list"
+		   });	
 		addAnnotation
-		  (getEventProperty_EventProperties(),
-		   source,
+		  (getEventProperty_EventProperties(), 
+		   source, 
 		   new String[] {
-			   "layout", "list"
+			 "layout", "list"
 		   });
 	}
 
