@@ -1,0 +1,81 @@
+context SmartContract {
+	constraint HasContractName {
+
+	    check : self.typeName.isDefined() and self.typeName.trim().length() > 0
+	
+	    message : "Attribute 'typeName' must be named."
+	    
+	    fix {
+	        
+	    	title : "Set a value for 'name'."
+	            
+	        do {
+	        	var name : String;
+	            name = UserInput.prompt("Please enter a value for 'typeName':");
+	            self.typeName = name;
+	        }
+	    }  
+
+  	} 	
+}
+
+context ContractFunction {
+	constraint HasFunctiontName {
+
+        check : self.name.isDefined() and self.name.trim().length() > 0
+
+        message : 'Function must have a name.'
+
+        fix {
+        
+            title : "Set a value for 'name'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter a value for 'name':");
+                self.name = name;
+            }
+        }      
+    } 
+}
+
+context Parameter {
+	constraint HasParameterName {
+    
+        check : self.name.isDefined() and self.name.trim().length() > 0
+
+        message : "Parameter must be named."
+
+        fix {
+        
+            title : "Set a value for 'name'."
+            
+            do {
+                var name : String;
+                name = UserInput.prompt("Please enter a value for 'name':");
+                self.name = name;
+            }
+        }      
+    }    
+         
+    constraint HasParameterType {
+    
+    	guard : self.satisfies('HasParameterName')
+    
+        check {
+        
+        	var m : String; 
+        	m = "Parameter '" + self.name; 
+        	     	
+        	if (self.type == PropertyTypeValue#Unknown) {
+        		m = m + "' must have a type.";
+        		return false;        	    
+        	} else {
+        		return true; 
+        	}  
+        }
+
+        message : m
+      
+    }
+}

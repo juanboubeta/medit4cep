@@ -32,69 +32,69 @@ public class SmartcontractParserProvider extends AbstractProvider implements IPa
 	/**
 	* @generated
 	*/
-	private IParser smartContractTypeName_5006Parser;
+	private IParser smartContractTypeName_5014Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getSmartContractTypeName_5006Parser() {
-		if (smartContractTypeName_5006Parser == null) {
+	private IParser getSmartContractTypeName_5014Parser() {
+		if (smartContractTypeName_5014Parser == null) {
 			EAttribute[] features = new EAttribute[] { SmartcontractPackage.eINSTANCE.getSmartContract_TypeName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			smartContractTypeName_5006Parser = parser;
+			smartContractTypeName_5014Parser = parser;
 		}
-		return smartContractTypeName_5006Parser;
+		return smartContractTypeName_5014Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser contractFunctionName_5005Parser;
+	private IParser contractFunctionName_5013Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getContractFunctionName_5005Parser() {
-		if (contractFunctionName_5005Parser == null) {
+	private IParser getContractFunctionName_5013Parser() {
+		if (contractFunctionName_5013Parser == null) {
 			EAttribute[] features = new EAttribute[] { SmartcontractPackage.eINSTANCE.getContractFunction_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			contractFunctionName_5005Parser = parser;
+			contractFunctionName_5013Parser = parser;
 		}
-		return contractFunctionName_5005Parser;
+		return contractFunctionName_5013Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser inputParameterName_5010Parser;
+	private IParser inputParameterName_5011Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getInputParameterName_5010Parser() {
-		if (inputParameterName_5010Parser == null) {
+	private IParser getInputParameterName_5011Parser() {
+		if (inputParameterName_5011Parser == null) {
 			EAttribute[] features = new EAttribute[] { SmartcontractPackage.eINSTANCE.getParameter_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			inputParameterName_5010Parser = parser;
+			inputParameterName_5011Parser = parser;
 		}
-		return inputParameterName_5010Parser;
+		return inputParameterName_5011Parser;
 	}
 
 	/**
 	* @generated
 	*/
-	private IParser outputParameterName_5009Parser;
+	private IParser outputParameterName_5012Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getOutputParameterName_5009Parser() {
-		if (outputParameterName_5009Parser == null) {
+	private IParser getOutputParameterName_5012Parser() {
+		if (outputParameterName_5012Parser == null) {
 			EAttribute[] features = new EAttribute[] { SmartcontractPackage.eINSTANCE.getParameter_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			outputParameterName_5009Parser = parser;
+			outputParameterName_5012Parser = parser;
 		}
-		return outputParameterName_5009Parser;
+		return outputParameterName_5012Parser;
 	}
 
 	/**
@@ -103,13 +103,13 @@ public class SmartcontractParserProvider extends AbstractProvider implements IPa
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case SmartContractTypeNameEditPart.VISUAL_ID:
-			return getSmartContractTypeName_5006Parser();
+			return getSmartContractTypeName_5014Parser();
 		case ContractFunctionNameEditPart.VISUAL_ID:
-			return getContractFunctionName_5005Parser();
+			return getContractFunctionName_5013Parser();
 		case InputParameterNameEditPart.VISUAL_ID:
-			return getInputParameterName_5010Parser();
+			return getInputParameterName_5011Parser();
 		case OutputParameterNameEditPart.VISUAL_ID:
-			return getOutputParameterName_5009Parser();
+			return getOutputParameterName_5012Parser();
 		}
 		return null;
 	}

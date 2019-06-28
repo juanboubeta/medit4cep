@@ -60,7 +60,7 @@ public class InputParameterNameEditPart extends CompartmentEditPart implements I
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5010;
+	public static final int VISUAL_ID = 5011;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class InputParameterNameEditPart extends CompartmentEditPart implements I
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.InputParameter_3008,
+			parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.InputParameter_3010,
 					getParserElement(), SmartcontractVisualIDRegistry
 							.getType(smartcontract.diagram.edit.parts.InputParameterNameEditPart.VISUAL_ID));
 		}

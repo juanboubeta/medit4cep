@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smartcontract" nsURI="www.uca.es/modeling/smartcontract" nsPrefix="smartcontract">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smartcontract" nsURI="www.uca.es/modeling/cep/smartcontract"
+    nsPrefix="smartcontract">
   <eClassifiers xsi:type="ecore:EClass" name="SmartContracts">
     <eAnnotations source="gmf.diagram">
       <details key="model.extension" value="smartc"/>
@@ -23,6 +24,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contractfunctions" upperBound="-1"
+        eType="#//ContractFunction" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SmartContractProperties"
         upperBound="-1" eType="#//ContractFunction" containment="true" eOpposite="#//ContractFunction/referencedSmartContract">
       <eAnnotations source="gmf.compartment">

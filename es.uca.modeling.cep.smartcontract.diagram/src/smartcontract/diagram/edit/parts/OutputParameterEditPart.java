@@ -38,7 +38,7 @@ public class OutputParameterEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3007;
+	public static final int VISUAL_ID = 3011;
 
 	/**
 	* @generated

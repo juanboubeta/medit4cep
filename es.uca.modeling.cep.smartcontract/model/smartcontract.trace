@@ -4,40 +4,40 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
   <nodeTraces
-      visualID="2002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/smartcontract' and _eClass_.name = 'SmartContract') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/smartcontract' and _eClass_.name = 'SmartContracts') and _containmentMF_.name = 'smartcontracts')">
+      visualID="2003"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'SmartContract') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'SmartContracts') and _containmentMF_.name = 'smartcontracts')">
     <nodeLabelTraces
-        visualID="5006"
+        visualID="5014"
         queryText="true"/>
     <compartmentTraces
-        visualID="7004"
+        visualID="7007"
         queryText="true"/>
   </nodeTraces>
   <childNodeTraces
-      visualID="3003"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/smartcontract' and _eClass_.name = 'ContractFunction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/smartcontract' and _eClass_.name = 'SmartContract') and _containmentMF_.name = 'SmartContractProperties')">
+      visualID="3009"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'ContractFunction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'SmartContract') and _containmentMF_.name = 'SmartContractProperties')">
     <nodeLabelTraces
-        visualID="5005"
+        visualID="5013"
         queryText="true"/>
     <compartmentTraces
-        visualID="7005"
+        visualID="7008"
         queryText="true"/>
     <compartmentTraces
-        visualID="7006"
+        visualID="7009"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3007"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/smartcontract' and _eClass_.name = 'OutputParameter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/smartcontract' and _eClass_.name = 'ContractFunction') and _containmentMF_.name = 'OutputParametersFunction')">
+      visualID="3010"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'InputParameter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'ContractFunction') and _containmentMF_.name = 'InputParametersFunction')">
     <nodeLabelTraces
-        visualID="5009"
+        visualID="5011"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3008"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/smartcontract' and _eClass_.name = 'InputParameter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/smartcontract' and _eClass_.name = 'ContractFunction') and _containmentMF_.name = 'InputParametersFunction')">
+      visualID="3011"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'OutputParameter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'ContractFunction') and _containmentMF_.name = 'OutputParametersFunction')">
     <nodeLabelTraces
-        visualID="5010"
+        visualID="5012"
         queryText="true"/>
   </childNodeTraces>
 </trace:TraceModel>

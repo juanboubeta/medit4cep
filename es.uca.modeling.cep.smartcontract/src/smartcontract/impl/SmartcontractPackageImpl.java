@@ -214,8 +214,17 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSmartContract_SmartContractProperties() {
+	public EReference getSmartContract_Contractfunctions() {
 		return (EReference)smartContractEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSmartContract_SmartContractProperties() {
+		return (EReference)smartContractEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -381,6 +390,7 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 		smartContractEClass = createEClass(SMART_CONTRACT);
 		createEAttribute(smartContractEClass, SMART_CONTRACT__TYPE_NAME);
 		createEAttribute(smartContractEClass, SMART_CONTRACT__IMAGE_PATH);
+		createEReference(smartContractEClass, SMART_CONTRACT__CONTRACTFUNCTIONS);
 		createEReference(smartContractEClass, SMART_CONTRACT__SMART_CONTRACT_PROPERTIES);
 
 		contractFunctionEClass = createEClass(CONTRACT_FUNCTION);
@@ -445,6 +455,7 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 		initEClass(smartContractEClass, SmartContract.class, "SmartContract", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSmartContract_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSmartContract_ImagePath(), ecorePackage.getEString(), "imagePath", null, 0, 1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSmartContract_Contractfunctions(), this.getContractFunction(), null, "contractfunctions", null, 0, -1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSmartContract_SmartContractProperties(), this.getContractFunction(), this.getContractFunction_ReferencedSmartContract(), "SmartContractProperties", null, 0, -1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contractFunctionEClass, ContractFunction.class, "ContractFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

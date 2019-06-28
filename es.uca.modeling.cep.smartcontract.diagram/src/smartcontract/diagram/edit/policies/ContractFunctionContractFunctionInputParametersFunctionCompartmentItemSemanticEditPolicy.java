@@ -19,14 +19,14 @@ public class ContractFunctionContractFunctionInputParametersFunctionCompartmentI
 	* @generated
 	*/
 	public ContractFunctionContractFunctionInputParametersFunctionCompartmentItemSemanticEditPolicy() {
-		super(SmartcontractElementTypes.ContractFunction_3003);
+		super(SmartcontractElementTypes.ContractFunction_3009);
 	}
 
 	/**
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (SmartcontractElementTypes.InputParameter_3008 == req.getElementType()) {
+		if (SmartcontractElementTypes.InputParameter_3010 == req.getElementType()) {
 			return getGEFWrapper(new InputParameterCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

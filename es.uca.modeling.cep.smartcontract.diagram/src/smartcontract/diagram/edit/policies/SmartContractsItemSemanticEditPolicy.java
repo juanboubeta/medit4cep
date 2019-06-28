@@ -29,7 +29,7 @@ public class SmartContractsItemSemanticEditPolicy extends SmartcontractBaseItemS
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (SmartcontractElementTypes.SmartContract_2002 == req.getElementType()) {
+		if (SmartcontractElementTypes.SmartContract_2003 == req.getElementType()) {
 			return getGEFWrapper(new SmartContractCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

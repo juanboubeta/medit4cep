@@ -60,7 +60,7 @@ public class SmartContractTypeNameEditPart extends CompartmentEditPart implement
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5006;
+	public static final int VISUAL_ID = 5014;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class SmartContractTypeNameEditPart extends CompartmentEditPart implement
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.SmartContract_2002,
+			parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.SmartContract_2003,
 					getParserElement(), SmartcontractVisualIDRegistry
 							.getType(smartcontract.diagram.edit.parts.SmartContractTypeNameEditPart.VISUAL_ID));
 		}

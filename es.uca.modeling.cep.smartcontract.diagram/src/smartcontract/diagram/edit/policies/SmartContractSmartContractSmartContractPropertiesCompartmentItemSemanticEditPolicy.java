@@ -19,14 +19,14 @@ public class SmartContractSmartContractSmartContractPropertiesCompartmentItemSem
 	* @generated
 	*/
 	public SmartContractSmartContractSmartContractPropertiesCompartmentItemSemanticEditPolicy() {
-		super(SmartcontractElementTypes.SmartContract_2002);
+		super(SmartcontractElementTypes.SmartContract_2003);
 	}
 
 	/**
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (SmartcontractElementTypes.ContractFunction_3003 == req.getElementType()) {
+		if (SmartcontractElementTypes.ContractFunction_3009 == req.getElementType()) {
 			return getGEFWrapper(new ContractFunctionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -9,7 +9,7 @@
  *     Juan Boubeta-Puig - initial metamodel and implementation
  ******************************************************************************/
 
-@namespace(uri="www.uca.es/modeling/smartcontract", prefix="smartcontract")
+@namespace(uri="www.uca.es/modeling/cep/smartcontract", prefix="smartcontract")
 package smartcontract; 
 
 @gmf.diagram(model.extension="smartc", diagram.extension="smartc_diagram")
@@ -24,7 +24,8 @@ class SmartContracts {
 tool.name="SmartContract", tool.description="Add a SmartContract", resizable="false")
 class SmartContract {
    attr String typeName;
-   attr String imagePath;  
+   attr String imagePath;
+   val ContractFunction[*] contractfunctions;   
     
    @gmf.compartment(layout="list")
    val ContractFunction[*]#referencedSmartContract SmartContractProperties;  

@@ -29,7 +29,7 @@ public class SmartContractItemSemanticEditPolicy extends SmartcontractBaseItemSe
 	* @generated
 	*/
 	public SmartContractItemSemanticEditPolicy() {
-		super(SmartcontractElementTypes.SmartContract_2002);
+		super(SmartcontractElementTypes.SmartContract_2003);
 	}
 
 	/**

@@ -35,7 +35,7 @@ public class SmartContractSmartContractSmartContractPropertiesCompartmentEditPar
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 7004;
+	public static final int VISUAL_ID = 7007;
 
 	/**
 	* @generated
@@ -99,7 +99,7 @@ public class SmartContractSmartContractSmartContractPropertiesCompartmentEditPar
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == SmartcontractElementTypes.ContractFunction_3003) {
+			if (type == SmartcontractElementTypes.ContractFunction_3009) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

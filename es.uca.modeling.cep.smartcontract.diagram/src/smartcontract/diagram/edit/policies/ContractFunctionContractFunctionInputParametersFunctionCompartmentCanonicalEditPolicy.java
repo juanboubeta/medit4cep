@@ -64,7 +64,7 @@ public class ContractFunctionContractFunctionInputParametersFunctionCompartmentC
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<SmartcontractNodeDescriptor> childDescriptors = SmartcontractDiagramUpdater
-				.getContractFunctionContractFunctionInputParametersFunctionCompartment_7005SemanticChildren(viewObject);
+				.getContractFunctionContractFunctionInputParametersFunctionCompartment_7008SemanticChildren(viewObject);
 		for (SmartcontractNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -94,7 +94,7 @@ public class ContractFunctionContractFunctionInputParametersFunctionCompartmentC
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<SmartcontractNodeDescriptor> childDescriptors = SmartcontractDiagramUpdater
-				.getContractFunctionContractFunctionInputParametersFunctionCompartment_7005SemanticChildren(
+				.getContractFunctionContractFunctionInputParametersFunctionCompartment_7008SemanticChildren(
 						(View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

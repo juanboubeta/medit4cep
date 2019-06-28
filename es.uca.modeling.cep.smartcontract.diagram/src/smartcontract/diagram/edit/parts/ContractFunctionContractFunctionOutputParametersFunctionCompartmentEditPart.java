@@ -36,7 +36,7 @@ public class ContractFunctionContractFunctionOutputParametersFunctionCompartment
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 7006;
+	public static final int VISUAL_ID = 7009;
 
 	/**
 	* @generated
@@ -100,7 +100,7 @@ public class ContractFunctionContractFunctionOutputParametersFunctionCompartment
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == SmartcontractElementTypes.OutputParameter_3007) {
+			if (type == SmartcontractElementTypes.OutputParameter_3011) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

@@ -45,11 +45,11 @@ public class SmartcontractDiagramUpdater {
 		case SmartContractsEditPart.VISUAL_ID:
 			return getSmartContracts_1000SemanticChildren(view);
 		case SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID:
-			return getSmartContractSmartContractSmartContractPropertiesCompartment_7004SemanticChildren(view);
+			return getSmartContractSmartContractSmartContractPropertiesCompartment_7007SemanticChildren(view);
 		case ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID:
-			return getContractFunctionContractFunctionInputParametersFunctionCompartment_7005SemanticChildren(view);
+			return getContractFunctionContractFunctionInputParametersFunctionCompartment_7008SemanticChildren(view);
 		case ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID:
-			return getContractFunctionContractFunctionOutputParametersFunctionCompartment_7006SemanticChildren(view);
+			return getContractFunctionContractFunctionOutputParametersFunctionCompartment_7009SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -77,7 +77,7 @@ public class SmartcontractDiagramUpdater {
 	/**
 	* @generated
 	*/
-	public static List<SmartcontractNodeDescriptor> getSmartContractSmartContractSmartContractPropertiesCompartment_7004SemanticChildren(
+	public static List<SmartcontractNodeDescriptor> getSmartContractSmartContractSmartContractPropertiesCompartment_7007SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -102,7 +102,7 @@ public class SmartcontractDiagramUpdater {
 	/**
 	* @generated
 	*/
-	public static List<SmartcontractNodeDescriptor> getContractFunctionContractFunctionInputParametersFunctionCompartment_7005SemanticChildren(
+	public static List<SmartcontractNodeDescriptor> getContractFunctionContractFunctionInputParametersFunctionCompartment_7008SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -127,7 +127,7 @@ public class SmartcontractDiagramUpdater {
 	/**
 	* @generated
 	*/
-	public static List<SmartcontractNodeDescriptor> getContractFunctionContractFunctionOutputParametersFunctionCompartment_7006SemanticChildren(
+	public static List<SmartcontractNodeDescriptor> getContractFunctionContractFunctionOutputParametersFunctionCompartment_7009SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -156,13 +156,13 @@ public class SmartcontractDiagramUpdater {
 		case SmartContractsEditPart.VISUAL_ID:
 			return getSmartContracts_1000ContainedLinks(view);
 		case SmartContractEditPart.VISUAL_ID:
-			return getSmartContract_2002ContainedLinks(view);
+			return getSmartContract_2003ContainedLinks(view);
 		case ContractFunctionEditPart.VISUAL_ID:
-			return getContractFunction_3003ContainedLinks(view);
+			return getContractFunction_3009ContainedLinks(view);
 		case InputParameterEditPart.VISUAL_ID:
-			return getInputParameter_3008ContainedLinks(view);
+			return getInputParameter_3010ContainedLinks(view);
 		case OutputParameterEditPart.VISUAL_ID:
-			return getOutputParameter_3007ContainedLinks(view);
+			return getOutputParameter_3011ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -173,13 +173,13 @@ public class SmartcontractDiagramUpdater {
 	public static List<SmartcontractLinkDescriptor> getIncomingLinks(View view) {
 		switch (SmartcontractVisualIDRegistry.getVisualID(view)) {
 		case SmartContractEditPart.VISUAL_ID:
-			return getSmartContract_2002IncomingLinks(view);
+			return getSmartContract_2003IncomingLinks(view);
 		case ContractFunctionEditPart.VISUAL_ID:
-			return getContractFunction_3003IncomingLinks(view);
+			return getContractFunction_3009IncomingLinks(view);
 		case InputParameterEditPart.VISUAL_ID:
-			return getInputParameter_3008IncomingLinks(view);
+			return getInputParameter_3010IncomingLinks(view);
 		case OutputParameterEditPart.VISUAL_ID:
-			return getOutputParameter_3007IncomingLinks(view);
+			return getOutputParameter_3011IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -190,13 +190,13 @@ public class SmartcontractDiagramUpdater {
 	public static List<SmartcontractLinkDescriptor> getOutgoingLinks(View view) {
 		switch (SmartcontractVisualIDRegistry.getVisualID(view)) {
 		case SmartContractEditPart.VISUAL_ID:
-			return getSmartContract_2002OutgoingLinks(view);
+			return getSmartContract_2003OutgoingLinks(view);
 		case ContractFunctionEditPart.VISUAL_ID:
-			return getContractFunction_3003OutgoingLinks(view);
+			return getContractFunction_3009OutgoingLinks(view);
 		case InputParameterEditPart.VISUAL_ID:
-			return getInputParameter_3008OutgoingLinks(view);
+			return getInputParameter_3010OutgoingLinks(view);
 		case OutputParameterEditPart.VISUAL_ID:
-			return getOutputParameter_3007OutgoingLinks(view);
+			return getOutputParameter_3011OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -209,86 +209,86 @@ public class SmartcontractDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getSmartContract_2002ContainedLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getSmartContract_2003ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getContractFunction_3003ContainedLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getContractFunction_3009ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getInputParameter_3008ContainedLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getInputParameter_3010ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getOutputParameter_3007ContainedLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getOutputParameter_3011ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getSmartContract_2002IncomingLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getSmartContract_2003IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getContractFunction_3003IncomingLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getContractFunction_3009IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getInputParameter_3008IncomingLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getInputParameter_3010IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getOutputParameter_3007IncomingLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getOutputParameter_3011IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getSmartContract_2002OutgoingLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getSmartContract_2003OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getContractFunction_3003OutgoingLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getContractFunction_3009OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getInputParameter_3008OutgoingLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getInputParameter_3010OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<SmartcontractLinkDescriptor> getOutputParameter_3007OutgoingLinks(View view) {
+	* @generated
+	*/
+	public static List<SmartcontractLinkDescriptor> getOutputParameter_3011OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 

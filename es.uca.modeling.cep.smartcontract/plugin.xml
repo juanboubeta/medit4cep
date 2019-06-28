@@ -16,7 +16,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated smartcontract -->
       <package
-            uri="www.uca.es/modeling/smartcontract"
+            uri="www.uca.es/modeling/cep/smartcontract"
             class="smartcontract.SmartcontractPackage"/>
    </extension>
 

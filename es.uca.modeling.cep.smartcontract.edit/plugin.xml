@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated smartcontract -->
       <factory
-            uri="www.uca.es/modeling/smartcontract"
+            uri="www.uca.es/modeling/cep/smartcontract"
             class="smartcontract.provider.SmartcontractItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

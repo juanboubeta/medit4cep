@@ -80,10 +80,10 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 	*/
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-				if (op.getViewKind() == Node.class)
-					return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-				if (op.getViewKind() == Edge.class)
-					return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		    if (op.getViewKind() == Node.class)
+		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		    if (op.getViewKind() == Edge.class)
+		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
 		*/
 		return true;
 	}
@@ -201,13 +201,13 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 		}
 		switch (visualID) {
 		case SmartContractEditPart.VISUAL_ID:
-			return createSmartContract_2002(domainElement, containerView, index, persisted, preferencesHint);
+			return createSmartContract_2003(domainElement, containerView, index, persisted, preferencesHint);
 		case ContractFunctionEditPart.VISUAL_ID:
-			return createContractFunction_3003(domainElement, containerView, index, persisted, preferencesHint);
+			return createContractFunction_3009(domainElement, containerView, index, persisted, preferencesHint);
 		case InputParameterEditPart.VISUAL_ID:
-			return createInputParameter_3008(domainElement, containerView, index, persisted, preferencesHint);
+			return createInputParameter_3010(domainElement, containerView, index, persisted, preferencesHint);
 		case OutputParameterEditPart.VISUAL_ID:
-			return createOutputParameter_3007(domainElement, containerView, index, persisted, preferencesHint);
+			return createOutputParameter_3011(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -229,7 +229,7 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 	/**
 	* @generated
 	*/
-	public Node createSmartContract_2002(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createSmartContract_2003(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -258,7 +258,7 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5006 = createLabel(node,
+		Node label5014 = createLabel(node,
 				SmartcontractVisualIDRegistry.getType(SmartContractTypeNameEditPart.VISUAL_ID));
 		createCompartment(node,
 				SmartcontractVisualIDRegistry
@@ -270,7 +270,7 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 	/**
 	* @generated
 	*/
-	public Node createContractFunction_3003(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createContractFunction_3009(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -298,7 +298,7 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5005 = createLabel(node,
+		Node label5013 = createLabel(node,
 				SmartcontractVisualIDRegistry.getType(ContractFunctionNameEditPart.VISUAL_ID));
 		createCompartment(node,
 				SmartcontractVisualIDRegistry
@@ -314,7 +314,7 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 	/**
 	* @generated
 	*/
-	public Node createInputParameter_3008(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createInputParameter_3010(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -341,14 +341,14 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5010 = createLabel(node, SmartcontractVisualIDRegistry.getType(InputParameterNameEditPart.VISUAL_ID));
+		Node label5011 = createLabel(node, SmartcontractVisualIDRegistry.getType(InputParameterNameEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Node createOutputParameter_3007(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createOutputParameter_3011(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -375,7 +375,7 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5009 = createLabel(node,
+		Node label5012 = createLabel(node,
 				SmartcontractVisualIDRegistry.getType(OutputParameterNameEditPart.VISUAL_ID));
 		return node;
 	}

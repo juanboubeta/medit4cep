@@ -25,8 +25,8 @@ public class SmartcontractModelingAssistantProviderOfContractFunctionEditPart
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(SmartcontractElementTypes.InputParameter_3008);
-		types.add(SmartcontractElementTypes.OutputParameter_3007);
+		types.add(SmartcontractElementTypes.InputParameter_3010);
+		types.add(SmartcontractElementTypes.OutputParameter_3011);
 		return types;
 	}
 

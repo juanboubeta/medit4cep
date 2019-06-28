@@ -125,6 +125,7 @@ public class SmartContractItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(SmartcontractPackage.Literals.SMART_CONTRACT__CONTRACTFUNCTIONS);
 			childrenFeatures.add(SmartcontractPackage.Literals.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES);
 		}
 		return childrenFeatures;
@@ -185,6 +186,7 @@ public class SmartContractItemProvider
 			case SmartcontractPackage.SMART_CONTRACT__IMAGE_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case SmartcontractPackage.SMART_CONTRACT__CONTRACTFUNCTIONS:
 			case SmartcontractPackage.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -205,8 +207,36 @@ public class SmartContractItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(SmartcontractPackage.Literals.SMART_CONTRACT__CONTRACTFUNCTIONS,
+				 SmartcontractFactory.eINSTANCE.createContractFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(SmartcontractPackage.Literals.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES,
 				 SmartcontractFactory.eINSTANCE.createContractFunction()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == SmartcontractPackage.Literals.SMART_CONTRACT__CONTRACTFUNCTIONS ||
+			childFeature == SmartcontractPackage.Literals.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

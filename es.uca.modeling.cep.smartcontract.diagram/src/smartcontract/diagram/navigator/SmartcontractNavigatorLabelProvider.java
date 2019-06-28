@@ -98,20 +98,20 @@ public class SmartcontractNavigatorLabelProvider extends LabelProvider
 	public Image getImage(View view) {
 		switch (SmartcontractVisualIDRegistry.getVisualID(view)) {
 		case SmartContractsEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?www.uca.es/modeling/smartcontract?SmartContracts", //$NON-NLS-1$
+			return getImage("Navigator?Diagram?www.uca.es/modeling/cep/smartcontract?SmartContracts", //$NON-NLS-1$
 					SmartcontractElementTypes.SmartContracts_1000);
 		case SmartContractEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?www.uca.es/modeling/smartcontract?SmartContract", //$NON-NLS-1$
-					SmartcontractElementTypes.SmartContract_2002);
+			return getImage("Navigator?TopLevelNode?www.uca.es/modeling/cep/smartcontract?SmartContract", //$NON-NLS-1$
+					SmartcontractElementTypes.SmartContract_2003);
 		case ContractFunctionEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?www.uca.es/modeling/smartcontract?ContractFunction", //$NON-NLS-1$
-					SmartcontractElementTypes.ContractFunction_3003);
-		case OutputParameterEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?www.uca.es/modeling/smartcontract?OutputParameter", //$NON-NLS-1$
-					SmartcontractElementTypes.OutputParameter_3007);
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/smartcontract?ContractFunction", //$NON-NLS-1$
+					SmartcontractElementTypes.ContractFunction_3009);
 		case InputParameterEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?www.uca.es/modeling/smartcontract?InputParameter", //$NON-NLS-1$
-					SmartcontractElementTypes.InputParameter_3008);
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/smartcontract?InputParameter", //$NON-NLS-1$
+					SmartcontractElementTypes.InputParameter_3010);
+		case OutputParameterEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/smartcontract?OutputParameter", //$NON-NLS-1$
+					SmartcontractElementTypes.OutputParameter_3011);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -173,13 +173,13 @@ public class SmartcontractNavigatorLabelProvider extends LabelProvider
 		case SmartContractsEditPart.VISUAL_ID:
 			return getSmartContracts_1000Text(view);
 		case SmartContractEditPart.VISUAL_ID:
-			return getSmartContract_2002Text(view);
+			return getSmartContract_2003Text(view);
 		case ContractFunctionEditPart.VISUAL_ID:
-			return getContractFunction_3003Text(view);
-		case OutputParameterEditPart.VISUAL_ID:
-			return getOutputParameter_3007Text(view);
+			return getContractFunction_3009Text(view);
 		case InputParameterEditPart.VISUAL_ID:
-			return getInputParameter_3008Text(view);
+			return getInputParameter_3010Text(view);
+		case OutputParameterEditPart.VISUAL_ID:
+			return getOutputParameter_3011Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -201,15 +201,15 @@ public class SmartcontractNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getSmartContract_2002Text(View view) {
-		IParser parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.SmartContract_2002,
+	private String getSmartContract_2003Text(View view) {
+		IParser parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.SmartContract_2003,
 				view.getElement() != null ? view.getElement() : view,
 				SmartcontractVisualIDRegistry.getType(SmartContractTypeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5006); //$NON-NLS-1$
+			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5014); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -217,15 +217,15 @@ public class SmartcontractNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getContractFunction_3003Text(View view) {
-		IParser parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.ContractFunction_3003,
+	private String getContractFunction_3009Text(View view) {
+		IParser parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.ContractFunction_3009,
 				view.getElement() != null ? view.getElement() : view,
 				SmartcontractVisualIDRegistry.getType(ContractFunctionNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5005); //$NON-NLS-1$
+			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5013); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -233,31 +233,31 @@ public class SmartcontractNavigatorLabelProvider extends LabelProvider
 	/**
 	* @generated
 	*/
-	private String getOutputParameter_3007Text(View view) {
-		IParser parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.OutputParameter_3007,
-				view.getElement() != null ? view.getElement() : view,
-				SmartcontractVisualIDRegistry.getType(OutputParameterNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5009); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getInputParameter_3008Text(View view) {
-		IParser parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.InputParameter_3008,
+	private String getInputParameter_3010Text(View view) {
+		IParser parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.InputParameter_3010,
 				view.getElement() != null ? view.getElement() : view,
 				SmartcontractVisualIDRegistry.getType(InputParameterNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5010); //$NON-NLS-1$
+			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5011); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getOutputParameter_3011Text(View view) {
+		IParser parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.OutputParameter_3011,
+				view.getElement() != null ? view.getElement() : view,
+				SmartcontractVisualIDRegistry.getType(OutputParameterNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5012); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

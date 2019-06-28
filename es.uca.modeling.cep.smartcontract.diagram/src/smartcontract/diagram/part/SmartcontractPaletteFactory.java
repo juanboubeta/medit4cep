@@ -46,10 +46,10 @@ public class SmartcontractPaletteFactory {
 	private ToolEntry createContractFunction1CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ContractFunction1CreationTool_title,
 				Messages.ContractFunction1CreationTool_desc,
-				Collections.singletonList(SmartcontractElementTypes.ContractFunction_3003));
+				Collections.singletonList(SmartcontractElementTypes.ContractFunction_3009));
 		entry.setId("createContractFunction1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
-				SmartcontractElementTypes.getImageDescriptor(SmartcontractElementTypes.ContractFunction_3003));
+				SmartcontractElementTypes.getImageDescriptor(SmartcontractElementTypes.ContractFunction_3009));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -60,9 +60,9 @@ public class SmartcontractPaletteFactory {
 	private ToolEntry createInputParameter2CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.InputParameter2CreationTool_title,
 				Messages.InputParameter2CreationTool_desc,
-				Collections.singletonList(SmartcontractElementTypes.InputParameter_3008));
+				Collections.singletonList(SmartcontractElementTypes.InputParameter_3010));
 		entry.setId("createInputParameter2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(SmartcontractElementTypes.getImageDescriptor(SmartcontractElementTypes.InputParameter_3008));
+		entry.setSmallIcon(SmartcontractElementTypes.getImageDescriptor(SmartcontractElementTypes.InputParameter_3010));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -73,10 +73,10 @@ public class SmartcontractPaletteFactory {
 	private ToolEntry createOutputParameter3CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.OutputParameter3CreationTool_title,
 				Messages.OutputParameter3CreationTool_desc,
-				Collections.singletonList(SmartcontractElementTypes.OutputParameter_3007));
+				Collections.singletonList(SmartcontractElementTypes.OutputParameter_3011));
 		entry.setId("createOutputParameter3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(
-				SmartcontractElementTypes.getImageDescriptor(SmartcontractElementTypes.OutputParameter_3007));
+				SmartcontractElementTypes.getImageDescriptor(SmartcontractElementTypes.OutputParameter_3011));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -87,9 +87,9 @@ public class SmartcontractPaletteFactory {
 	private ToolEntry createSmartContract4CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.SmartContract4CreationTool_title,
 				Messages.SmartContract4CreationTool_desc,
-				Collections.singletonList(SmartcontractElementTypes.SmartContract_2002));
+				Collections.singletonList(SmartcontractElementTypes.SmartContract_2003));
 		entry.setId("createSmartContract4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(SmartcontractElementTypes.getImageDescriptor(SmartcontractElementTypes.SmartContract_2002));
+		entry.setSmallIcon(SmartcontractElementTypes.getImageDescriptor(SmartcontractElementTypes.SmartContract_2003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

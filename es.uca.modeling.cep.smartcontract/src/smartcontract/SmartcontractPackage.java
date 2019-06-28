@@ -38,7 +38,7 @@ public interface SmartcontractPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "www.uca.es/modeling/smartcontract";
+	String eNS_URI = "www.uca.es/modeling/cep/smartcontract";
 
 	/**
 	 * The package namespace name.
@@ -140,13 +140,22 @@ public interface SmartcontractPackage extends EPackage {
 	int SMART_CONTRACT__IMAGE_PATH = 1;
 
 	/**
+	 * The feature id for the '<em><b>Contractfunctions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT__CONTRACTFUNCTIONS = 2;
+
+	/**
 	 * The feature id for the '<em><b>Smart Contract Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = 2;
+	int SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Smart Contract</em>' class.
@@ -155,7 +164,7 @@ public interface SmartcontractPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT_FEATURE_COUNT = 3;
+	int SMART_CONTRACT_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link smartcontract.impl.ContractFunctionImpl <em>Contract Function</em>}' class.
@@ -448,6 +457,17 @@ public interface SmartcontractPackage extends EPackage {
 	EAttribute getSmartContract_ImagePath();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link smartcontract.SmartContract#getContractfunctions <em>Contractfunctions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contractfunctions</em>'.
+	 * @see smartcontract.SmartContract#getContractfunctions()
+	 * @see #getSmartContract()
+	 * @generated
+	 */
+	EReference getSmartContract_Contractfunctions();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link smartcontract.SmartContract#getSmartContractProperties <em>Smart Contract Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -696,6 +716,14 @@ public interface SmartcontractPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SMART_CONTRACT__IMAGE_PATH = eINSTANCE.getSmartContract_ImagePath();
+
+		/**
+		 * The meta object literal for the '<em><b>Contractfunctions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SMART_CONTRACT__CONTRACTFUNCTIONS = eINSTANCE.getSmartContract_Contractfunctions();
 
 		/**
 		 * The meta object literal for the '<em><b>Smart Contract Properties</b></em>' containment reference list feature.

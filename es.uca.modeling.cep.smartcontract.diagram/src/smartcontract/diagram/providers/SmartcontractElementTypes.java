@@ -60,23 +60,26 @@ public class SmartcontractElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType SmartContract_2002 = getElementType(
-			"es.uca.modeling.cep.smartcontract.diagram.SmartContract_2002"); //$NON-NLS-1$
+	public static final IElementType SmartContract_2003 = getElementType(
+			"es.uca.modeling.cep.smartcontract.diagram.SmartContract_2003"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType ContractFunction_3003 = getElementType(
-			"es.uca.modeling.cep.smartcontract.diagram.ContractFunction_3003"); //$NON-NLS-1$
+	public static final IElementType ContractFunction_3009 = getElementType(
+			"es.uca.modeling.cep.smartcontract.diagram.ContractFunction_3009"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType InputParameter_3008 = getElementType(
-			"es.uca.modeling.cep.smartcontract.diagram.InputParameter_3008"); //$NON-NLS-1$
+	public static final IElementType InputParameter_3010 = getElementType(
+			"es.uca.modeling.cep.smartcontract.diagram.InputParameter_3010"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
-	public static final IElementType OutputParameter_3007 = getElementType(
-			"es.uca.modeling.cep.smartcontract.diagram.OutputParameter_3007"); //$NON-NLS-1$
+	public static final IElementType OutputParameter_3011 = getElementType(
+			"es.uca.modeling.cep.smartcontract.diagram.OutputParameter_3011"); //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -118,13 +121,13 @@ public class SmartcontractElementTypes {
 
 			elements.put(SmartContracts_1000, SmartcontractPackage.eINSTANCE.getSmartContracts());
 
-			elements.put(SmartContract_2002, SmartcontractPackage.eINSTANCE.getSmartContract());
+			elements.put(SmartContract_2003, SmartcontractPackage.eINSTANCE.getSmartContract());
 
-			elements.put(ContractFunction_3003, SmartcontractPackage.eINSTANCE.getContractFunction());
+			elements.put(ContractFunction_3009, SmartcontractPackage.eINSTANCE.getContractFunction());
 
-			elements.put(InputParameter_3008, SmartcontractPackage.eINSTANCE.getInputParameter());
+			elements.put(InputParameter_3010, SmartcontractPackage.eINSTANCE.getInputParameter());
 
-			elements.put(OutputParameter_3007, SmartcontractPackage.eINSTANCE.getOutputParameter());
+			elements.put(OutputParameter_3011, SmartcontractPackage.eINSTANCE.getOutputParameter());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -143,10 +146,10 @@ public class SmartcontractElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(SmartContracts_1000);
-			KNOWN_ELEMENT_TYPES.add(SmartContract_2002);
-			KNOWN_ELEMENT_TYPES.add(ContractFunction_3003);
-			KNOWN_ELEMENT_TYPES.add(InputParameter_3008);
-			KNOWN_ELEMENT_TYPES.add(OutputParameter_3007);
+			KNOWN_ELEMENT_TYPES.add(SmartContract_2003);
+			KNOWN_ELEMENT_TYPES.add(ContractFunction_3009);
+			KNOWN_ELEMENT_TYPES.add(InputParameter_3010);
+			KNOWN_ELEMENT_TYPES.add(OutputParameter_3011);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -159,13 +162,13 @@ public class SmartcontractElementTypes {
 		case SmartContractsEditPart.VISUAL_ID:
 			return SmartContracts_1000;
 		case SmartContractEditPart.VISUAL_ID:
-			return SmartContract_2002;
+			return SmartContract_2003;
 		case ContractFunctionEditPart.VISUAL_ID:
-			return ContractFunction_3003;
+			return ContractFunction_3009;
 		case InputParameterEditPart.VISUAL_ID:
-			return InputParameter_3008;
+			return InputParameter_3010;
 		case OutputParameterEditPart.VISUAL_ID:
-			return OutputParameter_3007;
+			return OutputParameter_3011;
 		}
 		return null;
 	}

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link smartcontract.SmartContract#getTypeName <em>Type Name</em>}</li>
  *   <li>{@link smartcontract.SmartContract#getImagePath <em>Image Path</em>}</li>
+ *   <li>{@link smartcontract.SmartContract#getContractfunctions <em>Contractfunctions</em>}</li>
  *   <li>{@link smartcontract.SmartContract#getSmartContractProperties <em>Smart Contract Properties</em>}</li>
  * </ul>
  *
@@ -76,6 +77,22 @@ public interface SmartContract extends EObject {
 	 * @generated
 	 */
 	void setImagePath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Contractfunctions</b></em>' containment reference list.
+	 * The list contents are of type {@link smartcontract.ContractFunction}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Contractfunctions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contractfunctions</em>' containment reference list.
+	 * @see smartcontract.SmartcontractPackage#getSmartContract_Contractfunctions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ContractFunction> getContractfunctions();
 
 	/**
 	 * Returns the value of the '<em><b>Smart Contract Properties</b></em>' containment reference list.

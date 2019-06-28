@@ -38,7 +38,7 @@ public class InputParameterEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3008;
+	public static final int VISUAL_ID = 3010;
 
 	/**
 	* @generated

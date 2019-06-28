@@ -22,7 +22,7 @@ public class InputParameterItemSemanticEditPolicy extends SmartcontractBaseItemS
 	* @generated
 	*/
 	public InputParameterItemSemanticEditPolicy() {
-		super(SmartcontractElementTypes.InputParameter_3008);
+		super(SmartcontractElementTypes.InputParameter_3010);
 	}
 
 	/**

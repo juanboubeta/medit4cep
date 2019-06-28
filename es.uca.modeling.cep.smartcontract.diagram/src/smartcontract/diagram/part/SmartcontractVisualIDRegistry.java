@@ -276,8 +276,8 @@ public class SmartcontractVisualIDRegistry {
 		switch (visualID) {
 		case SmartContractsEditPart.VISUAL_ID:
 			return false;
-		case OutputParameterEditPart.VISUAL_ID:
 		case InputParameterEditPart.VISUAL_ID:
+		case OutputParameterEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

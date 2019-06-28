@@ -22,7 +22,7 @@ public class OutputParameterItemSemanticEditPolicy extends SmartcontractBaseItem
 	* @generated
 	*/
 	public OutputParameterItemSemanticEditPolicy() {
-		super(SmartcontractElementTypes.OutputParameter_3007);
+		super(SmartcontractElementTypes.OutputParameter_3011);
 	}
 
 	/**

@@ -45,7 +45,7 @@ public class ContractFunctionEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 3003;
+	public static final int VISUAL_ID = 3009;
 
 	/**
 	* @generated
@@ -310,11 +310,11 @@ public class ContractFunctionEditPart extends ShapeNodeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == SmartcontractElementTypes.InputParameter_3008) {
+			if (type == SmartcontractElementTypes.InputParameter_3010) {
 				return getChildBySemanticHint(SmartcontractVisualIDRegistry
 						.getType(ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID));
 			}
-			if (type == SmartcontractElementTypes.OutputParameter_3007) {
+			if (type == SmartcontractElementTypes.OutputParameter_3011) {
 				return getChildBySemanticHint(SmartcontractVisualIDRegistry.getType(
 						ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID));
 			}
