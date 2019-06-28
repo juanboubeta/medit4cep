@@ -95,6 +95,10 @@
                   style="push">
             </command>
          </menu>
+         <menu
+               id="Smart Contracts"
+               label="Smart Contracts">
+         </menu>
       </menuContribution>
       <menuContribution
             allPopups="false"
