@@ -13,57 +13,63 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class WithinTimerTest extends PatternOperandTest {
+public class WithinTimerTest extends PatternOperandTest
+{
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static void main(String[] args) {
+  public static void main(String[] args)
+  {
 		TestRunner.run(WithinTimerTest.class);
 	}
 
-	/**
+  /**
 	 * Constructs a new Within Timer test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WithinTimerTest(String name) {
+  public WithinTimerTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Within Timer test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected WithinTimer getFixture() {
+  @Override
+  protected WithinTimer getFixture()
+  {
 		return (WithinTimer)fixture;
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-	@Override
-	protected void setUp() throws Exception {
+  @Override
+  protected void setUp() throws Exception
+  {
 		setFixture(EventpatternFactory.eINSTANCE.createWithinTimer());
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-	@Override
-	protected void tearDown() throws Exception {
+  @Override
+  protected void tearDown() throws Exception
+  {
 		setFixture(null);
 	}
 

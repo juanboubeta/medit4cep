@@ -12,43 +12,47 @@ import junit.framework.TestCase;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class OperatorTest extends TestCase {
+public abstract class OperatorTest extends TestCase
+{
 
-	/**
+  /**
 	 * The fixture for this Operator test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Operator fixture = null;
+  protected Operator fixture = null;
 
-	/**
+  /**
 	 * Constructs a new Operator test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OperatorTest(String name) {
+  public OperatorTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Sets the fixture for this Operator test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Operator fixture) {
+  protected void setFixture(Operator fixture)
+  {
 		this.fixture = fixture;
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Operator test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Operator getFixture() {
+  protected Operator getFixture()
+  {
 		return fixture;
 	}
 

@@ -13,57 +13,63 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComplexEventTest extends OperandTest {
+public class ComplexEventTest extends OperandTest
+{
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static void main(String[] args) {
+  public static void main(String[] args)
+  {
 		TestRunner.run(ComplexEventTest.class);
 	}
 
-	/**
+  /**
 	 * Constructs a new Complex Event test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComplexEventTest(String name) {
+  public ComplexEventTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Complex Event test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected ComplexEvent getFixture() {
+  @Override
+  protected ComplexEvent getFixture()
+  {
 		return (ComplexEvent)fixture;
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-	@Override
-	protected void setUp() throws Exception {
+  @Override
+  protected void setUp() throws Exception
+  {
 		setFixture(EventpatternFactory.eINSTANCE.createComplexEvent());
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-	@Override
-	protected void tearDown() throws Exception {
+  @Override
+  protected void tearDown() throws Exception
+  {
 		setFixture(null);
 	}
 

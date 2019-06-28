@@ -13,57 +13,63 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SubtractionTest extends ArithmeticOperatorTest {
+public class SubtractionTest extends ArithmeticOperatorTest
+{
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static void main(String[] args) {
+  public static void main(String[] args)
+  {
 		TestRunner.run(SubtractionTest.class);
 	}
 
-	/**
+  /**
 	 * Constructs a new Subtraction test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SubtractionTest(String name) {
+  public SubtractionTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Subtraction test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected Subtraction getFixture() {
+  @Override
+  protected Subtraction getFixture()
+  {
 		return (Subtraction)fixture;
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-	@Override
-	protected void setUp() throws Exception {
+  @Override
+  protected void setUp() throws Exception
+  {
 		setFixture(EventpatternFactory.eINSTANCE.createSubtraction());
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-	@Override
-	protected void tearDown() throws Exception {
+  @Override
+  protected void tearDown() throws Exception
+  {
 		setFixture(null);
 	}
 

@@ -12,43 +12,47 @@ import junit.framework.TestCase;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class EventPatternElementTest extends TestCase {
+public abstract class EventPatternElementTest extends TestCase
+{
 
-	/**
+  /**
 	 * The fixture for this Event Pattern Element test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EventPatternElement fixture = null;
+  protected EventPatternElement fixture = null;
 
-	/**
+  /**
 	 * Constructs a new Event Pattern Element test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventPatternElementTest(String name) {
+  public EventPatternElementTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Sets the fixture for this Event Pattern Element test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(EventPatternElement fixture) {
+  protected void setFixture(EventPatternElement fixture)
+  {
 		this.fixture = fixture;
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Event Pattern Element test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EventPatternElement getFixture() {
+  protected EventPatternElement getFixture()
+  {
 		return fixture;
 	}
 

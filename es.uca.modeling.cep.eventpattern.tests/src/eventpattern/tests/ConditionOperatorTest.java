@@ -10,26 +10,29 @@ import eventpattern.ConditionOperator;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class ConditionOperatorTest extends OperatorTest {
+public abstract class ConditionOperatorTest extends OperatorTest
+{
 
-	/**
+  /**
 	 * Constructs a new Condition Operator test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConditionOperatorTest(String name) {
+  public ConditionOperatorTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Condition Operator test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected ConditionOperator getFixture() {
+  @Override
+  protected ConditionOperator getFixture()
+  {
 		return (ConditionOperator)fixture;
 	}
 

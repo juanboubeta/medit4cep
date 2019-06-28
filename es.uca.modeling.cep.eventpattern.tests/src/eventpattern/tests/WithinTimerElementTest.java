@@ -12,43 +12,47 @@ import junit.framework.TestCase;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class WithinTimerElementTest extends TestCase {
+public abstract class WithinTimerElementTest extends TestCase
+{
 
-	/**
+  /**
 	 * The fixture for this Within Timer Element test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WithinTimerElement fixture = null;
+  protected WithinTimerElement fixture = null;
 
-	/**
+  /**
 	 * Constructs a new Within Timer Element test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WithinTimerElementTest(String name) {
+  public WithinTimerElementTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Sets the fixture for this Within Timer Element test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(WithinTimerElement fixture) {
+  protected void setFixture(WithinTimerElement fixture)
+  {
 		this.fixture = fixture;
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Within Timer Element test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WithinTimerElement getFixture() {
+  protected WithinTimerElement getFixture()
+  {
 		return fixture;
 	}
 

@@ -13,57 +13,63 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EventTest extends PatternOperandTest {
+public class EventTest extends PatternOperandTest
+{
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static void main(String[] args) {
+  public static void main(String[] args)
+  {
 		TestRunner.run(EventTest.class);
 	}
 
-	/**
+  /**
 	 * Constructs a new Event test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventTest(String name) {
+  public EventTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Event test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected Event getFixture() {
+  @Override
+  protected Event getFixture()
+  {
 		return (Event)fixture;
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-	@Override
-	protected void setUp() throws Exception {
+  @Override
+  protected void setUp() throws Exception
+  {
 		setFixture(EventpatternFactory.eINSTANCE.createEvent());
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-	@Override
-	protected void tearDown() throws Exception {
+  @Override
+  protected void tearDown() throws Exception
+  {
 		setFixture(null);
 	}
 

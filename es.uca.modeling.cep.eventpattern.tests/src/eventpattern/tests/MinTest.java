@@ -13,57 +13,63 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MinTest extends AggregationOperatorTest {
+public class MinTest extends AggregationOperatorTest
+{
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static void main(String[] args) {
+  public static void main(String[] args)
+  {
 		TestRunner.run(MinTest.class);
 	}
 
-	/**
+  /**
 	 * Constructs a new Min test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MinTest(String name) {
+  public MinTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Min test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected Min getFixture() {
+  @Override
+  protected Min getFixture()
+  {
 		return (Min)fixture;
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
-	@Override
-	protected void setUp() throws Exception {
+  @Override
+  protected void setUp() throws Exception
+  {
 		setFixture(EventpatternFactory.eINSTANCE.createMin());
 	}
 
-	/**
+  /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
-	@Override
-	protected void tearDown() throws Exception {
+  @Override
+  protected void tearDown() throws Exception
+  {
 		setFixture(null);
 	}
 

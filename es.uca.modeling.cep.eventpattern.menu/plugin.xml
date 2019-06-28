@@ -56,7 +56,7 @@
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="menu:org.eclipse.ui.main.menu?after=file">
+            locationURI="menu:org.eclipse.ui.main.menu?after=SmartContracts">
          <menu
                id="CEPDomain"
                label="CEP Domain">
@@ -94,10 +94,6 @@
                   label="Delete"
                   style="push">
             </command>
-         </menu>
-         <menu
-               id="Smart Contracts"
-               label="Smart Contracts">
          </menu>
       </menuContribution>
       <menuContribution
@@ -146,6 +142,19 @@
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteEventPattern"
                   label="Delete"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=file">
+         <menu
+               id="SmartContracts"
+               label="Smart Contracts">
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.NewSmartContract"
+                  label="New..."
                   style="push">
             </command>
          </menu>

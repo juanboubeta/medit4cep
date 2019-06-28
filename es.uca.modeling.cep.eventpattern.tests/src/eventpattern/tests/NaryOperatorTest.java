@@ -10,26 +10,29 @@ import eventpattern.NaryOperator;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class NaryOperatorTest extends OperatorTest {
+public abstract class NaryOperatorTest extends OperatorTest
+{
 
-	/**
+  /**
 	 * Constructs a new Nary Operator test case with the given name.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaryOperatorTest(String name) {
+  public NaryOperatorTest(String name)
+  {
 		super(name);
 	}
 
-	/**
+  /**
 	 * Returns the fixture for this Nary Operator test case.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected NaryOperator getFixture() {
+  @Override
+  protected NaryOperator getFixture()
+  {
 		return (NaryOperator)fixture;
 	}
 
