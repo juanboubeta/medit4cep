@@ -24,6 +24,7 @@ class CEPEventPattern {
    val Link[*] links; 
    val EventPatternElement[*] eventPatternElements;
    val ComplexEvent[0..1] complexEvent;
+   //val SmartContract[0..1] smartContract;
    val Action[*] actions;
 }
 

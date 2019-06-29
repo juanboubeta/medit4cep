@@ -167,6 +167,38 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 				TransformEventPatternToCode.executeEGL(sourceModel2, eventPatternModel, patternToActionPath, outputActionFile);
 			}
 			
+			// 8º Transform the invocations of the smartcontracts for the event pattern to java code 
+			
+			/*if (!eventPatternModel.getSmartContracts().isEmpty()) { // There are actions for the event pattern
+			
+				final Model sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
+				sourceModel3.setStoredOnDisposal(false);
+				sourceModel3.setReadOnLoad(true);
+				
+				final String patternToContractFunctionPath = "/egl/eventpattern-to-contractfunction.egl";
+				final File outputActionFile = new File(EventPatternsStatus.getGeneratedActionPath(), 
+						eventPatternModel.getPatternName() + ".java");	
+				System.out.println("\noutputActionFile.getAbsolutePath(): " + outputActionFile.getAbsolutePath());
+					
+				TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel, patternToContractFunctionPath, outputActionFile);
+			}*/
+			
+			// 9º Generate the smartcontracts for the event pattern in java code 
+			
+			/*if (!eventPatternModel.getSmartContracts().isEmpty()) { // There are actions for the event pattern
+						
+				final Model sourceModel4 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
+				sourceModel4.setStoredOnDisposal(false);
+				sourceModel4.setReadOnLoad(true);
+						
+				final String patternToSmartContractPath = "/egl/eventpattern-to-smartcontract.egl";
+				final File outputActionFile = new File(EventPatternsStatus.getGeneratedActionPath(), 
+						eventPatternModel.getPatternName() + ".java");	
+				System.out.println("\noutputActionFile.getAbsolutePath(): " + outputActionFile.getAbsolutePath());
+								
+				TransformEventPatternToCode.executeEGL(sourceModel4, eventPatternModel, patternToSmartContractPath, outputActionFile);
+			}*/
+			
 			MessageDialog.openInformation(shell, "Generate and Deploy Pattern Code", 
 		    		"The event pattern has been transformed into code and deployed.");	
 			
