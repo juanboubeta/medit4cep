@@ -147,14 +147,14 @@ public class ExportSmartContractHandler extends AbstractHandler {
         }
         
         
-        // 6º Get the value of domain name from model file
+        // 6º Get the value of smartcontract name from model file
         
         URI modelUri; 
         
-        if (modelHref.contains("platform:")) { // modelHref is like 'platform:/resource/proyecto1/default.domain'
+        if (modelHref.contains("platform:")) { // modelHref is like 'platform:/resource/proyecto1/default.smartc'
         	modelUri = URI.createURI(modelHref);
         }
-        else { // modelHref is like 'default.domain' 
+        else { // modelHref is like 'default.smartc' 
         	modelUri = URI.createURI("platform:/resource" + diagramPath.replace(diagramFileName, modelHref));
         }
                  
@@ -250,10 +250,10 @@ public class ExportSmartContractHandler extends AbstractHandler {
 		}
 		
 		
-	    // 8º Replace the value of name attribute from diagram file by the value of domainName 
-		// attribute (domainName.domain_diagram). Also, replace absolute paths of href by 
-		// relative ones (domainName.domain).
-		// A new file (.domain_diagram) containing this modified information is created in the temporal directory 
+	    // 8º Replace the value of name attribute from diagram file by the value of name 
+		// attribute (name.smartc_diagram). Also, replace absolute paths of href by 
+		// relative ones (name.smartc).
+		// A new file (.smartc_diagram) containing this modified information is created in the temporal directory 
 					
 		String diagramNewText = "";
 		diagramNewText = diagramOriginalText.replaceFirst("name=\".*.smartc_diagram", 
@@ -273,7 +273,7 @@ public class ExportSmartContractHandler extends AbstractHandler {
 		}
 		
 		
-		// 9º A zip archive is created containing all files from the temporal directory (.domain, .domain_diagram 
+		// 9º A zip archive is created containing all files from the temporal directory (.smartc, .smartc_diagram 
 		// and image files). Then, this directory is removed.
 		
 		FileOutputStream fout;
