@@ -287,14 +287,27 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="domain.diagram.providers.DomainModelingAssistantProvider">
+      <modelingAssistantProvider class="domain.diagram.providers.assistants.DomainModelingAssistantProviderOfCEPDomainEditPart">
          <Priority name="Lowest"/>
          <object class="domain.diagram.edit.parts.CEPDomainEditPart" id="CEPDomain_1000"/>
-         <object class="domain.diagram.edit.parts.EventEditPart" id="Event_2001"/>
-         <object class="domain.diagram.edit.parts.EventPropertyEditPart" id="EventProperty_3001"/>
-         <object class="domain.diagram.edit.parts.EventProperty2EditPart" id="EventProperty_3002"/>
-         <context elements="CEPDomain_1000,Event_2001,EventProperty_3001,EventProperty_3002"/>
+         <context elements="CEPDomain_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="domain.diagram.providers.assistants.DomainModelingAssistantProviderOfEventEditPart">
+         <Priority name="Lowest"/>
+         <object class="domain.diagram.edit.parts.EventEditPart" id="Event_2001"/>
+         <context elements="Event_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="domain.diagram.providers.assistants.DomainModelingAssistantProviderOfEventPropertyEditPart">
+         <Priority name="Lowest"/>
+         <object class="domain.diagram.edit.parts.EventPropertyEditPart" id="EventProperty_3001"/>
+         <context elements="EventProperty_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="domain.diagram.providers.assistants.DomainModelingAssistantProviderOfEventProperty2EditPart">
+         <Priority name="Lowest"/>
+         <object class="domain.diagram.edit.parts.EventProperty2EditPart" id="EventProperty_3002"/>
+         <context elements="EventProperty_3002"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">

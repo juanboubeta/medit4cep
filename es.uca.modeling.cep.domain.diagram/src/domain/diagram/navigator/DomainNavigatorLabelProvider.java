@@ -38,21 +38,17 @@ import domain.diagram.providers.DomainParserProvider;
 /**
  * @generated
  */
-public class DomainNavigatorLabelProvider extends LabelProvider implements
-		ICommonLabelProvider, ITreePathLabelProvider {
+public class DomainNavigatorLabelProvider extends LabelProvider
+		implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	static {
-		DomainDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		DomainDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		DomainDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
+		DomainDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", //$NON-NLS-1$
+				ImageDescriptor.getMissingImageDescriptor());
 	}
 
 	/**
@@ -60,8 +56,7 @@ public class DomainNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof DomainNavigatorItem
-				&& !isOwnView(((DomainNavigatorItem) element).getView())) {
+		if (element instanceof DomainNavigatorItem && !isOwnView(((DomainNavigatorItem) element).getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -74,8 +69,7 @@ public class DomainNavigatorLabelProvider extends LabelProvider implements
 	public Image getImage(Object element) {
 		if (element instanceof DomainNavigatorGroup) {
 			DomainNavigatorGroup group = (DomainNavigatorGroup) element;
-			return DomainDiagramEditorPlugin.getInstance().getBundledImage(
-					group.getIcon());
+			return DomainDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
 		}
 
 		if (element instanceof DomainNavigatorItem) {
@@ -103,17 +97,17 @@ public class DomainNavigatorLabelProvider extends LabelProvider implements
 	public Image getImage(View view) {
 		switch (DomainVisualIDRegistry.getVisualID(view)) {
 		case CEPDomainEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?www.uca.es/modeling/cep/domain?CEPDomain", DomainElementTypes.CEPDomain_1000); //$NON-NLS-1$
+			return getImage("Navigator?Diagram?www.uca.es/modeling/cep/domain?CEPDomain", //$NON-NLS-1$
+					DomainElementTypes.CEPDomain_1000);
 		case EventEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?www.uca.es/modeling/cep/domain?Event", DomainElementTypes.Event_2001); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?www.uca.es/modeling/cep/domain?Event", //$NON-NLS-1$
+					DomainElementTypes.Event_2001);
 		case EventPropertyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?www.uca.es/modeling/cep/domain?EventProperty", DomainElementTypes.EventProperty_3001); //$NON-NLS-1$
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/domain?EventProperty", //$NON-NLS-1$
+					DomainElementTypes.EventProperty_3001);
 		case EventProperty2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?www.uca.es/modeling/cep/domain?EventProperty", DomainElementTypes.EventProperty_3002); //$NON-NLS-1$
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/domain?EventProperty", //$NON-NLS-1$
+					DomainElementTypes.EventProperty_3002);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -122,11 +116,9 @@ public class DomainNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = DomainDiagramEditorPlugin.getInstance()
-				.getImageRegistry();
+		ImageRegistry imageRegistry = DomainDiagramEditorPlugin.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null && elementType != null
-				&& DomainElementTypes.isKnownElementType(elementType)) {
+		if (image == null && elementType != null && DomainElementTypes.isKnownElementType(elementType)) {
 			image = DomainElementTypes.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
@@ -194,8 +186,7 @@ public class DomainNavigatorLabelProvider extends LabelProvider implements
 		if (domainModelElement != null) {
 			return domainModelElement.getDomainName();
 		} else {
-			DomainDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			DomainDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -204,18 +195,14 @@ public class DomainNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getEvent_2001Text(View view) {
-		IParser parser = DomainParserProvider
-				.getParser(DomainElementTypes.Event_2001,
-						view.getElement() != null ? view.getElement() : view,
-						DomainVisualIDRegistry
-								.getType(EventTypeNameEditPart.VISUAL_ID));
+		IParser parser = DomainParserProvider.getParser(DomainElementTypes.Event_2001,
+				view.getElement() != null ? view.getElement() : view,
+				DomainVisualIDRegistry.getType(EventTypeNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			DomainDiagramEditorPlugin.getInstance().logError(
-					"Parser was not found for label " + 5003); //$NON-NLS-1$
+			DomainDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -224,18 +211,14 @@ public class DomainNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getEventProperty_3001Text(View view) {
-		IParser parser = DomainParserProvider.getParser(
-				DomainElementTypes.EventProperty_3001,
+		IParser parser = DomainParserProvider.getParser(DomainElementTypes.EventProperty_3001,
 				view.getElement() != null ? view.getElement() : view,
-				DomainVisualIDRegistry
-						.getType(EventPropertyNameEditPart.VISUAL_ID));
+				DomainVisualIDRegistry.getType(EventPropertyNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			DomainDiagramEditorPlugin.getInstance().logError(
-					"Parser was not found for label " + 5002); //$NON-NLS-1$
+			DomainDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -244,18 +227,14 @@ public class DomainNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getEventProperty_3002Text(View view) {
-		IParser parser = DomainParserProvider.getParser(
-				DomainElementTypes.EventProperty_3002,
+		IParser parser = DomainParserProvider.getParser(DomainElementTypes.EventProperty_3002,
 				view.getElement() != null ? view.getElement() : view,
-				DomainVisualIDRegistry
-						.getType(EventPropertyName2EditPart.VISUAL_ID));
+				DomainVisualIDRegistry.getType(EventPropertyName2EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
-			DomainDiagramEditorPlugin.getInstance().logError(
-					"Parser was not found for label " + 5001); //$NON-NLS-1$
+			DomainDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -303,8 +282,7 @@ public class DomainNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return CEPDomainEditPart.MODEL_ID.equals(DomainVisualIDRegistry
-				.getModelID(view));
+		return CEPDomainEditPart.MODEL_ID.equals(DomainVisualIDRegistry.getModelID(view));
 	}
 
 }

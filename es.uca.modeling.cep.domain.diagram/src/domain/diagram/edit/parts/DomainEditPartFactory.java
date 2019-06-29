@@ -50,12 +50,10 @@ public class DomainEditPartFactory implements EditPartFactory {
 				return new EventEventEventPropertiesCompartmentEditPart(view);
 
 			case EventPropertyEventPropertyEventPropertiesCompartmentEditPart.VISUAL_ID:
-				return new EventPropertyEventPropertyEventPropertiesCompartmentEditPart(
-						view);
+				return new EventPropertyEventPropertyEventPropertiesCompartmentEditPart(view);
 
 			case EventPropertyEventPropertyEventPropertiesCompartment2EditPart.VISUAL_ID:
-				return new EventPropertyEventPropertyEventPropertiesCompartment2EditPart(
-						view);
+				return new EventPropertyEventPropertyEventPropertiesCompartment2EditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);
@@ -72,10 +70,8 @@ public class DomainEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }

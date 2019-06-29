@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link domain.impl.EventPropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link domain.impl.EventPropertyImpl#getType <em>Type</em>}</li>
@@ -38,476 +39,465 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link domain.impl.EventPropertyImpl#getEventProperties <em>Event Properties</em>}</li>
  *   <li>{@link domain.impl.EventPropertyImpl#getReferencedEventProperty <em>Referenced Event Property</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class EventPropertyImpl extends EObjectImpl implements EventProperty
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
   protected static final PropertyTypeValue TYPE_EDEFAULT = PropertyTypeValue.UNKNOWN;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
   protected PropertyTypeValue type = TYPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getImagePath() <em>Image Path</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getImagePath() <em>Image Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImagePath()
-   * @generated
-   * @ordered
-   */
+	 * @see #getImagePath()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String IMAGE_PATH_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getImagePath() <em>Image Path</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getImagePath() <em>Image Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImagePath()
-   * @generated
-   * @ordered
-   */
+	 * @see #getImagePath()
+	 * @generated
+	 * @ordered
+	 */
   protected String imagePath = IMAGE_PATH_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getEventProperties() <em>Event Properties</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEventProperties() <em>Event Properties</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEventProperties()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEventProperties()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<EventProperty> eventProperties;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected EventPropertyImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return DomainPackage.Literals.EVENT_PROPERTY;
-  }
+		return DomainPackage.Literals.EVENT_PROPERTY;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public PropertyTypeValue getType()
   {
-    return type;
-  }
+		return type;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setType(PropertyTypeValue newType)
   {
-    PropertyTypeValue oldType = type;
-    type = newType == null ? TYPE_EDEFAULT : newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__TYPE, oldType, type));
-  }
+		PropertyTypeValue oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__TYPE, oldType, type));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getImagePath()
   {
-    return imagePath;
-  }
+		return imagePath;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setImagePath(String newImagePath)
   {
-    String oldImagePath = imagePath;
-    imagePath = newImagePath;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__IMAGE_PATH, oldImagePath, imagePath));
-  }
+		String oldImagePath = imagePath;
+		imagePath = newImagePath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__IMAGE_PATH, oldImagePath, imagePath));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Event getReferencedEvent()
   {
-    if (eContainerFeatureID() != DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT) return null;
-    return (Event)eInternalContainer();
-  }
+		if (eContainerFeatureID() != DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT) return null;
+		return (Event)eInternalContainer();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetReferencedEvent(Event newReferencedEvent, NotificationChain msgs)
   {
-    msgs = eBasicSetContainer((InternalEObject)newReferencedEvent, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT, msgs);
-    return msgs;
-  }
+		msgs = eBasicSetContainer((InternalEObject)newReferencedEvent, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT, msgs);
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setReferencedEvent(Event newReferencedEvent)
   {
-    if (newReferencedEvent != eInternalContainer() || (eContainerFeatureID() != DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT && newReferencedEvent != null))
-    {
-      if (EcoreUtil.isAncestor(this, newReferencedEvent))
-        throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-      NotificationChain msgs = null;
-      if (eInternalContainer() != null)
-        msgs = eBasicRemoveFromContainer(msgs);
-      if (newReferencedEvent != null)
-        msgs = ((InternalEObject)newReferencedEvent).eInverseAdd(this, DomainPackage.EVENT__EVENT_PROPERTIES, Event.class, msgs);
-      msgs = basicSetReferencedEvent(newReferencedEvent, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT, newReferencedEvent, newReferencedEvent));
-  }
+		if (newReferencedEvent != eInternalContainer() || (eContainerFeatureID() != DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT && newReferencedEvent != null)) {
+			if (EcoreUtil.isAncestor(this, newReferencedEvent))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newReferencedEvent != null)
+				msgs = ((InternalEObject)newReferencedEvent).eInverseAdd(this, DomainPackage.EVENT__EVENT_PROPERTIES, Event.class, msgs);
+			msgs = basicSetReferencedEvent(newReferencedEvent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT, newReferencedEvent, newReferencedEvent));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<EventProperty> getEventProperties()
   {
-    if (eventProperties == null)
-    {
-      eventProperties = new EObjectContainmentWithInverseEList<EventProperty>(EventProperty.class, this, DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY);
-    }
-    return eventProperties;
-  }
+		if (eventProperties == null) {
+			eventProperties = new EObjectContainmentWithInverseEList<EventProperty>(EventProperty.class, this, DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY);
+		}
+		return eventProperties;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EventProperty getReferencedEventProperty()
   {
-    if (eContainerFeatureID() != DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY) return null;
-    return (EventProperty)eInternalContainer();
-  }
+		if (eContainerFeatureID() != DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY) return null;
+		return (EventProperty)eInternalContainer();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetReferencedEventProperty(EventProperty newReferencedEventProperty, NotificationChain msgs)
   {
-    msgs = eBasicSetContainer((InternalEObject)newReferencedEventProperty, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY, msgs);
-    return msgs;
-  }
+		msgs = eBasicSetContainer((InternalEObject)newReferencedEventProperty, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY, msgs);
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setReferencedEventProperty(EventProperty newReferencedEventProperty)
   {
-    if (newReferencedEventProperty != eInternalContainer() || (eContainerFeatureID() != DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY && newReferencedEventProperty != null))
-    {
-      if (EcoreUtil.isAncestor(this, newReferencedEventProperty))
-        throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-      NotificationChain msgs = null;
-      if (eInternalContainer() != null)
-        msgs = eBasicRemoveFromContainer(msgs);
-      if (newReferencedEventProperty != null)
-        msgs = ((InternalEObject)newReferencedEventProperty).eInverseAdd(this, DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES, EventProperty.class, msgs);
-      msgs = basicSetReferencedEventProperty(newReferencedEventProperty, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY, newReferencedEventProperty, newReferencedEventProperty));
-  }
+		if (newReferencedEventProperty != eInternalContainer() || (eContainerFeatureID() != DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY && newReferencedEventProperty != null)) {
+			if (EcoreUtil.isAncestor(this, newReferencedEventProperty))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newReferencedEventProperty != null)
+				msgs = ((InternalEObject)newReferencedEventProperty).eInverseAdd(this, DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES, EventProperty.class, msgs);
+			msgs = basicSetReferencedEventProperty(newReferencedEventProperty, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY, newReferencedEventProperty, newReferencedEventProperty));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
-        if (eInternalContainer() != null)
-          msgs = eBasicRemoveFromContainer(msgs);
-        return basicSetReferencedEvent((Event)otherEnd, msgs);
-      case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
-        return ((InternalEList<InternalEObject>)(InternalEList<?>)getEventProperties()).basicAdd(otherEnd, msgs);
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
-        if (eInternalContainer() != null)
-          msgs = eBasicRemoveFromContainer(msgs);
-        return basicSetReferencedEventProperty((EventProperty)otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetReferencedEvent((Event)otherEnd, msgs);
+			case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEventProperties()).basicAdd(otherEnd, msgs);
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetReferencedEventProperty((EventProperty)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
-        return basicSetReferencedEvent(null, msgs);
-      case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
-        return ((InternalEList<?>)getEventProperties()).basicRemove(otherEnd, msgs);
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
-        return basicSetReferencedEventProperty(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
+				return basicSetReferencedEvent(null, msgs);
+			case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
+				return ((InternalEList<?>)getEventProperties()).basicRemove(otherEnd, msgs);
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
+				return basicSetReferencedEventProperty(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
   {
-    switch (eContainerFeatureID())
-    {
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
-        return eInternalContainer().eInverseRemove(this, DomainPackage.EVENT__EVENT_PROPERTIES, Event.class, msgs);
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
-        return eInternalContainer().eInverseRemove(this, DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES, EventProperty.class, msgs);
-    }
-    return super.eBasicRemoveFromContainerFeature(msgs);
-  }
+		switch (eContainerFeatureID()) {
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
+				return eInternalContainer().eInverseRemove(this, DomainPackage.EVENT__EVENT_PROPERTIES, Event.class, msgs);
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
+				return eInternalContainer().eInverseRemove(this, DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES, EventProperty.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case DomainPackage.EVENT_PROPERTY__NAME:
-        return getName();
-      case DomainPackage.EVENT_PROPERTY__TYPE:
-        return getType();
-      case DomainPackage.EVENT_PROPERTY__IMAGE_PATH:
-        return getImagePath();
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
-        return getReferencedEvent();
-      case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
-        return getEventProperties();
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
-        return getReferencedEventProperty();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DomainPackage.EVENT_PROPERTY__NAME:
+				return getName();
+			case DomainPackage.EVENT_PROPERTY__TYPE:
+				return getType();
+			case DomainPackage.EVENT_PROPERTY__IMAGE_PATH:
+				return getImagePath();
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
+				return getReferencedEvent();
+			case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
+				return getEventProperties();
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
+				return getReferencedEventProperty();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case DomainPackage.EVENT_PROPERTY__NAME:
-        setName((String)newValue);
-        return;
-      case DomainPackage.EVENT_PROPERTY__TYPE:
-        setType((PropertyTypeValue)newValue);
-        return;
-      case DomainPackage.EVENT_PROPERTY__IMAGE_PATH:
-        setImagePath((String)newValue);
-        return;
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
-        setReferencedEvent((Event)newValue);
-        return;
-      case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
-        getEventProperties().clear();
-        getEventProperties().addAll((Collection<? extends EventProperty>)newValue);
-        return;
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
-        setReferencedEventProperty((EventProperty)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DomainPackage.EVENT_PROPERTY__NAME:
+				setName((String)newValue);
+				return;
+			case DomainPackage.EVENT_PROPERTY__TYPE:
+				setType((PropertyTypeValue)newValue);
+				return;
+			case DomainPackage.EVENT_PROPERTY__IMAGE_PATH:
+				setImagePath((String)newValue);
+				return;
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
+				setReferencedEvent((Event)newValue);
+				return;
+			case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
+				getEventProperties().clear();
+				getEventProperties().addAll((Collection<? extends EventProperty>)newValue);
+				return;
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
+				setReferencedEventProperty((EventProperty)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case DomainPackage.EVENT_PROPERTY__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case DomainPackage.EVENT_PROPERTY__TYPE:
-        setType(TYPE_EDEFAULT);
-        return;
-      case DomainPackage.EVENT_PROPERTY__IMAGE_PATH:
-        setImagePath(IMAGE_PATH_EDEFAULT);
-        return;
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
-        setReferencedEvent((Event)null);
-        return;
-      case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
-        getEventProperties().clear();
-        return;
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
-        setReferencedEventProperty((EventProperty)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DomainPackage.EVENT_PROPERTY__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case DomainPackage.EVENT_PROPERTY__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
+			case DomainPackage.EVENT_PROPERTY__IMAGE_PATH:
+				setImagePath(IMAGE_PATH_EDEFAULT);
+				return;
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
+				setReferencedEvent((Event)null);
+				return;
+			case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
+				getEventProperties().clear();
+				return;
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
+				setReferencedEventProperty((EventProperty)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case DomainPackage.EVENT_PROPERTY__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DomainPackage.EVENT_PROPERTY__TYPE:
-        return type != TYPE_EDEFAULT;
-      case DomainPackage.EVENT_PROPERTY__IMAGE_PATH:
-        return IMAGE_PATH_EDEFAULT == null ? imagePath != null : !IMAGE_PATH_EDEFAULT.equals(imagePath);
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
-        return getReferencedEvent() != null;
-      case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
-        return eventProperties != null && !eventProperties.isEmpty();
-      case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
-        return getReferencedEventProperty() != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DomainPackage.EVENT_PROPERTY__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DomainPackage.EVENT_PROPERTY__TYPE:
+				return type != TYPE_EDEFAULT;
+			case DomainPackage.EVENT_PROPERTY__IMAGE_PATH:
+				return IMAGE_PATH_EDEFAULT == null ? imagePath != null : !IMAGE_PATH_EDEFAULT.equals(imagePath);
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT:
+				return getReferencedEvent() != null;
+			case DomainPackage.EVENT_PROPERTY__EVENT_PROPERTIES:
+				return eventProperties != null && !eventProperties.isEmpty();
+			case DomainPackage.EVENT_PROPERTY__REFERENCED_EVENT_PROPERTY:
+				return getReferencedEventProperty() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", type: ");
-    result.append(type);
-    result.append(", imagePath: ");
-    result.append(imagePath);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", type: ");
+		result.append(type);
+		result.append(", imagePath: ");
+		result.append(imagePath);
+		result.append(')');
+		return result.toString();
+	}
 
 } //EventPropertyImpl

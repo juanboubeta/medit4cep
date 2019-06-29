@@ -1,338 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgen:GenEditorGenerator
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    diagramFileExtension="domain_diagram"
-    domainFileExtension="domain"
-    copyrightText="">
-  <diagram
-      visualID="1000"
-      editPartClassName="CEPDomainEditPart"
-      itemSemanticEditPolicyClassName="CEPDomainItemSemanticEditPolicy"
-      canonicalEditPolicyClassName="CEPDomainCanonicalEditPolicy"
-      iconProviderPriority="Low"
-      validationProviderPriority="Low"
-      validationEnabled="true"
-      validationDecorators="true"
-      liveValidationUIFeedback="true">
-    <diagramRunTimeClass
-        href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
-    <elementType
-        xsi:type="gmfgen:MetamodelType"
-        editHelperClassName="CEPDomainEditHelper"/>
-    <viewmap
-        xsi:type="gmfgen:FigureViewmap"
-        figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" diagramFileExtension="domain_diagram" domainFileExtension="domain" copyrightText="">
+  <diagram visualID="1000" editPartClassName="CEPDomainEditPart" itemSemanticEditPolicyClassName="CEPDomainItemSemanticEditPolicy" canonicalEditPolicyClassName="CEPDomainCanonicalEditPolicy" iconProviderPriority="Low" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true" liveValidationUIFeedback="true">
+    <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
+    <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="CEPDomainEditHelper"/>
+    <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <containsShortcutsTo>domain</containsShortcutsTo>
     <shortcutsProvidedFor>domain</shortcutsProvidedFor>
-    <domainDiagramElement
-        href="cep-domain.genmodel#//domain/CEPDomain"/>
-    <childNodes
-        visualID="3001"
-        editPartClassName="EventPropertyEditPart"
-        itemSemanticEditPolicyClassName="EventPropertyItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="EventPropertyCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.1"
-        graphicalNodeEditPolicyClassName="EventPropertyGraphicalNodeEditPolicy"
-        createCommandClassName="EventPropertyCreateCommand"
-        containers="//@diagram/@compartments.0">
-      <diagramRunTimeClass
-          href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="EventPropertyEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="EventPropertyFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EventPropertyFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEventPropertyLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fEventPropertyEventPropertiesCompartmentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EventPropertyFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEventPropertyLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureEventPropertyLabelFigure.setText(&quot;EventProperty&quot;);&#xA;fFigureEventPropertyLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureEventPropertyLabelFigure);&#xA;&#xA;&#xA;&#xA;fEventPropertyEventPropertiesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fEventPropertyEventPropertiesCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fEventPropertyEventPropertiesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEventPropertyLabelFigure() {&#xA;&#x9;&#x9;return fFigureEventPropertyLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getEventPropertyEventPropertiesCompartmentFigure() {&#xA;&#x9;&#x9;return fEventPropertyEventPropertiesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"
-            nonResizeHandles="31"/>
+    <domainDiagramElement href="cep-domain.genmodel#//domain/CEPDomain"/>
+    <childNodes visualID="3001" editPartClassName="EventPropertyEditPart" itemSemanticEditPolicyClassName="EventPropertyItemSemanticEditPolicy" canonicalEditPolicyClassName="EventPropertyCanonicalEditPolicy" compartments="//@diagram/@compartments.1" graphicalNodeEditPolicyClassName="EventPropertyGraphicalNodeEditPolicy" createCommandClassName="EventPropertyCreateCommand" containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="EventPropertyEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="EventPropertyFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EventPropertyFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEventPropertyLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fEventPropertyEventPropertiesCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EventPropertyFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEventPropertyLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureEventPropertyLabelFigure.setText(&quot;EventProperty&quot;);&#xA;fFigureEventPropertyLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureEventPropertyLabelFigure);&#xA;&#xA;&#xA;&#xA;fEventPropertyEventPropertiesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fEventPropertyEventPropertiesCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fEventPropertyEventPropertiesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEventPropertyLabelFigure() {&#xA;&#x9;&#x9;return fFigureEventPropertyLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getEventPropertyEventPropertiesCompartmentFigure() {&#xA;&#x9;&#x9;return fEventPropertyEventPropertiesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+        <attributes xsi:type="gmfgen:ResizeConstraints" nonResizeHandles="31"/>
       </viewmap>
-      <behaviour
-          xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
       <modelFacet>
-        <metaClass
-            href="cep-domain.genmodel#//domain/EventProperty"/>
-        <containmentMetaFeature
-            href="cep-domain.genmodel#//domain/Event/eventProperties"/>
-        <childMetaFeature
-            href="cep-domain.genmodel#//domain/Event/eventProperties"/>
+        <metaClass href="cep-domain.genmodel#//domain/EventProperty"/>
+        <containmentMetaFeature href="cep-domain.genmodel#//domain/Event/eventProperties"/>
+        <childMetaFeature href="cep-domain.genmodel#//domain/Event/eventProperties"/>
       </modelFacet>
-      <labels
-          visualID="5002"
-          editPartClassName="EventPropertyNameEditPart"
-          itemSemanticEditPolicyClassName="EventPropertyNameItemSemanticEditPolicy"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureEventPropertyLabelFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="cep-domain.genmodel#//domain/EventProperty/name"/>
+      <labels visualID="5002" editPartClassName="EventPropertyNameEditPart" itemSemanticEditPolicyClassName="EventPropertyNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureEventPropertyLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="cep-domain.genmodel#//domain/EventProperty/name"/>
         </modelFacet>
       </labels>
     </childNodes>
-    <childNodes
-        visualID="3002"
-        editPartClassName="EventProperty2EditPart"
-        itemSemanticEditPolicyClassName="EventProperty2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="EventProperty2CanonicalEditPolicy"
-        compartments="//@diagram/@compartments.2"
-        graphicalNodeEditPolicyClassName="EventProperty2GraphicalNodeEditPolicy"
-        createCommandClassName="EventProperty2CreateCommand"
-        containers="//@diagram/@compartments.2 //@diagram/@compartments.1">
-      <diagramRunTimeClass
-          href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.0/@elementType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="EventPropertyFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EventPropertyFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEventPropertyLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fEventPropertyEventPropertiesCompartmentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EventPropertyFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEventPropertyLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureEventPropertyLabelFigure.setText(&quot;EventProperty&quot;);&#xA;fFigureEventPropertyLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureEventPropertyLabelFigure);&#xA;&#xA;&#xA;&#xA;fEventPropertyEventPropertiesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fEventPropertyEventPropertiesCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fEventPropertyEventPropertiesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEventPropertyLabelFigure() {&#xA;&#x9;&#x9;return fFigureEventPropertyLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getEventPropertyEventPropertiesCompartmentFigure() {&#xA;&#x9;&#x9;return fEventPropertyEventPropertiesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"
-            nonResizeHandles="31"/>
+    <childNodes visualID="3002" editPartClassName="EventProperty2EditPart" itemSemanticEditPolicyClassName="EventProperty2ItemSemanticEditPolicy" canonicalEditPolicyClassName="EventProperty2CanonicalEditPolicy" compartments="//@diagram/@compartments.2" graphicalNodeEditPolicyClassName="EventProperty2GraphicalNodeEditPolicy" createCommandClassName="EventProperty2CreateCommand" containers="//@diagram/@compartments.2 //@diagram/@compartments.1">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:SpecializationType" metamodelType="//@diagram/@childNodes.0/@elementType"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="EventPropertyFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EventPropertyFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEventPropertyLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fEventPropertyEventPropertiesCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EventPropertyFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEventPropertyLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureEventPropertyLabelFigure.setText(&quot;EventProperty&quot;);&#xA;fFigureEventPropertyLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureEventPropertyLabelFigure);&#xA;&#xA;&#xA;&#xA;fEventPropertyEventPropertiesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fEventPropertyEventPropertiesCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fEventPropertyEventPropertiesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEventPropertyLabelFigure() {&#xA;&#x9;&#x9;return fFigureEventPropertyLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getEventPropertyEventPropertiesCompartmentFigure() {&#xA;&#x9;&#x9;return fEventPropertyEventPropertiesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+        <attributes xsi:type="gmfgen:ResizeConstraints" nonResizeHandles="31"/>
       </viewmap>
-      <behaviour
-          xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
       <modelFacet>
-        <metaClass
-            href="cep-domain.genmodel#//domain/EventProperty"/>
-        <containmentMetaFeature
-            href="cep-domain.genmodel#//domain/EventProperty/eventProperties"/>
-        <childMetaFeature
-            href="cep-domain.genmodel#//domain/EventProperty/eventProperties"/>
+        <metaClass href="cep-domain.genmodel#//domain/EventProperty"/>
+        <containmentMetaFeature href="cep-domain.genmodel#//domain/EventProperty/eventProperties"/>
+        <childMetaFeature href="cep-domain.genmodel#//domain/EventProperty/eventProperties"/>
       </modelFacet>
-      <labels
-          visualID="5001"
-          editPartClassName="EventPropertyName2EditPart"
-          itemSemanticEditPolicyClassName="EventPropertyName2ItemSemanticEditPolicy"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureEventPropertyLabelFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="cep-domain.genmodel#//domain/EventProperty/name"/>
+      <labels visualID="5001" editPartClassName="EventPropertyName2EditPart" itemSemanticEditPolicyClassName="EventPropertyName2ItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureEventPropertyLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="cep-domain.genmodel#//domain/EventProperty/name"/>
         </modelFacet>
       </labels>
     </childNodes>
-    <topLevelNodes
-        visualID="2001"
-        editPartClassName="EventEditPart"
-        itemSemanticEditPolicyClassName="EventItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="EventCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.0"
-        graphicalNodeEditPolicyClassName="EventGraphicalNodeEditPolicy"
-        createCommandClassName="EventCreateCommand">
-      <diagramRunTimeClass
-          href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="EventEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="EventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEventLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fEventEventPropertiesCompartmentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EventFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEventLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureEventLabelFigure.setText(&quot;Event&quot;);&#xA;fFigureEventLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureEventLabelFigure);&#xA;&#xA;&#xA;&#xA;fEventEventPropertiesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fEventEventPropertiesCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fEventEventPropertiesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEventLabelFigure() {&#xA;&#x9;&#x9;return fFigureEventLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getEventEventPropertiesCompartmentFigure() {&#xA;&#x9;&#x9;return fEventEventPropertiesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"
-            nonResizeHandles="31"/>
+    <topLevelNodes visualID="2001" editPartClassName="EventEditPart" itemSemanticEditPolicyClassName="EventItemSemanticEditPolicy" canonicalEditPolicyClassName="EventCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="EventGraphicalNodeEditPolicy" createCommandClassName="EventCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="EventEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="EventFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEventLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fEventEventPropertiesCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EventFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEventLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureEventLabelFigure.setText(&quot;Event&quot;);&#xA;fFigureEventLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureEventLabelFigure);&#xA;&#xA;&#xA;&#xA;fEventEventPropertiesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fEventEventPropertiesCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fEventEventPropertiesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEventLabelFigure() {&#xA;&#x9;&#x9;return fFigureEventLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getEventEventPropertiesCompartmentFigure() {&#xA;&#x9;&#x9;return fEventEventPropertiesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+        <attributes xsi:type="gmfgen:ResizeConstraints" nonResizeHandles="31"/>
       </viewmap>
-      <behaviour
-          xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
       <modelFacet>
-        <metaClass
-            href="cep-domain.genmodel#//domain/Event"/>
-        <containmentMetaFeature
-            href="cep-domain.genmodel#//domain/CEPDomain/events"/>
-        <childMetaFeature
-            href="cep-domain.genmodel#//domain/CEPDomain/events"/>
+        <metaClass href="cep-domain.genmodel#//domain/Event"/>
+        <containmentMetaFeature href="cep-domain.genmodel#//domain/CEPDomain/events"/>
+        <childMetaFeature href="cep-domain.genmodel#//domain/CEPDomain/events"/>
       </modelFacet>
-      <labels
-          visualID="5003"
-          editPartClassName="EventTypeNameEditPart"
-          itemSemanticEditPolicyClassName="EventTypeNameItemSemanticEditPolicy"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureEventLabelFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="cep-domain.genmodel#//domain/Event/typeName"/>
+      <labels visualID="5003" editPartClassName="EventTypeNameEditPart" itemSemanticEditPolicyClassName="EventTypeNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureEventLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="cep-domain.genmodel#//domain/Event/typeName"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <compartments
-        visualID="7001"
-        editPartClassName="EventEventEventPropertiesCompartmentEditPart"
-        itemSemanticEditPolicyClassName="EventEventEventPropertiesCompartmentItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="EventEventEventPropertiesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0"
-        title="EventEventPropertiesCompartment"
-        needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
-      <diagramRunTimeClass
-          href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getEventEventPropertiesCompartmentFigure"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    <compartments visualID="7001" editPartClassName="EventEventEventPropertiesCompartmentEditPart" itemSemanticEditPolicyClassName="EventEventEventPropertiesCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="EventEventEventPropertiesCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="EventEventPropertiesCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.0">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getEventEventPropertiesCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
-    <compartments
-        visualID="7002"
-        editPartClassName="EventPropertyEventPropertyEventPropertiesCompartmentEditPart"
-        itemSemanticEditPolicyClassName="EventPropertyEventPropertyEventPropertiesCompartmentItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="EventPropertyEventPropertyEventPropertiesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.1"
-        title="EventPropertyEventPropertiesCompartment"
-        needsTitle="false"
-        node="//@diagram/@childNodes.0">
-      <diagramRunTimeClass
-          href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getEventPropertyEventPropertiesCompartmentFigure"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    <compartments visualID="7002" editPartClassName="EventPropertyEventPropertyEventPropertiesCompartmentEditPart" itemSemanticEditPolicyClassName="EventPropertyEventPropertyEventPropertiesCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="EventPropertyEventPropertyEventPropertiesCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1" title="EventPropertyEventPropertiesCompartment" needsTitle="false" node="//@diagram/@childNodes.0">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getEventPropertyEventPropertiesCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
-    <compartments
-        visualID="7003"
-        editPartClassName="EventPropertyEventPropertyEventPropertiesCompartment2EditPart"
-        itemSemanticEditPolicyClassName="EventPropertyEventPropertyEventPropertiesCompartment2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="EventPropertyEventPropertyEventPropertiesCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.1"
-        title="EventPropertyEventPropertiesCompartment"
-        needsTitle="false"
-        node="//@diagram/@childNodes.1">
-      <diagramRunTimeClass
-          href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getEventPropertyEventPropertiesCompartmentFigure"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    <compartments visualID="7003" editPartClassName="EventPropertyEventPropertyEventPropertiesCompartment2EditPart" itemSemanticEditPolicyClassName="EventPropertyEventPropertyEventPropertiesCompartment2ItemSemanticEditPolicy" canonicalEditPolicyClassName="EventPropertyEventPropertyEventPropertiesCompartment2CanonicalEditPolicy" childNodes="//@diagram/@childNodes.1" title="EventPropertyEventPropertiesCompartment" needsTitle="false" node="//@diagram/@childNodes.1">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getEventPropertyEventPropertiesCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <palette>
-      <groups
-          title="Objects"
-          collapse="true">
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Event"
-            description="Add an event"
-            genNodes="//@diagram/@topLevelNodes.0"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Event Property"
-            description="Add an event property"
-            genNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"/>
+      <groups title="Objects" collapse="true">
+        <entries xsi:type="gmfgen:ToolEntry" title="Event" description="Add an event" genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Event Property" description="Add an event property" genNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"/>
       </groups>
     </palette>
-    <preferencePages
-        xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="es.uca.modeling.cep.domain.diagram.general"
-        name="Domain Diagram">
-      <children
-          xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="es.uca.modeling.cep.domain.diagram.appearance"
-          name="Appearance"
-          kind="Appearance"/>
-      <children
-          xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="es.uca.modeling.cep.domain.diagram.connections"
-          name="Connections"
-          kind="Connections"/>
-      <children
-          xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="es.uca.modeling.cep.domain.diagram.printing"
-          name="Printing"
-          kind="Printing"/>
-      <children
-          xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="es.uca.modeling.cep.domain.diagram.rulersAndGrid"
-          name="Rulers And Grid"
-          kind="RulersAndGrid"/>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="es.uca.modeling.cep.domain.diagram.general" name="Domain Diagram">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="es.uca.modeling.cep.domain.diagram.appearance" name="Appearance" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="es.uca.modeling.cep.domain.diagram.connections" name="Connections" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="es.uca.modeling.cep.domain.diagram.printing" name="Printing" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="es.uca.modeling.cep.domain.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin
-      printingEnabled="true">
+  <plugin printingEnabled="true">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>
-    <childReferences
-        child="//@diagram"/>
-    <childReferences
-        parent="//@diagram/@childNodes.1"
-        child="//@diagram/@childNodes.1"/>
-    <childReferences
-        parent="//@diagram/@childNodes.0"
-        child="//@diagram/@childNodes.1"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.0"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@topLevelNodes.0"/>
+    <childReferences child="//@diagram"/>
+    <childReferences parent="//@diagram/@childNodes.1" child="//@diagram/@childNodes.1"/>
+    <childReferences parent="//@diagram/@childNodes.0" child="//@diagram/@childNodes.1"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.0"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.0"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
-        iD="appearance"/>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
-        iD="diagram"/>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
-        iD="domain"
-        label="Core">
-      <filter
-          xsi:type="gmfgen:TypeTabFilter">
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="appearance"/>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="diagram"/>
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="domain" label="Core">
+      <filter xsi:type="gmfgen:TypeTabFilter">
         <types>org.eclipse.gmf.runtime.notation.View</types>
         <types>org.eclipse.gef.EditPart</types>
         <generatedTypes>abstractNavigatorItem</generatedTypes>
       </filter>
     </tabs>
   </propertySheet>
-  <domainGenModel
-      href="cep-domain.genmodel#/"/>
-  <labelParsers
-      extensibleViaService="true">
-    <implementations
-        xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+  <domainGenModel href="cep-domain.genmodel#/"/>
+  <labelParsers extensibleViaService="true">
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
   </labelParsers>
-  <contextMenus
-      context="//@diagram">
-    <items
-        xsi:type="gmfgen:LoadResourceAction"/>
+  <contextMenus context="//@diagram">
+    <items xsi:type="gmfgen:LoadResourceAction"/>
   </contextMenus>
 </gmfgen:GenEditorGenerator>

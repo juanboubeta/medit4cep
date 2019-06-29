@@ -31,8 +31,7 @@ import domain.EventProperty;
 /**
  * @generated
  */
-public class DomainPropertySection extends DefaultPropertySection implements
-		IPropertySourceProvider {
+public class DomainPropertySection extends DefaultPropertySection implements IPropertySourceProvider {
 
 	/**
 	 * Modify/unwrap selection.
@@ -53,8 +52,7 @@ public class DomainPropertySection extends DefaultPropertySection implements
 		}
 		AdapterFactory af = getAdapterFactory(object);
 		if (af != null) {
-			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
-					IItemPropertySource.class);
+			IItemPropertySource ips = (IItemPropertySource) af.adapt(object, IItemPropertySource.class);
 
 			if (ips != null) {
 
@@ -64,15 +62,12 @@ public class DomainPropertySection extends DefaultPropertySection implements
 						protected IPropertyDescriptor createPropertyDescriptor(
 								IItemPropertyDescriptor itemPropertyDescriptor) {
 
-							EStructuralFeature feature = (EStructuralFeature) itemPropertyDescriptor
-									.getFeature(object);
+							EStructuralFeature feature = (EStructuralFeature) itemPropertyDescriptor.getFeature(object);
 
 							if (feature.getName().equalsIgnoreCase("imagePath")) {
-								return new PropertyImagePathPropertyDescriptor(
-										object, itemPropertyDescriptor, "Misc");
+								return new PropertyImagePathPropertyDescriptor(object, itemPropertyDescriptor, "Misc");
 							} else {
-								return new EMFCompositeSourcePropertyDescriptor(
-										object, itemPropertyDescriptor, "Misc");
+								return new EMFCompositeSourcePropertyDescriptor(object, itemPropertyDescriptor, "Misc");
 							}
 						}
 					};
@@ -82,8 +77,7 @@ public class DomainPropertySection extends DefaultPropertySection implements
 			}
 		}
 		if (object instanceof IAdaptable) {
-			return (IPropertySource) ((IAdaptable) object)
-					.getAdapter(IPropertySource.class);
+			return (IPropertySource) ((IAdaptable) object).getAdapter(IPropertySource.class);
 		}
 		return null;
 	}

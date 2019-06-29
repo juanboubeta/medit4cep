@@ -39,8 +39,7 @@ public class DomainDiagramUpdater {
 	 * @generated
 	 */
 	public static boolean isShortcutOrphaned(View view) {
-		return !view.isSetElement() || view.getElement() == null
-				|| view.getElement().eIsProxy();
+		return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
 	}
 
 	/**
@@ -63,8 +62,7 @@ public class DomainDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<DomainNodeDescriptor> getCEPDomain_1000SemanticChildren(
-			View view) {
+	public static List<DomainNodeDescriptor> getCEPDomain_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
@@ -72,8 +70,7 @@ public class DomainDiagramUpdater {
 		LinkedList<DomainNodeDescriptor> result = new LinkedList<DomainNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getEvents().iterator(); it.hasNext();) {
 			Event childElement = (Event) it.next();
-			int visualID = DomainVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = DomainVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventEditPart.VISUAL_ID) {
 				result.add(new DomainNodeDescriptor(childElement, visualID));
 				continue;
@@ -85,8 +82,7 @@ public class DomainDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<DomainNodeDescriptor> getEventEventEventPropertiesCompartment_7001SemanticChildren(
-			View view) {
+	public static List<DomainNodeDescriptor> getEventEventEventPropertiesCompartment_7001SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -96,11 +92,9 @@ public class DomainDiagramUpdater {
 		}
 		Event modelElement = (Event) containerView.getElement();
 		LinkedList<DomainNodeDescriptor> result = new LinkedList<DomainNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = DomainVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = DomainVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventPropertyEditPart.VISUAL_ID) {
 				result.add(new DomainNodeDescriptor(childElement, visualID));
 				continue;
@@ -123,11 +117,9 @@ public class DomainDiagramUpdater {
 		}
 		EventProperty modelElement = (EventProperty) containerView.getElement();
 		LinkedList<DomainNodeDescriptor> result = new LinkedList<DomainNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = DomainVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = DomainVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty2EditPart.VISUAL_ID) {
 				result.add(new DomainNodeDescriptor(childElement, visualID));
 				continue;
@@ -150,11 +142,9 @@ public class DomainDiagramUpdater {
 		}
 		EventProperty modelElement = (EventProperty) containerView.getElement();
 		LinkedList<DomainNodeDescriptor> result = new LinkedList<DomainNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEventProperties().iterator(); it.hasNext();) {
 			EventProperty childElement = (EventProperty) it.next();
-			int visualID = DomainVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = DomainVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EventProperty2EditPart.VISUAL_ID) {
 				result.add(new DomainNodeDescriptor(childElement, visualID));
 				continue;
@@ -213,80 +203,70 @@ public class DomainDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getCEPDomain_1000ContainedLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getCEPDomain_1000ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getEvent_2001ContainedLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getEvent_2001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getEventProperty_3001ContainedLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getEventProperty_3001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getEventProperty_3002ContainedLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getEventProperty_3002ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getEvent_2001IncomingLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getEvent_2001IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getEventProperty_3001IncomingLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getEventProperty_3001IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getEventProperty_3002IncomingLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getEventProperty_3002IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getEvent_2001OutgoingLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getEvent_2001OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getEventProperty_3001OutgoingLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getEventProperty_3001OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<DomainLinkDescriptor> getEventProperty_3002OutgoingLinks(
-			View view) {
+	public static List<DomainLinkDescriptor> getEventProperty_3002OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 

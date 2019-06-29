@@ -12,8 +12,7 @@ import domain.diagram.providers.DomainElementTypes;
 /**
  * @generated
  */
-public class EventEventEventPropertiesCompartmentItemSemanticEditPolicy extends
-		DomainBaseItemSemanticEditPolicy {
+public class EventEventEventPropertiesCompartmentItemSemanticEditPolicy extends DomainBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

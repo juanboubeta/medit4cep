@@ -44,8 +44,7 @@ public class DomainElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			DomainDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			DomainDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -55,7 +54,8 @@ public class DomainElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CEPDomain_1000 = getElementType("es.uca.modeling.cep.domain.diagram.CEPDomain_1000"); //$NON-NLS-1$
+	public static final IElementType CEPDomain_1000 = getElementType(
+			"es.uca.modeling.cep.domain.diagram.CEPDomain_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -63,11 +63,13 @@ public class DomainElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventProperty_3001 = getElementType("es.uca.modeling.cep.domain.diagram.EventProperty_3001"); //$NON-NLS-1$
+	public static final IElementType EventProperty_3001 = getElementType(
+			"es.uca.modeling.cep.domain.diagram.EventProperty_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventProperty_3002 = getElementType("es.uca.modeling.cep.domain.diagram.EventProperty_3002"); //$NON-NLS-1$
+	public static final IElementType EventProperty_3002 = getElementType(
+			"es.uca.modeling.cep.domain.diagram.EventProperty_3002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -111,11 +113,9 @@ public class DomainElementTypes {
 
 			elements.put(Event_2001, DomainPackage.eINSTANCE.getEvent());
 
-			elements.put(EventProperty_3001,
-					DomainPackage.eINSTANCE.getEventProperty());
+			elements.put(EventProperty_3001, DomainPackage.eINSTANCE.getEventProperty());
 
-			elements.put(EventProperty_3002,
-					DomainPackage.eINSTANCE.getEventProperty());
+			elements.put(EventProperty_3002, DomainPackage.eINSTANCE.getEventProperty());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -161,35 +161,33 @@ public class DomainElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
-			return domain.diagram.providers.DomainElementTypes
-					.isKnownElementType(elementType);
+			return domain.diagram.providers.DomainElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return domain.diagram.providers.DomainElementTypes
-					.getElementType(visualID);
+			return domain.diagram.providers.DomainElementTypes.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
-			return domain.diagram.providers.DomainElementTypes
-					.getElement(elementTypeAdapter);
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
+			return domain.diagram.providers.DomainElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

@@ -502,6 +502,51 @@ class Value extends ConditionOperand {
    attr PropertyTypeValue type;
 }
 
+/* SMART CONTRACTS*/
+/*
+@gmf.node(figure="rectangle", label="typeName", border.color="110,110,110",
+tool.name="Smart Contract", tool.description="Add a SmartContract", resizable="false", label.readOnly="true")
+class SmartContract {
+   attr String typeName;
+   attr String imagePath;
+   val ContractFunction[*] contractfunctions;   
+    
+   @gmf.compartment(layout="list")
+   val ContractFunction[*]#referencedSmartContract SmartContractProperties;  
+}
+
+@gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
+tool.name="Contract Function", tool.description="Add a Contract Function", resizable="false", label.readOnly="true")
+class ContractFunction {
+   attr String name;
+   attr String imagePath;
+   ref SmartContract#SmartContractProperties referencedSmartContract;
+      
+   @gmf.compartment(layout="list")
+   val InputParameter[*]#InputReferencedFunction InputParametersFunction; 
+
+   @gmf.compartment(layout="list")
+   val OutputParameter[0..1]#OutputReferencedFunction OutputParametersFunction;
+    
+}
+
+abstract class Parameter {
+	attr String name;
+   	attr PropertyTypeValue type;
+}
+
+@gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
+tool.name="Input Parameter", tool.description="Add an Input Parameter", resizable="false", label.readOnly="true")
+class InputParameter extends Parameter{
+   ref ContractFunction#InputParametersFunction InputReferencedFunction;
+}
+
+@gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
+tool.name="Output Parameter", tool.description="Add an Output Parameter", resizable="false", label.readOnly="true")
+class OutputParameter extends Parameter{
+   ref ContractFunction#OutputParametersFunction OutputReferencedFunction;
+}
+*/
 
 /* ACTIONS */
 

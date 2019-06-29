@@ -50,8 +50,7 @@ public class DomainVisualIDRegistry {
 				return -1;
 			}
 		}
-		return domain.diagram.part.DomainVisualIDRegistry.getVisualID(view
-				.getType());
+		return domain.diagram.part.DomainVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -76,11 +75,9 @@ public class DomainVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(
-					Platform.getDebugOption(DEBUG_KEY))) {
-				DomainDiagramEditorPlugin.getInstance().logError(
-						"Unable to parse view type as a visualID number: "
-								+ type);
+			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
+				DomainDiagramEditorPlugin.getInstance()
+						.logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -100,8 +97,7 @@ public class DomainVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (DomainPackage.eINSTANCE.getCEPDomain().isSuperTypeOf(
-				domainElement.eClass())
+		if (DomainPackage.eINSTANCE.getCEPDomain().isSuperTypeOf(domainElement.eClass())
 				&& isDiagram((CEPDomain) domainElement)) {
 			return CEPDomainEditPart.VISUAL_ID;
 		}
@@ -115,16 +111,13 @@ public class DomainVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		String containerModelID = domain.diagram.part.DomainVisualIDRegistry
-				.getModelID(containerView);
-		if (!CEPDomainEditPart.MODEL_ID.equals(containerModelID)
-				&& !"domain".equals(containerModelID)) { //$NON-NLS-1$
+		String containerModelID = domain.diagram.part.DomainVisualIDRegistry.getModelID(containerView);
+		if (!CEPDomainEditPart.MODEL_ID.equals(containerModelID) && !"domain".equals(containerModelID)) { //$NON-NLS-1$
 			return -1;
 		}
 		int containerVisualID;
 		if (CEPDomainEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = domain.diagram.part.DomainVisualIDRegistry
-					.getVisualID(containerView);
+			containerVisualID = domain.diagram.part.DomainVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = CEPDomainEditPart.VISUAL_ID;
@@ -134,26 +127,22 @@ public class DomainVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case CEPDomainEditPart.VISUAL_ID:
-			if (DomainPackage.eINSTANCE.getEvent().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (DomainPackage.eINSTANCE.getEvent().isSuperTypeOf(domainElement.eClass())) {
 				return EventEditPart.VISUAL_ID;
 			}
 			break;
 		case EventEventEventPropertiesCompartmentEditPart.VISUAL_ID:
-			if (DomainPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (DomainPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventPropertyEditPart.VISUAL_ID;
 			}
 			break;
 		case EventPropertyEventPropertyEventPropertiesCompartmentEditPart.VISUAL_ID:
-			if (DomainPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (DomainPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty2EditPart.VISUAL_ID;
 			}
 			break;
 		case EventPropertyEventPropertyEventPropertiesCompartment2EditPart.VISUAL_ID:
-			if (DomainPackage.eINSTANCE.getEventProperty().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (DomainPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
 				return EventProperty2EditPart.VISUAL_ID;
 			}
 			break;
@@ -165,16 +154,13 @@ public class DomainVisualIDRegistry {
 	 * @generated
 	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
-		String containerModelID = domain.diagram.part.DomainVisualIDRegistry
-				.getModelID(containerView);
-		if (!CEPDomainEditPart.MODEL_ID.equals(containerModelID)
-				&& !"domain".equals(containerModelID)) { //$NON-NLS-1$
+		String containerModelID = domain.diagram.part.DomainVisualIDRegistry.getModelID(containerView);
+		if (!CEPDomainEditPart.MODEL_ID.equals(containerModelID) && !"domain".equals(containerModelID)) { //$NON-NLS-1$
 			return false;
 		}
 		int containerVisualID;
 		if (CEPDomainEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = domain.diagram.part.DomainVisualIDRegistry
-					.getVisualID(containerView);
+			containerVisualID = domain.diagram.part.DomainVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = CEPDomainEditPart.VISUAL_ID;
@@ -254,8 +240,7 @@ public class DomainVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	public static boolean checkNodeVisualID(View containerView,
-			EObject domainElement, int candidate) {
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -297,56 +282,58 @@ public class DomainVisualIDRegistry {
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getVisualID(View view) {
 			return domain.diagram.part.DomainVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public String getModelID(View view) {
 			return domain.diagram.part.DomainVisualIDRegistry.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return domain.diagram.part.DomainVisualIDRegistry.getNodeVisualID(
-					containerView, domainElement);
+			return domain.diagram.part.DomainVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public boolean checkNodeVisualID(View containerView,
-				EObject domainElement, int candidate) {
-			return domain.diagram.part.DomainVisualIDRegistry
-					.checkNodeVisualID(containerView, domainElement, candidate);
+
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return domain.diagram.part.DomainVisualIDRegistry.checkNodeVisualID(containerView, domainElement,
+					candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isCompartmentVisualID(int visualID) {
-			return domain.diagram.part.DomainVisualIDRegistry
-					.isCompartmentVisualID(visualID);
+			return domain.diagram.part.DomainVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isSemanticLeafVisualID(int visualID) {
-			return domain.diagram.part.DomainVisualIDRegistry
-					.isSemanticLeafVisualID(visualID);
+			return domain.diagram.part.DomainVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 	};
 

@@ -90,15 +90,11 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						DomainVisualIDRegistry.TYPED_INSTANCE));
+				new CreationEditPolicyWithCustomReparent(DomainVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new EventPropertyItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new EventPropertyItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(EditPolicyRoles.OPEN_ROLE,
-				new OpenDiagramEditPolicy());
-		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy()); // XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 	}
 
@@ -109,8 +105,7 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -147,17 +142,13 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof EventPropertyNameEditPart) {
-			((EventPropertyNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureEventPropertyLabelFigure());
+			((EventPropertyNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureEventPropertyLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof EventPropertyEventPropertyEventPropertiesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getEventPropertyEventPropertiesCompartmentFigure();
+			IFigure pane = getPrimaryShape().getEventPropertyEventPropertiesCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((EventPropertyEventPropertyEventPropertiesCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(((EventPropertyEventPropertyEventPropertiesCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -171,10 +162,8 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof EventPropertyEventPropertyEventPropertiesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getEventPropertyEventPropertiesCompartmentFigure();
-			pane.remove(((EventPropertyEventPropertyEventPropertiesCompartmentEditPart) childEditPart)
-					.getFigure());
+			IFigure pane = getPrimaryShape().getEventPropertyEventPropertiesCompartmentFigure();
+			pane.remove(((EventPropertyEventPropertyEventPropertiesCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -205,8 +194,7 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof EventPropertyEventPropertyEventPropertiesCompartmentEditPart) {
-			return getPrimaryShape()
-					.getEventPropertyEventPropertiesCompartmentFigure();
+			return getPrimaryShape().getEventPropertyEventPropertiesCompartmentFigure();
 		}
 		return getContentPane();
 	}
@@ -313,8 +301,7 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(DomainVisualIDRegistry
-				.getType(EventPropertyNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(DomainVisualIDRegistry.getType(EventPropertyNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -322,11 +309,9 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == DomainElementTypes.EventProperty_3002) {
 				return getChildBySemanticHint(DomainVisualIDRegistry
 						.getType(EventPropertyEventPropertyEventPropertiesCompartmentEditPart.VISUAL_ID));
@@ -354,8 +339,7 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 		 */
 		public EventPropertyFigure() {
 			this.setForegroundColor(THIS_FORE);
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 			createContents();
 		}
@@ -368,8 +352,8 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 			fFigureEventPropertyLabelFigure = new WrappingLabel();
 
 			fFigureEventPropertyLabelFigure.setText("EventProperty");
-			fFigureEventPropertyLabelFigure.setMaximumSize(new Dimension(
-					getMapMode().DPtoLP(10000), getMapMode().DPtoLP(50)));
+			fFigureEventPropertyLabelFigure
+					.setMaximumSize(new Dimension(getMapMode().DPtoLP(10000), getMapMode().DPtoLP(50)));
 
 			this.add(fFigureEventPropertyLabelFigure);
 
@@ -409,27 +393,23 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations()
-						.equals(event.getFeature())) {
+				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
 			handleMajorSemanticChange();
 		} else {
 			if (event.getFeature() instanceof EAttribute) {
 				EAttribute eAttribute = (EAttribute) event.getFeature();
 
 				if (eAttribute.getName().equalsIgnoreCase("imagePath")) {
-					EventPropertyFigure figure = (EventPropertyFigure) this
-							.getPrimaryShape();
+					EventPropertyFigure figure = (EventPropertyFigure) this.getPrimaryShape();
 
 					Image image;
 					String elementName = event.getNewStringValue();
 
-					if (elementName != null && !elementName.equals("")
-							&& new File(elementName).exists()) {
+					if (elementName != null && !elementName.equals("") && new File(elementName).exists()) {
 						try {
 							File file = new File(elementName);
 							URL url = file.toURI().toURL();
-							image = ImageDescriptor.createFromURL(url)
-									.createImage();
+							image = ImageDescriptor.createFromURL(url).createImage();
 						} catch (MalformedURLException e) {
 							e.printStackTrace();
 							image = null;
@@ -437,11 +417,9 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 
 						Image scaledImage;
 
-						scaledImage = new Image(Display.getDefault(), image
-								.getImageData().scaledTo(20, 20));
+						scaledImage = new Image(Display.getDefault(), image.getImageData().scaledTo(20, 20));
 
-						figure.getFigureEventPropertyLabelFigure().setIcon(
-								scaledImage);
+						figure.getFigureEventPropertyLabelFigure().setIcon(scaledImage);
 					}
 				}
 			}
@@ -461,8 +439,7 @@ public class EventPropertyEditPart extends ShapeNodeEditPart {
 	}
 
 	protected void mouseDoubleClick() {
-		IWorkbenchPage page = PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getActivePage();
+		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 
 		if (page != null) {
 			try {

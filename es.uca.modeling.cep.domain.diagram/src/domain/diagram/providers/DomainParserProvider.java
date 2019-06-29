@@ -28,8 +28,7 @@ import domain.diagram.part.DomainVisualIDRegistry;
 /**
  * @generated
  */
-public class DomainParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class DomainParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -41,8 +40,7 @@ public class DomainParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventTypeName_5003Parser() {
 		if (eventTypeName_5003Parser == null) {
-			EAttribute[] features = new EAttribute[] { DomainPackage.eINSTANCE
-					.getEvent_TypeName() };
+			EAttribute[] features = new EAttribute[] { DomainPackage.eINSTANCE.getEvent_TypeName() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventTypeName_5003Parser = parser;
 		}
@@ -59,8 +57,7 @@ public class DomainParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventPropertyName_5002Parser() {
 		if (eventPropertyName_5002Parser == null) {
-			EAttribute[] features = new EAttribute[] { DomainPackage.eINSTANCE
-					.getEventProperty_Name() };
+			EAttribute[] features = new EAttribute[] { DomainPackage.eINSTANCE.getEventProperty_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventPropertyName_5002Parser = parser;
 		}
@@ -77,8 +74,7 @@ public class DomainParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventPropertyName_5001Parser() {
 		if (eventPropertyName_5001Parser == null) {
-			EAttribute[] features = new EAttribute[] { DomainPackage.eINSTANCE
-					.getEventProperty_Name() };
+			EAttribute[] features = new EAttribute[] { DomainPackage.eINSTANCE.getEventProperty_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventPropertyName_5001Parser = parser;
 		}
@@ -104,10 +100,8 @@ public class DomainParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**

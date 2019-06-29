@@ -49,3 +49,34 @@ for (eAttr in eAttributes4) {
 		feature.property = GenModel!GenPropertyKind#Readonly;
 	}
 }
+
+-- Disable property "type" of InputParameter 
+--var eAttributes5 = Ecore!EAttribute.all.select(as|as.name="type");
+
+--for (eAttr in eAttributes5) {	
+--	if (eAttr.eContainingClass.name == 'InputParameter') {
+--		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+--		feature.property = GenModel!GenPropertyKind#Readonly;
+--	}
+--}
+
+-- Disable property "type" of OutputParameter 
+--var eAttributes6 = Ecore!EAttribute.all.select(as|as.name="type");
+
+--for (eAttr in eAttributes6) {	
+--	if (eAttr.eContainingClass.name == 'OutputParameter') {
+--		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+--		feature.property = GenModel!GenPropertyKind#Readonly;
+--	}
+--}
+
+-- Disable property "imagePath" of SmartContract and ContractFunction
+--var eAttributes7 = Ecore!EAttribute.all.select(as|as.name="imagePath");
+
+--for (eAttr in eAttributes7) {
+	
+--	if (eAttr.eContainingClass.name == 'SmartContract' or eAttr.eContainingClass.name == 'ContractFunction') {
+--		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+--		feature.property = GenModel!GenPropertyKind#Readonly;
+--	}
+--}

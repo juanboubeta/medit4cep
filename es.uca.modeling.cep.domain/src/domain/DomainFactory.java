@@ -15,47 +15,47 @@ import org.eclipse.emf.ecore.EFactory;
 public interface DomainFactory extends EFactory
 {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   DomainFactory eINSTANCE = domain.impl.DomainFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>CEP Domain</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>CEP Domain</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>CEP Domain</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>CEP Domain</em>'.
+	 * @generated
+	 */
   CEPDomain createCEPDomain();
 
   /**
-   * Returns a new object of class '<em>Event</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Event</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Event</em>'.
+	 * @generated
+	 */
   Event createEvent();
 
   /**
-   * Returns a new object of class '<em>Event Property</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Event Property</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Property</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Event Property</em>'.
+	 * @generated
+	 */
   EventProperty createEventProperty();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   DomainPackage getDomainPackage();
 
 } //DomainFactory
