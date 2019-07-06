@@ -844,6 +844,21 @@ public class Messages extends NLS {
 	public static String ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart_title;
 
 	/**
+	* @generated
+	*/
+	public static String SmartContractSmartContractSmartContractPropertiesCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart_title;
+
+	/**
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
@@ -1167,6 +1182,11 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_GroupBy_2040_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_SmartContract_2041_incominglinks;
 
 	/**
 	 * @generated

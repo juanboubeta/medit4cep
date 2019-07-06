@@ -33,6 +33,7 @@ import eventpattern.BatchingTimeInterval;
 import eventpattern.CEPEventPattern;
 import eventpattern.ComplexEvent;
 import eventpattern.ComplexEventProperty;
+import eventpattern.ContractFunction;
 import eventpattern.Count;
 import eventpattern.Division;
 import eventpattern.Email;
@@ -48,6 +49,7 @@ import eventpattern.FollowedBy;
 import eventpattern.GreaterEqual;
 import eventpattern.GreaterThan;
 import eventpattern.GroupBy;
+import eventpattern.InputParameter;
 import eventpattern.LessEqual;
 import eventpattern.LessThan;
 import eventpattern.Link;
@@ -60,10 +62,12 @@ import eventpattern.NotEqual;
 import eventpattern.Operand;
 import eventpattern.Operator;
 import eventpattern.Or;
+import eventpattern.OutputParameter;
 import eventpattern.Range;
 import eventpattern.Repeat;
 import eventpattern.SlidingEventInterval;
 import eventpattern.SlidingTimeInterval;
+import eventpattern.SmartContract;
 import eventpattern.Subtraction;
 import eventpattern.Sum;
 import eventpattern.TimeInterval;
@@ -130,6 +134,12 @@ public class EventpatternDiagramUpdater {
 					view);
 		case ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart.VISUAL_ID:
 			return getComplexEventComplexEventComplexEventPropertiesCompartment_7015SemanticChildren(view);
+		case SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID:
+			return getSmartContractSmartContractSmartContractPropertiesCompartment_7016SemanticChildren(view);
+		case ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID:
+			return getContractFunctionContractFunctionInputParametersFunctionCompartment_7017SemanticChildren(view);
+		case ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID:
+			return getContractFunctionContractFunctionOutputParametersFunctionCompartment_7018SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -312,6 +322,14 @@ public class EventpatternDiagramUpdater {
 			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ComplexEventEditPart.VISUAL_ID) {
 				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+			}
+		}
+		for (Iterator<?> it = modelElement.getSmartContracts().iterator(); it.hasNext();) {
+			SmartContract childElement = (SmartContract) it.next();
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == SmartContractEditPart.VISUAL_ID) {
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+				continue;
 			}
 		}
 		return result;
@@ -1389,6 +1407,80 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<EventpatternNodeDescriptor> getSmartContractSmartContractSmartContractPropertiesCompartment_7016SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		SmartContract modelElement = (SmartContract) containerView.getElement();
+		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getSmartContractProperties().iterator(); it.hasNext();) {
+			ContractFunction childElement = (ContractFunction) it.next();
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ContractFunctionEditPart.VISUAL_ID) {
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternNodeDescriptor> getContractFunctionContractFunctionInputParametersFunctionCompartment_7017SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		ContractFunction modelElement = (ContractFunction) containerView.getElement();
+		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getInputParametersFunction().iterator(); it.hasNext();) {
+			InputParameter childElement = (InputParameter) it.next();
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == InputParameterEditPart.VISUAL_ID) {
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternNodeDescriptor> getContractFunctionContractFunctionOutputParametersFunctionCompartment_7018SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		ContractFunction modelElement = (ContractFunction) containerView.getElement();
+		LinkedList<EventpatternNodeDescriptor> result = new LinkedList<EventpatternNodeDescriptor>();
+		{
+			OutputParameter childElement = modelElement.getOutputParametersFunction();
+			int visualID = EventpatternVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == OutputParameterEditPart.VISUAL_ID) {
+				result.add(new EventpatternNodeDescriptor(childElement, visualID));
+			}
+		}
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<EventpatternLinkDescriptor> getContainedLinks(View view) {
@@ -1475,6 +1567,8 @@ public class EventpatternDiagramUpdater {
 			return getBatchingTimeInterval_2037ContainedLinks(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2038ContainedLinks(view);
+		case SmartContractEditPart.VISUAL_ID:
+			return getSmartContract_2041ContainedLinks(view);
 		case EventProperty2EditPart.VISUAL_ID:
 			return getEventProperty_3001ContainedLinks(view);
 		case EventProperty3EditPart.VISUAL_ID:
@@ -1595,6 +1689,12 @@ public class EventpatternDiagramUpdater {
 			return getTimeSchedule_3058ContainedLinks(view);
 		case ComplexEventPropertyEditPart.VISUAL_ID:
 			return getComplexEventProperty_3059ContainedLinks(view);
+		case ContractFunctionEditPart.VISUAL_ID:
+			return getContractFunction_3061ContainedLinks(view);
+		case InputParameterEditPart.VISUAL_ID:
+			return getInputParameter_3062ContainedLinks(view);
+		case OutputParameterEditPart.VISUAL_ID:
+			return getOutputParameter_3063ContainedLinks(view);
 		case LinkEditPart.VISUAL_ID:
 			return getLink_4001ContainedLinks(view);
 		}
@@ -1686,6 +1786,8 @@ public class EventpatternDiagramUpdater {
 			return getBatchingTimeInterval_2037IncomingLinks(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2038IncomingLinks(view);
+		case SmartContractEditPart.VISUAL_ID:
+			return getSmartContract_2041IncomingLinks(view);
 		case EventProperty2EditPart.VISUAL_ID:
 			return getEventProperty_3001IncomingLinks(view);
 		case EventProperty3EditPart.VISUAL_ID:
@@ -1806,6 +1908,12 @@ public class EventpatternDiagramUpdater {
 			return getTimeSchedule_3058IncomingLinks(view);
 		case ComplexEventPropertyEditPart.VISUAL_ID:
 			return getComplexEventProperty_3059IncomingLinks(view);
+		case ContractFunctionEditPart.VISUAL_ID:
+			return getContractFunction_3061IncomingLinks(view);
+		case InputParameterEditPart.VISUAL_ID:
+			return getInputParameter_3062IncomingLinks(view);
+		case OutputParameterEditPart.VISUAL_ID:
+			return getOutputParameter_3063IncomingLinks(view);
 		case LinkEditPart.VISUAL_ID:
 			return getLink_4001IncomingLinks(view);
 		}
@@ -1897,6 +2005,8 @@ public class EventpatternDiagramUpdater {
 			return getBatchingTimeInterval_2037OutgoingLinks(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2038OutgoingLinks(view);
+		case SmartContractEditPart.VISUAL_ID:
+			return getSmartContract_2041OutgoingLinks(view);
 		case EventProperty2EditPart.VISUAL_ID:
 			return getEventProperty_3001OutgoingLinks(view);
 		case EventProperty3EditPart.VISUAL_ID:
@@ -2017,6 +2127,12 @@ public class EventpatternDiagramUpdater {
 			return getTimeSchedule_3058OutgoingLinks(view);
 		case ComplexEventPropertyEditPart.VISUAL_ID:
 			return getComplexEventProperty_3059OutgoingLinks(view);
+		case ContractFunctionEditPart.VISUAL_ID:
+			return getContractFunction_3061OutgoingLinks(view);
+		case InputParameterEditPart.VISUAL_ID:
+			return getInputParameter_3062OutgoingLinks(view);
+		case OutputParameterEditPart.VISUAL_ID:
+			return getOutputParameter_3063OutgoingLinks(view);
 		case LinkEditPart.VISUAL_ID:
 			return getLink_4001OutgoingLinks(view);
 		}
@@ -2310,6 +2426,13 @@ public class EventpatternDiagramUpdater {
 	 * @generated
 	 */
 	public static List<EventpatternLinkDescriptor> getComplexEvent_2038ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getSmartContract_2041ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -2730,6 +2853,27 @@ public class EventpatternDiagramUpdater {
 	 * @generated
 	 */
 	public static List<EventpatternLinkDescriptor> getComplexEventProperty_3059ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getContractFunction_3061ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getInputParameter_3062ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getOutputParameter_3063ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -3163,6 +3307,18 @@ public class EventpatternDiagramUpdater {
 	 */
 	public static List<EventpatternLinkDescriptor> getComplexEvent_2038IncomingLinks(View view) {
 		ComplexEvent modelElement = (ComplexEvent) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getSmartContract_2041IncomingLinks(View view) {
+		SmartContract modelElement = (SmartContract) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
@@ -3836,6 +3992,27 @@ public class EventpatternDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getContractFunction_3061IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getInputParameter_3062IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getOutputParameter_3063IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<EventpatternLinkDescriptor> getLink_4001IncomingLinks(View view) {
@@ -4219,6 +4396,13 @@ public class EventpatternDiagramUpdater {
 		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Link_4001(modelElement));
 		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getSmartContract_2041OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
@@ -4812,6 +4996,27 @@ public class EventpatternDiagramUpdater {
 	 * @generated
 	 */
 	public static List<EventpatternLinkDescriptor> getComplexEventProperty_3059OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getContractFunction_3061OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getInputParameter_3062OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<EventpatternLinkDescriptor> getOutputParameter_3063OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 

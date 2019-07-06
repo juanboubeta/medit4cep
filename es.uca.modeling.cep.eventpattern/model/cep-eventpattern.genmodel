@@ -24,6 +24,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/links"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/eventPatternElements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/complexEvent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/smartContracts"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//CEPEventPattern/actions"/>
     </genClasses>
     <genClasses ecoreClass="cep-eventpattern.ecore#//Link">

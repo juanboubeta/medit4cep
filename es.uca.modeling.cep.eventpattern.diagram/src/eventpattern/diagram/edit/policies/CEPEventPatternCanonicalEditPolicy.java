@@ -72,6 +72,7 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE.getCEPEventPattern_EventPatternElements());
 			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE.getCEPEventPattern_Actions());
 			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE.getCEPEventPattern_ComplexEvent());
+			myFeaturesToSynchronize.add(EventpatternPackage.eINSTANCE.getCEPEventPattern_SmartContracts());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -147,6 +148,7 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 		case SlidingTimeIntervalEditPart.VISUAL_ID:
 		case BatchingTimeIntervalEditPart.VISUAL_ID:
 		case ComplexEventEditPart.VISUAL_ID:
+		case SmartContractEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -586,6 +588,13 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
+		case SmartContractEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(EventpatternDiagramUpdater.getSmartContract_2041ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 		case EventProperty2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(EventpatternDiagramUpdater.getEventProperty_3001ContainedLinks(view));
@@ -1002,6 +1011,27 @@ public class CEPEventPatternCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ComplexEventPropertyEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(EventpatternDiagramUpdater.getComplexEventProperty_3059ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ContractFunctionEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(EventpatternDiagramUpdater.getContractFunction_3061ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case InputParameterEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(EventpatternDiagramUpdater.getInputParameter_3062ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case OutputParameterEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(EventpatternDiagramUpdater.getOutputParameter_3063ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

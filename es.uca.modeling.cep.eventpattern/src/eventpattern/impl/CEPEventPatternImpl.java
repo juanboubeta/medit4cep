@@ -9,6 +9,7 @@ import eventpattern.EventPatternElement;
 import eventpattern.EventpatternPackage;
 import eventpattern.Link;
 
+import eventpattern.SmartContract;
 import java.util.Collection;
 import java.util.Date;
 
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getEventPatternElements <em>Event Pattern Elements</em>}</li>
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getComplexEvent <em>Complex Event</em>}</li>
+ *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getSmartContracts <em>Smart Contracts</em>}</li>
  *   <li>{@link eventpattern.impl.CEPEventPatternImpl#getActions <em>Actions</em>}</li>
  * </ul>
  *
@@ -201,6 +203,16 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
   protected ComplexEvent complexEvent;
 
   /**
+	 * The cached value of the '{@link #getSmartContracts() <em>Smart Contracts</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSmartContracts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SmartContract> smartContracts;
+
+		/**
 	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -441,6 +453,18 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SmartContract> getSmartContracts() {
+		if (smartContracts == null) {
+			smartContracts = new EObjectContainmentEList<SmartContract>(SmartContract.class, this, EventpatternPackage.CEP_EVENT_PATTERN__SMART_CONTRACTS);
+		}
+		return smartContracts;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -467,6 +491,8 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 				return ((InternalEList<?>)getEventPatternElements()).basicRemove(otherEnd, msgs);
 			case EventpatternPackage.CEP_EVENT_PATTERN__COMPLEX_EVENT:
 				return basicSetComplexEvent(null, msgs);
+			case EventpatternPackage.CEP_EVENT_PATTERN__SMART_CONTRACTS:
+				return ((InternalEList<?>)getSmartContracts()).basicRemove(otherEnd, msgs);
 			case EventpatternPackage.CEP_EVENT_PATTERN__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 		}
@@ -500,6 +526,8 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 				return getEventPatternElements();
 			case EventpatternPackage.CEP_EVENT_PATTERN__COMPLEX_EVENT:
 				return getComplexEvent();
+			case EventpatternPackage.CEP_EVENT_PATTERN__SMART_CONTRACTS:
+				return getSmartContracts();
 			case EventpatternPackage.CEP_EVENT_PATTERN__ACTIONS:
 				return getActions();
 		}
@@ -545,6 +573,10 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 			case EventpatternPackage.CEP_EVENT_PATTERN__COMPLEX_EVENT:
 				setComplexEvent((ComplexEvent)newValue);
 				return;
+			case EventpatternPackage.CEP_EVENT_PATTERN__SMART_CONTRACTS:
+				getSmartContracts().clear();
+				getSmartContracts().addAll((Collection<? extends SmartContract>)newValue);
+				return;
 			case EventpatternPackage.CEP_EVENT_PATTERN__ACTIONS:
 				getActions().clear();
 				getActions().addAll((Collection<? extends Action>)newValue);
@@ -589,6 +621,9 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 			case EventpatternPackage.CEP_EVENT_PATTERN__COMPLEX_EVENT:
 				setComplexEvent((ComplexEvent)null);
 				return;
+			case EventpatternPackage.CEP_EVENT_PATTERN__SMART_CONTRACTS:
+				getSmartContracts().clear();
+				return;
 			case EventpatternPackage.CEP_EVENT_PATTERN__ACTIONS:
 				getActions().clear();
 				return;
@@ -623,6 +658,8 @@ public class CEPEventPatternImpl extends EObjectImpl implements CEPEventPattern
 				return eventPatternElements != null && !eventPatternElements.isEmpty();
 			case EventpatternPackage.CEP_EVENT_PATTERN__COMPLEX_EVENT:
 				return complexEvent != null;
+			case EventpatternPackage.CEP_EVENT_PATTERN__SMART_CONTRACTS:
+				return smartContracts != null && !smartContracts.isEmpty();
 			case EventpatternPackage.CEP_EVENT_PATTERN__ACTIONS:
 				return actions != null && !actions.isEmpty();
 		}

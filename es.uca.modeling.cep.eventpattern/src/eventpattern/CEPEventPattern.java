@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eventpattern.CEPEventPattern#getLinks <em>Links</em>}</li>
  *   <li>{@link eventpattern.CEPEventPattern#getEventPatternElements <em>Event Pattern Elements</em>}</li>
  *   <li>{@link eventpattern.CEPEventPattern#getComplexEvent <em>Complex Event</em>}</li>
+ *   <li>{@link eventpattern.CEPEventPattern#getSmartContracts <em>Smart Contracts</em>}</li>
  *   <li>{@link eventpattern.CEPEventPattern#getActions <em>Actions</em>}</li>
  * </ul>
  *
@@ -251,6 +252,22 @@ public interface CEPEventPattern extends EObject
   void setComplexEvent(ComplexEvent value);
 
   /**
+	 * Returns the value of the '<em><b>Smart Contracts</b></em>' containment reference list.
+	 * The list contents are of type {@link eventpattern.SmartContract}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Smart Contracts</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Smart Contracts</em>' containment reference list.
+	 * @see eventpattern.EventpatternPackage#getCEPEventPattern_SmartContracts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SmartContract> getSmartContracts();
+
+		/**
 	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
 	 * The list contents are of type {@link eventpattern.Action}.
 	 * <!-- begin-user-doc -->

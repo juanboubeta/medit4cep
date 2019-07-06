@@ -79,6 +79,7 @@ import eventpattern.diagram.edit.parts.RangeEditPart;
 import eventpattern.diagram.edit.parts.Repeat2EditPart;
 import eventpattern.diagram.edit.parts.Repeat3EditPart;
 import eventpattern.diagram.edit.parts.RepeatEditPart;
+import eventpattern.diagram.edit.parts.SmartContractEditPart;
 import eventpattern.diagram.edit.parts.Subtraction2EditPart;
 import eventpattern.diagram.edit.parts.Subtraction3EditPart;
 import eventpattern.diagram.edit.parts.SubtractionEditPart;
@@ -235,6 +236,9 @@ public class EventpatternModelingAssistantProviderOfEventProperty5EditPart
 			types.add(EventpatternElementTypes.Link_4001);
 		}
 		if (targetEditPart instanceof ComplexEventEditPart) {
+			types.add(EventpatternElementTypes.Link_4001);
+		}
+		if (targetEditPart instanceof SmartContractEditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
 		if (targetEditPart instanceof And2EditPart) {
@@ -433,6 +437,7 @@ public class EventpatternModelingAssistantProviderOfEventProperty5EditPart
 			types.add(EventpatternElementTypes.Email_2033);
 			types.add(EventpatternElementTypes.Twitter_2039);
 			types.add(EventpatternElementTypes.ComplexEvent_2038);
+			types.add(EventpatternElementTypes.SmartContract_2041);
 			types.add(EventpatternElementTypes.And_3003);
 			types.add(EventpatternElementTypes.Or_3004);
 			types.add(EventpatternElementTypes.Not_3005);

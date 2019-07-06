@@ -442,6 +442,23 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser smartContractTypeName_5102Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getSmartContractTypeName_5102Parser() {
+		if (smartContractTypeName_5102Parser == null) {
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getSmartContract_TypeName() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			smartContractTypeName_5102Parser = parser;
+		}
+		return smartContractTypeName_5102Parser;
+	}
+
+	/**
 	 * @generated
 	 */
 	private IParser eventPropertyName_5028Parser;
@@ -765,6 +782,57 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser contractFunctionName_5101Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getContractFunctionName_5101Parser() {
+		if (contractFunctionName_5101Parser == null) {
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getContractFunction_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			contractFunctionName_5101Parser = parser;
+		}
+		return contractFunctionName_5101Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser inputParameterName_5099Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getInputParameterName_5099Parser() {
+		if (inputParameterName_5099Parser == null) {
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getParameter_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			inputParameterName_5099Parser = parser;
+		}
+		return inputParameterName_5099Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser outputParameterName_5100Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getOutputParameterName_5100Parser() {
+		if (outputParameterName_5100Parser == null) {
+			EAttribute[] features = new EAttribute[] { EventpatternPackage.eINSTANCE.getParameter_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			outputParameterName_5100Parser = parser;
+		}
+		return outputParameterName_5100Parser;
+	}
+
+	/**
 	 * @generated
 	 */
 	private IParser linkOrder_6001Parser;
@@ -814,6 +882,8 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 			return getBatchingTimeIntervalYearsMonthsWeeksDaysHoursMinutesSecondsMilliseconds_5095Parser();
 		case ComplexEventTypeNameEditPart.VISUAL_ID:
 			return getComplexEventTypeName_5097Parser();
+		case SmartContractTypeNameEditPart.VISUAL_ID:
+			return getSmartContractTypeName_5102Parser();
 		case EventPropertyName2EditPart.VISUAL_ID:
 			return getEventPropertyName_5028Parser();
 		case EventPropertyName3EditPart.VISUAL_ID:
@@ -846,6 +916,12 @@ public class EventpatternParserProvider extends AbstractProvider implements IPar
 			return getTimeScheduleDayOfWeekDayOfMonthMonthHourMinuteSecond_5091Parser();
 		case ComplexEventPropertyNameEditPart.VISUAL_ID:
 			return getComplexEventPropertyName_5096Parser();
+		case ContractFunctionNameEditPart.VISUAL_ID:
+			return getContractFunctionName_5101Parser();
+		case InputParameterNameEditPart.VISUAL_ID:
+			return getInputParameterName_5099Parser();
+		case OutputParameterNameEditPart.VISUAL_ID:
+			return getOutputParameterName_5100Parser();
 		case LinkOrderEditPart.VISUAL_ID:
 			return getLinkOrder_6001Parser();
 		}

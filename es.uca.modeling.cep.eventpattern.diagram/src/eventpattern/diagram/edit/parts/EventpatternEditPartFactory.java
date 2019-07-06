@@ -190,6 +190,12 @@ public class EventpatternEditPartFactory implements EditPartFactory {
 			case ComplexEventTypeNameEditPart.VISUAL_ID:
 				return new ComplexEventTypeNameEditPart(view);
 
+			case SmartContractEditPart.VISUAL_ID:
+				return new SmartContractEditPart(view);
+
+			case SmartContractTypeNameEditPart.VISUAL_ID:
+				return new SmartContractTypeNameEditPart(view);
+
 			case EventProperty2EditPart.VISUAL_ID:
 				return new EventProperty2EditPart(view);
 
@@ -418,6 +424,24 @@ public class EventpatternEditPartFactory implements EditPartFactory {
 			case ComplexEventPropertyNameEditPart.VISUAL_ID:
 				return new ComplexEventPropertyNameEditPart(view);
 
+			case ContractFunctionEditPart.VISUAL_ID:
+				return new ContractFunctionEditPart(view);
+
+			case ContractFunctionNameEditPart.VISUAL_ID:
+				return new ContractFunctionNameEditPart(view);
+
+			case InputParameterEditPart.VISUAL_ID:
+				return new InputParameterEditPart(view);
+
+			case InputParameterNameEditPart.VISUAL_ID:
+				return new InputParameterNameEditPart(view);
+
+			case OutputParameterEditPart.VISUAL_ID:
+				return new OutputParameterEditPart(view);
+
+			case OutputParameterNameEditPart.VISUAL_ID:
+				return new OutputParameterNameEditPart(view);
+
 			case EventEventEventPropertiesCompartmentEditPart.VISUAL_ID:
 				return new EventEventEventPropertiesCompartmentEditPart(view);
 
@@ -462,6 +486,15 @@ public class EventpatternEditPartFactory implements EditPartFactory {
 
 			case ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart.VISUAL_ID:
 				return new ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart(view);
+
+			case SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID:
+				return new SmartContractSmartContractSmartContractPropertiesCompartmentEditPart(view);
+
+			case ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID:
+				return new ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart(view);
+
+			case ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID:
+				return new ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart(view);
 
 			case LinkEditPart.VISUAL_ID:
 				return new LinkEditPart(view);

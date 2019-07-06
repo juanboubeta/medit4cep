@@ -240,6 +240,12 @@ public class EventpatternElementTypes {
 	public static final IElementType ComplexEvent_2038 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.ComplexEvent_2038"); //$NON-NLS-1$
 	/**
+	* @generated
+	*/
+	public static final IElementType SmartContract_2041 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.SmartContract_2041"); //$NON-NLS-1$
+
+	/**
 	 * @generated
 	 */
 	public static final IElementType EventProperty_3001 = getElementType(
@@ -516,6 +522,24 @@ public class EventpatternElementTypes {
 	public static final IElementType ComplexEventProperty_3059 = getElementType(
 			"es.uca.modeling.cep.eventpattern.diagram.ComplexEventProperty_3059"); //$NON-NLS-1$
 	/**
+	* @generated
+	*/
+	public static final IElementType ContractFunction_3061 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.ContractFunction_3061"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType InputParameter_3062 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.InputParameter_3062"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType OutputParameter_3063 = getElementType(
+			"es.uca.modeling.cep.eventpattern.diagram.OutputParameter_3063"); //$NON-NLS-1$
+
+	/**
 	 * @generated
 	 */
 	public static final IElementType Link_4001 = getElementType("es.uca.modeling.cep.eventpattern.diagram.Link_4001"); //$NON-NLS-1$
@@ -640,6 +664,8 @@ public class EventpatternElementTypes {
 
 			elements.put(ComplexEvent_2038, EventpatternPackage.eINSTANCE.getComplexEvent());
 
+			elements.put(SmartContract_2041, EventpatternPackage.eINSTANCE.getSmartContract());
+
 			elements.put(EventProperty_3001, EventpatternPackage.eINSTANCE.getEventProperty());
 
 			elements.put(EventProperty_3002, EventpatternPackage.eINSTANCE.getEventProperty());
@@ -760,6 +786,12 @@ public class EventpatternElementTypes {
 
 			elements.put(ComplexEventProperty_3059, EventpatternPackage.eINSTANCE.getComplexEventProperty());
 
+			elements.put(ContractFunction_3061, EventpatternPackage.eINSTANCE.getContractFunction());
+
+			elements.put(InputParameter_3062, EventpatternPackage.eINSTANCE.getInputParameter());
+
+			elements.put(OutputParameter_3063, EventpatternPackage.eINSTANCE.getOutputParameter());
+
 			elements.put(Link_4001, EventpatternPackage.eINSTANCE.getLink());
 		}
 		return (ENamedElement) elements.get(type);
@@ -819,6 +851,7 @@ public class EventpatternElementTypes {
 			KNOWN_ELEMENT_TYPES.add(SlidingTimeInterval_2036);
 			KNOWN_ELEMENT_TYPES.add(BatchingTimeInterval_2037);
 			KNOWN_ELEMENT_TYPES.add(ComplexEvent_2038);
+			KNOWN_ELEMENT_TYPES.add(SmartContract_2041);
 			KNOWN_ELEMENT_TYPES.add(EventProperty_3001);
 			KNOWN_ELEMENT_TYPES.add(EventProperty_3002);
 			KNOWN_ELEMENT_TYPES.add(And_3003);
@@ -879,6 +912,9 @@ public class EventpatternElementTypes {
 			KNOWN_ELEMENT_TYPES.add(TimeInterval_3057);
 			KNOWN_ELEMENT_TYPES.add(TimeSchedule_3058);
 			KNOWN_ELEMENT_TYPES.add(ComplexEventProperty_3059);
+			KNOWN_ELEMENT_TYPES.add(ContractFunction_3061);
+			KNOWN_ELEMENT_TYPES.add(InputParameter_3062);
+			KNOWN_ELEMENT_TYPES.add(OutputParameter_3063);
 			KNOWN_ELEMENT_TYPES.add(Link_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -971,6 +1007,8 @@ public class EventpatternElementTypes {
 			return BatchingTimeInterval_2037;
 		case ComplexEventEditPart.VISUAL_ID:
 			return ComplexEvent_2038;
+		case SmartContractEditPart.VISUAL_ID:
+			return SmartContract_2041;
 		case EventProperty2EditPart.VISUAL_ID:
 			return EventProperty_3001;
 		case EventProperty3EditPart.VISUAL_ID:
@@ -1091,6 +1129,12 @@ public class EventpatternElementTypes {
 			return TimeSchedule_3058;
 		case ComplexEventPropertyEditPart.VISUAL_ID:
 			return ComplexEventProperty_3059;
+		case ContractFunctionEditPart.VISUAL_ID:
+			return ContractFunction_3061;
+		case InputParameterEditPart.VISUAL_ID:
+			return InputParameter_3062;
+		case OutputParameterEditPart.VISUAL_ID:
+			return OutputParameter_3063;
 		case LinkEditPart.VISUAL_ID:
 			return Link_4001;
 		}

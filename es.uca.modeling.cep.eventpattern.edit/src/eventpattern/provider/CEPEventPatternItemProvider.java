@@ -229,6 +229,7 @@ public class CEPEventPatternItemProvider
 			childrenFeatures.add(EventpatternPackage.Literals.CEP_EVENT_PATTERN__LINKS);
 			childrenFeatures.add(EventpatternPackage.Literals.CEP_EVENT_PATTERN__EVENT_PATTERN_ELEMENTS);
 			childrenFeatures.add(EventpatternPackage.Literals.CEP_EVENT_PATTERN__COMPLEX_EVENT);
+			childrenFeatures.add(EventpatternPackage.Literals.CEP_EVENT_PATTERN__SMART_CONTRACTS);
 			childrenFeatures.add(EventpatternPackage.Literals.CEP_EVENT_PATTERN__ACTIONS);
 		}
 		return childrenFeatures;
@@ -299,6 +300,7 @@ public class CEPEventPatternItemProvider
 			case EventpatternPackage.CEP_EVENT_PATTERN__LINKS:
 			case EventpatternPackage.CEP_EVENT_PATTERN__EVENT_PATTERN_ELEMENTS:
 			case EventpatternPackage.CEP_EVENT_PATTERN__COMPLEX_EVENT:
+			case EventpatternPackage.CEP_EVENT_PATTERN__SMART_CONTRACTS:
 			case EventpatternPackage.CEP_EVENT_PATTERN__ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -512,6 +514,11 @@ public class CEPEventPatternItemProvider
 			(createChildParameter
 				(EventpatternPackage.Literals.CEP_EVENT_PATTERN__COMPLEX_EVENT,
 				 EventpatternFactory.eINSTANCE.createComplexEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EventpatternPackage.Literals.CEP_EVENT_PATTERN__SMART_CONTRACTS,
+				 EventpatternFactory.eINSTANCE.createSmartContract()));
 
 		newChildDescriptors.add
 			(createChildParameter

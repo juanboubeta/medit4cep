@@ -929,6 +929,67 @@
         </modelFacet>
       </labels>
     </childNodes>
+    <childNodes visualID="3061" editPartClassName="ContractFunctionEditPart" itemSemanticEditPolicyClassName="ContractFunctionItemSemanticEditPolicy" canonicalEditPolicyClassName="ContractFunctionCanonicalEditPolicy" compartments="//@diagram/@compartments.16 //@diagram/@compartments.17" graphicalNodeEditPolicyClassName="ContractFunctionGraphicalNodeEditPolicy" createCommandClassName="ContractFunctionCreateCommand" containers="//@diagram/@compartments.15">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ContractFunctionEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContractFunctionFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContractFunctionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureContractFunctionLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fContractFunctionInputParametersFunctionCompartmentFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fContractFunctionOutputParametersFunctionCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContractFunctionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureContractFunctionLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureContractFunctionLabelFigure.setText(&quot;ContractFunction&quot;);&#xA;fFigureContractFunctionLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureContractFunctionLabelFigure);&#xA;&#xA;&#xA;&#xA;fContractFunctionInputParametersFunctionCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fContractFunctionInputParametersFunctionCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fContractFunctionInputParametersFunctionCompartmentFigure);&#xA;&#xA;&#xA;&#xA;fContractFunctionOutputParametersFunctionCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fContractFunctionOutputParametersFunctionCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fContractFunctionOutputParametersFunctionCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureContractFunctionLabelFigure() {&#xA;&#x9;&#x9;return fFigureContractFunctionLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContractFunctionInputParametersFunctionCompartmentFigure() {&#xA;&#x9;&#x9;return fContractFunctionInputParametersFunctionCompartmentFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getContractFunctionOutputParametersFunctionCompartmentFigure() {&#xA;&#x9;&#x9;return fContractFunctionOutputParametersFunctionCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+        <attributes xsi:type="gmfgen:ResizeConstraints" nonResizeHandles="31"/>
+      </viewmap>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <modelFacet>
+        <metaClass href="cep-eventpattern.genmodel#//eventpattern/ContractFunction"/>
+        <containmentMetaFeature href="cep-eventpattern.genmodel#//eventpattern/SmartContract/SmartContractProperties"/>
+        <childMetaFeature href="cep-eventpattern.genmodel#//eventpattern/SmartContract/SmartContractProperties"/>
+      </modelFacet>
+      <labels visualID="5101" editPartClassName="ContractFunctionNameEditPart" itemSemanticEditPolicyClassName="ContractFunctionNameItemSemanticEditPolicy" readOnly="true" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureContractFunctionLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="cep-eventpattern.genmodel#//eventpattern/ContractFunction/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes visualID="3062" editPartClassName="InputParameterEditPart" itemSemanticEditPolicyClassName="InputParameterItemSemanticEditPolicy" canonicalEditPolicyClassName="InputParameterCanonicalEditPolicy" graphicalNodeEditPolicyClassName="InputParameterGraphicalNodeEditPolicy" createCommandClassName="InputParameterCreateCommand" containers="//@diagram/@compartments.16">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="InputParameterEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="InputParameterFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InputParameterFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureInputParameterLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InputParameterFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInputParameterLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureInputParameterLabelFigure.setText(&quot;InputParameter&quot;);&#xA;&#xA;this.add(fFigureInputParameterLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInputParameterLabelFigure() {&#xA;&#x9;&#x9;return fFigureInputParameterLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+        <attributes xsi:type="gmfgen:ResizeConstraints" nonResizeHandles="31"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="cep-eventpattern.genmodel#//eventpattern/InputParameter"/>
+        <containmentMetaFeature href="cep-eventpattern.genmodel#//eventpattern/ContractFunction/InputParametersFunction"/>
+        <childMetaFeature href="cep-eventpattern.genmodel#//eventpattern/ContractFunction/InputParametersFunction"/>
+      </modelFacet>
+      <labels visualID="5099" editPartClassName="InputParameterNameEditPart" itemSemanticEditPolicyClassName="InputParameterNameItemSemanticEditPolicy" readOnly="true" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureInputParameterLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="cep-eventpattern.genmodel#//eventpattern/Parameter/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes visualID="3063" editPartClassName="OutputParameterEditPart" itemSemanticEditPolicyClassName="OutputParameterItemSemanticEditPolicy" canonicalEditPolicyClassName="OutputParameterCanonicalEditPolicy" graphicalNodeEditPolicyClassName="OutputParameterGraphicalNodeEditPolicy" createCommandClassName="OutputParameterCreateCommand" containers="//@diagram/@compartments.17">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="OutputParameterEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="OutputParameterFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class OutputParameterFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureOutputParameterLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public OutputParameterFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureOutputParameterLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureOutputParameterLabelFigure.setText(&quot;OutputParameter&quot;);&#xA;&#xA;this.add(fFigureOutputParameterLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureOutputParameterLabelFigure() {&#xA;&#x9;&#x9;return fFigureOutputParameterLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+        <attributes xsi:type="gmfgen:ResizeConstraints" nonResizeHandles="31"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="cep-eventpattern.genmodel#//eventpattern/OutputParameter"/>
+        <containmentMetaFeature href="cep-eventpattern.genmodel#//eventpattern/ContractFunction/OutputParametersFunction"/>
+        <childMetaFeature href="cep-eventpattern.genmodel#//eventpattern/ContractFunction/OutputParametersFunction"/>
+      </modelFacet>
+      <labels visualID="5100" editPartClassName="OutputParameterNameEditPart" itemSemanticEditPolicyClassName="OutputParameterNameItemSemanticEditPolicy" readOnly="true" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureOutputParameterLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="cep-eventpattern.genmodel#//eventpattern/Parameter/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
     <topLevelNodes visualID="2001" editPartClassName="AndEditPart" itemSemanticEditPolicyClassName="AndItemSemanticEditPolicy" canonicalEditPolicyClassName="AndCanonicalEditPolicy" graphicalNodeEditPolicyClassName="AndGraphicalNodeEditPolicy" createCommandClassName="AndCreateCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="AndEditHelper"/>
@@ -1585,6 +1646,27 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
+    <topLevelNodes visualID="2041" editPartClassName="SmartContractEditPart" itemSemanticEditPolicyClassName="SmartContractItemSemanticEditPolicy" canonicalEditPolicyClassName="SmartContractCanonicalEditPolicy" compartments="//@diagram/@compartments.15" graphicalNodeEditPolicyClassName="SmartContractGraphicalNodeEditPolicy" createCommandClassName="SmartContractCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="SmartContractEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="SmartContractFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SmartContractFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSmartContractLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fSmartContractSmartContractPropertiesCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SmartContractFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSmartContractLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureSmartContractLabelFigure.setText(&quot;SmartContract&quot;);&#xA;fFigureSmartContractLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureSmartContractLabelFigure);&#xA;&#xA;&#xA;&#xA;fSmartContractSmartContractPropertiesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fSmartContractSmartContractPropertiesCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fSmartContractSmartContractPropertiesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSmartContractLabelFigure() {&#xA;&#x9;&#x9;return fFigureSmartContractLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getSmartContractSmartContractPropertiesCompartmentFigure() {&#xA;&#x9;&#x9;return fSmartContractSmartContractPropertiesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 110, 110, 110);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+        <attributes xsi:type="gmfgen:ResizeConstraints" nonResizeHandles="31"/>
+      </viewmap>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <modelFacet>
+        <metaClass href="cep-eventpattern.genmodel#//eventpattern/SmartContract"/>
+        <containmentMetaFeature href="cep-eventpattern.genmodel#//eventpattern/CEPEventPattern/smartContracts"/>
+        <childMetaFeature href="cep-eventpattern.genmodel#//eventpattern/CEPEventPattern/smartContracts"/>
+      </modelFacet>
+      <labels visualID="5102" editPartClassName="SmartContractTypeNameEditPart" itemSemanticEditPolicyClassName="SmartContractTypeNameItemSemanticEditPolicy" readOnly="true" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureSmartContractLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="cep-eventpattern.genmodel#//eventpattern/SmartContract/typeName"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
     <links visualID="4001" editPartClassName="LinkEditPart" itemSemanticEditPolicyClassName="LinkItemSemanticEditPolicy" createCommandClassName="LinkCreateCommand" reorientCommandClassName="LinkReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="LinkEditHelper"/>
@@ -1669,6 +1751,18 @@
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getComplexEventComplexEventPropertiesCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
+    <compartments visualID="7016" editPartClassName="SmartContractSmartContractSmartContractPropertiesCompartmentEditPart" itemSemanticEditPolicyClassName="SmartContractSmartContractSmartContractPropertiesCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="SmartContractSmartContractSmartContractPropertiesCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.60" title="SmartContractSmartContractPropertiesCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.40">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getSmartContractSmartContractPropertiesCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7017" editPartClassName="ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart" itemSemanticEditPolicyClassName="ContractFunctionContractFunctionInputParametersFunctionCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ContractFunctionContractFunctionInputParametersFunctionCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.61" title="ContractFunctionInputParametersFunctionCompartment" needsTitle="false" node="//@diagram/@childNodes.60">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getContractFunctionInputParametersFunctionCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7018" editPartClassName="ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart" itemSemanticEditPolicyClassName="ContractFunctionContractFunctionOutputParametersFunctionCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ContractFunctionContractFunctionOutputParametersFunctionCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.62" title="ContractFunctionOutputParametersFunctionCompartment" needsTitle="false" node="//@diagram/@childNodes.60">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getContractFunctionOutputParametersFunctionCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
     <palette>
       <groups title="Default" description="Holds top-level non-container tools">
         <entries xsi:type="gmfgen:ToolEntry" title="Link" description="Add a link" genLinks="//@diagram/@links.0"/>
@@ -1680,10 +1774,10 @@
         <entries xsi:type="gmfgen:ToolEntry" title="Event Property" description="Add an event property" genNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@topLevelNodes.27 //@diagram/@childNodes.24 //@diagram/@childNodes.53"/>
       </groups>
       <groups title="Smart Contracts" collapse="true">
-        <entries xsi:type="gmfgen:ToolEntry" title="Smart Contract" description="Add a SmartContract"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Contract Function" description="Add a Contract Function"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Input Parameter" description="Add an Input Parameter"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Output Parameter" description="Add an Output Parameter"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Smart Contract" description="Add a SmartContract" genNodes="//@diagram/@topLevelNodes.40"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Contract Function" description="Add a Contract Function" genNodes="//@diagram/@childNodes.60"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Input Parameter" description="Add an Input Parameter" genNodes="//@diagram/@childNodes.61"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Output Parameter" description="Add an Output Parameter" genNodes="//@diagram/@childNodes.62"/>
       </groups>
       <groups title="Complex Events" collapse="true">
         <entries xsi:type="gmfgen:ToolEntry" title="New Complex Event" description="Add a new complex event" genNodes="//@diagram/@topLevelNodes.39"/>
@@ -1986,6 +2080,10 @@
     <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.38"/>
     <childReferences parent="//@diagram/@topLevelNodes.39" child="//@diagram/@childNodes.59"/>
     <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.39"/>
+    <childReferences parent="//@diagram/@childNodes.60" child="//@diagram/@childNodes.61"/>
+    <childReferences parent="//@diagram/@childNodes.60" child="//@diagram/@childNodes.62"/>
+    <childReferences parent="//@diagram/@topLevelNodes.40" child="//@diagram/@childNodes.60"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.40"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.0" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.0" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
@@ -2047,6 +2145,8 @@
     <childReferences parent="//@diagram/@topLevelNodes.34" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.39" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@topLevelNodes.39" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.40" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.40" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.2" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.2" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.3" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
@@ -2348,7 +2448,7 @@
     </providers>
   </expressionProviders>
   <labelParsers extensibleViaService="true">
-    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@topLevelNodes.16/@labels.0/@modelFacet //@diagram/@topLevelNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.26/@labels.0/@modelFacet //@diagram/@topLevelNodes.27/@labels.0/@modelFacet //@diagram/@topLevelNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.25/@labels.0/@modelFacet //@diagram/@topLevelNodes.30/@labels.0/@modelFacet //@diagram/@topLevelNodes.31/@labels.0/@modelFacet //@diagram/@topLevelNodes.32/@labels.0/@modelFacet //@diagram/@topLevelNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.52/@labels.0/@modelFacet //@diagram/@childNodes.53/@labels.0/@modelFacet //@diagram/@childNodes.54/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@topLevelNodes.35/@labels.0/@modelFacet //@diagram/@topLevelNodes.36/@labels.0/@modelFacet //@diagram/@topLevelNodes.37/@labels.0/@modelFacet //@diagram/@topLevelNodes.38/@labels.0/@modelFacet //@diagram/@childNodes.59/@labels.0/@modelFacet //@diagram/@topLevelNodes.39/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@topLevelNodes.16/@labels.0/@modelFacet //@diagram/@topLevelNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.26/@labels.0/@modelFacet //@diagram/@topLevelNodes.27/@labels.0/@modelFacet //@diagram/@topLevelNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.25/@labels.0/@modelFacet //@diagram/@topLevelNodes.30/@labels.0/@modelFacet //@diagram/@topLevelNodes.31/@labels.0/@modelFacet //@diagram/@topLevelNodes.32/@labels.0/@modelFacet //@diagram/@topLevelNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.52/@labels.0/@modelFacet //@diagram/@childNodes.53/@labels.0/@modelFacet //@diagram/@childNodes.54/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@topLevelNodes.35/@labels.0/@modelFacet //@diagram/@topLevelNodes.36/@labels.0/@modelFacet //@diagram/@topLevelNodes.37/@labels.0/@modelFacet //@diagram/@topLevelNodes.38/@labels.0/@modelFacet //@diagram/@childNodes.59/@labels.0/@modelFacet //@diagram/@topLevelNodes.39/@labels.0/@modelFacet //@diagram/@childNodes.61/@labels.0/@modelFacet //@diagram/@childNodes.62/@labels.0/@modelFacet //@diagram/@childNodes.60/@labels.0/@modelFacet //@diagram/@topLevelNodes.40/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus context="//@diagram">
     <items xsi:type="gmfgen:LoadResourceAction"/>

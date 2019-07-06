@@ -314,7 +314,7 @@ public class EventpatternPaletteFactory {
 		paletteContainer.add(createNewComplexEventProperty2CreationTool());
 		return paletteContainer;
 	}*/
-		
+
 	private PaletteContainer createComplexEvents4Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComplexEvents4Group_title);
 		paletteContainer.setId("createComplexEvents4Group"); //$NON-NLS-1$
@@ -406,7 +406,7 @@ public class EventpatternPaletteFactory {
 
 		return entry;
 	}
-	
+
 	/**
 	 * Creates "Smart Contracts" palette tool group
 	 * @generated NOT
@@ -450,7 +450,8 @@ public class EventpatternPaletteFactory {
 				if (smartcontractProject.getFile(smartcontractName + ".smartc") != null) {
 
 					URI modelUri = URI.createPlatformResourceURI(
-							smartcontractProject.getFile(smartcontractName + ".smartc").getFullPath().toString(), false);
+							smartcontractProject.getFile(smartcontractName + ".smartc").getFullPath().toString(),
+							false);
 
 					ResourceSet resourceSet = new ResourceSetImpl();
 					Resource modelResource = resourceSet.getResource(modelUri, true);
@@ -480,16 +481,14 @@ public class EventpatternPaletteFactory {
 	// Added
 	private ToolEntry createCustomisedSmartContractCreationTool(String toolName, String imagePath) {
 
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(EventpatternElementTypes.Event_2027);
-		types.add(EventpatternElementTypes.Event_3024);
-		types.add(EventpatternElementTypes.Event_3053);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(EventpatternElementTypes.SmartContract_2041);
 
 		NodeToolEntry entry = new NodeToolEntry(toolName, "Add " + toolName, types);
 		entry.setId("create" + toolName + "CreationTool");
 
 		if (imagePath == null || imagePath.equals("") || !(new File(imagePath).exists())) {
-			entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Event_2027));
+			entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.SmartContract_2041));
 		} else {
 			try {
 				File file = new File(imagePath);
@@ -824,10 +823,12 @@ public class EventpatternPaletteFactory {
 	* @generated
 	*/
 	private ToolEntry createSmartContract1CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.SmartContract1CreationTool_title,
-				Messages.SmartContract1CreationTool_desc, null, null) {
-		};
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.SmartContract1CreationTool_title,
+				Messages.SmartContract1CreationTool_desc,
+				Collections.singletonList(EventpatternElementTypes.SmartContract_2041));
 		entry.setId("createSmartContract1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.SmartContract_2041));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -835,10 +836,12 @@ public class EventpatternPaletteFactory {
 	* @generated
 	*/
 	private ToolEntry createContractFunction2CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.ContractFunction2CreationTool_title,
-				Messages.ContractFunction2CreationTool_desc, null, null) {
-		};
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ContractFunction2CreationTool_title,
+				Messages.ContractFunction2CreationTool_desc,
+				Collections.singletonList(EventpatternElementTypes.ContractFunction_3061));
 		entry.setId("createContractFunction2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.ContractFunction_3061));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -846,10 +849,12 @@ public class EventpatternPaletteFactory {
 	* @generated
 	*/
 	private ToolEntry createInputParameter3CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.InputParameter3CreationTool_title,
-				Messages.InputParameter3CreationTool_desc, null, null) {
-		};
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.InputParameter3CreationTool_title,
+				Messages.InputParameter3CreationTool_desc,
+				Collections.singletonList(EventpatternElementTypes.InputParameter_3062));
 		entry.setId("createInputParameter3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.InputParameter_3062));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -857,10 +862,12 @@ public class EventpatternPaletteFactory {
 	* @generated
 	*/
 	private ToolEntry createOutputParameter4CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.OutputParameter4CreationTool_title,
-				Messages.OutputParameter4CreationTool_desc, null, null) {
-		};
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.OutputParameter4CreationTool_title,
+				Messages.OutputParameter4CreationTool_desc,
+				Collections.singletonList(EventpatternElementTypes.OutputParameter_3063));
 		entry.setId("createOutputParameter4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.OutputParameter_3063));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -1251,6 +1258,10 @@ public class EventpatternPaletteFactory {
 
 				tool = new CustomisedEventTypeCreationTool(elementTypes, this.getLabel());
 
+			} else if (elementTypes.contains(EventpatternElementTypes.SmartContract_2041)) {
+				
+				tool = new CustomisedSmartContractTypeCreationTool(elementTypes, this.getLabel());
+			
 			} else if (elementTypes.contains(EventpatternElementTypes.ComplexEvent_2038)
 					&& !this.getLabel().equals("New Complex Event")) { // except to "New Complex Event" component
 				ArrayList<IElementType> types = new ArrayList<IElementType>(3);
@@ -1323,6 +1334,32 @@ public class EventpatternPaletteFactory {
 
 				request.getExtendedData().put("clickedComplexEventTool", node);
 				request.getExtendedData().put("patternName", patternName);
+
+				return request;
+			}
+		}
+		
+		/* Add class
+		 * 
+		 * @see eventpattern.diagram.edit.helpers.SmartContractEditHelper
+		 */
+		public class CustomisedSmartContractTypeCreationTool extends CreationTool {
+
+			protected String node;
+			private List elementTypes;
+
+			public CustomisedSmartContractTypeCreationTool(List elementTypes, String node) {
+				super();
+				this.node = node;
+				this.elementTypes = elementTypes;
+			}
+
+			protected Request createTargetRequest() {
+
+				CreateUnspecifiedTypeRequest request = new CreateUnspecifiedTypeRequest(elementTypes,
+						getPreferencesHint());
+
+				request.getExtendedData().put("clickedSmartContractTool", node);
 
 				return request;
 			}

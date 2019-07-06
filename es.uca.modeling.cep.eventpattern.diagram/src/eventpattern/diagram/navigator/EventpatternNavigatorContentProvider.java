@@ -352,6 +352,9 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry.getType(ComplexEventEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry.getType(SmartContractEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry.getType(LinkEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
@@ -2003,6 +2006,27 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			return result.toArray();
 		}
 
+		case SmartContractEditPart.VISUAL_ID: {
+			LinkedList<EventpatternAbstractNavigatorItem> result = new LinkedList<EventpatternAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			EventpatternNavigatorGroup incominglinks = new EventpatternNavigatorGroup(
+					Messages.NavigatorGroupName_SmartContract_2041_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry
+					.getType(SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					EventpatternVisualIDRegistry.getType(ContractFunctionEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry.getType(LinkEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
 		case EventProperty2EditPart.VISUAL_ID: {
 			LinkedList<EventpatternAbstractNavigatorItem> result = new LinkedList<EventpatternAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -3536,6 +3560,23 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			return result.toArray();
 		}
 
+		case ContractFunctionEditPart.VISUAL_ID: {
+			LinkedList<EventpatternAbstractNavigatorItem> result = new LinkedList<EventpatternAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry
+					.getType(ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					EventpatternVisualIDRegistry.getType(InputParameterEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), EventpatternVisualIDRegistry
+					.getType(ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					EventpatternVisualIDRegistry.getType(OutputParameterEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			return result.toArray();
+		}
+
 		case LinkEditPart.VISUAL_ID: {
 			LinkedList<EventpatternAbstractNavigatorItem> result = new LinkedList<EventpatternAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
@@ -3633,6 +3674,9 @@ public class EventpatternNavigatorContentProvider implements ICommonContentProvi
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry.getType(ComplexEventEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EventpatternVisualIDRegistry.getType(SmartContractEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					EventpatternVisualIDRegistry.getType(And2EditPart.VISUAL_ID));

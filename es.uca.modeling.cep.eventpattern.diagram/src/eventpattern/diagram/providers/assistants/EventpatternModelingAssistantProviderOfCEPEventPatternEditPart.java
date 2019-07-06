@@ -24,7 +24,7 @@ public class EventpatternModelingAssistantProviderOfCEPEventPatternEditPart
 	@Override
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
-		List<IElementType> types = new ArrayList<IElementType>(40);
+		List<IElementType> types = new ArrayList<IElementType>(41);
 		types.add(EventpatternElementTypes.And_2001);
 		types.add(EventpatternElementTypes.Or_2002);
 		types.add(EventpatternElementTypes.Not_2003);
@@ -65,6 +65,7 @@ public class EventpatternModelingAssistantProviderOfCEPEventPatternEditPart
 		types.add(EventpatternElementTypes.SlidingTimeInterval_2036);
 		types.add(EventpatternElementTypes.BatchingTimeInterval_2037);
 		types.add(EventpatternElementTypes.ComplexEvent_2038);
+		types.add(EventpatternElementTypes.SmartContract_2041);
 		return types;
 	}
 

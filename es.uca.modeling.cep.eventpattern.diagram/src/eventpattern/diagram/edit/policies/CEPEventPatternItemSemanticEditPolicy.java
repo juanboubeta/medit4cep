@@ -41,6 +41,7 @@ import eventpattern.diagram.edit.commands.RangeCreateCommand;
 import eventpattern.diagram.edit.commands.RepeatCreateCommand;
 import eventpattern.diagram.edit.commands.SlidingEventIntervalCreateCommand;
 import eventpattern.diagram.edit.commands.SlidingTimeIntervalCreateCommand;
+import eventpattern.diagram.edit.commands.SmartContractCreateCommand;
 import eventpattern.diagram.edit.commands.SubtractionCreateCommand;
 import eventpattern.diagram.edit.commands.SumCreateCommand;
 import eventpattern.diagram.edit.commands.TimeIntervalCreateCommand;
@@ -187,6 +188,9 @@ public class CEPEventPatternItemSemanticEditPolicy extends EventpatternBaseItemS
 		}
 		if (EventpatternElementTypes.ComplexEvent_2038 == req.getElementType()) {
 			return getGEFWrapper(new ComplexEventCreateCommand(req));
+		}
+		if (EventpatternElementTypes.SmartContract_2041 == req.getElementType()) {
+			return getGEFWrapper(new SmartContractCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -149,13 +149,22 @@ public interface EventpatternPackage extends EPackage
   int CEP_EVENT_PATTERN__COMPLEX_EVENT = 8;
 
   /**
+	 * The feature id for the '<em><b>Smart Contracts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CEP_EVENT_PATTERN__SMART_CONTRACTS = 9;
+
+		/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int CEP_EVENT_PATTERN__ACTIONS = 9;
+  int CEP_EVENT_PATTERN__ACTIONS = 10;
 
   /**
 	 * The number of structural features of the '<em>CEP Event Pattern</em>' class.
@@ -164,7 +173,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int CEP_EVENT_PATTERN_FEATURE_COUNT = 10;
+  int CEP_EVENT_PATTERN_FEATURE_COUNT = 11;
 
   /**
 	 * The meta object id for the '{@link eventpattern.impl.LinkImpl <em>Link</em>}' class.
@@ -3142,6 +3151,17 @@ public interface EventpatternPackage extends EPackage
   EReference getCEPEventPattern_ComplexEvent();
 
   /**
+	 * Returns the meta object for the containment reference list '{@link eventpattern.CEPEventPattern#getSmartContracts <em>Smart Contracts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Smart Contracts</em>'.
+	 * @see eventpattern.CEPEventPattern#getSmartContracts()
+	 * @see #getCEPEventPattern()
+	 * @generated
+	 */
+	EReference getCEPEventPattern_SmartContracts();
+
+		/**
 	 * Returns the meta object for the containment reference list '{@link eventpattern.CEPEventPattern#getActions <em>Actions</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4897,6 +4917,14 @@ public interface EventpatternPackage extends EPackage
     EReference CEP_EVENT_PATTERN__COMPLEX_EVENT = eINSTANCE.getCEPEventPattern_ComplexEvent();
 
     /**
+		 * The meta object literal for the '<em><b>Smart Contracts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CEP_EVENT_PATTERN__SMART_CONTRACTS = eINSTANCE.getCEPEventPattern_SmartContracts();
+
+				/**
 		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

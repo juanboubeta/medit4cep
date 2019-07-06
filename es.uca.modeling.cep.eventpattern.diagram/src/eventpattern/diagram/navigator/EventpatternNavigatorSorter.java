@@ -15,12 +15,12 @@ public class EventpatternNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7017;
+	private static final int GROUP_CATEGORY = 7020;
 
 	/**
 	 * @generated
 	 */
-	private static final int SHORTCUTS_CATEGORY = 7016;
+	private static final int SHORTCUTS_CATEGORY = 7019;
 
 	/**
 	 * @generated

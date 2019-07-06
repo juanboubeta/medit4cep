@@ -721,12 +721,21 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCEPEventPattern_SmartContracts() {
+		return (EReference)cepEventPatternEClass.getEStructuralFeatures().get(9);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
   public EReference getCEPEventPattern_Actions()
   {
-		return (EReference)cepEventPatternEClass.getEStructuralFeatures().get(9);
+		return (EReference)cepEventPatternEClass.getEStructuralFeatures().get(10);
 	}
 
   /**
@@ -2298,6 +2307,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		createEReference(cepEventPatternEClass, CEP_EVENT_PATTERN__LINKS);
 		createEReference(cepEventPatternEClass, CEP_EVENT_PATTERN__EVENT_PATTERN_ELEMENTS);
 		createEReference(cepEventPatternEClass, CEP_EVENT_PATTERN__COMPLEX_EVENT);
+		createEReference(cepEventPatternEClass, CEP_EVENT_PATTERN__SMART_CONTRACTS);
 		createEReference(cepEventPatternEClass, CEP_EVENT_PATTERN__ACTIONS);
 
 		linkEClass = createEClass(LINK);
@@ -2649,6 +2659,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		initEReference(getCEPEventPattern_Links(), this.getLink(), null, "links", null, 0, -1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCEPEventPattern_EventPatternElements(), this.getEventPatternElement(), null, "eventPatternElements", null, 0, -1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCEPEventPattern_ComplexEvent(), this.getComplexEvent(), null, "complexEvent", null, 0, 1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCEPEventPattern_SmartContracts(), this.getSmartContract(), null, "smartContracts", null, 0, -1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCEPEventPattern_Actions(), this.getAction(), null, "actions", null, 0, -1, CEPEventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

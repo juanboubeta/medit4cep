@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Eventpattern"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2040,2030,2031,2032,2033,2039,2034,2035,2036,2037,2038,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040,3041,3042,3043,3044,3045,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3056,3057,3058,3059"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2040,2030,2031,2032,2033,2039,2034,2035,2036,2037,2038,2041,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040,3041,3042,3043,3044,3045,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3056,3057,3058,3059,3061,3062,3063"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
@@ -271,16 +271,16 @@
             <method name="getType()" value="Eventpattern"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2040,2030,2031,2032,2033,2039,2034,2035,2036,2037,2038,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040,3041,3042,3043,3044,3045,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3056,3057,3058,3059"/>
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2040,2030,2031,2032,2033,2039,2034,2035,2036,2037,2038,2041,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040,3041,3042,3043,3044,3045,3046,3047,3048,3049,3050,3051,3052,3053,3054,3055,3060,3056,3057,3058,3059,3061,3062,3063"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5017,5019,5029,5030,5031,5056,5057,5058,5098,5092,5093,5094,5095,5097,5028,5027,5048,5050,5053,5054,5055,5076,5078,5086,5087,5088,5089,5090,5091,5096"/>
+            <method name="getType()" value="5017,5019,5029,5030,5031,5056,5057,5058,5098,5092,5093,5094,5095,5097,5102,5028,5027,5048,5050,5053,5054,5055,5076,5078,5086,5087,5088,5089,5090,5091,5096,5101,5099,5100"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7009,7010,7011,7012,7013,7014,7015"/>
+            <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7009,7010,7011,7012,7013,7014,7015,7016,7017,7018"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -492,6 +492,11 @@
          <Priority name="Lowest"/>
          <object class="eventpattern.diagram.edit.parts.ComplexEventEditPart" id="ComplexEvent_2038"/>
          <context elements="ComplexEvent_2038"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfSmartContractEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.SmartContractEditPart" id="SmartContract_2041"/>
+         <context elements="SmartContract_2041"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfEventProperty2EditPart">
          <Priority name="Lowest"/>
@@ -793,6 +798,21 @@
          <object class="eventpattern.diagram.edit.parts.ComplexEventPropertyEditPart" id="ComplexEventProperty_3059"/>
          <context elements="ComplexEventProperty_3059"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfContractFunctionEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.ContractFunctionEditPart" id="ContractFunction_3061"/>
+         <context elements="ContractFunction_3061"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfInputParameterEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.InputParameterEditPart" id="InputParameter_3062"/>
+         <context elements="InputParameter_3062"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="eventpattern.diagram.providers.assistants.EventpatternModelingAssistantProviderOfOutputParameterEditPart">
+         <Priority name="Lowest"/>
+         <object class="eventpattern.diagram.edit.parts.OutputParameterEditPart" id="OutputParameter_3063"/>
+         <context elements="OutputParameter_3063"/>
+      </modelingAssistantProvider>
       
    </extension>
 
@@ -815,7 +835,7 @@
       <decoratorProvider class="eventpattern.diagram.providers.EventpatternShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2040,2030,2031,2032,2033,2039,2034,2035,2036,2037,2038"/>
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2040,2030,2031,2032,2033,2039,2034,2035,2036,2037,2038,2041"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -1230,6 +1250,16 @@
                eclass="ComplexEvent"
                edithelper="eventpattern.diagram.edit.helpers.ComplexEventEditHelper">
             <param name="semanticHint" value="2038"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="www.uca.es/modeling/cep/eventpattern">
+         <metamodelType
+               id="es.uca.modeling.cep.eventpattern.diagram.SmartContract_2041"
+               name="%metatype.name.SmartContract_2041"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SmartContract"
+               edithelper="eventpattern.diagram.edit.helpers.SmartContractEditHelper">
+            <param name="semanticHint" value="2041"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="www.uca.es/modeling/cep/eventpattern">
@@ -1776,6 +1806,36 @@
       </metamodel>
       <metamodel nsURI="www.uca.es/modeling/cep/eventpattern">
          <metamodelType
+               id="es.uca.modeling.cep.eventpattern.diagram.ContractFunction_3061"
+               name="%metatype.name.ContractFunction_3061"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ContractFunction"
+               edithelper="eventpattern.diagram.edit.helpers.ContractFunctionEditHelper">
+            <param name="semanticHint" value="3061"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="www.uca.es/modeling/cep/eventpattern">
+         <metamodelType
+               id="es.uca.modeling.cep.eventpattern.diagram.InputParameter_3062"
+               name="%metatype.name.InputParameter_3062"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InputParameter"
+               edithelper="eventpattern.diagram.edit.helpers.InputParameterEditHelper">
+            <param name="semanticHint" value="3062"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="www.uca.es/modeling/cep/eventpattern">
+         <metamodelType
+               id="es.uca.modeling.cep.eventpattern.diagram.OutputParameter_3063"
+               name="%metatype.name.OutputParameter_3063"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OutputParameter"
+               edithelper="eventpattern.diagram.edit.helpers.OutputParameterEditHelper">
+            <param name="semanticHint" value="3063"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="www.uca.es/modeling/cep/eventpattern">
+         <metamodelType
                id="es.uca.modeling.cep.eventpattern.diagram.Link_4001"
                name="%metatype.name.Link_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -1837,6 +1897,7 @@
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.SlidingTimeInterval_2036"/>
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.BatchingTimeInterval_2037"/>
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.ComplexEvent_2038"/>
+         <elementType ref="es.uca.modeling.cep.eventpattern.diagram.SmartContract_2041"/>
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.EventProperty_3001"/>
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.EventProperty_3002"/>
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.And_3003"/>
@@ -1897,6 +1958,9 @@
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.TimeInterval_3057"/>
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.TimeSchedule_3058"/>
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.ComplexEventProperty_3059"/>
+         <elementType ref="es.uca.modeling.cep.eventpattern.diagram.ContractFunction_3061"/>
+         <elementType ref="es.uca.modeling.cep.eventpattern.diagram.InputParameter_3062"/>
+         <elementType ref="es.uca.modeling.cep.eventpattern.diagram.OutputParameter_3063"/>
          <elementType ref="es.uca.modeling.cep.eventpattern.diagram.Link_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

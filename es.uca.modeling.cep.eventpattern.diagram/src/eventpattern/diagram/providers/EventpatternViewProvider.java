@@ -170,8 +170,12 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 				case SlidingTimeIntervalEditPart.VISUAL_ID:
 				case BatchingTimeIntervalEditPart.VISUAL_ID:
 				case ComplexEventEditPart.VISUAL_ID:
+				case SmartContractEditPart.VISUAL_ID:
 				case EventProperty2EditPart.VISUAL_ID:
 				case ComplexEventPropertyEditPart.VISUAL_ID:
+				case ContractFunctionEditPart.VISUAL_ID:
+				case InputParameterEditPart.VISUAL_ID:
+				case OutputParameterEditPart.VISUAL_ID:
 				case EventPropertyEditPart.VISUAL_ID:
 				case EventProperty3EditPart.VISUAL_ID:
 				case And2EditPart.VISUAL_ID:
@@ -262,36 +266,38 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 				|| BatchingEventIntervalEditPart.VISUAL_ID == visualID
 				|| SlidingTimeIntervalEditPart.VISUAL_ID == visualID
 				|| BatchingTimeIntervalEditPart.VISUAL_ID == visualID || ComplexEventEditPart.VISUAL_ID == visualID
-				|| EventProperty2EditPart.VISUAL_ID == visualID || EventProperty3EditPart.VISUAL_ID == visualID
-				|| And2EditPart.VISUAL_ID == visualID || Or2EditPart.VISUAL_ID == visualID
-				|| Not2EditPart.VISUAL_ID == visualID || Addition2EditPart.VISUAL_ID == visualID
-				|| Subtraction2EditPart.VISUAL_ID == visualID || Multiplication2EditPart.VISUAL_ID == visualID
-				|| Division2EditPart.VISUAL_ID == visualID || Modulus2EditPart.VISUAL_ID == visualID
-				|| Equal2EditPart.VISUAL_ID == visualID || NotEqual2EditPart.VISUAL_ID == visualID
-				|| LessThan2EditPart.VISUAL_ID == visualID || GreaterThan2EditPart.VISUAL_ID == visualID
-				|| LessEqual2EditPart.VISUAL_ID == visualID || GreaterEqual2EditPart.VISUAL_ID == visualID
-				|| Every2EditPart.VISUAL_ID == visualID || EveryDistinct2EditPart.VISUAL_ID == visualID
-				|| Repeat2EditPart.VISUAL_ID == visualID || Until2EditPart.VISUAL_ID == visualID
-				|| Range2EditPart.VISUAL_ID == visualID || FollowedBy2EditPart.VISUAL_ID == visualID
-				|| While2EditPart.VISUAL_ID == visualID || Event2EditPart.VISUAL_ID == visualID
-				|| EventProperty4EditPart.VISUAL_ID == visualID || Value2EditPart.VISUAL_ID == visualID
-				|| And3EditPart.VISUAL_ID == visualID || Or3EditPart.VISUAL_ID == visualID
-				|| Not3EditPart.VISUAL_ID == visualID || Addition3EditPart.VISUAL_ID == visualID
-				|| Subtraction3EditPart.VISUAL_ID == visualID || Multiplication3EditPart.VISUAL_ID == visualID
-				|| Division3EditPart.VISUAL_ID == visualID || Modulus3EditPart.VISUAL_ID == visualID
-				|| Equal3EditPart.VISUAL_ID == visualID || NotEqual3EditPart.VISUAL_ID == visualID
-				|| LessThan3EditPart.VISUAL_ID == visualID || GreaterThan3EditPart.VISUAL_ID == visualID
-				|| LessEqual3EditPart.VISUAL_ID == visualID || GreaterEqual3EditPart.VISUAL_ID == visualID
-				|| Every3EditPart.VISUAL_ID == visualID || EveryDistinct3EditPart.VISUAL_ID == visualID
-				|| Repeat3EditPart.VISUAL_ID == visualID || Until3EditPart.VISUAL_ID == visualID
-				|| Range3EditPart.VISUAL_ID == visualID || FollowedBy3EditPart.VISUAL_ID == visualID
-				|| While3EditPart.VISUAL_ID == visualID || Max2EditPart.VISUAL_ID == visualID
-				|| Min2EditPart.VISUAL_ID == visualID || Avg2EditPart.VISUAL_ID == visualID
-				|| Count2EditPart.VISUAL_ID == visualID || Sum2EditPart.VISUAL_ID == visualID
-				|| Event3EditPart.VISUAL_ID == visualID || EventProperty5EditPart.VISUAL_ID == visualID
-				|| Value3EditPart.VISUAL_ID == visualID || GroupBy2EditPart.VISUAL_ID == visualID
-				|| WithinTimer2EditPart.VISUAL_ID == visualID || TimeInterval2EditPart.VISUAL_ID == visualID
-				|| TimeSchedule2EditPart.VISUAL_ID == visualID || ComplexEventPropertyEditPart.VISUAL_ID == visualID;
+				|| SmartContractEditPart.VISUAL_ID == visualID || EventProperty2EditPart.VISUAL_ID == visualID
+				|| EventProperty3EditPart.VISUAL_ID == visualID || And2EditPart.VISUAL_ID == visualID
+				|| Or2EditPart.VISUAL_ID == visualID || Not2EditPart.VISUAL_ID == visualID
+				|| Addition2EditPart.VISUAL_ID == visualID || Subtraction2EditPart.VISUAL_ID == visualID
+				|| Multiplication2EditPart.VISUAL_ID == visualID || Division2EditPart.VISUAL_ID == visualID
+				|| Modulus2EditPart.VISUAL_ID == visualID || Equal2EditPart.VISUAL_ID == visualID
+				|| NotEqual2EditPart.VISUAL_ID == visualID || LessThan2EditPart.VISUAL_ID == visualID
+				|| GreaterThan2EditPart.VISUAL_ID == visualID || LessEqual2EditPart.VISUAL_ID == visualID
+				|| GreaterEqual2EditPart.VISUAL_ID == visualID || Every2EditPart.VISUAL_ID == visualID
+				|| EveryDistinct2EditPart.VISUAL_ID == visualID || Repeat2EditPart.VISUAL_ID == visualID
+				|| Until2EditPart.VISUAL_ID == visualID || Range2EditPart.VISUAL_ID == visualID
+				|| FollowedBy2EditPart.VISUAL_ID == visualID || While2EditPart.VISUAL_ID == visualID
+				|| Event2EditPart.VISUAL_ID == visualID || EventProperty4EditPart.VISUAL_ID == visualID
+				|| Value2EditPart.VISUAL_ID == visualID || And3EditPart.VISUAL_ID == visualID
+				|| Or3EditPart.VISUAL_ID == visualID || Not3EditPart.VISUAL_ID == visualID
+				|| Addition3EditPart.VISUAL_ID == visualID || Subtraction3EditPart.VISUAL_ID == visualID
+				|| Multiplication3EditPart.VISUAL_ID == visualID || Division3EditPart.VISUAL_ID == visualID
+				|| Modulus3EditPart.VISUAL_ID == visualID || Equal3EditPart.VISUAL_ID == visualID
+				|| NotEqual3EditPart.VISUAL_ID == visualID || LessThan3EditPart.VISUAL_ID == visualID
+				|| GreaterThan3EditPart.VISUAL_ID == visualID || LessEqual3EditPart.VISUAL_ID == visualID
+				|| GreaterEqual3EditPart.VISUAL_ID == visualID || Every3EditPart.VISUAL_ID == visualID
+				|| EveryDistinct3EditPart.VISUAL_ID == visualID || Repeat3EditPart.VISUAL_ID == visualID
+				|| Until3EditPart.VISUAL_ID == visualID || Range3EditPart.VISUAL_ID == visualID
+				|| FollowedBy3EditPart.VISUAL_ID == visualID || While3EditPart.VISUAL_ID == visualID
+				|| Max2EditPart.VISUAL_ID == visualID || Min2EditPart.VISUAL_ID == visualID
+				|| Avg2EditPart.VISUAL_ID == visualID || Count2EditPart.VISUAL_ID == visualID
+				|| Sum2EditPart.VISUAL_ID == visualID || Event3EditPart.VISUAL_ID == visualID
+				|| EventProperty5EditPart.VISUAL_ID == visualID || Value3EditPart.VISUAL_ID == visualID
+				|| GroupBy2EditPart.VISUAL_ID == visualID || WithinTimer2EditPart.VISUAL_ID == visualID
+				|| TimeInterval2EditPart.VISUAL_ID == visualID || TimeSchedule2EditPart.VISUAL_ID == visualID
+				|| ComplexEventPropertyEditPart.VISUAL_ID == visualID || ContractFunctionEditPart.VISUAL_ID == visualID
+				|| InputParameterEditPart.VISUAL_ID == visualID || OutputParameterEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -420,6 +426,8 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 			return createBatchingTimeInterval_2037(domainElement, containerView, index, persisted, preferencesHint);
 		case ComplexEventEditPart.VISUAL_ID:
 			return createComplexEvent_2038(domainElement, containerView, index, persisted, preferencesHint);
+		case SmartContractEditPart.VISUAL_ID:
+			return createSmartContract_2041(domainElement, containerView, index, persisted, preferencesHint);
 		case EventProperty2EditPart.VISUAL_ID:
 			return createEventProperty_3001(domainElement, containerView, index, persisted, preferencesHint);
 		case EventProperty3EditPart.VISUAL_ID:
@@ -540,6 +548,12 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 			return createTimeSchedule_3058(domainElement, containerView, index, persisted, preferencesHint);
 		case ComplexEventPropertyEditPart.VISUAL_ID:
 			return createComplexEventProperty_3059(domainElement, containerView, index, persisted, preferencesHint);
+		case ContractFunctionEditPart.VISUAL_ID:
+			return createContractFunction_3061(domainElement, containerView, index, persisted, preferencesHint);
+		case InputParameterEditPart.VISUAL_ID:
+			return createInputParameter_3062(domainElement, containerView, index, persisted, preferencesHint);
+		case OutputParameterEditPart.VISUAL_ID:
+			return createOutputParameter_3063(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -2014,6 +2028,47 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 		createCompartment(node,
 				EventpatternVisualIDRegistry
 						.getType(ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createSmartContract_2041(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(EventpatternVisualIDRegistry.getType(SmartContractEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5102 = createLabel(node,
+				EventpatternVisualIDRegistry.getType(SmartContractTypeNameEditPart.VISUAL_ID));
+		createCompartment(node,
+				EventpatternVisualIDRegistry
+						.getType(SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID),
 				true, false, true, true);
 		return node;
 	}
@@ -4125,6 +4180,118 @@ public class EventpatternViewProvider extends AbstractProvider implements IViewP
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5096 = createLabel(node,
 				EventpatternVisualIDRegistry.getType(ComplexEventPropertyNameEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createContractFunction_3061(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(EventpatternVisualIDRegistry.getType(ContractFunctionEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5101 = createLabel(node,
+				EventpatternVisualIDRegistry.getType(ContractFunctionNameEditPart.VISUAL_ID));
+		createCompartment(node,
+				EventpatternVisualIDRegistry
+						.getType(ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		createCompartment(node,
+				EventpatternVisualIDRegistry
+						.getType(ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createInputParameter_3062(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(EventpatternVisualIDRegistry.getType(InputParameterEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5099 = createLabel(node, EventpatternVisualIDRegistry.getType(InputParameterNameEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createOutputParameter_3063(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(EventpatternVisualIDRegistry.getType(OutputParameterEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5100 = createLabel(node, EventpatternVisualIDRegistry.getType(OutputParameterNameEditPart.VISUAL_ID));
 		return node;
 	}
 

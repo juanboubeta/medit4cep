@@ -236,6 +236,9 @@ public class EventpatternVisualIDRegistry {
 			if (EventpatternPackage.eINSTANCE.getComplexEvent().isSuperTypeOf(domainElement.eClass())) {
 				return ComplexEventEditPart.VISUAL_ID;
 			}
+			if (EventpatternPackage.eINSTANCE.getSmartContract().isSuperTypeOf(domainElement.eClass())) {
+				return SmartContractEditPart.VISUAL_ID;
+			}
 			break;
 		case EventEventEventPropertiesCompartmentEditPart.VISUAL_ID:
 			if (EventpatternPackage.eINSTANCE.getEventProperty().isSuperTypeOf(domainElement.eClass())) {
@@ -834,6 +837,21 @@ public class EventpatternVisualIDRegistry {
 				return ComplexEventPropertyEditPart.VISUAL_ID;
 			}
 			break;
+		case SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID:
+			if (EventpatternPackage.eINSTANCE.getContractFunction().isSuperTypeOf(domainElement.eClass())) {
+				return ContractFunctionEditPart.VISUAL_ID;
+			}
+			break;
+		case ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID:
+			if (EventpatternPackage.eINSTANCE.getInputParameter().isSuperTypeOf(domainElement.eClass())) {
+				return InputParameterEditPart.VISUAL_ID;
+			}
+			break;
+		case ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID:
+			if (EventpatternPackage.eINSTANCE.getOutputParameter().isSuperTypeOf(domainElement.eClass())) {
+				return OutputParameterEditPart.VISUAL_ID;
+			}
+			break;
 		}
 		return -1;
 	}
@@ -978,6 +996,9 @@ public class EventpatternVisualIDRegistry {
 			if (ComplexEventEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (SmartContractEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case RepeatEditPart.VISUAL_ID:
 			if (RepeatCountEditPart.VISUAL_ID == nodeVisualID) {
@@ -1070,6 +1091,14 @@ public class EventpatternVisualIDRegistry {
 				return true;
 			}
 			if (ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case SmartContractEditPart.VISUAL_ID:
+			if (SmartContractTypeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1171,6 +1200,27 @@ public class EventpatternVisualIDRegistry {
 			break;
 		case ComplexEventPropertyEditPart.VISUAL_ID:
 			if (ComplexEventPropertyNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ContractFunctionEditPart.VISUAL_ID:
+			if (ContractFunctionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InputParameterEditPart.VISUAL_ID:
+			if (InputParameterNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case OutputParameterEditPart.VISUAL_ID:
+			if (OutputParameterNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1771,6 +1821,21 @@ public class EventpatternVisualIDRegistry {
 				return true;
 			}
 			break;
+		case SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID:
+			if (ContractFunctionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID:
+			if (InputParameterEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID:
+			if (OutputParameterEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case LinkEditPart.VISUAL_ID:
 			if (LinkOrderEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -1835,6 +1900,9 @@ public class EventpatternVisualIDRegistry {
 		case SlidingTimeIntervalSlidingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
 		case BatchingTimeIntervalBatchingTimeIntervalEventPatternConditionsCompartmentEditPart.VISUAL_ID:
 		case ComplexEventComplexEventComplexEventPropertiesCompartmentEditPart.VISUAL_ID:
+		case SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID:
+		case ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID:
+		case ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -1934,6 +2002,8 @@ public class EventpatternVisualIDRegistry {
 		case TimeSchedule2EditPart.VISUAL_ID:
 		case ComplexEventPropertyEditPart.VISUAL_ID:
 		case GroupBy2EditPart.VISUAL_ID:
+		case InputParameterEditPart.VISUAL_ID:
+		case OutputParameterEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

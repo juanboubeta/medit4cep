@@ -214,6 +214,9 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 		case GroupByEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?www.uca.es/modeling/cep/eventpattern?GroupBy", //$NON-NLS-1$
 					EventpatternElementTypes.GroupBy_2040);
+		case SmartContractEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?www.uca.es/modeling/cep/eventpattern?SmartContract", //$NON-NLS-1$
+					EventpatternElementTypes.SmartContract_2041);
 		case EventProperty2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?www.uca.es/modeling/cep/eventpattern?EventProperty", //$NON-NLS-1$
 					EventpatternElementTypes.EventProperty_3001);
@@ -392,6 +395,15 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 		case GroupBy2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?www.uca.es/modeling/cep/eventpattern?GroupBy", //$NON-NLS-1$
 					EventpatternElementTypes.GroupBy_3060);
+		case ContractFunctionEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/eventpattern?ContractFunction", //$NON-NLS-1$
+					EventpatternElementTypes.ContractFunction_3061);
+		case InputParameterEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/eventpattern?InputParameter", //$NON-NLS-1$
+					EventpatternElementTypes.InputParameter_3062);
+		case OutputParameterEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/eventpattern?OutputParameter", //$NON-NLS-1$
+					EventpatternElementTypes.OutputParameter_3063);
 		case LinkEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?www.uca.es/modeling/cep/eventpattern?Link", //$NON-NLS-1$
 					EventpatternElementTypes.Link_4001);
@@ -535,6 +547,8 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 			return getTwitter_2039Text(view);
 		case GroupByEditPart.VISUAL_ID:
 			return getGroupBy_2040Text(view);
+		case SmartContractEditPart.VISUAL_ID:
+			return getSmartContract_2041Text(view);
 		case EventProperty2EditPart.VISUAL_ID:
 			return getEventProperty_3001Text(view);
 		case EventProperty3EditPart.VISUAL_ID:
@@ -655,6 +669,12 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 			return getComplexEventProperty_3059Text(view);
 		case GroupBy2EditPart.VISUAL_ID:
 			return getGroupBy_3060Text(view);
+		case ContractFunctionEditPart.VISUAL_ID:
+			return getContractFunction_3061Text(view);
+		case InputParameterEditPart.VISUAL_ID:
+			return getInputParameter_3062Text(view);
+		case OutputParameterEditPart.VISUAL_ID:
+			return getOutputParameter_3063Text(view);
 		case LinkEditPart.VISUAL_ID:
 			return getLink_4001Text(view);
 		}
@@ -1079,6 +1099,22 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	*/
 	private String getGroupBy_2040Text(View view) {
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	* @generated
+	*/
+	private String getSmartContract_2041Text(View view) {
+		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.SmartContract_2041,
+				view.getElement() != null ? view.getElement() : view,
+				EventpatternVisualIDRegistry.getType(SmartContractTypeNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			EventpatternDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5102); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
@@ -1643,6 +1679,54 @@ public class EventpatternNavigatorLabelProvider extends LabelProvider
 	*/
 	private String getGroupBy_3060Text(View view) {
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	* @generated
+	*/
+	private String getContractFunction_3061Text(View view) {
+		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.ContractFunction_3061,
+				view.getElement() != null ? view.getElement() : view,
+				EventpatternVisualIDRegistry.getType(ContractFunctionNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			EventpatternDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5101); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getInputParameter_3062Text(View view) {
+		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.InputParameter_3062,
+				view.getElement() != null ? view.getElement() : view,
+				EventpatternVisualIDRegistry.getType(InputParameterNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			EventpatternDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5099); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getOutputParameter_3063Text(View view) {
+		IParser parser = EventpatternParserProvider.getParser(EventpatternElementTypes.OutputParameter_3063,
+				view.getElement() != null ? view.getElement() : view,
+				EventpatternVisualIDRegistry.getType(OutputParameterNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			EventpatternDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5100); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
