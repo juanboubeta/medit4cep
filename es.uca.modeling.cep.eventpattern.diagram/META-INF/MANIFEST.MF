@@ -44,7 +44,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport,
  es.uca.modeling.cep.domain;bundle-version="0.1.0",
  org.eclipse.gmf.runtime.lite;resolution:=optional;visibility:=reexport,
- org.eclipse.gmf.runtime.lite.svg;visibility:=reexport
+ org.eclipse.gmf.runtime.lite.svg;visibility:=reexport,
+ es.uca.modeling.cep.smartcontract;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: es.uca.modeling.cep.eventpattern.figures

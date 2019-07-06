@@ -312,6 +312,56 @@
         </actualFigure>
         <accessors accessor="getFigureValueLabelFigure" figure="/0/@figures.0/@descriptors.40/@actualFigure/@children.0"/>
       </descriptors>
+      <descriptors name="SmartContractFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="SmartContractFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="SmartContractLabelFigure" text="SmartContract">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="SmartContractSmartContractPropertiesCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureSmartContractLabelFigure" figure="/0/@figures.0/@descriptors.41/@actualFigure/@children.0"/>
+        <accessors accessor="getSmartContractSmartContractPropertiesCompartmentFigure" figure="/0/@figures.0/@descriptors.41/@actualFigure/@children.1"/>
+      </descriptors>
+      <descriptors name="ContractFunctionFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="ContractFunctionFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ContractFunctionLabelFigure" text="ContractFunction">
+            <maximumSize dx="10000" dy="50"/>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="ContractFunctionInputParametersFunctionCompartmentFigure" outline="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="ContractFunctionOutputParametersFunctionCompartmentFigure" outline="false"/>
+        </actualFigure>
+        <accessors accessor="getFigureContractFunctionLabelFigure" figure="/0/@figures.0/@descriptors.42/@actualFigure/@children.0"/>
+        <accessors accessor="getContractFunctionInputParametersFunctionCompartmentFigure" figure="/0/@figures.0/@descriptors.42/@actualFigure/@children.1"/>
+        <accessors accessor="getContractFunctionOutputParametersFunctionCompartmentFigure" figure="/0/@figures.0/@descriptors.42/@actualFigure/@children.2"/>
+      </descriptors>
+      <descriptors name="InputParameterFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="InputParameterFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="InputParameterLabelFigure" text="InputParameter"/>
+        </actualFigure>
+        <accessors accessor="getFigureInputParameterLabelFigure" figure="/0/@figures.0/@descriptors.43/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="OutputParameterFigure">
+        <actualFigure xsi:type="gmfgraph:Rectangle" name="OutputParameterFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="OutputParameterLabelFigure" text="OutputParameter"/>
+        </actualFigure>
+        <accessors accessor="getFigureOutputParameterLabelFigure" figure="/0/@figures.0/@descriptors.44/@actualFigure/@children.0"/>
+      </descriptors>
       <descriptors name="EmailFigure">
         <actualFigure xsi:type="gmfgraph:SVGFigure" name="EmailFigure" documentURI="platform:/plugin/es.uca.modeling.cep.eventpattern.figures/svg/Email.svg">
           <preferredSize dx="30" dy="30"/>
@@ -493,6 +543,10 @@
         <defaultSize dx="30" dy="30"/>
       </facets>
     </nodes>
+    <nodes name="SmartContract" figure="SmartContractFigure"/>
+    <nodes name="ContractFunction" figure="ContractFunctionFigure"/>
+    <nodes name="InputParameter" figure="InputParameterFigure"/>
+    <nodes name="OutputParameter" figure="OutputParameterFigure"/>
     <nodes name="Email" figure="EmailFigure">
       <facets xsi:type="gmfgraph:DefaultSizeFacet">
         <defaultSize dx="30" dy="30"/>
@@ -512,6 +566,9 @@
     <compartments name="WithinTimerWithinTimerElementsCompartment" figure="WithinTimerFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.33/@accessors.1"/>
     <compartments name="EventEventPropertiesCompartment" figure="EventFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.38/@accessors.1"/>
     <compartments name="EventPropertyEventPropertiesCompartment" figure="EventPropertyFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.39/@accessors.1"/>
+    <compartments name="SmartContractSmartContractPropertiesCompartment" figure="SmartContractFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.41/@accessors.1"/>
+    <compartments name="ContractFunctionInputParametersFunctionCompartment" figure="ContractFunctionFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.42/@accessors.1"/>
+    <compartments name="ContractFunctionOutputParametersFunctionCompartment" figure="ContractFunctionFigure" collapsible="true" accessor="/0/@figures.0/@descriptors.42/@accessors.2"/>
     <labels name="ComplexEventLabel" figure="ComplexEventFigure" accessor="/0/@figures.0/@descriptors.0/@accessors.0"/>
     <labels name="ComplexEventPropertyLabel" figure="ComplexEventPropertyFigure" accessor="/0/@figures.0/@descriptors.1/@accessors.0"/>
     <labels name="SlidingEventIntervalLabel" figure="SlidingEventIntervalFigure" accessor="/0/@figures.0/@descriptors.2/@accessors.0"/>
@@ -526,6 +583,10 @@
     <labels name="EventLabel" figure="EventFigure" accessor="/0/@figures.0/@descriptors.38/@accessors.0"/>
     <labels name="EventPropertyLabel" figure="EventPropertyFigure" accessor="/0/@figures.0/@descriptors.39/@accessors.0"/>
     <labels name="ValueLabel" figure="ValueFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.40/@accessors.0"/>
+    <labels name="SmartContractLabel" figure="SmartContractFigure" accessor="/0/@figures.0/@descriptors.41/@accessors.0"/>
+    <labels name="ContractFunctionLabel" figure="ContractFunctionFigure" accessor="/0/@figures.0/@descriptors.42/@accessors.0"/>
+    <labels name="InputParameterLabel" figure="InputParameterFigure" accessor="/0/@figures.0/@descriptors.43/@accessors.0"/>
+    <labels name="OutputParameterLabel" figure="OutputParameterFigure" accessor="/0/@figures.0/@descriptors.44/@accessors.0"/>
     <labels name="EmailLabel" figure="EmailLabelFigure" elementIcon="false"/>
     <labels name="LinkLabel" figure="LinkLabelFigure" elementIcon="false">
       <facets xsi:type="gmfgraph:AlignmentFacet"/>

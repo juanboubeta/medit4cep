@@ -307,6 +307,26 @@ public class EventpatternAdapterFactory extends AdapterFactoryImpl
 				return createValueAdapter();
 			}
 			@Override
+			public Adapter caseSmartContract(SmartContract object) {
+				return createSmartContractAdapter();
+			}
+			@Override
+			public Adapter caseContractFunction(ContractFunction object) {
+				return createContractFunctionAdapter();
+			}
+			@Override
+			public Adapter caseParameter(Parameter object) {
+				return createParameterAdapter();
+			}
+			@Override
+			public Adapter caseInputParameter(InputParameter object) {
+				return createInputParameterAdapter();
+			}
+			@Override
+			public Adapter caseOutputParameter(OutputParameter object) {
+				return createOutputParameterAdapter();
+			}
+			@Override
 			public Adapter caseEmail(Email object) {
 				return createEmailAdapter();
 			}
@@ -1220,6 +1240,76 @@ public class EventpatternAdapterFactory extends AdapterFactoryImpl
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link eventpattern.SmartContract <em>Smart Contract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eventpattern.SmartContract
+	 * @generated
+	 */
+	public Adapter createSmartContractAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link eventpattern.ContractFunction <em>Contract Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eventpattern.ContractFunction
+	 * @generated
+	 */
+	public Adapter createContractFunctionAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link eventpattern.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eventpattern.Parameter
+	 * @generated
+	 */
+	public Adapter createParameterAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link eventpattern.InputParameter <em>Input Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eventpattern.InputParameter
+	 * @generated
+	 */
+	public Adapter createInputParameterAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link eventpattern.OutputParameter <em>Output Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eventpattern.OutputParameter
+	 * @generated
+	 */
+	public Adapter createOutputParameterAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link eventpattern.Email <em>Email</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;

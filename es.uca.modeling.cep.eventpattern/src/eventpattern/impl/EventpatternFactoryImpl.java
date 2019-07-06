@@ -102,6 +102,10 @@ public class EventpatternFactoryImpl extends EFactoryImpl implements Eventpatter
 			case EventpatternPackage.EVENT: return createEvent();
 			case EventpatternPackage.EVENT_PROPERTY: return createEventProperty();
 			case EventpatternPackage.VALUE: return createValue();
+			case EventpatternPackage.SMART_CONTRACT: return createSmartContract();
+			case EventpatternPackage.CONTRACT_FUNCTION: return createContractFunction();
+			case EventpatternPackage.INPUT_PARAMETER: return createInputParameter();
+			case EventpatternPackage.OUTPUT_PARAMETER: return createOutputParameter();
 			case EventpatternPackage.EMAIL: return createEmail();
 			case EventpatternPackage.TWITTER: return createTwitter();
 			default:
@@ -592,6 +596,46 @@ public class EventpatternFactoryImpl extends EFactoryImpl implements Eventpatter
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SmartContract createSmartContract() {
+		SmartContractImpl smartContract = new SmartContractImpl();
+		return smartContract;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContractFunction createContractFunction() {
+		ContractFunctionImpl contractFunction = new ContractFunctionImpl();
+		return contractFunction;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InputParameter createInputParameter() {
+		InputParameterImpl inputParameter = new InputParameterImpl();
+		return inputParameter;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OutputParameter createOutputParameter() {
+		OutputParameterImpl outputParameter = new OutputParameterImpl();
+		return outputParameter;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

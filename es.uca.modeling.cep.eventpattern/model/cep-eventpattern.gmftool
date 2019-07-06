@@ -58,6 +58,47 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
+        title="Smart Contracts"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Smart Contract"
+          description="Add a SmartContract">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Contract Function"
+          description="Add a Contract Function">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Input Parameter"
+          description="Add an Input Parameter">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Output Parameter"
+          description="Add an Output Parameter">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
         title="Complex Events"
         collapsible="true">
       <tools

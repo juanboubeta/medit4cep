@@ -169,6 +169,29 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Value/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Value/type"/>
     </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//SmartContract">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/imagePath"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//SmartContract/contractfunctions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//SmartContract/SmartContractProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//ContractFunction">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//ContractFunction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//ContractFunction/imagePath"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//ContractFunction/referencedSmartContract"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//ContractFunction/InputParametersFunction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//ContractFunction/OutputParametersFunction"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//Parameter">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Parameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Parameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//InputParameter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//InputParameter/InputReferencedFunction"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-eventpattern.ecore#//OutputParameter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//OutputParameter/OutputReferencedFunction"/>
+    </genClasses>
     <genClasses ecoreClass="cep-eventpattern.ecore#//Email">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/to"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Email/cc"/>

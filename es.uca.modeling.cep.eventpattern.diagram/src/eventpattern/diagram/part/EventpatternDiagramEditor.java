@@ -218,6 +218,46 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 		}
 	}
 
+	// Added
+	public void refreshPaletteSmartContract() {
+
+		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
+
+		clearPaletteSimpleEvent(paletteRoot);
+
+		List<Object> containers = new ArrayList<Object>();
+		containers.addAll(paletteRoot.getChildren());
+
+		for (Object container : containers) {
+			PaletteContainer paletteContainer = (PaletteContainer) container;
+
+			if (paletteContainer.getLabel().equals("Smart Contracts")) {
+				paletteFactory.addSimpleEventTools(paletteContainer);
+			}
+		}
+	}
+
+	// Added
+	private void clearPaletteSmartContract(PaletteRoot paletteRoot) {
+
+		List<Object> containers = new ArrayList<Object>();
+		containers.addAll(paletteRoot.getChildren());
+
+		for (Object container : containers) {
+			PaletteContainer paletteContainer = (PaletteContainer) container;
+
+			if (paletteContainer.getLabel().equals("Smart Contracts")) {
+				List<Object> smartContractEntries = new ArrayList<Object>();
+				smartContractEntries.addAll(paletteContainer.getChildren());
+
+				for (Object smartContractEntry : smartContractEntries) {
+					PaletteEntry entry = (PaletteEntry) smartContractEntry;
+					paletteContainer.remove(entry);
+				}
+			}
+		}
+	}
+
 	/**
 	 * @generated
 	 */

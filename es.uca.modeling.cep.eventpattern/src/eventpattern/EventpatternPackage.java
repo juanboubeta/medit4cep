@@ -2628,6 +2628,263 @@ public interface EventpatternPackage extends EPackage
   int VALUE_FEATURE_COUNT = CONDITION_OPERAND_FEATURE_COUNT + 2;
 
   /**
+	 * The meta object id for the '{@link eventpattern.impl.SmartContractImpl <em>Smart Contract</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eventpattern.impl.SmartContractImpl
+	 * @see eventpattern.impl.EventpatternPackageImpl#getSmartContract()
+	 * @generated
+	 */
+	int SMART_CONTRACT = 59;
+
+		/**
+	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT__INBOUND_LINK = UNARY_OPERATOR__INBOUND_LINK;
+
+		/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT__TYPE_NAME = UNARY_OPERATOR_FEATURE_COUNT + 0;
+
+		/**
+	 * The feature id for the '<em><b>Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT__IMAGE_PATH = UNARY_OPERATOR_FEATURE_COUNT + 1;
+
+		/**
+	 * The feature id for the '<em><b>Contractfunctions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT__CONTRACTFUNCTIONS = UNARY_OPERATOR_FEATURE_COUNT + 2;
+
+		/**
+	 * The feature id for the '<em><b>Smart Contract Properties</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = UNARY_OPERATOR_FEATURE_COUNT + 3;
+
+		/**
+	 * The number of structural features of the '<em>Smart Contract</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT_FEATURE_COUNT = UNARY_OPERATOR_FEATURE_COUNT + 4;
+
+		/**
+	 * The meta object id for the '{@link eventpattern.impl.ContractFunctionImpl <em>Contract Function</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eventpattern.impl.ContractFunctionImpl
+	 * @see eventpattern.impl.EventpatternPackageImpl#getContractFunction()
+	 * @generated
+	 */
+	int CONTRACT_FUNCTION = 60;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT_FUNCTION__NAME = 0;
+
+		/**
+	 * The feature id for the '<em><b>Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT_FUNCTION__IMAGE_PATH = 1;
+
+		/**
+	 * The feature id for the '<em><b>Referenced Smart Contract</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT_FUNCTION__REFERENCED_SMART_CONTRACT = 2;
+
+		/**
+	 * The feature id for the '<em><b>Input Parameters Function</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT_FUNCTION__INPUT_PARAMETERS_FUNCTION = 3;
+
+		/**
+	 * The feature id for the '<em><b>Output Parameters Function</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT_FUNCTION__OUTPUT_PARAMETERS_FUNCTION = 4;
+
+		/**
+	 * The number of structural features of the '<em>Contract Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT_FUNCTION_FEATURE_COUNT = 5;
+
+		/**
+	 * The meta object id for the '{@link eventpattern.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eventpattern.impl.ParameterImpl
+	 * @see eventpattern.impl.EventpatternPackageImpl#getParameter()
+	 * @generated
+	 */
+	int PARAMETER = 61;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__NAME = 0;
+
+		/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__TYPE = 1;
+
+		/**
+	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_FEATURE_COUNT = 2;
+
+		/**
+	 * The meta object id for the '{@link eventpattern.impl.InputParameterImpl <em>Input Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eventpattern.impl.InputParameterImpl
+	 * @see eventpattern.impl.EventpatternPackageImpl#getInputParameter()
+	 * @generated
+	 */
+	int INPUT_PARAMETER = 62;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PARAMETER__NAME = PARAMETER__NAME;
+
+		/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PARAMETER__TYPE = PARAMETER__TYPE;
+
+		/**
+	 * The feature id for the '<em><b>Input Referenced Function</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PARAMETER__INPUT_REFERENCED_FUNCTION = PARAMETER_FEATURE_COUNT + 0;
+
+		/**
+	 * The number of structural features of the '<em>Input Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 1;
+
+		/**
+	 * The meta object id for the '{@link eventpattern.impl.OutputParameterImpl <em>Output Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eventpattern.impl.OutputParameterImpl
+	 * @see eventpattern.impl.EventpatternPackageImpl#getOutputParameter()
+	 * @generated
+	 */
+	int OUTPUT_PARAMETER = 63;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PARAMETER__NAME = PARAMETER__NAME;
+
+		/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PARAMETER__TYPE = PARAMETER__TYPE;
+
+		/**
+	 * The feature id for the '<em><b>Output Referenced Function</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PARAMETER__OUTPUT_REFERENCED_FUNCTION = PARAMETER_FEATURE_COUNT + 0;
+
+		/**
+	 * The number of structural features of the '<em>Output Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 1;
+
+		/**
 	 * The meta object id for the '{@link eventpattern.impl.EmailImpl <em>Email</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2635,7 +2892,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getEmail()
 	 * @generated
 	 */
-  int EMAIL = 59;
+  int EMAIL = 64;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -2744,7 +3001,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getTwitter()
 	 * @generated
 	 */
-  int TWITTER = 60;
+  int TWITTER = 65;
 
   /**
 	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
@@ -2772,7 +3029,7 @@ public interface EventpatternPackage extends EPackage
 	 * @see eventpattern.impl.EventpatternPackageImpl#getPropertyTypeValue()
 	 * @generated
 	 */
-  int PROPERTY_TYPE_VALUE = 61;
+  int PROPERTY_TYPE_VALUE = 66;
 
 
   /**
@@ -4213,6 +4470,199 @@ public interface EventpatternPackage extends EPackage
   EAttribute getValue_Type();
 
   /**
+	 * Returns the meta object for class '{@link eventpattern.SmartContract <em>Smart Contract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Smart Contract</em>'.
+	 * @see eventpattern.SmartContract
+	 * @generated
+	 */
+	EClass getSmartContract();
+
+		/**
+	 * Returns the meta object for the attribute '{@link eventpattern.SmartContract#getTypeName <em>Type Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Name</em>'.
+	 * @see eventpattern.SmartContract#getTypeName()
+	 * @see #getSmartContract()
+	 * @generated
+	 */
+	EAttribute getSmartContract_TypeName();
+
+		/**
+	 * Returns the meta object for the attribute '{@link eventpattern.SmartContract#getImagePath <em>Image Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Image Path</em>'.
+	 * @see eventpattern.SmartContract#getImagePath()
+	 * @see #getSmartContract()
+	 * @generated
+	 */
+	EAttribute getSmartContract_ImagePath();
+
+		/**
+	 * Returns the meta object for the containment reference list '{@link eventpattern.SmartContract#getContractfunctions <em>Contractfunctions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contractfunctions</em>'.
+	 * @see eventpattern.SmartContract#getContractfunctions()
+	 * @see #getSmartContract()
+	 * @generated
+	 */
+	EReference getSmartContract_Contractfunctions();
+
+		/**
+	 * Returns the meta object for the containment reference list '{@link eventpattern.SmartContract#getSmartContractProperties <em>Smart Contract Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Smart Contract Properties</em>'.
+	 * @see eventpattern.SmartContract#getSmartContractProperties()
+	 * @see #getSmartContract()
+	 * @generated
+	 */
+	EReference getSmartContract_SmartContractProperties();
+
+		/**
+	 * Returns the meta object for class '{@link eventpattern.ContractFunction <em>Contract Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Contract Function</em>'.
+	 * @see eventpattern.ContractFunction
+	 * @generated
+	 */
+	EClass getContractFunction();
+
+		/**
+	 * Returns the meta object for the attribute '{@link eventpattern.ContractFunction#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see eventpattern.ContractFunction#getName()
+	 * @see #getContractFunction()
+	 * @generated
+	 */
+	EAttribute getContractFunction_Name();
+
+		/**
+	 * Returns the meta object for the attribute '{@link eventpattern.ContractFunction#getImagePath <em>Image Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Image Path</em>'.
+	 * @see eventpattern.ContractFunction#getImagePath()
+	 * @see #getContractFunction()
+	 * @generated
+	 */
+	EAttribute getContractFunction_ImagePath();
+
+		/**
+	 * Returns the meta object for the container reference '{@link eventpattern.ContractFunction#getReferencedSmartContract <em>Referenced Smart Contract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Referenced Smart Contract</em>'.
+	 * @see eventpattern.ContractFunction#getReferencedSmartContract()
+	 * @see #getContractFunction()
+	 * @generated
+	 */
+	EReference getContractFunction_ReferencedSmartContract();
+
+		/**
+	 * Returns the meta object for the containment reference list '{@link eventpattern.ContractFunction#getInputParametersFunction <em>Input Parameters Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Input Parameters Function</em>'.
+	 * @see eventpattern.ContractFunction#getInputParametersFunction()
+	 * @see #getContractFunction()
+	 * @generated
+	 */
+	EReference getContractFunction_InputParametersFunction();
+
+		/**
+	 * Returns the meta object for the containment reference '{@link eventpattern.ContractFunction#getOutputParametersFunction <em>Output Parameters Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Output Parameters Function</em>'.
+	 * @see eventpattern.ContractFunction#getOutputParametersFunction()
+	 * @see #getContractFunction()
+	 * @generated
+	 */
+	EReference getContractFunction_OutputParametersFunction();
+
+		/**
+	 * Returns the meta object for class '{@link eventpattern.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see eventpattern.Parameter
+	 * @generated
+	 */
+	EClass getParameter();
+
+		/**
+	 * Returns the meta object for the attribute '{@link eventpattern.Parameter#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see eventpattern.Parameter#getName()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Name();
+
+		/**
+	 * Returns the meta object for the attribute '{@link eventpattern.Parameter#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see eventpattern.Parameter#getType()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Type();
+
+		/**
+	 * Returns the meta object for class '{@link eventpattern.InputParameter <em>Input Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Input Parameter</em>'.
+	 * @see eventpattern.InputParameter
+	 * @generated
+	 */
+	EClass getInputParameter();
+
+		/**
+	 * Returns the meta object for the container reference '{@link eventpattern.InputParameter#getInputReferencedFunction <em>Input Referenced Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Input Referenced Function</em>'.
+	 * @see eventpattern.InputParameter#getInputReferencedFunction()
+	 * @see #getInputParameter()
+	 * @generated
+	 */
+	EReference getInputParameter_InputReferencedFunction();
+
+		/**
+	 * Returns the meta object for class '{@link eventpattern.OutputParameter <em>Output Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Output Parameter</em>'.
+	 * @see eventpattern.OutputParameter
+	 * @generated
+	 */
+	EClass getOutputParameter();
+
+		/**
+	 * Returns the meta object for the container reference '{@link eventpattern.OutputParameter#getOutputReferencedFunction <em>Output Referenced Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Output Referenced Function</em>'.
+	 * @see eventpattern.OutputParameter#getOutputReferencedFunction()
+	 * @see #getOutputParameter()
+	 * @generated
+	 */
+	EReference getOutputParameter_OutputReferencedFunction();
+
+		/**
 	 * Returns the meta object for class '{@link eventpattern.Email <em>Email</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5571,6 +6021,160 @@ public interface EventpatternPackage extends EPackage
     EAttribute VALUE__TYPE = eINSTANCE.getValue_Type();
 
     /**
+		 * The meta object literal for the '{@link eventpattern.impl.SmartContractImpl <em>Smart Contract</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eventpattern.impl.SmartContractImpl
+		 * @see eventpattern.impl.EventpatternPackageImpl#getSmartContract()
+		 * @generated
+		 */
+		EClass SMART_CONTRACT = eINSTANCE.getSmartContract();
+
+				/**
+		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SMART_CONTRACT__TYPE_NAME = eINSTANCE.getSmartContract_TypeName();
+
+				/**
+		 * The meta object literal for the '<em><b>Image Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SMART_CONTRACT__IMAGE_PATH = eINSTANCE.getSmartContract_ImagePath();
+
+				/**
+		 * The meta object literal for the '<em><b>Contractfunctions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SMART_CONTRACT__CONTRACTFUNCTIONS = eINSTANCE.getSmartContract_Contractfunctions();
+
+				/**
+		 * The meta object literal for the '<em><b>Smart Contract Properties</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = eINSTANCE.getSmartContract_SmartContractProperties();
+
+				/**
+		 * The meta object literal for the '{@link eventpattern.impl.ContractFunctionImpl <em>Contract Function</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eventpattern.impl.ContractFunctionImpl
+		 * @see eventpattern.impl.EventpatternPackageImpl#getContractFunction()
+		 * @generated
+		 */
+		EClass CONTRACT_FUNCTION = eINSTANCE.getContractFunction();
+
+				/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTRACT_FUNCTION__NAME = eINSTANCE.getContractFunction_Name();
+
+				/**
+		 * The meta object literal for the '<em><b>Image Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTRACT_FUNCTION__IMAGE_PATH = eINSTANCE.getContractFunction_ImagePath();
+
+				/**
+		 * The meta object literal for the '<em><b>Referenced Smart Contract</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT_FUNCTION__REFERENCED_SMART_CONTRACT = eINSTANCE.getContractFunction_ReferencedSmartContract();
+
+				/**
+		 * The meta object literal for the '<em><b>Input Parameters Function</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT_FUNCTION__INPUT_PARAMETERS_FUNCTION = eINSTANCE.getContractFunction_InputParametersFunction();
+
+				/**
+		 * The meta object literal for the '<em><b>Output Parameters Function</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT_FUNCTION__OUTPUT_PARAMETERS_FUNCTION = eINSTANCE.getContractFunction_OutputParametersFunction();
+
+				/**
+		 * The meta object literal for the '{@link eventpattern.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eventpattern.impl.ParameterImpl
+		 * @see eventpattern.impl.EventpatternPackageImpl#getParameter()
+		 * @generated
+		 */
+		EClass PARAMETER = eINSTANCE.getParameter();
+
+				/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
+
+				/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__TYPE = eINSTANCE.getParameter_Type();
+
+				/**
+		 * The meta object literal for the '{@link eventpattern.impl.InputParameterImpl <em>Input Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eventpattern.impl.InputParameterImpl
+		 * @see eventpattern.impl.EventpatternPackageImpl#getInputParameter()
+		 * @generated
+		 */
+		EClass INPUT_PARAMETER = eINSTANCE.getInputParameter();
+
+				/**
+		 * The meta object literal for the '<em><b>Input Referenced Function</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INPUT_PARAMETER__INPUT_REFERENCED_FUNCTION = eINSTANCE.getInputParameter_InputReferencedFunction();
+
+				/**
+		 * The meta object literal for the '{@link eventpattern.impl.OutputParameterImpl <em>Output Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eventpattern.impl.OutputParameterImpl
+		 * @see eventpattern.impl.EventpatternPackageImpl#getOutputParameter()
+		 * @generated
+		 */
+		EClass OUTPUT_PARAMETER = eINSTANCE.getOutputParameter();
+
+				/**
+		 * The meta object literal for the '<em><b>Output Referenced Function</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OUTPUT_PARAMETER__OUTPUT_REFERENCED_FUNCTION = eINSTANCE.getOutputParameter_OutputReferencedFunction();
+
+				/**
 		 * The meta object literal for the '{@link eventpattern.impl.EmailImpl <em>Email</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

@@ -24,7 +24,7 @@ var batchingEventIntervalTool = objectGroup.tools.selectOne(o|o.title='Batching 
 var batchingTimeIntervalTool = objectGroup.tools.selectOne(o|o.title='Batching Time Interval');
 var complexEventTool = objectGroup.tools.selectOne(o|o.title='New Complex Event');
 var complexEventPropertyTool = objectGroup.tools.selectOne(o|o.title='New Complex Event Property');
---var contractFunctionTool = objectGroup.tools.selectOne(o|o.title='Contract Function');
+var contractFunctionTool = objectGroup.tools.selectOne(o|o.title='Contract Function');
 var countTool = objectGroup.tools.selectOne(o|o.title='Count');
 var divisionTool = objectGroup.tools.selectOne(o|o.title='Division');
 var emailTool = objectGroup.tools.selectOne(o|o.title='Email');
@@ -37,7 +37,7 @@ var followedByTool = objectGroup.tools.selectOne(o|o.title='Followed By');
 var greaterEqualTool = objectGroup.tools.selectOne(o|o.title='Greater Equal');
 var greaterThanTool = objectGroup.tools.selectOne(o|o.title='Greater Than');
 var groupByTool = objectGroup.tools.selectOne(o|o.title='Group By');
---var inputParameterTool = objectGroup.tools.selectOne(o|o.title='Input Parameter');
+var inputParameterTool = objectGroup.tools.selectOne(o|o.title='Input Parameter');
 var lessEqualTool = objectGroup.tools.selectOne(o|o.title='Less Equal');
 var lessThanTool = objectGroup.tools.selectOne(o|o.title='Less Than');
 var maxTool = objectGroup.tools.selectOne(o|o.title='Max');
@@ -47,12 +47,12 @@ var multiplicationTool = objectGroup.tools.selectOne(o|o.title='Multiplication')
 var notTool = objectGroup.tools.selectOne(o|o.title='Not');
 var notEqualTool = objectGroup.tools.selectOne(o|o.title='Not Equal');
 var orTool = objectGroup.tools.selectOne(o|o.title='Or');
---var outputParameterTool = objectGroup.tools.selectOne(o|o.title='Output Parameter');
+var outputParameterTool = objectGroup.tools.selectOne(o|o.title='Output Parameter');
 var rangeTool = objectGroup.tools.selectOne(o|o.title='Range');
 var repeatTool = objectGroup.tools.selectOne(o|o.title='Repeat');
 var slidingEventIntervalTool = objectGroup.tools.selectOne(o|o.title='Sliding Event Interval');
 var slidingTimeIntervalTool = objectGroup.tools.selectOne(o|o.title='Sliding Time Interval');
---var smartContractTool = objectGroup.tools.selectOne(o|o.title='Smart Contract');
+var smartContractTool = objectGroup.tools.selectOne(o|o.title='Smart Contract');
 var subtractionTool = objectGroup.tools.selectOne(o|o.title='Subtraction');
 var sumTool = objectGroup.tools.selectOne(o|o.title='Sum');
 var timeIntervalTool = objectGroup.tools.selectOne(o|o.title='Time Interval');
@@ -77,14 +77,14 @@ simpleEventGroup.tools.add(eventTool);
 simpleEventGroup.tools.add(eventPropertyTool);
 
 --Create smartContractsGroup
---var smartContractsGroup = new GmfTool!ToolGroup; 
---smartContractsGroup.title = 'Smart Contracts'; 
---smartContractsGroup.collapsible = true;
---palette.tools.add(smartContractsGroup);
---smartContractsGroup.tools.add(smartContractTool); 
---smartContractsGroup.tools.add(contractFunctionTool);
---smartContractsGroup.tools.add(inputParameterTool); 
---smartContractsGroup.tools.add(outputParameterTool);
+var smartContractsGroup = new GmfTool!ToolGroup; 
+smartContractsGroup.title = 'Smart Contracts'; 
+smartContractsGroup.collapsible = true;
+palette.tools.add(smartContractsGroup);
+smartContractsGroup.tools.add(smartContractTool); 
+smartContractsGroup.tools.add(contractFunctionTool);
+smartContractsGroup.tools.add(inputParameterTool); 
+smartContractsGroup.tools.add(outputParameterTool);
 
 --Create complexEventGroup
 var complexEventGroup = new GmfTool!ToolGroup; 

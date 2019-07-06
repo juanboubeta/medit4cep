@@ -166,6 +166,7 @@ public class EventpatternActionBarContributor
   @Override
   public void contributeToToolBar(IToolBarManager toolBarManager)
   {
+		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new Separator("eventpattern-settings"));
 		toolBarManager.add(new Separator("eventpattern-additions"));
 	}

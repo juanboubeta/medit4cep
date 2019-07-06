@@ -24,7 +24,7 @@ class CEPEventPattern {
    val Link[*] links; 
    val EventPatternElement[*] eventPatternElements;
    val ComplexEvent[0..1] complexEvent;
-   //val SmartContract[0..1] smartContract;
+   //val SmartContract[*] smartContracts;
    val Action[*] actions;
 }
 
@@ -504,10 +504,10 @@ class Value extends ConditionOperand {
 }
 
 /* SMART CONTRACTS*/
-/*
+
 @gmf.node(figure="rectangle", label="typeName", border.color="110,110,110",
 tool.name="Smart Contract", tool.description="Add a SmartContract", resizable="false", label.readOnly="true")
-class SmartContract {
+class SmartContract extends UnaryOperator {
    attr String typeName;
    attr String imagePath;
    val ContractFunction[*] contractfunctions;   
@@ -547,7 +547,7 @@ tool.name="Output Parameter", tool.description="Add an Output Parameter", resiza
 class OutputParameter extends Parameter{
    ref ContractFunction#OutputParametersFunction OutputReferencedFunction;
 }
-*/
+
 
 /* ACTIONS */
 

@@ -741,6 +741,40 @@ public class EventpatternSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case EventpatternPackage.SMART_CONTRACT: {
+				SmartContract smartContract = (SmartContract)theEObject;
+				T result = caseSmartContract(smartContract);
+				if (result == null) result = caseUnaryOperator(smartContract);
+				if (result == null) result = caseOperator(smartContract);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EventpatternPackage.CONTRACT_FUNCTION: {
+				ContractFunction contractFunction = (ContractFunction)theEObject;
+				T result = caseContractFunction(contractFunction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EventpatternPackage.PARAMETER: {
+				Parameter parameter = (Parameter)theEObject;
+				T result = caseParameter(parameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EventpatternPackage.INPUT_PARAMETER: {
+				InputParameter inputParameter = (InputParameter)theEObject;
+				T result = caseInputParameter(inputParameter);
+				if (result == null) result = caseParameter(inputParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EventpatternPackage.OUTPUT_PARAMETER: {
+				OutputParameter outputParameter = (OutputParameter)theEObject;
+				T result = caseOutputParameter(outputParameter);
+				if (result == null) result = caseParameter(outputParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case EventpatternPackage.EMAIL: {
 				Email email = (Email)theEObject;
 				T result = caseEmail(email);
@@ -1707,6 +1741,81 @@ public class EventpatternSwitch<T> extends Switch<T>
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Smart Contract</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Smart Contract</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSmartContract(SmartContract object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Contract Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Contract Function</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContractFunction(ContractFunction object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameter(Parameter object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Input Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Input Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInputParameter(InputParameter object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Output Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Output Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOutputParameter(OutputParameter object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Email</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;

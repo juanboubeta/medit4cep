@@ -1057,6 +1057,98 @@ public class EventpatternItemProviderAdapterFactory extends EventpatternAdapterF
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link eventpattern.SmartContract} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SmartContractItemProvider smartContractItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link eventpattern.SmartContract}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSmartContractAdapter() {
+		if (smartContractItemProvider == null) {
+			smartContractItemProvider = new SmartContractItemProvider(this);
+		}
+
+		return smartContractItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link eventpattern.ContractFunction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContractFunctionItemProvider contractFunctionItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link eventpattern.ContractFunction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContractFunctionAdapter() {
+		if (contractFunctionItemProvider == null) {
+			contractFunctionItemProvider = new ContractFunctionItemProvider(this);
+		}
+
+		return contractFunctionItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link eventpattern.InputParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InputParameterItemProvider inputParameterItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link eventpattern.InputParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInputParameterAdapter() {
+		if (inputParameterItemProvider == null) {
+			inputParameterItemProvider = new InputParameterItemProvider(this);
+		}
+
+		return inputParameterItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link eventpattern.OutputParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OutputParameterItemProvider outputParameterItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link eventpattern.OutputParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOutputParameterAdapter() {
+		if (outputParameterItemProvider == null) {
+			outputParameterItemProvider = new OutputParameterItemProvider(this);
+		}
+
+		return outputParameterItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link eventpattern.Email} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1253,6 +1345,10 @@ public class EventpatternItemProviderAdapterFactory extends EventpatternAdapterF
 		if (eventItemProvider != null) eventItemProvider.dispose();
 		if (eventPropertyItemProvider != null) eventPropertyItemProvider.dispose();
 		if (valueItemProvider != null) valueItemProvider.dispose();
+		if (smartContractItemProvider != null) smartContractItemProvider.dispose();
+		if (contractFunctionItemProvider != null) contractFunctionItemProvider.dispose();
+		if (inputParameterItemProvider != null) inputParameterItemProvider.dispose();
+		if (outputParameterItemProvider != null) outputParameterItemProvider.dispose();
 		if (emailItemProvider != null) emailItemProvider.dispose();
 		if (twitterItemProvider != null) twitterItemProvider.dispose();
 	}

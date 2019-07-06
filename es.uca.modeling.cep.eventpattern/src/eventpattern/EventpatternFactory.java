@@ -392,6 +392,42 @@ public interface EventpatternFactory extends EFactory
   Value createValue();
 
   /**
+	 * Returns a new object of class '<em>Smart Contract</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Smart Contract</em>'.
+	 * @generated
+	 */
+	SmartContract createSmartContract();
+
+		/**
+	 * Returns a new object of class '<em>Contract Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Contract Function</em>'.
+	 * @generated
+	 */
+	ContractFunction createContractFunction();
+
+		/**
+	 * Returns a new object of class '<em>Input Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Input Parameter</em>'.
+	 * @generated
+	 */
+	InputParameter createInputParameter();
+
+		/**
+	 * Returns a new object of class '<em>Output Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Output Parameter</em>'.
+	 * @generated
+	 */
+	OutputParameter createOutputParameter();
+
+		/**
 	 * Returns a new object of class '<em>Email</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

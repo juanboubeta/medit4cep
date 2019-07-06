@@ -259,49 +259,54 @@ public class Messages extends NLS {
 	public static String SimpleEvents2Group_title;
 
 	/**
-	 * @generated
-	 */
-	public static String ComplexEvents3Group_title;
+	* @generated
+	*/
+	public static String SmartContracts3Group_title;
 
 	/**
-	 * @generated
-	 */
-	public static String PatternTimers4Group_title;
+	* @generated
+	*/
+	public static String ComplexEvents4Group_title;
 
 	/**
-	 * @generated
-	 */
-	public static String PatternOperators5Group_title;
+	* @generated
+	*/
+	public static String PatternTimers5Group_title;
 
 	/**
-	 * @generated
-	 */
-	public static String LogicalOperators6Group_title;
+	* @generated
+	*/
+	public static String PatternOperators6Group_title;
 
 	/**
-	 * @generated
-	 */
-	public static String ComparisonOperators7Group_title;
+	* @generated
+	*/
+	public static String LogicalOperators7Group_title;
 
 	/**
-	 * @generated
-	 */
-	public static String ArithmeticOperators8Group_title;
+	* @generated
+	*/
+	public static String ComparisonOperators8Group_title;
 
 	/**
-	 * @generated
-	 */
-	public static String AggregationOperators9Group_title;
+	* @generated
+	*/
+	public static String ArithmeticOperators9Group_title;
 
 	/**
-	 * @generated
-	 */
-	public static String DataWindows10Group_title;
+	* @generated
+	*/
+	public static String AggregationOperators10Group_title;
 
 	/**
-	 * @generated
-	 */
-	public static String Actions11Group_title;
+	* @generated
+	*/
+	public static String DataWindows11Group_title;
+
+	/**
+	* @generated
+	*/
+	public static String Actions12Group_title;
 
 	/**
 	 * @generated
@@ -512,6 +517,46 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String EventProperty2CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String SmartContract1CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String SmartContract1CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String ContractFunction2CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String ContractFunction2CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String InputParameter3CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String InputParameter3CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String OutputParameter4CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String OutputParameter4CreationTool_desc;
 
 	/**
 	 * @generated

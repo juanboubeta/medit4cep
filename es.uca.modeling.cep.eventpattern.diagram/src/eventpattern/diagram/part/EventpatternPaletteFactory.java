@@ -61,15 +61,16 @@ public class EventpatternPaletteFactory {
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createDefault1Group());
 		paletteRoot.add(createSimpleEvents2Group());
-		paletteRoot.add(createComplexEvents3Group());
-		paletteRoot.add(createPatternTimers4Group());
-		paletteRoot.add(createPatternOperators5Group());
-		paletteRoot.add(createLogicalOperators6Group());
-		paletteRoot.add(createComparisonOperators7Group());
-		paletteRoot.add(createArithmeticOperators8Group());
-		paletteRoot.add(createAggregationOperators9Group());
-		paletteRoot.add(createDataWindows10Group());
-		paletteRoot.add(createActions11Group());
+		paletteRoot.add(createSmartContracts3Group());
+		paletteRoot.add(createComplexEvents4Group());
+		paletteRoot.add(createPatternTimers5Group());
+		paletteRoot.add(createPatternOperators6Group());
+		paletteRoot.add(createLogicalOperators7Group());
+		paletteRoot.add(createComparisonOperators8Group());
+		paletteRoot.add(createArithmeticOperators9Group());
+		paletteRoot.add(createAggregationOperators10Group());
+		paletteRoot.add(createDataWindows11Group());
+		paletteRoot.add(createActions12Group());
 	}
 
 	/**
@@ -107,6 +108,121 @@ public class EventpatternPaletteFactory {
 		// Added
 		addSimpleEventTools(paletteContainer);
 
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Pattern Timers" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createPatternTimers5Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.PatternTimers5Group_title);
+		paletteContainer.setId("createPatternTimers5Group"); //$NON-NLS-1$
+		paletteContainer.add(createTimeInterval1CreationTool());
+		paletteContainer.add(createTimeSchedule2CreationTool());
+		paletteContainer.add(createWithinTimer3CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Pattern Operators" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createPatternOperators6Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.PatternOperators6Group_title);
+		paletteContainer.setId("createPatternOperators6Group"); //$NON-NLS-1$
+		paletteContainer.add(createEvery1CreationTool());
+		paletteContainer.add(createEveryDistinct2CreationTool());
+		paletteContainer.add(createFollowedBy3CreationTool());
+		paletteContainer.add(createRange4CreationTool());
+		paletteContainer.add(createRepeat5CreationTool());
+		paletteContainer.add(createUntil6CreationTool());
+		paletteContainer.add(createWhile7CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Logical Operators" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createLogicalOperators7Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.LogicalOperators7Group_title);
+		paletteContainer.setId("createLogicalOperators7Group"); //$NON-NLS-1$
+		paletteContainer.add(createAnd1CreationTool());
+		paletteContainer.add(createNot2CreationTool());
+		paletteContainer.add(createOr3CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Comparison Operators" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createComparisonOperators8Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComparisonOperators8Group_title);
+		paletteContainer.setId("createComparisonOperators8Group"); //$NON-NLS-1$
+		paletteContainer.add(createEqual1CreationTool());
+		paletteContainer.add(createGreaterEqual2CreationTool());
+		paletteContainer.add(createGreaterThan3CreationTool());
+		paletteContainer.add(createLessEqual4CreationTool());
+		paletteContainer.add(createLessThan5CreationTool());
+		paletteContainer.add(createNotEqual6CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Arithmetic Operators" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createArithmeticOperators9Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ArithmeticOperators9Group_title);
+		paletteContainer.setId("createArithmeticOperators9Group"); //$NON-NLS-1$
+		paletteContainer.add(createAddition1CreationTool());
+		paletteContainer.add(createDivision2CreationTool());
+		paletteContainer.add(createModulus3CreationTool());
+		paletteContainer.add(createMultiplication4CreationTool());
+		paletteContainer.add(createSubtraction5CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Aggregation Operators" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createAggregationOperators10Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.AggregationOperators10Group_title);
+		paletteContainer.setId("createAggregationOperators10Group"); //$NON-NLS-1$
+		paletteContainer.add(createAvg1CreationTool());
+		paletteContainer.add(createCount2CreationTool());
+		paletteContainer.add(createMax3CreationTool());
+		paletteContainer.add(createMin4CreationTool());
+		paletteContainer.add(createSum5CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Data Windows" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createDataWindows11Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.DataWindows11Group_title);
+		paletteContainer.setId("createDataWindows11Group"); //$NON-NLS-1$
+		paletteContainer.add(createBatchingEventInterval1CreationTool());
+		paletteContainer.add(createBatchingTimeInterval2CreationTool());
+		paletteContainer.add(createSlidingEventInterval3CreationTool());
+		paletteContainer.add(createSlidingTimeInterval4CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Actions" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createActions12Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Actions12Group_title);
+		paletteContainer.setId("createActions12Group"); //$NON-NLS-1$
+		paletteContainer.add(createEmail1CreationTool());
+		paletteContainer.add(createTwitter2CreationTool());
 		return paletteContainer;
 	}
 
@@ -191,18 +307,17 @@ public class EventpatternPaletteFactory {
 	 * @generated NOT
 	 */
 	/*
-	private PaletteContainer createComplexEvents3Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				Messages.ComplexEvents3Group_title);
-		paletteContainer.setId("createComplexEvents3Group"); //$NON-NLS-1$
+	private PaletteContainer createComplexEvents4Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComplexEvents4Group_title);
+		paletteContainer.setId("createComplexEvents4Group"); //$NON-NLS-1$
 		paletteContainer.add(createNewComplexEvent1CreationTool());
 		paletteContainer.add(createNewComplexEventProperty2CreationTool());
 		return paletteContainer;
-	}
-	 */
-	private PaletteContainer createComplexEvents3Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComplexEvents3Group_title);
-		paletteContainer.setId("createComplexEvents3Group"); //$NON-NLS-1$
+	}*/
+		
+	private PaletteContainer createComplexEvents4Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComplexEvents4Group_title);
+		paletteContainer.setId("createComplexEvents4Group"); //$NON-NLS-1$
 		paletteContainer.add(createNewComplexEvent1CreationTool());
 		paletteContainer.add(createNewComplexEventProperty2CreationTool());
 
@@ -291,120 +406,106 @@ public class EventpatternPaletteFactory {
 
 		return entry;
 	}
-
+	
 	/**
-	 * Creates "Pattern Timers" palette tool group
-	 * @generated
+	 * Creates "Smart Contracts" palette tool group
+	 * @generated NOT
 	 */
-	private PaletteContainer createPatternTimers4Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.PatternTimers4Group_title);
-		paletteContainer.setId("createPatternTimers4Group"); //$NON-NLS-1$
-		paletteContainer.add(createTimeInterval1CreationTool());
-		paletteContainer.add(createTimeSchedule2CreationTool());
-		paletteContainer.add(createWithinTimer3CreationTool());
+	/*
+	private PaletteContainer createSmartContracts3Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.SmartContracts3Group_title);
+		paletteContainer.setId("createSmartContracts3Group"); //$NON-NLS-1$
+		paletteContainer.add(createSmartContract1CreationTool());
+		paletteContainer.add(createContractFunction2CreationTool());
+		paletteContainer.add(createInputParameter3CreationTool());
+		paletteContainer.add(createOutputParameter4CreationTool());
+		return paletteContainer;
+	}
+	 */
+	private PaletteContainer createSmartContracts3Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.SmartContracts3Group_title);
+		paletteContainer.setId("SmartContracts3Group"); //$NON-NLS-1$
+
+		// Added
+		addSmartContractTools(paletteContainer);
+
 		return paletteContainer;
 	}
 
-	/**
-	 * Creates "Pattern Operators" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createPatternOperators5Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.PatternOperators5Group_title);
-		paletteContainer.setId("createPatternOperators5Group"); //$NON-NLS-1$
-		paletteContainer.add(createEvery1CreationTool());
-		paletteContainer.add(createEveryDistinct2CreationTool());
-		paletteContainer.add(createFollowedBy3CreationTool());
-		paletteContainer.add(createRange4CreationTool());
-		paletteContainer.add(createRepeat5CreationTool());
-		paletteContainer.add(createUntil6CreationTool());
-		paletteContainer.add(createWhile7CreationTool());
-		return paletteContainer;
+	protected void addSmartContractTools(PaletteContainer paletteContainer) {
+
+		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+		IProject smartcontractProject = myWorkspaceRoot.getProject("smartcontract");
+
+		try {
+
+			if (smartcontractProject.exists()) {
+
+				if (!smartcontractProject.isOpen()) {
+					smartcontractProject.open(null);
+				}
+
+				String smartcontractName = EventPatternsStatus.getDomainName();
+
+				if (smartcontractProject.getFile(smartcontractName + ".smartc") != null) {
+
+					URI modelUri = URI.createPlatformResourceURI(
+							smartcontractProject.getFile(smartcontractName + ".smartc").getFullPath().toString(), false);
+
+					ResourceSet resourceSet = new ResourceSetImpl();
+					Resource modelResource = resourceSet.getResource(modelUri, true);
+					String toolName = null;
+					String imagePath = null;
+
+					for (TreeIterator iter = EcoreUtil.getAllContents(modelResource, true); iter.hasNext();) {
+						EObject eObject = (EObject) iter.next();
+
+						if (eObject.getClass().getSimpleName().equals("SmartContractImpl")) {
+
+							toolName = ((smartcontract.SmartContract) eObject).getTypeName().toString();
+							imagePath = ((smartcontract.SmartContract) eObject).getImagePath();
+							paletteContainer.add(createCustomisedSmartContractCreationTool(toolName, imagePath));
+
+							iter.prune(); // Causes the following next() call to skip over any children of the current node								
+
+						}
+					}
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	/**
-	 * Creates "Logical Operators" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createLogicalOperators6Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.LogicalOperators6Group_title);
-		paletteContainer.setId("createLogicalOperators6Group"); //$NON-NLS-1$
-		paletteContainer.add(createAnd1CreationTool());
-		paletteContainer.add(createNot2CreationTool());
-		paletteContainer.add(createOr3CreationTool());
-		return paletteContainer;
-	}
+	// Added
+	private ToolEntry createCustomisedSmartContractCreationTool(String toolName, String imagePath) {
 
-	/**
-	 * Creates "Comparison Operators" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createComparisonOperators7Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ComparisonOperators7Group_title);
-		paletteContainer.setId("createComparisonOperators7Group"); //$NON-NLS-1$
-		paletteContainer.add(createEqual1CreationTool());
-		paletteContainer.add(createGreaterEqual2CreationTool());
-		paletteContainer.add(createGreaterThan3CreationTool());
-		paletteContainer.add(createLessEqual4CreationTool());
-		paletteContainer.add(createLessThan5CreationTool());
-		paletteContainer.add(createNotEqual6CreationTool());
-		return paletteContainer;
-	}
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(EventpatternElementTypes.Event_2027);
+		types.add(EventpatternElementTypes.Event_3024);
+		types.add(EventpatternElementTypes.Event_3053);
 
-	/**
-	 * Creates "Arithmetic Operators" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createArithmeticOperators8Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.ArithmeticOperators8Group_title);
-		paletteContainer.setId("createArithmeticOperators8Group"); //$NON-NLS-1$
-		paletteContainer.add(createAddition1CreationTool());
-		paletteContainer.add(createDivision2CreationTool());
-		paletteContainer.add(createModulus3CreationTool());
-		paletteContainer.add(createMultiplication4CreationTool());
-		paletteContainer.add(createSubtraction5CreationTool());
-		return paletteContainer;
-	}
+		NodeToolEntry entry = new NodeToolEntry(toolName, "Add " + toolName, types);
+		entry.setId("create" + toolName + "CreationTool");
 
-	/**
-	 * Creates "Aggregation Operators" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createAggregationOperators9Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.AggregationOperators9Group_title);
-		paletteContainer.setId("createAggregationOperators9Group"); //$NON-NLS-1$
-		paletteContainer.add(createAvg1CreationTool());
-		paletteContainer.add(createCount2CreationTool());
-		paletteContainer.add(createMax3CreationTool());
-		paletteContainer.add(createMin4CreationTool());
-		paletteContainer.add(createSum5CreationTool());
-		return paletteContainer;
-	}
+		if (imagePath == null || imagePath.equals("") || !(new File(imagePath).exists())) {
+			entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.Event_2027));
+		} else {
+			try {
+				File file = new File(imagePath);
+				URL url = file.toURI().toURL();
+				Image scaledImage = new Image(Display.getDefault(),
+						ImageDescriptor.createFromURL(url).getImageData().scaledTo(20, 20));
 
-	/**
-	 * Creates "Data Windows" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createDataWindows10Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.DataWindows10Group_title);
-		paletteContainer.setId("createDataWindows10Group"); //$NON-NLS-1$
-		paletteContainer.add(createBatchingEventInterval1CreationTool());
-		paletteContainer.add(createBatchingTimeInterval2CreationTool());
-		paletteContainer.add(createSlidingEventInterval3CreationTool());
-		paletteContainer.add(createSlidingTimeInterval4CreationTool());
-		return paletteContainer;
-	}
+				entry.setSmallIcon(ImageDescriptor.createFromURL(url).createFromImage(scaledImage));
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+		}
 
-	/**
-	 * Creates "Actions" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createActions11Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Actions11Group_title);
-		paletteContainer.setId("createActions11Group"); //$NON-NLS-1$
-		paletteContainer.add(createEmail1CreationTool());
-		paletteContainer.add(createTwitter2CreationTool());
-		return paletteContainer;
+		entry.setLargeIcon(entry.getSmallIcon());
+
+		return entry;
 	}
 
 	/**
@@ -716,6 +817,50 @@ public class EventpatternPaletteFactory {
 		entry.setId("createEventProperty2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.EventProperty_3001));
 		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createSmartContract1CreationTool() {
+		ToolEntry entry = new ToolEntry(Messages.SmartContract1CreationTool_title,
+				Messages.SmartContract1CreationTool_desc, null, null) {
+		};
+		entry.setId("createSmartContract1CreationTool"); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createContractFunction2CreationTool() {
+		ToolEntry entry = new ToolEntry(Messages.ContractFunction2CreationTool_title,
+				Messages.ContractFunction2CreationTool_desc, null, null) {
+		};
+		entry.setId("createContractFunction2CreationTool"); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createInputParameter3CreationTool() {
+		ToolEntry entry = new ToolEntry(Messages.InputParameter3CreationTool_title,
+				Messages.InputParameter3CreationTool_desc, null, null) {
+		};
+		entry.setId("createInputParameter3CreationTool"); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createOutputParameter4CreationTool() {
+		ToolEntry entry = new ToolEntry(Messages.OutputParameter4CreationTool_title,
+				Messages.OutputParameter4CreationTool_desc, null, null) {
+		};
+		entry.setId("createOutputParameter4CreationTool"); //$NON-NLS-1$
 		return entry;
 	}
 
