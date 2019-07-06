@@ -85,13 +85,13 @@ public class SmartContractEditHelper extends EventpatternBaseEditHelper {
 							// return EClass for "smartcontract.ContractFunction"
 							return EventpatternPackage.Literals.CONTRACT_FUNCTION;
 						}
-						
+
 						if (e.getInstanceClassName().equals("smartcontract.InputParameter")) {
 
 							// return EClass for "smartcontract.InputParameter"
 							return EventpatternPackage.Literals.INPUT_PARAMETER;
 						}
-						
+
 						if (e.getInstanceClassName().equals("smartcontract.OutputParameter")) {
 
 							// return EClass for "smartcontract.OutputParameter"
@@ -114,7 +114,8 @@ public class SmartContractEditHelper extends EventpatternBaseEditHelper {
 						// EEnum must be copied manually
 						if (eAttribute.getEType() instanceof EEnum) {
 
-							if (eAttribute.getEType().getInstanceClassName().equals("smartcontract.PropertyTypeValue")) {
+							if (eAttribute.getEType().getInstanceClassName()
+									.equals("smartcontract.PropertyTypeValue")) {
 
 								Enumerator value = (Enumerator) eObject.eGet(eAttribute);
 
@@ -155,14 +156,14 @@ public class SmartContractEditHelper extends EventpatternBaseEditHelper {
 
 							if (smartcontractProject.getFile(smartcontractName + ".smartc") != null) {
 
-								URI domainModelUri = URI.createPlatformResourceURI(
-										smartcontractProject.getFile(smartcontractName + ".smartc").getFullPath().toString(), false);
+								URI domainModelUri = URI.createPlatformResourceURI(smartcontractProject
+										.getFile(smartcontractName + ".smartc").getFullPath().toString(), false);
 
 								Resource smartcontractModelResource = resourceSet.getResource(domainModelUri, true);
 
 								// Find the equivalent event to the event dropped onto the canvas in the "domain" model					         						    
-								for (Iterator iter = EcoreUtil.getAllContents(smartcontractModelResource.getContents().get(0),
-										true); iter.hasNext();) {
+								for (Iterator iter = EcoreUtil.getAllContents(
+										smartcontractModelResource.getContents().get(0), true); iter.hasNext();) {
 
 									EObject eObject = (EObject) iter.next();
 

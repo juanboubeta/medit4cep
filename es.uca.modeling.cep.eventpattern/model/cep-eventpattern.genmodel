@@ -172,13 +172,13 @@
     </genClasses>
     <genClasses ecoreClass="cep-eventpattern.ecore#//SmartContract">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/typeName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/imagePath"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/imagePath"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//SmartContract/contractfunctions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//SmartContract/SmartContractProperties"/>
     </genClasses>
     <genClasses ecoreClass="cep-eventpattern.ecore#//ContractFunction">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//ContractFunction/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//ContractFunction/imagePath"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//ContractFunction/imagePath"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//ContractFunction/referencedSmartContract"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//ContractFunction/InputParametersFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//ContractFunction/OutputParametersFunction"/>

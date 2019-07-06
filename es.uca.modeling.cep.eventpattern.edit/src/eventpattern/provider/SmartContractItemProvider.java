@@ -90,7 +90,7 @@ public class SmartContractItemProvider extends UnaryOperatorItemProvider {
 				 getString("_UI_SmartContract_imagePath_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SmartContract_imagePath_feature", "_UI_SmartContract_type"),
 				 EventpatternPackage.Literals.SMART_CONTRACT__IMAGE_PATH,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

@@ -105,7 +105,7 @@ public class ContractFunctionItemProvider
 				 getString("_UI_ContractFunction_imagePath_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContractFunction_imagePath_feature", "_UI_ContractFunction_type"),
 				 EventpatternPackage.Literals.CONTRACT_FUNCTION__IMAGE_PATH,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

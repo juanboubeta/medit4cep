@@ -488,7 +488,8 @@ public class EventpatternPaletteFactory {
 		entry.setId("create" + toolName + "CreationTool");
 
 		if (imagePath == null || imagePath.equals("") || !(new File(imagePath).exists())) {
-			entry.setSmallIcon(EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.SmartContract_2041));
+			entry.setSmallIcon(
+					EventpatternElementTypes.getImageDescriptor(EventpatternElementTypes.SmartContract_2041));
 		} else {
 			try {
 				File file = new File(imagePath);
@@ -1259,9 +1260,9 @@ public class EventpatternPaletteFactory {
 				tool = new CustomisedEventTypeCreationTool(elementTypes, this.getLabel());
 
 			} else if (elementTypes.contains(EventpatternElementTypes.SmartContract_2041)) {
-				
+
 				tool = new CustomisedSmartContractTypeCreationTool(elementTypes, this.getLabel());
-			
+
 			} else if (elementTypes.contains(EventpatternElementTypes.ComplexEvent_2038)
 					&& !this.getLabel().equals("New Complex Event")) { // except to "New Complex Event" component
 				ArrayList<IElementType> types = new ArrayList<IElementType>(3);
@@ -1338,7 +1339,7 @@ public class EventpatternPaletteFactory {
 				return request;
 			}
 		}
-		
+
 		/* Add class
 		 * 
 		 * @see eventpattern.diagram.edit.helpers.SmartContractEditHelper
