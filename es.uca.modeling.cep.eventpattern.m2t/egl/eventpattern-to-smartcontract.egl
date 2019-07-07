@@ -1,0 +1,17 @@
+ESTO ES UNA PRUEBA
+
+[%
+var smartcontracts : Sequence = SmartContract.allInstances();
+	
+	for (sc : SmartContract in smartcontracts) {	
+		if (sc.typeName == "contrato1") {%]
+generacion de codigo para contrato 1              
+	    [%} 
+	    if (sc.typeName == "contrato 2") {%]
+generacion de codigo para contrato 2              
+	    [%} 
+	    if (sc.typeName == "contrato 3") {%]
+generacion de codigo para contrato 3              
+	    [%}
+	}  
+%]

@@ -185,7 +185,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="cep-eventpattern.ecore#//Parameter">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Parameter/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Parameter/type"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Parameter/type"/>
     </genClasses>
     <genClasses ecoreClass="cep-eventpattern.ecore#//InputParameter">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//InputParameter/InputReferencedFunction"/>

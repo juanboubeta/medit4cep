@@ -32,6 +32,7 @@ class CEPEventPattern {
 	source.constraint="self <> oppositeEnd 
 	and ( 
 	   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))
+	   or (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(SmartContract))
 	   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or 
 	        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) 
 	        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) 

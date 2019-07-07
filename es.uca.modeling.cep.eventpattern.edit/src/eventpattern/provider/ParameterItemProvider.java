@@ -102,7 +102,7 @@ public class ParameterItemProvider
 				 getString("_UI_Parameter_type_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Parameter_type_feature", "_UI_Parameter_type"),
 				 EventpatternPackage.Literals.PARAMETER__TYPE,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

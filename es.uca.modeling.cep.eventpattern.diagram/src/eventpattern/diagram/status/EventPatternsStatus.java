@@ -22,6 +22,7 @@ public class EventPatternsStatus {
 	private static HashMap<String, Boolean> complexEventChanges = new HashMap<String, Boolean>();
 	private static String generatedEventPatternPath;
 	private static String generatedActionPath;
+	private static String generatedSmartContractPath;
 	private static String eventTypePath;
 	
 	public static String getDomainName() {
@@ -70,6 +71,14 @@ public class EventPatternsStatus {
 
 	public static void setEventTypePath(String path) {
 		eventTypePath = path;
+	}
+	
+	public static String getGeneratedSmartContractPath() {
+		return generatedSmartContractPath;
+	}
+
+	public static void setGeneratedSmartContractPath(String path) {
+		generatedSmartContractPath = path;
 	}
 	
 }
