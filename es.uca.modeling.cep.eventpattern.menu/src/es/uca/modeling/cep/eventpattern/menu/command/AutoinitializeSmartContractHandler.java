@@ -149,7 +149,6 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 							while (iterator.hasNext()) {
 								
 								smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
-								smartcontract.InputParameter InputParameter = factory.createInputParameter();
 								smartcontract.OutputParameter OutputParameter = factory.createOutputParameter();
 
 								aux = iterator.next();
@@ -162,6 +161,7 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 								inputsParameter = (JSONArray) aux.get("inputs");
 
 								for (int j = 0; j < inputsParameter.size(); j++) {
+									smartcontract.InputParameter InputParameter = factory.createInputParameter();
 									inputParameter = (JSONObject) inputsParameter.get(j);
 									String InputParameterName = (String) inputParameter.get("name");
 									//smartcontract.PropertyTypeValue InputParameterType = (smartcontract.PropertyTypeValue) inputParameter

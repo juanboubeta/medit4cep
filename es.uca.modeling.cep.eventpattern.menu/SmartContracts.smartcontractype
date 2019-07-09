@@ -33,7 +33,7 @@
 		"inputs":[{"name":"_blindedBid","type":"bytes32"}],
 		"output":{"name":"output1","type":"uint"}},
 		{"name":"reveal",
-		"inputs":[{"name":"_values","type":""},{"name":"_blindedBid","type":"bytes32"},{"name":"_blindedBid","type":"bytes32"}],
+		"inputs":[{"name":"_values","type":""},{"name":"_blinded","type":"bytes32"},{"name":"_blindedBid","type":"bytes32"}],
 		"output":{"name":"output2","type":"uint"}},
 		{"name":"funcion3",
 		"inputs":[],
