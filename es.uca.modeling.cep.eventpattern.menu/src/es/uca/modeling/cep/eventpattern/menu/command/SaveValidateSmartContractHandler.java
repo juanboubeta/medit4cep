@@ -86,7 +86,7 @@ public class SaveValidateSmartContractHandler extends AbstractHandler {
 		}
 		
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-		String name = EventPatternsStatus.getDomainName();
+		String name = EventPatternsStatus.getSmartcontractsName();
 		IProject patternProject = myWorkspaceRoot.getProject(name + "_patterns");
 		
 		// If the domain has been modified, then the simple event tools of every event pattern's palette will be updated.

@@ -16,14 +16,14 @@
 	"name":"Purchase",
 	"functions":[
 		{"name":"abort",
-		"inputs":[{"name":"","type":""}],
+		"inputs":[],
 		"output":{"name":"votes","type":"uint"}},
 		{"name":"confirmPurchase",
-		"inputs":[{"name":"","type":""}],
+		"inputs":[],
 		"output":{"name":"votes","type":"uint"}},
 		{"name":"confirmReceived",
-		"inputs":[{"name":"","type":""}],
-		"output":{"name":"votes","type":"uint"}}
+		"inputs":[],
+		"output":{}}
 	]
 },
 {
@@ -31,12 +31,12 @@
 	"functions":[
 		{"name":"bid",
 		"inputs":[{"name":"_blindedBid","type":"bytes32"}],
-		"output":{"name":"votes","type":"uint"}},
+		"output":{"name":"output1","type":"uint"}},
 		{"name":"reveal",
 		"inputs":[{"name":"_values","type":""},{"name":"_blindedBid","type":"bytes32"},{"name":"_blindedBid","type":"bytes32"}],
-		"output":{"name":"votes","type":"uint"}},
+		"output":{"name":"output2","type":"uint"}},
 		{"name":"funcion3",
-		"inputs":[{"name":"","type":""}],
+		"inputs":[],
 		"output":{"name":"votes","type":"uint"}}
 	]
 }]

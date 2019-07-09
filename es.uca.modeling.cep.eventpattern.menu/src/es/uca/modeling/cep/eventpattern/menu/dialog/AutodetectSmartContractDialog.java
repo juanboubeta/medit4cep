@@ -39,8 +39,8 @@ public class AutodetectSmartContractDialog extends TitleAreaDialog {
 	  public void create() {
 		  
 		  super.create();
-		  setTitle("Auto-detect Smart Contracts");
-		  setMessage("Please insert the information of the Smart Contracts to be auto-detected:", 
+		  setTitle("Auto-initialize Smart Contracts");
+		  setMessage("Please insert the information of the Smart Contracts to be auto-initialized:", 
 				  IMessageProvider.INFORMATION);
 	  }
 	

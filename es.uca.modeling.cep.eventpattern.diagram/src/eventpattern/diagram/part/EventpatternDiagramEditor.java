@@ -223,7 +223,7 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 
 		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
 
-		clearPaletteSimpleEvent(paletteRoot);
+		clearPaletteSmartContract(paletteRoot);
 
 		List<Object> containers = new ArrayList<Object>();
 		containers.addAll(paletteRoot.getChildren());
@@ -232,7 +232,7 @@ public class EventpatternDiagramEditor extends DiagramDocumentEditor implements 
 			PaletteContainer paletteContainer = (PaletteContainer) container;
 
 			if (paletteContainer.getLabel().equals("Smart Contracts")) {
-				paletteFactory.addSimpleEventTools(paletteContainer);
+				paletteFactory.addSmartContractTools(paletteContainer);
 			}
 		}
 	}

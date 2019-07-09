@@ -85,7 +85,7 @@ public class ImportSmartContractHandler extends AbstractHandler {
 					
 					smartcontractFile = dialog.getFileName();
 					String name = smartcontractFile.replace("_smartc.zip", "");
-					EventPatternsStatus.setDomainName(name);
+					EventPatternsStatus.setSmartcontractsName(name);
 					smartcontractPath = dialog.getFilterPath() + "/" + smartcontractFile;					
 					smartcontractProject.create(null);
 					

@@ -17,6 +17,7 @@ public class EventPatternsStatus {
 	
 	// domainName (a static field) is shared among all the instances of the class
 	private static String domainName; 
+	private static String smartcontractsName; 
 	private static String activePatternName; 
 	private static HashMap<String, Boolean> patternValidations = new HashMap<String, Boolean>();
 	private static HashMap<String, Boolean> complexEventChanges = new HashMap<String, Boolean>();
@@ -32,6 +33,15 @@ public class EventPatternsStatus {
 	public static void setDomainName(String d) {
 		domainName = d; 
 	}
+	
+	public static String getSmartcontractsName() {
+		return smartcontractsName; 
+	}
+	
+	public static void setSmartcontractsName(String sc) {
+		smartcontractsName = sc; 
+	}
+	
 	
 	public static String getActivePatternName() {
 		return activePatternName; 

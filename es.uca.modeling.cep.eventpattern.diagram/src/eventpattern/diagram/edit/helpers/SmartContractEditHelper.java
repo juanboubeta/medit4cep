@@ -65,7 +65,7 @@ public class SmartContractEditHelper extends EventpatternBaseEditHelper {
 				Object o = req.getElementToConfigure();
 				Map params = req.getParameters();
 
-				String smartcontractName = eventpattern.diagram.status.EventPatternsStatus.getDomainName();
+				String smartcontractName = eventpattern.diagram.status.EventPatternsStatus.getSmartcontractsName();
 				IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 
 				EcoreUtil.Copier smartContractTocustomSmartcontractCopier = new EcoreUtil.Copier() {

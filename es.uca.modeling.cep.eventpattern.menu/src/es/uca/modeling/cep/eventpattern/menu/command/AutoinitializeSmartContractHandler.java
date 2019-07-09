@@ -71,7 +71,6 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 
 		IProject smartcontractProject = myWorkspaceRoot.getProject("smartcontract");
 
-		System.out.println("AQUI ESTOY");
 		try {
 
 			if (!smartcontractProject.exists()) {
@@ -94,13 +93,15 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 				}
 
 				// Open the file .smartcontractype that contains default SmartContracts.
-
-				Object array = parser.parse(new FileReader("SmartContracts.smartcontractype"));
+				
+				final String smartcontractype = "D:\\UNIVERSIDAD\\TFG\\medit4cep\\es.uca.modeling.cep.eventpattern.menu\\SmartContracts.smartcontractype";
+				Object array = parser.parse(new FileReader(smartcontractype));
 				JSONArray jsonArray = (JSONArray) array;
 
 				String name = dialog.getSmartContractsName();
 				String description = dialog.getSmartContractsDescription();
 				smartcontractProject.create(null);
+				EventPatternsStatus.setSmartcontractsName(name);
 
 				// Open if necessary
 				if (!smartcontractProject.isOpen()) {
@@ -125,22 +126,20 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 						smartcontracts.setCreationDate(new Date());
 						smartcontracts.setDescription(description);
 
-						// Get the default factory singleton
-						SmartcontractFactory factory = SmartcontractFactory.eINSTANCE;
-
-						smartcontract.SmartContract SmartContract = factory.createSmartContract();
-						smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
-						smartcontract.InputParameter InputParameter = factory.createInputParameter();
-						smartcontract.OutputParameter OutputParameter = factory.createOutputParameter();
+						
 
 						for (int i = 0; i < jsonArray.size(); i++) {
+							
+							// Get the default factory singleton
+							SmartcontractFactory factory = SmartcontractFactory.eINSTANCE;
+
+							smartcontract.SmartContract SmartContract = factory.createSmartContract();							
+							
 							contractsArray = (JSONObject) jsonArray.get(i);
 							functionsArray = (JSONArray) contractsArray.get("functions");
-							// JSONArray inputsArray = (JSONArray) inputsArray.get("inputs");
 
 							String SmartContractName = (String) contractsArray.get("name");
-							System.out.println("Contrato " + (i + 1) + " : " + SmartContractName);
-
+							
 							// put the name of the smart contract and add into the SmartContracts List
 							SmartContract.setTypeName(SmartContractName);
 							smartcontracts.getSmartcontracts().add(SmartContract);
@@ -148,10 +147,13 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 							Iterator<JSONObject> iterator = functionsArray.iterator();
 
 							while (iterator.hasNext()) {
+								
+								smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
+								smartcontract.InputParameter InputParameter = factory.createInputParameter();
+								smartcontract.OutputParameter OutputParameter = factory.createOutputParameter();
 
 								aux = iterator.next();
 								String ContractFunctionName = (String) aux.get("name");
-								System.out.println("Metodo : " + aux.get("name"));
 
 								// put the name of the contract function and add into the SmartContract List
 								ContractFunction.setName(ContractFunctionName);
@@ -162,41 +164,30 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 								for (int j = 0; j < inputsParameter.size(); j++) {
 									inputParameter = (JSONObject) inputsParameter.get(j);
 									String InputParameterName = (String) inputParameter.get("name");
-									smartcontract.PropertyTypeValue InputParameterType = (smartcontract.PropertyTypeValue) inputParameter
-											.get("type");
-									System.out.println("Input Parameter - " + inputParameter.get("name") + " : "
-											+ inputParameter.get("type"));
+									//smartcontract.PropertyTypeValue InputParameterType = (smartcontract.PropertyTypeValue) inputParameter
+									//		.get("type");
 
 									// put the name and type of the input parameter and add into the
 									// ContractFunction List
 									InputParameter.setName(InputParameterName);
-									InputParameter.setType(InputParameterType);
-									ContractFunction.getInputParametersFunction().add(InputParameter);
-
+									//InputParameter.setType(InputParameterType);
+									ContractFunction.getInputParametersFunction().add(InputParameter);											
 								}
 
 								outputParameter = (JSONObject) aux.get("output");
 								String OutputParameterName = (String) outputParameter.get("name");
-								smartcontract.PropertyTypeValue OutputParameterType = (smartcontract.PropertyTypeValue) outputParameter
-										.get("type");
-								System.out.println("Output Parameter - " + outputParameter.get("name") + " : "
-										+ outputParameter.get("type"));
+								//smartcontract.PropertyTypeValue OutputParameterType = (smartcontract.PropertyTypeValue) outputParameter
+								//		.get("type");
 
 								// put the name and type of the input parameter and add into the
 								// ContractFunction List
 								OutputParameter.setName(OutputParameterName);
-								OutputParameter.setType(OutputParameterType);
-								ContractFunction.setOutputParametersFunction(OutputParameter);
+								//OutputParameter.setType(OutputParameterType);
+								ContractFunction.setOutputParametersFunction(OutputParameter);	
 							} // Fin while
 
 						} // Fin for
 
-						// ContractFunction = (ContractFunction) getContractFunction();
-						// SmartContract.getSmartContractProperties().add(ContractFunction);
-						// InputParameter = (InputParameter) getInputParameter();
-						// OutputParameter = (OutputParameter) getOutputParameter();
-						// ContractFunction.getInputParametersFunction().add(InputParameter);
-						// ContractFunction.getOutputParametersFunction().add(OutputParameter);
 
 						modelResource.save(null);
 

@@ -62,7 +62,7 @@ public class NewSmartContractHandler extends AbstractHandler {
 					
 					String name = dialog.getName();
 					String description = dialog.getDescription();
-					EventPatternsStatus.setDomainName(name);				
+					EventPatternsStatus.setSmartcontractsName(name);				
 					smartcontractsProject.create(null);
 					
 					// Open if necessary

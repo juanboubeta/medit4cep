@@ -446,7 +446,7 @@ public class EventpatternPaletteFactory {
 					smartcontractProject.open(null);
 				}
 
-				String smartcontractName = EventPatternsStatus.getDomainName();
+				String smartcontractName = EventPatternsStatus.getSmartcontractsName();
 
 				if (smartcontractProject.getFile(smartcontractName + ".smartc") != null) {
 
