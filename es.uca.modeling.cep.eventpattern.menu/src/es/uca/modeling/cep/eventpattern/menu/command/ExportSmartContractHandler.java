@@ -251,15 +251,14 @@ public class ExportSmartContractHandler extends AbstractHandler {
 		
 		
 	    // 8º Replace the value of name attribute from diagram file by the value of name 
-		// attribute (name.smartc_diagram). Also, replace absolute paths of href by 
-		// relative ones (name.smartc).
+		// attribute (name.smartc_diagram). 
 		// A new file (.smartc_diagram) containing this modified information is created in the temporal directory 
 					
 		String diagramNewText = "";
 		diagramNewText = diagramOriginalText.replaceFirst("name=\".*.smartc_diagram", 
 				"name=\"" + smartcontractName + ".smartc_diagram");
 				
-		diagramNewText = diagramNewText.replaceAll("href=\".*.smartc", "href=\"" + smartcontractName + ".smartc");
+		//diagramNewText = diagramNewText.replaceAll("href=\".*.smartc", "href=\"" + smartcontractName + ".smartc");
 
 		File newfile = new File(tempDirPath + smartcontractName + ".smartc_diagram");
 		FileWriter fw;

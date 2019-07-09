@@ -93,7 +93,7 @@ public class ImportSmartContractHandler extends AbstractHandler {
 					if (!smartcontractProject.isOpen()) {
 						smartcontractProject.open(null);
 					}
-				    
+					
 					// Copy files from imported .zip archive to smartContractProject
 					FileInputStream fis = new FileInputStream(smartcontractPath);
 				    ZipInputStream zis = new ZipInputStream(fis);
