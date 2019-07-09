@@ -1,0 +1,257 @@
+package java;
+
+import io.reactivex.Flowable;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.Callable;
+import org.web3j.abi.EventEncoder;
+import org.web3j.abi.FunctionEncoder;
+import org.web3j.abi.TypeReference;
+import org.web3j.abi.datatypes.Address;
+import org.web3j.abi.datatypes.Bool;
+import org.web3j.abi.datatypes.Event;
+import org.web3j.abi.datatypes.Function;
+import org.web3j.abi.datatypes.Type;
+import org.web3j.abi.datatypes.generated.Bytes32;
+import org.web3j.abi.datatypes.generated.Uint256;
+import org.web3j.crypto.Credentials;
+import org.web3j.protocol.Web3j;
+import org.web3j.protocol.core.DefaultBlockParameter;
+import org.web3j.protocol.core.RemoteCall;
+import org.web3j.protocol.core.methods.request.EthFilter;
+import org.web3j.protocol.core.methods.response.Log;
+import org.web3j.protocol.core.methods.response.TransactionReceipt;
+import org.web3j.tuples.generated.Tuple2;
+import org.web3j.tx.Contract;
+import org.web3j.tx.TransactionManager;
+import org.web3j.tx.gas.ContractGasProvider;
+
+public class BlindAuction extends Contract {
+    private static final String BINARY = "608060405234801561001057600080fd5b506040516104b23803806104b28339818101604052606081101561003357600080fd5b5080516020820151604090920151600080546001600160a01b039092166001600160a01b031990921691909117905542600181905501600281905501600355610431806100816000396000f3fe60806040526004361061009c5760003560e01c8063423b217f11610064578063423b217f146101795780634f245ef7146101a057806391f90157146101b5578063957bb1e0146101ca578063a6e66477146101e7578063d57bde79146101fc5761009c565b806301495c1c146100a157806312fa6feb146100f35780632a24f46c1461011c57806338af3eed146101335780633ccfd60b14610164575b600080fd5b3480156100ad57600080fd5b506100da600480360360408110156100c457600080fd5b506001600160a01b038135169060200135610211565b6040805192835260208301919091528051918290030190f35b3480156100ff57600080fd5b5061010861024a565b604080519115158252519081900360200190f35b34801561012857600080fd5b50610131610253565b005b34801561013f57600080fd5b50610148610309565b604080516001600160a01b039092168252519081900360200190f35b34801561017057600080fd5b50610108610318565b34801561018557600080fd5b5061018e61037f565b60408051918252519081900360200190f35b3480156101ac57600080fd5b5061018e610385565b3480156101c157600080fd5b5061014861038b565b610131600480360360208110156101e057600080fd5b503561039a565b3480156101f357600080fd5b5061018e6103f0565b34801561020857600080fd5b5061018e6103f6565b6005602052816000526040600020818154811061022a57fe5b600091825260209091206002909102018054600190910154909250905082565b60045460ff1681565b60035480421161026257600080fd5b60045460ff161561027257600080fd5b600654600754604080516001600160a01b039093168352602083019190915280517fdaec4582d5d9595688c8c98545fdd1c696d41c6aeaeb636737e84ed2f5c00eda9281900390910190a16004805460ff19166001179055600080546040516001600160a01b0390911691303180156108fc02929091818181858888f19350505050158015610305573d6000803e3d6000fd5b5050565b6000546001600160a01b031681565b33600090815260086020526040812054801561037657336000818152600860205260408082208290555183156108fc0291849190818181858888f193505050506103765733600090815260086020526040812091909155905061037c565b60019150505b90565b60025481565b60015481565b6006546001600160a01b031681565b6002548042106103a957600080fd5b503360009081526005602090815260408083208151808301909252938152348183019081528454600181810187559585529290932090516002909202019081559051910155565b60035481565b6007548156fea265627a7a72305820433c1761a3a115dc03a582c8c5864be7458ee4e3e73b263f76761b287986121564736f6c63430005090032";
+
+    public static final String FUNC_BIDS = "bids";
+
+    public static final String FUNC_ENDED = "ended";
+
+    public static final String FUNC_AUCTIONEND = "auctionEnd";
+
+    public static final String FUNC_BENEFICIARY = "beneficiary";
+
+    public static final String FUNC_WITHDRAW = "withdraw";
+
+    public static final String FUNC_BIDDINGEND = "biddingEnd";
+
+    public static final String FUNC_AUCTIONSTART = "auctionStart";
+
+    public static final String FUNC_HIGHESTBIDDER = "highestBidder";
+
+    public static final String FUNC_BID = "bid";
+
+    public static final String FUNC_REVEALEND = "revealEnd";
+
+    public static final String FUNC_HIGHESTBID = "highestBid";
+
+    public static final Event AUCTIONENDED_EVENT = new Event("AuctionEnded", 
+            Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}, new TypeReference<Uint256>() {}));
+    ;
+
+    @Deprecated
+    protected BlindAuction(String contractAddress, Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit) {
+        super(BINARY, contractAddress, web3j, credentials, gasPrice, gasLimit);
+    }
+
+    protected BlindAuction(String contractAddress, Web3j web3j, Credentials credentials, ContractGasProvider contractGasProvider) {
+        super(BINARY, contractAddress, web3j, credentials, contractGasProvider);
+    }
+
+    @Deprecated
+    protected BlindAuction(String contractAddress, Web3j web3j, TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit) {
+        super(BINARY, contractAddress, web3j, transactionManager, gasPrice, gasLimit);
+    }
+
+    protected BlindAuction(String contractAddress, Web3j web3j, TransactionManager transactionManager, ContractGasProvider contractGasProvider) {
+        super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
+    }
+
+    public RemoteCall<Tuple2<byte[], BigInteger>> bids(String param0, BigInteger param1) {
+        final Function function = new Function(FUNC_BIDS, 
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(param0), 
+                new org.web3j.abi.datatypes.generated.Uint256(param1)), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Bytes32>() {}, new TypeReference<Uint256>() {}));
+        return new RemoteCall<Tuple2<byte[], BigInteger>>(
+                new Callable<Tuple2<byte[], BigInteger>>() {
+                    @Override
+                    public Tuple2<byte[], BigInteger> call() throws Exception {
+                        List<Type> results = executeCallMultipleValueReturn(function);
+                        return new Tuple2<byte[], BigInteger>(
+                                (byte[]) results.get(0).getValue(), 
+                                (BigInteger) results.get(1).getValue());
+                    }
+                });
+    }
+
+    public RemoteCall<Boolean> ended() {
+        final Function function = new Function(FUNC_ENDED, 
+                Arrays.<Type>asList(), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
+        return executeRemoteCallSingleValueReturn(function, Boolean.class);
+    }
+
+    public RemoteCall<TransactionReceipt> auctionEnd() {
+        final Function function = new Function(
+                FUNC_AUCTIONEND, 
+                Arrays.<Type>asList(), 
+                Collections.<TypeReference<?>>emptyList());
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<String> beneficiary() {
+        final Function function = new Function(FUNC_BENEFICIARY, 
+                Arrays.<Type>asList(), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
+        return executeRemoteCallSingleValueReturn(function, String.class);
+    }
+
+    public RemoteCall<TransactionReceipt> withdraw() {
+        final Function function = new Function(
+                FUNC_WITHDRAW, 
+                Arrays.<Type>asList(), 
+                Collections.<TypeReference<?>>emptyList());
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<BigInteger> biddingEnd() {
+        final Function function = new Function(FUNC_BIDDINGEND, 
+                Arrays.<Type>asList(), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
+        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
+    }
+
+    public RemoteCall<BigInteger> auctionStart() {
+        final Function function = new Function(FUNC_AUCTIONSTART, 
+                Arrays.<Type>asList(), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
+        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
+    }
+
+    public RemoteCall<String> highestBidder() {
+        final Function function = new Function(FUNC_HIGHESTBIDDER, 
+                Arrays.<Type>asList(), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
+        return executeRemoteCallSingleValueReturn(function, String.class);
+    }
+
+    public RemoteCall<TransactionReceipt> bid(byte[] _blindedBid, BigInteger weiValue) {
+        final Function function = new Function(
+                FUNC_BID, 
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Bytes32(_blindedBid)), 
+                Collections.<TypeReference<?>>emptyList());
+        return executeRemoteCallTransaction(function, weiValue);
+    }
+
+    public RemoteCall<BigInteger> revealEnd() {
+        final Function function = new Function(FUNC_REVEALEND, 
+                Arrays.<Type>asList(), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
+        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
+    }
+
+    public RemoteCall<BigInteger> highestBid() {
+        final Function function = new Function(FUNC_HIGHESTBID, 
+                Arrays.<Type>asList(), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
+        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
+    }
+
+    public List<AuctionEndedEventResponse> getAuctionEndedEvents(TransactionReceipt transactionReceipt) {
+        List<Contract.EventValuesWithLog> valueList = extractEventParametersWithLog(AUCTIONENDED_EVENT, transactionReceipt);
+        ArrayList<AuctionEndedEventResponse> responses = new ArrayList<AuctionEndedEventResponse>(valueList.size());
+        for (Contract.EventValuesWithLog eventValues : valueList) {
+            AuctionEndedEventResponse typedResponse = new AuctionEndedEventResponse();
+            typedResponse.log = eventValues.getLog();
+            typedResponse.winner = (String) eventValues.getNonIndexedValues().get(0).getValue();
+            typedResponse.highestBid = (BigInteger) eventValues.getNonIndexedValues().get(1).getValue();
+            responses.add(typedResponse);
+        }
+        return responses;
+    }
+
+    public Flowable<AuctionEndedEventResponse> auctionEndedEventFlowable(EthFilter filter) {
+        return web3j.ethLogFlowable(filter).map(new io.reactivex.functions.Function<Log, AuctionEndedEventResponse>() {
+            @Override
+            public AuctionEndedEventResponse apply(Log log) {
+                Contract.EventValuesWithLog eventValues = extractEventParametersWithLog(AUCTIONENDED_EVENT, log);
+                AuctionEndedEventResponse typedResponse = new AuctionEndedEventResponse();
+                typedResponse.log = log;
+                typedResponse.winner = (String) eventValues.getNonIndexedValues().get(0).getValue();
+                typedResponse.highestBid = (BigInteger) eventValues.getNonIndexedValues().get(1).getValue();
+                return typedResponse;
+            }
+        });
+    }
+
+    public Flowable<AuctionEndedEventResponse> auctionEndedEventFlowable(DefaultBlockParameter startBlock, DefaultBlockParameter endBlock) {
+        EthFilter filter = new EthFilter(startBlock, endBlock, getContractAddress());
+        filter.addSingleTopic(EventEncoder.encode(AUCTIONENDED_EVENT));
+        return auctionEndedEventFlowable(filter);
+    }
+
+    @Deprecated
+    public static BlindAuction load(String contractAddress, Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit) {
+        return new BlindAuction(contractAddress, web3j, credentials, gasPrice, gasLimit);
+    }
+
+    @Deprecated
+    public static BlindAuction load(String contractAddress, Web3j web3j, TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit) {
+        return new BlindAuction(contractAddress, web3j, transactionManager, gasPrice, gasLimit);
+    }
+
+    public static BlindAuction load(String contractAddress, Web3j web3j, Credentials credentials, ContractGasProvider contractGasProvider) {
+        return new BlindAuction(contractAddress, web3j, credentials, contractGasProvider);
+    }
+
+    public static BlindAuction load(String contractAddress, Web3j web3j, TransactionManager transactionManager, ContractGasProvider contractGasProvider) {
+        return new BlindAuction(contractAddress, web3j, transactionManager, contractGasProvider);
+    }
+
+    public static RemoteCall<BlindAuction> deploy(Web3j web3j, Credentials credentials, ContractGasProvider contractGasProvider, BigInteger _biddingTime, BigInteger _revealTime, String _beneficiary) {
+        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(_biddingTime), 
+                new org.web3j.abi.datatypes.generated.Uint256(_revealTime), 
+                new org.web3j.abi.datatypes.Address(_beneficiary)));
+        return deployRemoteCall(BlindAuction.class, web3j, credentials, contractGasProvider, BINARY, encodedConstructor);
+    }
+
+    public static RemoteCall<BlindAuction> deploy(Web3j web3j, TransactionManager transactionManager, ContractGasProvider contractGasProvider, BigInteger _biddingTime, BigInteger _revealTime, String _beneficiary) {
+        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(_biddingTime), 
+                new org.web3j.abi.datatypes.generated.Uint256(_revealTime), 
+                new org.web3j.abi.datatypes.Address(_beneficiary)));
+        return deployRemoteCall(BlindAuction.class, web3j, transactionManager, contractGasProvider, BINARY, encodedConstructor);
+    }
+
+    @Deprecated
+    public static RemoteCall<BlindAuction> deploy(Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit, BigInteger _biddingTime, BigInteger _revealTime, String _beneficiary) {
+        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(_biddingTime), 
+                new org.web3j.abi.datatypes.generated.Uint256(_revealTime), 
+                new org.web3j.abi.datatypes.Address(_beneficiary)));
+        return deployRemoteCall(BlindAuction.class, web3j, credentials, gasPrice, gasLimit, BINARY, encodedConstructor);
+    }
+
+    @Deprecated
+    public static RemoteCall<BlindAuction> deploy(Web3j web3j, TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit, BigInteger _biddingTime, BigInteger _revealTime, String _beneficiary) {
+        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(_biddingTime), 
+                new org.web3j.abi.datatypes.generated.Uint256(_revealTime), 
+                new org.web3j.abi.datatypes.Address(_beneficiary)));
+        return deployRemoteCall(BlindAuction.class, web3j, transactionManager, gasPrice, gasLimit, BINARY, encodedConstructor);
+    }
+
+    public static class AuctionEndedEventResponse {
+        public Log log;
+
+        public String winner;
+
+        public BigInteger highestBid;
+    }
+}

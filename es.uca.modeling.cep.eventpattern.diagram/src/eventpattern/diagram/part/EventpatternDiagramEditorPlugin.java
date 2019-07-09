@@ -121,6 +121,7 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 		IProject domainProject = myWorkspaceRoot.getProject("domain");
+		IProject smartcontractProject = myWorkspaceRoot.getProject("smartcontract");
 
 		try {
 
@@ -143,9 +144,30 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 					}
 				}
 			}
+			
+			if (smartcontractProject.exists()) {
+
+				// Open if necessary
+				if (!smartcontractProject.isOpen()) {
+					smartcontractProject.open(null);
+				}
+
+				File currentDir = new File(smartcontractProject.getLocationURI());
+				File[] files = currentDir.listFiles();
+
+				for (File file : files) {
+
+					if (!file.isDirectory() && file.getName().matches(".+smartc")) {
+
+						String smartcontractName = file.getName().replace(".smartc", "");
+						EventPatternsStatus.setSmartcontractsName(smartcontractName);
+					}
+				}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	/**
