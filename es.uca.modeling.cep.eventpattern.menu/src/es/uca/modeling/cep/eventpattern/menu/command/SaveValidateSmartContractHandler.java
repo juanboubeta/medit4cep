@@ -50,7 +50,6 @@ public class SaveValidateSmartContractHandler extends AbstractHandler {
 		// 1º Obtain the active editor's diagram
 		
         SmartcontractDiagramEditor smartcontractDiagramEditor = (SmartcontractDiagramEditor) HandlerUtil.getActiveEditor(event);
-        
         if (smartcontractDiagramEditor == null || !smartcontractDiagramEditor.getTitle().endsWith("smartc_diagram")) {
         	MessageDialog.openError(shell, "Save and Validate Smart Contracts", "The Smart Contracts must be open.");
         	return null; 
@@ -64,16 +63,16 @@ public class SaveValidateSmartContractHandler extends AbstractHandler {
         
 		// 3º Check if there are some problems which must be solved
 
-		IResource ir = (IResource) HandlerUtil.getActiveEditorInput(event).getAdapter(IResource.class);
+        IResource ir = (IResource) HandlerUtil.getActiveEditorInput(event).getAdapter(IResource.class);
         IMarker[] problems = null;
         int depth = IResource.DEPTH_INFINITE;
-	
+        
 		try {
 			problems = ir.findMarkers(IMarker.PROBLEM, true, depth);
 		} catch (CoreException e1) {
 			e1.printStackTrace();
 		}
-		
+
 		if (problems.length > 0) {
 			MessageDialog.openError(shell, "Save and Validate Smart Contracts", "There are some problems that must be solved before saving the Smart Contracts.");
 			
@@ -130,12 +129,12 @@ public class SaveValidateSmartContractHandler extends AbstractHandler {
 					smartcontractProject.open(null);
 				}
 				
-				URI domainDiagramUri = URI.createPlatformResourceURI(smartcontractProject
+				URI smartcontractDiagramUri = URI.createPlatformResourceURI(smartcontractProject
 						.getFile(name + ".smartc_diagram").getFullPath().toString(), false);
 				
-			 	Resource domainDiagramResource = resourceSet.getResource(domainDiagramUri, true);
+			 	Resource smartcontractDiagramResource = resourceSet.getResource(smartcontractDiagramUri, true);
 			 	
-			 	SmartcontractDiagramEditorUtil.openDiagram(domainDiagramResource);
+			 	SmartcontractDiagramEditorUtil.openDiagram(smartcontractDiagramResource);
 				
 			 	SmartcontractStatus.setSmartcontractModified(false);
 								

@@ -422,6 +422,7 @@ public class EventpatternPaletteFactory {
 		return paletteContainer;
 	}
 	 */
+
 	private PaletteContainer createSmartContracts3Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.SmartContracts3Group_title);
 		paletteContainer.setId("SmartContracts3Group"); //$NON-NLS-1$

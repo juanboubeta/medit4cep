@@ -66,48 +66,6 @@
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="menu:org.eclipse.ui.main.menu?after=SmartContracts">
-         <menu
-               id="CEPDomain"
-               label="CEP Domain">
-            <command
-                  commandId="es.uca.modeling.cep.eventpattern.menu.command.NewDomain"
-                  label="New..."
-                  style="push">
-            </command>
-            <command
-                  commandId="es.uca.modeling.cep.eventpattern.menu.command.AutodetectDomain"
-                  label="Auto-detect Domain"
-                  style="push">
-            </command>
-            <command
-                  commandId="es.uca.modeling.cep.eventpattern.menu.command.OpenDomain"
-                  label="Open"
-                  style="push">
-            </command>
-            
-            <!--
-            <command
-                  commandId="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateDomain"
-                  label="Save and Validate"
-                  style="push">
-            </command>
-            -->
-            <command
-                  commandId="org.eclipse.ui.file.save" 
-                  label="Save and Validate"
-                  style="push">
-            </command>
-                        
-            <command
-                  commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteDomain"
-                  label="Delete"
-                  style="push">
-            </command>
-         </menu>
-      </menuContribution>
-      <menuContribution
-            allPopups="false"
             locationURI="menu:org.eclipse.ui.main.menu?after=CEPDomain">
          <menu
                id="EventPattern"
@@ -150,6 +108,11 @@
                   style="push">
             </command>
             <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.GenerateExecuteSmartContracts"
+                  label="Generate and Execute Smart Contracts"
+                  style="push">
+            </command>
+            <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteEventPattern"
                   label="Delete"
                   style="push">
@@ -158,13 +121,18 @@
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="menu:org.eclipse.ui.main.menu?after=file">
+            locationURI="menu:org.eclipse.ui.main.menu?after=EventPattern">
          <menu
                id="SmartContracts"
                label="Smart Contracts">
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.NewSmartContract"
                   label="New..."
+                  style="push">
+            </command>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.AutoinitializeSmartContract"
+                  label="Auto-initialize Smart Contracts"
                   style="push">
             </command>
             <command
@@ -179,6 +147,48 @@
             </command>
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteSmartContract"
+                  label="Delete"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=file">
+         <menu
+               id="CEPDomain"
+               label="CEP Domain">
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.NewDomain"
+                  label="New..."
+                  style="push">
+            </command>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.AutodetectDomain"
+                  label="Auto-detect Domain"
+                  style="push">
+            </command>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.OpenDomain"
+                  label="Open"
+                  style="push">
+            </command>
+            
+            <!--
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateDomain"
+                  label="Save and Validate"
+                  style="push">
+            </command>
+            -->
+            <command
+                  commandId="org.eclipse.ui.file.save" 
+                  label="Save and Validate"
+                  style="push">
+            </command>
+                        
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteDomain"
                   label="Delete"
                   style="push">
             </command>
@@ -248,6 +258,11 @@
             name="GenerateDeployEventPattern">
       </command>
       <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.GenerateExecuteSmartContractsHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.GenerateExecuteSmartContracts"
+            name="GenerateExecuteSmartContracts">
+      </command>
+      <command
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateDomainHandler"
             id="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateDomain"
             name="SaveValidateDomain">
@@ -296,6 +311,11 @@
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.ExportSmartContractHandler"
             id="es.uca.modeling.cep.eventpattern.menu.command.ExportSmartContract"
             name="ExportSmartContracts">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.AutoinitializeSmartContractHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.AutoinitializeSmartContract"
+            name="AutoinitializeSmartContract">
       </command>
    </extension>
 

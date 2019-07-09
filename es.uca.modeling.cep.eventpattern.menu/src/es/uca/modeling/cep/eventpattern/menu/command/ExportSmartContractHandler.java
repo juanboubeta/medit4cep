@@ -118,8 +118,8 @@ public class ExportSmartContractHandler extends AbstractHandler {
         String diagramFileName = ieditorpart.getTitle();        
         URL diagramUrl;
               
-        // modelHref can be like 'default.domain' or 
-        //   'platform:/resource/proyecto1/default.domain' (if the model is not in the same directory of diagram file) 
+        // modelHref can be like 'default.smartc' or 
+        //   'platform:/resource/proyecto1/default.smartc' (if the model is not in the same directory of diagram file) 
         String modelHref = null; 
         String diagramOriginalText = "";
         

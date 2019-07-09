@@ -1,4 +1,4 @@
-ESTO ES UNA PRUEBA
+ESTO ES UNA PRUEBA 
 
 [%
 var smartcontracts : Sequence = SmartContract.allInstances();
@@ -7,10 +7,10 @@ var smartcontracts : Sequence = SmartContract.allInstances();
 		if (sc.typeName == "contrato1") {%]
 generacion de codigo para contrato 1              
 	    [%} 
-	    if (sc.typeName == "contrato 2") {%]
+	    else if (sc.typeName == "contrato 2") {%]
 generacion de codigo para contrato 2              
 	    [%} 
-	    if (sc.typeName == "contrato 3") {%]
+	    else if (sc.typeName == "contrato 3") {%]
 generacion de codigo para contrato 3              
 	    [%}
 	}  

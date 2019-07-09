@@ -94,7 +94,7 @@ public class ImportSmartContractHandler extends AbstractHandler {
 						smartcontractProject.open(null);
 					}
 				    
-					// Copy files from imported .zip archive to domainProject
+					// Copy files from imported .zip archive to smartContractProject
 					FileInputStream fis = new FileInputStream(smartcontractPath);
 				    ZipInputStream zis = new ZipInputStream(fis);
 				    ZipEntry entry = null;
@@ -108,7 +108,7 @@ public class ImportSmartContractHandler extends AbstractHandler {
 						if (!entry.isDirectory()) {
 							ext = getFileExtension(entryName); 
 							
-							// Check if entry is a file .domain, .domain_diagram or image.
+							// Check if entry is a file .smartc, .smartc_diagram or image.
 							if (ext.equalsIgnoreCase("smartc") || ext.equalsIgnoreCase("smartc_diagram") 
 									|| ext.equalsIgnoreCase("jpg") || ext.equalsIgnoreCase("jpeg") 
 									|| ext.equalsIgnoreCase("gif") || ext.equalsIgnoreCase("bmp") 
@@ -124,7 +124,7 @@ public class ImportSmartContractHandler extends AbstractHandler {
 						        }
 						        out.close();
 		
-								// Create a new file in the Eclipse domainProject
+								// Create a new file in the Eclipse smartContractProject
 						      	IFile newFile = smartcontractProject.getFile(entryName);
 						      	FileInputStream fileStream = new FileInputStream(unzippedEntryPath);
 						      	newFile.create(fileStream, false, null);

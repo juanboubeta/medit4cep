@@ -23,4 +23,5 @@ Bundle-ActivationPolicy: lazy
 Import-Package: es.uca.modeling.cep.eventpattern.m2t,
  org.eclipse.epsilon.emc.emf,
  org.eclipse.epsilon.eol.models
+Bundle-ClassPath: .
 

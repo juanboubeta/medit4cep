@@ -1,3 +1,30 @@
+ESTO ES UNA PRUEBA [%=SmartContract.typeName%]
+
+[%
+var smartcontracts : Sequence = SmartContract.allInstances();
+	
+	for (sc : SmartContract in smartcontracts) {	
+		if (sc.typeName == "contrato1") {
+			for(cf: ContractFunction in sc.SmartContractProperties) {
+				if(cf.name == "Funcion 1"){
+					for(ip: InputParameter in cf.InputParametersFunction) {%]	
+generacion de codigo para contrato 1 - Funcion 1
+Parametros de entrada:
+[%=ip.type%] : [%=ip.name%] 
+					[%for(op: OutputParameter in cf.OutputParametersFunction) {%]
+Parametros de salida:
+[%=op.type%] : [%=op.name%]					
+					[%}%]
+	    [%}}}} 
+	    if (sc.typeName == "contrato 2") {%]
+generacion de codigo para contrato 2              
+	    [%} 
+	    if (sc.typeName == "contrato 3") {%]
+generacion de codigo para contrato 3              
+	    [%}
+	}  
+%]
+
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.WalletUtils;

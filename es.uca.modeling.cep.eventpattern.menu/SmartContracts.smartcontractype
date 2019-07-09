@@ -1,0 +1,42 @@
+[{
+	"name":"Voting",
+	"functions":[
+		{"name":"authorizeVoter",
+		"inputs":[{"name":"_address","type":"address"}],
+		"output":{"name":"votes","type":"uint"}},
+		{"name":"voteForCandidate",
+		"inputs":[{"name":"_index","type":"uint"}],
+		"output":{"name":"votes","type":"uint"}},
+		{"name":"getVoteForCandidate",
+		"inputs":[{"name":"_index","type":"uint"}],
+		"output":{"name":"votes","type":"uint"}}
+	]
+},
+{
+	"name":"Purchase",
+	"functions":[
+		{"name":"abort",
+		"inputs":[{"name":"","type":""}],
+		"output":{"name":"votes","type":"uint"}},
+		{"name":"confirmPurchase",
+		"inputs":[{"name":"","type":""}],
+		"output":{"name":"votes","type":"uint"}},
+		{"name":"confirmReceived",
+		"inputs":[{"name":"","type":""}],
+		"output":{"name":"votes","type":"uint"}}
+	]
+},
+{
+	"name":"BlindAuction",
+	"functions":[
+		{"name":"bid",
+		"inputs":[{"name":"_blindedBid","type":"bytes32"}],
+		"output":{"name":"votes","type":"uint"}},
+		{"name":"reveal",
+		"inputs":[{"name":"_values","type":""},{"name":"_blindedBid","type":"bytes32"},{"name":"_blindedBid","type":"bytes32"}],
+		"output":{"name":"votes","type":"uint"}},
+		{"name":"funcion3",
+		"inputs":[{"name":"","type":""}],
+		"output":{"name":"votes","type":"uint"}}
+	]
+}]

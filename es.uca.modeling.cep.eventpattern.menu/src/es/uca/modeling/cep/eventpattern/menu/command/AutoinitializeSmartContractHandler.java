@@ -61,7 +61,7 @@ import smartcontract.diagram.part.SmartcontractDiagramEditorUtil;
 import es.uca.modeling.cep.eventpattern.menu.dialog.AutodetectSmartContractDialog;
 import eventpattern.diagram.status.EventPatternsStatus;
 
-public class AutodetectSmartContractHandler extends AbstractHandler {
+public class AutoinitializeSmartContractHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
