@@ -117,7 +117,7 @@ public class SaveValidateSmartContractHandler extends AbstractHandler {
 						EventpatternDiagramEditorUtil.openDiagram(diagramResource);
 						EventpatternDiagramEditor diagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
 																
-						diagramEditor.refreshPaletteSimpleEvent();
+						diagramEditor.refreshPaletteSmartContract();
 						
 					}
 				}

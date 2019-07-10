@@ -102,7 +102,6 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 		   	Resource patternModelResource = resourceSet.getResource(activePatternModelUri, true);
 		   				
 		    CEPEventPattern eventPatternModel = (CEPEventPattern) patternModelResource.getContents().get(0);
-		    //SmartContract smartContractModel = (SmartContract) eventPatternModel;
 		    
 			// 4º Select the directory to generate the event pattern. 
 			// It should be the 'new-eventpattern' directory in the Mule project where the pattern will be deployed.
@@ -167,60 +166,7 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 				
 				TransformEventPatternToCode.executeEGL(sourceModel2, eventPatternModel, patternToActionPath, outputActionFile);
 			}
-			
-			// 8º Select the directory to generate the smartcontracts for the event pattern, if there are smartcontracts.
 						
-			/*if (!eventPatternModel.getSmartContracts().isEmpty() && EventPatternsStatus.getGeneratedSmartContractPath() == null) {
-				String selectedDir = null; 
-			    DirectoryDialog dirDialog = new DirectoryDialog(shell);
-			    dirDialog.setText("Choose a folder where to save the generated smartcontract code.");
-			    selectedDir = dirDialog.open();
-					    	    
-			    if (selectedDir == null) {
-			       	return null; 	    	
-			    }
-			    else {
-			    	EventPatternsStatus.setGeneratedSmartContractPath(selectedDir);
-			    }
-			}	*/
-			
-			// 9º Generate the smartcontracts for the event pattern in java code 
-			
-			/*if (!eventPatternModel.getSmartContracts().isEmpty()) { // There are actions for the event pattern
-						
-				final Model sourceModel4 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
-				sourceModel4.setStoredOnDisposal(false);
-				sourceModel4.setReadOnLoad(true);
-									
-				final String patternToSmartContractPath = "/egl/eventpattern-to-smartcontract.egl";
-						
-				//for() {
-					final File outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath(), 
-							eventPatternModel.getPatternName() + ".java");		
-					System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputSmartContractFile.getAbsolutePath());
-												
-					TransformEventPatternToCode.executeEGL(sourceModel4, eventPatternModel, patternToSmartContractPath, outputSmartContractFile);
-				//}	
-			}*/
-						
-			
-			// 10º Transform the invocations of the smartcontracts for the event pattern to java code 
-			
-			/*if (!eventPatternModel.getSmartContracts().isEmpty()) { // There are actions for the event pattern
-			
-				final Model sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
-				sourceModel3.setStoredOnDisposal(false);
-				sourceModel3.setReadOnLoad(true);
-				
-				final String patternToContractFunctionPath = "/egl/eventpattern-to-contractfunction.egl";
-				final File outputContractFunctionFile = new File(EventPatternsStatus.getGeneratedSmartContractPath(), 
-						eventPatternModel.getPatternName() + "_invocation.java");	
-				System.out.println("\noutputActionFile.getAbsolutePath(): " + outputContractFunctionFile.getAbsolutePath());
-					
-				TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel, patternToContractFunctionPath, outputContractFunctionFile);
-				//ejecutar la invocacion del contrato
-			}*/
-			
 			MessageDialog.openInformation(shell, "Generate and Deploy Pattern Code", 
 		    		"The event pattern has been transformed into code and deployed.");	
 			

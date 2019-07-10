@@ -26,12 +26,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contractfunctions" upperBound="-1"
         eType="#//ContractFunction" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="SmartContractProperties"
-        upperBound="-1" eType="#//ContractFunction" containment="true" eOpposite="#//ContractFunction/referencedSmartContract">
-      <eAnnotations source="gmf.compartment">
-        <details key="layout" value="list"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContractFunction">
     <eAnnotations source="gmf.node">
@@ -44,8 +38,6 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedSmartContract"
-        eType="#//SmartContract" eOpposite="#//SmartContract/SmartContractProperties"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="InputParametersFunction"
         upperBound="-1" eType="#//InputParameter" containment="true" eOpposite="#//InputParameter/InputReferencedFunction">
       <eAnnotations source="gmf.compartment">

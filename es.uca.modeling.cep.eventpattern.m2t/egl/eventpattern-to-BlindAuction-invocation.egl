@@ -1,21 +1,28 @@
-ESTO ES UNA PRUEBA [%=SmartContract.typeName%]
+package BlindAuction;
+
+ESTO ES UNA PRUEBA de la invocacion del contrato BlindAuction
 
 [%
 var smartcontracts : Sequence = SmartContract.allInstances();
-	
-	for (sc : SmartContract in smartcontracts) {	
-		if (sc.typeName == "contrato1") {
-			for(cf: ContractFunction in sc.SmartContractProperties) {
-				if(cf.name == "Funcion 1"){
-					for(ip: InputParameter in cf.InputParametersFunction) {%]	
-generacion de codigo para contrato 1 - Funcion 1
+%]
+asdfasfd
+[%	
+	for (sc : SmartContract in smartcontracts) {	%]
+[%=sc.typeName%]	
+		[%if (sc.typeName == "BlindAuction") {%]
+Contrato BlindAuction
+			[%for(cf: ContractFunction in sc.SmartContractProperties) {
+				if(cf.name == "reveal"){%]
+generacion de codigo para contrato 1 - Funcion [%=cf.name%]
+					[%for(ip: InputParameter in cf.InputParametersFunction) {%]	
 Parametros de entrada:
 [%=ip.type%] : [%=ip.name%] 
-					[%for(op: OutputParameter in cf.OutputParametersFunction) {%]
+					[%}for(op: OutputParameter in cf.OutputParametersFunction) {%]
+
 Parametros de salida:
 [%=op.type%] : [%=op.name%]					
 					[%}%]
-	    [%}}}} 
+	    [%}}} 
 	    if (sc.typeName == "contrato 2") {%]
 generacion de codigo para contrato 2              
 	    [%} 
@@ -41,7 +48,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class [%=CEPEventPattern.allInstances.at(0).patternName%] {
+public class BlindAuction_invocation {
 	
 	private final static String PRIVATE_KEY = "your PRIVATE_KEY";
 	
@@ -52,13 +59,13 @@ public class [%=CEPEventPattern.allInstances.at(0).patternName%] {
 	
 	public static void main(String[] args) {
 		try {
-			new [%=CEPEventPattern.allInstances.at(0).patternName%]();
+			new BlindAuction_invocation();
 		} catch (Exception e){
 			e.printStackTrace();
 		}
 	}
 	
-	private [%=CEPEventPattern.allInstances.at(0).patternName%]() throws Exception {
+	private BlindAuction_invocation() throws Exception {
 		
 		Web3j web3j = Web3j.build(new HttpService("https://ropsten.infura.io/v3/06ec613b421b4f118b06204feda6db41"));
 		Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();

@@ -2,14 +2,14 @@
 	"name":"Voting",
 	"functions":[
 		{"name":"authorizeVoter",
-		"inputs":[{"name":"_address","type":"address"}],
-		"output":{"name":"votes","type":"uint"}},
+		"inputs":[{"name":"_address","type":"boolean"}],
+		"output":{"name":"votes","type":"integer"}},
 		{"name":"voteForCandidate",
-		"inputs":[{"name":"_index","type":"uint"}],
-		"output":{"name":"votes","type":"uint"}},
+		"inputs":[{"name":"_index","type":"boolean"}],
+		"output":{"name":"votes","type":"string"}},
 		{"name":"getVoteForCandidate",
-		"inputs":[{"name":"_index","type":"uint"}],
-		"output":{"name":"votes","type":"uint"}}
+		"inputs":[{"name":"_index","type":"double"}],
+		"output":{"name":"votes","type":"long"}}
 	]
 },
 {
@@ -17,26 +17,26 @@
 	"functions":[
 		{"name":"abort",
 		"inputs":[],
-		"output":{"name":"votes","type":"uint"}},
+		"output":{"name":"votes","type":"string"}},
 		{"name":"confirmPurchase",
 		"inputs":[],
-		"output":{"name":"votes","type":"uint"}},
+		"output":{"name":"votes","type":"integer"}},
 		{"name":"confirmReceived",
 		"inputs":[],
-		"output":{}}
+		"output": null}
 	]
 },
 {
 	"name":"BlindAuction",
 	"functions":[
 		{"name":"bid",
-		"inputs":[{"name":"_blindedBid","type":"bytes32"}],
-		"output":{"name":"output1","type":"uint"}},
+		"inputs":[{"name":"_blindedBid","type":"boolean"}],
+		"output":{"name":"output1","type":"double"}},
 		{"name":"reveal",
-		"inputs":[{"name":"_values","type":""},{"name":"_blinded","type":"bytes32"},{"name":"_blindedBid","type":"bytes32"}],
-		"output":{"name":"output2","type":"uint"}},
+		"inputs":[{"name":"_values","type":"long"},{"name":"_blinded","type":"integer"},{"name":"_blindedBid","type":"string"}],
+		"output":{"name":"output2","type":"string"}},
 		{"name":"funcion3",
 		"inputs":[],
-		"output":{"name":"votes","type":"uint"}}
+		"output":{"name":"votes","type":"integer"}}
 	]
 }]

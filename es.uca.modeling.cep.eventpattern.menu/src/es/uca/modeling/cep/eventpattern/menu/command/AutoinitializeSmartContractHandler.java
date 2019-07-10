@@ -164,26 +164,72 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 									smartcontract.InputParameter InputParameter = factory.createInputParameter();
 									inputParameter = (JSONObject) inputsParameter.get(j);
 									String InputParameterName = (String) inputParameter.get("name");
-									//smartcontract.PropertyTypeValue InputParameterType = (smartcontract.PropertyTypeValue) inputParameter
-									//		.get("type");
-
+									
+									smartcontract.PropertyTypeValue InputParameterType;
+									switch((String) inputParameter.get("type")) {
+									case "boolean":
+										InputParameterType = PropertyTypeValue.BOOLEAN;
+										break;
+									case "integer":
+										InputParameterType = PropertyTypeValue.INTEGER;
+										break;
+									case "long":
+										InputParameterType = PropertyTypeValue.LONG;
+										break;
+									case "double":
+										InputParameterType = PropertyTypeValue.DOUBLE;
+										break;
+									case "float":
+										InputParameterType = PropertyTypeValue.FLOAT;
+										break;
+									case "string":
+										InputParameterType = PropertyTypeValue.STRING;
+										break;
+									default:
+										InputParameterType = PropertyTypeValue.UNKNOWN;
+									}
+								
 									// put the name and type of the input parameter and add into the
 									// ContractFunction List
 									InputParameter.setName(InputParameterName);
-									//InputParameter.setType(InputParameterType);
+									InputParameter.setType(InputParameterType);
 									ContractFunction.getInputParametersFunction().add(InputParameter);											
 								}
 
 								outputParameter = (JSONObject) aux.get("output");
-								String OutputParameterName = (String) outputParameter.get("name");
-								//smartcontract.PropertyTypeValue OutputParameterType = (smartcontract.PropertyTypeValue) outputParameter
-								//		.get("type");
-
-								// put the name and type of the input parameter and add into the
-								// ContractFunction List
-								OutputParameter.setName(OutputParameterName);
-								//OutputParameter.setType(OutputParameterType);
-								ContractFunction.setOutputParametersFunction(OutputParameter);	
+								if(outputParameter != null) {
+									String OutputParameterName = (String) outputParameter.get("name");
+									smartcontract.PropertyTypeValue OutputParameterType;
+								
+									switch((String) outputParameter.get("type")) {
+									case "boolean":
+										OutputParameterType = PropertyTypeValue.BOOLEAN;
+										break;
+									case "integer":
+										OutputParameterType = PropertyTypeValue.INTEGER;
+										break;
+									case "long":
+										OutputParameterType = PropertyTypeValue.LONG;
+										break;
+									case "double":
+										OutputParameterType = PropertyTypeValue.DOUBLE;
+										break;
+									case "float":
+										OutputParameterType = PropertyTypeValue.FLOAT;
+										break;
+									case "string":
+										OutputParameterType = PropertyTypeValue.STRING;
+										break;
+									default:
+										OutputParameterType = PropertyTypeValue.UNKNOWN;
+									}
+									
+									// put the name and type of the input parameter and add into the
+									// ContractFunction List
+									OutputParameter.setName(OutputParameterName);
+									OutputParameter.setType(OutputParameterType);
+									ContractFunction.setOutputParametersFunction(OutputParameter);	
+								} // Fin if
 							} // Fin while
 
 						} // Fin for

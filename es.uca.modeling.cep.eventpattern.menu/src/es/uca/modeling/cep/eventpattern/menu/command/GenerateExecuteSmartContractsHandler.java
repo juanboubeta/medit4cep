@@ -103,7 +103,6 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 		   	Resource patternModelResource = resourceSet.getResource(activePatternModelUri, true);
 		   				
 		    CEPEventPattern eventPatternModel = (CEPEventPattern) patternModelResource.getContents().get(0);
-		    //SmartContract smartContractModel = (SmartContract) eventPatternModel;
 		    		    
 			// 4º Select the directory to generate the smartcontracts for the event pattern, if there are smartcontracts.
 						
@@ -135,11 +134,11 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 				for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
 					
 					patternToSmartContractPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +".egl";
-					outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath(), 
+					outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
 							eventPatternModel.getSmartContracts().get(i).getTypeName() + ".java");	
 					System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputSmartContractFile.getAbsolutePath());
 												
-					TransformEventPatternToCode.executeEGL(sourceModel4, eventPatternModel.getSmartContracts().get(i), patternToSmartContractPath, outputSmartContractFile);
+					TransformEventPatternToCode.executeEGL(sourceModel4, eventPatternModel, patternToSmartContractPath, outputSmartContractFile);
 				
 				}	
 			}
@@ -149,23 +148,23 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 			
 			if (!eventPatternModel.getSmartContracts().isEmpty()) { // There are actions for the event pattern
 			
-				//String [] cmd = new String[2];
-				final Model sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
-				sourceModel3.setStoredOnDisposal(false);
-				sourceModel3.setReadOnLoad(true);
+				Model sourceModel3;
 				
 				File outputContractFunctionFile;
 				String patternToContractFunctionPath;
 						
 				for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
+					sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
+					sourceModel3.setStoredOnDisposal(false);
+					sourceModel3.setReadOnLoad(true);
 					
 					patternToContractFunctionPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +"-invocation.egl";
-					outputContractFunctionFile = new File(EventPatternsStatus.getGeneratedSmartContractPath(), 
+					outputContractFunctionFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
 							eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation.java");	
 					System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputContractFunctionFile.getAbsolutePath());
 												
-					TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel.getSmartContracts().get(i), patternToContractFunctionPath, outputContractFunctionFile);
-				
+					TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel, patternToContractFunctionPath, outputContractFunctionFile);
+					
 					//ejecutar la invocacion de cada contrato
 					
 					/*try {
@@ -174,7 +173,7 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 						Runtime.getRuntime().exec("javac " + outputContractFunctionFile.getAbsolutePath());
 						System.out.println("javac " + outputContractFunctionFile.getAbsolutePath());
 						Runtime.getRuntime().exec("java -classpath " + EventPatternsStatus.getGeneratedSmartContractPath() + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation");
-						System.out.println("java -classpath " + EventPatternsStatus.getGeneratedSmartContractPath() + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation");
+						System.out.println("java -classpath " + EventPatternsStatus.getGeneratedSmartContractPath() + " " + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation");
 						//Runtime.getRuntime().exec("java -classpath " + EventPatternsStatus.getGeneratedSmartContractPath() + " " + eventPatternModel.getSmartContracts().get(i).getTypeName());
 					} catch (IOException ioe) {
 						System.out.println (ioe);

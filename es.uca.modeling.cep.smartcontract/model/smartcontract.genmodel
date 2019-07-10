@@ -24,12 +24,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//SmartContract/typeName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//SmartContract/imagePath"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//SmartContract/contractfunctions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//SmartContract/SmartContractProperties"/>
     </genClasses>
     <genClasses ecoreClass="smartcontract.ecore#//ContractFunction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//ContractFunction/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//ContractFunction/imagePath"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smartcontract.ecore#//ContractFunction/referencedSmartContract"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//ContractFunction/InputParametersFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//ContractFunction/OutputParametersFunction"/>
     </genClasses>
