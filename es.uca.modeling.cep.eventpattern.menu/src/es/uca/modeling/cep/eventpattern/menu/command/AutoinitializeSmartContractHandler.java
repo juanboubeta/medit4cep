@@ -157,6 +157,7 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 								// put the name of the contract function and add into the SmartContract List
 								ContractFunction.setName(ContractFunctionName);
 								SmartContract.getSmartContractProperties().add(ContractFunction);
+								ContractFunction.setReferencedSmartContract(SmartContract);
 
 								inputsParameter = (JSONArray) aux.get("inputs");
 
@@ -193,7 +194,8 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 									// ContractFunction List
 									InputParameter.setName(InputParameterName);
 									InputParameter.setType(InputParameterType);
-									ContractFunction.getInputParametersFunction().add(InputParameter);											
+									InputParameter.setInputReferencedFunction(ContractFunction);
+									ContractFunction.getInputParametersFunction().add(InputParameter);	
 								}
 
 								outputParameter = (JSONObject) aux.get("output");
@@ -228,6 +230,7 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 									// ContractFunction List
 									OutputParameter.setName(OutputParameterName);
 									OutputParameter.setType(OutputParameterType);
+									OutputParameter.setOutputReferencedFunction(ContractFunction);
 									ContractFunction.setOutputParametersFunction(OutputParameter);	
 								} // Fin if
 							} // Fin while

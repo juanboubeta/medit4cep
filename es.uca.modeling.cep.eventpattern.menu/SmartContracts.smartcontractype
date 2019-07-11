@@ -5,11 +5,11 @@
 		"inputs":[{"name":"_address","type":"boolean"}],
 		"output":{"name":"votes","type":"integer"}},
 		{"name":"voteForCandidate",
-		"inputs":[{"name":"_index","type":"boolean"}],
-		"output":{"name":"votes","type":"string"}},
+		"inputs":[{"name":"_index","type":"integer"}],
+		"output":{"name":"op2","type":"integer"}},
 		{"name":"getVoteForCandidate",
 		"inputs":[{"name":"_index","type":"double"}],
-		"output":{"name":"votes","type":"long"}}
+		"output":{"name":"op3","type":"long"}}
 	]
 },
 {
@@ -17,10 +17,10 @@
 	"functions":[
 		{"name":"abort",
 		"inputs":[],
-		"output":{"name":"votes","type":"string"}},
+		"output":{"name":"op1","type":"string"}},
 		{"name":"confirmPurchase",
 		"inputs":[],
-		"output":{"name":"votes","type":"integer"}},
+		"output":{"name":"op2","type":"integer"}},
 		{"name":"confirmReceived",
 		"inputs":[],
 		"output": null}
@@ -37,6 +37,6 @@
 		"output":{"name":"output2","type":"string"}},
 		{"name":"funcion3",
 		"inputs":[],
-		"output":{"name":"votes","type":"integer"}}
+		"output":{"name":"output3","type":"integer"}}
 	]
 }]

@@ -12,6 +12,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.text.View;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -602,6 +604,7 @@ public class SmartcontractDocumentProvider extends AbstractDocumentProvider impl
 			}
 			newResource.unload();
 		}
+		ValidateAction.runValidation((org.eclipse.gmf.runtime.notation.View) document.getContent());
 	}
 
 	/**

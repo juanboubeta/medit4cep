@@ -16,7 +16,28 @@ context SmartContract {
 	        }
 	    }  
 
-  	} 	
+  	}
+  	
+  	constraint ExistContract {
+    
+    	guard : self.satisfies('HasContractName')
+    
+        check {
+        
+        	var m : String; 
+        	m = "SmartContract '" + self.typeName; 
+        	     	
+        	if (self.typeName == "Voting" or self.typeName == "Purchase" or self.typeName == "BlindAuction") {
+        		return true;        	    
+        	} else {
+        		m = m + "' doesn´t exist.";
+        		return false; 
+        	}  
+        }
+
+        message : m
+      
+    } 	
 }
 
 context ContractFunction {
@@ -37,6 +58,51 @@ context ContractFunction {
             }
         }      
     } 
+    
+    constraint ExistFunction {
+    
+    	guard : self.satisfies('HasFunctiontName')
+    
+        check {
+        
+        	var m : String; 
+        	m = "ContractFunction '" + self.name; 
+        		     	
+        	switch(self.referencedSmartContract.typeName) {
+        	case "Voting":
+	        	if (self.name == "authorizeVoter" or self.name == "voteForCandidate" or self.name == "getVoteForCandidate") {
+	        		return true;        	    
+	        	} else {
+	        		m = m + "' doesn´t exist for the SmartContract '" + self.referencedSmartContract.typeName + "'";
+	        		return false; 
+	        	} 
+        		break;
+        	case "Purchase":
+        		if (self.name == "abort" or self.name == "confirmPurchase" or self.name == "confirmReceived") {
+	        		return true;        	    
+	        	} else {
+	        		m = m + "' doesn´t exist for the SmartContract '" + self.referencedSmartContract.typeName + "'";
+	        		return false; 
+	        	} 
+        		break;
+        	case "BlindAuction":
+        		if (self.name == "bid" or self.name == "reveal" or self.name == "funcion3") {
+	        		return true;        	    
+	        	} else {
+	        		m = m + "' doesn´t exist for the SmartContract '" + self.referencedSmartContract.typeName + "'";
+	        		return false; 
+	        	} 
+        		break;
+        	default:
+        		m = m + "' doesn´t exist";
+        		return false; 
+        		break;	
+        	} 
+        }
+
+        message : m
+      
+    } 	
 }
 
 context Parameter {
@@ -77,5 +143,287 @@ context Parameter {
 
         message : m
       
+    }
+    
+    constraint HasCorrectType {
+    
+    	guard : self.satisfies('HasParameterType')
+    
+      	check {
+        
+        	var m : String; 
+        	m = "Parameter '"; 
+        	
+        	if(self.isKindOf(InputParameter)){	     	
+	        	switch(self.InputReferencedFunction.referencedSmartContract.typeName) {
+	        	case "Voting":
+			        switch(self.InputReferencedFunction.name) {	
+				    	case "authorizeVoter":
+				    		if (self.name == "_address") {
+				        		if (self.type == PropertyTypeValue#Boolean) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+					        		return false; 
+					        	}       	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		
+				    		break;
+				    	case "voteForCandidate":
+				    		if (self.name == "_index") {
+				        		if (self.type == PropertyTypeValue#Integer) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+					        		return false; 
+					        	}         	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	case "getVoteForCandidate":
+				    		if (self.name == "_index") {
+				        		if (self.type == PropertyTypeValue#Double) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+					        		return false; 
+					        	}         	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	default:
+				    		m = m + self.name + "' doesn´t exist";
+				    		break;
+				    }
+	        		break;
+	        	case "Purchase":
+	        		switch(self.InputReferencedFunction.name) {	
+				    	case "abort":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
+				    		break;
+				    	case "confirmPurchase":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
+				    		break;
+				    	case "confirmReceived":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
+				    		break;
+				    	default:
+				    		m = m + self.name + "' doesn´t exist";
+				    		break;
+				    }
+	        		break;
+	        	case "BlindAuction":
+	        		switch(self.InputReferencedFunction.name) {	
+				    	case "bid":
+				    		if (self.name == "_blindedBid") {
+				        		if (self.type == PropertyTypeValue#Boolean) {
+				        			return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+					        		return false; 
+					        	}         	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	case "reveal":
+				    		if (self.name <> "_values" and self.name <> "_blinded" and self.name <> "_blindedBid") {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false;      	    
+				        	} 
+				    		if((self.name == "_values" and self.type <> PropertyTypeValue#Long) or (self.name == "_blinded" and self.type <> PropertyTypeValue#Integer) or (self.name == "_blindedBid" and self.type <> PropertyTypeValue#String)) {
+				    			m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+					        	return false; 
+				    		} else {
+				    			return true;
+				    		}
+				  			
+				    		break;
+				    	case "funcion3":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
+				    		break;
+				    	default:
+				    		m = m + self.name + "' doesn´t exist";
+				    		break;
+				    }
+	        		break;
+	        	default:
+	        		m = m + "' doesn´t exist";
+	        		return false; 
+	        		break;	
+	        	} 
+	        } else {
+	        	switch(self.OutputReferencedFunction.referencedSmartContract.typeName) {
+	        	case "Voting":
+			        switch(self.OutputReferencedFunction.name) {	
+				    	case "authorizeVoter":
+				    		if (self.name == "votes") {
+				        		if (self.type == PropertyTypeValue#Integer) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+					        		return false; 
+					        	}       	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		
+				    		break;
+				    	case "voteForCandidate":
+				    		if (self.name == "op2") {
+				        		if (self.type == PropertyTypeValue#Integer) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+					        		return false; 
+					        	}         	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	case "getVoteForCandidate":
+				    		if (self.name == "op3") {
+				        		if (self.type == PropertyTypeValue#Long) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+					        		return false; 
+					        	}         	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	default:
+				    		m = m + self.name + "' doesn´t exist";
+				    		break;
+				    }
+	        		break;
+	        	case "Purchase":
+	        		switch(self.OutputReferencedFunction.name) {	
+				    	case "abort":
+				    		if (self.name == "op1") {
+				        		if (self.type == PropertyTypeValue#String) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+					        		return false; 
+					        	}         	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	case "confirmPurchase":
+				    		if (self.name == "op2") {
+				        		if (self.type == PropertyTypeValue#Integer) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+					        		return false; 
+					        	}         	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	case "confirmReceived":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
+				    		break;
+				    	default:
+				    		m = m + self.name + "' doesn´t exist";
+				    		break;
+				    }
+	        		break;
+	        	case "BlindAuction":
+	        		switch(self.OutputReferencedFunction.name) {	
+				    	case "bid":
+				    		if (self.name == "output1") {
+				        		if (self.type == PropertyTypeValue#Double) {
+				        			return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+					        		return false; 
+					        	}         	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	case "reveal":
+				    		if (self.name == "output2") {
+				        		if (self.type == PropertyTypeValue#String) {
+					        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+					        		return false; 
+					        	}        	 					        		   
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	case "funcion3":
+				    		if (self.name == "output3") {
+				        		if (self.type == PropertyTypeValue#Integer) {
+					        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+					        		return false; 
+					        	}        	 					        		   
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		break;
+				    	default:
+				    		m = m + self.name + "' doesn´t exist";
+				    		break;
+				    }
+	        		break;
+	        	default:
+	        		m = m + "' doesn´t exist";
+	        		return false; 
+	        		break;	
+	        	} 
+	        }
+        }
+
+        message : m
     }
 }
