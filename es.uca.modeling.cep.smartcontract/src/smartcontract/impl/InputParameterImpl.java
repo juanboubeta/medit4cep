@@ -26,12 +26,32 @@ import smartcontract.SmartcontractPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link smartcontract.impl.InputParameterImpl#getValue <em>Value</em>}</li>
  *   <li>{@link smartcontract.impl.InputParameterImpl#getInputReferencedFunction <em>Input Referenced Function</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class InputParameterImpl extends ParameterImpl implements InputParameter {
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,6 +69,27 @@ public class InputParameterImpl extends ParameterImpl implements InputParameter 
 	@Override
 	protected EClass eStaticClass() {
 		return SmartcontractPackage.Literals.INPUT_PARAMETER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartcontractPackage.INPUT_PARAMETER__VALUE, oldValue, value));
 	}
 
 	/**
@@ -144,6 +185,8 @@ public class InputParameterImpl extends ParameterImpl implements InputParameter 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case SmartcontractPackage.INPUT_PARAMETER__VALUE:
+				return getValue();
 			case SmartcontractPackage.INPUT_PARAMETER__INPUT_REFERENCED_FUNCTION:
 				return getInputReferencedFunction();
 		}
@@ -158,6 +201,9 @@ public class InputParameterImpl extends ParameterImpl implements InputParameter 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case SmartcontractPackage.INPUT_PARAMETER__VALUE:
+				setValue((String)newValue);
+				return;
 			case SmartcontractPackage.INPUT_PARAMETER__INPUT_REFERENCED_FUNCTION:
 				setInputReferencedFunction((ContractFunction)newValue);
 				return;
@@ -173,6 +219,9 @@ public class InputParameterImpl extends ParameterImpl implements InputParameter 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case SmartcontractPackage.INPUT_PARAMETER__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
 			case SmartcontractPackage.INPUT_PARAMETER__INPUT_REFERENCED_FUNCTION:
 				setInputReferencedFunction((ContractFunction)null);
 				return;
@@ -188,10 +237,28 @@ public class InputParameterImpl extends ParameterImpl implements InputParameter 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case SmartcontractPackage.INPUT_PARAMETER__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case SmartcontractPackage.INPUT_PARAMETER__INPUT_REFERENCED_FUNCTION:
 				return getInputReferencedFunction() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
 	}
 
 } //InputParameterImpl

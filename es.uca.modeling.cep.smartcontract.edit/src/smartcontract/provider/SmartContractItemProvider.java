@@ -65,6 +65,8 @@ public class SmartContractItemProvider
 
 			addTypeNamePropertyDescriptor(object);
 			addImagePathPropertyDescriptor(object);
+			addPrivateKeyPropertyDescriptor(object);
+			addContractAddressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -105,6 +107,50 @@ public class SmartContractItemProvider
 				 getString("_UI_SmartContract_imagePath_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SmartContract_imagePath_feature", "_UI_SmartContract_type"),
 				 SmartcontractPackage.Literals.SMART_CONTRACT__IMAGE_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Private Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPrivateKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SmartContract_privateKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SmartContract_privateKey_feature", "_UI_SmartContract_type"),
+				 SmartcontractPackage.Literals.SMART_CONTRACT__PRIVATE_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Contract Address feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContractAddressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SmartContract_contractAddress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SmartContract_contractAddress_feature", "_UI_SmartContract_type"),
+				 SmartcontractPackage.Literals.SMART_CONTRACT__CONTRACT_ADDRESS,
 				 true,
 				 false,
 				 false,
@@ -184,6 +230,8 @@ public class SmartContractItemProvider
 		switch (notification.getFeatureID(SmartContract.class)) {
 			case SmartcontractPackage.SMART_CONTRACT__TYPE_NAME:
 			case SmartcontractPackage.SMART_CONTRACT__IMAGE_PATH:
+			case SmartcontractPackage.SMART_CONTRACT__PRIVATE_KEY:
+			case SmartcontractPackage.SMART_CONTRACT__CONTRACT_ADDRESS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SmartcontractPackage.SMART_CONTRACT__CONTRACTFUNCTIONS:

@@ -2018,8 +2018,26 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSmartContract_PrivateKey() {
+		return (EAttribute)smartContractEClass.getEStructuralFeatures().get(2);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSmartContract_ContractAddress() {
+		return (EAttribute)smartContractEClass.getEStructuralFeatures().get(3);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getSmartContract_Contractfunctions() {
-		return (EReference)smartContractEClass.getEStructuralFeatures().get(2);
+		return (EReference)smartContractEClass.getEStructuralFeatures().get(4);
 	}
 
 		/**
@@ -2028,7 +2046,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 	 * @generated
 	 */
 	public EReference getSmartContract_SmartContractProperties() {
-		return (EReference)smartContractEClass.getEStructuralFeatures().get(3);
+		return (EReference)smartContractEClass.getEStructuralFeatures().get(5);
 	}
 
 		/**
@@ -2126,8 +2144,17 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getInputParameter_Value() {
+		return (EAttribute)inputParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getInputParameter_InputReferencedFunction() {
-		return (EReference)inputParameterEClass.getEStructuralFeatures().get(0);
+		return (EReference)inputParameterEClass.getEStructuralFeatures().get(1);
 	}
 
 		/**
@@ -2496,6 +2523,8 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		smartContractEClass = createEClass(SMART_CONTRACT);
 		createEAttribute(smartContractEClass, SMART_CONTRACT__TYPE_NAME);
 		createEAttribute(smartContractEClass, SMART_CONTRACT__IMAGE_PATH);
+		createEAttribute(smartContractEClass, SMART_CONTRACT__PRIVATE_KEY);
+		createEAttribute(smartContractEClass, SMART_CONTRACT__CONTRACT_ADDRESS);
 		createEReference(smartContractEClass, SMART_CONTRACT__CONTRACTFUNCTIONS);
 		createEReference(smartContractEClass, SMART_CONTRACT__SMART_CONTRACT_PROPERTIES);
 
@@ -2511,6 +2540,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		createEAttribute(parameterEClass, PARAMETER__TYPE);
 
 		inputParameterEClass = createEClass(INPUT_PARAMETER);
+		createEAttribute(inputParameterEClass, INPUT_PARAMETER__VALUE);
 		createEReference(inputParameterEClass, INPUT_PARAMETER__INPUT_REFERENCED_FUNCTION);
 
 		outputParameterEClass = createEClass(OUTPUT_PARAMETER);
@@ -2848,6 +2878,8 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		initEClass(smartContractEClass, SmartContract.class, "SmartContract", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSmartContract_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSmartContract_ImagePath(), ecorePackage.getEString(), "imagePath", null, 0, 1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSmartContract_PrivateKey(), ecorePackage.getEString(), "privateKey", null, 0, 1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSmartContract_ContractAddress(), ecorePackage.getEString(), "contractAddress", null, 0, 1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSmartContract_Contractfunctions(), this.getContractFunction(), null, "contractfunctions", null, 0, -1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSmartContract_SmartContractProperties(), this.getContractFunction(), this.getContractFunction_ReferencedSmartContract(), "SmartContractProperties", null, 0, -1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2863,6 +2895,7 @@ public class EventpatternPackageImpl extends EPackageImpl implements Eventpatter
 		initEAttribute(getParameter_Type(), this.getPropertyTypeValue(), "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inputParameterEClass, InputParameter.class, "InputParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInputParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, InputParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInputParameter_InputReferencedFunction(), this.getContractFunction(), this.getContractFunction_InputParametersFunction(), "InputReferencedFunction", null, 0, 1, InputParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(outputParameterEClass, OutputParameter.class, "OutputParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

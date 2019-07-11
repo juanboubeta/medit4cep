@@ -140,13 +140,31 @@ public interface SmartcontractPackage extends EPackage {
 	int SMART_CONTRACT__IMAGE_PATH = 1;
 
 	/**
+	 * The feature id for the '<em><b>Private Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT__PRIVATE_KEY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Contract Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT__CONTRACT_ADDRESS = 3;
+
+	/**
 	 * The feature id for the '<em><b>Contractfunctions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT__CONTRACTFUNCTIONS = 2;
+	int SMART_CONTRACT__CONTRACTFUNCTIONS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Smart Contract Properties</b></em>' containment reference list.
@@ -155,7 +173,7 @@ public interface SmartcontractPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = 3;
+	int SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = 5;
 
 	/**
 	 * The number of structural features of the '<em>Smart Contract</em>' class.
@@ -164,7 +182,7 @@ public interface SmartcontractPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT_FEATURE_COUNT = 4;
+	int SMART_CONTRACT_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link smartcontract.impl.ContractFunctionImpl <em>Contract Function</em>}' class.
@@ -296,13 +314,22 @@ public interface SmartcontractPackage extends EPackage {
 	int INPUT_PARAMETER__TYPE = PARAMETER__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PARAMETER__VALUE = PARAMETER_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Input Referenced Function</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PARAMETER__INPUT_REFERENCED_FUNCTION = PARAMETER_FEATURE_COUNT + 0;
+	int INPUT_PARAMETER__INPUT_REFERENCED_FUNCTION = PARAMETER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Input Parameter</em>' class.
@@ -311,7 +338,7 @@ public interface SmartcontractPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 1;
+	int INPUT_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link smartcontract.impl.OutputParameterImpl <em>Output Parameter</em>}' class.
@@ -457,6 +484,28 @@ public interface SmartcontractPackage extends EPackage {
 	EAttribute getSmartContract_ImagePath();
 
 	/**
+	 * Returns the meta object for the attribute '{@link smartcontract.SmartContract#getPrivateKey <em>Private Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Private Key</em>'.
+	 * @see smartcontract.SmartContract#getPrivateKey()
+	 * @see #getSmartContract()
+	 * @generated
+	 */
+	EAttribute getSmartContract_PrivateKey();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smartcontract.SmartContract#getContractAddress <em>Contract Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Contract Address</em>'.
+	 * @see smartcontract.SmartContract#getContractAddress()
+	 * @see #getSmartContract()
+	 * @generated
+	 */
+	EAttribute getSmartContract_ContractAddress();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link smartcontract.SmartContract#getContractfunctions <em>Contractfunctions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -584,6 +633,17 @@ public interface SmartcontractPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getInputParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smartcontract.InputParameter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see smartcontract.InputParameter#getValue()
+	 * @see #getInputParameter()
+	 * @generated
+	 */
+	EAttribute getInputParameter_Value();
 
 	/**
 	 * Returns the meta object for the container reference '{@link smartcontract.InputParameter#getInputReferencedFunction <em>Input Referenced Function</em>}'.
@@ -718,6 +778,22 @@ public interface SmartcontractPackage extends EPackage {
 		EAttribute SMART_CONTRACT__IMAGE_PATH = eINSTANCE.getSmartContract_ImagePath();
 
 		/**
+		 * The meta object literal for the '<em><b>Private Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SMART_CONTRACT__PRIVATE_KEY = eINSTANCE.getSmartContract_PrivateKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Contract Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SMART_CONTRACT__CONTRACT_ADDRESS = eINSTANCE.getSmartContract_ContractAddress();
+
+		/**
 		 * The meta object literal for the '<em><b>Contractfunctions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -818,6 +894,14 @@ public interface SmartcontractPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INPUT_PARAMETER = eINSTANCE.getInputParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INPUT_PARAMETER__VALUE = eINSTANCE.getInputParameter_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Input Referenced Function</b></em>' container reference feature.

@@ -3,7 +3,7 @@ var smartcontracts : Sequence = SmartContract.allInstances();
 
 	for (sc : SmartContract in smartcontracts) {	%]
 		[%if (sc.typeName == "Purchase") {%]
-package Purchase;
+package Smartcontract_Purchase;
 
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;
@@ -25,13 +25,15 @@ public class [%=sc.typeName%]_invocation {
 	
 	private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
 	private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
-	private final static String PRIVATE_KEY = "Your private key";
-	private final static String CONTRACT_ADDRESS = "Address of the deploy contract";
+	private final static String PRIVATE_KEY = "[%=sc.privateKey%]";
+	private final static String CONTRACT_ADDRESS = "[%=sc.contractAddress%]";
 	
 	[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
-		[%if(cf.name == "confirmPurchase") {%]
-	private final static BigInteger WEI_VALUE = BigInteger.valueOf();
-		[%}}%]	
+		[%if(cf.name == "confirmPurchase") {
+		for(ip : InputParameter in cf.InputParametersFunction){
+				if(ip.name == "purchaseValue"){%]
+	private final static BigInteger WEI_VALUE = BigInteger.valueOf([%=ip.value%]L);
+		[%}}}}%]	
 	
 	public static void main(String[] args) {
 		try {

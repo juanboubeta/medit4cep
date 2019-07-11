@@ -1,4 +1,4 @@
-package Purchase;
+package Smartcontract_Purchase;
 
 import io.reactivex.Flowable;
 import java.math.BigInteger;

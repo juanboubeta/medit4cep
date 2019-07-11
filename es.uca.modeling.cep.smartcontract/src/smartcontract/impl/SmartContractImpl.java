@@ -33,6 +33,8 @@ import smartcontract.SmartcontractPackage;
  * <ul>
  *   <li>{@link smartcontract.impl.SmartContractImpl#getTypeName <em>Type Name</em>}</li>
  *   <li>{@link smartcontract.impl.SmartContractImpl#getImagePath <em>Image Path</em>}</li>
+ *   <li>{@link smartcontract.impl.SmartContractImpl#getPrivateKey <em>Private Key</em>}</li>
+ *   <li>{@link smartcontract.impl.SmartContractImpl#getContractAddress <em>Contract Address</em>}</li>
  *   <li>{@link smartcontract.impl.SmartContractImpl#getContractfunctions <em>Contractfunctions</em>}</li>
  *   <li>{@link smartcontract.impl.SmartContractImpl#getSmartContractProperties <em>Smart Contract Properties</em>}</li>
  * </ul>
@@ -79,6 +81,46 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 	 * @ordered
 	 */
 	protected String imagePath = IMAGE_PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPrivateKey() <em>Private Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrivateKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRIVATE_KEY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPrivateKey() <em>Private Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrivateKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected String privateKey = PRIVATE_KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getContractAddress() <em>Contract Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContractAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONTRACT_ADDRESS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getContractAddress() <em>Contract Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContractAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected String contractAddress = CONTRACT_ADDRESS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getContractfunctions() <em>Contractfunctions</em>}' containment reference list.
@@ -166,6 +208,48 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPrivateKey() {
+		return privateKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPrivateKey(String newPrivateKey) {
+		String oldPrivateKey = privateKey;
+		privateKey = newPrivateKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartcontractPackage.SMART_CONTRACT__PRIVATE_KEY, oldPrivateKey, privateKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getContractAddress() {
+		return contractAddress;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContractAddress(String newContractAddress) {
+		String oldContractAddress = contractAddress;
+		contractAddress = newContractAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartcontractPackage.SMART_CONTRACT__CONTRACT_ADDRESS, oldContractAddress, contractAddress));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<ContractFunction> getContractfunctions() {
 		if (contractfunctions == null) {
 			contractfunctions = new EObjectContainmentEList<ContractFunction>(ContractFunction.class, this, SmartcontractPackage.SMART_CONTRACT__CONTRACTFUNCTIONS);
@@ -228,6 +312,10 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 				return getTypeName();
 			case SmartcontractPackage.SMART_CONTRACT__IMAGE_PATH:
 				return getImagePath();
+			case SmartcontractPackage.SMART_CONTRACT__PRIVATE_KEY:
+				return getPrivateKey();
+			case SmartcontractPackage.SMART_CONTRACT__CONTRACT_ADDRESS:
+				return getContractAddress();
 			case SmartcontractPackage.SMART_CONTRACT__CONTRACTFUNCTIONS:
 				return getContractfunctions();
 			case SmartcontractPackage.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES:
@@ -250,6 +338,12 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 				return;
 			case SmartcontractPackage.SMART_CONTRACT__IMAGE_PATH:
 				setImagePath((String)newValue);
+				return;
+			case SmartcontractPackage.SMART_CONTRACT__PRIVATE_KEY:
+				setPrivateKey((String)newValue);
+				return;
+			case SmartcontractPackage.SMART_CONTRACT__CONTRACT_ADDRESS:
+				setContractAddress((String)newValue);
 				return;
 			case SmartcontractPackage.SMART_CONTRACT__CONTRACTFUNCTIONS:
 				getContractfunctions().clear();
@@ -277,6 +371,12 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 			case SmartcontractPackage.SMART_CONTRACT__IMAGE_PATH:
 				setImagePath(IMAGE_PATH_EDEFAULT);
 				return;
+			case SmartcontractPackage.SMART_CONTRACT__PRIVATE_KEY:
+				setPrivateKey(PRIVATE_KEY_EDEFAULT);
+				return;
+			case SmartcontractPackage.SMART_CONTRACT__CONTRACT_ADDRESS:
+				setContractAddress(CONTRACT_ADDRESS_EDEFAULT);
+				return;
 			case SmartcontractPackage.SMART_CONTRACT__CONTRACTFUNCTIONS:
 				getContractfunctions().clear();
 				return;
@@ -299,6 +399,10 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 				return TYPE_NAME_EDEFAULT == null ? typeName != null : !TYPE_NAME_EDEFAULT.equals(typeName);
 			case SmartcontractPackage.SMART_CONTRACT__IMAGE_PATH:
 				return IMAGE_PATH_EDEFAULT == null ? imagePath != null : !IMAGE_PATH_EDEFAULT.equals(imagePath);
+			case SmartcontractPackage.SMART_CONTRACT__PRIVATE_KEY:
+				return PRIVATE_KEY_EDEFAULT == null ? privateKey != null : !PRIVATE_KEY_EDEFAULT.equals(privateKey);
+			case SmartcontractPackage.SMART_CONTRACT__CONTRACT_ADDRESS:
+				return CONTRACT_ADDRESS_EDEFAULT == null ? contractAddress != null : !CONTRACT_ADDRESS_EDEFAULT.equals(contractAddress);
 			case SmartcontractPackage.SMART_CONTRACT__CONTRACTFUNCTIONS:
 				return contractfunctions != null && !contractfunctions.isEmpty();
 			case SmartcontractPackage.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES:
@@ -321,6 +425,10 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 		result.append(typeName);
 		result.append(", imagePath: ");
 		result.append(imagePath);
+		result.append(", privateKey: ");
+		result.append(privateKey);
+		result.append(", contractAddress: ");
+		result.append(contractAddress);
 		result.append(')');
 		return result.toString();
 	}

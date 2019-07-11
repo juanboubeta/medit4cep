@@ -511,6 +511,8 @@ tool.name="Smart Contract", tool.description="Add a SmartContract", resizable="f
 class SmartContract extends UnaryOperator {
    attr String typeName;
    attr String imagePath;
+   attr String privateKey;
+   attr String contractAddress;
    val ContractFunction[*] contractfunctions;   
     
    @gmf.compartment(layout="list")
@@ -540,6 +542,7 @@ abstract class Parameter {
 @gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
 tool.name="Input Parameter", tool.description="Add an Input Parameter", resizable="false", label.readOnly="true")
 class InputParameter extends Parameter{
+	attr String value;
    ref ContractFunction#InputParametersFunction InputReferencedFunction;
 }
 

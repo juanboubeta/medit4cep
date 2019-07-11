@@ -3,7 +3,7 @@ var smartcontracts : Sequence = SmartContract.allInstances();
 
 	for (sc : SmartContract in smartcontracts) {	%]
 		[%if (sc.typeName == 'Voting') {%]
-package Voting;
+package Smartcontract_Voting;
 
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;
@@ -25,20 +25,26 @@ public class [%=sc.typeName%]_invocation {
 	
 	private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
 	private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
-	private final static String PRIVATE_KEY = "Your private key";
-	private final static String CONTRACT_ADDRESS = "Address of the deploy contract";
+	private final static String PRIVATE_KEY = "[%=sc.privateKey%]";
+	private final static String CONTRACT_ADDRESS = "[%=sc.contractAddress%]";
 	
 	[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
-		[%if(cf.name == "authorizeVoter") {%]
-	private final static String AUTHORIZE_ADDRESS = "address";	
-		[%}%]
-		[%if(cf.name == "voteForCandidate") {%]
-	private final static BigInteger VOTE_INDEX = BigInteger.valueOf();
-		[%}%]
-		[%if(cf.name == "getVoteForCandidate") {%]
-	private final static BigInteger GET_VOTE_INDEX = BigInteger.valueOf();
-		[%}}%]		
-	
+		[%if(cf.name == "authorizeVoter") {
+		for(ip : InputParameter in cf.InputParametersFunction){
+				if(ip.name == "_address"){%]
+	private final static String AUTHORIZE_ADDRESS = "[%=ip.value%]";	
+		[%}}}%]
+		[%if(cf.name == "voteForCandidate") {
+		for(ip : InputParameter in cf.InputParametersFunction){
+				if(ip.name == "_index"){%]
+	private final static BigInteger VOTE_INDEX = BigInteger.valueOf([%=ip.value%]L);
+		[%}}}%]
+		[%if(cf.name == "getVoteForCandidate") {
+		for(ip : InputParameter in cf.InputParametersFunction){
+				if(ip.name == "_index"){%]
+	private final static BigInteger GET_VOTE_INDEX = BigInteger.valueOf([%=ip.value%]L);
+		[%}}}}%]		
+		
 	public static void main(String[] args) {
 		try {
 			new [%=sc.typeName%]_invocation();

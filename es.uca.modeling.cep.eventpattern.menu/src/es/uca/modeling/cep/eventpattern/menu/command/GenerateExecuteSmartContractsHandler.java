@@ -134,7 +134,7 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 				for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
 					
 					patternToSmartContractPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +".egl";
-					outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
+					outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
 							eventPatternModel.getSmartContracts().get(i).getTypeName() + ".java");	
 					System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputSmartContractFile.getAbsolutePath());
 												
@@ -159,7 +159,7 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 					sourceModel3.setReadOnLoad(true);
 					
 					patternToContractFunctionPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +"-invocation.egl";
-					outputContractFunctionFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
+					outputContractFunctionFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
 							eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation.java");	
 					System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputContractFunctionFile.getAbsolutePath());
 												

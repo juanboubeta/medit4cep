@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link smartcontract.SmartContract#getTypeName <em>Type Name</em>}</li>
  *   <li>{@link smartcontract.SmartContract#getImagePath <em>Image Path</em>}</li>
+ *   <li>{@link smartcontract.SmartContract#getPrivateKey <em>Private Key</em>}</li>
+ *   <li>{@link smartcontract.SmartContract#getContractAddress <em>Contract Address</em>}</li>
  *   <li>{@link smartcontract.SmartContract#getContractfunctions <em>Contractfunctions</em>}</li>
  *   <li>{@link smartcontract.SmartContract#getSmartContractProperties <em>Smart Contract Properties</em>}</li>
  * </ul>
@@ -77,6 +79,58 @@ public interface SmartContract extends EObject {
 	 * @generated
 	 */
 	void setImagePath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Private Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Private Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Private Key</em>' attribute.
+	 * @see #setPrivateKey(String)
+	 * @see smartcontract.SmartcontractPackage#getSmartContract_PrivateKey()
+	 * @model
+	 * @generated
+	 */
+	String getPrivateKey();
+
+	/**
+	 * Sets the value of the '{@link smartcontract.SmartContract#getPrivateKey <em>Private Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Private Key</em>' attribute.
+	 * @see #getPrivateKey()
+	 * @generated
+	 */
+	void setPrivateKey(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Contract Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Contract Address</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contract Address</em>' attribute.
+	 * @see #setContractAddress(String)
+	 * @see smartcontract.SmartcontractPackage#getSmartContract_ContractAddress()
+	 * @model
+	 * @generated
+	 */
+	String getContractAddress();
+
+	/**
+	 * Sets the value of the '{@link smartcontract.SmartContract#getContractAddress <em>Contract Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Contract Address</em>' attribute.
+	 * @see #getContractAddress()
+	 * @generated
+	 */
+	void setContractAddress(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Contractfunctions</b></em>' containment reference list.

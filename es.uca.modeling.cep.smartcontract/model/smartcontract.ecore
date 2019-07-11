@@ -24,6 +24,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contractAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contractfunctions" upperBound="-1"
         eType="#//ContractFunction" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SmartContractProperties"
@@ -72,6 +74,7 @@
       <details key="tool.description" value="Add an Input Parameter"/>
       <details key="resizable" value="false"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="InputReferencedFunction"
         eType="#//ContractFunction" eOpposite="#//ContractFunction/InputParametersFunction"/>
   </eClassifiers>
