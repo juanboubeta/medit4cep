@@ -2,14 +2,17 @@
 	"name":"Voting",
 	"functions":[
 		{"name":"authorizeVoter",
-		"inputs":[{"name":"_address","type":"boolean"}],
-		"output":{"name":"votes","type":"integer"}},
+		"inputs":[{"name":"_address","type":"string"}],
+		"output": null},
 		{"name":"voteForCandidate",
-		"inputs":[{"name":"_index","type":"integer"}],
-		"output":{"name":"op2","type":"integer"}},
+		"inputs":[{"name":"_index","type":"bigInteger"}],
+		"output": null},
 		{"name":"getVoteForCandidate",
-		"inputs":[{"name":"_index","type":"double"}],
-		"output":{"name":"op3","type":"long"}}
+		"inputs":[{"name":"_index","type":"bigInteger"}],
+		"output":{"name":"votes","type":"bigInteger"}},
+		{"name":"getAllCandidatesWithVotes",
+		"inputs":[],
+		"output":{"name":"CandidatesWithVotes","type":"String"}}
 	]
 },
 {

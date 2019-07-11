@@ -23,12 +23,21 @@ import java.math.BigInteger;
 
 public class [%=sc.typeName%]_invocation {
 	
-	private final static String PRIVATE_KEY = "84480F5478DDF2DD563360204281753E5285248E9ED0A3E70E2F032810D28C80";
-
 	private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
 	private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
-				
-	private final static String CONTRACT_ADDRESS = "0x3D091B157d624d0F5ee91D99875D9d493dA741c1";
+	private final static String PRIVATE_KEY = "Your private key";
+	private final static String CONTRACT_ADDRESS = "Address of the deploy contract";
+	
+	[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
+		[%if(cf.name == "authorizeVoter") {%]
+	private final static String AUTHORIZE_ADDRESS = "address";	
+		[%}%]
+		[%if(cf.name == "voteForCandidate") {%]
+	private final static BigInteger VOTE_INDEX = BigInteger.valueOf();
+		[%}%]
+		[%if(cf.name == "getVoteForCandidate") {%]
+	private final static BigInteger GET_VOTE_INDEX = BigInteger.valueOf();
+		[%}}%]		
 	
 	public static void main(String[] args) {
 		try {
@@ -40,7 +49,7 @@ public class [%=sc.typeName%]_invocation {
 	
 	private [%=sc.typeName%]_invocation() throws Exception {
 		
-		Web3j web3j = Web3j.build(new HttpService("https://ropsten.infura.io/v3/06ec613b421b4f118b06204feda6db41"));
+		Web3j web3j = Web3j.build(new HttpService();
 		Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();
 		System.out.println(web3ClientVersion.getWeb3ClientVersion());
 		
@@ -48,17 +57,21 @@ public class [%=sc.typeName%]_invocation {
 		
 		Voting voting = loadContract(CONTRACT_ADDRESS, web3j, credentials);
 		System.out.println("Deployed contract address: " + voting.getContractAddress());
+		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
 		[%if(cf.name == "authorizeVoter") {%]
-			[%for(ip: InputParameter in cf.InputParametersFunction) {%]	
-		voting.authorizeVoter([%=ip.name%]).send();[%}}%]
+		System.out.println(voting.authorizeVoter(AUTHORIZE_ADDRESS).send().getTransactionHash());
+		[%}%]
 		[%if(cf.name == "voteForCandidate") {%]
-			[%for(ip: InputParameter in cf.InputParametersFunction) {%]	
-		voting.voteForCandidate([%=ip.name%]).send();[%}}%]
+		System.out.println(voting.voteForCandidate(VOTE_INDEX).send().getTransactionHash());
+		[%}%]
 		[%if(cf.name == "getVoteForCandidate") {%]
-			[%for(ip: InputParameter in cf.InputParametersFunction) {%]	
-		voting.getVoteForCandidate([%=ip.name%]).send();[%}}}%]
-
+		System.out.println(voting.getVoteForCandidate(GET_VOTE_INDEX).send());
+		[%}%]
+		[%if(cf.name == "getAllCandidatesWithVotes") {%]
+		System.out.println(voting.getAllCandidatesWithVotes().send());
+		[%}}%]
+		
 	}
 	
 	private Credentials getCredentialsFromPrivateKey() {

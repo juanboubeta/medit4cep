@@ -70,7 +70,7 @@ context ContractFunction {
         		     	
         	switch(self.referencedSmartContract.typeName) {
         	case "Voting":
-	        	if (self.name == "authorizeVoter" or self.name == "voteForCandidate" or self.name == "getVoteForCandidate") {
+	        	if (self.name == "authorizeVoter" or self.name == "voteForCandidate" or self.name == "getVoteForCandidate" or self.name == "getAllCandidatesWithVotes") {
 	        		return true;        	    
 	        	} else {
 	        		m = m + "' doesn´t exist for the SmartContract '" + self.referencedSmartContract.typeName + "'";
@@ -160,7 +160,7 @@ context Parameter {
 			        switch(self.InputReferencedFunction.name) {	
 				    	case "authorizeVoter":
 				    		if (self.name == "_address") {
-				        		if (self.type == PropertyTypeValue#Boolean) {
+				        		if (self.type == PropertyTypeValue#String) {
 				        		return true;        	    
 					        	} else {
 					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
@@ -174,7 +174,7 @@ context Parameter {
 				    		break;
 				    	case "voteForCandidate":
 				    		if (self.name == "_index") {
-				        		if (self.type == PropertyTypeValue#Integer) {
+				        		if (self.type == PropertyTypeValue#bigInteger) {
 				        		return true;        	    
 					        	} else {
 					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
@@ -187,7 +187,7 @@ context Parameter {
 				    		break;
 				    	case "getVoteForCandidate":
 				    		if (self.name == "_index") {
-				        		if (self.type == PropertyTypeValue#Double) {
+				        		if (self.type == PropertyTypeValue#bigInteger) {
 				        		return true;        	    
 					        	} else {
 					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
@@ -197,6 +197,14 @@ context Parameter {
 				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
 				        		return false; 
 				        	} 
+				    		break;
+				    	case "getAllCandidatesWithVotes":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
 				    		break;
 				    	default:
 				    		m = m + self.name + "' doesn´t exist";
@@ -285,22 +293,24 @@ context Parameter {
 	        	case "Voting":
 			        switch(self.OutputReferencedFunction.name) {	
 				    	case "authorizeVoter":
-				    		if (self.name == "votes") {
-				        		if (self.type == PropertyTypeValue#Integer) {
-				        		return true;        	    
-					        	} else {
-					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
-					        		return false; 
-					        	}       	    
-				        	} else {
-				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
 				        		return false; 
-				        	} 
-				    		
+				    		} else {
+				    			return true;
+				    		}				    		
 				    		break;
 				    	case "voteForCandidate":
-				    		if (self.name == "op2") {
-				        		if (self.type == PropertyTypeValue#Integer) {
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
+				    		break;
+				    	case "getVoteForCandidate":
+				    		if (self.name == "votes") {
+				        		if (self.type == PropertyTypeValue#bigInteger) {
 				        		return true;        	    
 					        	} else {
 					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
@@ -311,9 +321,9 @@ context Parameter {
 				        		return false; 
 				        	} 
 				    		break;
-				    	case "getVoteForCandidate":
-				    		if (self.name == "op3") {
-				        		if (self.type == PropertyTypeValue#Long) {
+				    	case "getAllCandidatesWithVotes":
+				    		if (self.name == "CandidatesWithVotes") {
+				        		if (self.type == PropertyTypeValue#String) {
 				        		return true;        	    
 					        	} else {
 					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
