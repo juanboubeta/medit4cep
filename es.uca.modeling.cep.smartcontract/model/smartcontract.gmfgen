@@ -106,7 +106,7 @@
         <entries xsi:type="gmfgen:ToolEntry" title="Contract Function" description="Add a Contract Function" genNodes="//@diagram/@childNodes.0"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Input Parameter" description="Add an Input Parameter" genNodes="//@diagram/@childNodes.1"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Output Parameter" description="Add an Output Parameter" genNodes="//@diagram/@childNodes.2"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="SmartContract" description="Add a SmartContract" genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Smart Contract" description="Add a SmartContract" genNodes="//@diagram/@topLevelNodes.0"/>
       </groups>
     </palette>
     <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="es.uca.modeling.cep.smartcontract.diagram.general" name="Smartcontract Diagram">

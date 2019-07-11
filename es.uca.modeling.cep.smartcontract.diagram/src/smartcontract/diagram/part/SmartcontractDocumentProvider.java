@@ -604,7 +604,6 @@ public class SmartcontractDocumentProvider extends AbstractDocumentProvider impl
 			}
 			newResource.unload();
 		}
-		ValidateAction.runValidation((org.eclipse.gmf.runtime.notation.View) document.getContent());
 	}
 
 	/**

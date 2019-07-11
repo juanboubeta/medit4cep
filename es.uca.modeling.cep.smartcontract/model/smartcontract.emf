@@ -67,6 +67,7 @@ enum PropertyTypeValue {
    Unknown;
    Boolean;
    Integer;
+   BigInteger;
    Long; 
    Double;
    Float; 

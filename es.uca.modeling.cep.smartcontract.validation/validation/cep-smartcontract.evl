@@ -174,7 +174,7 @@ context Parameter {
 				    		break;
 				    	case "voteForCandidate":
 				    		if (self.name == "_index") {
-				        		if (self.type == PropertyTypeValue#bigInteger) {
+				        		if (self.type == PropertyTypeValue#BigInteger) {
 				        		return true;        	    
 					        	} else {
 					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
@@ -187,7 +187,7 @@ context Parameter {
 				    		break;
 				    	case "getVoteForCandidate":
 				    		if (self.name == "_index") {
-				        		if (self.type == PropertyTypeValue#bigInteger) {
+				        		if (self.type == PropertyTypeValue#BigInteger) {
 				        		return true;        	    
 					        	} else {
 					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";

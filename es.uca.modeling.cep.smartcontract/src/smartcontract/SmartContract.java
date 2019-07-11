@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see smartcontract.SmartcontractPackage#getSmartContract()
- * @model annotation="gmf.node figure='rectangle' label='typeName' border.color='110,110,110' tool.name='SmartContract' tool.description='Add a SmartContract' resizable='false'"
+ * @model annotation="gmf.node figure='rectangle' label='typeName' border.color='110,110,110' tool.name='Smart Contract' tool.description='Add a SmartContract' resizable='false'"
  * @generated
  */
 public interface SmartContract extends EObject {

@@ -39,7 +39,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="SmartContract"
+          title="Smart Contract"
           description="Add a SmartContract">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>

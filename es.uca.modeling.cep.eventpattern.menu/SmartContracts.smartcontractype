@@ -12,7 +12,7 @@
 		"output":{"name":"votes","type":"bigInteger"}},
 		{"name":"getAllCandidatesWithVotes",
 		"inputs":[],
-		"output":{"name":"CandidatesWithVotes","type":"String"}}
+		"output":{"name":"CandidatesWithVotes","type":"string"}}
 	]
 },
 {
