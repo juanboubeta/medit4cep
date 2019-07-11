@@ -5,11 +5,11 @@
 		"inputs":[{"name":"_address","type":"string"}],
 		"output": null},
 		{"name":"voteForCandidate",
-		"inputs":[{"name":"_index","type":"bigInteger"}],
+		"inputs":[{"name":"_index","type":"integer"}],
 		"output": null},
 		{"name":"getVoteForCandidate",
-		"inputs":[{"name":"_index","type":"bigInteger"}],
-		"output":{"name":"votes","type":"bigInteger"}},
+		"inputs":[{"name":"_index","type":"integer"}],
+		"output":{"name":"votes","type":"integer"}},
 		{"name":"getAllCandidatesWithVotes",
 		"inputs":[],
 		"output":{"name":"CandidatesWithVotes","type":"string"}}
@@ -20,26 +20,26 @@
 	"functions":[
 		{"name":"abort",
 		"inputs":[],
-		"output":{"name":"op1","type":"string"}},
+		"output": null},
 		{"name":"confirmPurchase",
-		"inputs":[],
-		"output":{"name":"op2","type":"integer"}},
+		"inputs":[{"name":"purchaseValue","type":"integer"}],
+		"output": null},
 		{"name":"confirmReceived",
 		"inputs":[],
 		"output": null}
 	]
 },
 {
-	"name":"BlindAuction",
+	"name":"Auction",
 	"functions":[
 		{"name":"bid",
-		"inputs":[{"name":"_blindedBid","type":"boolean"}],
-		"output":{"name":"output1","type":"double"}},
-		{"name":"reveal",
-		"inputs":[{"name":"_values","type":"long"},{"name":"_blinded","type":"integer"},{"name":"_blindedBid","type":"string"}],
-		"output":{"name":"output2","type":"string"}},
-		{"name":"funcion3",
+		"inputs":[{"name":"bidValue","type":"integer"}],
+		"output": null },
+		{"name":"withdraw",
 		"inputs":[],
-		"output":{"name":"output3","type":"integer"}}
+		"output": null },
+		{"name":"auctionEnd",
+		"inputs":[],
+		"output": null }
 	]
 }]

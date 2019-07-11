@@ -23,12 +23,15 @@ import java.math.BigInteger;
 
 public class [%=sc.typeName%]_invocation {
 	
-	private final static String PRIVATE_KEY = "84480F5478DDF2DD563360204281753E5285248E9ED0A3E70E2F032810D28C80";
-
 	private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
 	private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
-				
-	private final static String CONTRACT_ADDRESS = "0x3D091B157d624d0F5ee91D99875D9d493dA741c1";
+	private final static String PRIVATE_KEY = "Your private key";
+	private final static String CONTRACT_ADDRESS = "Address of the deploy contract";
+	
+	[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
+		[%if(cf.name == "confirmPurchase") {%]
+	private final static BigInteger WEI_VALUE = BigInteger.valueOf();
+		[%}}%]	
 	
 	public static void main(String[] args) {
 		try {
@@ -40,7 +43,7 @@ public class [%=sc.typeName%]_invocation {
 	
 	private [%=sc.typeName%]_invocation() throws Exception {
 		
-		Web3j web3j = Web3j.build(new HttpService("https://ropsten.infura.io/v3/06ec613b421b4f118b06204feda6db41"));
+		Web3j web3j = Web3j.build(new HttpService());
 		Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();
 		System.out.println(web3ClientVersion.getWeb3ClientVersion());
 		
@@ -51,11 +54,12 @@ public class [%=sc.typeName%]_invocation {
 		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
 		[%if(cf.name == "abort") {%]
-		purchase.abort().send();
+		System.out.println(purchase.abort().send().getTransactionHash());
 		[%}if(cf.name == "confirmPurchase") {%]
-		purchase.abort().confirmPurchase();
+		System.out.println(purchase.confirmPurchase(WEI_VALUE).send().getTransactionHash());
 		[%}if(cf.name == "confirmReceived") {%]
-		purchase.abort().send();[%}}%]
+		System.out.println(purchase.confirmReceived().send().getTransactionHash());
+		[%}}%]
 
 	}
 	
@@ -70,5 +74,3 @@ public class [%=sc.typeName%]_invocation {
 	
 }
 [%}}%]
-
-

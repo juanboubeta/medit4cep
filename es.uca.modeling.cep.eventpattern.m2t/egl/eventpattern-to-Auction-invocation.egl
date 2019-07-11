@@ -2,8 +2,8 @@
 var smartcontracts : Sequence = SmartContract.allInstances();
 
 	for (sc : SmartContract in smartcontracts) {	%]
-		[%if (sc.typeName == 'Voting') {%]
-package Voting;
+		[%if (sc.typeName == "Auction") {%]
+package Auction;
 
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;
@@ -29,15 +29,9 @@ public class [%=sc.typeName%]_invocation {
 	private final static String CONTRACT_ADDRESS = "Address of the deploy contract";
 	
 	[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
-		[%if(cf.name == "authorizeVoter") {%]
-	private final static String AUTHORIZE_ADDRESS = "address";	
-		[%}%]
-		[%if(cf.name == "voteForCandidate") {%]
-	private final static BigInteger VOTE_INDEX = BigInteger.valueOf();
-		[%}%]
-		[%if(cf.name == "getVoteForCandidate") {%]
-	private final static BigInteger GET_VOTE_INDEX = BigInteger.valueOf();
-		[%}}%]		
+		[%if(cf.name == "bid") {%]
+	private final static BigInteger WEI_VALUE = BigInteger.valueOf();
+		[%}}%]	
 	
 	public static void main(String[] args) {
 		try {
@@ -55,23 +49,18 @@ public class [%=sc.typeName%]_invocation {
 		
 		Credentials credentials = getCredentialsFromPrivateKey();
 		
-		Voting voting = loadContract(CONTRACT_ADDRESS, web3j, credentials);
-		System.out.println("Deployed contract address: " + voting.getContractAddress());
+		Auction auction = loadContract(CONTRACT_ADDRESS, web3j, credentials);
+		System.out.println("Deployed contract address: " + auction.getContractAddress());
 		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
-		[%if(cf.name == "authorizeVoter") {%]
-		System.out.println(voting.authorizeVoter(AUTHORIZE_ADDRESS).send().getTransactionHash());
-		[%}%]
-		[%if(cf.name == "voteForCandidate") {%]
-		System.out.println(voting.voteForCandidate(VOTE_INDEX).send().getTransactionHash());
-		[%}%]
-		[%if(cf.name == "getVoteForCandidate") {%]
-		System.out.println(voting.getVoteForCandidate(GET_VOTE_INDEX).send());
-		[%}%]
-		[%if(cf.name == "getAllCandidatesWithVotes") {%]
-		System.out.println(voting.getAllCandidatesWithVotes().send());
+		[%if(cf.name == "bid") {%]
+		System.out.println(auction.bid(WEI_VALUE).send().getTransactionHash());
+		[%}if(cf.name == "withdraw") {%]
+		System.out.println(auction.withdraw().send().getTransactionHash());
+		[%}if(cf.name == "auctionEnd") {%]
+		System.out.println(auction.auctionEnd().send().getTransactionHash());
 		[%}}%]
-		
+
 	}
 	
 	private Credentials getCredentialsFromPrivateKey() {
@@ -79,11 +68,9 @@ public class [%=sc.typeName%]_invocation {
 		return Credentials.create(PRIVATE_KEY);
 	}
 	
-	private Voting loadContract(String contractAddress, Web3j web3j, Credentials credentials) {
-		return Voting.load(contractAddress, web3j, credentials, GAS_PRICE, GAS_LIMIT);
+	private Auction loadContract(String contractAddress, Web3j web3j, Credentials credentials) {
+		return Auction.load(contractAddress, web3j, credentials, GAS_PRICE, GAS_LIMIT);
 	}
 	
 }
 [%}}%]
-
-

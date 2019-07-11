@@ -91,10 +91,9 @@
     <eLiterals name="Unknown"/>
     <eLiterals name="Boolean" value="1"/>
     <eLiterals name="Integer" value="2"/>
-    <eLiterals name="BigInteger" value="3"/>
-    <eLiterals name="Long" value="4"/>
-    <eLiterals name="Double" value="5"/>
-    <eLiterals name="Float" value="6"/>
-    <eLiterals name="String" value="7"/>
+    <eLiterals name="Long" value="3"/>
+    <eLiterals name="Double" value="4"/>
+    <eLiterals name="Float" value="5"/>
+    <eLiterals name="String" value="6"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -144,7 +144,7 @@ public class EventpatternDiagramEditorPlugin extends AbstractUIPlugin {
 					}
 				}
 			}
-			
+
 			if (smartcontractProject.exists()) {
 
 				// Open if necessary

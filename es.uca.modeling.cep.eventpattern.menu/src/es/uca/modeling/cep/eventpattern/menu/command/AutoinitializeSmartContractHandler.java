@@ -186,9 +186,6 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 									case "string":
 										InputParameterType = PropertyTypeValue.STRING;
 										break;
-									case "bigInteger":
-										InputParameterType = PropertyTypeValue.BIG_INTEGER;
-										break;
 									default:
 										InputParameterType = PropertyTypeValue.UNKNOWN;
 									}

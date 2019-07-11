@@ -109,7 +109,7 @@
             </command>
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.GenerateExecuteSmartContracts"
-                  label="Generate and Execute Smart Contracts"
+                  label="Generate Smart Contracts"
                   style="push">
             </command>
             <command

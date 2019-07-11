@@ -49,14 +49,6 @@ public enum PropertyTypeValue implements Enumerator {
 	INTEGER(2, "Integer", "Integer"),
 
 	/**
-	 * The '<em><b>Big Integer</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BIG_INTEGER_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BIG_INTEGER(3, "BigInteger", "BigInteger"), /**
 	 * The '<em><b>Long</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,7 +56,7 @@ public enum PropertyTypeValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LONG(4, "Long", "Long"),
+	LONG(3, "Long", "Long"),
 
 	/**
 	 * The '<em><b>Double</b></em>' literal object.
@@ -74,7 +66,7 @@ public enum PropertyTypeValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOUBLE(5, "Double", "Double"),
+	DOUBLE(4, "Double", "Double"),
 
 	/**
 	 * The '<em><b>Float</b></em>' literal object.
@@ -84,7 +76,7 @@ public enum PropertyTypeValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FLOAT(6, "Float", "Float"),
+	FLOAT(5, "Float", "Float"),
 
 	/**
 	 * The '<em><b>String</b></em>' literal object.
@@ -94,7 +86,7 @@ public enum PropertyTypeValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STRING(7, "String", "String");
+	STRING(6, "String", "String");
 
 	/**
 	 * The '<em><b>Unknown</b></em>' literal value.
@@ -142,21 +134,6 @@ public enum PropertyTypeValue implements Enumerator {
 	public static final int INTEGER_VALUE = 2;
 
 	/**
-	 * The '<em><b>Big Integer</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Big Integer</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #BIG_INTEGER
-	 * @model name="BigInteger"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BIG_INTEGER_VALUE = 3;
-
-	/**
 	 * The '<em><b>Long</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -169,7 +146,7 @@ public enum PropertyTypeValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LONG_VALUE = 4;
+	public static final int LONG_VALUE = 3;
 
 	/**
 	 * The '<em><b>Double</b></em>' literal value.
@@ -184,7 +161,7 @@ public enum PropertyTypeValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DOUBLE_VALUE = 5;
+	public static final int DOUBLE_VALUE = 4;
 
 	/**
 	 * The '<em><b>Float</b></em>' literal value.
@@ -199,7 +176,7 @@ public enum PropertyTypeValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FLOAT_VALUE = 6;
+	public static final int FLOAT_VALUE = 5;
 
 	/**
 	 * The '<em><b>String</b></em>' literal value.
@@ -214,7 +191,7 @@ public enum PropertyTypeValue implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STRING_VALUE = 7;
+	public static final int STRING_VALUE = 6;
 
 	/**
 	 * An array of all the '<em><b>Property Type Value</b></em>' enumerators.
@@ -227,7 +204,6 @@ public enum PropertyTypeValue implements Enumerator {
 			UNKNOWN,
 			BOOLEAN,
 			INTEGER,
-			BIG_INTEGER,
 			LONG,
 			DOUBLE,
 			FLOAT,
@@ -291,7 +267,6 @@ public enum PropertyTypeValue implements Enumerator {
 			case UNKNOWN_VALUE: return UNKNOWN;
 			case BOOLEAN_VALUE: return BOOLEAN;
 			case INTEGER_VALUE: return INTEGER;
-			case BIG_INTEGER_VALUE: return BIG_INTEGER;
 			case LONG_VALUE: return LONG;
 			case DOUBLE_VALUE: return DOUBLE;
 			case FLOAT_VALUE: return FLOAT;

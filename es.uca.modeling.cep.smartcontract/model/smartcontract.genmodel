@@ -9,7 +9,6 @@
       <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Unknown"/>
       <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Boolean"/>
       <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Integer"/>
-      <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/BigInteger"/>
       <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Long"/>
       <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Double"/>
       <genEnumLiterals ecoreEnumLiteral="smartcontract.ecore#//PropertyTypeValue/Float"/>

@@ -55,13 +55,13 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 			IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
 							
 			if (!patternProject.exists()) {
-	        	MessageDialog.openError(shell, "Generate and Execute Smart Contracts", "There are no event patterns to be transformed into code.");
+	        	MessageDialog.openError(shell, "Generate Smart Contracts", "There are no event patterns to be transformed into code.");
 	        	return null;	
 			}		
 		
 			if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
 							
-				MessageDialog.openError(shell, "Generate and Execute Smart Contracts", "An event pattern must be open.");
+				MessageDialog.openError(shell, "Generate Smart Contracts", "An event pattern must be open.");
 				return null;
 			}
 			
@@ -69,7 +69,7 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 	        EventpatternDiagramEditor patternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
 	        
 	        if (patternDiagramEditor == null || !patternDiagramEditor.getTitle().endsWith("pattern_diagram")) {
-	        	MessageDialog.openError(shell, "Generate and Execute Smart Contracts", "An event pattern must be open.");
+	        	MessageDialog.openError(shell, "Generate Smart Contracts", "An event pattern must be open.");
 	        	return null; 
 	        }
 	        
@@ -85,7 +85,7 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 				
 			// problems.length is the number of errors of the active editor (not total errors).
 			if (problems.length > 0) {
-				MessageDialog.openError(shell, "Generate and Execute Smart Contracts", "There are some problems that must be solved before generating and executing the smart contracts.");
+				MessageDialog.openError(shell, "Generate Smart Contracts", "There are some problems that must be solved before generating and executing the smart contracts.");
 	        	return null; 
 			}
 		 	
@@ -181,7 +181,7 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 				}					
 			}
 			
-			MessageDialog.openInformation(shell, "Generate and Execute Smart Contracts", 
+			MessageDialog.openInformation(shell, "Generate Smart Contracts", 
 		    		"The Smart Contracts has been transformed into java code and executed.");	
 			
 		} catch (Exception e1) {

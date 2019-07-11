@@ -480,7 +480,6 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 		addEEnumLiteral(propertyTypeValueEEnum, PropertyTypeValue.UNKNOWN);
 		addEEnumLiteral(propertyTypeValueEEnum, PropertyTypeValue.BOOLEAN);
 		addEEnumLiteral(propertyTypeValueEEnum, PropertyTypeValue.INTEGER);
-		addEEnumLiteral(propertyTypeValueEEnum, PropertyTypeValue.BIG_INTEGER);
 		addEEnumLiteral(propertyTypeValueEEnum, PropertyTypeValue.LONG);
 		addEEnumLiteral(propertyTypeValueEEnum, PropertyTypeValue.DOUBLE);
 		addEEnumLiteral(propertyTypeValueEEnum, PropertyTypeValue.FLOAT);
