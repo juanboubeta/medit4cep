@@ -2,7 +2,7 @@
 	"name":"Voting",
 	"functions":[
 		{"name":"authorizeVoter",
-		"inputs":[{"name":"_address","type":"string"}],
+		"inputs":[{"name":"_address","type":"string"}, {"name":"role","type":"string"}, {"name":"censo","type":"string"}],
 		"output": null},
 		{"name":"voteForCandidate",
 		"inputs":[{"name":"_index","type":"integer"}],
@@ -12,7 +12,10 @@
 		"output":{"name":"votes","type":"integer"}},
 		{"name":"getAllCandidatesWithVotes",
 		"inputs":[],
-		"output":{"name":"CandidatesWithVotes","type":"string"}}
+		"output":{"name":"CandidatesWithVotes","type":"string"}},
+		{"name":"getTotalVotes",
+		"inputs":[],
+		"output":{"name":"TotalVotes","type":"string"}}
 	]
 },
 {

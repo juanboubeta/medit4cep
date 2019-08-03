@@ -1299,7 +1299,7 @@ context ContractFunction {
         		     	
         	switch(self.referencedSmartContract.typeName) {
         	case "Voting":
-	        	if (self.name == "authorizeVoter" or self.name == "voteForCandidate" or self.name == "getVoteForCandidate" or self.name == "getAllCandidatesWithVotes") {
+	        	if (self.name == "authorizeVoter" or self.name == "voteForCandidate" or self.name == "getVoteForCandidate" or self.name == "getAllCandidatesWithVotes" or self.name == "getTotalVotes") {
 	        		return true;        	    
 	        	} else {
 	        		m = m + "' doesn´t exist for the SmartContract '" + self.referencedSmartContract.typeName + "'";
@@ -1388,7 +1388,7 @@ context Parameter {
 	        	case "Voting":
 			        switch(self.InputReferencedFunction.name) {	
 				    	case "authorizeVoter":
-				    		if (self.name == "_address") {
+				    		if (self.name == "_address" or self.name == "role" or self.name == "censo") {
 				        		if (self.type == PropertyTypeValue#String) {
 				        		return true;        	    
 					        	} else {
@@ -1428,6 +1428,14 @@ context Parameter {
 				        	} 
 				    		break;
 				    	case "getAllCandidatesWithVotes":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
+				    		break;
+				    	case "getTotalVotes":
 				    		if(self.name.isDefined()){
 				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
 				        		return false; 
@@ -1564,6 +1572,19 @@ context Parameter {
 				        		return false; 
 				        	} 
 				    		break;
+				    	case "getTotalVotes":
+				    		if (self.name == "TotalVotes") {
+				        		if (self.type == PropertyTypeValue#String) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+					        		return false; 
+					        	}         	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    	break;
 				    	default:
 				    		m = m + self.name + "' doesn´t exist";
 				    		break;

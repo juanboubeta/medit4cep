@@ -33,6 +33,12 @@ public class [%=sc.typeName%]_invocation {
 		for(ip : InputParameter in cf.InputParametersFunction){
 				if(ip.name == "_address"){%]
 	private final static String AUTHORIZE_ADDRESS = "[%=ip.value%]";	
+		[%}
+				else if(ip.name == "role"){%]
+	private final static String ROLE = "[%=ip.value%]";
+		[%}
+				else if(ip.name == "censo"){%]
+	private final static String CENSO = "[%=ip.value%]";	
 		[%}}}%]
 		[%if(cf.name == "voteForCandidate") {
 		for(ip : InputParameter in cf.InputParametersFunction){
@@ -66,7 +72,7 @@ public class [%=sc.typeName%]_invocation {
 		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
 		[%if(cf.name == "authorizeVoter") {%]
-		System.out.println(voting.authorizeVoter(AUTHORIZE_ADDRESS).send().getTransactionHash());
+		System.out.println(voting.authorizeVoter(AUTHORIZE_ADDRESS, ROLE, CENSO).send().getTransactionHash());
 		[%}%]
 		[%if(cf.name == "voteForCandidate") {%]
 		System.out.println(voting.voteForCandidate(VOTE_INDEX).send().getTransactionHash());
@@ -76,6 +82,9 @@ public class [%=sc.typeName%]_invocation {
 		[%}%]
 		[%if(cf.name == "getAllCandidatesWithVotes") {%]
 		System.out.println(voting.getAllCandidatesWithVotes().send());
+		[%}%]
+		[%if(cf.name == "getTotalVotes") {%]
+		System.out.println(voting.getTotalVotes().send());
 		[%}}%]
 		
 	}
