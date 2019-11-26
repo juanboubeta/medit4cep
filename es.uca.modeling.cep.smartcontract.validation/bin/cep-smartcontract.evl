@@ -70,7 +70,7 @@ context ContractFunction {
         		     	
         	switch(self.referencedSmartContract.typeName) {
         	case "Voting":
-	        	if (self.name == "authorizeVoter" or self.name == "voteForCandidate" or self.name == "getVoteForCandidate" or self.name == "getAllCandidatesWithVotes" or self.name == "getTotalVotes") {
+	        	if (self.name == "authorizeVoter" or self.name == "voteForCandidate" or self.name == "getVoteForCandidate" or self.name == "getAllCandidatesWithVotes" or self.name == "getTotalVotes" or self.name == "StartTimeToVote" or self.name == "StopTimeToVote") {
 	        		return true;        	    
 	        	} else {
 	        		m = m + "' doesn´t exist for the SmartContract '" + self.referencedSmartContract.typeName + "'";
@@ -207,6 +207,22 @@ context Parameter {
 				    		}
 				    		break;
 				    	case "getTotalVotes":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
+				    		break;
+				    	case "StartTimeToVote":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
+				    		break;
+				    	case "StopTimeToVote":
 				    		if(self.name.isDefined()){
 				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
 				        		return false; 
@@ -356,6 +372,22 @@ context Parameter {
 				        		return false; 
 				        	} 
 				    	break;
+				    	case "StartTimeToVote":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}				    		
+				    		break;
+				    	case "StopTimeToVote":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}				    		
+				    		break;
 				    	default:
 				    		m = m + self.name + "' doesn´t exist";
 				    		break;

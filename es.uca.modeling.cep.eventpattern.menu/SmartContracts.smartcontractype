@@ -17,10 +17,10 @@
 		"inputs":[],
 		"output":{"name":"TotalVotes","type":"string"}},
 		{"name":"StartTimeToVote",
-		"inputs":[{"name":"TimeToVote","type":"boolean"}],
+		"inputs":[],
 		"output": null},
-		{"name":"getVoteForCandidate",
-		"inputs":[{"name":"TimeToVote","type":"boolean"}],
+		{"name":"StopTimeToVote",
+		"inputs":[],
 		"output": null}
 	]
 },

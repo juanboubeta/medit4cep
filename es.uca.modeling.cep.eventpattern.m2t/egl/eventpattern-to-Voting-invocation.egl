@@ -85,6 +85,12 @@ public class [%=sc.typeName%]_invocation {
 		[%}%]
 		[%if(cf.name == "getTotalVotes") {%]
 		System.out.println(voting.getTotalVotes().send());
+		[%}%]
+		[%if(cf.name == "StartTimeToVote") {%]
+		System.out.println(voting.StartTimeToVote().send());
+		[%}%]
+		[%if(cf.name == "StopTimeToVote") {%]
+		System.out.println(voting.StopTimeToVote().send());
 		[%}}%]
 		
 	}
