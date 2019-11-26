@@ -15,7 +15,13 @@
 		"output":{"name":"CandidatesWithVotes","type":"string"}},
 		{"name":"getTotalVotes",
 		"inputs":[],
-		"output":{"name":"TotalVotes","type":"string"}}
+		"output":{"name":"TotalVotes","type":"string"}},
+		{"name":"StartTimeToVote",
+		"inputs":[{"name":"TimeToVote","type":"boolean"}],
+		"output": null},
+		{"name":"getVoteForCandidate",
+		"inputs":[{"name":"TimeToVote","type":"boolean"}],
+		"output": null}
 	]
 },
 {
