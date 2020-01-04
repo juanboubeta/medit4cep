@@ -106,5 +106,3 @@ public class [%=sc.typeName%]_invocation {
 	
 }
 [%}}%]
-
-
