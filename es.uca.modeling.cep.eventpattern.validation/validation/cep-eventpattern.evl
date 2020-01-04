@@ -1256,7 +1256,7 @@ context SmartContract {
         	var m : String; 
         	m = "SmartContract '" + self.typeName; 
         	     	
-        	if (self.typeName == "Voting" or self.typeName == "Purchase" or self.typeName == "Auction") {
+        	if (self.typeName == "Voting" or self.typeName == "Purchase" or self.typeName == "Auction" or self.typeName == "VaccineDelivery") {
         		return true;        	    
         	} else {
         		m = m + "' doesn´t exist.";
@@ -1316,6 +1316,14 @@ context ContractFunction {
         		break;
         	case "Auction":
         		if (self.name == "bid" or self.name == "withdraw" or self.name == "auctionEnd") {
+	        		return true;        	    
+	        	} else {
+	        		m = m + "' doesn´t exist for the SmartContract '" + self.referencedSmartContract.typeName + "'";
+	        		return false; 
+	        	} 
+        		break;
+        	case "VaccineDelivery":
+        		if (self.name == "registerEvent") {
 	        		return true;        	    
 	        	} else {
 	        		m = m + "' doesn´t exist for the SmartContract '" + self.referencedSmartContract.typeName + "'";
@@ -1537,6 +1545,27 @@ context Parameter {
 				    		break;
 				    }
 	        		break;
+	        	case "VaccineDelivery":
+			        switch(self.InputReferencedFunction.name) {	
+				    	case "registerEvent":
+				    		if (self.name == "eventName" or self.name == "eventInfo") {
+				        		if (self.type == PropertyTypeValue#String) {
+				        		return true;        	    
+					        	} else {
+					        		m = m + self.name + "' doesn´t have the correct type for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+					        		return false; 
+					        	}       	    
+				        	} else {
+				        		m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				        		return false; 
+				        	} 
+				    		
+				    		break;
+				    	default:
+				    		m = m + self.name + "' doesn´t exist";
+				    		break;
+				    }
+	        		break;
 	        	default:
 	        		m = m + "' doesn´t exist";
 	        		return false; 
@@ -1548,7 +1577,7 @@ context Parameter {
 			        switch(self.OutputReferencedFunction.name) {	
 				    	case "authorizeVoter":
 				    		if(self.name.isDefined()){
-				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
 				        		return false; 
 				    		} else {
 				    			return true;
@@ -1556,7 +1585,7 @@ context Parameter {
 				    		break;
 				    	case "voteForCandidate":
 				    		if(self.name.isDefined()){
-				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
 				        		return false; 
 				    		} else {
 				    			return true;
@@ -1626,7 +1655,7 @@ context Parameter {
 	        		switch(self.OutputReferencedFunction.name) {	
 				    	case "abort":
 				    		if(self.name.isDefined()){
-				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
 				        		return false; 
 				    		} else {
 				    			return true;
@@ -1634,7 +1663,7 @@ context Parameter {
 				    		break;
 				    	case "confirmPurchase":
 				    		if(self.name.isDefined()){
-				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.InputReferencedFunction.name + "'";
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
 				        		return false; 
 				    		} else {
 				    			return true;
@@ -1681,6 +1710,21 @@ context Parameter {
 				    			return true;
 				    		}
 				    		break;
+				    		break;
+				    	default:
+				    		m = m + self.name + "' doesn´t exist";
+				    		break;
+				    }
+	        		break;
+	        	case "VaccineDelivery":
+	        		switch(self.OutputReferencedFunction.name) {	
+				    	case "registerEvent":
+				    		if(self.name.isDefined()){
+				    			m = m + self.name + "' doesn´t exist for the ContractFunction '" + self.OutputReferencedFunction.name + "'";
+				        		return false; 
+				    		} else {
+				    			return true;
+				    		}
 				    		break;
 				    	default:
 				    		m = m + self.name + "' doesn´t exist";

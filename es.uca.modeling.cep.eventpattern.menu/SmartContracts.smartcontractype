@@ -25,6 +25,14 @@
 	]
 },
 {
+	"name":"VaccineDelivery",
+	"functions":[
+		{"name":"registerEvent",
+		"inputs":[{"name":"eventName","type":"string"}, {"name":"eventInfo","type":"string"}],
+		"output": null}
+	]
+},
+{
 	"name":"Purchase",
 	"functions":[
 		{"name":"abort",
