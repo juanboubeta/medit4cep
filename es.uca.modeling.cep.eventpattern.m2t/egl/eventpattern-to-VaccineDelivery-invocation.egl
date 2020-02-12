@@ -55,11 +55,14 @@ public class [%=sc.typeName%]_invocation {
 		
 		VaccineDelivery vaccinedelivery = loadContract(CONTRACT_ADDRESS, web3j, credentials);
 		System.out.println("Deployed contract address: " + vaccinedelivery.getContractAddress());
-		
+			
+	}
+	
+	private registerEvent(String cep_event_name, String cep_event_info) throws Exception {
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
 		[%if(cf.name == "registerEvent") {%]
-		System.out.println(vaccinedelivery.registerEvent(EVENT_NAME, EVENT_INFO).send().getTransactionHash());
-		[%}}%]	
+		System.out.println(vaccinedelivery.registerEvent(cep_event_name, cep_event_info).send().getTransactionHash());
+		[%}}%]
 	}
 	
 	private Credentials getCredentialsFromPrivateKey() {
