@@ -1259,8 +1259,8 @@ context SmartContract {
         	if (self.typeName == "Voting" or self.typeName == "Purchase" or self.typeName == "Auction" or self.typeName == "VaccineDelivery") {
         		return true;        	    
         	} else {
-        		m = m + "' doesn´t exist.";
-        		return false; 
+        		m = m + "' doesn´t exist in the tool.";
+        		return true; 
         	}  
         }
 
@@ -1331,8 +1331,8 @@ context ContractFunction {
 	        	} 
         		break;
         	default:
-        		m = m + "' doesn´t exist";
-        		return false; 
+        		m = m + "' doesn´t exist in the tool";
+        		return true; 
         		break;	
         	} 
         }
@@ -1567,8 +1567,8 @@ context Parameter {
 				    }
 	        		break;
 	        	default:
-	        		m = m + "' doesn´t exist";
-	        		return false; 
+	        		m = m + "' doesn´t exist in the tool.";
+	        		return true; 
 	        		break;	
 	        	} 
 	        } else {
@@ -1732,8 +1732,8 @@ context Parameter {
 				    }
 	        		break;
 	        	default:
-	        		m = m + "' doesn´t exist";
-	        		return false; 
+	        		m = m + "' doesn´t exist in the tool.";
+	        		return true; 
 	        		break;	
 	        	} 
 	        }
