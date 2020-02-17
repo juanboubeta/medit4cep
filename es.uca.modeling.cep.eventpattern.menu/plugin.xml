@@ -136,6 +136,11 @@
                   style="push">
             </command>
             <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFile"
+                  label="Load and Model Solidity File"
+                  style="push">
+            </command>
+            <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.OpenSmartContract"
                   label="Open"
                   style="push">
@@ -316,6 +321,11 @@
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.AutoinitializeSmartContractHandler"
             id="es.uca.modeling.cep.eventpattern.menu.command.AutoinitializeSmartContract"
             name="AutoinitializeSmartContract">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFileHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFile"
+            name="LoadAndModelSolidityFile">
       </command>
    </extension>
 
