@@ -84,13 +84,13 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 				System.out.println(smartcontractPath);
 				
 				//Generating bin and abi files from solidity file
-				/*try {
+				try {
 					String [] cmd = {"solc", smartcontractPath,"--bin", "--abi", "--optimize", "-o", solidityPath}; //Comando de apagado en windows
 					System.out.println(cmd);
 					Runtime.getRuntime().exec(cmd);
 				} catch (IOException ioe) {
 					System.out.println(ioe);
-				}*/
+				}
 				
 				//Generating java smart contract from abi and bin files
 				/*try {
@@ -117,13 +117,11 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 				JSONParser parser = new JSONParser();
 
 				// Create local variables
-				JSONObject contractsArray;
-				JSONArray functionsArray;
 				JSONObject outputParameter;
-				JSONArray inputsParameter;
+				JSONArray inputsArray;
+				JSONArray outputsArray;
 				JSONObject inputParameter;
-				JSONObject aux;
-				
+
 				// Open the file .abi that contains solidity in JSON format.
 				
 				final String smartcontractype = solidityPath + "/" + smartcontractFile.replace(".sol", ".abi");
@@ -157,45 +155,36 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 						smartcontracts.setCreationDate(new Date());
 						smartcontracts.setDescription(description);
 						
-						//modificar a partir de aqui la lectura del ABI
+						// Get the default factory singleton
+						SmartcontractFactory factory = SmartcontractFactory.eINSTANCE;
+						smartcontract.SmartContract SmartContract = factory.createSmartContract();
+						
+						// put the name of the smart contract and add into the SmartContracts List
+						SmartContract.setTypeName(smartcontractFile.replace(".sol", ""));
+						smartcontracts.getSmartcontracts().add(SmartContract);
+						
+						//modificar a partir de aqui la lectura del ABI						
 						for (int i = 0; i < jsonArray.size(); i++) {
+
+							JSONObject functionsArray = (JSONObject) jsonArray.get(i);
+							if(functionsArray.get("name") != null) {
+							System.out.println(functionsArray.get("name"));
+							smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
 							
-							// Get the default factory singleton
-							SmartcontractFactory factory = SmartcontractFactory.eINSTANCE;
-
-							smartcontract.SmartContract SmartContract = factory.createSmartContract();							
+							String ContractFunctionName = (String) functionsArray.get("name");
 							
-							contractsArray = (JSONObject) jsonArray.get(i);
-							functionsArray = (JSONArray) contractsArray.get("functions");
-
-							String SmartContractName = (String) contractsArray.get("name");
+							// put the name of the contract function and add into the SmartContract List
+							ContractFunction.setName(ContractFunctionName);
+							SmartContract.getSmartContractProperties().add(ContractFunction);
+							ContractFunction.setReferencedSmartContract(SmartContract);
 							
-							// put the name of the smart contract and add into the SmartContracts List
-							SmartContract.setTypeName(SmartContractName);
-							smartcontracts.getSmartcontracts().add(SmartContract);
-
-							Iterator<JSONObject> iterator = functionsArray.iterator();
-
-							while (iterator.hasNext()) {
-								
-								smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
-								smartcontract.OutputParameter OutputParameter = factory.createOutputParameter();
-
-								aux = iterator.next();
-								String ContractFunctionName = (String) aux.get("name");
-
-								// put the name of the contract function and add into the SmartContract List
-								ContractFunction.setName(ContractFunctionName);
-								SmartContract.getSmartContractProperties().add(ContractFunction);
-								ContractFunction.setReferencedSmartContract(SmartContract);
-
-								inputsParameter = (JSONArray) aux.get("inputs");
-
-								for (int j = 0; j < inputsParameter.size(); j++) {
+								inputsArray = (JSONArray) functionsArray.get("inputs");
+								for (int j = 0; j < inputsArray.size(); j++) {
 									smartcontract.InputParameter InputParameter = factory.createInputParameter();
-									inputParameter = (JSONObject) inputsParameter.get(j);
-									String InputParameterName = (String) inputParameter.get("name");
+									inputParameter = (JSONObject) inputsArray.get(j);
 									
+									String InputParameterName = (String) inputParameter.get("name");
+										
 									smartcontract.PropertyTypeValue InputParameterType;
 									switch((String) inputParameter.get("type")) {
 									case "boolean":
@@ -219,20 +208,26 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 									default:
 										InputParameterType = PropertyTypeValue.UNKNOWN;
 									}
-								
+										
 									// put the name and type of the input parameter and add into the
 									// ContractFunction List
 									InputParameter.setName(InputParameterName);
 									InputParameter.setType(InputParameterType);
 									InputParameter.setInputReferencedFunction(ContractFunction);
-									ContractFunction.getInputParametersFunction().add(InputParameter);	
+									ContractFunction.getInputParametersFunction().add(InputParameter);
+									
 								}
-
-								outputParameter = (JSONObject) aux.get("output");
-								if(outputParameter != null) {
-									String OutputParameterName = (String) outputParameter.get("name");
-									smartcontract.PropertyTypeValue OutputParameterType;
 								
+								outputsArray = (JSONArray) functionsArray.get("outputs");
+								
+								for (int k = 0; k < outputsArray.size(); k++) {
+									smartcontract.OutputParameter OutputParameter = factory.createOutputParameter();
+									outputParameter = (JSONObject) outputsArray.get(k);
+									
+									String OutputParameterName = (String) outputParameter.get("name");
+										
+									smartcontract.PropertyTypeValue OutputParameterType;
+										
 									switch((String) outputParameter.get("type")) {
 									case "boolean":
 										OutputParameterType = PropertyTypeValue.BOOLEAN;
@@ -255,16 +250,16 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 									default:
 										OutputParameterType = PropertyTypeValue.UNKNOWN;
 									}
-									
+										
 									// put the name and type of the input parameter and add into the
 									// ContractFunction List
 									OutputParameter.setName(OutputParameterName);
 									OutputParameter.setType(OutputParameterType);
 									OutputParameter.setOutputReferencedFunction(ContractFunction);
 									ContractFunction.setOutputParametersFunction(OutputParameter);	
-								} // Fin if
-							} // Fin while
-
+									
+								}
+							}
 						} // Fin for
 
 						modelResource.save(null);
