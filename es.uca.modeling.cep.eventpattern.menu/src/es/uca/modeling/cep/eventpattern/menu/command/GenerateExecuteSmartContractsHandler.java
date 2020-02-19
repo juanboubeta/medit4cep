@@ -133,14 +133,21 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 						
 				for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
 					
-					patternToSmartContractPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +".egl";
-					outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
-							eventPatternModel.getSmartContracts().get(i).getTypeName() + ".java");	
-					System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputSmartContractFile.getAbsolutePath());
-												
-					TransformEventPatternToCode.executeEGL(sourceModel4, eventPatternModel, patternToSmartContractPath, outputSmartContractFile);
-				
-				}	
+				if(eventPatternModel.getSmartContracts().get(i).getTypeName() == "Auction" ||
+					eventPatternModel.getSmartContracts().get(i).getTypeName() == "Purchase" ||
+					eventPatternModel.getSmartContracts().get(i).getTypeName() == "Voting" ||
+					eventPatternModel.getSmartContracts().get(i).getTypeName() == "VaccineDelivery") {
+						
+						patternToSmartContractPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +".egl";
+						outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
+								eventPatternModel.getSmartContracts().get(i).getTypeName() + ".java");	
+						System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputSmartContractFile.getAbsolutePath());
+													
+						TransformEventPatternToCode.executeEGL(sourceModel4, eventPatternModel, patternToSmartContractPath, outputSmartContractFile);
+					
+				} //Fin-if
+					
+				} //Fin-for	
 			}
 						
 			
@@ -154,6 +161,11 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 				String patternToContractFunctionPath;
 						
 				for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
+					
+					if(eventPatternModel.getSmartContracts().get(i).getTypeName() == "Auction" ||
+							eventPatternModel.getSmartContracts().get(i).getTypeName() == "Purchase" ||
+							eventPatternModel.getSmartContracts().get(i).getTypeName() == "Voting" ||
+							eventPatternModel.getSmartContracts().get(i).getTypeName() == "VaccineDelivery") {
 					sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
 					sourceModel3.setStoredOnDisposal(false);
 					sourceModel3.setReadOnLoad(true);
@@ -164,6 +176,21 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 					System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputContractFunctionFile.getAbsolutePath());
 												
 					TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel, patternToContractFunctionPath, outputContractFunctionFile);
+					
+					} else {
+						
+						sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
+						sourceModel3.setStoredOnDisposal(false);
+						sourceModel3.setReadOnLoad(true);
+						
+						patternToContractFunctionPath = "/egl/eventpattern-to-SmartContract-invocation.egl";
+						outputContractFunctionFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
+								eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation.java");	
+						System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputContractFunctionFile.getAbsolutePath());
+													
+						TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel, patternToContractFunctionPath, outputContractFunctionFile);
+						
+					}
 					
 					//ejecutar la invocacion de cada contrato
 					
@@ -178,7 +205,7 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 					} catch (IOException ioe) {
 						System.out.println (ioe);
 					} */ 
-				}					
+				} //Fin for					
 			}
 			
 			MessageDialog.openInformation(shell, "Generate Smart Contracts", 

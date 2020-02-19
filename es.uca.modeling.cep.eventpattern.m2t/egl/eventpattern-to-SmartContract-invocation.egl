@@ -1,0 +1,79 @@
+[%
+var count;
+var smartcontracts : Sequence = SmartContract.allInstances();
+
+	for (sc : SmartContract in smartcontracts) {	%]
+package Smartcontract_[%=sc.typeName%];
+
+import org.web3j.crypto.CipherException;
+import org.web3j.crypto.Credentials;
+import org.web3j.crypto.WalletUtils;
+import org.web3j.protocol.Web3j;
+import org.web3j.protocol.core.methods.response.TransactionReceipt;
+import org.web3j.protocol.core.methods.response.Web3ClientVersion;
+import org.web3j.protocol.http.HttpService;
+import org.web3j.tx.RawTransactionManager;
+import org.web3j.tx.TransactionManager;
+import org.web3j.tx.Transfer;
+import org.web3j.utils.Convert;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+public class [%=sc.typeName%]_invocation {
+	
+	private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
+	private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
+	private final static String PRIVATE_KEY = "[%=sc.privateKey%]";
+	private final static String CONTRACT_ADDRESS = "[%=sc.contractAddress%]";
+
+	
+	[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
+		[%for(ip : InputParameter in cf.InputParametersFunction){%]
+	private final static [%=ip.type%] VAR_[%=ip.name%] = "[%=ip.value%]";		
+		[%}}%]	
+		
+	public static void main(String[] args) {
+		try {
+			new [%=sc.typeName%]_invocation();
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	private [%=sc.typeName%]_invocation() throws Exception {
+		
+		Web3j web3j = Web3j.build(new HttpService());
+		Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();
+		System.out.println(web3ClientVersion.getWeb3ClientVersion());
+		
+		Credentials credentials = getCredentialsFromPrivateKey();
+		
+		[%=sc.typeName%] smartContract = loadContract(CONTRACT_ADDRESS, web3j, credentials);
+		System.out.println("Deployed contract address: " + smartContract.getContractAddress());
+		
+		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
+		[%if(cf.InputParametersFunction.size() == 0  or cf.InputParametersFunction.size() == 1){%]
+		[%=sc.typeName%].[%=cf.name%]([%for(ip : InputParameter in cf.InputParametersFunction){%]VAR_[%=ip.name%][%}%]).send();
+		[%}}%]
+		
+		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
+		[%if(cf.InputParametersFunction.size() > 1){
+		count = cf.InputParametersFunction.size();%]
+		[%=sc.typeName%].[%=cf.name%]([%for(ip : InputParameter in cf.InputParametersFunction){ if(count > 1){%]VAR_[%=ip.name%],[%count -= 1;} else {%]VAR_[%=ip.name%][% count -= 1;}}%]).send();
+		[%}}%]
+		
+	}
+	
+	private Credentials getCredentialsFromPrivateKey() {
+		//El metodo create recibe una clave privada para generar las credenciales
+		return Credentials.create(PRIVATE_KEY);
+	}
+	
+	private [%=sc.typeName%] loadContract(String contractAddress, Web3j web3j, Credentials credentials) {
+		return [%=sc.typeName%].load(contractAddress, web3j, credentials, GAS_PRICE, GAS_LIMIT);
+	}
+	
+}
+[%}%]
