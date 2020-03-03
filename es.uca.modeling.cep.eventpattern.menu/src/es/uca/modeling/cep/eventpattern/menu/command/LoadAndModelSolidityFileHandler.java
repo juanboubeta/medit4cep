@@ -1,6 +1,7 @@
 package es.uca.modeling.cep.eventpattern.menu.command;
 
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -9,6 +10,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -46,6 +49,8 @@ import smartcontract.SmartContract;
 import smartcontract.SmartContracts;
 import smartcontract.SmartcontractFactory;
 import smartcontract.diagram.part.SmartcontractDiagramEditorUtil;
+
+
 
 public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 
@@ -93,18 +98,18 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 				}
 				
 				//Generating java smart contract from abi and bin files
-				/*try {
+				try {
 					String abiPath = solidityPath + "/" + smartcontractFile.replace(".sol", ".abi");
 					String binPath = solidityPath + "/" + smartcontractFile.replace(".sol", ".bin");
 					System.out.println(abiPath);
 					System.out.println(binPath);
-					String cmd = "web3j solidity generate -a D:/UNIVERSIDAD/TFM/EjemploSolidityToJava/CaseStudy.abi -b D:/UNIVERSIDAD/TFM/EjemploSolidityToJava/CaseStudy.bin -o D:/UNIVERSIDAD/TFM/EjemploSolidityToJava -p java";
-					//String [] cmd = {"web3j","solidity","generate", "-a", abiPath, "-b", binPath, "-o", solidityPath, "-p", "java"}; //Comando de apagado en windows
+					System.out.println(solidityPath + "/");
+					String [] cmd = {"web3j","solidity","generate", "-a", abiPath, "-b", binPath, "-o", solidityPath + "/", "-p", "java"}; //Comando de apagado en windows
 					System.out.println(cmd);
 					Runtime.getRuntime().exec(cmd);
 				} catch (IOException ioe) {
 					System.out.println (ioe);
-				}*/
+				}
 				
 				//Auto initializing smart contract from abi file
 				AutodetectSmartContractDialog newDialog = new AutodetectSmartContractDialog(shell);
@@ -186,7 +191,7 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 										
 									smartcontract.PropertyTypeValue InputParameterType;
 									switch((String) inputParameter.get("type")) {
-									case "boolean":
+									case "bool":
 										InputParameterType = PropertyTypeValue.BOOLEAN;
 										break;
 									case "integer":
@@ -205,7 +210,19 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 										InputParameterType = PropertyTypeValue.STRING;
 										break;
 									default:
-										InputParameterType = PropertyTypeValue.UNKNOWN;
+										Pattern p = Pattern.compile("int\\d{0,3}");
+									    Matcher mat = p.matcher((String) inputParameter.get("type"));
+										if(mat.matches()) {
+											InputParameterType = PropertyTypeValue.INTEGER;
+										} else {
+											p = Pattern.compile("uint\\d{0,3}");
+											mat = p.matcher((String) inputParameter.get("type"));
+											if(mat.matches()) {
+												InputParameterType = PropertyTypeValue.INTEGER;
+											} else {
+												InputParameterType = PropertyTypeValue.UNKNOWN;
+											}
+										}
 									}
 										
 									// put the name and type of the input parameter and add into the
