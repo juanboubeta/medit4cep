@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, 2015 Juan Boubeta-Puig
+ * Copyright (c) 2011, 2020 Juan Boubeta-Puig
  * All rights reserved. This program and the accompanying materials 
  * are made available under the terms of the Eclipse Public License v1.0 
  * which accompanies this distribution, and is available at 
@@ -11,16 +11,11 @@
 
 package es.uca.modeling.cep.eventpattern.menu.command;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FilenameFilter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.InputStreamReader;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.Map;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -30,15 +25,12 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
-import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -46,20 +38,14 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import smartcontract.SmartContracts;
 import smartcontract.SmartcontractFactory;
-import smartcontract.SmartcontractPackage;
-import smartcontract.SmartContract;
-import smartcontract.ContractFunction;
-import smartcontract.InputParameter;
-import smartcontract.OutputParameter;
-import smartcontract.Parameter;
 import smartcontract.PropertyTypeValue;
 import smartcontract.diagram.part.SmartcontractDiagramEditorUtil;
 import es.uca.modeling.cep.eventpattern.menu.dialog.AutodetectSmartContractDialog;
 import eventpattern.diagram.status.EventPatternsStatus;
+
+
 
 public class AutoinitializeSmartContractHandler extends AbstractHandler {
 
@@ -92,12 +78,11 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 					return null;
 				}
 
-				// Open the file .smartcontractype that contains default SmartContracts.
+				// Open the .smartcontractype file that contains default SmartContracts.
+				// This file must be located in the resources folder. 
+				JSONArray jsonArray = (JSONArray) new JSONParser().parse(new InputStreamReader(AutoinitializeSmartContractHandler.
+						class.getResourceAsStream("/SmartContracts.smartcontractype")));
 				
-				final String smartcontractype = "D:\\UNIVERSIDAD\\TFG\\medit4cep\\es.uca.modeling.cep.eventpattern.menu\\SmartContracts.smartcontractype";
-				Object array = parser.parse(new FileReader(smartcontractype));
-				JSONArray jsonArray = (JSONArray) array;
-
 				String name = dialog.getSmartContractsName();
 				String description = dialog.getSmartContractsDescription();
 				smartcontractProject.create(null);
@@ -262,5 +247,10 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 
 		return null;
 
+	}
+	
+	private Object getResource() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
