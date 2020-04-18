@@ -32,7 +32,7 @@ class CEPEventPattern {
 	source.constraint="self <> oppositeEnd 
 	and ( 
 	   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))
-	   or (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(SmartContract))
+	   or (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(ContractFunction))
 	   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or 
 	        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) 
 	        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) 
@@ -521,7 +521,7 @@ class SmartContract extends UnaryOperator {
 
 @gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
 tool.name="Contract Function", tool.description="Add a Contract Function", resizable="false", label.readOnly="true")
-class ContractFunction {
+class ContractFunction extends UnaryOperator {
    attr String name;
    attr String imagePath;
    ref SmartContract#SmartContractProperties referencedSmartContract;

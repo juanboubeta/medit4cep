@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="gmf.node figure='rectangle' label='name' border.color='110,110,110' tool.name='Contract Function' tool.description='Add a Contract Function' resizable='false' label.readOnly='true'"
  * @generated
  */
-public interface ContractFunction extends EObject {
+public interface ContractFunction extends UnaryOperator {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

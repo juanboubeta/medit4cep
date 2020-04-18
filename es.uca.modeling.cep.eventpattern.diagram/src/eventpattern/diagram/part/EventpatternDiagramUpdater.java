@@ -3995,7 +3995,12 @@ public class EventpatternDiagramUpdater {
 	* @generated
 	*/
 	public static List<EventpatternLinkDescriptor> getContractFunction_3061IncomingLinks(View view) {
-		return Collections.emptyList();
+		ContractFunction modelElement = (ContractFunction) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<EventpatternLinkDescriptor> result = new LinkedList<EventpatternLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Link_4001(modelElement, crossReferences));
+		return result;
 	}
 
 	/**

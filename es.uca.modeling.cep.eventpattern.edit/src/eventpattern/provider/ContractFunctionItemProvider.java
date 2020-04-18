@@ -35,13 +35,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class ContractFunctionItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends UnaryOperatorItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -214,17 +208,6 @@ public class ContractFunctionItemProvider
 			(createChildParameter
 				(EventpatternPackage.Literals.CONTRACT_FUNCTION__OUTPUT_PARAMETERS_FUNCTION,
 				 EventpatternFactory.eINSTANCE.createOutputParameter()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return EventpatternEditPlugin.INSTANCE;
 	}
 
 }

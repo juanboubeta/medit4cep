@@ -752,6 +752,8 @@ public class EventpatternSwitch<T> extends Switch<T>
 			case EventpatternPackage.CONTRACT_FUNCTION: {
 				ContractFunction contractFunction = (ContractFunction)theEObject;
 				T result = caseContractFunction(contractFunction);
+				if (result == null) result = caseUnaryOperator(contractFunction);
+				if (result == null) result = caseOperator(contractFunction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

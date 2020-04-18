@@ -2729,13 +2729,22 @@ public interface EventpatternPackage extends EPackage
 	int CONTRACT_FUNCTION = 60;
 
 		/**
+	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT_FUNCTION__INBOUND_LINK = UNARY_OPERATOR__INBOUND_LINK;
+
+		/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRACT_FUNCTION__NAME = 0;
+	int CONTRACT_FUNCTION__NAME = UNARY_OPERATOR_FEATURE_COUNT + 0;
 
 		/**
 	 * The feature id for the '<em><b>Image Path</b></em>' attribute.
@@ -2744,7 +2753,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRACT_FUNCTION__IMAGE_PATH = 1;
+	int CONTRACT_FUNCTION__IMAGE_PATH = UNARY_OPERATOR_FEATURE_COUNT + 1;
 
 		/**
 	 * The feature id for the '<em><b>Referenced Smart Contract</b></em>' container reference.
@@ -2753,7 +2762,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRACT_FUNCTION__REFERENCED_SMART_CONTRACT = 2;
+	int CONTRACT_FUNCTION__REFERENCED_SMART_CONTRACT = UNARY_OPERATOR_FEATURE_COUNT + 2;
 
 		/**
 	 * The feature id for the '<em><b>Input Parameters Function</b></em>' containment reference list.
@@ -2762,7 +2771,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRACT_FUNCTION__INPUT_PARAMETERS_FUNCTION = 3;
+	int CONTRACT_FUNCTION__INPUT_PARAMETERS_FUNCTION = UNARY_OPERATOR_FEATURE_COUNT + 3;
 
 		/**
 	 * The feature id for the '<em><b>Output Parameters Function</b></em>' containment reference.
@@ -2771,7 +2780,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRACT_FUNCTION__OUTPUT_PARAMETERS_FUNCTION = 4;
+	int CONTRACT_FUNCTION__OUTPUT_PARAMETERS_FUNCTION = UNARY_OPERATOR_FEATURE_COUNT + 4;
 
 		/**
 	 * The number of structural features of the '<em>Contract Function</em>' class.
@@ -2780,7 +2789,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRACT_FUNCTION_FEATURE_COUNT = 5;
+	int CONTRACT_FUNCTION_FEATURE_COUNT = UNARY_OPERATOR_FEATURE_COUNT + 5;
 
 		/**
 	 * The meta object id for the '{@link eventpattern.impl.ParameterImpl <em>Parameter</em>}' class.

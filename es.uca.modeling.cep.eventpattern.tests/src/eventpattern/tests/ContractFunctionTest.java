@@ -15,15 +15,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContractFunctionTest extends TestCase {
-
-	/**
-	 * The fixture for this Contract Function test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ContractFunction fixture = null;
+public class ContractFunctionTest extends UnaryOperatorTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +37,14 @@ public class ContractFunctionTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Contract Function test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(ContractFunction fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Contract Function test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected ContractFunction getFixture() {
-		return fixture;
+		return (ContractFunction)fixture;
 	}
 
 	/**

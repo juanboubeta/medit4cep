@@ -21,6 +21,7 @@ import eventpattern.diagram.edit.parts.Avg2EditPart;
 import eventpattern.diagram.edit.parts.AvgEditPart;
 import eventpattern.diagram.edit.parts.ComplexEventEditPart;
 import eventpattern.diagram.edit.parts.ComplexEventPropertyEditPart;
+import eventpattern.diagram.edit.parts.ContractFunctionEditPart;
 import eventpattern.diagram.edit.parts.Count2EditPart;
 import eventpattern.diagram.edit.parts.CountEditPart;
 import eventpattern.diagram.edit.parts.Division2EditPart;
@@ -388,6 +389,9 @@ public class EventpatternModelingAssistantProviderOfEventProperty5EditPart
 		if (targetEditPart instanceof ComplexEventPropertyEditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
+		if (targetEditPart instanceof ContractFunctionEditPart) {
+			types.add(EventpatternElementTypes.Link_4001);
+		}
 		return types;
 	}
 
@@ -487,6 +491,7 @@ public class EventpatternModelingAssistantProviderOfEventProperty5EditPart
 			types.add(EventpatternElementTypes.Sum_3052);
 			types.add(EventpatternElementTypes.GroupBy_3060);
 			types.add(EventpatternElementTypes.ComplexEventProperty_3059);
+			types.add(EventpatternElementTypes.ContractFunction_3061);
 		}
 		return types;
 	}

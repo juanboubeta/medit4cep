@@ -1724,6 +1724,11 @@ public class Messages extends NLS {
 	public static String NavigatorGroupName_GroupBy_3060_incominglinks;
 
 	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ContractFunction_3061_incominglinks;
+
+	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Link_4001_target;
