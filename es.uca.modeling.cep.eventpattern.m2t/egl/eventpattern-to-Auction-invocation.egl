@@ -29,7 +29,7 @@ public class [%=sc.typeName%]_invocation {
 	private final static String CONTRACT_ADDRESS = "[%=sc.contractAddress%]";
 	
 	[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
-		[%if(cf.name == "bid") {
+		[%if(cf.name == "bid" and not cf.inboundLink.isEmpty()) {
 			for(ip : InputParameter in cf.InputParametersFunction){
 				if(ip.name == "bidValue"){%]
 	private final static BigInteger WEI_VALUE = BigInteger.valueOf([%=ip.value%]L);
@@ -55,11 +55,11 @@ public class [%=sc.typeName%]_invocation {
 		System.out.println("Deployed contract address: " + auction.getContractAddress());
 		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
-		[%if(cf.name == "bid") {%]
+		[%if(cf.name == "bid" and not cf.inboundLink.isEmpty()) {%]
 		System.out.println(auction.bid(WEI_VALUE).send().getTransactionHash());
-		[%}if(cf.name == "withdraw") {%]
+		[%}if(cf.name == "withdraw" and not cf.inboundLink.isEmpty()) {%]
 		System.out.println(auction.withdraw().send().getTransactionHash());
-		[%}if(cf.name == "auctionEnd") {%]
+		[%}if(cf.name == "auctionEnd" and not cf.inboundLink.isEmpty()) {%]
 		System.out.println(auction.auctionEnd().send().getTransactionHash());
 		[%}}%]
 

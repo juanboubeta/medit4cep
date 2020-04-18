@@ -133,10 +133,10 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 						
 				for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
 					
-				if(eventPatternModel.getSmartContracts().get(i).getTypeName() == "Auction" ||
-					eventPatternModel.getSmartContracts().get(i).getTypeName() == "Purchase" ||
-					eventPatternModel.getSmartContracts().get(i).getTypeName() == "Voting" ||
-					eventPatternModel.getSmartContracts().get(i).getTypeName() == "VaccineDelivery") {
+				if(eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Auction") ||
+						eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Purchase") ||
+						eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Voting") ||
+						eventPatternModel.getSmartContracts().get(i).getTypeName().equals("VaccineDelivery")) {
 						
 						patternToSmartContractPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +".egl";
 						outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
@@ -161,11 +161,10 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 				String patternToContractFunctionPath;
 						
 				for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
-					
-					if(eventPatternModel.getSmartContracts().get(i).getTypeName() == "Auction" ||
-							eventPatternModel.getSmartContracts().get(i).getTypeName() == "Purchase" ||
-							eventPatternModel.getSmartContracts().get(i).getTypeName() == "Voting" ||
-							eventPatternModel.getSmartContracts().get(i).getTypeName() == "VaccineDelivery") {
+					if(eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Auction") ||
+							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Purchase") ||
+							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Voting") ||
+							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("VaccineDelivery")) {
 					sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
 					sourceModel3.setStoredOnDisposal(false);
 					sourceModel3.setReadOnLoad(true);

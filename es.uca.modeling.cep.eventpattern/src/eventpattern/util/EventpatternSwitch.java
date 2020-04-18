@@ -744,7 +744,6 @@ public class EventpatternSwitch<T> extends Switch<T>
 			case EventpatternPackage.SMART_CONTRACT: {
 				SmartContract smartContract = (SmartContract)theEObject;
 				T result = caseSmartContract(smartContract);
-				if (result == null) result = caseUnaryOperator(smartContract);
 				if (result == null) result = caseOperator(smartContract);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -752,7 +751,6 @@ public class EventpatternSwitch<T> extends Switch<T>
 			case EventpatternPackage.CONTRACT_FUNCTION: {
 				ContractFunction contractFunction = (ContractFunction)theEObject;
 				T result = caseContractFunction(contractFunction);
-				if (result == null) result = caseUnaryOperator(contractFunction);
 				if (result == null) result = caseOperator(contractFunction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

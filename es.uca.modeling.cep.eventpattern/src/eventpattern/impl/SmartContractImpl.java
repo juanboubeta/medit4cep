@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class SmartContractImpl extends UnaryOperatorImpl implements SmartContract {
+public class SmartContractImpl extends OperatorImpl implements SmartContract {
 	/**
 	 * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -42,7 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ContractFunctionImpl extends UnaryOperatorImpl implements ContractFunction {
+public class ContractFunctionImpl extends OperatorImpl implements ContractFunction {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -29,10 +29,11 @@ public class [%=sc.typeName%]_invocation {
 	private final static String CONTRACT_ADDRESS = "[%=sc.contractAddress%]";
 
 	
-	[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
+	[%for(cf: ContractFunction in sc.SmartContractProperties) {
+		if(not cf.inboundLink.isEmpty()){%]
 		[%for(ip : InputParameter in cf.InputParametersFunction){%]
 	private final static [%=ip.type%] VAR_[%=ip.name%] = "[%=ip.value%]";		
-		[%}}%]	
+		[%}}}%]	
 		
 	public static void main(String[] args) {
 		try {
@@ -53,16 +54,18 @@ public class [%=sc.typeName%]_invocation {
 		[%=sc.typeName%] smartContract = loadContract(CONTRACT_ADDRESS, web3j, credentials);
 		System.out.println("Deployed contract address: " + smartContract.getContractAddress());
 		
-		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
+		[%for(cf: ContractFunction in sc.SmartContractProperties) {
+		if(not cf.inboundLink.isEmpty()){%]
 		[%if(cf.InputParametersFunction.size() == 0  or cf.InputParametersFunction.size() == 1){%]
 		[%=sc.typeName%].[%=cf.name%]([%for(ip : InputParameter in cf.InputParametersFunction){%]VAR_[%=ip.name%][%}%]).send();
-		[%}}%]
+		[%}}}%]
 		
-		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
+		[%for(cf: ContractFunction in sc.SmartContractProperties) {
+		if(not cf.inboundLink.isEmpty()){%]
 		[%if(cf.InputParametersFunction.size() > 1){
 		count = cf.InputParametersFunction.size();%]
 		[%=sc.typeName%].[%=cf.name%]([%for(ip : InputParameter in cf.InputParametersFunction){ if(count > 1){%]VAR_[%=ip.name%],[%count -= 1;} else {%]VAR_[%=ip.name%][% count -= 1;}}%]).send();
-		[%}}%]
+		[%}}}%]
 		
 	}
 	

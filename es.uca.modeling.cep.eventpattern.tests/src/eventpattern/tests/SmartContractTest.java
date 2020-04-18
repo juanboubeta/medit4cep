@@ -13,7 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SmartContractTest extends UnaryOperatorTest {
+public class SmartContractTest extends OperatorTest {
 
 	/**
 	 * <!-- begin-user-doc -->

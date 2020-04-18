@@ -508,7 +508,7 @@ class Value extends ConditionOperand {
 
 @gmf.node(figure="rectangle", label="typeName", border.color="110,110,110",
 tool.name="Smart Contract", tool.description="Add a SmartContract", resizable="false", label.readOnly="true")
-class SmartContract extends UnaryOperator {
+class SmartContract extends Operator {
    attr String typeName;
    attr String imagePath;
    attr String privateKey;
@@ -521,7 +521,7 @@ class SmartContract extends UnaryOperator {
 
 @gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
 tool.name="Contract Function", tool.description="Add a Contract Function", resizable="false", label.readOnly="true")
-class ContractFunction extends UnaryOperator {
+class ContractFunction extends Operator {
    attr String name;
    attr String imagePath;
    ref SmartContract#SmartContractProperties referencedSmartContract;

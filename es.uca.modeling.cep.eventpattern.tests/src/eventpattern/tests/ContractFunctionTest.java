@@ -15,7 +15,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContractFunctionTest extends UnaryOperatorTest {
+public class ContractFunctionTest extends OperatorTest {
 
 	/**
 	 * <!-- begin-user-doc -->
