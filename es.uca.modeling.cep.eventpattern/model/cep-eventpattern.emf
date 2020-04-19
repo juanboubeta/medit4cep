@@ -508,7 +508,7 @@ class Value extends ConditionOperand {
 
 @gmf.node(figure="rectangle", label="typeName", border.color="110,110,110",
 tool.name="Smart Contract", tool.description="Add a SmartContract", resizable="false", label.readOnly="true")
-class SmartContract extends Operator {
+class SmartContract {
    attr String typeName;
    attr String imagePath;
    attr String privateKey;

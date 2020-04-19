@@ -3,6 +3,7 @@
 package eventpattern;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="gmf.node figure='rectangle' label='typeName' border.color='110,110,110' tool.name='Smart Contract' tool.description='Add a SmartContract' resizable='false' label.readOnly='true'"
  * @generated
  */
-public interface SmartContract extends Operator {
+public interface SmartContract extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Type Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

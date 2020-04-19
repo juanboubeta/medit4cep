@@ -5,6 +5,8 @@ package eventpattern.tests;
 import eventpattern.EventpatternFactory;
 import eventpattern.SmartContract;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 /**
@@ -13,7 +15,15 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SmartContractTest extends OperatorTest {
+public class SmartContractTest extends TestCase {
+
+	/**
+	 * The fixture for this Smart Contract test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SmartContract fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,14 +45,23 @@ public class SmartContractTest extends OperatorTest {
 	}
 
 	/**
+	 * Sets the fixture for this Smart Contract test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(SmartContract fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Smart Contract test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected SmartContract getFixture() {
-		return (SmartContract)fixture;
+		return fixture;
 	}
 
 	/**

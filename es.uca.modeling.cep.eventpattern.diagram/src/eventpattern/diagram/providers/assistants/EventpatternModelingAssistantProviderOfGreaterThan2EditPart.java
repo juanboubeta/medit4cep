@@ -226,9 +226,6 @@ public class EventpatternModelingAssistantProviderOfGreaterThan2EditPart extends
 		if (targetEditPart instanceof ComplexEventEditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
-		if (targetEditPart instanceof SmartContractEditPart) {
-			types.add(EventpatternElementTypes.Link_4001);
-		}
 		if (targetEditPart instanceof And2EditPart) {
 			types.add(EventpatternElementTypes.Link_4001);
 		}
@@ -428,7 +425,6 @@ public class EventpatternModelingAssistantProviderOfGreaterThan2EditPart extends
 			types.add(EventpatternElementTypes.Email_2033);
 			types.add(EventpatternElementTypes.Twitter_2039);
 			types.add(EventpatternElementTypes.ComplexEvent_2038);
-			types.add(EventpatternElementTypes.SmartContract_2041);
 			types.add(EventpatternElementTypes.And_3003);
 			types.add(EventpatternElementTypes.Or_3004);
 			types.add(EventpatternElementTypes.Not_3005);

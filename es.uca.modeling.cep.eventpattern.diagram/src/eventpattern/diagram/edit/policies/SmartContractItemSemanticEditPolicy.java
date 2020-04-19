@@ -45,15 +45,6 @@ public class SmartContractItemSemanticEditPolicy extends EventpatternBaseItemSem
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
-			Edge incomingLink = (Edge) it.next();
-			if (EventpatternVisualIDRegistry.getVisualID(incomingLink) == LinkEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
-				cmd.add(new DestroyElementCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
-		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
 			// there are indirectly referenced children, need extra commands: false
@@ -99,49 +90,6 @@ public class SmartContractItemSemanticEditPolicy extends EventpatternBaseItemSem
 				break;
 			}
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
-				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super.getCreateRelationshipCommand(req);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (EventpatternElementTypes.Link_4001 == req.getElementType()) {
-			return null;
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (EventpatternElementTypes.Link_4001 == req.getElementType()) {
-			return getGEFWrapper(new LinkCreateCommand(req, req.getSource(), req.getTarget()));
-		}
-		return null;
-	}
-
-	/**
-	 * Returns command to reorient EClass based link. New link target or source
-	 * should be the domain model element associated with this node.
-	 * 
-	 * @generated
-	 */
-	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch (getVisualID(req)) {
-		case LinkEditPart.VISUAL_ID:
-			return getGEFWrapper(new LinkReorientCommand(req));
-		}
-		return super.getReorientRelationshipCommand(req);
 	}
 
 }

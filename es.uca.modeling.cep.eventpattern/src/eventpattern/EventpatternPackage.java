@@ -2647,22 +2647,13 @@ public interface EventpatternPackage extends EPackage
 	int SMART_CONTRACT = 59;
 
 		/**
-	 * The feature id for the '<em><b>Inbound Link</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SMART_CONTRACT__INBOUND_LINK = OPERATOR__INBOUND_LINK;
-
-		/**
 	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT__TYPE_NAME = OPERATOR_FEATURE_COUNT + 0;
+	int SMART_CONTRACT__TYPE_NAME = 0;
 
 		/**
 	 * The feature id for the '<em><b>Image Path</b></em>' attribute.
@@ -2671,7 +2662,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT__IMAGE_PATH = OPERATOR_FEATURE_COUNT + 1;
+	int SMART_CONTRACT__IMAGE_PATH = 1;
 
 		/**
 	 * The feature id for the '<em><b>Private Key</b></em>' attribute.
@@ -2680,7 +2671,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT__PRIVATE_KEY = OPERATOR_FEATURE_COUNT + 2;
+	int SMART_CONTRACT__PRIVATE_KEY = 2;
 
 		/**
 	 * The feature id for the '<em><b>Contract Address</b></em>' attribute.
@@ -2689,7 +2680,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT__CONTRACT_ADDRESS = OPERATOR_FEATURE_COUNT + 3;
+	int SMART_CONTRACT__CONTRACT_ADDRESS = 3;
 
 		/**
 	 * The feature id for the '<em><b>Contractfunctions</b></em>' containment reference list.
@@ -2698,7 +2689,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT__CONTRACTFUNCTIONS = OPERATOR_FEATURE_COUNT + 4;
+	int SMART_CONTRACT__CONTRACTFUNCTIONS = 4;
 
 		/**
 	 * The feature id for the '<em><b>Smart Contract Properties</b></em>' containment reference list.
@@ -2707,7 +2698,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = OPERATOR_FEATURE_COUNT + 5;
+	int SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = 5;
 
 		/**
 	 * The number of structural features of the '<em>Smart Contract</em>' class.
@@ -2716,7 +2707,7 @@ public interface EventpatternPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 6;
+	int SMART_CONTRACT_FEATURE_COUNT = 6;
 
 		/**
 	 * The meta object id for the '{@link eventpattern.impl.ContractFunctionImpl <em>Contract Function</em>}' class.

@@ -1184,11 +1184,6 @@ public class Messages extends NLS {
 	public static String NavigatorGroupName_GroupBy_2040_incominglinks;
 
 	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_SmartContract_2041_incominglinks;
-
-	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_EventProperty_3001_outgoinglinks;
