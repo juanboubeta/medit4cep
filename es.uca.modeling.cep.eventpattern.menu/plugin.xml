@@ -199,6 +199,19 @@
             </command>
          </menu>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=SmartContracts">
+         <menu
+               id="App"
+               label="CEP Application">
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.StartAppHandler"
+                  label="StartApp"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
@@ -326,6 +339,11 @@
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFileHandler"
             id="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFile"
             name="LoadAndModelSolidityFile">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.StartAppHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.StartAppHandler"
+            name="StartAppHandler">
       </command>
    </extension>
 

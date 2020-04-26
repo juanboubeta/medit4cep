@@ -23,7 +23,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ocl
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy 
-Import-Package: es.uca.modeling.cep.eventpattern.m2t,
+Import-Package: app.esper,
+ es.uca.modeling.cep.eventpattern.m2t,
  org.eclipse.epsilon.emc.emf,
  org.eclipse.epsilon.eol.models
 Bundle-ClassPath: .
