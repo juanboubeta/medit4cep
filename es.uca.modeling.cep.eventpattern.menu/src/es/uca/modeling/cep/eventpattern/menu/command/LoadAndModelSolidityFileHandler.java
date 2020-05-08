@@ -1,11 +1,13 @@
 package es.uca.modeling.cep.eventpattern.menu.command;
 
+import java.io.BufferedWriter;
 import java.io.File;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Date;
@@ -98,14 +100,29 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 				}
 				
 				//Generating java smart contract from abi and bin files
+				String ruta = solidityPath + "/GeneracionJava.ps1";
+				File archivo = new File(ruta);
+				String abiPath = solidityPath + "/" + smartcontractFile.replace(".sol", ".abi");
+				String binPath = solidityPath + "/" + smartcontractFile.replace(".sol", ".bin");
+				BufferedWriter bw;
+				if(archivo.exists()) {
+					bw = new BufferedWriter(new FileWriter(archivo));
+				    bw.write("web3j " + "solidity " + "generate " + "-a " + abiPath + " -b " + binPath + " -o " + solidityPath + "/ -p java");
+				    bw.close();
+				} else {
+					bw = new BufferedWriter(new FileWriter(archivo));
+					System.out.println("Esto es lo de javita");
+					System.out.println("\"web3j \" + \"solidity \" + \"generate \" + \"-a \" + abiPath + \" -b \" + binPath + \" -o \" + solidityPath + \"/ -p java\"");
+					bw.write("web3j " + "solidity " + "generate " + "-a " + abiPath + " -b " + binPath + " -o " + solidityPath + "/ -p java");
+					bw.close();
+				}
+
 				try {
-					String abiPath = solidityPath + "/" + smartcontractFile.replace(".sol", ".abi");
-					String binPath = solidityPath + "/" + smartcontractFile.replace(".sol", ".bin");
-					System.out.println(abiPath);
-					System.out.println(binPath);
-					System.out.println(solidityPath + "/");
-					String [] cmd = {"web3j","solidity","generate", "-a", abiPath, "-b", binPath, "-o", solidityPath + "/", "-p", "java"}; //Comando de apagado en windows
-					System.out.println(cmd);
+					//System.out.println(abiPath);
+					//System.out.println(binPath);
+					//System.out.println(solidityPath + "/");
+					String [] cmd = {"PowerShell.exe","-Command",ruta}; //Comando de apagado en windows
+					//System.out.println(cmd);
 					Runtime.getRuntime().exec(cmd);
 				} catch (IOException ioe) {
 					System.out.println (ioe);
