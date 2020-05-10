@@ -1,0 +1,10 @@
+@Name("TemperatureWarningStatic")
+@Tag(name="domainName", value="VaccineDeliveyr")
+insert into TemperatureWarningStatic
+select 1 as timestamp, 
+   a1.shipmentId as shipmentId, 
+   count(a1.timestamp) as count, 
+   max(a1.temperature) as max, 
+    min(a1.temperature) as min
+from pattern [(every a1 = TemperatureWarning)].win:time(1 hours)
+group by a1.shipmentId

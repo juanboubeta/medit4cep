@@ -107,22 +107,16 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 				BufferedWriter bw;
 				if(archivo.exists()) {
 					bw = new BufferedWriter(new FileWriter(archivo));
-				    bw.write("web3j " + "solidity " + "generate " + "-a " + abiPath + " -b " + binPath + " -o " + solidityPath + "/ -p java");
+				    bw.write("web3j " + "solidity " + "generate " + "-a " + abiPath + " -b " + binPath + " -o " + solidityPath + "/ -p Smartcontract_" + smartcontractFile.replace(".sol", ""));
 				    bw.close();
 				} else {
 					bw = new BufferedWriter(new FileWriter(archivo));
-					System.out.println("Esto es lo de javita");
-					System.out.println("\"web3j \" + \"solidity \" + \"generate \" + \"-a \" + abiPath + \" -b \" + binPath + \" -o \" + solidityPath + \"/ -p java\"");
-					bw.write("web3j " + "solidity " + "generate " + "-a " + abiPath + " -b " + binPath + " -o " + solidityPath + "/ -p java");
+					bw.write("web3j " + "solidity " + "generate " + "-a " + abiPath + " -b " + binPath + " -o " + solidityPath + "/ -p Smartcontract_" + smartcontractFile.replace(".sol", ""));
 					bw.close();
 				}
 
 				try {
-					//System.out.println(abiPath);
-					//System.out.println(binPath);
-					//System.out.println(solidityPath + "/");
 					String [] cmd = {"PowerShell.exe","-Command",ruta}; //Comando de apagado en windows
-					//System.out.println(cmd);
 					Runtime.getRuntime().exec(cmd);
 				} catch (IOException ioe) {
 					System.out.println (ioe);

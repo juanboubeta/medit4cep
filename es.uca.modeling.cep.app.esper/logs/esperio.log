@@ -1,0 +1,6 @@
+[10/05/20 02:10:09:009 CEST] DEBUG [CSVPropertyOrderHelper][resolvePropertyOrder]: .resolvePropertyOrder firstRow==[timestamp, shipmentId, temperature]
+[10/05/20 02:10:09:009 CEST] DEBUG [CSVPropertyOrderHelper][isValidRowLength]: .isValidRowLength
+[10/05/20 02:10:09:009 CEST] DEBUG [CSVPropertyOrderHelper][resolvePropertyOrder]: .resolvePropertyOrder using valid title row, propertyOrder==[timestamp, shipmentId, temperature]
+[10/05/20 02:10:09:009 CEST] DEBUG [AbstractTypeCoercer][createPropertyConstructors]: .createPropertyConstructors property==shipmentId, type==class java.lang.String
+[10/05/20 02:10:09:009 CEST] DEBUG [AbstractTypeCoercer][createPropertyConstructors]: .createPropertyConstructors property==temperature, type==class java.lang.Double
+[10/05/20 02:10:09:009 CEST] DEBUG [AbstractTypeCoercer][createPropertyConstructors]: .createPropertyConstructors property==timestamp, type==class java.lang.Long
