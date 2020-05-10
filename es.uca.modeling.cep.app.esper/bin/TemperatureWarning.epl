@@ -1,5 +1,0 @@
-@Name("TemperatureWarning")
-@Tag(name="domainName", value="VaccineDeliveyr")
-insert into TemperatureWarning
-select a1.*
-from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.temperature > 8.0)))]
