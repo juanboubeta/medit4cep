@@ -99,7 +99,7 @@ public class NetworkAttackCSVSimulator {
 					
 			
 			// The CSV data input file must be located in the resources folder.		
-			AdapterInputSource VaccineDeliveryInputSource = new AdapterInputSource("Vaccine_Delivery-EventsPrueba.csv");
+			AdapterInputSource VaccineDeliveryInputSource = new AdapterInputSource("Vaccine_Delivery-Events.csv");
 			CSVInputAdapterSpec VaccineDeliveryAdapterSpec = new CSVInputAdapterSpec(VaccineDeliveryInputSource, "TemperatureReading");
 			VaccineDeliveryAdapterSpec.setUsingTimeSpanEvents(true);
 				
