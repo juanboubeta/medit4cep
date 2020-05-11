@@ -23,7 +23,7 @@ public class TemperatureWarningStaticListener implements UpdateListener {
 	private static ArrayList<String> lines = new ArrayList();
 	
 	// The detected complex events will be saved in the file located in the folder simulation-output.
-	private static Path patternOutput = Paths.get("simulation-output/TELNETMirai-complex-events_SVR.txt"); 
+	private static Path patternOutput = Paths.get("simulation-output/TemperatureWarningStatic-compex-events_SVR.txt"); 
 
 	@Override
 	public void update(EventBean[] arg0, EventBean[] arg1) {
