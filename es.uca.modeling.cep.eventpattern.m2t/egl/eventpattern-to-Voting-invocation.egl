@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class [%=sc.typeName%]_invocation {
+public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).patternName%] {
 	
 	private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
 	private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
@@ -53,13 +53,13 @@ public class [%=sc.typeName%]_invocation {
 		
 	public static void main(String[] args) {
 		try {
-			new [%=sc.typeName%]_invocation();
+			new [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).patternName%]();
 		} catch (Exception e){
 			e.printStackTrace();
 		}
 	}
 	
-	private [%=sc.typeName%]_invocation() throws Exception {
+	private [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).patternName%]() throws Exception {
 		
 		Web3j web3j = Web3j.build(new HttpService());
 		Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();
