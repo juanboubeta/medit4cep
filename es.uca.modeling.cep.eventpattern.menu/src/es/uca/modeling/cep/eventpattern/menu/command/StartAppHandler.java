@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -150,6 +152,25 @@ public class StartAppHandler extends AbstractHandler {
 		   	
 		   	CEPEventPattern patternModel = (CEPEventPattern) patternModelResource.getContents().get(0);
 		   	//System.out.println(patternModel.getComplexEvent().getTypeName());	
+		   	
+		   	String csvPath = null;
+			String csvFile = null;
+			
+			FileDialog dialog = new FileDialog(shell, SWT.OPEN);
+			dialog.setText("Select the CSV File to send the events.");
+			
+			dialog.setFilterExtensions(new String[] { "*.csv" });
+			
+			dialog.setFilterNames(new String[] { "CSV Files (*.csv)" });
+			dialog.open();
+
+			if (dialog.getFileName() != null && !dialog.getFileName().equals("")) {
+				csvFile = dialog.getFileName();
+				csvPath = dialog.getFilterPath();
+				csvPath = csvPath + "/" + csvFile;
+			}
+			
+			System.out.println(csvPath);
 		   	
 		    /*CEPDomain domainModel = (CEPDomain) complexEventModelResource.getContents().get(0);
 		    domainModel.setDomainName(domainName);
@@ -323,7 +344,7 @@ public class StartAppHandler extends AbstractHandler {
 			}
 			
 			try {
-				Simulator.runApp(domainModel, patternModel);
+				Simulator.runApp(domainModel, patternModel, csvPath);
 				//NetworkAttackCSVSimulator.runApp();
 			}catch(Exception e2) {
 				e2.printStackTrace();

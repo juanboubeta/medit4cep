@@ -1,9 +1,11 @@
 package app.esper;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
+import java.util.regex.Pattern;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -29,6 +31,7 @@ import com.espertech.esperio.csv.AdapterCoordinatorImpl;
 import com.espertech.esperio.csv.AdapterInputSource;
 import com.espertech.esperio.csv.CSVInputAdapter;
 import com.espertech.esperio.csv.CSVInputAdapterSpec;
+import com.opencsv.CSVReader;
 
 import domain.CEPDomain;
 import domain.Event;
@@ -43,7 +46,7 @@ public class Simulator {
 	    //runApp();
 	}
     
-	public static void runApp(CEPDomain domainModel, CEPEventPattern patternModel) throws Exception {
+	public static void runApp(CEPDomain domainModel, CEPEventPattern patternModel, String CSVpath) throws Exception {
 		
 			Configuration config = new Configuration();
 			
@@ -73,11 +76,45 @@ public class Simulator {
 			EPRuntime runtime = epService.getEPRuntime();
 			// Switch to external clocking
 			runtime.sendEvent(new TimerControlEvent(TimerControlEvent.ClockType.CLOCK_EXTERNAL));
-				
+			
+			char SEPARATOR=',';
+			char QUOTE='"';
+			String firstTimestamp="";
+			
+			CSVReader reader = null;
+		    try {
+		    	reader = new CSVReader(new FileReader(CSVpath),SEPARATOR,QUOTE);
+		        
+		        reader.readNext();
+		        
+		        Pattern limpiar = Pattern.compile("\\d{10,13}");
+		        java.util.regex.Matcher buscar = limpiar.matcher(Arrays.toString(reader.readNext()));
+		        while (buscar.find())
+		        	firstTimestamp = buscar.group(0);
+		        
+
+		    } catch (Exception e) {
+		    	e.printStackTrace();
+		    } finally {
+		    	if (null != reader) {
+		        
+		    	try {
+		    		reader.close();
+		    	} catch (IOException e1) {
+		    		e1.printStackTrace();
+		    	}	
+		    		
+		    	} 
+		    }
+			
+		    Long firstTimestampLong = Long.parseLong(firstTimestamp);
+		    
 			// IMPORTANT: CurrentTimeEvent must receive as parameter the timestamp in which the data start in the CSV file
 			// 
 			// 1571732376156602 is in microseconds
-			runtime.sendEvent(new CurrentTimeEvent(1577872800000L));
+			//runtime.sendEvent(new CurrentTimeEvent(1577872800000L));
+			runtime.sendEvent(new CurrentTimeEvent(firstTimestampLong));
+			
 			
 			String GenericEpl = Files.lines(Paths.get("resources\\" + patternModel.getPatternName() + ".epl")).collect(Collectors.joining("\n"));
 			EPStatement GenericPattern = epService.getEPAdministrator().createEPL(GenericEpl);
@@ -98,7 +135,8 @@ public class Simulator {
 					
 			
 			// The CSV data input file must be located in the resources folder.		
-			AdapterInputSource GenericInputSource = new AdapterInputSource("Vaccine_Delivery-Events.csv");
+			//AdapterInputSource GenericInputSource = new AdapterInputSource("Vaccine_Delivery-Events.csv");
+			AdapterInputSource GenericInputSource = new AdapterInputSource(CSVpath);
 			CSVInputAdapterSpec GenericAdapterSpec = new CSVInputAdapterSpec(GenericInputSource, patternModel.getPatternName());
 			GenericAdapterSpec.setUsingTimeSpanEvents(true);
 				
