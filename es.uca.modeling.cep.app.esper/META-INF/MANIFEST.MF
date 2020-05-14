@@ -10,3 +10,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: es.uca.modeling.cep.app.esper
 Bundle-ActivationPolicy: lazy
 Export-Package: app.esper
+Import-Package: eventpattern

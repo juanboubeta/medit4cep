@@ -38,6 +38,11 @@ public class TemperatureAlertListener implements UpdateListener {
 					+ "," + event.get("temperatureMin")
 					; 	
 				
+			//Clave publica del emisor senderPublicKey
+			//Clave publica del contrato contractPublicKey
+			//Contenido del evento
+			//Todo el contenido del evento complejo pasado a string event.getUnderlying
+			
 			//System.out.println(detectedComplexEvent);
 			logger.debug(detectedComplexEvent); 
 			lines.add(detectedComplexEvent);
