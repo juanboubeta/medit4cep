@@ -1,93 +1,93 @@
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.Configuration id -220881974438617882 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.ArrayList id 8683452581122892189 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.HashMap id 362498820763181265 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults id -528835191586154300 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$AlternativeContext id 4488861684585251042 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ByteCodeGeneration id -4582655217918634675 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ConditionHandling id -708367341332718634 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$EventMeta id -6091772368103140370 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$EventMeta$AvroSettings id 2977645210525767203 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.Configuration$PropertyResolutionStyle id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.Enum id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEventTypeLegacy$AccessorStyle id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.util.EventUnderlyingType id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ExceptionHandling id -708367341332718634 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ExceptionHandling$UndeployRethrowPolicy id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Execution id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$FilterServiceProfile id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ThreadingProfile id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Expression id 3192205923560011213 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class sun.util.calendar.ZoneInfo id 2653134537216586139 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.TimeZone id 3581463369166924961 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class [I id 5600894804908749477 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class [J id 8655923659555304851 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Language id -6237674558477894392 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Logging id -8129836306582810327 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$MatchRecognize id 4541565245238216789 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationMetricsReporting id -7265780298667075895 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.LinkedHashMap id 3801124242820219131 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Patterns id -7596853289989573800 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Scripts id -3111856398932434323 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$StreamSelection id -7943748323859161674 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.soda.StreamSelector id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Threading id 6504606101119059962 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Threading$Locking id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$TimeSource id 2075039404763313824 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$TimeSourceType id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.concurrent.TimeUnit id 0 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Variables id 8276015152830052323 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ViewResources id 2527853225433208362 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.LinkedHashSet id -2851667679971038690 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.HashSet id -5024744406713321676 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.String id -6849794470754667710 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.Double id -9172774392245257468 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.Number id -8742448824652078965 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.Long id 4290774380558885855 classloader class sun.misc.Launcher$AppClassLoader
-[11/05/20 04:06:51:051 CEST]  INFO [EPServiceProviderImpl][doInitialize]: Initializing engine URI 'default' version 7.1.0
-[11/05/20 04:06:51:051 CEST] DEBUG [MetricReportingPath][setMetricsEnabled]: Metrics reporting has been disabled, this setting takes affect for all engine instances at engine initialization time.
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import java.lang.*
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import java.math.*
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import java.text.*
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import java.util.*
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import com.espertech.esper.client.annotation.*
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import com.espertech.esper.dataflow.ops.*
-[11/05/20 04:06:52:052 CEST] DEBUG [EPServicesContextFactoryDefault][createServicesContext]: Avro provider com.espertech.esper.avro.core.EventAdapterAvroHandlerImpl not instantiated, not enabling Avro support: Unable to load class 'com.espertech.esper.avro.core.EventAdapterAvroHandlerImpl', class not found
-[11/05/20 04:06:52:052 CEST]  WARN [TimerServiceImpl][stopInternalClock]: .stopInternalClock Internal clock is already stopped, start first before stopping, operation not completed
-[11/05/20 04:06:52:052 CEST] DEBUG [EPAdministratorHelper][compileEPL]: .createEPLStmt statementName=null eplStatement=@Name("TemperatureWarning")
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.Configuration id -220881974438617882 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.ArrayList id 8683452581122892189 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.HashMap id 362498820763181265 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults id -528835191586154300 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$AlternativeContext id 4488861684585251042 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ByteCodeGeneration id -4582655217918634675 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ConditionHandling id -708367341332718634 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$EventMeta id -6091772368103140370 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$EventMeta$AvroSettings id 2977645210525767203 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.Configuration$PropertyResolutionStyle id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.Enum id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEventTypeLegacy$AccessorStyle id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.util.EventUnderlyingType id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ExceptionHandling id -708367341332718634 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ExceptionHandling$UndeployRethrowPolicy id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Execution id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$FilterServiceProfile id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ThreadingProfile id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Expression id 3192205923560011213 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class sun.util.calendar.ZoneInfo id 2653134537216586139 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.TimeZone id 3581463369166924961 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class [I id 5600894804908749477 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class [J id 8655923659555304851 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Language id -6237674558477894392 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Logging id -8129836306582810327 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$MatchRecognize id 4541565245238216789 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationMetricsReporting id -7265780298667075895 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.LinkedHashMap id 3801124242820219131 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Patterns id -7596853289989573800 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Scripts id -3111856398932434323 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$StreamSelection id -7943748323859161674 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.soda.StreamSelector id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Threading id 6504606101119059962 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Threading$Locking id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$TimeSource id 2075039404763313824 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$TimeSourceType id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.concurrent.TimeUnit id 0 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$Variables id 8276015152830052323 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class com.espertech.esper.client.ConfigurationEngineDefaults$ViewResources id 2527853225433208362 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.LinkedHashSet id -2851667679971038690 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.util.HashSet id -5024744406713321676 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.String id -6849794470754667710 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.Double id -9172774392245257468 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.Number id -8742448824652078965 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST] DEBUG [ObjectInputStreamWithTCCL][resolveClass]: Resolving class java.lang.Long id 4290774380558885855 classloader class sun.misc.Launcher$AppClassLoader
+[12/05/20 03:27:35:035 CEST]  INFO [EPServiceProviderImpl][doInitialize]: Initializing engine URI 'default' version 7.1.0
+[12/05/20 03:27:35:035 CEST] DEBUG [MetricReportingPath][setMetricsEnabled]: Metrics reporting has been disabled, this setting takes affect for all engine instances at engine initialization time.
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import java.lang.*
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import java.math.*
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import java.text.*
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import java.util.*
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import com.espertech.esper.client.annotation.*
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][validateImportAndAdd]: Adding import com.espertech.esper.dataflow.ops.*
+[12/05/20 03:27:35:035 CEST] DEBUG [EPServicesContextFactoryDefault][createServicesContext]: Avro provider com.espertech.esper.avro.core.EventAdapterAvroHandlerImpl not instantiated, not enabling Avro support: Unable to load class 'com.espertech.esper.avro.core.EventAdapterAvroHandlerImpl', class not found
+[12/05/20 03:27:35:035 CEST]  WARN [TimerServiceImpl][stopInternalClock]: .stopInternalClock Internal clock is already stopped, start first before stopping, operation not completed
+[12/05/20 03:27:35:035 CEST] DEBUG [EPAdministratorHelper][compileEPL]: .createEPLStmt statementName=null eplStatement=@Name("TemperatureWarning")
 @Tag(name="domainName", value="VaccineDeliveyr")
 insert into TemperatureWarning
 select a1.*
 from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.temperature > 8.0)))]
-[11/05/20 04:06:52:052 CEST] DEBUG [ParseHelper][parse]: .parse Parsing expr=@Name("TemperatureWarning")
+[12/05/20 03:27:35:035 CEST] DEBUG [ParseHelper][parse]: .parse Parsing expr=@Name("TemperatureWarning")
 @Tag(name="domainName", value="VaccineDeliveyr")
 insert into TemperatureWarning
 select a1.*
 from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.temperature > 8.0)))]
-[11/05/20 04:06:52:052 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:52:052 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:52:052 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:52:052 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:52:052 CEST] DEBUG [ParseHelper][parse]: .parse Dumping AST...
-[11/05/20 04:06:52:052 CEST] DEBUG [ParseHelper][walk]: .walk Walking AST using walker com.espertech.esper.epl.parse.EPLTreeWalkerListener
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Name'
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Name'
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Name'
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Name'
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Name'
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Tag'
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Tag'
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Tag'
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Tag'
-[11/05/20 04:06:52:052 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Tag'
-[11/05/20 04:06:52:052 CEST] DEBUG [StatementResultServiceImpl][<init>]: .ctor
-[11/05/20 04:06:52:052 CEST] DEBUG [FilterSpecCompiler][buildNoStmtCtx]: .makeFilterSpec spec=FilterSpecCompiled type=com.espertech.esper.event.map.MapEventType@10a9d961 parameters=[[Lcom.espertech.esper.filterspec.FilterSpecParam;@130e116b, [Lcom.espertech.esper.filterspec.FilterSpecParam;@e383572]
-[11/05/20 04:06:52:052 CEST] DEBUG [StatementLifecycleSvcImpl][start]: .start Starting statement 1 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@2f62ea70
-[11/05/20 04:06:52:052 CEST] DEBUG [StatementLifecycleSvcImpl][startInternal]: .startInternal Starting statement 1 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@2f62ea70
-[11/05/20 04:06:52:052 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Incoming specifications=[]
-[11/05/20 04:06:52:052 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Outgoing specifications=[]
-[11/05/20 04:06:52:052 CEST] DEBUG [OrderByProcessorFactoryFactory][getProcessor]: .getProcessor Using no OrderByProcessor
-[11/05/20 04:06:52:052 CEST] DEBUG [ResultSetProcessorFactoryFactory][getProcessorPrototype]: .getProcessor Using no result processor
-[11/05/20 04:06:53:053 CEST] DEBUG [CodegenCompilerJanino][compileClass]: Compiling class for statement 'TemperatureWarning' result-set-processor requestor-class 'ResultSetProcessorFactoryFactory' includeDebugSymbols=false classloader=sun.misc.Launcher$AppClassLoader@60e53b93 code: 
+[12/05/20 03:27:35:035 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:35:035 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:35:035 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:35:035 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:35:035 CEST] DEBUG [ParseHelper][parse]: .parse Dumping AST...
+[12/05/20 03:27:35:035 CEST] DEBUG [ParseHelper][walk]: .walk Walking AST using walker com.espertech.esper.epl.parse.EPLTreeWalkerListener
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Name'
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Name'
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Name'
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Name'
+[12/05/20 03:27:35:035 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Name'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Tag'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Tag'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Tag'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Tag'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Tag'
+[12/05/20 03:27:36:036 CEST] DEBUG [StatementResultServiceImpl][<init>]: .ctor
+[12/05/20 03:27:36:036 CEST] DEBUG [FilterSpecCompiler][buildNoStmtCtx]: .makeFilterSpec spec=FilterSpecCompiled type=com.espertech.esper.event.map.MapEventType@10a9d961 parameters=[[Lcom.espertech.esper.filterspec.FilterSpecParam;@130e116b, [Lcom.espertech.esper.filterspec.FilterSpecParam;@e383572]
+[12/05/20 03:27:36:036 CEST] DEBUG [StatementLifecycleSvcImpl][start]: .start Starting statement 1 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@2f62ea70
+[12/05/20 03:27:36:036 CEST] DEBUG [StatementLifecycleSvcImpl][startInternal]: .startInternal Starting statement 1 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@2f62ea70
+[12/05/20 03:27:36:036 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Incoming specifications=[]
+[12/05/20 03:27:36:036 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Outgoing specifications=[]
+[12/05/20 03:27:36:036 CEST] DEBUG [OrderByProcessorFactoryFactory][getProcessor]: .getProcessor Using no OrderByProcessor
+[12/05/20 03:27:36:036 CEST] DEBUG [ResultSetProcessorFactoryFactory][getProcessorPrototype]: .getProcessor Using no result processor
+[12/05/20 03:27:36:036 CEST] DEBUG [CodegenCompilerJanino][compileClass]: Compiling class for statement 'TemperatureWarning' result-set-processor requestor-class 'ResultSetProcessorFactoryFactory' includeDebugSymbols=false classloader=sun.misc.Launcher$AppClassLoader@60e53b93 code: 
    1  package com.espertech.esper.generated.uri_default;
    2  import com.espertech.esper.epl.core.resultset.codegen.ResultSetProcessorFactoryProvider;
    3  import java.util.List;
@@ -123,7 +123,7 @@ from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.tempera
   33  import java.util.Map;
   34  import com.espertech.esper.view.Viewable;
   35  import com.espertech.esper.epl.agg.service.common.AggregationRowRemovedCallback;
-  36  public class ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 implements ResultSetProcessorFactoryProvider {
+  36  public class ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 implements ResultSetProcessorFactoryProvider {
   37    final EventAdapterServiceImpl mb1;
   38    final StatementResultServiceImpl mb2;
   39    final WrapperEventType mb0;
@@ -132,7 +132,7 @@ from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.tempera
   42    final AggregationServiceFactory aggFactory;
   43    final SelectExprProcessor selectExprProcessor;
   44  
-  45    public ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27(EventAdapterServiceImpl p1,StatementResultServiceImpl p2,WrapperEventType p0){
+  45    public ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27(EventAdapterServiceImpl p1,StatementResultServiceImpl p2,WrapperEventType p0){
   46      this.mb1=p1;
   47      this.mb2=p2;
   48      this.mb0=p0;
@@ -158,9 +158,9 @@ from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.tempera
   68    }
   69  
   70    static class RSPFactory implements ResultSetProcessorFactory {
-  71      final ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o;
+  71      final ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o;
   72  
-  73      public RSPFactory(ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o){
+  73      public RSPFactory(ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o){
   74        this.o=o;
   75      }
   76  
@@ -171,12 +171,12 @@ from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.tempera
   81    }
   82  
   83    static class RSP implements ResultSetProcessor {
-  84      final ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o;
+  84      final ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o;
   85      final OrderByProcessor orderByProcessor;
   86      final AggregationService aggregationService;
   87      final AgentInstanceContext agentInstanceContext;
   88  
-  89      public RSP(ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o,OrderByProcessor orderByProcessor,AggregationService aggregationService,AgentInstanceContext agentInstanceContext){
+  89      public RSP(ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o,OrderByProcessor orderByProcessor,AggregationService aggregationService,AgentInstanceContext agentInstanceContext){
   90        this.o=o;
   91        this.orderByProcessor=orderByProcessor;
   92        this.aggregationService=aggregationService;
@@ -269,9 +269,9 @@ from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.tempera
  179    }
  180  
  181    static class AggFactory implements AggregationServiceFactory {
- 182      final ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o;
+ 182      final ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o;
  183  
- 184      public AggFactory(ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o){
+ 184      public AggFactory(ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o){
  185        this.o=o;
  186      }
  187  
@@ -282,9 +282,9 @@ from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.tempera
  192    }
  193  
  194    static class AggSvc implements AggregationService {
- 195      final ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o;
+ 195      final ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o;
  196  
- 197      public AggSvc(ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o){
+ 197      public AggSvc(ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o){
  198        this.o=o;
  199      }
  200  
@@ -362,9 +362,9 @@ from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.tempera
  272    }
  273  
  274    static class SelectExprProcessorImpl implements SelectExprProcessor {
- 275      final ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o;
+ 275      final ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o;
  276  
- 277      public SelectExprProcessorImpl(ResultSetProcessorFactoryProvider_cc2c07b577fc646d8afb8225adde97e27 o){
+ 277      public SelectExprProcessorImpl(ResultSetProcessorFactoryProvider_c0f9d64d021084526a23a904a7b635e27 o){
  278        this.o=o;
  279      }
  280  
@@ -420,11 +420,11 @@ from pattern [(every a1 = TemperatureReading((a1.temperature < 2.0 or a1.tempera
  330    }
  331  }
 
-[11/05/20 04:06:53:053 CEST] DEBUG [ViewServiceImpl][createViews]: .createView No new views created, dumping stream ... com.espertech.esper.view.ZeroDepthStreamNoIterate@1433046b
-[11/05/20 04:06:53:053 CEST] DEBUG [NamedWindowConsumerMgmtServiceImpl][start]: Statement 'TemperatureWarning starts consuming
-[11/05/20 04:06:53:053 CEST] DEBUG [EPAdministratorImpl][createEPLStmt]: .createEPLStmt Statement created and started
-[11/05/20 04:06:53:053 CEST] DEBUG [StatementLifecycleSvcImpl][updatedListeners]: .updatedListeners No action for base implementation
-[11/05/20 04:06:53:053 CEST] DEBUG [EPAdministratorHelper][compileEPL]: .createEPLStmt statementName=null eplStatement=@Name("TemperatureWarningStatic")
+[12/05/20 03:27:36:036 CEST] DEBUG [ViewServiceImpl][createViews]: .createView No new views created, dumping stream ... com.espertech.esper.view.ZeroDepthStreamNoIterate@1433046b
+[12/05/20 03:27:36:036 CEST] DEBUG [NamedWindowConsumerMgmtServiceImpl][start]: Statement 'TemperatureWarning starts consuming
+[12/05/20 03:27:36:036 CEST] DEBUG [EPAdministratorImpl][createEPLStmt]: .createEPLStmt Statement created and started
+[12/05/20 03:27:36:036 CEST] DEBUG [StatementLifecycleSvcImpl][updatedListeners]: .updatedListeners No action for base implementation
+[12/05/20 03:27:36:036 CEST] DEBUG [EPAdministratorHelper][compileEPL]: .createEPLStmt statementName=null eplStatement=@Name("TemperatureWarningStatic")
 @Tag(name="domainName", value="VaccineDeliveyr")
 insert into TemperatureWarningStatic
 select 1 as timestamp, 
@@ -434,7 +434,7 @@ select 1 as timestamp,
     min(a1.temperature) as min
 from pattern [(every a1 = TemperatureWarning)].win:time(1 hours)
 group by a1.shipmentId
-[11/05/20 04:06:53:053 CEST] DEBUG [ParseHelper][parse]: .parse Parsing expr=@Name("TemperatureWarningStatic")
+[12/05/20 03:27:36:036 CEST] DEBUG [ParseHelper][parse]: .parse Parsing expr=@Name("TemperatureWarningStatic")
 @Tag(name="domainName", value="VaccineDeliveyr")
 insert into TemperatureWarningStatic
 select 1 as timestamp, 
@@ -444,47 +444,47 @@ select 1 as timestamp,
     min(a1.temperature) as min
 from pattern [(every a1 = TemperatureWarning)].win:time(1 hours)
 group by a1.shipmentId
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:53:053 CEST] DEBUG [ParseHelper][parse]: .parse Dumping AST...
-[11/05/20 04:06:53:053 CEST] DEBUG [ParseHelper][walk]: .walk Walking AST using walker com.espertech.esper.epl.parse.EPLTreeWalkerListener
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [StatementResultServiceImpl][<init>]: .ctor
-[11/05/20 04:06:53:053 CEST] DEBUG [FilterSpecCompiler][buildNoStmtCtx]: .makeFilterSpec spec=FilterSpecCompiled type=WrapperEventType underlyingEventType=com.espertech.esper.event.map.MapEventType@10a9d961 underlyingMapType=com.espertech.esper.event.map.MapEventType@5f8890c2 parameters=[]
-[11/05/20 04:06:53:053 CEST] DEBUG [StatementLifecycleSvcImpl][start]: .start Starting statement 2 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@138a7441
-[11/05/20 04:06:53:053 CEST] DEBUG [StatementLifecycleSvcImpl][startInternal]: .startInternal Starting statement 2 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@138a7441
-[11/05/20 04:06:53:053 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Incoming specifications=[objectName=time  objectParameters=( 1 hours)]
-[11/05/20 04:06:53:053 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Outgoing specifications=[objectName=time  objectParameters=( 1 hours)]
-[11/05/20 04:06:53:053 CEST] DEBUG [ViewResolutionServiceImpl][create]: .create Creating view factory, namespace=win name=time
-[11/05/20 04:06:53:053 CEST] DEBUG [ViewResolutionServiceImpl][create]: .create Successfully instantiated view
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'TemperatureWarningStatic'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.TemperatureWarningStatic'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.TemperatureWarningStatic'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.TemperatureWarningStatic'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.TemperatureWarningStatic'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'com.espertech.esper.client.annotation.TemperatureWarningStatic'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'com.espertech.esper.dataflow.ops.TemperatureWarningStatic'
-[11/05/20 04:06:53:053 CEST] DEBUG [SelectExprProcessorHelper][getForge]: Target stream name 'TemperatureWarningStatic' is not resolved as a class name
-[11/05/20 04:06:53:053 CEST] DEBUG [OrderByProcessorFactoryFactory][getProcessor]: .getProcessor Using no OrderByProcessor
-[11/05/20 04:06:53:053 CEST] DEBUG [ResultSetProcessorFactoryFactory][getProcessorPrototype]: .getProcessor Using ResultSetProcessorRowPerGroup
-[11/05/20 04:06:53:053 CEST] DEBUG [CodegenCompilerJanino][compileClass]: Compiling class for statement 'TemperatureWarningStatic' result-set-processor requestor-class 'ResultSetProcessorFactoryFactory' includeDebugSymbols=false classloader=sun.misc.Launcher$AppClassLoader@60e53b93 code: 
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:36:036 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:36:036 CEST] DEBUG [ParseHelper][parse]: .parse Dumping AST...
+[12/05/20 03:27:36:036 CEST] DEBUG [ParseHelper][walk]: .walk Walking AST using walker com.espertech.esper.epl.parse.EPLTreeWalkerListener
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Name'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Name'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Name'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Name'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Name'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Tag'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Tag'
+[12/05/20 03:27:36:036 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Tag'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Tag'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Tag'
+[12/05/20 03:27:37:037 CEST] DEBUG [StatementResultServiceImpl][<init>]: .ctor
+[12/05/20 03:27:37:037 CEST] DEBUG [FilterSpecCompiler][buildNoStmtCtx]: .makeFilterSpec spec=FilterSpecCompiled type=WrapperEventType underlyingEventType=com.espertech.esper.event.map.MapEventType@10a9d961 underlyingMapType=com.espertech.esper.event.map.MapEventType@5f8890c2 parameters=[]
+[12/05/20 03:27:37:037 CEST] DEBUG [StatementLifecycleSvcImpl][start]: .start Starting statement 2 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@138a7441
+[12/05/20 03:27:37:037 CEST] DEBUG [StatementLifecycleSvcImpl][startInternal]: .startInternal Starting statement 2 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@138a7441
+[12/05/20 03:27:37:037 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Incoming specifications=[objectName=time  objectParameters=( 1 hours)]
+[12/05/20 03:27:37:037 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Outgoing specifications=[objectName=time  objectParameters=( 1 hours)]
+[12/05/20 03:27:37:037 CEST] DEBUG [ViewResolutionServiceImpl][create]: .create Creating view factory, namespace=win name=time
+[12/05/20 03:27:37:037 CEST] DEBUG [ViewResolutionServiceImpl][create]: .create Successfully instantiated view
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'TemperatureWarningStatic'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.TemperatureWarningStatic'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.TemperatureWarningStatic'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.TemperatureWarningStatic'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.TemperatureWarningStatic'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'com.espertech.esper.client.annotation.TemperatureWarningStatic'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'com.espertech.esper.dataflow.ops.TemperatureWarningStatic'
+[12/05/20 03:27:37:037 CEST] DEBUG [SelectExprProcessorHelper][getForge]: Target stream name 'TemperatureWarningStatic' is not resolved as a class name
+[12/05/20 03:27:37:037 CEST] DEBUG [OrderByProcessorFactoryFactory][getProcessor]: .getProcessor Using no OrderByProcessor
+[12/05/20 03:27:37:037 CEST] DEBUG [ResultSetProcessorFactoryFactory][getProcessorPrototype]: .getProcessor Using ResultSetProcessorRowPerGroup
+[12/05/20 03:27:37:037 CEST] DEBUG [CodegenCompilerJanino][compileClass]: Compiling class for statement 'TemperatureWarningStatic' result-set-processor requestor-class 'ResultSetProcessorFactoryFactory' includeDebugSymbols=false classloader=sun.misc.Launcher$AppClassLoader@60e53b93 code: 
    1  package com.espertech.esper.generated.uri_default;
    2  import com.espertech.esper.epl.core.resultset.codegen.ResultSetProcessorFactoryProvider;
    3  import java.util.List;
@@ -528,7 +528,7 @@ group by a1.shipmentId
   41  import com.espertech.esper.view.Viewable;
   42  import com.espertech.esper.epl.core.resultset.rowpergroup.ResultSetProcessorRowPerGroup;
   43  import com.espertech.esper.epl.agg.service.common.AggregationRowRemovedCallback;
-  44  public class ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf implements ResultSetProcessorFactoryProvider {
+  44  public class ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 implements ResultSetProcessorFactoryProvider {
   45    final MapEventType mb0;
   46    final EventAdapterServiceImpl mb1;
   47    final ExprMinMaxAggrNode mb3;
@@ -540,7 +540,7 @@ group by a1.shipmentId
   53    final AggregationServiceFactory aggFactory;
   54    final SelectExprProcessor selectExprProcessor;
   55  
-  56    public ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf(MapEventType p0,EventAdapterServiceImpl p1,ExprMinMaxAggrNode p3,StatementResultServiceImpl p5,ExprCountNode p2,ExprMinMaxAggrNode p4){
+  56    public ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53(MapEventType p0,EventAdapterServiceImpl p1,ExprMinMaxAggrNode p3,StatementResultServiceImpl p5,ExprCountNode p2,ExprMinMaxAggrNode p4){
   57      this.mb0=p0;
   58      this.mb1=p1;
   59      this.mb3=p3;
@@ -569,9 +569,9 @@ group by a1.shipmentId
   82    }
   83  
   84    static class RSPFactory implements ResultSetProcessorFactory {
-  85      final ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o;
+  85      final ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o;
   86  
-  87      public RSPFactory(ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o){
+  87      public RSPFactory(ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o){
   88        this.o=o;
   89      }
   90  
@@ -582,12 +582,12 @@ group by a1.shipmentId
   95    }
   96  
   97    static class RSP implements ResultSetProcessorRowPerGroup {
-  98      final ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o;
+  98      final ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o;
   99      final OrderByProcessor orderByProcessor;
  100      final AggregationService aggregationService;
  101      final AgentInstanceContext agentInstanceContext;
  102  
- 103      public RSP(ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o,OrderByProcessor orderByProcessor,AggregationService aggregationService,AgentInstanceContext agentInstanceContext){
+ 103      public RSP(ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o,OrderByProcessor orderByProcessor,AggregationService aggregationService,AgentInstanceContext agentInstanceContext){
  104        this.o=o;
  105        this.orderByProcessor=orderByProcessor;
  106        this.aggregationService=aggregationService;
@@ -853,13 +853,13 @@ group by a1.shipmentId
  366    }
  367  
  368    static class AggRowTop implements AggregationRowGenerated {
- 369      final ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o;
+ 369      final ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o;
  370      final int refcount;
  371      final long cnt0;
  372      final SortedRefCountedSet refSet1;
  373      final SortedRefCountedSet refSet2;
  374  
- 375      public AggRowTop(ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o){
+ 375      public AggRowTop(ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o){
  376        this.o=o;
  377        refcount=1;
  378        refSet1=new SortedRefCountedSet();
@@ -1173,9 +1173,9 @@ group by a1.shipmentId
  686    }
  687  
  688    static class AggFactory implements AggregationServiceFactory {
- 689      final ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o;
+ 689      final ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o;
  690  
- 691      public AggFactory(ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o){
+ 691      public AggFactory(ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o){
  692        this.o=o;
  693      }
  694  
@@ -1186,14 +1186,14 @@ group by a1.shipmentId
  699    }
  700  
  701    static class AggSvc implements AggregationService {
- 702      final ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o;
+ 702      final ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o;
  703      final AgentInstanceContext agentInstanceContext;
  704      final Map aggregatorsPerGroup;
  705      final Object currentGroupKey;
  706      final AggRowTop currentRow;
  707      final List removedKeys;
  708  
- 709      public AggSvc(ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o,AgentInstanceContext agentInstanceContext){
+ 709      public AggSvc(ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o,AgentInstanceContext agentInstanceContext){
  710        this.o=o;
  711        this.agentInstanceContext=agentInstanceContext;
  712        aggregatorsPerGroup=new HashMap();
@@ -1325,9 +1325,9 @@ group by a1.shipmentId
  838    }
  839  
  840    static class SelectExprProcessorImpl implements SelectExprProcessor {
- 841      final ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o;
+ 841      final ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o;
  842  
- 843      public SelectExprProcessorImpl(ResultSetProcessorFactoryProvider_c2235d9cc55244c9d8547a2c7fa736bcf o){
+ 843      public SelectExprProcessorImpl(ResultSetProcessorFactoryProvider_c14b6862154c04a66a014ba4fa00e9f53 o){
  844        this.o=o;
  845      }
  846  
@@ -1429,11 +1429,11 @@ group by a1.shipmentId
  942    }
  943  }
 
-[11/05/20 04:06:53:053 CEST] DEBUG [ViewServiceImpl][createViews]: .createView New views created for stream, all views ... com.espertech.esper.view.ZeroDepthStreamNoIterate@5f84abe8
-[11/05/20 04:06:53:053 CEST] DEBUG [NamedWindowConsumerMgmtServiceImpl][start]: Statement 'TemperatureWarningStatic starts consuming
-[11/05/20 04:06:53:053 CEST] DEBUG [EPAdministratorImpl][createEPLStmt]: .createEPLStmt Statement created and started
-[11/05/20 04:06:53:053 CEST] DEBUG [StatementLifecycleSvcImpl][updatedListeners]: .updatedListeners No action for base implementation
-[11/05/20 04:06:53:053 CEST] DEBUG [EPAdministratorHelper][compileEPL]: .createEPLStmt statementName=null eplStatement=@Name("TemperatureAlert")
+[12/05/20 03:27:37:037 CEST] DEBUG [ViewServiceImpl][createViews]: .createView New views created for stream, all views ... com.espertech.esper.view.ZeroDepthStreamNoIterate@5f84abe8
+[12/05/20 03:27:37:037 CEST] DEBUG [NamedWindowConsumerMgmtServiceImpl][start]: Statement 'TemperatureWarningStatic starts consuming
+[12/05/20 03:27:37:037 CEST] DEBUG [EPAdministratorImpl][createEPLStmt]: .createEPLStmt Statement created and started
+[12/05/20 03:27:37:037 CEST] DEBUG [StatementLifecycleSvcImpl][updatedListeners]: .updatedListeners No action for base implementation
+[12/05/20 03:27:37:037 CEST] DEBUG [EPAdministratorHelper][compileEPL]: .createEPLStmt statementName=null eplStatement=@Name("TemperatureAlert")
 @Tag(name="domainName", value="VaccineDeliveyr")
 insert into TemperatureAlert
 select a1.timestamp as  timestamp, 
@@ -1442,7 +1442,7 @@ select a1.timestamp as  timestamp,
    a1.max as temperatureMax, 
    a1.min as temperatureMin
 from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
-[11/05/20 04:06:53:053 CEST] DEBUG [ParseHelper][parse]: .parse Parsing expr=@Name("TemperatureAlert")
+[12/05/20 03:27:37:037 CEST] DEBUG [ParseHelper][parse]: .parse Parsing expr=@Name("TemperatureAlert")
 @Tag(name="domainName", value="VaccineDeliveyr")
 insert into TemperatureAlert
 select a1.timestamp as  timestamp, 
@@ -1451,43 +1451,43 @@ select a1.timestamp as  timestamp,
    a1.max as temperatureMax, 
    a1.min as temperatureMin
 from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
-[11/05/20 04:06:53:053 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
-[11/05/20 04:06:53:053 CEST] DEBUG [ParseHelper][parse]: .parse Dumping AST...
-[11/05/20 04:06:53:053 CEST] DEBUG [ParseHelper][walk]: .walk Walking AST using walker com.espertech.esper.epl.parse.EPLTreeWalkerListener
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Name'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Tag'
-[11/05/20 04:06:53:053 CEST] DEBUG [StatementResultServiceImpl][<init>]: .ctor
-[11/05/20 04:06:53:053 CEST] DEBUG [FilterSpecCompiler][buildNoStmtCtx]: .makeFilterSpec spec=FilterSpecCompiled type=com.espertech.esper.event.map.MapEventType@39aa45a1 parameters=[[Lcom.espertech.esper.filterspec.FilterSpecParam;@4c98a6d5]
-[11/05/20 04:06:53:053 CEST] DEBUG [StatementLifecycleSvcImpl][start]: .start Starting statement 3 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@392a04e7
-[11/05/20 04:06:53:053 CEST] DEBUG [StatementLifecycleSvcImpl][startInternal]: .startInternal Starting statement 3 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@392a04e7
-[11/05/20 04:06:53:053 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Incoming specifications=[]
-[11/05/20 04:06:53:053 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Outgoing specifications=[]
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'TemperatureAlert'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.TemperatureAlert'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.TemperatureAlert'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.TemperatureAlert'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.TemperatureAlert'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'com.espertech.esper.client.annotation.TemperatureAlert'
-[11/05/20 04:06:53:053 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'com.espertech.esper.dataflow.ops.TemperatureAlert'
-[11/05/20 04:06:53:053 CEST] DEBUG [SelectExprProcessorHelper][getForge]: Target stream name 'TemperatureAlert' is not resolved as a class name
-[11/05/20 04:06:53:053 CEST] DEBUG [OrderByProcessorFactoryFactory][getProcessor]: .getProcessor Using no OrderByProcessor
-[11/05/20 04:06:53:053 CEST] DEBUG [ResultSetProcessorFactoryFactory][getProcessorPrototype]: .getProcessor Using no result processor
-[11/05/20 04:06:53:053 CEST] DEBUG [CodegenCompilerJanino][compileClass]: Compiling class for statement 'TemperatureAlert' result-set-processor requestor-class 'ResultSetProcessorFactoryFactory' includeDebugSymbols=false classloader=sun.misc.Launcher$AppClassLoader@60e53b93 code: 
+[12/05/20 03:27:37:037 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:37:037 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:37:037 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:37:037 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:37:037 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:37:037 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:37:037 CEST] DEBUG [Antlr4ErrorListener][reportAttemptingFullContext]: reportAttemptingFullContext
+[12/05/20 03:27:37:037 CEST] DEBUG [Antlr4ErrorListener][reportAmbiguity]: reportAmbiguity
+[12/05/20 03:27:37:037 CEST] DEBUG [ParseHelper][parse]: .parse Dumping AST...
+[12/05/20 03:27:37:037 CEST] DEBUG [ParseHelper][walk]: .walk Walking AST using walker com.espertech.esper.epl.parse.EPLTreeWalkerListener
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Name'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Name'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Name'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Name'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Name'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'Tag'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.Tag'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.Tag'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.Tag'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.Tag'
+[12/05/20 03:27:37:037 CEST] DEBUG [StatementResultServiceImpl][<init>]: .ctor
+[12/05/20 03:27:37:037 CEST] DEBUG [FilterSpecCompiler][buildNoStmtCtx]: .makeFilterSpec spec=FilterSpecCompiled type=com.espertech.esper.event.map.MapEventType@39aa45a1 parameters=[[Lcom.espertech.esper.filterspec.FilterSpecParam;@4c98a6d5]
+[12/05/20 03:27:37:037 CEST] DEBUG [StatementLifecycleSvcImpl][start]: .start Starting statement 3 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@392a04e7
+[12/05/20 03:27:37:037 CEST] DEBUG [StatementLifecycleSvcImpl][startInternal]: .startInternal Starting statement 3 from desc=com.espertech.esper.core.service.StatementLifecycleSvcImpl$EPStatementDesc@392a04e7
+[12/05/20 03:27:37:037 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Incoming specifications=[]
+[12/05/20 03:27:37:037 CEST] DEBUG [ViewServiceHelper][addMergeViews]: .addMergeViews Outgoing specifications=[]
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][resolveClassInternal]: Class not found for resolving from name as-is 'TemperatureAlert'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.lang.TemperatureAlert'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.math.TemperatureAlert'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.text.TemperatureAlert'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'java.util.TemperatureAlert'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'com.espertech.esper.client.annotation.TemperatureAlert'
+[12/05/20 03:27:37:037 CEST] DEBUG [EngineImportServiceImpl][checkImports]: Class not found for resolving from name 'com.espertech.esper.dataflow.ops.TemperatureAlert'
+[12/05/20 03:27:37:037 CEST] DEBUG [SelectExprProcessorHelper][getForge]: Target stream name 'TemperatureAlert' is not resolved as a class name
+[12/05/20 03:27:37:037 CEST] DEBUG [OrderByProcessorFactoryFactory][getProcessor]: .getProcessor Using no OrderByProcessor
+[12/05/20 03:27:37:037 CEST] DEBUG [ResultSetProcessorFactoryFactory][getProcessorPrototype]: .getProcessor Using no result processor
+[12/05/20 03:27:37:037 CEST] DEBUG [CodegenCompilerJanino][compileClass]: Compiling class for statement 'TemperatureAlert' result-set-processor requestor-class 'ResultSetProcessorFactoryFactory' includeDebugSymbols=false classloader=sun.misc.Launcher$AppClassLoader@60e53b93 code: 
    1  package com.espertech.esper.generated.uri_default;
    2  import com.espertech.esper.epl.core.resultset.codegen.ResultSetProcessorFactoryProvider;
    3  import java.util.List;
@@ -1523,7 +1523,7 @@ from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
   33  import java.util.Map;
   34  import com.espertech.esper.view.Viewable;
   35  import com.espertech.esper.epl.agg.service.common.AggregationRowRemovedCallback;
-  36  public class ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c implements ResultSetProcessorFactoryProvider {
+  36  public class ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 implements ResultSetProcessorFactoryProvider {
   37    final EventAdapterServiceImpl mb1;
   38    final MapEventType mb0;
   39    final StatementResultServiceImpl mb2;
@@ -1532,7 +1532,7 @@ from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
   42    final AggregationServiceFactory aggFactory;
   43    final SelectExprProcessor selectExprProcessor;
   44  
-  45    public ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c(EventAdapterServiceImpl p1,MapEventType p0,StatementResultServiceImpl p2){
+  45    public ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804(EventAdapterServiceImpl p1,MapEventType p0,StatementResultServiceImpl p2){
   46      this.mb1=p1;
   47      this.mb0=p0;
   48      this.mb2=p2;
@@ -1558,9 +1558,9 @@ from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
   68    }
   69  
   70    static class RSPFactory implements ResultSetProcessorFactory {
-  71      final ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o;
+  71      final ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o;
   72  
-  73      public RSPFactory(ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o){
+  73      public RSPFactory(ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o){
   74        this.o=o;
   75      }
   76  
@@ -1571,12 +1571,12 @@ from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
   81    }
   82  
   83    static class RSP implements ResultSetProcessor {
-  84      final ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o;
+  84      final ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o;
   85      final OrderByProcessor orderByProcessor;
   86      final AggregationService aggregationService;
   87      final AgentInstanceContext agentInstanceContext;
   88  
-  89      public RSP(ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o,OrderByProcessor orderByProcessor,AggregationService aggregationService,AgentInstanceContext agentInstanceContext){
+  89      public RSP(ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o,OrderByProcessor orderByProcessor,AggregationService aggregationService,AgentInstanceContext agentInstanceContext){
   90        this.o=o;
   91        this.orderByProcessor=orderByProcessor;
   92        this.aggregationService=aggregationService;
@@ -1669,9 +1669,9 @@ from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
  179    }
  180  
  181    static class AggFactory implements AggregationServiceFactory {
- 182      final ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o;
+ 182      final ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o;
  183  
- 184      public AggFactory(ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o){
+ 184      public AggFactory(ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o){
  185        this.o=o;
  186      }
  187  
@@ -1682,9 +1682,9 @@ from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
  192    }
  193  
  194    static class AggSvc implements AggregationService {
- 195      final ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o;
+ 195      final ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o;
  196  
- 197      public AggSvc(ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o){
+ 197      public AggSvc(ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o){
  198        this.o=o;
  199      }
  200  
@@ -1762,9 +1762,9 @@ from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
  272    }
  273  
  274    static class SelectExprProcessorImpl implements SelectExprProcessor {
- 275      final ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o;
+ 275      final ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o;
  276  
- 277      public SelectExprProcessorImpl(ResultSetProcessorFactoryProvider_cbbe192b320d845ca9dae3a72c959272c o){
+ 277      public SelectExprProcessorImpl(ResultSetProcessorFactoryProvider_c81e59351cfee48af8cb572c8b7b47804 o){
  278        this.o=o;
  279      }
  280  
@@ -1986,7 +1986,7 @@ from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
  496    }
  497  }
 
-[11/05/20 04:06:53:053 CEST] DEBUG [ViewServiceImpl][createViews]: .createView No new views created, dumping stream ... com.espertech.esper.view.ZeroDepthStreamNoIterate@22d9c961
-[11/05/20 04:06:53:053 CEST] DEBUG [NamedWindowConsumerMgmtServiceImpl][start]: Statement 'TemperatureAlert starts consuming
-[11/05/20 04:06:53:053 CEST] DEBUG [EPAdministratorImpl][createEPLStmt]: .createEPLStmt Statement created and started
-[11/05/20 04:06:53:053 CEST] DEBUG [StatementLifecycleSvcImpl][updatedListeners]: .updatedListeners No action for base implementation
+[12/05/20 03:27:37:037 CEST] DEBUG [ViewServiceImpl][createViews]: .createView No new views created, dumping stream ... com.espertech.esper.view.ZeroDepthStreamNoIterate@22d9c961
+[12/05/20 03:27:37:037 CEST] DEBUG [NamedWindowConsumerMgmtServiceImpl][start]: Statement 'TemperatureAlert starts consuming
+[12/05/20 03:27:37:037 CEST] DEBUG [EPAdministratorImpl][createEPLStmt]: .createEPLStmt Statement created and started
+[12/05/20 03:27:37:037 CEST] DEBUG [StatementLifecycleSvcImpl][updatedListeners]: .updatedListeners No action for base implementation
