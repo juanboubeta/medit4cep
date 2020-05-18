@@ -104,7 +104,7 @@
                         
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.GenerateDeployEventPattern"
-                  label="Generate Pattern Code"
+                  label="Generate and Deploy Pattern Code"
                   style="push">
             </command>
             <command
