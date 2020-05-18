@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cepapp" nsURI="www.uca.es/modeling/cep/cepapp" nsPrefix="cepapp">
+  <eClassifiers xsi:type="ecore:EClass" name="CEPApp">
+    <eAnnotations source="gmf.diagram">
+      <details key="model.extension" value="cepapp"/>
+      <details key="diagram.extension" value="cepapp_diagram"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceElements" upperBound="-1"
+        eType="#//SourceElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sinkElements" upperBound="-1"
+        eType="#//SinkElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
+        eType="#//Link" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Link">
+    <eAnnotations source="gmf.link">
+      <details key="label" value=""/>
+      <details key="source" value="origin"/>
+      <details key="target" value="destination"/>
+      <details key="source.constraint" value="self &lt;> oppositeEnd&#xA;&#x9;and (&#xA;&#x9;&#x9;(self.oclIsKindOf(SourceElement) and oppositeEnd.oclIsKindOf(SourceElement))&#xA;&#x9;&#x9;or (self.oclIsKindOf(SinkElement) and oppositeEnd.oclIsKindOf(SinkElement))&#xA;&#x9;)"/>
+      <details key="target.constraint" value="self &lt;> oppositeEnd"/>
+      <details key="source.decoration" value="none"/>
+      <details key="target.decoration" value="arrow"/>
+      <details key="color" value="110,110,110"/>
+      <details key="tool.name" value="Link"/>
+      <details key="tool.description" value="Add a link"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origin" eType="#//Origin"
+        eOpposite="#//Origin/outboundLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//Destination"
+        eOpposite="#//Destination/inboundLink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Origin" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outboundLink" upperBound="-1"
+        eType="#//Link" eOpposite="#//Link/origin"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Destination" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inboundLink" upperBound="-1"
+        eType="#//Link" eOpposite="#//Link/destination"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SinkElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Mappable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mappingType" eType="#//MappingType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InMemory" abstract="true" eSuperTypes="#//Mappable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="topic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="File" abstract="true" eSuperTypes="#//Mappable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Email" abstract="true" eSuperTypes="#//Mappable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="host" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Http" abstract="true" eSuperTypes="#//Mappable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Database" abstract="true" eSuperTypes="#//Mappable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primary_key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MongoDB" abstract="true" eSuperTypes="#//Database">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MQTT" abstract="true" eSuperTypes="#//Mappable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="topic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="client_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InMemoryInput" eSuperTypes="#//InMemory #//SourceElement #//Origin">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="In Memory Source"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/InMemoryInput.svg"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceEmail" eSuperTypes="#//Email #//SourceElement #//Origin">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="Source Email"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/SourceEmail.svg"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="993"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="folder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputFile" eSuperTypes="#//File #//SourceElement #//Origin">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="Input File"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/InputFile.svg"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dir_uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="file_uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceHttp" eSuperTypes="#//Http #//SourceElement #//Origin">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="Source HTTP"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/SourceHttp.svg"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceMqtt" eSuperTypes="#//MQTT #//SourceElement #//Origin">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="Source MQTT"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/SourceMqtt.svg"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//SourceElement #//Destination">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="typeName"/>
+      <details key="border.color" value="110,110,110"/>
+      <details key="tool.name" value="Event"/>
+      <details key="tool.description" value="Add an event"/>
+      <details key="resizable" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventProperties" upperBound="-1"
+        eType="#//EventProperty" containment="true" eOpposite="#//EventProperty/referencedEvent">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventProperty">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="name"/>
+      <details key="border.color" value="110,110,110"/>
+      <details key="tool.name" value="Event Property"/>
+      <details key="tool.description" value="Add an event property"/>
+      <details key="resizable" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PropertyTypeValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedEvent" eType="#//Event"
+        eOpposite="#//Event/eventProperties"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventProperties" upperBound="-1"
+        eType="#//EventProperty" containment="true" eOpposite="#//EventProperty/referencedEventProperty">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedEventProperty"
+        eType="#//EventProperty" eOpposite="#//EventProperty/eventProperties"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InMemoryOutput" eSuperTypes="#//InMemory #//SinkElement #//Destination">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="In Memory Sink"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/InMemoryOutput.svg"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexEvent" eSuperTypes="#//SinkElement #//Origin">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="typeName"/>
+      <details key="border.color" value="110,110,110"/>
+      <details key="label.readOnly" value="true"/>
+      <details key="tool.name" value="New Complex Event"/>
+      <details key="tool.description" value="Add a new complex event"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="complexEventProperties"
+        upperBound="-1" eType="#//ComplexEventProperty" containment="true" eOpposite="#//ComplexEventProperty/referencedComplexEvent">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexEventProperty">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="name"/>
+      <details key="border.color" value="110,110,110"/>
+      <details key="tool.name" value="New Complex Event Property"/>
+      <details key="tool.description" value="Add a new complex event property"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PropertyTypeValue"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedComplexEvent"
+        eType="#//ComplexEvent" eOpposite="#//ComplexEvent/complexEventProperties"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="complexEventProperties"
+        upperBound="-1" eType="#//ComplexEventProperty" containment="true" eOpposite="#//ComplexEventProperty/referencedComplexEventProperty">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedComplexEventProperty"
+        eType="#//ComplexEventProperty" eOpposite="#//ComplexEventProperty/complexEventProperties"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SinkEmail" eSuperTypes="#//Email #//SinkElement #//Destination">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="Sink Email"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/SinkEmail.svg"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="to" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputFile" eSuperTypes="#//File #//SinkElement #//Destination">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="Output File"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/OutputFile.svg"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SinkMongoDB" eSuperTypes="#//MongoDB #//SinkElement #//Destination">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="Sink MongoDB"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/MongoDB.svg"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SinkHttp" eSuperTypes="#//Http #//SinkElement #//Destination">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="Sink HTTP"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/SinkHttp.svg"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="basic_auth_username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="basic_auth_password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SinkMqtt" eSuperTypes="#//MQTT #//SinkElement #//Destination">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="svg"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.name" value="Sink MQTT"/>
+      <details key="svg.uri" value="platform:/plugin/es.uca.modeling.cep.app.figures/svg/SinkMqtt.svg"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MappingType">
+    <eLiterals name="PassThrough"/>
+    <eLiterals name="json" value="1"/>
+    <eLiterals name="xml" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PropertyTypeValue">
+    <eLiterals name="Unknown"/>
+    <eLiterals name="Boolean" value="1"/>
+    <eLiterals name="Integer" value="2"/>
+    <eLiterals name="Long" value="3"/>
+    <eLiterals name="Double" value="4"/>
+    <eLiterals name="Float" value="5"/>
+    <eLiterals name="String" value="6"/>
+  </eClassifiers>
+</ecore:EPackage>

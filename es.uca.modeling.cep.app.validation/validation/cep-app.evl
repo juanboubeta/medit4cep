@@ -1,0 +1,484 @@
+context CEPApp{
+	constraint UniqueComplexEvent{
+		check{
+			var m : String;
+			var complexEventsInDiagram : Integer = 0;
+			for(element : SinkElement in self.sinkElements){
+				if(element.isKindOf(ComplexEvent)){
+					complexEventsInDiagram += 1;
+				}
+			}
+
+			if(complexEventsInDiagram == 1){
+				return true;
+			}
+			else if(complexEventsInDiagram == 0){
+				m = 'There must be a complexEventInTheDiagram';
+				return false;
+			}
+			else{
+				m = 'There cannot be more than one complex event in the diagram';
+				return false;
+			}
+		}
+		message : m
+	}
+
+	constraint MinSinkElements{
+		check{
+			var sinkElementsInDiagram : Integer;
+			for(element : SinkElement in self.sinkElements){
+				if(not element.isKindOf(ComplexEvent)){
+					sinkElementsInDiagram += 1;
+				}
+			}
+
+			if(sinkElementsInDiagram == 0){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		message : 'There must be a sink element apart from the complex event in the diagram'
+	}
+
+	constraint MinSimpleEventsElements{
+		check{
+			var simpleEventsInDiagram : Integer;
+			for(element : SourceElement in self.sourceElements){
+				if(element.isKindOf(Event)){
+					simpleEventsInDiagram += 1;
+				}
+			}
+
+			if(simpleEventsInDiagram == 0){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		message : 'There must be a simple event in the diagram'
+	}
+
+	constraint MinSourceElements{
+		check{
+			var sourceElementsInDiagram : Integer;
+			for(element : SourceElement in self.sourceElements){
+				if(element.isKindOf(Event)){
+					sourceElementsInDiagram += 1;
+				}
+			}
+
+			if(sourceElementsInDiagram == 0){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		message : 'There must be a sink element apart from the complex event in the diagram'
+	}
+	
+	constraint AllLinked{
+		check{
+			for(element : SourceElement in self.sourceElements){
+				if(element.isKindOf(Event)){
+					if(element.inboundLink.size() == 0)
+						return false;
+				}
+				else{
+					if(element.outboundLink.size() == 0)
+						return false;
+				}
+			}
+			
+			for(element : SinkElement in self.sinkElements){
+				if(element.isKindOf(ComplexEvent)){
+					if(element.outboundLink.size() == 0)
+						return false;
+				}
+				else{
+					if(element.inboundLink.size() == 0)
+						return false;
+				}
+			}
+			return true;
+		}
+		message : "All elements in the model must remain linked."
+	}
+}
+
+/*context Mappable{
+	constraint MapCheck {
+		check{
+			if(link.type <> MappingType.PassThrough and link.mapReferences.length == 0)
+				return false;
+			else
+				return true;
+		}
+		message : 'There cannot be a link configured for mapping without having that maping configured. Add variables at the mapping reference.'
+	}
+}*/
+
+context InMemory{
+	constraint topicNotIncluded{
+		check{
+			if(self.topic == "" or self.topic == null)
+				return false;
+			else
+				return true;
+		}
+		message : "Topic is required"
+	}
+}
+
+context Email{
+	constraint usernameNotIncluded{
+		check{
+			if(self.username == "" or self.username == null){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		message : 'Username is required'
+	}
+
+	constraint passwordNotIncluded{
+		check{
+			if(self.password == "" or self.password == null){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		message : 'Password is required'
+	}
+
+	constraint notPassThroughAllowed{
+		check{
+			if(self.mappingType == MappingType#PassThrough)
+				return false;
+			else
+				return true;
+		}
+		message : 'In this element, the mapping type "PassThrough" is not allowed.'
+	}
+}
+
+context Http{
+	constraint urlNotDefined{
+		check{
+			if(self.url == "" or self.url == null){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		message : 'Url in Http element must be defined'
+	}
+
+	constraint notPassThroughAllowed{
+		check{
+			if(self.mappingType == MappingType#PassThrough)
+				return false;
+			else
+				return true;
+		}
+		message : 'In this element, the mapping type "PassThrough" is not allowed.'
+	}
+}
+
+context Database{
+	constraint noPrimaryKeyDefined{
+		check{
+			if(self.primary_key == "" or self.primary_key == null){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		message : 'A primary key must be defined'
+	}
+
+	constraint onlyPassThroughAllowed{
+		check{
+			if(self.mappingType == MappingType#PassThrough)
+				return true;
+			else
+				return false;
+		}
+		message : 'In this element, the mapping type "PassThrough" is the only one allowed.'
+	}
+	constraint noPrimaryKeyExistent{
+		check{
+			if (self.inboundLink.size() == 0){
+				return false;
+			}
+			
+			for(property : ComplexEventProperty in self.inboundLink.at(0).origin.complexEventProperties){
+				if(property.name == self.primary_key)
+					return true;
+			}
+			return false;
+		}
+		message : "The primaryKey has to be one of the properties of the Complex Event"
+	}
+}
+
+/*context RDBMS{
+	constraint noUrlDefined{
+		check{
+			if(self.jdbc_url == "" or self.jdbc_url == null)
+				return false;
+			else
+				return true;
+		}
+		message: "The jdbc_url needs to be defined"
+	}
+	constraint noUsernameDefined{
+		check{
+			if(self.username == "" or self.username == null)
+				return false;
+			else
+				return true;
+		}
+		message : "Username has to be defined"
+	}
+	constraint noPasswordDefined{
+		check{
+			if(self.password == "" or self.password == null)
+				return false;
+			else
+				return true;
+		}
+		message : "Password has to be defined"
+	}
+	constraint noJdbcDriverNameDefined{
+		check{
+			if(self.jdbc_driver_name == "" or self.jdbc_driver_name == null)
+				return false;
+			else
+				return true;
+		}
+		message : "Jdbc driver name has to be defined"
+	}
+	constraint noIndexDefined{
+		check{
+			if(self.index == "" or self.index == null)
+				return false;
+			else
+				return true;
+		}
+		message : "Index has to be defined"
+	}
+}*/
+
+//context HBase
+
+context MongoDB{
+	constraint noIndexDefined{
+		check{
+			if(self.index == "" or self.index == null)
+				return false;
+			else
+				return true;
+		}
+		message : "Index has to be defined"
+	}
+
+	constraint noUriDefined{
+		check{
+			if(self.uri == "" or self.uri == null)
+				return false;
+			else
+				return true;
+		}
+		message: "The uri needs to be defined"
+	}
+}
+
+context MQTT{
+	constraint urlNotDefined{
+		check{
+			if(self.url == "" or self.url == null)
+				return false;
+
+			else
+				return true;
+		}
+
+		message : 'Url must be defined.'
+	}
+
+	constraint topicNotDefined{
+		check{
+			if(self.topic == "" or self.topic == null)
+				return false;
+			else
+				return true;
+		}
+		message : 'A topic must be defined.'
+	}
+
+	constraint notPassThroughAllowed{
+		check{
+			if(self.mappingType == MappingType#PassThrough)
+				return false;
+			else
+				return true;
+		}
+		message : 'In this element, the mapping type "PassThrough" is not allowed.'
+	}
+}
+
+context InputFile{
+	constraint dirOrFileUriProvided{
+		check{
+			var m : String;
+			if((self.dir_uri == "" or self.dir_uri == null) and (self.file_uri == "" or self.file_uri == null)){
+				m = 'A dir_uri or file_uri should be provided. Only one.';
+				return false;
+			}
+			else if(self.dir_uri <> "" and self.dir_uri <> null and self.file_uri <> "" and self.file_uri <> null){
+				m = 'Only a dir_uri or file_uri should be provided.';
+				return false;
+			}
+			else
+				return true;
+		}
+		message : m
+	}
+
+	constraint notPassThroughAllowed{
+		check{
+			if(self.mappingType == MappingType#PassThrough)
+				return false;
+			else
+				return true;
+		}
+		message : 'In this element, the mapping type "PassThrough" is not allowed.'
+	}
+}
+
+/*context Twitter{
+	constraint consumerKeyNotFound{
+		check{
+			if(self.consumer_key == "" or self.consumer_key == null)
+				return false;
+			else
+				return true;
+		}
+		message : 'A consumer key must be defined.'
+	}
+
+	constraint consumerSecretNotFound{
+		check{
+			if(self.consumer_secret == "" or self.consumer_secret == null)
+				return false;
+			else
+				return true;
+		}
+		message : 'A consumer secret must be defined.'
+	}
+
+	constraint accessTokenNotFound{
+		check{
+			if(self.access_token == "" or self.access_token == null)
+				return false;
+			else
+				return true;
+		}
+		message : 'An access token must be defined.'
+	}
+
+	constraint accessTokenSecretNotFound{
+		check{
+			if(self.access_token_secret == "" or self.access_token_secret == null)
+				return false;
+			else
+				return true;
+		}
+		message : 'An access token secret must be defined.'
+	}
+
+	constraint notPassThroughAllowed{
+		check{
+			if(self.mappingType == MappingType#PassThrough)
+				return false;
+			else
+				return true;
+		}
+		message : 'In this element, the mapping type "PassThrough" is not allowed.'
+	}
+}*/
+
+context SinkEmail{
+	constraint addressNotIncluded{
+		check{
+			if(self.address == "" or self.address == null)
+				return false;
+			else
+				return true;
+		}
+		message : 'An address for sending emails must be included.'
+	}
+
+	constraint toNotIncluded{
+		check{
+			if(self.to == "" or self.to == null)
+				return false;
+			else
+				return true;
+		}
+		message : 'An address or addresses to sent to the email must be included.'
+	}
+
+	constraint subjectNotIncluded{
+		check{
+			if(self.subject == "" or self.subject == null)
+				return false;
+			else
+				return true;
+		}
+		message : 'A subject must be included.'
+	}
+
+	constraint notPassThroughAllowed{
+		check{
+			if(self.mappingType == MappingType#PassThrough)
+				return false;
+			else
+				return true;
+		}
+		message : 'In this element, the mapping type "PassThrough" is not allowed.'
+	}
+}
+
+context OutputFile{
+	constraint aPathForStoring{
+		check{
+			if(self.path == "" or self.path == null)
+				return false;
+			else
+				return true;
+		}
+		message : 'A path for storing the file is needed.'
+	}
+
+	constraint notPassThroughAllowed{
+		check{
+			if(self.mappingType == MappingType#PassThrough)
+				return false;
+			else
+				return true;
+		}
+		message : 'In this element, the mapping type "PassThrough" is not allowed.'
+	}
+}
