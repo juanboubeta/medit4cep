@@ -20,7 +20,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.workbench,
  json-simple-1.1.1;bundle-version="1.0.0",
  org.eclipse.osgi,
- org.eclipse.ocl
+ org.eclipse.ocl,
+ es.uca.modeling.cep.app;bundle-version="0.1.0",
+ es.uca.modeling.cep.app.diagram;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy 
 Import-Package: app.esper,

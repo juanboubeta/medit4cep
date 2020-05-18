@@ -206,7 +206,7 @@
                id="App"
                label="CEP Application">
             <command
-                  commandId="es.uca.modeling.cep.eventpattern.menu.NewApp"
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.NewApp"
                   label="New"
                   style="push">
             </command>
@@ -228,14 +228,6 @@
                   label="StartApp"
                   style="push">
             </command>
-            <menu
-                  id="StopApp"
-                  label="StopApp">
-               <dynamic
-                     class="es.uca.modeling.cep.eventpattern.menu.StopApp"
-                     id="es.uca.modeling.cep.eventpattern.menu.StopApp">
-               </dynamic>
-            </menu>
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteAppHandler"
                   label="Delete"
@@ -375,6 +367,21 @@
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.StartAppHandler"
             id="es.uca.modeling.cep.eventpattern.menu.StartAppHandler"
             name="StartAppHandler">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.NewAppHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.NewApp"
+            name="NewApp">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.SaveValidateAppHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.SaveValidateAppHandler"
+            name="SaveValidateApp">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.DeleteAppHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.DeleteAppHandler"
+            name="DeleteApp">
       </command>
    </extension>
 

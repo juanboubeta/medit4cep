@@ -34,12 +34,14 @@ public class SaveValidateHandler extends AbstractHandler {
 		else if (diagramEditor.equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
 			SaveValidateEventPatternHandler eventPatternHandler = new SaveValidateEventPatternHandler();
 			return eventPatternHandler.execute(event);
-		}
+		} 
 		else if (diagramEditor.equals("smartcontract.diagram.part.SmartcontractDiagramEditor")) {
 			SaveValidateSmartContractHandler smartContractHandler = new SaveValidateSmartContractHandler();
 			return smartContractHandler.execute(event);
-		}
-		else {
+		} else if(diagramEditor.equals("cepapp.diagram.part.CepappDiagramEditor")){
+			SaveValidateAppHandler appHandler = new SaveValidateAppHandler();
+			return appHandler.execute(event);
+		} else {
 			MessageDialog.openError(shell, "Save and Validate", "An event pattern, domain or smart contract must be open.");
 			return null;
 		}

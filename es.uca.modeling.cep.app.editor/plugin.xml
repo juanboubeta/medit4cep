@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated cep-app -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="cepapp.presentation.CepappModelWizardID"
+            name="%_UI_CepappModelWizard_label"
+            class="cepapp.presentation.CepappModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CepappModelFile.gif">
+         <description>%_UI_CepappModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated cep-app -->
+      <editor
+            id="cepapp.presentation.CepappEditorID"
+            name="%_UI_CepappEditor_label"
+            icon="icons/full/obj16/CepappModelFile.gif"
+            extensions="cepapp"
+            class="cepapp.presentation.CepappEditor"
+            contributorClass="cepapp.presentation.CepappActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
