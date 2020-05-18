@@ -206,8 +206,39 @@
                id="App"
                label="CEP Application">
             <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.NewApp"
+                  label="New"
+                  style="push">
+            </command>
+            <menu
+                  id="OpenApp"
+                  label="Open">
+               <dynamic
+                     class="es.uca.modeling.cep.eventpattern.menu.dynamic.OpenApp"
+                     id="es.uca.modeling.cep.eventpattern.menu.dynamic.OpenApp">
+               </dynamic>
+            </menu>
+            <command
+                  commandId="org.eclipse.ui.file.save"
+                  label="Save and Validate"
+                  style="push">
+            </command>
+            <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.StartAppHandler"
                   label="StartApp"
+                  style="push">
+            </command>
+            <menu
+                  id="StopApp"
+                  label="StopApp">
+               <dynamic
+                     class="es.uca.modeling.cep.eventpattern.menu.StopApp"
+                     id="es.uca.modeling.cep.eventpattern.menu.StopApp">
+               </dynamic>
+            </menu>
+            <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.DeleteAppHandler"
+                  label="Delete"
                   style="push">
             </command>
          </menu>
