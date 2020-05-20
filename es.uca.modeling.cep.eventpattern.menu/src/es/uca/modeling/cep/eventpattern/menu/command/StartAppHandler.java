@@ -1,8 +1,6 @@
 package es.uca.modeling.cep.eventpattern.menu.command;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -16,11 +14,9 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.FileDialog;
@@ -28,39 +24,37 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-//import app.esper.NetworkAttackCSVSimulator.java;
-
 import app.esper.NetworkAttackCSVSimulator;
 import app.esper.Simulator;
 import domain.CEPDomain;
-import domain.DomainFactory;
-import domain.DomainPackage;
 import domain.diagram.part.DomainDiagramEditorUtil;
+
+import cepapp.CEPApp;
+import cepapp.diagram.part.CepappDiagramEditor;
+
 import eventpattern.CEPEventPattern;
-import eventpattern.ComplexEvent;
-import eventpattern.ComplexEventProperty;
-import eventpattern.Value;
 import eventpattern.diagram.part.EventpatternDiagramEditor;
-import eventpattern.diagram.part.EventpatternDiagramEditorUtil;
 import eventpattern.diagram.status.EventPatternsStatus;
 
-public class StartAppHandlerPattern extends AbstractHandler {
-
+public class StartAppHandler extends AbstractHandler {
+	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		
 		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
 		
 		// 1º Obtain the active editor's diagram
-        EventpatternDiagramEditor patternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
+		
+		CepappDiagramEditor cepappDiagramEditor = (CepappDiagramEditor) HandlerUtil.getActiveEditor(event);
         
-        if (patternDiagramEditor == null || !patternDiagramEditor.getTitle().endsWith("pattern_diagram")) {
-        	MessageDialog.openError(shell, "Start App", "An event pattern must be open.");
+		System.out.println(cepappDiagramEditor.getClass().toString());
+		
+        if (cepappDiagramEditor == null || !cepappDiagramEditor.getTitle().endsWith("cepapp_diagram")) {
+        	MessageDialog.openError(shell, "Start App", "An CEP application must be open.");
         	return null; 
         }
         
         // 2º Save all changes made in the editor       
-        patternDiagramEditor.doSave(new NullProgressMonitor());
+        cepappDiagramEditor.doSave(new NullProgressMonitor());
         
 		// 3º Check if there are some problems which must be solved
                 
@@ -75,7 +69,7 @@ public class StartAppHandlerPattern extends AbstractHandler {
 		}
 		
 		if (problems.length > 0) {
-			MessageDialog.openError(shell, "Start App", "There are some problems that must be solved before saving the event pattern.");
+			MessageDialog.openError(shell, "Start App", "There are some problems that must be solved before saving the CEP application.");
 			
 			try {
 				HandlerUtil.getActiveWorkbenchWindowChecked(event).getActivePage().showView("org.eclipse.ui.views.ProblemView");
@@ -85,17 +79,24 @@ public class StartAppHandlerPattern extends AbstractHandler {
 			
         	return null; 
 		}
-	 		
+	 	
 		String domainName = EventPatternsStatus.getDomainName();
 		String smartContractsName = EventPatternsStatus.getSmartcontractsName();
-		String activePatternName = patternDiagramEditor.getTitle().replace(".pattern_diagram","");
-				
+		//String activePatternName = patternDiagramEditor.getTitle().replace(".pattern_diagram","");
+		
+		String activeCepappName = cepappDiagramEditor.getTitle().replace(".cepapp_diagram","");
+		
+		System.out.println(activeCepappName);
+		
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 		IProject CEPdomainProject = myWorkspaceRoot.getProject("domain");
 		IProject SmartContractProject = myWorkspaceRoot.getProject("smartcontract");
 		IProject complexEventProject = myWorkspaceRoot.getProject(domainName + "_complex_events");
-		IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
+		
+		IProject cepappProject = myWorkspaceRoot.getProject(domainName + "_apps");
         
+		System.out.println(cepappProject);
+		
 		try {
 			if (!complexEventProject.exists()) {
 				complexEventProject.create(null);
@@ -107,8 +108,8 @@ public class StartAppHandlerPattern extends AbstractHandler {
 			}
 			
 			// Open if necessary
-			if (!patternProject.isOpen()) {
-				patternProject.open(null);
+			if (!cepappProject.isOpen()) {
+				cepappProject.open(null);
 			}
 			
 			IFile complexEventFile = complexEventProject.getFile(domainName + "_complex_events" + ".domain_diagram");
@@ -117,12 +118,16 @@ public class StartAppHandlerPattern extends AbstractHandler {
 					getFile(domainName + "_complex_events" + ".domain_diagram").getFullPath().toString(), false);
 			URI complexEventModelUri = URI.createPlatformResourceURI(complexEventProject.
 					getFile(domainName + "_complex_events" + ".domain").getFullPath().toString(), false);
+					
+			URI activeCepappModelUri = URI.createPlatformResourceURI(cepappProject
+					.getFile(activeCepappName + ".cepapp").getFullPath().toString(), false);
 			
-			URI activePatternModelUri = URI.createPlatformResourceURI(patternProject
-					.getFile(activePatternName + ".pattern").getFullPath().toString(), false);
+			URI activeCepappDiagramUri = URI.createPlatformResourceURI(cepappProject
+					.getFile(activeCepappName + ".cepapp_diagram").getFullPath().toString(), false);
 			
-			URI activePatternDiagramUri = URI.createPlatformResourceURI(patternProject
-					.getFile(activePatternName + ".pattern_diagram").getFullPath().toString(), false);
+			System.out.println(activeCepappModelUri);
+			
+			System.out.println(activeCepappDiagramUri);
 						
 			if (!complexEventFile.exists()) {
 				DomainDiagramEditorUtil.createDiagram(complexEventDiagramUri, complexEventModelUri, new NullProgressMonitor());
@@ -134,33 +139,43 @@ public class StartAppHandlerPattern extends AbstractHandler {
 		    //Resource SmartContractModelResource = resourceSet.getResource(SmartContractsDiagramUri, true);
 		    
 		    Resource complexEventModelResource = resourceSet.getResource(complexEventModelUri, true);
-		   	Resource patternModelResource = resourceSet.getResource(activePatternModelUri, true);
-		   	Resource patternDiagramResource = resourceSet.getResource(activePatternDiagramUri, true);
+		    
+		    
+		   	Resource cepappModelResource = resourceSet.getResource(activeCepappModelUri, true);
+		   	Resource cepappDiagramResource = resourceSet.getResource(activeCepappDiagramUri, true);
 		   	
+		   	System.out.println(complexEventModelResource);
+		   	
+		   	System.out.println(cepappModelResource);
+		   	
+		   	System.out.println(cepappDiagramResource);
+		   	
+		   	System.out.println(complexEventModelResource.getContents().get(0).getClass().toString());
 		   	CEPDomain domainModel = (CEPDomain) complexEventModelResource.getContents().get(0);
 		   	//System.out.println(domainModel.getDomainName());
 		   	
-		   	CEPEventPattern patternModel = (CEPEventPattern) patternModelResource.getContents().get(0);
+		   	/*for(int x = 0; x < cepappDiagramResource.getContents().size(); x++) {
+		   		System.out.println(cepappDiagramResource.getContents().get(x).toString());
+		   	}*/
+		   	
+		   	System.out.println(cepappDiagramResource.getContents().get(0).getClass().toString());
+		   	//CEPApp cepappModel = (CEPApp) cepappDiagramResource.getContents().get(0);
 		   	//System.out.println(patternModel.getComplexEvent().getTypeName());	
 		   	
-		   	String csvPath = null;
-			String csvFile = null;
-			
-			FileDialog dialog = new FileDialog(shell, SWT.OPEN);
-			dialog.setText("Select the CSV File to send the events.");
-			
-			dialog.setFilterExtensions(new String[] { "*.csv" });
-			
-			dialog.setFilterNames(new String[] { "CSV Files (*.csv)" });
-			dialog.open();
-
-			if (dialog.getFileName() != null && !dialog.getFileName().equals("")) {
-				csvFile = dialog.getFileName();
-				csvPath = dialog.getFilterPath();
-				csvPath = csvPath + "/" + csvFile;
-			}
-			
-			System.out.println(csvPath);
+		   	/*System.out.println("Links");
+		   	for (int i = 0; i < cepappModel.getLinks().size(); i++) {
+		   		System.out.println(cepappModel.getLinks().get(i).toString());
+		   	}*/
+		   	
+		   	/*System.out.println("Source elements");
+		   	for (int j = 0; j < cepappModel.getSourceElements().size(); j++) {
+		   		System.out.println(cepappModel.getSourceElements().get(j).toString());
+		   	}
+		   	
+		   	System.out.println("Sink elements");
+		   	for (int z = 0; z < cepappModel.getSinkElements().size(); z++) {
+		   		System.out.println(cepappModel.getSinkElements().get(z).toString());
+		   	}*/
 			
 			try {
 				complexEventModelResource.save(null);
@@ -169,7 +184,7 @@ public class StartAppHandlerPattern extends AbstractHandler {
 			}
 			
 			try {
-				Simulator.runApp(domainModel, patternModel, csvPath);
+				//Simulator.runApp(domainModel, patternModel, csvPath);
 				//NetworkAttackCSVSimulator.runApp();
 			}catch(Exception e2) {
 				e2.printStackTrace();
@@ -183,5 +198,4 @@ public class StartAppHandlerPattern extends AbstractHandler {
 		
 		return null;
 	}
-
 }
