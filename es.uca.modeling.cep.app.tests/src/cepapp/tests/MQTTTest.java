@@ -4,6 +4,8 @@ package cepapp.tests;
 
 import cepapp.MQTT;
 
+import junit.framework.TestCase;
+
 /**
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>MQTT</b></em>'.

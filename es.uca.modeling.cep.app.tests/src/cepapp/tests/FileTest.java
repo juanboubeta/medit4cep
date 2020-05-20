@@ -4,6 +4,8 @@ package cepapp.tests;
 
 import cepapp.File;
 
+import junit.framework.TestCase;
+
 /**
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>File</b></em>'.

@@ -118,6 +118,52 @@ public class CepappItemProviderAdapterFactory extends CepappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link cepapp.InMemoryInput} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InMemoryInputItemProvider inMemoryInputItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cepapp.InMemoryInput}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInMemoryInputAdapter() {
+		if (inMemoryInputItemProvider == null) {
+			inMemoryInputItemProvider = new InMemoryInputItemProvider(this);
+		}
+
+		return inMemoryInputItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link cepapp.SourceEmail} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SourceEmailItemProvider sourceEmailItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cepapp.SourceEmail}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSourceEmailAdapter() {
+		if (sourceEmailItemProvider == null) {
+			sourceEmailItemProvider = new SourceEmailItemProvider(this);
+		}
+
+		return sourceEmailItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link cepapp.InputFile} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,6 +184,29 @@ public class CepappItemProviderAdapterFactory extends CepappAdapterFactory imple
 		}
 
 		return inputFileItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link cepapp.SourceHttp} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SourceHttpItemProvider sourceHttpItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cepapp.SourceHttp}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSourceHttpAdapter() {
+		if (sourceHttpItemProvider == null) {
+			sourceHttpItemProvider = new SourceHttpItemProvider(this);
+		}
+
+		return sourceHttpItemProvider;
 	}
 
 	/**
@@ -210,6 +279,29 @@ public class CepappItemProviderAdapterFactory extends CepappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link cepapp.InMemoryOutput} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InMemoryOutputItemProvider inMemoryOutputItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cepapp.InMemoryOutput}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInMemoryOutputAdapter() {
+		if (inMemoryOutputItemProvider == null) {
+			inMemoryOutputItemProvider = new InMemoryOutputItemProvider(this);
+		}
+
+		return inMemoryOutputItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link cepapp.ComplexEvent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -256,6 +348,29 @@ public class CepappItemProviderAdapterFactory extends CepappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link cepapp.SinkEmail} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SinkEmailItemProvider sinkEmailItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cepapp.SinkEmail}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSinkEmailAdapter() {
+		if (sinkEmailItemProvider == null) {
+			sinkEmailItemProvider = new SinkEmailItemProvider(this);
+		}
+
+		return sinkEmailItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link cepapp.OutputFile} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -276,6 +391,75 @@ public class CepappItemProviderAdapterFactory extends CepappAdapterFactory imple
 		}
 
 		return outputFileItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link cepapp.SinkRDBMS} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	//protected SinkRDBMSItemProvider sinkRDBMSItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cepapp.SinkRDBMS}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	/*@Override
+	public Adapter createSinkRDBMSAdapter() {
+		if (sinkRDBMSItemProvider == null) {
+			sinkRDBMSItemProvider = new SinkRDBMSItemProvider(this);
+		}
+
+		return sinkRDBMSItemProvider;
+	}*/
+
+	/**
+	 * This keeps track of the one adapter used for all {@link cepapp.SinkMongoDB} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SinkMongoDBItemProvider sinkMongoDBItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cepapp.SinkMongoDB}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSinkMongoDBAdapter() {
+		if (sinkMongoDBItemProvider == null) {
+			sinkMongoDBItemProvider = new SinkMongoDBItemProvider(this);
+		}
+
+		return sinkMongoDBItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link cepapp.SinkHttp} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SinkHttpItemProvider sinkHttpItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cepapp.SinkHttp}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSinkHttpAdapter() {
+		if (sinkHttpItemProvider == null) {
+			sinkHttpItemProvider = new SinkHttpItemProvider(this);
+		}
+
+		return sinkHttpItemProvider;
 	}
 
 	/**
@@ -402,13 +586,21 @@ public class CepappItemProviderAdapterFactory extends CepappAdapterFactory imple
 	public void dispose() {
 		if (cepAppItemProvider != null) cepAppItemProvider.dispose();
 		if (linkItemProvider != null) linkItemProvider.dispose();
+		if (inMemoryInputItemProvider != null) inMemoryInputItemProvider.dispose();
+		if (sourceEmailItemProvider != null) sourceEmailItemProvider.dispose();
 		if (inputFileItemProvider != null) inputFileItemProvider.dispose();
+		if (sourceHttpItemProvider != null) sourceHttpItemProvider.dispose();
 		if (sourceMqttItemProvider != null) sourceMqttItemProvider.dispose();
 		if (eventItemProvider != null) eventItemProvider.dispose();
 		if (eventPropertyItemProvider != null) eventPropertyItemProvider.dispose();
+		if (inMemoryOutputItemProvider != null) inMemoryOutputItemProvider.dispose();
 		if (complexEventItemProvider != null) complexEventItemProvider.dispose();
 		if (complexEventPropertyItemProvider != null) complexEventPropertyItemProvider.dispose();
+		if (sinkEmailItemProvider != null) sinkEmailItemProvider.dispose();
 		if (outputFileItemProvider != null) outputFileItemProvider.dispose();
+		//if (sinkRDBMSItemProvider != null) sinkRDBMSItemProvider.dispose();
+		if (sinkMongoDBItemProvider != null) sinkMongoDBItemProvider.dispose();
+		if (sinkHttpItemProvider != null) sinkHttpItemProvider.dispose();
 		if (sinkMqttItemProvider != null) sinkMqttItemProvider.dispose();
 	}
 

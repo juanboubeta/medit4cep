@@ -258,7 +258,22 @@ public class CEPAppItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CepappPackage.Literals.CEP_APP__SOURCE_ELEMENTS,
+				 CepappFactory.eINSTANCE.createInMemoryInput()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CepappPackage.Literals.CEP_APP__SOURCE_ELEMENTS,
+				 CepappFactory.eINSTANCE.createSourceEmail()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CepappPackage.Literals.CEP_APP__SOURCE_ELEMENTS,
 				 CepappFactory.eINSTANCE.createInputFile()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CepappPackage.Literals.CEP_APP__SOURCE_ELEMENTS,
+				 CepappFactory.eINSTANCE.createSourceHttp()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -273,12 +288,37 @@ public class CEPAppItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CepappPackage.Literals.CEP_APP__SINK_ELEMENTS,
+				 CepappFactory.eINSTANCE.createInMemoryOutput()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CepappPackage.Literals.CEP_APP__SINK_ELEMENTS,
 				 CepappFactory.eINSTANCE.createComplexEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(CepappPackage.Literals.CEP_APP__SINK_ELEMENTS,
+				 CepappFactory.eINSTANCE.createSinkEmail()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CepappPackage.Literals.CEP_APP__SINK_ELEMENTS,
 				 CepappFactory.eINSTANCE.createOutputFile()));
+
+		/*newChildDescriptors.add
+			(createChildParameter
+				(CepappPackage.Literals.CEP_APP__SINK_ELEMENTS,
+				 CepappFactory.eINSTANCE.createSinkRDBMS()));
+		*/
+		newChildDescriptors.add
+			(createChildParameter
+				(CepappPackage.Literals.CEP_APP__SINK_ELEMENTS,
+				 CepappFactory.eINSTANCE.createSinkMongoDB()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CepappPackage.Literals.CEP_APP__SINK_ELEMENTS,
+				 CepappFactory.eINSTANCE.createSinkHttp()));
 
 		newChildDescriptors.add
 			(createChildParameter

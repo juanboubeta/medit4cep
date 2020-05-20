@@ -5,8 +5,8 @@ package cepapp.provider;
 
 import cepapp.CepappPackage;
 import cepapp.InputFile;
-import cepapp.MappingType;
 
+import cepapp.MappingType;
 import java.util.Collection;
 import java.util.List;
 
