@@ -141,6 +141,11 @@
                   style="push">
             </command>
             <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelFromCaterpillar"
+                  label="Load and Model From Caterpillar"
+                  style="push">
+            </command>
+            <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.OpenSmartContract"
                   label="Open"
                   style="push">
@@ -362,6 +367,11 @@
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFileHandler"
             id="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFile"
             name="LoadAndModelSolidityFile">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelCaterpillarHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelFromCaterpillar"
+            name="LoadAndModelFromCaterpillar">
       </command>
       <command
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.StartAppHandler"
