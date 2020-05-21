@@ -45,8 +45,6 @@ public class StartAppHandler extends AbstractHandler {
 		// 1º Obtain the active editor's diagram
 		
 		CepappDiagramEditor cepappDiagramEditor = (CepappDiagramEditor) HandlerUtil.getActiveEditor(event);
-        
-		System.out.println(cepappDiagramEditor.getClass().toString());
 		
         if (cepappDiagramEditor == null || !cepappDiagramEditor.getTitle().endsWith("cepapp_diagram")) {
         	MessageDialog.openError(shell, "Start App", "An CEP application must be open.");
@@ -86,17 +84,13 @@ public class StartAppHandler extends AbstractHandler {
 		
 		String activeCepappName = cepappDiagramEditor.getTitle().replace(".cepapp_diagram","");
 		
-		System.out.println(activeCepappName);
-		
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 		IProject CEPdomainProject = myWorkspaceRoot.getProject("domain");
 		IProject SmartContractProject = myWorkspaceRoot.getProject("smartcontract");
 		IProject complexEventProject = myWorkspaceRoot.getProject(domainName + "_complex_events");
 		
 		IProject cepappProject = myWorkspaceRoot.getProject(domainName + "_apps");
-        
-		System.out.println(cepappProject);
-		
+
 		try {
 			if (!complexEventProject.exists()) {
 				complexEventProject.create(null);
@@ -125,10 +119,6 @@ public class StartAppHandler extends AbstractHandler {
 			URI activeCepappDiagramUri = URI.createPlatformResourceURI(cepappProject
 					.getFile(activeCepappName + ".cepapp_diagram").getFullPath().toString(), false);
 			
-			System.out.println(activeCepappModelUri);
-			
-			System.out.println(activeCepappDiagramUri);
-						
 			if (!complexEventFile.exists()) {
 				DomainDiagramEditorUtil.createDiagram(complexEventDiagramUri, complexEventModelUri, new NullProgressMonitor());
 			}
@@ -143,14 +133,7 @@ public class StartAppHandler extends AbstractHandler {
 		    
 		   	Resource cepappModelResource = resourceSet.getResource(activeCepappModelUri, true);
 		   	Resource cepappDiagramResource = resourceSet.getResource(activeCepappDiagramUri, true);
-		   	
-		   	System.out.println(complexEventModelResource);
-		   	
-		   	System.out.println(cepappModelResource);
-		   	
-		   	System.out.println(cepappDiagramResource);
-		   	
-		   	System.out.println(complexEventModelResource.getContents().get(0).getClass().toString());
+
 		   	CEPDomain domainModel = (CEPDomain) complexEventModelResource.getContents().get(0);
 		   	//System.out.println(domainModel.getDomainName());
 		   	
@@ -158,16 +141,16 @@ public class StartAppHandler extends AbstractHandler {
 		   		System.out.println(cepappDiagramResource.getContents().get(x).toString());
 		   	}*/
 		   	
-		   	System.out.println(cepappDiagramResource.getContents().get(0).getClass().toString());
-		   	//CEPApp cepappModel = (CEPApp) cepappDiagramResource.getContents().get(0);
+		   	//System.out.println(cepappModelResource.getContents().get(0).getClass().toString());
+		   	CEPApp cepappModel = (CEPApp) cepappModelResource.getContents().get(0);
 		   	//System.out.println(patternModel.getComplexEvent().getTypeName());	
 		   	
-		   	/*System.out.println("Links");
+		   	System.out.println("Links");
 		   	for (int i = 0; i < cepappModel.getLinks().size(); i++) {
 		   		System.out.println(cepappModel.getLinks().get(i).toString());
-		   	}*/
+		   	}
 		   	
-		   	/*System.out.println("Source elements");
+		   	System.out.println("Source elements");
 		   	for (int j = 0; j < cepappModel.getSourceElements().size(); j++) {
 		   		System.out.println(cepappModel.getSourceElements().get(j).toString());
 		   	}
@@ -175,7 +158,7 @@ public class StartAppHandler extends AbstractHandler {
 		   	System.out.println("Sink elements");
 		   	for (int z = 0; z < cepappModel.getSinkElements().size(); z++) {
 		   		System.out.println(cepappModel.getSinkElements().get(z).toString());
-		   	}*/
+		   	}
 			
 			try {
 				complexEventModelResource.save(null);
