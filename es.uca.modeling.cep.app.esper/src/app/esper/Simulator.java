@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.FileReader;
 import java.io.IOException;
@@ -33,12 +34,15 @@ import com.espertech.esperio.csv.CSVInputAdapter;
 import com.espertech.esperio.csv.CSVInputAdapterSpec;
 import com.opencsv.CSVReader;
 
+import cepapp.CEPApp;
+import cepapp.InputFile;
 import domain.CEPDomain;
 import domain.Event;
 import domain.impl.CEPDomainImpl;
 import domain.impl.EventImpl;
 import domain.impl.EventPropertyImpl;
 import eventpattern.CEPEventPattern;
+import eventpattern.ComplexEvent;
 
 public class Simulator {
 
@@ -46,125 +50,142 @@ public class Simulator {
 	    //runApp();
 	}
     
-	public static void runApp(CEPDomain domainModel, CEPEventPattern patternModel, String CSVpath) throws Exception {
+	public static void runApp(CEPApp cepappModel) throws Exception {
 		
-			Configuration config = new Configuration();
-			
-			// The internal timer is disabled
-			config.getEngineDefaults().getThreading().setInternalTimerEnabled(false);
-			
-			// Microsecond time unit for time resolution
-			config.getEngineDefaults().getTimeSource().setTimeUnit(TimeUnit.MICROSECONDS);
-			
-			// Define the event type
-			
-			for(int i = 0; i < domainModel.getEvents().size(); i++) {
-				Map<String, Object> CEPdomainProperties = new HashMap<String, Object>();
-				for(int j = 0; j < domainModel.getEvents().get(i).getEventProperties().size(); j++) {
-					CEPdomainProperties.put(domainModel.getEvents().get(i).getEventProperties().get(j).getName(), 
-							domainModel.getEvents().get(i).getEventProperties().get(j).getType());
+		//Simulator for run app
+		Configuration config = new Configuration();
+		
+		// The internal timer is disabled
+		config.getEngineDefaults().getThreading().setInternalTimerEnabled(false);
+		
+		// Microsecond time unit for time resolution
+		config.getEngineDefaults().getTimeSource().setTimeUnit(TimeUnit.MICROSECONDS);
+		
+		EPServiceProvider epService = EPServiceProviderManager.getDefaultProvider(config);
+		
+		// Define the event type
+		
+		Pattern p = Pattern.compile("cepapp.impl.EventImpl");
+		Matcher mat;
+		
+		Event newEvent;
+		Map<String, Object> CEPdomainProperties = new HashMap<String, Object>();
+		
+		for(int i = 0; i < cepappModel.getSourceElements().size(); i++) {
+			mat = p.matcher(cepappModel.getSourceElements().get(i).getClass().getName());
+			if(mat.matches()) {
+				System.out.println("AQUI");
+				newEvent = (Event) cepappModel.getSourceElements().get(i);
+				for(int j = 0; j < newEvent.getEventProperties().size(); j++) {
+					CEPdomainProperties.put(newEvent.getEventProperties().get(j).getName(),
+							newEvent.getEventProperties().get(j).getType());
 				}
-				config.addEventType(domainModel.getEvents().get(i).getTypeName(), CEPdomainProperties);
+				config.addEventType(newEvent.getTypeName(), CEPdomainProperties);
 			}
+		}
+		
+		
+		// Delete all existing patterns from the CEP engine
+		epService.getEPAdministrator().destroyAllStatements();
 			
-						
-			EPServiceProvider epService = EPServiceProviderManager.getDefaultProvider(config);
+		EPRuntime runtime = epService.getEPRuntime();
+		// Switch to external clocking
+		runtime.sendEvent(new TimerControlEvent(TimerControlEvent.ClockType.CLOCK_EXTERNAL));
+		
+		char SEPARATOR=',';
+		char QUOTE='"';
+		String firstTimestamp="";
+		CSVReader reader = null;
+		p = Pattern.compile("class cepapp.impl.InputFileImpl");
+		Pattern complexEvent = Pattern.compile("class cepapp.impl.ComplexEventImpl");
+		InputFile newInputFile;
+		ComplexEvent newComplexEvent = null;
+		AdapterCoordinator coordinator = null;
+		
+		for(int i = 0; i < cepappModel.getSourceElements().size(); i++) {
+			mat = p.matcher(cepappModel.getSourceElements().get(i).getClass().toString());
+			if(mat.matches()) {
+				newInputFile = (InputFile) cepappModel.getSourceElements().get(i);
+			    try {
+			    	reader = new CSVReader(new FileReader(newInputFile.getFile_uri()),SEPARATOR,QUOTE);
+			        
+			        reader.readNext();
+			        
+			        Pattern limpiar = Pattern.compile("\\d{10,13}");
+			        java.util.regex.Matcher buscar = limpiar.matcher(Arrays.toString(reader.readNext()));
+			        while (buscar.find())
+			        	firstTimestamp = buscar.group(0);
+			        
+	
+			    } catch (Exception e) {
+			    	e.printStackTrace();
+			    } finally {
+			    	if (null != reader) {
+			        
+			    	try {
+			    		reader.close();
+			    	} catch (IOException e1) {
+			    		e1.printStackTrace();
+			    	}	
+			    		
+			    	} 
+			    }
 				
-			// Delete all existing patterns from the CEP engine
-			epService.getEPAdministrator().destroyAllStatements();
+			    Long firstTimestampLong = Long.parseLong(firstTimestamp);
+			    
+				// IMPORTANT: CurrentTimeEvent must receive as parameter the timestamp in which the data start in the CSV file
+				// 1571732376156602 is in microseconds
+				//runtime.sendEvent(new CurrentTimeEvent(firstTimestampLong));
 				
-			EPRuntime runtime = epService.getEPRuntime();
-			// Switch to external clocking
-			runtime.sendEvent(new TimerControlEvent(TimerControlEvent.ClockType.CLOCK_EXTERNAL));
-			
-			char SEPARATOR=',';
-			char QUOTE='"';
-			String firstTimestamp="";
-			
-			CSVReader reader = null;
-		    try {
-		    	reader = new CSVReader(new FileReader(CSVpath),SEPARATOR,QUOTE);
-		        
-		        reader.readNext();
-		        
-		        Pattern limpiar = Pattern.compile("\\d{10,13}");
-		        java.util.regex.Matcher buscar = limpiar.matcher(Arrays.toString(reader.readNext()));
-		        while (buscar.find())
-		        	firstTimestamp = buscar.group(0);
-		        
-
-		    } catch (Exception e) {
-		    	e.printStackTrace();
-		    } finally {
-		    	if (null != reader) {
-		        
-		    	try {
-		    		reader.close();
-		    	} catch (IOException e1) {
-		    		e1.printStackTrace();
-		    	}	
-		    		
-		    	} 
-		    }
-			
-		    Long firstTimestampLong = Long.parseLong(firstTimestamp);
-		    
-			// IMPORTANT: CurrentTimeEvent must receive as parameter the timestamp in which the data start in the CSV file
-			// 
-			// 1571732376156602 is in microseconds
-			//runtime.sendEvent(new CurrentTimeEvent(1577872800000L));
-			runtime.sendEvent(new CurrentTimeEvent(firstTimestampLong));
-			
-			
-			String GenericEpl = Files.lines(Paths.get("resources\\" + patternModel.getPatternName() + ".epl")).collect(Collectors.joining("\n"));
-			EPStatement GenericPattern = epService.getEPAdministrator().createEPL(GenericEpl);
-			GenericPattern.addListener(new GenericListener(patternModel));
-			
-			
-			/*String TemperatureWarningEpl = Files.lines(Paths.get("resources\\TemperatureWarning.epl")).collect(Collectors.joining("\n"));
-			EPStatement TemperatureWarningPattern = epService.getEPAdministrator().createEPL(TemperatureWarningEpl);
-			TemperatureWarningPattern.addListener(new TemperatureWarningListener());	
-				
-			String TemperatureWarningStaticEpl = Files.lines(Paths.get("resources\\TemperatureWarningStatic.epl")).collect(Collectors.joining("\n"));
-			EPStatement TemperatureWarningStaticPattern = epService.getEPAdministrator().createEPL(TemperatureWarningStaticEpl);
-			TemperatureWarningStaticPattern.addListener(new TemperatureWarningStaticListener());
-			
-			String TemperatureAlertEpl = Files.lines(Paths.get("resources\\TemperatureAlert.epl")).collect(Collectors.joining("\n"));
-			EPStatement TemperatureAlertPattern = epService.getEPAdministrator().createEPL(TemperatureAlertEpl);
-			TemperatureAlertPattern.addListener(new TemperatureAlertListener());*/
+				try {
+					for(int j = 0; j < cepappModel.getSinkElements().size(); j++) {
+						mat = complexEvent.matcher(cepappModel.getSinkElements().get(j).getClass().toString());
+						if(mat.matches()) {
+							newComplexEvent = (ComplexEvent) cepappModel.getSinkElements().get(j);
+							String GenericEpl = Files.lines(Paths.get("resources\\" + newComplexEvent.getTypeName() + ".epl")).collect(Collectors.joining("\n"));
+							EPStatement GenericPattern = epService.getEPAdministrator().createEPL(GenericEpl);
+							//GenericPattern.addListener(new GenericListener(newComplexEvent));
+						}
+					}
+				} catch (IOException io){
+					io.printStackTrace();
+				}
+											
+				// The CSV data input file must be located in the resources folder.		
+				//AdapterInputSource GenericInputSource = new AdapterInputSource("Vaccine_Delivery-Events.csv");
+				AdapterInputSource GenericInputSource = new AdapterInputSource(newInputFile.getFile_uri());
+				CSVInputAdapterSpec GenericAdapterSpec = new CSVInputAdapterSpec(GenericInputSource, newComplexEvent.getTypeName());
+				GenericAdapterSpec.setUsingTimeSpanEvents(true);
 					
-			
-			// The CSV data input file must be located in the resources folder.		
-			//AdapterInputSource GenericInputSource = new AdapterInputSource("Vaccine_Delivery-Events.csv");
-			AdapterInputSource GenericInputSource = new AdapterInputSource(CSVpath);
-			CSVInputAdapterSpec GenericAdapterSpec = new CSVInputAdapterSpec(GenericInputSource, patternModel.getPatternName());
-			GenericAdapterSpec.setUsingTimeSpanEvents(true);
-				
-			// The timestamp column to schedule events being sent into the CEP engine
-			GenericAdapterSpec.setTimestampColumn("timestamp");
-				
-			// External timing is enabled, so EsperIO will run through the input file at full speed without pausing.
-			// The algorithm used sends a time event after all events for a particular time have been received.		
-			GenericAdapterSpec.setUsingExternalTimer(true);
-			GenericAdapterSpec.setUsingEngineThread(false);
-				
-			    	
-			// AdapterCoordinatorImpl(com.espertech.esper.client.EPServiceProvider epService, boolean usingEngineThread, boolean usingExternalTimer, boolean usingTimeSpanEvents)
-			//   usingEngineThread - true if the coordinator should set time by the scheduling service in the engine, false if it should set time externally through the calling thread
-			//   usingExternalTimer - true to use esper's external timer mechanism instead of internal timing
-			//   usingTimeSpanEvents - true for time span events
-			AdapterCoordinator coordinator = new AdapterCoordinatorImpl(epService, false, true, true);
-			 		 	
-			coordinator.coordinate(new CSVInputAdapter(GenericAdapterSpec));
-			//coordinator.coordinate(new CSVInputAdapter(predictionAdapterSpec));
-			    
-			System.out.println("The simulation has started...");	
-			    
-			long start = System.currentTimeMillis();
-			coordinator.start();
-			long delta = System.currentTimeMillis() - start;
-			System.out.println("Time execution: " + delta + " milliseconds");
-			System.out.println("The simulation has finished.");
+				// The timestamp column to schedule events being sent into the CEP engine
+				GenericAdapterSpec.setTimestampColumn("timestamp");
+					
+				// External timing is enabled, so EsperIO will run through the input file at full speed without pausing.
+				// The algorithm used sends a time event after all events for a particular time have been received.		
+				GenericAdapterSpec.setUsingExternalTimer(true);
+				GenericAdapterSpec.setUsingEngineThread(false);
+					
+				    	
+				// AdapterCoordinatorImpl(com.espertech.esper.client.EPServiceProvider epService, boolean usingEngineThread, boolean usingExternalTimer, boolean usingTimeSpanEvents)
+				//   usingEngineThread - true if the coordinator should set time by the scheduling service in the engine, false if it should set time externally through the calling thread
+				//   usingExternalTimer - true to use esper's external timer mechanism instead of internal timing
+				//   usingTimeSpanEvents - true for time span events
+				//coordinator = new AdapterCoordinatorImpl(epService, false, true, true);
+				 		 	
+				coordinator.coordinate(new CSVInputAdapter(GenericAdapterSpec));
+				//coordinator.coordinate(new CSVInputAdapter(predictionAdapterSpec));
+			}
+		}    
+		    
+		System.out.println("The simulation has started...");	
+		    
+		long start = System.currentTimeMillis();
+		coordinator.start();
+		long delta = System.currentTimeMillis() - start;
+		System.out.println("Time execution: " + delta + " milliseconds");
+		System.out.println("The simulation has finished.");
+		
+		
 	}
 	
 }

@@ -1,6 +1,16 @@
 package es.uca.modeling.cep.eventpattern.menu.command;
 
+import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -24,17 +34,23 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
 
+import app.esper.GenericListener;
 import app.esper.NetworkAttackCSVSimulator;
 import app.esper.Simulator;
 import domain.CEPDomain;
 import domain.diagram.part.DomainDiagramEditorUtil;
 
 import cepapp.CEPApp;
+import cepapp.Event;
+import cepapp.InputFile;
 import cepapp.diagram.part.CepappDiagramEditor;
+import cepapp.impl.EventImpl;
 
+import eventpattern.ComplexEvent;
 import eventpattern.CEPEventPattern;
 import eventpattern.diagram.part.EventpatternDiagramEditor;
 import eventpattern.diagram.status.EventPatternsStatus;
+import smartcontract.PropertyTypeValue;
 
 public class StartAppHandler extends AbstractHandler {
 	
@@ -137,10 +153,6 @@ public class StartAppHandler extends AbstractHandler {
 		   	CEPDomain domainModel = (CEPDomain) complexEventModelResource.getContents().get(0);
 		   	//System.out.println(domainModel.getDomainName());
 		   	
-		   	/*for(int x = 0; x < cepappDiagramResource.getContents().size(); x++) {
-		   		System.out.println(cepappDiagramResource.getContents().get(x).toString());
-		   	}*/
-		   	
 		   	//System.out.println(cepappModelResource.getContents().get(0).getClass().toString());
 		   	CEPApp cepappModel = (CEPApp) cepappModelResource.getContents().get(0);
 		   	//System.out.println(patternModel.getComplexEvent().getTypeName());	
@@ -166,8 +178,9 @@ public class StartAppHandler extends AbstractHandler {
 				e1.printStackTrace();
 			}
 			
+			
 			try {
-				//Simulator.runApp(domainModel, patternModel, csvPath);
+				Simulator.runApp(cepappModel);
 				//NetworkAttackCSVSimulator.runApp();
 			}catch(Exception e2) {
 				e2.printStackTrace();

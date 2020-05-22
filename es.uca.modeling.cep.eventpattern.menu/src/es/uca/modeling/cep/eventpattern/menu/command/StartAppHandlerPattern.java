@@ -169,7 +169,7 @@ public class StartAppHandlerPattern extends AbstractHandler {
 			}
 			
 			try {
-				Simulator.runApp(domainModel, patternModel, csvPath);
+				//Simulator.runApp(domainModel, patternModel, csvPath);
 				//NetworkAttackCSVSimulator.runApp();
 			}catch(Exception e2) {
 				e2.printStackTrace();

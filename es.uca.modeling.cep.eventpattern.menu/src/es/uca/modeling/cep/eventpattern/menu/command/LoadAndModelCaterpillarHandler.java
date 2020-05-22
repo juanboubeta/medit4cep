@@ -285,6 +285,9 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 								case "string":
 									InputParameterType = PropertyTypeValue.STRING;
 									break;
+								case "address":
+									InputParameterType = PropertyTypeValue.STRING;
+									break;
 								default:
 									Pattern p = Pattern.compile("int\\d{0,3}");
 								    Matcher mat = p.matcher((String) inputParameter.get("type"));
@@ -337,6 +340,9 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 									OutputParameterType = PropertyTypeValue.FLOAT;
 									break;
 								case "string":
+									OutputParameterType = PropertyTypeValue.STRING;
+									break;
+								case "address":
 									OutputParameterType = PropertyTypeValue.STRING;
 									break;
 								default:
