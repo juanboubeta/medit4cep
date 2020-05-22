@@ -66,7 +66,7 @@
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="menu:org.eclipse.ui.main.menu?after=CEPDomain">
+            locationURI="menu:org.eclipse.ui.main.menu?after=SmartContract">
          <menu
                id="EventPattern"
                label="Event Pattern">
@@ -104,12 +104,12 @@
                         
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.GenerateDeployEventPattern"
-                  label="Generate and Deploy Pattern Code"
+                  label="Generate Pattern Code"
                   style="push">
             </command>
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.GenerateExecuteSmartContracts"
-                  label="Generate Smart Contracts"
+                  label="Generate Smart Contract Code"
                   style="push">
             </command>
             <command
@@ -121,10 +121,10 @@
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="menu:org.eclipse.ui.main.menu?after=EventPattern">
+            locationURI="menu:org.eclipse.ui.main.menu?after=CEPDomain">
          <menu
-               id="SmartContracts"
-               label="Smart Contracts">
+               id="SmartContract"
+               label="Smart Contract">
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.NewSmartContract"
                   label="New..."
@@ -206,7 +206,7 @@
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="menu:org.eclipse.ui.main.menu?after=SmartContracts">
+            locationURI="menu:org.eclipse.ui.main.menu?after=EventPattern">
          <menu
                id="App"
                label="CEP Application">
