@@ -110,6 +110,7 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
             BufferedReader br = new BufferedReader(in);
             Set<String> models = new HashSet<String>();
             HashMap<Object, String> modelsWithABI = new HashMap<Object, String>();
+            HashMap<Object, String> modelsWithBIN = new HashMap<Object, String>();
             String output;
             
             while ((output = br.readLine()) != null) {
@@ -133,6 +134,7 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
           		modelJSON = (JSONObject) jsonArray.get(i);
           		options[i] = modelJSON.get("name").toString();
           		modelsWithABI.put(modelJSON.get("name"), modelJSON.get("abi").toString());
+          		modelsWithBIN.put(modelJSON.get("name"), modelJSON.get("bin").toString());
           	}
             
           	//Dialog for select what model are going to be modeled
@@ -154,6 +156,7 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 			//String rutaABI = smartcontractsProject.toString() + "/" + s + ".abi";
 			File archivo = new File("GeneracionJava.ps1");
 			File ABI = new File(s + ".abi");
+			File BIN = new File(s + ".bin");
 			//System.out.println(ABI);
 			BufferedWriter bw;
 			//System.out.println(modelsWithABI.get(s));
@@ -167,14 +170,24 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 				bw.close();
 			}
 			
+			if(BIN.exists()) {
+				bw = new BufferedWriter(new FileWriter(BIN));
+				bw.write(modelsWithBIN.get(s));
+				bw.close();
+			} else {
+				bw = new BufferedWriter(new FileWriter(BIN));
+				bw.write(modelsWithBIN.get(s));
+				bw.close();
+			}
+			
 			if(archivo.exists()) {
 				bw = new BufferedWriter(new FileWriter(archivo));
-			    bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -o " + '"' + archivo.getAbsolutePath().replace("\\GeneracionJava.ps1", "") + '"' + " -p Smartcontract_" + s);
+			    bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -b " + '"' + BIN.getAbsolutePath() + '"' + " -o " + '"' + archivo.getAbsolutePath().replace("\\GeneracionJava.ps1", "") + '"' + " -p Smartcontract_" + s);
 			    bw.close();
 			} else {
 				bw = new BufferedWriter(new FileWriter(archivo));
-				bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -o " + '"' + archivo.getAbsolutePath().replace("\\GeneracionJava.ps1", "") + '"' + " -p Smartcontract_" + s);
-				bw.close();
+				bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -b " + '"' + BIN.getAbsolutePath() + '"' + " -o " + '"' + archivo.getAbsolutePath().replace("\\GeneracionJava.ps1", "") + '"' + " -p Smartcontract_" + s);
+			    bw.close();
 			}
 
 			//System.out.println("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -o " + '"' + archivo.getAbsolutePath().replace("\\GeneracionJava.ps1", "") + '"' + " -p Smartcontract_" + s);
