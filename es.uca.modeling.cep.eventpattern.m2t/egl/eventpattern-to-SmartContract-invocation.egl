@@ -37,7 +37,7 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 		
 	public static void main(String[] args) {
 		try {
-			new [%=sc.typeName%]_invocation()_[%=CEPEventPattern.allInstances.at(0).patternName%];
+			new [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).patternName%]();
 		} catch (Exception e){
 			e.printStackTrace();
 		}
