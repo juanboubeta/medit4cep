@@ -34,9 +34,9 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import app.esper.GenericListener;
-import app.esper.NetworkAttackCSVSimulator;
-import app.esper.Simulator;
+//import app.esper.GenericListener;
+//import app.esper.NetworkAttackCSVSimulator;
+//import app.esper.Simulator;
 import domain.CEPDomain;
 import domain.diagram.part.DomainDiagramEditorUtil;
 
@@ -180,7 +180,7 @@ public class StartAppHandler extends AbstractHandler {
 			
 			
 			try {
-				Simulator.runApp(cepappModel);
+				//Simulator.runApp(cepappModel);
 				//NetworkAttackCSVSimulator.runApp();
 			}catch(Exception e2) {
 				e2.printStackTrace();

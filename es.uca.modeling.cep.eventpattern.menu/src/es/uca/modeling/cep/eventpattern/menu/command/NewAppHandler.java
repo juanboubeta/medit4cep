@@ -38,6 +38,8 @@ public class NewAppHandler extends AbstractHandler {
 		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 		
+		System.out.println("AQUIII!");
+		System.out.println();
 		IProject eventPatternProject = myWorkspaceRoot.getProject(CepAppStatus.getDomainName() + "_patterns");
 		
 		if(!eventPatternProject.exists()) {
