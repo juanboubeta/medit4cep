@@ -1,4 +1,4 @@
-package app.esper;
+package es.uca.modeling.cep.app.esper;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

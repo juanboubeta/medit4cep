@@ -39,7 +39,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 //import app.esper.Simulator;
 import domain.CEPDomain;
 import domain.diagram.part.DomainDiagramEditorUtil;
-
+import es.uca.modeling.cep.app.esper.Simulator;
 import cepapp.CEPApp;
 import cepapp.Event;
 import cepapp.InputFile;
@@ -180,7 +180,7 @@ public class StartAppHandler extends AbstractHandler {
 			
 			
 			try {
-				//Simulator.runApp(cepappModel);
+				Simulator.runApp(cepappModel);
 				//NetworkAttackCSVSimulator.runApp();
 			}catch(Exception e2) {
 				e2.printStackTrace();

@@ -1,4 +1,4 @@
-package app.esper;
+package es.uca.modeling.cep.app.esper;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -52,6 +52,11 @@ public class Simulator {
     
 	public static void runApp(CEPApp cepappModel) throws Exception {
 		
+		System.out.println("Start app");
+		
+		Configuration config = new Configuration();
+		
+		/*
 		//Simulator for run app
 		Configuration config = new Configuration();
 		
@@ -185,7 +190,7 @@ public class Simulator {
 		System.out.println("Time execution: " + delta + " milliseconds");
 		System.out.println("The simulation has finished.");
 		
-		
+		*/
 	}
-	
+
 }

@@ -1,9 +1,0 @@
-@Name("TemperatureAlert")
-@Tag(name="domainName", value="VaccineDeliveyr")
-insert into TemperatureAlert
-select a1.timestamp as  timestamp, 
-   a1.shipmentId as shipmentId, 
-   a1.count as temperatureWarnings, 
-   a1.max as temperatureMax, 
-   a1.min as temperatureMin
-from pattern [(every a1 = TemperatureWarningStatic(a1.count > 50))]
