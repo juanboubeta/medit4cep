@@ -13,3 +13,12 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: es.uca.modeling.cep.application.esper
 Bundle-ActivationPolicy: lazy
 Export-Package: es.uca.modeling.cep.app.esper
+Bundle-ClassPath: lib/antlr-runtime-4.5.3.jar,
+ lib/cglib-nodep-3.2.4.jar,
+ lib/esper-6.1.0.jar,
+ lib/esperio-csv-6.1.0.jar,
+ lib/log4j-1.2.17.jar,
+ lib/opencsv-3.7.jar,
+ lib/slf4j-api-1.7.21.jar,
+ lib/slf4j-log4j12-1.7.21.jar,
+ .

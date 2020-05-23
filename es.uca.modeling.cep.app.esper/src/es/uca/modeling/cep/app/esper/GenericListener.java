@@ -1,5 +1,8 @@
 package es.uca.modeling.cep.app.esper;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -21,7 +24,7 @@ public class GenericListener implements UpdateListener {
 	private static ArrayList<String> lines = new ArrayList();
 	
 	// The detected complex events will be saved in the file located in the folder simulation-output.
-	//private static Path patternOutput = Paths.get("Generic-complex-events_SVR.txt"); 
+	private static File ComplexEventTXT;
 	
 	private static ComplexEvent ComplexEvent;
 	
@@ -30,6 +33,7 @@ public class GenericListener implements UpdateListener {
 	public GenericListener(ComplexEvent complexEvent) {
 		ComplexEvent = complexEvent;
 		//Create the txt file
+		ComplexEventTXT = new File(ComplexEvent.getTypeName() + "-complex-events_SVR.txt");
 	}
 	
 	@Override
@@ -53,7 +57,7 @@ public class GenericListener implements UpdateListener {
 						
 			//System.out.println(detectedComplexEvent);
 			logger.debug(detectedComplexEvent); 
-			//lines.add(detectedComplexEvent);
+			lines.add(detectedComplexEvent);
 		}
 		
 		try {
@@ -65,16 +69,16 @@ public class GenericListener implements UpdateListener {
 				Class c = Class.forName(invokeSmartContract);
 				c.newInstance();
 			}*/
-			System.out.println("Invocacion del Smart Contract");
+			System.out.println("Invocacion del Smart Contract en " + ComplexEvent.getTypeName());
 		} catch (Exception sce) {
 			sce.printStackTrace();
 		}
 		
-		/*try {
-			Files.write(patternOutput, lines, Charset.forName("UTF-8"));
+		try {
+			Files.write(Paths.get(ComplexEventTXT.getAbsolutePath()), lines, Charset.forName("UTF-8"));
 		} catch (IOException e) {
 			e.printStackTrace();
-		}*/
+		}
 	}
 
 }

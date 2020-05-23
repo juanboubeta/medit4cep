@@ -52,11 +52,11 @@ public class Simulator {
     
 	public static void runApp(CEPApp cepappModel) throws Exception {
 		
-		System.out.println("Start app");
+		Long firstTimestampLong = null;
 		
-		Configuration config = new Configuration();
+		AdapterInputSource GenericInputSource = null;
+		CSVInputAdapterSpec GenericAdapterSpec = null;
 		
-		/*
 		//Simulator for run app
 		Configuration config = new Configuration();
 		
@@ -101,18 +101,26 @@ public class Simulator {
 		char QUOTE='"';
 		String firstTimestamp="";
 		CSVReader reader = null;
-		p = Pattern.compile("class cepapp.impl.InputFileImpl");
-		Pattern complexEvent = Pattern.compile("class cepapp.impl.ComplexEventImpl");
+		p = Pattern.compile("cepapp.impl.InputFileImpl");
+		Pattern complexEvent = Pattern.compile("cepapp.impl.ComplexEventImpl");
 		InputFile newInputFile;
 		ComplexEvent newComplexEvent = null;
 		AdapterCoordinator coordinator = null;
+		String rutaCSV = "";
+		String GenericEpl = null;
+		EPStatement GenericPattern = null;
 		
 		for(int i = 0; i < cepappModel.getSourceElements().size(); i++) {
-			mat = p.matcher(cepappModel.getSourceElements().get(i).getClass().toString());
+			mat = p.matcher(cepappModel.getSourceElements().get(i).getClass().getName());
 			if(mat.matches()) {
 				newInputFile = (InputFile) cepappModel.getSourceElements().get(i);
 			    try {
-			    	reader = new CSVReader(new FileReader(newInputFile.getFile_uri()),SEPARATOR,QUOTE);
+			    	if(newInputFile.getFile_uri( )== "") {
+			    		rutaCSV = newInputFile.getDir_uri();
+			    	} else if(newInputFile.getDir_uri( )== "") {
+			    		rutaCSV = newInputFile.getFile_uri();
+			    	}
+			    	reader = new CSVReader(new FileReader(rutaCSV),SEPARATOR,QUOTE);
 			        
 			        reader.readNext();
 			        
@@ -125,31 +133,27 @@ public class Simulator {
 			    } catch (Exception e) {
 			    	e.printStackTrace();
 			    } finally {
-			    	if (null != reader) {
-			        
-			    	try {
-			    		reader.close();
-			    	} catch (IOException e1) {
-			    		e1.printStackTrace();
-			    	}	
-			    		
+			    	if (null != reader) {    
+				    	try {
+				    		reader.close();
+				    	} catch (IOException e1) {
+				    		e1.printStackTrace();
+				    	}	
 			    	} 
 			    }
 				
-			    Long firstTimestampLong = Long.parseLong(firstTimestamp);
-			    
-				// IMPORTANT: CurrentTimeEvent must receive as parameter the timestamp in which the data start in the CSV file
-				// 1571732376156602 is in microseconds
-				//runtime.sendEvent(new CurrentTimeEvent(firstTimestampLong));
+			    if(Long.parseLong(firstTimestamp) < firstTimestampLong) {
+			    	firstTimestampLong = Long.parseLong(firstTimestamp);
+			    }
 				
 				try {
 					for(int j = 0; j < cepappModel.getSinkElements().size(); j++) {
-						mat = complexEvent.matcher(cepappModel.getSinkElements().get(j).getClass().toString());
+						mat = complexEvent.matcher(cepappModel.getSinkElements().get(j).getClass().getName());
 						if(mat.matches()) {
 							newComplexEvent = (ComplexEvent) cepappModel.getSinkElements().get(j);
-							String GenericEpl = Files.lines(Paths.get("resources\\" + newComplexEvent.getTypeName() + ".epl")).collect(Collectors.joining("\n"));
-							EPStatement GenericPattern = epService.getEPAdministrator().createEPL(GenericEpl);
-							//GenericPattern.addListener(new GenericListener(newComplexEvent));
+							GenericEpl = Files.lines(Paths.get("resources\\" + newComplexEvent.getTypeName() + ".epl")).collect(Collectors.joining("\n"));
+							GenericPattern = epService.getEPAdministrator().createEPL(GenericEpl);
+							GenericPattern.addListener(new GenericListener(newComplexEvent));
 						}
 					}
 				} catch (IOException io){
@@ -158,8 +162,8 @@ public class Simulator {
 											
 				// The CSV data input file must be located in the resources folder.		
 				//AdapterInputSource GenericInputSource = new AdapterInputSource("Vaccine_Delivery-Events.csv");
-				AdapterInputSource GenericInputSource = new AdapterInputSource(newInputFile.getFile_uri());
-				CSVInputAdapterSpec GenericAdapterSpec = new CSVInputAdapterSpec(GenericInputSource, newComplexEvent.getTypeName());
+				GenericInputSource = new AdapterInputSource(rutaCSV);
+				GenericAdapterSpec = new CSVInputAdapterSpec(GenericInputSource, newComplexEvent.getTypeName());
 				GenericAdapterSpec.setUsingTimeSpanEvents(true);
 					
 				// The timestamp column to schedule events being sent into the CEP engine
@@ -175,22 +179,24 @@ public class Simulator {
 				//   usingEngineThread - true if the coordinator should set time by the scheduling service in the engine, false if it should set time externally through the calling thread
 				//   usingExternalTimer - true to use esper's external timer mechanism instead of internal timing
 				//   usingTimeSpanEvents - true for time span events
-				//coordinator = new AdapterCoordinatorImpl(epService, false, true, true);
+				coordinator = new AdapterCoordinatorImpl(epService, false, true, true);
 				 		 	
 				coordinator.coordinate(new CSVInputAdapter(GenericAdapterSpec));
-				//coordinator.coordinate(new CSVInputAdapter(predictionAdapterSpec));
 			}
 		}    
-		    
+		
+		// IMPORTANT: CurrentTimeEvent must receive as parameter the timestamp in which the data start in the CSV files
+		// 1571732376156602 is in microseconds
+		runtime.sendEvent(new CurrentTimeEvent(firstTimestampLong));
+		
 		System.out.println("The simulation has started...");	
-		    
 		long start = System.currentTimeMillis();
 		coordinator.start();
 		long delta = System.currentTimeMillis() - start;
 		System.out.println("Time execution: " + delta + " milliseconds");
 		System.out.println("The simulation has finished.");
 		
-		*/
+		
 	}
-
+	
 }
