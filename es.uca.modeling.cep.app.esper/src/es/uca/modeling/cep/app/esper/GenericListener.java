@@ -16,46 +16,54 @@ import com.espertech.esper.client.EventBean;
 import com.espertech.esper.client.UpdateListener;
 
 import eventpattern.CEPEventPattern;
-import eventpattern.ComplexEvent;
+import cepapp.ComplexEvent;
 
 public class GenericListener implements UpdateListener {
 	
-	private static Logger logger = Logger.getLogger(GenericListener.class);
-	private static ArrayList<String> lines = new ArrayList();
+	private Logger logger = Logger.getLogger(GenericListener.class);
+	private ArrayList<String> lines = new ArrayList();
 	
 	// The detected complex events will be saved in the file located in the folder simulation-output.
-	private static File ComplexEventTXT;
+	private File ComplexEventTXT;
 	
-	private static ComplexEvent ComplexEvent;
+	private ComplexEvent ComplexEvent;
 	
-	private static int contador;
+	//private int contador;
 	
 	public GenericListener(ComplexEvent complexEvent) {
 		ComplexEvent = complexEvent;
 		//Create the txt file
 		ComplexEventTXT = new File(ComplexEvent.getTypeName() + "-complex-events_SVR.txt");
+		System.out.println(ComplexEvent.getTypeName() + "-complex-events_SVR.txt");
 	}
 	
 	@Override
 	public void update(EventBean[] arg0, EventBean[] arg1) {
-		contador = 0;		
+		System.out.println("Entrando en UPDATE " + ComplexEvent.getTypeName());
+		int contador = 0;		
 		String detectedComplexEvent = ""; 
 			
 		//Comprobar si el complex event tiene otubound link de file
 		//ComplexEvent.getOutboundLink();
+		
 		for (EventBean event : arg0) {
 			if(ComplexEvent.getComplexEventProperties().size() == 1) {
 				detectedComplexEvent = (String) event.get(ComplexEvent.getComplexEventProperties().get(0).getName());
 			} else if (ComplexEvent.getComplexEventProperties().size() > 1) {
 				while(contador < ComplexEvent.getComplexEventProperties().size() - 1) {
-					
+					System.out.println(ComplexEvent.getComplexEventProperties().get(contador).getName());
+					System.out.println("AQUI ESTOY " +ComplexEvent.getTypeName() + " propiedades "+ ComplexEvent.getComplexEventProperties().size());
+					System.out.println("CONTADOR " + contador);
 					detectedComplexEvent = detectedComplexEvent + event.get(ComplexEvent.getComplexEventProperties().get(contador).getName()) + ",";
 					contador++;
+					System.out.println(detectedComplexEvent);
 				}
+				System.out.println("AQUI ESTOY " +ComplexEvent.getTypeName());
+				System.out.println("CONTADOR FINAL " + contador);
 				detectedComplexEvent = detectedComplexEvent + event.get(ComplexEvent.getComplexEventProperties().get(contador).getName());
 			}	
 						
-			//System.out.println(detectedComplexEvent);
+			System.out.println(detectedComplexEvent);
 			logger.debug(detectedComplexEvent); 
 			lines.add(detectedComplexEvent);
 		}
@@ -75,6 +83,7 @@ public class GenericListener implements UpdateListener {
 		}
 		
 		try {
+			System.out.println(ComplexEventTXT.getAbsolutePath());
 			Files.write(Paths.get(ComplexEventTXT.getAbsolutePath()), lines, Charset.forName("UTF-8"));
 		} catch (IOException e) {
 			e.printStackTrace();

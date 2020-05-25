@@ -54,13 +54,13 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 			IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
 							
 			if (!patternProject.exists()) {
-	        	MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "There are no event patterns to be transformed into code.");
+	        	MessageDialog.openError(shell, "Generate Pattern Code", "There are no event patterns to be transformed into code.");
 	        	return null;	
 			}		
 		
 			if(!HandlerUtil.getActiveEditor(event).getClass().getName().equals("eventpattern.diagram.part.EventpatternDiagramEditor")) {
 							
-				MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "An event pattern must be open.");
+				MessageDialog.openError(shell, "Generate Pattern Code", "An event pattern must be open.");
 				return null;
 			}
 			
@@ -68,7 +68,7 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 	        EventpatternDiagramEditor patternDiagramEditor = (EventpatternDiagramEditor) HandlerUtil.getActiveEditor(event);
 	        
 	        if (patternDiagramEditor == null || !patternDiagramEditor.getTitle().endsWith("pattern_diagram")) {
-	        	MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "An event pattern must be open.");
+	        	MessageDialog.openError(shell, "Generate Pattern Code", "An event pattern must be open.");
 	        	return null; 
 	        }
 	        
@@ -84,7 +84,7 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 				
 			// problems.length is the number of errors of the active editor (not total errors).
 			if (problems.length > 0) {
-				MessageDialog.openError(shell, "Generate and Deploy Pattern Code", "There are some problems that must be solved before generating and deploying the code.");
+				MessageDialog.openError(shell, "Generate Pattern Code", "There are some problems that must be solved before generating and deploying the code.");
 	        	return null; 
 			}
 		 	
@@ -167,8 +167,8 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 				TransformEventPatternToCode.executeEGL(sourceModel2, eventPatternModel, patternToActionPath, outputActionFile);
 			}
 						
-			MessageDialog.openInformation(shell, "Generate and Deploy Pattern Code", 
-		    		"The event pattern has been transformed into code and deployed.");	
+			MessageDialog.openInformation(shell, "Generate Pattern Code", 
+		    		"The event pattern has been transformed into code.");	
 			
 		} catch (Exception e1) {
 			e1.printStackTrace();
