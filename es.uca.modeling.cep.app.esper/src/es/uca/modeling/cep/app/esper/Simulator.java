@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -182,14 +183,13 @@ public class Simulator {
 					io.printStackTrace();
 				}
 				
-				//rutaCSV = "D:\\UNIVERSIDAD\\TFG\\medit4cep\\es.uca.modeling.cep.app.esper\\resources\\Vaccine_Delivery-Events.csv";
-				
+				File CSV = new File(rutaCSV);				
 				newEvent = (Event) newInputFile.getOutboundLink().get(0).getDestination();
 				//System.out.println(newEvent.getTypeName());
 				// The CSV data input file must be located in the resources folder.		
 				//AdapterInputSource GenericInputSource = new AdapterInputSource("Vaccine_Delivery-Events.csv");
-				//GenericInputSource = new AdapterInputSource(rutaCSV);
-				GenericInputSource = new AdapterInputSource("Vaccine_Delivery-Events.csv");
+				GenericInputSource = new AdapterInputSource(CSV);
+				//GenericInputSource = new AdapterInputSource("Vaccine_Delivery-Events.csv");
 				GenericAdapterSpec = new CSVInputAdapterSpec(GenericInputSource, newEvent.getTypeName());
 				GenericAdapterSpec.setUsingTimeSpanEvents(true);
 				

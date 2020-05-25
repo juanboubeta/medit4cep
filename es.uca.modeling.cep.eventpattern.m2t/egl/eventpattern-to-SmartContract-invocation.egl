@@ -1,5 +1,6 @@
 [%
 var count;
+var caterpillar = false;
 var smartcontracts : Sequence = SmartContract.allInstances();
 
 	for (sc : SmartContract in smartcontracts) {	%]
@@ -43,7 +44,7 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 		}
 	}
 	
-	private [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).patternName%]() throws Exception {
+	public [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).patternName%]() throws Exception {
 		
 		Web3j web3j = Web3j.build(new HttpService());
 		Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();
@@ -51,7 +52,28 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 		
 		Credentials credentials = getCredentialsFromPrivateKey();
 		
-		[%=sc.typeName%] smartContract = loadContract(CONTRACT_ADDRESS, web3j, credentials);
+		[%for(cf: ContractFunction in sc.SmartContractProperties) {
+			if(cf.name == "startExecution" or cf.name == "handleEvent" or cf.name == "killProcess" or cf.name == "broadcastSignal" or cf.name == "getWorklistAddress" or cf.name == "getInstanceIndex"){
+				caterpillar = true;
+			}
+		}%]
+		
+		[%if(caterpillar == true){%]
+		if(CONTRACT_ADDRESS == ""){
+			String deployedAddress = deployCaterpillarContract(web3j, credentials);
+			[%=sc.typeName%] smartContract = loadContract(deployedAddress, web3j, credentials);
+		} else {
+			[%=sc.typeName%] smartContract = loadContract(CONTRACT_ADDRESS, web3j, credentials);
+		}	
+		[%} else {%]
+		if(CONTRACT_ADDRESS == ""){
+			String deployedAddress = deployContract(web3j, credentials);
+			[%=sc.typeName%] smartContract = loadContract(deployedAddress, web3j, credentials);
+		} else {
+			[%=sc.typeName%] smartContract = loadContract(CONTRACT_ADDRESS, web3j, credentials);
+		}	
+		[%}%]
+		
 		System.out.println("Deployed contract address: " + smartContract.getContractAddress());
 		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {
@@ -74,6 +96,20 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 		return Credentials.create(PRIVATE_KEY);
 	}
 	
+	[%if(caterpillar == true){%]
+	private String deployCaterpillarContract(Web3j web3j, Credentials credentials) throws Exception {
+		return [%=sc.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, "", "", "")
+			.send()
+			.getContractAddress();
+	}	
+		[%} else {%]
+	private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
+		return [%=sc.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT)
+			.send()
+			.getContractAddress();
+	}	
+	[%}%]
+		
 	private [%=sc.typeName%] loadContract(String contractAddress, Web3j web3j, Credentials credentials) {
 		return [%=sc.typeName%].load(contractAddress, web3j, credentials, GAS_PRICE, GAS_LIMIT);
 	}
