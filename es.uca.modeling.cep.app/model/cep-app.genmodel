@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/es.uca.modeling.cep.app/src"
+    modelPluginID="es.uca.modeling.cep.app" modelName="Cepapp" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>cep-app.emf</foreignModel>
+  <genPackages prefix="Cepapp" disposableProviderFactory="true" ecorePackage="cep-app.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cep-app.ecore#//MappingType">
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//MappingType/PassThrough"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//MappingType/json"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//MappingType/xml"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//MappingType/csv"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cep-app.ecore#//PropertyTypeValue">
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//PropertyTypeValue/Unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//PropertyTypeValue/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//PropertyTypeValue/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//PropertyTypeValue/Long"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//PropertyTypeValue/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//PropertyTypeValue/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="cep-app.ecore#//PropertyTypeValue/String"/>
+    </genEnums>
+    <genClasses ecoreClass="cep-app.ecore#//CEPApp">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//CEPApp/name"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//CEPApp/description"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//CEPApp/creationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//CEPApp/domainName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-app.ecore#//CEPApp/sourceElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-app.ecore#//CEPApp/sinkElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-app.ecore#//CEPApp/links"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-app.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//Link/order"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cep-app.ecore#//Link/origin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cep-app.ecore#//Link/destination"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-app.ecore#//Origin">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cep-app.ecore#//Origin/outboundLink"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-app.ecore#//Destination">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cep-app.ecore#//Destination/inboundLink"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-app.ecore#//SourceElement"/>
+    <genClasses image="false" ecoreClass="cep-app.ecore#//SinkElement"/>
+    <genClasses image="false" ecoreClass="cep-app.ecore#//Mappable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//Mappable/mappingType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-app.ecore#//InMemory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//InMemory/topic"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cep-app.ecore#//File"/>
+    <genClasses image="false" ecoreClass="cep-app.ecore#//MQTT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//MQTT/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//MQTT/topic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//MQTT/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//MQTT/password"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//MQTT/client_id"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-app.ecore#//InMemoryInput"/>
+    <genClasses ecoreClass="cep-app.ecore#//InputFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//InputFile/dir_uri"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//InputFile/file_uri"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-app.ecore#//SourceMqtt"/>
+    <genClasses ecoreClass="cep-app.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//Event/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//Event/imagePath"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-app.ecore#//Event/eventProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-app.ecore#//EventProperty">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//EventProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//EventProperty/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//EventProperty/imagePath"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-app.ecore#//EventProperty/referencedEvent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-app.ecore#//EventProperty/eventProperties"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-app.ecore#//EventProperty/referencedEventProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-app.ecore#//InMemoryOutput"/>
+    <genClasses ecoreClass="cep-app.ecore#//ComplexEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//ComplexEvent/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//ComplexEvent/imagePath"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-app.ecore#//ComplexEvent/complexEventProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-app.ecore#//ComplexEventProperty">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//ComplexEventProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//ComplexEventProperty/imagePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//ComplexEventProperty/type"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-app.ecore#//ComplexEventProperty/referencedComplexEvent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-app.ecore#//ComplexEventProperty/complexEventProperties"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-app.ecore#//ComplexEventProperty/referencedComplexEventProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-app.ecore#//OutputFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-app.ecore#//OutputFile/path"/>
+    </genClasses>
+    <genClasses ecoreClass="cep-app.ecore#//SinkMqtt"/>
+  </genPackages>
+</genmodel:GenModel>

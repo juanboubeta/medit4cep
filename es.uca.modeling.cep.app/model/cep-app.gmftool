@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="cepappPalette">
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Link"
+        description="Add a link">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Simple Events"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Event"
+          description="Add an event">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Event Property"
+          description="Add an event property">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Complex Events"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="New Complex Event"
+          description="Add a new complex event">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="New Complex Event Property"
+          description="Add a new complex event property">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="File"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Input File"
+          description="Create new Input File">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Output File"
+          description="Create new Output File">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="MQTT"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Source MQTT"
+          description="Create new Source MQTT">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Sink MQTT"
+          description="Create new Sink MQTT">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Internal Queue"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="In Memory Source"
+          description="Create new In Memory Source">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="In Memory Sink"
+          description="Create new In Memory Sink">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>
