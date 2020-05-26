@@ -11,7 +11,9 @@
 
 package es.uca.modeling.cep.eventpattern.menu.command;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -53,6 +55,7 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 			String domainName = EventPatternsStatus.getDomainName();				
 			IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 			IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
+			IProject runtimeProject = myWorkspaceRoot.getProject(domainName + "_runtime");
 							
 			if (!patternProject.exists()) {
 	        	MessageDialog.openError(shell, "Generate Smart Contracts", "There are no event patterns to be transformed into code.");
@@ -143,8 +146,27 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 								eventPatternModel.getSmartContracts().get(i).getTypeName() + ".java");	
 						System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputSmartContractFile.getAbsolutePath());
 													
-						TransformEventPatternToCode.executeEGL(sourceModel4, eventPatternModel, patternToSmartContractPath, outputSmartContractFile);
+						String result = TransformEventPatternToCode.executeEGL(sourceModel4, eventPatternModel, patternToSmartContractPath, outputSmartContractFile);
 					
+						if(!runtimeProject.exists()) {
+							runtimeProject.create(null);							
+						}
+						
+						//System.out.println(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");
+						File archivo = new File(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName() + ".java");
+	
+						BufferedWriter bw;
+	
+						if(archivo.exists()) {
+							bw = new BufferedWriter(new FileWriter(archivo));
+							bw.write(result);
+							bw.close();
+						} else {
+							bw = new BufferedWriter(new FileWriter(archivo));
+							bw.write(result);
+							bw.close();
+						}
+						
 				} //Fin-if
 					
 				} //Fin-for	
@@ -165,16 +187,36 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Purchase") ||
 							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Voting") ||
 							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("VaccineDelivery")) {
-					sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
-					sourceModel3.setStoredOnDisposal(false);
-					sourceModel3.setReadOnLoad(true);
-					
-					patternToContractFunctionPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +"-invocation.egl";
-					outputContractFunctionFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
-							eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");	
-					System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputContractFunctionFile.getAbsolutePath());
-												
-					TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel, patternToContractFunctionPath, outputContractFunctionFile);
+						
+						sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
+						sourceModel3.setStoredOnDisposal(false);
+						sourceModel3.setReadOnLoad(true);
+						
+						patternToContractFunctionPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +"-invocation.egl";
+						outputContractFunctionFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
+								eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");	
+						System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputContractFunctionFile.getAbsolutePath());
+													
+						String result = TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel, patternToContractFunctionPath, outputContractFunctionFile);
+						
+						if(!runtimeProject.exists()) {
+							runtimeProject.create(null);							
+						}
+						
+						//System.out.println(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");
+						File archivo = new File(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");
+	
+						BufferedWriter bw;
+	
+						if(archivo.exists()) {
+							bw = new BufferedWriter(new FileWriter(archivo));
+							bw.write(result);
+							bw.close();
+						} else {
+							bw = new BufferedWriter(new FileWriter(archivo));
+							bw.write(result);
+							bw.close();
+						}
 					
 					} else {
 						
@@ -187,8 +229,26 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 								eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");	
 						System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputContractFunctionFile.getAbsolutePath());
 													
-						TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel, patternToContractFunctionPath, outputContractFunctionFile);
+						String result = TransformEventPatternToCode.executeEGL(sourceModel3, eventPatternModel, patternToContractFunctionPath, outputContractFunctionFile);
 						
+						if(!runtimeProject.exists()) {
+							runtimeProject.create(null);							
+						}
+						
+						//System.out.println(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");
+						File archivo = new File(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");
+	
+						BufferedWriter bw;
+	
+						if(archivo.exists()) {
+							bw = new BufferedWriter(new FileWriter(archivo));
+							bw.write(result);
+							bw.close();
+						} else {
+							bw = new BufferedWriter(new FileWriter(archivo));
+							bw.write(result);
+							bw.close();
+						}
 					}
 					
 					//ejecutar la invocacion de cada contrato

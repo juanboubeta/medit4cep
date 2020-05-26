@@ -11,7 +11,9 @@
 
 package es.uca.modeling.cep.eventpattern.menu.command;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -52,6 +54,7 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 			String domainName = EventPatternsStatus.getDomainName();				
 			IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 			IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
+			IProject runtimeProject = myWorkspaceRoot.getProject(domainName + "_runtime");
 							
 			if (!patternProject.exists()) {
 	        	MessageDialog.openError(shell, "Generate Pattern Code", "There are no event patterns to be transformed into code.");
@@ -149,7 +152,25 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 					eventPatternModel.getPatternName() + ".epl");		
 			System.out.println("\noutputPatternFile.getAbsolutePath(): " + outputPatternFile.getAbsolutePath());
 						
-			TransformEventPatternToCode.executeEGL(sourceModel, eventPatternModel, patternToEplPath, outputPatternFile);
+			String result = TransformEventPatternToCode.executeEGL(sourceModel, eventPatternModel, patternToEplPath, outputPatternFile);
+			
+			if(!runtimeProject.exists()) {
+				runtimeProject.create(null);							
+			}
+			
+			File archivo = new File(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\" + eventPatternModel.getPatternName() + ".epl");
+
+			BufferedWriter bw;
+
+			if(archivo.exists()) {
+				bw = new BufferedWriter(new FileWriter(archivo));
+				bw.write(result);
+				bw.close();
+			} else {
+				bw = new BufferedWriter(new FileWriter(archivo));
+				bw.write(result);
+				bw.close();
+			}
 			
 		    // 7º Transform the actions for the event pattern to Mule flow code 
 			

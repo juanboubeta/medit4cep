@@ -25,7 +25,7 @@ import org.eclipse.epsilon.eol.models.Model;
 
 public class TransformEventPatternToCode {
 	
-	public static void executeEGL(final Model sourceModel, EObject node, final String pathToEGL,
+	public static String executeEGL(final Model sourceModel, EObject node, final String pathToEGL,
 			final File outputFile) throws Exception {
 		
 		final EglFileGeneratingTemplateFactory factory = new EglFileGeneratingTemplateFactory();
@@ -50,7 +50,12 @@ public class TransformEventPatternToCode {
 		
 		eglModule.getContext().getModelRepository().dispose();
 		
-		System.out.println("Generated pattern code: \n" + result);
+		//System.out.println("Generated pattern code: \n" + result);
+		
+		return result;
+		
+		
+
 	}
 	
 }
