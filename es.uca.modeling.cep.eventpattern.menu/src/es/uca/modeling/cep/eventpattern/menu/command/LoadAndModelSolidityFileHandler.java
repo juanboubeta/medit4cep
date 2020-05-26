@@ -70,7 +70,7 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 		//First of all we must check if exist some smart contract project
 		try {
 			if (!domainProject.exists()) {
-	        	MessageDialog.openError(shell, "Load and Model from Caterpillar", "A CEP domain must be previously created or imported.");
+	        	MessageDialog.openError(shell, "Load and Model from Solidity File", "A CEP domain must be previously created or imported.");
 	        	return null;	
 			} else {
 				if (!smartcontractProject.exists()) {
@@ -319,7 +319,7 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 					} //Fin if sin else
 					
 				} else {
-					MessageDialog.openError(shell, "Load and Model Solidity File",
+					MessageDialog.openError(shell, "Load and Model from Solidity File",
 							"The editor has already been customised.");
 				}
 			}

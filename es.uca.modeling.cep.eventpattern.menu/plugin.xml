@@ -137,7 +137,7 @@
             </command>
             <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFile"
-                  label="Load and Model Solidity File"
+                  label="Load and Model from Solidity File"
                   style="push">
             </command>
             <command
