@@ -157,7 +157,7 @@ public class StartAppHandler extends AbstractHandler {
 		   	CEPApp cepappModel = (CEPApp) cepappModelResource.getContents().get(0);
 		   	//System.out.println(patternModel.getComplexEvent().getTypeName());	
 		   	
-		   	System.out.println("Links");
+		   /*	System.out.println("Links");
 		   	for (int i = 0; i < cepappModel.getLinks().size(); i++) {
 		   		System.out.println(cepappModel.getLinks().get(i).toString());
 		   	}
@@ -170,7 +170,7 @@ public class StartAppHandler extends AbstractHandler {
 		   	System.out.println("Sink elements");
 		   	for (int z = 0; z < cepappModel.getSinkElements().size(); z++) {
 		   		System.out.println(cepappModel.getSinkElements().get(z).toString());
-		   	}
+		   	}*/
 			
 			try {
 				complexEventModelResource.save(null);

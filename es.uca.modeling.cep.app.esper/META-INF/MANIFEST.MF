@@ -23,3 +23,5 @@ Bundle-ClassPath: lib/antlr-runtime-4.5.3.jar,
  lib/slf4j-log4j12-1.7.21.jar,
  .,
  lib/console-4.3.0-all.jar
+Import-Package: eventpattern.diagram.status,
+ org.eclipse.core.resources

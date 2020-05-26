@@ -136,13 +136,13 @@
                   style="push">
             </command>
             <command
-                  commandId="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFile"
-                  label="Load and Model from Solidity File"
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelFromCaterpillar"
+                  label="Load and Model From Caterpillar"
                   style="push">
             </command>
             <command
-                  commandId="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelFromCaterpillar"
-                  label="Load and Model From Caterpillar"
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelSolidityFile"
+                  label="Load and Model from Solidity File"
                   style="push">
             </command>
             <command
