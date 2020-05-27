@@ -1267,6 +1267,43 @@ context SmartContract {
         message : m
       
     } 	
+    
+    constraint HasPrivateKey {
+
+	    check : self.privateKey.isDefined() and self.privateKey.trim().length() > 0
+	
+	    message : "Attribute 'privateKey' must be filled."
+	    
+	    fix {
+	        
+	    	title : "Set a value for 'privateKey'."
+	            
+	        do {
+	        	var key : String;
+	            key = UserInput.prompt("Please enter a value for 'privateKey':");
+	            self.privateKey = key;
+	        }
+	    }  
+
+  	}
+  	constraint HasContractAddress {
+
+	    check : self.contractAddress.isDefined() and self.contractAddress.trim().length() > 0
+	
+	    message : "Attribute 'contractAddress' must be filled."
+	    
+	    fix {
+	        
+	    	title : "Set a value for 'contractAddress'."
+	            
+	        do {
+	        	var address : String;
+	            address = UserInput.prompt("Please enter a value for 'contractAddress':");
+	            self.contractAddress = address;
+	        }
+	    }  
+
+  	}
 }
 
 context ContractFunction {

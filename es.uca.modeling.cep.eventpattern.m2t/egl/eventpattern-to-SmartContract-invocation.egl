@@ -2,8 +2,10 @@
 var count;
 var caterpillar = false;
 var smartcontracts : Sequence = SmartContract.allInstances();
+var s = System.user.choose("Select the Smart Contract to be generated", smartcontracts.collect(e|e.typeName.asString()));
+var sc = collection.selectOne(e|e.asString() = s);
+%]
 
-	for (sc : SmartContract in smartcontracts) {	%]
 package Smartcontract_[%=sc.typeName%];
 
 import org.web3j.crypto.CipherException;
@@ -115,4 +117,3 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 	}
 	
 }
-[%}%]
