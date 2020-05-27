@@ -62,10 +62,40 @@ for (eAttr in eAttributes5) {
 }
 
 -- Disable property "type" of Parameters 
-var eAttributes6 = Ecore!EAttribute.all.select(as|as.name="type");
+var eAttributes6 = Ecore!EAttribute.all.select(as|as.name="type" );
 
 for (eAttr in eAttributes6) {	
 	if (eAttr.eContainingClass.name == 'Parameter' or eAttr.eContainingClass.name == 'InputParameter' or eAttr.eContainingClass.name == 'OutputParameter') {
+		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+		feature.property = GenModel!GenPropertyKind#Readonly;
+	}
+}
+
+-- Disable property "contractAddress" of Smart contract 
+var eAttributes7 = Ecore!EAttribute.all.select(as|as.name="contractAddress");
+
+for (eAttr in eAttributes7) {	
+	if (eAttr.eContainingClass.name == 'SmartContract') {
+		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+		feature.property = GenModel!GenPropertyKind#Readonly;
+	}
+}
+
+-- Disable property "privateKey" of Parameters 
+var eAttributes8 = Ecore!EAttribute.all.select(as|as.name="privateKey");
+
+for (eAttr in eAttributes8) {	
+	if (eAttr.eContainingClass.name == 'SmartContract') {
+		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+		feature.property = GenModel!GenPropertyKind#Readonly;
+	}
+}
+
+-- Disable property "type" of Parameters 
+var eAttributes9 = Ecore!EAttribute.all.select(as|as.name="value" );
+
+for (eAttr in eAttributes9) {	
+	if (eAttr.eContainingClass.name == 'InputParameter') {
 		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
 		feature.property = GenModel!GenPropertyKind#Readonly;
 	}
