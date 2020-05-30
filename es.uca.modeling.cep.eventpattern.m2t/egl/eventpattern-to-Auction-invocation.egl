@@ -51,12 +51,7 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 		
 		Credentials credentials = getCredentialsFromPrivateKey();
 				
-		if(CONTRACT_ADDRESS == ""){
-			String deployedAddress = deployContract(web3j, credentials);
-			Auction auction = loadContract(deployedAddress, web3j, credentials);
-		} else {
-			Auction auction = loadContract(CONTRACT_ADDRESS, web3j, credentials);
-		}
+		Auction auction = loadContract(CONTRACT_ADDRESS, web3j, credentials);
 		
 		System.out.println("Deployed contract address: " + auction.getContractAddress());
 		

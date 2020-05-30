@@ -53,18 +53,13 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 		
 		Credentials credentials = getCredentialsFromPrivateKey();
 		
-		if(CONTRACT_ADDRESS == ""){
-			String deployedAddress = deployContract(web3j, credentials);
-			VaccineDelivery vaccinedelivery = loadContract(deployedAddress, web3j, credentials);
-		} else {
-			VaccineDelivery vaccinedelivery = loadContract(CONTRACT_ADDRESS, web3j, credentials);
-		}
-		
+		VaccineDelivery vaccinedelivery = loadContract(CONTRACT_ADDRESS, web3j, credentials);
+
 		System.out.println("Deployed contract address: " + vaccinedelivery.getContractAddress());
 		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
 		[%if(cf.name == "registerEvent" and not cf.inboundLink.isEmpty()) {%]
-		System.out.println(vaccinedelivery.registerEvent(cep_event_name, cep_event_info).send().getTransactionHash());
+		System.out.println(vaccinedelivery.registerEvent(EVENT_NAME, EVENT_INFO).send().getTransactionHash());
 		[%}}%]
 			
 	}
@@ -72,12 +67,6 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 	private Credentials getCredentialsFromPrivateKey() {
 		//El metodo create recibe una clave privada para generar las credenciales
 		return Credentials.create(PRIVATE_KEY);
-	}
-	
-	private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
-		return VaccineDelivery.deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT)
-			.send()
-			.getContractAddress();
 	}
 	
 	private VaccineDelivery loadContract(String contractAddress, Web3j web3j, Credentials credentials) {

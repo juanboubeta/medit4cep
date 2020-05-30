@@ -51,14 +51,9 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 		
 		Credentials credentials = getCredentialsFromPrivateKey();
 		
-		if(CONTRACT_ADDRESS == ""){
-			String deployedAddress = deployContract(web3j, credentials);
-			Purchase Purchase = loadContract(deployedAddress, web3j, credentials);
-		} else {
-			Purchase Purchase = loadContract(CONTRACT_ADDRESS, web3j, credentials);
-		}
+		Purchase purchase = loadContract(CONTRACT_ADDRESS, web3j, credentials);
 		
-		System.out.println("Deployed contract address: " + Purchase.getContractAddress());
+		System.out.println("Deployed contract address: " + purchase.getContractAddress());
 		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
 		[%if(cf.name == "abort" and not cf.inboundLink.isEmpty()) {%]
@@ -74,12 +69,6 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 	private Credentials getCredentialsFromPrivateKey() {
 		//El metodo create recibe una clave privada para generar las credenciales
 		return Credentials.create(PRIVATE_KEY);
-	}
-	
-	private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
-		return Purchase.deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, BigInteger.valueOf(0L))
-			.send()
-			.getContractAddress();
 	}
 	
 	private Purchase loadContract(String contractAddress, Web3j web3j, Credentials credentials) {
