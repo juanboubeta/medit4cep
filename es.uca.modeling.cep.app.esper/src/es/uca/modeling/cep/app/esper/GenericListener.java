@@ -66,8 +66,8 @@ public class GenericListener implements UpdateListener {
 			        	System.out.println(smartContractInvoked);
 			        	deployedSmartContract = "es.uca.modeling.cep.smartcontract.code." + smartContractInvoked;
 			        	System.out.println(deployedSmartContract);
-			        	/*Class c = Class.forName(deployedSmartContract);
-						c.newInstance();*/
+			        	Class c = Class.forName(deployedSmartContract);
+						c.newInstance();
 			        }
 			      } catch(Exception e){
 			         e.printStackTrace();

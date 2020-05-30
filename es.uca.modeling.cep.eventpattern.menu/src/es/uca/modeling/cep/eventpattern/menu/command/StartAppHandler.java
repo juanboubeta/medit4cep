@@ -141,9 +141,6 @@ public class StartAppHandler extends AbstractHandler {
 			
 		    ResourceSet resourceSet = new ResourceSetImpl(); 
 		    
-		    //Resource CEPdomainModelResource = resourceSet.getResource(CEPdomainDiagramUri, true);
-		    //Resource SmartContractModelResource = resourceSet.getResource(SmartContractsDiagramUri, true);
-		    
 		    Resource complexEventModelResource = resourceSet.getResource(complexEventModelUri, true);
 		    
 		    
@@ -151,27 +148,9 @@ public class StartAppHandler extends AbstractHandler {
 		   	Resource cepappDiagramResource = resourceSet.getResource(activeCepappDiagramUri, true);
 
 		   	CEPDomain domainModel = (CEPDomain) complexEventModelResource.getContents().get(0);
-		   	//System.out.println(domainModel.getDomainName());
-		   	
-		   	//System.out.println(cepappModelResource.getContents().get(0).getClass().toString());
+
 		   	CEPApp cepappModel = (CEPApp) cepappModelResource.getContents().get(0);
-		   	//System.out.println(patternModel.getComplexEvent().getTypeName());	
-		   	
-		   /*	System.out.println("Links");
-		   	for (int i = 0; i < cepappModel.getLinks().size(); i++) {
-		   		System.out.println(cepappModel.getLinks().get(i).toString());
-		   	}
-		   	
-		   	System.out.println("Source elements");
-		   	for (int j = 0; j < cepappModel.getSourceElements().size(); j++) {
-		   		System.out.println(cepappModel.getSourceElements().get(j).toString());
-		   	}
-		   	
-		   	System.out.println("Sink elements");
-		   	for (int z = 0; z < cepappModel.getSinkElements().size(); z++) {
-		   		System.out.println(cepappModel.getSinkElements().get(z).toString());
-		   	}*/
-			
+		   				
 			try {
 				complexEventModelResource.save(null);
 			} catch (IOException e1) {

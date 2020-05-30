@@ -14,7 +14,6 @@ public class SmartContractInvocation {
 		
 	public SmartContractInvocation(ComplexEvent complexEvent, EList<SmartContract> smartContracts) {
 		
-		//private HashMap<String, String[]> smartContractsofComplexEvents = new HashMap<String, String[]>();
 		
 		File smartContractsFile = new File(complexEvent.getTypeName() + "_smartContracts.txt");
 		BufferedWriter bw;
@@ -23,7 +22,7 @@ public class SmartContractInvocation {
 		for(int i = 0; i < smartContracts.size(); i++) {
 			smartContractsString[i] = smartContracts.get(i).getTypeName() + "_invocation_" + complexEvent.getTypeName();
 		}
-		//smartContractsofComplexEvents.put(complexEvent.getTypeName(), smartContractsString);
+
 		try {
 			if(smartContractsFile.exists()) {
 				bw = new BufferedWriter(new FileWriter(smartContractsFile));
