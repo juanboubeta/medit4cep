@@ -69,6 +69,26 @@ public class DeploySmartContractHandler extends AbstractHandler {
 			IProject runtimeProject = myWorkspaceRoot.getProject(domainName + "_runtime");
 			IProject smartcontractsProject = myWorkspaceRoot.getProject("smartcontract");				
 			
+			if (EventPatternsStatus.getProjectPath() == null) {
+				
+				String selectedDir = null;
+			    DirectoryDialog dirDialog = new DirectoryDialog(shell);
+			    dirDialog.setText("Choose MEdit4CEP folder.");
+			    selectedDir = dirDialog.open();
+		    	    
+			    if (selectedDir == null) {
+		        	return null; 	    	
+			    }
+			    else {
+			    	System.out.println(selectedDir);
+			    	selectedDir += "\\es.uca.modeling.cep.smartcontract.code\\src\\es\\uca\\modeling\\cep\\smartcontract\\code";
+			    	EventPatternsStatus.setProjectPath(selectedDir);
+			    	System.out.println(selectedDir);
+			    }
+			}
+			
+			String projectPath = EventPatternsStatus.getProjectPath();
+			
 			if (!smartcontractsProject.exists()) {
 	        	MessageDialog.openError(shell, "Deploy Smart Contract", "There are no Smart Contratcs to be deployed.");
 	        	return null;	
@@ -161,7 +181,7 @@ public class DeploySmartContractHandler extends AbstractHandler {
 									smartContractSelected.equals("Voting") || smartContractSelected.equals("VaccineDelivery")) {
 									
 									patternToSmartContractPath = "/egl/eventpattern-to-" + smartContractSelected +".egl";
-									outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath(), smartContractSelected + ".java");	
+									outputSmartContractFile = new File(projectPath, smartContractSelected + ".java");	
 									System.out.println("\noutputSmartContractFile.getAbsolutePath(): " + outputSmartContractFile.getAbsolutePath());
 																
 									String result = TransformEventPatternToCode.executeEGL(sourceModel4, smartContractModel, patternToSmartContractPath, outputSmartContractFile);
@@ -181,17 +201,23 @@ public class DeploySmartContractHandler extends AbstractHandler {
 								runtimeProject.create(null);							
 							}
 							
+							
+							// 4º Select the directory to generate the event pattern. 
+							// It should be the 'new-eventpattern' directory in the Mule project where the pattern will be deployed.
+														
 							sourceModel3 = new InMemoryEmfModel("SourceModel", smartcontractModelResource, SmartcontractPackage.eINSTANCE);
 							sourceModel3.setStoredOnDisposal(false);
 							sourceModel3.setReadOnLoad(true);
 							
 							patternToSmartContractDeployPath = "/egl/eventpattern-to-SmartContract-Deploy.egl";
-							outputSmartContractDeployFile = new File(EventPatternsStatus.getGeneratedSmartContractPath(), smartContractSelected + "_deploy.java");	
+							outputSmartContractDeployFile = new File(projectPath, smartContractSelected + "_deploy.java");	
 							
 							String result = TransformEventPatternToCode.executeEGL(sourceModel3, smartContractModel, patternToSmartContractDeployPath, outputSmartContractDeployFile);
 							
 							//Despliegue del Smart Contract											
 							
+							//ResourcesPlugin.getWorkspace().getRoot().getProject( "" ).refreshLocal( IResource.DEPTH_INFINITE, new NullProgressMonitor() );
+							Thread.sleep(5000);
 							String deployedSmartContract = "es.uca.modeling.cep.smartcontract.code." + smartContractSelected + "_deploy";
 							Class c = Class.forName(deployedSmartContract);
 							c.newInstance();

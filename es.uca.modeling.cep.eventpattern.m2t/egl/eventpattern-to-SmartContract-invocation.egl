@@ -11,7 +11,7 @@ if(SmartContract.allInstances().size() == 1){
 }
 %]
 
-package Smartcontract_[%=sc.typeName%];
+package es.uca.modeling.cep.smartcontract.code;
 
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;

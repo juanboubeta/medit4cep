@@ -1,4 +1,4 @@
-package Smartcontract_Auction;
+package es.uca.modeling.cep.smartcontract.code;
 
 import io.reactivex.Flowable;
 import java.math.BigInteger;

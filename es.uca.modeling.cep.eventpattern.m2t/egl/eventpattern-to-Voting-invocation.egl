@@ -3,7 +3,7 @@ var smartcontracts : Sequence = SmartContract.allInstances();
 
 	for (sc : SmartContract in smartcontracts) {	%]
 		[%if (sc.typeName == 'Voting') {%]
-package Smartcontract_Voting;
+package es.uca.modeling.cep.smartcontract.code;
 
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;

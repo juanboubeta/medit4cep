@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Date;
 import java.util.HashMap;
@@ -45,6 +46,7 @@ import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PartInitException;
@@ -77,6 +79,26 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 		IProject smartcontractsProject = myWorkspaceRoot.getProject("smartcontract");
 		IProject domainProject = myWorkspaceRoot.getProject("domain");
 		IProject runtimeProject = myWorkspaceRoot.getProject(domainName + "_runtime");
+		
+		if (EventPatternsStatus.getProjectPath() == null) {
+			
+			String selectedDir = null;
+		    DirectoryDialog dirDialog = new DirectoryDialog(shell);
+		    dirDialog.setText("Choose MEdit4CEP folder.");
+		    selectedDir = dirDialog.open();
+	    	    
+		    if (selectedDir == null) {
+	        	return null; 	    	
+		    }
+		    else {
+		    	System.out.println(selectedDir);
+		    	selectedDir += "\\es.uca.modeling.cep.smartcontract.code\\src\\es\\uca\\modeling\\cep\\smartcontract\\code";
+		    	EventPatternsStatus.setProjectPath(selectedDir);
+		    	System.out.println(selectedDir);
+		    }
+		}
+		
+		String projectPath = EventPatternsStatus.getProjectPath();
 		
 		String caterpillarURL = "";
 		
@@ -194,11 +216,11 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 				
 				if(archivo.exists()) {
 					bw = new BufferedWriter(new FileWriter(archivo));
-				    bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -b " + '"' + BIN.getAbsolutePath() + '"' + " -o " + '"' + myWorkspaceRoot.getLocation().toString() + "/" + '"' + " -p " + '"' + myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + '"');
+				    bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -b " + '"' + BIN.getAbsolutePath() + '"' + " -o " + '"' + projectPath.replace("es\\uca\\modeling\\cep\\smartcontract\\code", "") + '"' + " -p "  + "es.uca.modeling.cep.smartcontract.code");
 				    bw.close();
 				} else {
 					bw = new BufferedWriter(new FileWriter(archivo));
-					bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -b " + '"' + BIN.getAbsolutePath() + '"' + " -o " + '"' + myWorkspaceRoot.getLocation().toString() + "/" + '"' + " -p " + '"' + myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + '"');
+					bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -b " + '"' + BIN.getAbsolutePath() + '"' + " -o " + '"' + projectPath.replace("es\\uca\\modeling\\cep\\smartcontract\\code", "") + '"' + " -p "  + "es.uca.modeling.cep.smartcontract.code");
 				    bw.close();
 				}
 	
@@ -211,7 +233,7 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 				} catch (IOException ioe) {
 					System.out.println (ioe);
 				}
-	            
+				
 				//System.out.println(ABI.getAbsolutePath());
 				//System.out.println(archivo.getAbsolutePath());
 	                   			

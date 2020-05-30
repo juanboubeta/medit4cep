@@ -11,6 +11,12 @@
 
 package eventpattern.diagram.status;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 
 public class EventPatternsStatus {
@@ -25,6 +31,7 @@ public class EventPatternsStatus {
 	private static String generatedActionPath;
 	private static String generatedSmartContractPath;
 	private static String eventTypePath;
+	private static String projectPath;
 	
 	public static String getDomainName() {
 		return domainName; 
@@ -89,6 +96,44 @@ public class EventPatternsStatus {
 
 	public static void setGeneratedSmartContractPath(String path) {
 		generatedSmartContractPath = path;
+	}
+	
+	public static String getProjectPath() {
+		File projectPathFile = new File("projectPATH.txt");
+		if(projectPathFile.exists()) {
+			try {
+				FileReader fr = new FileReader (projectPathFile);
+				BufferedReader br = new BufferedReader(fr);
+				projectPath = br.readLine();
+				br.close();
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			}	
+			return projectPath;
+		} else {
+			return projectPath;
+		}	
+	}
+
+	public static void setProjectPath(String projectpath) {
+		
+		projectPath = projectpath;
+		
+		try {
+			File projectPathFile = new File("projectPATH.txt");
+			BufferedWriter bw;
+			if(projectPathFile.exists()) {
+				bw = new BufferedWriter(new FileWriter(projectPathFile));
+				bw.write(projectPath);
+				bw.close();
+			} else {
+				bw = new BufferedWriter(new FileWriter(projectPathFile));
+				bw.write(projectPath);
+				bw.close();
+			}
+		} catch (IOException ioe){
+			ioe.printStackTrace();
+		}
 	}
 	
 }

@@ -3,7 +3,7 @@ var smartcontracts : Sequence = SmartContract.allInstances();
 
 	for (sc : SmartContract in smartcontracts) {	%]
 		[%if (sc.typeName == 'VaccineDelivery') {%]
-package Smartcontract_VaccineDelivery;
+package es.uca.modeling.cep.smartcontract.code;
 
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;

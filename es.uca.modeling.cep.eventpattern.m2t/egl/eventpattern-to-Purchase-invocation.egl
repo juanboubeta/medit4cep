@@ -3,7 +3,7 @@ var smartcontracts : Sequence = SmartContract.allInstances();
 
 	for (sc : SmartContract in smartcontracts) {	%]
 		[%if (sc.typeName == "Purchase") {%]
-package Smartcontract_Purchase;
+package es.uca.modeling.cep.smartcontract.code;
 
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;
@@ -53,12 +53,12 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 		
 		if(CONTRACT_ADDRESS == ""){
 			String deployedAddress = deployContract(web3j, credentials);
-			Purchase purchase = loadContract(deployedAddress, web3j, credentials);
+			Purchase Purchase = loadContract(deployedAddress, web3j, credentials);
 		} else {
-			Purchase purchase = loadContract(CONTRACT_ADDRESS, web3j, credentials);
+			Purchase Purchase = loadContract(CONTRACT_ADDRESS, web3j, credentials);
 		}
 		
-		System.out.println("Deployed contract address: " + purchase.getContractAddress());
+		System.out.println("Deployed contract address: " + Purchase.getContractAddress());
 		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {%]
 		[%if(cf.name == "abort" and not cf.inboundLink.isEmpty()) {%]

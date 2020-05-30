@@ -10,7 +10,7 @@ if(SmartContract.allInstances().size() == 1){
 }
 %]
 
-package Smartcontract_[%=s.typeName%];
+package es.uca.modeling.cep.smartcontract.code;
 
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;
@@ -35,7 +35,7 @@ public class [%=s.typeName%]_deploy {
 	
 	private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
 	private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
-	private final static String PRIVATE_KEY = "[%=s.typeName%]";
+	private final static String PRIVATE_KEY = "[%=s.privateKey%]";
 			
 	public static void main(String[] args) {
 		try {

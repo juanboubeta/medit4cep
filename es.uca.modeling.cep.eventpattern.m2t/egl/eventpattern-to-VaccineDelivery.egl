@@ -1,4 +1,4 @@
-package Smartcontract_VaccineDelivery;
+package es.uca.modeling.cep.smartcontract.code;
 
 import java.math.BigInteger;
 import java.util.Arrays;
