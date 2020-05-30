@@ -64,7 +64,7 @@ public class InputParameterItemProvider extends ParameterItemProvider {
 				 getString("_UI_InputParameter_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_InputParameter_value_feature", "_UI_InputParameter_type"),
 				 EventpatternPackage.Literals.INPUT_PARAMETER__VALUE,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

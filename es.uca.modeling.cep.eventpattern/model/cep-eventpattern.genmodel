@@ -173,8 +173,8 @@
     <genClasses ecoreClass="cep-eventpattern.ecore#//SmartContract">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/typeName"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/imagePath"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/privateKey"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/contractAddress"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/privateKey"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//SmartContract/contractAddress"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//SmartContract/contractfunctions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//SmartContract/SmartContractProperties"/>
     </genClasses>
@@ -190,7 +190,7 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//Parameter/type"/>
     </genClasses>
     <genClasses ecoreClass="cep-eventpattern.ecore#//InputParameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//InputParameter/value"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute cep-eventpattern.ecore#//InputParameter/value"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cep-eventpattern.ecore#//InputParameter/InputReferencedFunction"/>
     </genClasses>
     <genClasses ecoreClass="cep-eventpattern.ecore#//OutputParameter">
