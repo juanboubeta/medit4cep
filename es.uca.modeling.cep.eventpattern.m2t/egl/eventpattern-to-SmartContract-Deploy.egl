@@ -94,7 +94,7 @@ public class [%=s.typeName%]_deploy {
 			.send()
 			.getContractAddress();
 		[%} else if(caterpillar == true) {%]
-			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, "", "", "")
+			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, "0xF5054783936AeEfaD02befCB54613c642551F601", "0xF5054783936AeEfaD02befCB54613c642551F601", "0xF5054783936AeEfaD02befCB54613c642551F601")
 			.send()
 			.getContractAddress();
 		[%} else {%]
