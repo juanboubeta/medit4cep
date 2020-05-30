@@ -77,7 +77,7 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 	}
 	
 	private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
-		return Auction.deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, 86400, "0xb7C7d9bD74742193dBAA3C1C21A2Ab63b39113Db")
+		return Auction.deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, BigInteger.valueOf(86400L), "0x2abD29711FF22B5d8C35D6889EE0D956cB05C224")
 			.send()
 			.getContractAddress();
 	}
