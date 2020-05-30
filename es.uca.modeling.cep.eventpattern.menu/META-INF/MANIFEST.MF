@@ -27,7 +27,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy 
 Import-Package: es.uca.modeling.cep.app.esper,
  es.uca.modeling.cep.eventpattern.m2t,
+ es.uca.modeling.cep.smartcontract.code,
  org.eclipse.epsilon.emc.emf,
  org.eclipse.epsilon.eol.models
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ lib/console-4.3.0-all.jar
 

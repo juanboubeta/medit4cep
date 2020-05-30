@@ -1,10 +1,16 @@
 [%
-var smartcontracts : Sequence = SmartContract.allInstances();
-var s = System.user.choose("Select the Smart Contract to be deployed", smartcontracts.collect(e|e.typeName.asString()));
-var e = collection.selectOne(e|e.asString() = s);
+var caterpillar = false;
+var s;
+if(SmartContract.allInstances().size() == 1){
+	s = SmartContract.allInstances().get(0);
+} else {
+	var smartcontracts : Sequence = SmartContract.allInstances();
+	var sc = System.user.choose("Select the Smart Contract to be deployed", smartcontracts.collect(e|e.typeName));
+	s = smartcontracts.selectOne(e|e.typeName = sc);
+}
 %]
 
-package Smartcontract_[%=e.typeName%];
+package Smartcontract_[%=s.typeName%];
 
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;
@@ -18,25 +24,34 @@ import org.web3j.tx.TransactionManager;
 import org.web3j.tx.Transfer;
 import org.web3j.utils.Convert;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class [%=e.typeName%]_deploy {
+public class [%=s.typeName%]_deploy {
 	
 	private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
 	private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
-	private final static String PRIVATE_KEY = "[%=e.typeName%]";
+	private final static String PRIVATE_KEY = "[%=s.typeName%]";
 			
 	public static void main(String[] args) {
 		try {
-			new [%=e.typeName%]_deploy();
+			new [%=s.typeName%]_deploy();
 		} catch (Exception e){
 			e.printStackTrace();
 		}
 	}
 	
-	public [%=e.typeName%]_deploy() throws Exception {
+	public [%=s.typeName%]_deploy() throws Exception {
+		
+		[%for(cf: ContractFunction in s.SmartContractProperties) {
+			if(cf.name == "startExecution" or cf.name == "handleEvent" or cf.name == "killProcess" or cf.name == "broadcastSignal" or cf.name == "getWorklistAddress" or cf.name == "getInstanceIndex"){
+				caterpillar = true;
+			}
+		}%]
 		
 		Web3j web3j = Web3j.build(new HttpService());
 		Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();
@@ -46,7 +61,17 @@ public class [%=e.typeName%]_deploy {
 				
 		String deployedAddress = deployContract(web3j, credentials);
 		
-		System.out.println("Deployed contract address: " + deployedAddress);
+		File contractAddress = new File("[%=s.typeName%]_contractAddress.txt");
+		BufferedWriter bw;
+		if(contractAddress.exists()) {
+			bw = new BufferedWriter(new FileWriter(contractAddress));
+			bw.write(deployedAddress);
+			bw.close();
+		} else {
+			bw = new BufferedWriter(new FileWriter(contractAddress));
+			bw.write(deployedAddress);
+			bw.close();
+		}
 		
 	}
 	
@@ -56,9 +81,27 @@ public class [%=e.typeName%]_deploy {
 	}
 	
 	private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
-		return [%=e.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT)
+		[%if(s.typeName == "Voting") {%]
+			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT,"Candidato 1","Candidato 2","Candidato 3")
 			.send()
 			.getContractAddress();
+		[%} else if(s.typeName == "Purchase") {%]
+			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, 0000000000000000001)
+			.send()
+			.getContractAddress();
+		[%} else if(s.typeName == "Auction") {%]
+			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, 86400, "0xb7C7d9bD74742193dBAA3C1C21A2Ab63b39113Db")
+			.send()
+			.getContractAddress();
+		[%} else if(caterpillar == true) {%]
+			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, "", "", "")
+			.send()
+			.getContractAddress();
+		[%} else {%]
+			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT)
+			.send()
+			.getContractAddress();
+		[%}%]
 	}	
 
 }

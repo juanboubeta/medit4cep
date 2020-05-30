@@ -11,10 +11,15 @@
 
 package es.uca.modeling.cep.eventpattern.menu.command;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.nio.file.Paths;
 
 import javax.swing.JOptionPane;
 
@@ -26,6 +31,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -60,7 +66,6 @@ public class DeploySmartContractHandler extends AbstractHandler {
 			String domainName = EventPatternsStatus.getDomainName();				
 			IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 			IProject domainProject = myWorkspaceRoot.getProject("domain");
-			IProject patternProject = myWorkspaceRoot.getProject(domainName + "_patterns");
 			IProject runtimeProject = myWorkspaceRoot.getProject(domainName + "_runtime");
 			IProject smartcontractsProject = myWorkspaceRoot.getProject("smartcontract");				
 			
@@ -106,24 +111,31 @@ public class DeploySmartContractHandler extends AbstractHandler {
 										
 					    ResourceSet resourceSet = new ResourceSetImpl(); 
 					   	Resource smartcontractModelResource = resourceSet.getResource(activeSmartcontractModelUri, true);
-					   				
+					   	Resource modelResource = resourceSet.getResource(activeSmartcontractModelUri, true);
+					   	
 					   	SmartContracts smartContractModel = (SmartContracts) smartcontractModelResource.getContents().get(0);
 						
 					   	String[] options = new String[smartContractModel.getSmartcontracts().size()];
+					   	String smartContractSelected;
 					   	
-					   	for(int i = 0; i < smartContractModel.getSmartcontracts().size(); i++) {
-					   		options[i] = smartContractModel.getSmartcontracts().get(i).getTypeName();
+					   	if(smartContractModel.getSmartcontracts().size() == 1) {
+					   		smartContractSelected = smartContractModel.getSmartcontracts().get(0).getTypeName();
+					   	} else {
+					   	
+						   	for(int i = 0; i < smartContractModel.getSmartcontracts().size(); i++) {
+						   		options[i] = smartContractModel.getSmartcontracts().get(i).getTypeName();
+						   	}
+						   	
+						   	//Dialog for select what model are going to be modeled
+				            smartContractSelected = (String)JOptionPane.showInputDialog(
+				            					null,
+				                                "Select the Smart Contract that you want to deploy",
+				                                "Selection of Smart Contract model",
+				                                JOptionPane.PLAIN_MESSAGE,
+				                                null,
+				                                options,
+				                                options[0]);
 					   	}
-					   	
-					   	//Dialog for select what model are going to be modeled
-			            String smartContractSelected = (String)JOptionPane.showInputDialog(
-			            					null,
-			                                "Select the Smart Contract that you want to deploy",
-			                                "Selection of Smart Contract model",
-			                                JOptionPane.PLAIN_MESSAGE,
-			                                null,
-			                                options,
-			                                options[0]);
 					 
 			            // 4º Select the directory to generate the smartcontracts for the event pattern, if there are smartcontracts.
 						if (EventPatternsStatus.getGeneratedSmartContractPath() == null) {
@@ -178,47 +190,34 @@ public class DeploySmartContractHandler extends AbstractHandler {
 							
 							String result = TransformEventPatternToCode.executeEGL(sourceModel3, smartContractModel, patternToSmartContractDeployPath, outputSmartContractDeployFile);
 							
-							//Despliegue del Smart Contract
+							//Despliegue del Smart Contract											
 							
+							String deployedSmartContract = "es.uca.modeling.cep.smartcontract.code." + smartContractSelected + "_deploy";
+							Class c = Class.forName(deployedSmartContract);
+							c.newInstance();
 							
+							File contractAddressFile = new File (smartContractSelected + "_contractAddress.txt");
+							FileReader fr = new FileReader (contractAddressFile);
+							BufferedReader br = new BufferedReader(fr);
+							String contractAddress = br.readLine();
+							//System.out.println(contractAddress);
+							//System.out.println(contractAddressFile.getAbsolutePath());
+							//contractAddressFile.delete();
+							br.close();
 							
-							/*try {
-								//cmd = {"java",outputContractFunctionFile.getAbsolutePath()};
-								System.out.println("java " + outputContractFunctionFile.getAbsolutePath());
-								Runtime.getRuntime().exec("javac " + outputContractFunctionFile.getAbsolutePath());
-								System.out.println("javac " + outputContractFunctionFile.getAbsolutePath());
-								Runtime.getRuntime().exec("java -classpath " + EventPatternsStatus.getGeneratedSmartContractPath() + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation");
-								System.out.println("java -classpath " + EventPatternsStatus.getGeneratedSmartContractPath() + " " + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation");
-								//Runtime.getRuntime().exec("java -classpath " + EventPatternsStatus.getGeneratedSmartContractPath() + " " + eventPatternModel.getSmartContracts().get(i).getTypeName());
-							} catch (IOException ioe) {
-								System.out.println (ioe);
-							} */ 	
+							for(int i = 0; i < smartContractModel.getSmartcontracts().size(); i++) {
+						   		if(smartContractModel.getSmartcontracts().get(i).getTypeName() == smartContractSelected) {
+						   			//System.out.println(smartContractModel.getSmartcontracts().get(i).getTypeName());
+						   			smartContractModel.getSmartcontracts().get(i).setContractAddress(contractAddress);
+						   			modelResource.save(null);
+						   			//System.out.println(smartContractModel.getSmartcontracts().get(i).getContractAddress());
+						   		}
+						   	}
 						}
 					}
 				}	
 			}	
-			
-			
-			
-				
-		
-			
-	        
-	        
-	        
-			
-				
-					
-			
-		    		    
-			
-			
-			
-						
-			
-							
-			
-			
+															        	        	        									
 			MessageDialog.openInformation(shell, "Deploy Smart Contract", 
 		    		"The Smart Contract has been deployed.");	
 			

@@ -39,6 +39,7 @@ import eventpattern.CEPEventPattern;
 import eventpattern.EventpatternPackage;
 import eventpattern.diagram.part.EventpatternDiagramEditor;
 import eventpattern.diagram.status.EventPatternsStatus;
+import es.uca.modeling.cep.app.esper.SmartContractInvocation;
 import es.uca.modeling.cep.eventpattern.m2t.TransformEventPatternToCode;
 
 
@@ -170,6 +171,10 @@ public class GenerateDeployEventPatternHandler extends AbstractHandler {
 				bw = new BufferedWriter(new FileWriter(archivo));
 				bw.write(result);
 				bw.close();
+			}
+			
+			if(eventPatternModel.getSmartContracts().size() > 0) {
+				new SmartContractInvocation(eventPatternModel.getComplexEvent(), eventPatternModel.getSmartContracts());
 			}
 			
 		    // 7º Transform the actions for the event pattern to Mule flow code 

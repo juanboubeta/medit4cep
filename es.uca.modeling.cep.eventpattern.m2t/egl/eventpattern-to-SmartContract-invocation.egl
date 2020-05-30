@@ -1,9 +1,14 @@
 [%
 var count;
 var caterpillar = false;
-var smartcontracts : Sequence = SmartContract.allInstances();
-var s = System.user.choose("Select the Smart Contract to be generated", smartcontracts.collect(e|e.typeName.asString()));
-var sc = collection.selectOne(e|e.asString() = s);
+var sc;
+if(SmartContract.allInstances().size() == 1){
+	sc = SmartContract.allInstances().get(0);
+} else{
+	var smartcontracts : Sequence = SmartContract.allInstances();
+	var s = System.user.choose("Select the Smart Contract to be generated", smartcontracts.collect(e|e.typeName));
+	sc = smartcontracts.selectOne(e|e.typeName = s);
+}
 %]
 
 package Smartcontract_[%=sc.typeName%];

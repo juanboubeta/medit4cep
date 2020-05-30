@@ -1,7 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Smartcontracts
+Bundle-Name: Code
 Bundle-SymbolicName: es.uca.modeling.cep.smartcontract.code
 Bundle-Version: 1.0.0.qualifier
-Automatic-Module-Name: es.uca.modeling.cep.blockchain.smartcontracts
+Bundle-Activator: es.uca.modeling.cep.smartcontract.code.Activator
+Require-Bundle: org.eclipse.ui,
+  org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: es.uca.modeling.cep.smartcontract.code
+Bundle-ActivationPolicy: lazy
+Export-Package: es.uca.modeling.cep.smartcontract.code
+Bundle-ClassPath: lib/console-4.3.0-all.jar,
+ .

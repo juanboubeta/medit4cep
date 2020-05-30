@@ -264,8 +264,6 @@ public class Simulator {
 				while ((len = in.read(buf)) > 0) {
 					out.write(buf, 0, len);
 				}
-				//destinationFile = originFile;
-				//originFile.delete();
 				in.close();
 				out.close();
 				originFile.delete();
