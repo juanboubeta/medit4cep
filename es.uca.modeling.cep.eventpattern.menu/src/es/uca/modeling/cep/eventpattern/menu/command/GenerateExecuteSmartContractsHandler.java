@@ -256,8 +256,8 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 						}
 						
 						//System.out.println(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");
-						File archivo = new File(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");
-	
+						File archivo = new File(projectPath + "\\" + eventPatternModel.getSmartContracts().get(i).getTypeName() + "_invocation_" + eventPatternModel.getPatternName() + ".java");
+						
 						BufferedWriter bw;
 	
 						if(archivo.exists()) {
