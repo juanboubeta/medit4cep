@@ -121,7 +121,10 @@ models.get('/models', (req, res) => {
                             id: data._id,
                             name: data.rootProcessName,
                             bpmn: data.bpmnModel,
-                            solidity: data.solidityCode
+                            solidity: data.solidityCode,
+                            //Added
+                            abi: data.abi,
+                            bin: data.bytecode 
                         })
                     }
                 });
@@ -174,6 +177,11 @@ models.post('/models', (req, res) => {
             Object.keys(output.contracts).forEach(key => {
                 let bytecode = '0x' + output.contracts[key].bytecode;
                 let gasEstimate = web3.eth.estimateGas({data: bytecode});
+                //Added
+                console.log("........................BYTECODE.............");
+                console.log(output.contracts[key].bytecode);
+                console.log("........................ABI CODE.............");
+                console.log(output.contracts[key].interface); 
                 console.log(".............................................");
                 console.log("Contract Name: " + key.split(':')[1]);
                 console.log("Gas Estimation: " + gasEstimate);
@@ -552,7 +560,10 @@ let continueFactoryRegistration = (currentIndex, sortedElements, outputContracts
                         id: bundleId,
                         name: modelInfo.name,
                         bpmn: modelInfo.bpmn,
-                        solidity: modelInfo.solidity
+                        solidity: modelInfo.solidity,
+                        //Added
+                        abi: modelInfo.abi,
+                        bytecode: modelInfo.bytecode
                     });
                     console.log('----------------------------------------------------------------------------------------------');
                 }
