@@ -306,103 +306,106 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 							ContractFunction.setReferencedSmartContract(SmartContract);
 							
 								inputsArray = (JSONArray) functionsArray.get("inputs");
-								for (int j = 0; j < inputsArray.size(); j++) {
-									smartcontract.InputParameter InputParameter = factory.createInputParameter();
-									inputParameter = (JSONObject) inputsArray.get(j);
-									
-									String InputParameterName = (String) inputParameter.get("name");
+								if(inputsArray != null) {
+									for (int j = 0; j < inputsArray.size(); j++) {
+										smartcontract.InputParameter InputParameter = factory.createInputParameter();
+										inputParameter = (JSONObject) inputsArray.get(j);
 										
-									smartcontract.PropertyTypeValue InputParameterType;
-									switch((String) inputParameter.get("type")) {
-									case "bool":
-										InputParameterType = PropertyTypeValue.BOOLEAN;
-										break;
-									case "integer":
-										InputParameterType = PropertyTypeValue.INTEGER;
-										break;
-									case "long":
-										InputParameterType = PropertyTypeValue.LONG;
-										break;
-									case "double":
-										InputParameterType = PropertyTypeValue.DOUBLE;
-										break;
-									case "float":
-										InputParameterType = PropertyTypeValue.FLOAT;
-										break;
-									case "string":
-										InputParameterType = PropertyTypeValue.STRING;
-										break;
-									case "address":
-										InputParameterType = PropertyTypeValue.STRING;
-										break;
-									default:
-										Pattern p = Pattern.compile("int\\d{0,3}");
-									    Matcher mat = p.matcher((String) inputParameter.get("type"));
-										if(mat.matches()) {
+										String InputParameterName = (String) inputParameter.get("name");
+											
+										smartcontract.PropertyTypeValue InputParameterType;
+										switch((String) inputParameter.get("type")) {
+										case "bool":
+											InputParameterType = PropertyTypeValue.BOOLEAN;
+											break;
+										case "integer":
 											InputParameterType = PropertyTypeValue.INTEGER;
-										} else {
-											p = Pattern.compile("uint\\d{0,3}");
-											mat = p.matcher((String) inputParameter.get("type"));
+											break;
+										case "long":
+											InputParameterType = PropertyTypeValue.LONG;
+											break;
+										case "double":
+											InputParameterType = PropertyTypeValue.DOUBLE;
+											break;
+										case "float":
+											InputParameterType = PropertyTypeValue.FLOAT;
+											break;
+										case "string":
+											InputParameterType = PropertyTypeValue.STRING;
+											break;
+										case "address":
+											InputParameterType = PropertyTypeValue.STRING;
+											break;
+										default:
+											Pattern p = Pattern.compile("int\\d{0,3}");
+										    Matcher mat = p.matcher((String) inputParameter.get("type"));
 											if(mat.matches()) {
 												InputParameterType = PropertyTypeValue.INTEGER;
 											} else {
-												InputParameterType = PropertyTypeValue.UNKNOWN;
+												p = Pattern.compile("uint\\d{0,3}");
+												mat = p.matcher((String) inputParameter.get("type"));
+												if(mat.matches()) {
+													InputParameterType = PropertyTypeValue.INTEGER;
+												} else {
+													InputParameterType = PropertyTypeValue.UNKNOWN;
+												}
 											}
 										}
-									}
+											
+										// put the name and type of the input parameter and add into the
+										// ContractFunction List
+										InputParameter.setName(InputParameterName);
+										InputParameter.setType(InputParameterType);
+										InputParameter.setInputReferencedFunction(ContractFunction);
+										ContractFunction.getInputParametersFunction().add(InputParameter);
 										
-									// put the name and type of the input parameter and add into the
-									// ContractFunction List
-									InputParameter.setName(InputParameterName);
-									InputParameter.setType(InputParameterType);
-									InputParameter.setInputReferencedFunction(ContractFunction);
-									ContractFunction.getInputParametersFunction().add(InputParameter);
-									
+									}
 								}
 								
 								outputsArray = (JSONArray) functionsArray.get("outputs");
 								
-								for (int k = 0; k < outputsArray.size(); k++) {
-									smartcontract.OutputParameter OutputParameter = factory.createOutputParameter();
-									outputParameter = (JSONObject) outputsArray.get(k);
-									
-									String OutputParameterName = (String) outputParameter.get("name");
+								if(outputsArray != null) {
+									for (int k = 0; k < outputsArray.size(); k++) {
+										smartcontract.OutputParameter OutputParameter = factory.createOutputParameter();
+										outputParameter = (JSONObject) outputsArray.get(k);
+										String OutputParameterName = (String) outputParameter.get("name");
+											
+										smartcontract.PropertyTypeValue OutputParameterType;
+											
+										switch((String) outputParameter.get("type")) {
+										case "boolean":
+											OutputParameterType = PropertyTypeValue.BOOLEAN;
+											break;
+										case "integer":
+											OutputParameterType = PropertyTypeValue.INTEGER;
+											break;
+										case "long":
+											OutputParameterType = PropertyTypeValue.LONG;
+											break;
+										case "double":
+											OutputParameterType = PropertyTypeValue.DOUBLE;
+											break;
+										case "float":
+											OutputParameterType = PropertyTypeValue.FLOAT;
+											break;
+										case "string":
+											OutputParameterType = PropertyTypeValue.STRING;
+											break;
+										case "address":
+											OutputParameterType = PropertyTypeValue.STRING;
+											break;
+										default:
+											OutputParameterType = PropertyTypeValue.UNKNOWN;
+										}
+											
+										// put the name and type of the input parameter and add into the
+										// ContractFunction List
+										OutputParameter.setName(OutputParameterName);
+										OutputParameter.setType(OutputParameterType);
+										OutputParameter.setOutputReferencedFunction(ContractFunction);
+										ContractFunction.setOutputParametersFunction(OutputParameter);	
 										
-									smartcontract.PropertyTypeValue OutputParameterType;
-										
-									switch((String) outputParameter.get("type")) {
-									case "boolean":
-										OutputParameterType = PropertyTypeValue.BOOLEAN;
-										break;
-									case "integer":
-										OutputParameterType = PropertyTypeValue.INTEGER;
-										break;
-									case "long":
-										OutputParameterType = PropertyTypeValue.LONG;
-										break;
-									case "double":
-										OutputParameterType = PropertyTypeValue.DOUBLE;
-										break;
-									case "float":
-										OutputParameterType = PropertyTypeValue.FLOAT;
-										break;
-									case "string":
-										OutputParameterType = PropertyTypeValue.STRING;
-										break;
-									case "address":
-										OutputParameterType = PropertyTypeValue.STRING;
-										break;
-									default:
-										OutputParameterType = PropertyTypeValue.UNKNOWN;
 									}
-										
-									// put the name and type of the input parameter and add into the
-									// ContractFunction List
-									OutputParameter.setName(OutputParameterName);
-									OutputParameter.setType(OutputParameterType);
-									OutputParameter.setOutputReferencedFunction(ContractFunction);
-									ContractFunction.setOutputParametersFunction(OutputParameter);	
-									
 								}
 							}
 						} // Fin for
