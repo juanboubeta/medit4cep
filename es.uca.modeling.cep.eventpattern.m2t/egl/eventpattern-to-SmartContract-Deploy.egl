@@ -90,11 +90,11 @@ public class [%=s.typeName%]_deploy {
 			.send()
 			.getContractAddress();
 		[%} else if(s.typeName == "Auction") {%]
-			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, BigInteger.valueOf(86400L), "0x2abD29711FF22B5d8C35D6889EE0D956cB05C224")
+			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, BigInteger.valueOf(86400L), credentials.getAddress())
 			.send()
 			.getContractAddress();
 		[%} else if(caterpillar == true) {%]
-			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, "0xF5054783936AeEfaD02befCB54613c642551F601", "0xF5054783936AeEfaD02befCB54613c642551F601", "0xF5054783936AeEfaD02befCB54613c642551F601")
+			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, credentials.getAddress(), credentials.getAddress(), credentials.getAddress())
 			.send()
 			.getContractAddress();
 		[%} else {%]

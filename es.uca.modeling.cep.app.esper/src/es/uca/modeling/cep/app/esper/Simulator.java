@@ -232,9 +232,6 @@ public class Simulator {
 		
 		System.out.println("The simulation has started...");	
 		long start = System.currentTimeMillis();
-		/*String prueba = "es.uca.modeling.cep.app.esper.Voting_invocation";
-		Class c = Class.forName(prueba);
-		c.newInstance();*/
 		coordinator.start();
 		long delta = System.currentTimeMillis() - start;
 		System.out.println("Time execution: " + delta + " milliseconds");
