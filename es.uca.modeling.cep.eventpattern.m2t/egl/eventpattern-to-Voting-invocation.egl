@@ -97,7 +97,7 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 	}
 	
 	private Credentials getCredentialsFromPrivateKey() {
-		//El metodo create recibe una clave privada para generar las credenciales
+		//The create method receives a private key to generate the credentials 
 		return Credentials.create(PRIVATE_KEY);
 	}
 	
