@@ -143,6 +143,27 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 			    }
 			}	
 			
+			
+			boolean Caterpillar = false;
+			
+			for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
+		   		for(int j = 0; j < eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().size(); j++) {
+		   			if(eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("marking") ||
+		   					eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("processRegistry") ||
+		   					eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("broadcastSignal") ||
+		   					eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("startedActivities") ||
+		   					eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("killProcess") ||
+		   					eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("setInstanceIndex") ||
+		   					eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("handleEvent") ||
+		   					eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("startExecution") ||
+		   					eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("getWorklistAddress") ||
+		   					eventPatternModel.getSmartContracts().get(i).getSmartContractProperties().get(j).getName().equals("getInstanceIndex")) {
+		   				Caterpillar = true;
+		   			}
+		   		}
+		   	}
+			
+			
 			// 5º Generate the smartcontracts for the event pattern in java code 
 			
 			if (!eventPatternModel.getSmartContracts().isEmpty()) { // There are actions for the event pattern
@@ -156,10 +177,11 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 						
 				for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
 					
-				if(eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Auction") ||
+				if((eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Auction") ||
 						eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Purchase") ||
 						eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Voting") ||
-						eventPatternModel.getSmartContracts().get(i).getTypeName().equals("VaccineDelivery")) {
+						eventPatternModel.getSmartContracts().get(i).getTypeName().equals("VaccineDelivery"))
+						&& Caterpillar == false) {
 						
 						patternToSmartContractPath = "/egl/eventpattern-to-" + eventPatternModel.getSmartContracts().get(i).getTypeName() +".egl";
 						outputSmartContractFile = new File(EventPatternsStatus.getGeneratedSmartContractPath() + "\\Smartcontract_" + eventPatternModel.getSmartContracts().get(i).getTypeName(), 
@@ -191,7 +213,7 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 					
 				} //Fin-for	
 			}
-						
+			
 			
 			// 6º Transform the invocations of the smartcontracts for the event pattern to java code 
 			
@@ -203,10 +225,11 @@ public class GenerateExecuteSmartContractsHandler extends AbstractHandler {
 				String patternToContractFunctionPath;
 						
 				for(int i = 0; i < eventPatternModel.getSmartContracts().size(); i++) {
-					if(eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Auction") ||
+					if((eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Auction") ||
 							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Purchase") ||
 							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("Voting") ||
-							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("VaccineDelivery")) {
+							eventPatternModel.getSmartContracts().get(i).getTypeName().equals("VaccineDelivery"))
+							&& Caterpillar == false) {
 						
 						sourceModel3 = new InMemoryEmfModel("SourceModel", patternModelResource, EventpatternPackage.eINSTANCE);
 						sourceModel3.setStoredOnDisposal(false);

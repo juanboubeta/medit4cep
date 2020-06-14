@@ -177,8 +177,29 @@ public class DeploySmartContractHandler extends AbstractHandler {
 								runtimeProject.create(null);							
 							}
 							
-							if(smartContractSelected.equals("Auction") || smartContractSelected.equals("Purchase") ||
-									smartContractSelected.equals("Voting") || smartContractSelected.equals("VaccineDelivery")) {
+							boolean Caterpillar = false;
+							
+							
+							for(int i = 0; i < smartContractModel.getSmartcontracts().size(); i++) {
+						   		for(int j = 0; j < smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().size(); j++) {
+						   			if(smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("marking") ||
+						   					smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("processRegistry") ||
+						   					smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("broadcastSignal") ||
+						   					smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("startedActivities") ||
+						   					smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("killProcess") ||
+						   					smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("setInstanceIndex") ||
+						   					smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("handleEvent") ||
+						   					smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("startExecution") ||
+						   					smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("getWorklistAddress") ||
+						   					smartContractModel.getSmartcontracts().get(i).getSmartContractProperties().get(j).getName().equals("getInstanceIndex")) {
+						   				Caterpillar = true;
+						   			}
+						   		}
+						   	}
+							
+							if((smartContractSelected.equals("Auction") || smartContractSelected.equals("Purchase") ||
+									smartContractSelected.equals("Voting") || smartContractSelected.equals("VaccineDelivery"))
+									&& Caterpillar == false) {
 									
 									patternToSmartContractPath = "/egl/eventpattern-to-" + smartContractSelected +".egl";
 									outputSmartContractFile = new File(projectPath, smartContractSelected + ".java");	
