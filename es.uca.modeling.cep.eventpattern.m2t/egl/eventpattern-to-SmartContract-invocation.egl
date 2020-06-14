@@ -39,8 +39,13 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 	[%for(cf: ContractFunction in sc.SmartContractProperties) {
 		if(not cf.inboundLink.isEmpty()){%]
 		[%for(ip : InputParameter in cf.InputParametersFunction){%]
+		[%if(ip.type->toString() == "Integer") {%]
+	private final static BigInteger VAR_[%=ip.name%] = BigInteger.valueOf([%=ip.value%]L);		
+		[%} else if(ip.type->toString() == "Boolean" or ip.type->toString() == "Long" or ip.type->toString() == "Double" or ip.type->toString() == "Float") {%]
+	private final static [%=ip.type%] VAR_[%=ip.name%] = [%=ip.value%];	
+		[%} else {%]
 	private final static [%=ip.type%] VAR_[%=ip.name%] = "[%=ip.value%]";		
-		[%}}}%]	
+		[%}}}}%]	
 		
 	public static void main(String[] args) {
 		try {
