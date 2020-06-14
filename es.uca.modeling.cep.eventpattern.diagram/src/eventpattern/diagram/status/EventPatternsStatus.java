@@ -19,6 +19,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 
+import org.eclipse.core.resources.ResourcesPlugin;
+
 public class EventPatternsStatus {
 	
 	// domainName (a static field) is shared among all the instances of the class
@@ -99,7 +101,8 @@ public class EventPatternsStatus {
 	}
 	
 	public static String getProjectPath() {
-		File projectPathFile = new File("projectPATH.txt");
+		String WorkspaceLocation = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
+		File projectPathFile = new File(WorkspaceLocation + "/projectPATH.txt");
 		if(projectPathFile.exists()) {
 			try {
 				FileReader fr = new FileReader (projectPathFile);
@@ -119,8 +122,10 @@ public class EventPatternsStatus {
 		
 		projectPath = projectpath;
 		
+		String WorkspaceLocation = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
+		//System.out.println(WorkspaceLocation + "/projectPATH.txt");
 		try {
-			File projectPathFile = new File("projectPATH.txt");
+			File projectPathFile = new File(WorkspaceLocation + "/projectPATH.txt");
 			BufferedWriter bw;
 			if(projectPathFile.exists()) {
 				bw = new BufferedWriter(new FileWriter(projectPathFile));
