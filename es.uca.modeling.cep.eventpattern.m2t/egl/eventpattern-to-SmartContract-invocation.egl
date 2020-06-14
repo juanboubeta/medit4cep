@@ -65,14 +65,14 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {
 		if(not cf.inboundLink.isEmpty()){%]
 		[%if(cf.InputParametersFunction.size() == 0  or cf.InputParametersFunction.size() == 1){%]
-		[%=sc.typeName%].[%=cf.name%]([%for(ip : InputParameter in cf.InputParametersFunction){%]VAR_[%=ip.name%][%}%]).send();
+		smartContract.[%=cf.name%]([%for(ip : InputParameter in cf.InputParametersFunction){%]VAR_[%=ip.name%][%}%]).send();
 		[%}}}%]
 		
 		[%for(cf: ContractFunction in sc.SmartContractProperties) {
 		if(not cf.inboundLink.isEmpty()){%]
 		[%if(cf.InputParametersFunction.size() > 1){
 		count = cf.InputParametersFunction.size();%]
-		[%=sc.typeName%].[%=cf.name%]([%for(ip : InputParameter in cf.InputParametersFunction){ if(count > 1){%]VAR_[%=ip.name%],[%count -= 1;} else {%]VAR_[%=ip.name%][% count -= 1;}}%]).send();
+		smartContract.[%=cf.name%]([%for(ip : InputParameter in cf.InputParametersFunction){ if(count > 1){%]VAR_[%=ip.name%],[%count -= 1;} else {%]VAR_[%=ip.name%][% count -= 1;}}%]).send();
 		[%}}}%]
 		
 	}
