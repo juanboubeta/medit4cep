@@ -18,7 +18,7 @@ context SmartContract {
 
   	}
   	
-  	constraint ExistContract {
+  	/*constraint ExistContract {
     
     	guard : self.satisfies('HasContractName')
     
@@ -37,7 +37,7 @@ context SmartContract {
 
         message : m
       
-    } 	
+    } 	*/
     constraint HasPrivateKey {
 
 	    check : self.privateKey.isDefined() and self.privateKey.trim().length() > 0
@@ -77,7 +77,7 @@ context ContractFunction {
         }      
     } 
     
-    constraint ExistFunction {
+    /*constraint ExistFunction {
     
     	guard : self.satisfies('HasFunctiontName')
     
@@ -128,7 +128,7 @@ context ContractFunction {
 
         message : m
       
-    } 	
+    } */	
 }
 
 context Parameter {
@@ -171,7 +171,7 @@ context Parameter {
       
     }
     
-    constraint HasCorrectType {
+    /*constraint HasCorrectType {
     
     	guard : self.satisfies('HasParameterType')
     
@@ -529,5 +529,5 @@ context Parameter {
         }
 
         message : m
-    }
+    }*/
 }
