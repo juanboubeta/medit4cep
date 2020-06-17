@@ -1,3 +1,22 @@
+context SmartContracts {
+	constraint HasSmartContractUniqueTypeName {
+
+        check {
+        	var smartContracts : OrderedSet = self.smartcontracts;
+        
+        	if (smartContracts.size() > 1) {
+	            for (sc : SmartContract in smartContracts) {
+	                if (not (smartContracts.one(c : SmartContract | c.typeName == sc.typeName)))
+                    	return false;  
+	            }    
+            }    
+            return true;  
+        }
+
+        message : "'SmartContract' typeName must be unique."
+    }
+}
+
 context SmartContract {
 	constraint HasContractName {
 
@@ -17,6 +36,8 @@ context SmartContract {
 	    }  
 
   	}
+  	
+  	  
   	
   	/*constraint ExistContract {
     
@@ -75,6 +96,23 @@ context ContractFunction {
                 self.name = name;
             }
         }      
+    } 
+    
+    constraint HasContractFunctionUniqueName {
+
+        check {
+        	var contractFunctions : OrderedSet = self.referencedSmartContract.SmartContractProperties;
+        
+        	if (contractFunctions.size() > 1) {
+	            for (cf : ContractFunction in contractFunctions) {
+	                if (not (contractFunctions.one(c : ContractFunction | c.name == cf.name)))
+                    	return false;  
+	            }    
+            }    
+            return true;  
+        }
+
+        message : "'ContractFunction' name must be unique."
     } 
     
     /*constraint ExistFunction {
@@ -530,4 +568,43 @@ context Parameter {
 
         message : m
     }*/
+}
+
+context InputParameter {
+
+	constraint HasValue {
+
+	    check : self.value.isDefined() and self.value.trim().length() > 0
+	
+	    message : "Attribute 'Value' must be defined."
+	    
+	    fix {
+	        
+	    	title : "Set a value."
+	            
+	        do {
+	        	var entervalue : String;
+	            entervalue = UserInput.prompt("Please enter a value:");
+	            self.value = entervalue;
+	        }
+	    }  
+
+  	}
+
+	constraint HasInputParameterUniqueName {
+
+        check {
+        	var inputParameters : OrderedSet = self.InputReferencedFunction.InputParametersFunction;
+        
+        	if (inputParameters.size() > 1) {
+	            for (ip : InputParameter in inputParameters) {
+	                if (not (inputParameters.one(c : InputParameter | c.name == ip.name)))
+                    	return false;  
+	            }    
+            }    
+            return true;  
+        }
+
+        message : "'InputParameter' name must be unique."
+    } 
 }
