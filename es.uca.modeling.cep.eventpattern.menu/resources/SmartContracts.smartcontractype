@@ -8,7 +8,7 @@
 		"inputs":[{"name":"_index","type":"integer"}],
 		"output": null},
 		{"name":"getVoteForCandidate",
-		"inputs":[{"name":"_index","type":"integer"}],
+		"inputs":[{"name":"_index2","type":"integer"}],
 		"output":{"name":"votes","type":"integer"}},
 		{"name":"getAllCandidatesWithVotes",
 		"inputs":[],
