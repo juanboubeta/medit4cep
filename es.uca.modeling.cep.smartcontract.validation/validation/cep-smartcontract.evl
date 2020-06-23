@@ -37,10 +37,10 @@ context SmartContract {
 
   	}
   	
-  	constraint HasInputParameterUniqueName {
+  	/*constraint HasInputParameterUniqueName {
 
         check {
-                
+                     	
         	if(self.SmartContractProperties.size() > 0){
 	        	for(i in Sequence{1..self.SmartContractProperties.size()}){
 	        		if(self.SmartContractProperties.at(i-1).InputParametersFunction.size() > 0){
@@ -64,7 +64,7 @@ context SmartContract {
         }
 
         message : "'InputParameter' name must be unique."
-    } 
+    } */
   	
   	/*constraint HasOutputParameterUniqueName {
 
@@ -646,7 +646,36 @@ context InputParameter {
 	    }  
 
   	}*/
+	
+	constraint HasInputParameterSmartContractUniqueName {
 
+        check {
+                
+        	if(self.InputReferencedFunction.referencedSmartContract.SmartContractProperties.size() > 0){
+	        	for(i in Sequence{1..self.InputReferencedFunction.referencedSmartContract.SmartContractProperties.size()}){
+	        		if(self.InputReferencedFunction.referencedSmartContract.SmartContractProperties.at(i-1).InputParametersFunction.size() > 0){
+		        		for(j in Sequence{1..self.InputReferencedFunction.referencedSmartContract.SmartContractProperties.at(i-1).InputParametersFunction.size()}){
+		        			var counter : Integer = 0;
+				        	for(cf : ContractFunction in self.InputReferencedFunction.referencedSmartContract.SmartContractProperties){	
+				        		for(ip : InputParameter in cf.InputParametersFunction){
+				                    if (self.name == ip.name){
+				                    	counter++;
+				                    	if(counter > 1)
+				                    		return false;
+				                    }
+				           		}
+				        	}
+			        	}
+			        }
+		        }
+	        }
+
+            return true;  
+        }
+
+        message : "'InputParameter' name must be unique."
+    } 
+	
 	constraint HasInputParameterUniqueName {
 
         check {
