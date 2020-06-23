@@ -572,7 +572,7 @@ context Parameter {
 
 context InputParameter {
 
-	constraint HasValue {
+	/*constraint HasValue {
 
 	    check : self.value.isDefined() and self.value.trim().length() > 0
 	
@@ -589,7 +589,7 @@ context InputParameter {
 	        }
 	    }  
 
-  	}
+  	}*/
 
 	constraint HasInputParameterUniqueName {
 
