@@ -3,6 +3,11 @@ package es.uca.modeling.cep.eventpattern.menu.command;
 import java.io.BufferedWriter;
 import java.io.File;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,11 +17,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
+import javax.swing.JOptionPane;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -46,6 +56,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import es.uca.modeling.cep.eventpattern.menu.dialog.AutodetectSmartContractDialog;
+import es.uca.modeling.cep.eventpattern.menu.dialog.LoadAndModelEtherscanDialog;
 import eventpattern.diagram.status.EventPatternsStatus;
 import smartcontract.ContractFunction;
 import smartcontract.PropertyTypeValue;
@@ -64,8 +75,8 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 		String domainName = EventPatternsStatus.getDomainName();
 		Shell shell = HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell();
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-
-		IProject smartcontractProject = myWorkspaceRoot.getProject("smartcontract");
+		
+		IProject smartcontractsProject = myWorkspaceRoot.getProject("smartcontract");
 		IProject domainProject = myWorkspaceRoot.getProject("domain");
 		IProject runtimeProject = myWorkspaceRoot.getProject(domainName + "_runtime");
 		
@@ -89,70 +100,129 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 		
 		String projectPath = EventPatternsStatus.getProjectPath();
 		
-		//First of all we must check if exist some smart contract project
+		String EtherscanAddress = "";
+		
+		String contractAddress = "";
+		
 		try {
 			if (!domainProject.exists()) {
-	        	MessageDialog.openError(shell, "Load and Model from Solidity File", "A CEP domain must be previously created or imported.");
+	        	MessageDialog.openError(shell, "Load and Model from Etherscan", "A CEP domain must be previously created or imported.");
 	        	return null;	
 			} else {
-				if (!smartcontractProject.exists()) {
+				if (smartcontractsProject.exists()) {
+		        	MessageDialog.openError(shell, "Load and Model from Etherscan", "The editor has already been customised.");
+		        	return null;	
+				}
+				else {
+				
+					LoadAndModelEtherscanDialog dialog = new LoadAndModelEtherscanDialog(shell);
+					dialog.create();
 					
-					//Open the dialog to select the solidity file
-					String solidityPath = null;
-					String smartcontractPath = null;
-					String smartcontractFile = null;
-	
-					FileDialog dialog = new FileDialog(shell, SWT.OPEN);
-					dialog.setText("Select the Solidity File to be imported.");
+					if (dialog.open() == Window.OK) {
+						
+						contractAddress = dialog.getAddress();
+						
+						EtherscanAddress = "https://api.etherscan.io/api?module=contract&action=getsourcecode&address=" + contractAddress + "&apikey=V4NAYD81I26SR7JJM8PYJKK56EB2FUVAJE";
+					} 		
+				}
+				
+				//Connect to the API and get the models
+				URL url = new URL(EtherscanAddress);
+	            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+	            conn.setRequestMethod("GET");
+	            conn.setRequestProperty("Accept", "application/json");
+	            if (conn.getResponseCode() != 200) {
+	                throw new RuntimeException("Failed : HTTP Error code : "
+	                        + conn.getResponseCode());
+	            }
+	            InputStreamReader in = new InputStreamReader(conn.getInputStream());
+	            BufferedReader br = new BufferedReader(in);
+	            Set<String> EtherscanContract = new HashSet<String>();
+	            //HashMap<Object, String> modelsWithABI = new HashMap<Object, String>();
+	            //HashMap<Object, String> modelsWithBIN = new HashMap<Object, String>();
+	            String output;
+	            
+	            while ((output = br.readLine()) != null) {
+	            	EtherscanContract.add(output);
+	            }
+	            conn.disconnect();
+	            
+	            //Parse the models to JSON
+	            JSONParser parser = new JSONParser();
+	            
+	            Iterator<String> it = EtherscanContract.iterator();
+	            JSONObject modelJSON = (JSONObject) new JSONParser().parse(it.next());
+	            JSONArray jsonArray = (JSONArray) modelJSON.get("result");
+	            
+	          	for (int i = 0; i < jsonArray.size(); i++) {
+	          		modelJSON = (JSONObject) jsonArray.get(i);
+	          		//System.out.println(modelJSON.get("SourceCode").toString());
+	          		System.out.println(modelJSON.get("ABI").toString());
+	          		System.out.println(modelJSON.get("ContractName").toString());
+	          	}
+	                
+		            //System.out.println(s);
+		            //System.out.println(modelsWithABI.get(s));
+		            
+		            //Generating java smart contract from abi file
+		            //System.out.println(smartcontractsProject.toString());
+					//String ruta = smartcontractsProject.toString() + "GeneracionJava.ps1";
+					//String rutaABI = smartcontractsProject.toString() + "/" + s + ".abi";
+					//File archivo = new File("GeneracionJava.ps1");
+					//File ABI = new File(s + ".abi");
+					//File BIN = new File(s + ".bin");
+					//System.out.println(ABI);
+					//BufferedWriter bw;
+					//System.out.println(modelsWithABI.get(s));
+					/*if(ABI.exists()) {
+						bw = new BufferedWriter(new FileWriter(ABI));
+						bw.write(modelsWithABI.get(s));
+						bw.close();
+					} else {
+						bw = new BufferedWriter(new FileWriter(ABI));
+						bw.write(modelsWithABI.get(s));
+						bw.close();
+					}*/
 					
-					dialog.setFilterExtensions(new String[] { "*.sol" });
+					/*if(BIN.exists()) {
+						bw = new BufferedWriter(new FileWriter(BIN));
+						bw.write(modelsWithBIN.get(s));
+						bw.close();
+					} else {
+						bw = new BufferedWriter(new FileWriter(BIN));
+						bw.write(modelsWithBIN.get(s));
+						bw.close();
+					}*/
 					
-					dialog.setFilterNames(new String[] { "Solidity Files (*.sol)" });
-					dialog.open();
-	
-					if (dialog.getFileName() != null && !dialog.getFileName().equals("")) {
-						smartcontractFile = dialog.getFileName();
-						//String name = smartcontractFile.replace(".sol", "");
-						//EventPatternsStatus.setSmartcontractsName(name);
-						solidityPath = dialog.getFilterPath();
-						smartcontractPath = solidityPath + "/" + smartcontractFile;
+					if(!runtimeProject.exists()) {
+						runtimeProject.create(null);							
 					}
 					
-					System.out.println(smartcontractPath);
+					//File archivo = new File(myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "\\" + eventPatternModel.getPatternName() + ".epl");			
 					
-					//Generating bin and abi files from solidity file
-					try {
-						String [] cmd = {"solc", smartcontractPath,"--bin", "--abi", "--optimize", "-o", solidityPath}; //Comando de apagado en windows
-						System.out.println(cmd);
-						Runtime.getRuntime().exec(cmd);
-					} catch (IOException ioe) {
-						System.out.println(ioe);
-					}
-					
-					//Generating java smart contract from abi and bin files
-					String ruta = solidityPath + "/GeneracionJava.ps1";
-					File archivo = new File(ruta);
-					String abiPath = solidityPath + "/" + smartcontractFile.replace(".sol", ".abi");
-					String binPath = solidityPath + "/" + smartcontractFile.replace(".sol", ".bin");
-					BufferedWriter bw;
-					//System.out.println("web3j " + "solidity " + "generate " + "-a " + '"' + abiPath + '"' + " -b " + '"' + binPath + '"' + " -o " + '"' + myWorkspaceRoot.getLocation().toString() + runtimeProject.getFullPath() + "/" + '"' + " -p " + "es.uca.modeling.cep.smartcontract.code");
-					if(archivo.exists()) {
+					/*if(archivo.exists()) {
 						bw = new BufferedWriter(new FileWriter(archivo));
-					    bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + abiPath + '"' + " -b " + '"' + binPath + '"' + " -o " + '"' + projectPath.replace("es\\uca\\modeling\\cep\\smartcontract\\code", "") + '"' + " -p " + "es.uca.modeling.cep.smartcontract.code");
+					    bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -b " + '"' + BIN.getAbsolutePath() + '"' + " -o " + '"' + projectPath.replace("es\\uca\\modeling\\cep\\smartcontract\\code", "") + '"' + " -p "  + "es.uca.modeling.cep.smartcontract.code");
 					    bw.close();
 					} else {
 						bw = new BufferedWriter(new FileWriter(archivo));
-						bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + abiPath + '"' + " -b " + '"' + binPath + '"' + " -o " + '"' + projectPath.replace("es\\uca\\modeling\\cep\\smartcontract\\code", "") + '"' + " -p " + "es.uca.modeling.cep.smartcontract.code");
-						bw.close();
-					}
-	
-					try {
-						String [] cmd = {"PowerShell.exe","-Command",ruta}; //Comando de apagado en windows
+						bw.write("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -b " + '"' + BIN.getAbsolutePath() + '"' + " -o " + '"' + projectPath.replace("es\\uca\\modeling\\cep\\smartcontract\\code", "") + '"' + " -p "  + "es.uca.modeling.cep.smartcontract.code");
+					    bw.close();
+					}*/
+		
+					//System.out.println("web3j " + "solidity " + "generate " + "-a " + '"' + ABI.getAbsolutePath() + '"' + " -o " + '"' + archivo.getAbsolutePath().replace("\\GeneracionJava.ps1", "") + '"' + " -p Smartcontract_" + s);
+					//System.out.println("PowerShell.exe" + " -Command " + '"' + archivo.getAbsolutePath() + '"');
+					
+					/*try {
+						String [] cmd = {"PowerShell.exe","-Command","./GeneracionJava.ps1"};
 						Runtime.getRuntime().exec(cmd);
 					} catch (IOException ioe) {
 						System.out.println (ioe);
-					}
-										
+					}*/
+					
+					//System.out.println(ABI.getAbsolutePath());
+					//System.out.println(archivo.getAbsolutePath());
+		                   			
 					//Auto initializing smart contract from abi file
 					AutodetectSmartContractDialog newDialog = new AutodetectSmartContractDialog(shell);
 					newDialog.create();
@@ -160,35 +230,32 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 					if (newDialog.open() != Window.OK) {
 						return null;
 					}
-					
-					JSONParser parser = new JSONParser();
-	
+		
 					// Create local variables
 					JSONObject outputParameter;
 					JSONArray inputsArray;
 					JSONArray outputsArray;
 					JSONObject inputParameter;
-	
+		
 					// Open the file .abi that contains solidity in JSON format.
 					
-					final String smartcontractype = solidityPath + "/" + smartcontractFile.replace(".sol", ".abi");
-					Object array = parser.parse(new FileReader(smartcontractype));
-					JSONArray jsonArray = (JSONArray) array;
-	
+					Object array = parser.parse(modelJSON.get("ABI").toString());
+					jsonArray = (JSONArray) array;
+		
 					String name = newDialog.getSmartContractsName();
 					String description = newDialog.getSmartContractsDescription();
-					smartcontractProject.create(null);
+					smartcontractsProject.create(null);
 					EventPatternsStatus.setSmartcontractsName(name);
-	
+		
 					// Open if necessary
-					if (!smartcontractProject.isOpen()) {
-						smartcontractProject.open(null);
+					if (!smartcontractsProject.isOpen()) {
+						smartcontractsProject.open(null);
 					}
 					
 					URI diagramUri = URI.createPlatformResourceURI(
-							smartcontractProject.getFile(name + ".smartc_diagram").getFullPath().toString(), false);
+							smartcontractsProject.getFile(name + ".smartc_diagram").getFullPath().toString(), false);
 					URI modelUri = URI.createPlatformResourceURI(
-							smartcontractProject.getFile(name + ".smartc").getFullPath().toString(), false);
+							smartcontractsProject.getFile(name + ".smartc").getFullPath().toString(), false);
 					Resource diagramResource = SmartcontractDiagramEditorUtil.createDiagram(diagramUri, modelUri,
 							new NullProgressMonitor());
 					
@@ -207,12 +274,13 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 							smartcontract.SmartContract SmartContract = factory.createSmartContract();
 							
 							// put the name of the smart contract and add into the SmartContracts List
-							SmartContract.setTypeName(smartcontractFile.replace(".sol", ""));
+							SmartContract.setTypeName(modelJSON.get("ContractName").toString());
+							SmartContract.setContractAddress(contractAddress);
 							smartcontracts.getSmartcontracts().add(SmartContract);
 							
 							//modificar a partir de aqui la lectura del ABI						
 							for (int i = 0; i < jsonArray.size(); i++) {
-	
+		
 								JSONObject functionsArray = (JSONObject) jsonArray.get(i);
 								if(functionsArray.get("name") != null) {
 								smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
@@ -225,107 +293,110 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 								ContractFunction.setReferencedSmartContract(SmartContract);
 								
 									inputsArray = (JSONArray) functionsArray.get("inputs");
-									for (int j = 0; j < inputsArray.size(); j++) {
-										smartcontract.InputParameter InputParameter = factory.createInputParameter();
-										inputParameter = (JSONObject) inputsArray.get(j);
-										
-										String InputParameterName = (String) inputParameter.get("name");
+									if(inputsArray != null) {
+										for (int j = 0; j < inputsArray.size(); j++) {
+											smartcontract.InputParameter InputParameter = factory.createInputParameter();
+											inputParameter = (JSONObject) inputsArray.get(j);
 											
-										smartcontract.PropertyTypeValue InputParameterType;
-										switch((String) inputParameter.get("type")) {
-										case "bool":
-											InputParameterType = PropertyTypeValue.BOOLEAN;
-											break;
-										case "integer":
-											InputParameterType = PropertyTypeValue.INTEGER;
-											break;
-										case "long":
-											InputParameterType = PropertyTypeValue.LONG;
-											break;
-										case "double":
-											InputParameterType = PropertyTypeValue.DOUBLE;
-											break;
-										case "float":
-											InputParameterType = PropertyTypeValue.FLOAT;
-											break;
-										case "string":
-											InputParameterType = PropertyTypeValue.STRING;
-											break;
-										case "address":
-											InputParameterType = PropertyTypeValue.STRING;
-											break;
-										default:
-											Pattern p = Pattern.compile("int\\d{0,3}");
-										    Matcher mat = p.matcher((String) inputParameter.get("type"));
-											if(mat.matches()) {
+											String InputParameterName = (String) inputParameter.get("name");
+												
+											smartcontract.PropertyTypeValue InputParameterType;
+											switch((String) inputParameter.get("type")) {
+											case "bool":
+												InputParameterType = PropertyTypeValue.BOOLEAN;
+												break;
+											case "integer":
 												InputParameterType = PropertyTypeValue.INTEGER;
-											} else {
-												p = Pattern.compile("uint\\d{0,3}");
-												mat = p.matcher((String) inputParameter.get("type"));
+												break;
+											case "long":
+												InputParameterType = PropertyTypeValue.LONG;
+												break;
+											case "double":
+												InputParameterType = PropertyTypeValue.DOUBLE;
+												break;
+											case "float":
+												InputParameterType = PropertyTypeValue.FLOAT;
+												break;
+											case "string":
+												InputParameterType = PropertyTypeValue.STRING;
+												break;
+											case "address":
+												InputParameterType = PropertyTypeValue.STRING;
+												break;
+											default:
+												Pattern p = Pattern.compile("int\\d{0,3}");
+											    Matcher mat = p.matcher((String) inputParameter.get("type"));
 												if(mat.matches()) {
 													InputParameterType = PropertyTypeValue.INTEGER;
 												} else {
-													InputParameterType = PropertyTypeValue.UNKNOWN;
+													p = Pattern.compile("uint\\d{0,3}");
+													mat = p.matcher((String) inputParameter.get("type"));
+													if(mat.matches()) {
+														InputParameterType = PropertyTypeValue.INTEGER;
+													} else {
+														InputParameterType = PropertyTypeValue.UNKNOWN;
+													}
 												}
 											}
-										}
+												
+											// put the name and type of the input parameter and add into the
+											// ContractFunction List
+											InputParameter.setName(InputParameterName);
+											InputParameter.setType(InputParameterType);
+											InputParameter.setInputReferencedFunction(ContractFunction);
+											ContractFunction.getInputParametersFunction().add(InputParameter);
 											
-										// put the name and type of the input parameter and add into the
-										// ContractFunction List
-										InputParameter.setName(InputParameterName);
-										InputParameter.setType(InputParameterType);
-										InputParameter.setInputReferencedFunction(ContractFunction);
-										ContractFunction.getInputParametersFunction().add(InputParameter);
-										
+										}
 									}
 									
 									outputsArray = (JSONArray) functionsArray.get("outputs");
 									
-									for (int k = 0; k < outputsArray.size(); k++) {
-										smartcontract.OutputParameter OutputParameter = factory.createOutputParameter();
-										outputParameter = (JSONObject) outputsArray.get(k);
-										
-										String OutputParameterName = (String) outputParameter.get("name");
+									if(outputsArray != null) {
+										for (int k = 0; k < outputsArray.size(); k++) {
+											smartcontract.OutputParameter OutputParameter = factory.createOutputParameter();
+											outputParameter = (JSONObject) outputsArray.get(k);
+											String OutputParameterName = (String) outputParameter.get("name");
+												
+											smartcontract.PropertyTypeValue OutputParameterType;
+												
+											switch((String) outputParameter.get("type")) {
+											case "boolean":
+												OutputParameterType = PropertyTypeValue.BOOLEAN;
+												break;
+											case "integer":
+												OutputParameterType = PropertyTypeValue.INTEGER;
+												break;
+											case "long":
+												OutputParameterType = PropertyTypeValue.LONG;
+												break;
+											case "double":
+												OutputParameterType = PropertyTypeValue.DOUBLE;
+												break;
+											case "float":
+												OutputParameterType = PropertyTypeValue.FLOAT;
+												break;
+											case "string":
+												OutputParameterType = PropertyTypeValue.STRING;
+												break;
+											case "address":
+												OutputParameterType = PropertyTypeValue.STRING;
+												break;
+											default:
+												OutputParameterType = PropertyTypeValue.UNKNOWN;
+											}
+												
+											// put the name and type of the input parameter and add into the
+											// ContractFunction List
+											OutputParameter.setName(OutputParameterName);
+											OutputParameter.setType(OutputParameterType);
+											OutputParameter.setOutputReferencedFunction(ContractFunction);
+											ContractFunction.setOutputParametersFunction(OutputParameter);	
 											
-										smartcontract.PropertyTypeValue OutputParameterType;
-											
-										switch((String) outputParameter.get("type")) {
-										case "boolean":
-											OutputParameterType = PropertyTypeValue.BOOLEAN;
-											break;
-										case "integer":
-											OutputParameterType = PropertyTypeValue.INTEGER;
-											break;
-										case "long":
-											OutputParameterType = PropertyTypeValue.LONG;
-											break;
-										case "double":
-											OutputParameterType = PropertyTypeValue.DOUBLE;
-											break;
-										case "float":
-											OutputParameterType = PropertyTypeValue.FLOAT;
-											break;
-										case "string":
-											OutputParameterType = PropertyTypeValue.STRING;
-											break;
-										case "address":
-											OutputParameterType = PropertyTypeValue.STRING;
-											break;
-										default:
-											OutputParameterType = PropertyTypeValue.UNKNOWN;
 										}
-											
-										// put the name and type of the input parameter and add into the
-										// ContractFunction List
-										OutputParameter.setName(OutputParameterName);
-										OutputParameter.setType(OutputParameterType);
-										OutputParameter.setOutputReferencedFunction(ContractFunction);
-										ContractFunction.setOutputParametersFunction(OutputParameter);	
-										
 									}
 								}
 							} // Fin for
-	
+		
 							modelResource.save(null);
 							
 							SmartcontractDiagramEditorUtil.openDiagram(diagramResource);
@@ -338,18 +409,13 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 						} catch (Exception e) {
 							e.printStackTrace();
 						} // Fin try-catch
-					} //Fin if sin else
-					
-				} else {
-					MessageDialog.openError(shell, "Load and Model from Solidity File",
-							"The editor has already been customised.");
-				}
+					} //Fin if sin else	          	
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-
-		return null;
+		} 						
+				
+		return null; 
 
 	}
 
