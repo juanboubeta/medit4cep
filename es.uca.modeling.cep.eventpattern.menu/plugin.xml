@@ -146,6 +146,11 @@
                   style="push">
             </command>
             <command
+                  commandId="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelEtherscan"
+                  label="Load and Model from Etherscan"
+                  style="push">
+            </command>
+            <command
                   commandId="es.uca.modeling.cep.eventpattern.menu.command.DeploySmartContract"
                   label="Deploy Smart Contract"
                   style="push">
@@ -377,6 +382,11 @@
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelCaterpillarHandler"
             id="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelFromCaterpillar"
             name="LoadAndModelFromCaterpillar">
+      </command>
+      <command
+            defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelEtherscanHandler"
+            id="es.uca.modeling.cep.eventpattern.menu.command.LoadAndModelEtherscan"
+            name="LoadAndModelEtherscan">
       </command>
       <command
             defaultHandler="es.uca.modeling.cep.eventpattern.menu.command.DeploySmartContractHandler"
