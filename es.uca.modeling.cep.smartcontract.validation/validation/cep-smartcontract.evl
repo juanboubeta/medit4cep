@@ -647,7 +647,7 @@ context InputParameter {
 
   	}*/
 	
-	constraint HasInputParameterSmartContractUniqueName {
+	/*constraint HasInputParameterSmartContractUniqueName {
 
         check {
                 
@@ -674,7 +674,7 @@ context InputParameter {
         }
 
         message : "'InputParameter' name must be unique."
-    } 
+    } */
 	
 	constraint HasInputParameterUniqueName {
 
