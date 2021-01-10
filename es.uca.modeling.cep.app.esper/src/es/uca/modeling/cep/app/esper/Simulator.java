@@ -263,7 +263,7 @@ public class Simulator {
 				}
 				in.close();
 				out.close();
-				originFile.delete();
+				//originFile.delete();
 			}
 		}
 		
