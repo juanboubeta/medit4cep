@@ -724,3 +724,22 @@ context OutputParameter {
         message : "'OutputParameter' name must be unique."
     }  
 }
+
+context ConstructorParameter {	
+	constraint HasConstructorParameterUniqueName {
+
+        check {
+        	var constructorParameters : OrderedSet = self.ConstructorParameterReferencedContract.ConstructorParametersContract;
+        
+        	if (constructorParameters.size() > 1) {
+	            for (cp : ConstructorParameter in constructorParameters) {
+	                if (not (constructorParameters.one(c : ConstructorParameter | c.name == cp.name)))
+                    	return false;  
+	            }    
+            }    
+            return true;  
+        }
+
+        message : "'ConstructorParameter' name must be unique."
+    } 
+}
