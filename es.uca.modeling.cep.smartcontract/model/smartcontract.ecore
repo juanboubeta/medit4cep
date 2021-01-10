@@ -34,6 +34,12 @@
         <details key="layout" value="list"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConstructorParametersContract"
+        upperBound="-1" eType="#//ConstructorParameter" containment="true" eOpposite="#//ConstructorParameter/ConstructorParameterReferencedContract">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContractFunction">
     <eAnnotations source="gmf.node">
@@ -89,6 +95,19 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="OutputReferencedFunction"
         eType="#//ContractFunction" eOpposite="#//ContractFunction/OutputParametersFunction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorParameter" eSuperTypes="#//Parameter">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="name"/>
+      <details key="border.color" value="110,110,110"/>
+      <details key="tool.name" value="Constructor Parameter"/>
+      <details key="tool.description" value="Add an Constructor Parameter"/>
+      <details key="resizable" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConstructorParameterReferencedContract"
+        eType="#//SmartContract" eOpposite="#//SmartContract/ConstructorParametersContract"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PropertyTypeValue">
     <eLiterals name="Unknown"/>

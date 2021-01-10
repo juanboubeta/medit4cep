@@ -104,6 +104,13 @@ public class SmartcontractSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SmartcontractPackage.CONSTRUCTOR_PARAMETER: {
+				ConstructorParameter constructorParameter = (ConstructorParameter)theEObject;
+				T result = caseConstructorParameter(constructorParameter);
+				if (result == null) result = caseParameter(constructorParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -195,6 +202,21 @@ public class SmartcontractSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOutputParameter(OutputParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constructor Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constructor Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstructorParameter(ConstructorParameter object) {
 		return null;
 	}
 

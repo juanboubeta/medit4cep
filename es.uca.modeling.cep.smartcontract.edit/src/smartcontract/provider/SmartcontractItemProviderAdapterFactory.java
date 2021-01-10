@@ -187,6 +187,29 @@ public class SmartcontractItemProviderAdapterFactory extends SmartcontractAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link smartcontract.ConstructorParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConstructorParameterItemProvider constructorParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link smartcontract.ConstructorParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConstructorParameterAdapter() {
+		if (constructorParameterItemProvider == null) {
+			constructorParameterItemProvider = new ConstructorParameterItemProvider(this);
+		}
+
+		return constructorParameterItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,6 +313,7 @@ public class SmartcontractItemProviderAdapterFactory extends SmartcontractAdapte
 		if (contractFunctionItemProvider != null) contractFunctionItemProvider.dispose();
 		if (inputParameterItemProvider != null) inputParameterItemProvider.dispose();
 		if (outputParameterItemProvider != null) outputParameterItemProvider.dispose();
+		if (constructorParameterItemProvider != null) constructorParameterItemProvider.dispose();
 	}
 
 }

@@ -176,13 +176,22 @@ public interface SmartcontractPackage extends EPackage {
 	int SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = 5;
 
 	/**
+	 * The feature id for the '<em><b>Constructor Parameters Contract</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT = 6;
+
+	/**
 	 * The number of structural features of the '<em>Smart Contract</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SMART_CONTRACT_FEATURE_COUNT = 6;
+	int SMART_CONTRACT_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link smartcontract.impl.ContractFunctionImpl <em>Contract Function</em>}' class.
@@ -387,6 +396,61 @@ public interface SmartcontractPackage extends EPackage {
 	int OUTPUT_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link smartcontract.impl.ConstructorParameterImpl <em>Constructor Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smartcontract.impl.ConstructorParameterImpl
+	 * @see smartcontract.impl.SmartcontractPackageImpl#getConstructorParameter()
+	 * @generated
+	 */
+	int CONSTRUCTOR_PARAMETER = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PARAMETER__NAME = PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PARAMETER__TYPE = PARAMETER__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PARAMETER__VALUE = PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Constructor Parameter Referenced Contract</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PARAMETER__CONSTRUCTOR_PARAMETER_REFERENCED_CONTRACT = PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Constructor Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_PARAMETER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link smartcontract.PropertyTypeValue <em>Property Type Value</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -394,7 +458,7 @@ public interface SmartcontractPackage extends EPackage {
 	 * @see smartcontract.impl.SmartcontractPackageImpl#getPropertyTypeValue()
 	 * @generated
 	 */
-	int PROPERTY_TYPE_VALUE = 6;
+	int PROPERTY_TYPE_VALUE = 7;
 
 
 	/**
@@ -526,6 +590,17 @@ public interface SmartcontractPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSmartContract_SmartContractProperties();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link smartcontract.SmartContract#getConstructorParametersContract <em>Constructor Parameters Contract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Constructor Parameters Contract</em>'.
+	 * @see smartcontract.SmartContract#getConstructorParametersContract()
+	 * @see #getSmartContract()
+	 * @generated
+	 */
+	EReference getSmartContract_ConstructorParametersContract();
 
 	/**
 	 * Returns the meta object for class '{@link smartcontract.ContractFunction <em>Contract Function</em>}'.
@@ -678,6 +753,38 @@ public interface SmartcontractPackage extends EPackage {
 	EReference getOutputParameter_OutputReferencedFunction();
 
 	/**
+	 * Returns the meta object for class '{@link smartcontract.ConstructorParameter <em>Constructor Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constructor Parameter</em>'.
+	 * @see smartcontract.ConstructorParameter
+	 * @generated
+	 */
+	EClass getConstructorParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smartcontract.ConstructorParameter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see smartcontract.ConstructorParameter#getValue()
+	 * @see #getConstructorParameter()
+	 * @generated
+	 */
+	EAttribute getConstructorParameter_Value();
+
+	/**
+	 * Returns the meta object for the container reference '{@link smartcontract.ConstructorParameter#getConstructorParameterReferencedContract <em>Constructor Parameter Referenced Contract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Constructor Parameter Referenced Contract</em>'.
+	 * @see smartcontract.ConstructorParameter#getConstructorParameterReferencedContract()
+	 * @see #getConstructorParameter()
+	 * @generated
+	 */
+	EReference getConstructorParameter_ConstructorParameterReferencedContract();
+
+	/**
 	 * Returns the meta object for enum '{@link smartcontract.PropertyTypeValue <em>Property Type Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -810,6 +917,14 @@ public interface SmartcontractPackage extends EPackage {
 		EReference SMART_CONTRACT__SMART_CONTRACT_PROPERTIES = eINSTANCE.getSmartContract_SmartContractProperties();
 
 		/**
+		 * The meta object literal for the '<em><b>Constructor Parameters Contract</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT = eINSTANCE.getSmartContract_ConstructorParametersContract();
+
+		/**
 		 * The meta object literal for the '{@link smartcontract.impl.ContractFunctionImpl <em>Contract Function</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -928,6 +1043,32 @@ public interface SmartcontractPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OUTPUT_PARAMETER__OUTPUT_REFERENCED_FUNCTION = eINSTANCE.getOutputParameter_OutputReferencedFunction();
+
+		/**
+		 * The meta object literal for the '{@link smartcontract.impl.ConstructorParameterImpl <em>Constructor Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smartcontract.impl.ConstructorParameterImpl
+		 * @see smartcontract.impl.SmartcontractPackageImpl#getConstructorParameter()
+		 * @generated
+		 */
+		EClass CONSTRUCTOR_PARAMETER = eINSTANCE.getConstructorParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRUCTOR_PARAMETER__VALUE = eINSTANCE.getConstructorParameter_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Constructor Parameter Referenced Contract</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSTRUCTOR_PARAMETER__CONSTRUCTOR_PARAMETER_REFERENCED_CONTRACT = eINSTANCE.getConstructorParameter_ConstructorParameterReferencedContract();
 
 		/**
 		 * The meta object literal for the '{@link smartcontract.PropertyTypeValue <em>Property Type Value</em>}' enum.

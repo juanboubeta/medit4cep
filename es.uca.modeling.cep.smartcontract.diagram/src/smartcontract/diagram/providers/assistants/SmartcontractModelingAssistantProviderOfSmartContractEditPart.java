@@ -24,8 +24,9 @@ public class SmartcontractModelingAssistantProviderOfSmartContractEditPart
 	@Override
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
-		List<IElementType> types = new ArrayList<IElementType>(1);
+		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(SmartcontractElementTypes.ContractFunction_3009);
+		types.add(SmartcontractElementTypes.ConstructorParameter_3012);
 		return types;
 	}
 

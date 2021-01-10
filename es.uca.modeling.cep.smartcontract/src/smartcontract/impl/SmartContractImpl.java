@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import smartcontract.ConstructorParameter;
 import smartcontract.ContractFunction;
 import smartcontract.SmartContract;
 import smartcontract.SmartcontractPackage;
@@ -37,6 +38,7 @@ import smartcontract.SmartcontractPackage;
  *   <li>{@link smartcontract.impl.SmartContractImpl#getContractAddress <em>Contract Address</em>}</li>
  *   <li>{@link smartcontract.impl.SmartContractImpl#getContractfunctions <em>Contractfunctions</em>}</li>
  *   <li>{@link smartcontract.impl.SmartContractImpl#getSmartContractProperties <em>Smart Contract Properties</em>}</li>
+ *   <li>{@link smartcontract.impl.SmartContractImpl#getConstructorParametersContract <em>Constructor Parameters Contract</em>}</li>
  * </ul>
  *
  * @generated
@@ -141,6 +143,16 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 	 * @ordered
 	 */
 	protected EList<ContractFunction> smartContractProperties;
+
+	/**
+	 * The cached value of the '{@link #getConstructorParametersContract() <em>Constructor Parameters Contract</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConstructorParametersContract()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConstructorParameter> constructorParametersContract;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,12 +286,26 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ConstructorParameter> getConstructorParametersContract() {
+		if (constructorParametersContract == null) {
+			constructorParametersContract = new EObjectContainmentWithInverseEList<ConstructorParameter>(ConstructorParameter.class, this, SmartcontractPackage.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT, SmartcontractPackage.CONSTRUCTOR_PARAMETER__CONSTRUCTOR_PARAMETER_REFERENCED_CONTRACT);
+		}
+		return constructorParametersContract;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SmartcontractPackage.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSmartContractProperties()).basicAdd(otherEnd, msgs);
+			case SmartcontractPackage.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstructorParametersContract()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -296,6 +322,8 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 				return ((InternalEList<?>)getContractfunctions()).basicRemove(otherEnd, msgs);
 			case SmartcontractPackage.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES:
 				return ((InternalEList<?>)getSmartContractProperties()).basicRemove(otherEnd, msgs);
+			case SmartcontractPackage.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT:
+				return ((InternalEList<?>)getConstructorParametersContract()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -320,6 +348,8 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 				return getContractfunctions();
 			case SmartcontractPackage.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES:
 				return getSmartContractProperties();
+			case SmartcontractPackage.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT:
+				return getConstructorParametersContract();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -353,6 +383,10 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 				getSmartContractProperties().clear();
 				getSmartContractProperties().addAll((Collection<? extends ContractFunction>)newValue);
 				return;
+			case SmartcontractPackage.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT:
+				getConstructorParametersContract().clear();
+				getConstructorParametersContract().addAll((Collection<? extends ConstructorParameter>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -383,6 +417,9 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 			case SmartcontractPackage.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES:
 				getSmartContractProperties().clear();
 				return;
+			case SmartcontractPackage.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT:
+				getConstructorParametersContract().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -407,6 +444,8 @@ public class SmartContractImpl extends EObjectImpl implements SmartContract {
 				return contractfunctions != null && !contractfunctions.isEmpty();
 			case SmartcontractPackage.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES:
 				return smartContractProperties != null && !smartContractProperties.isEmpty();
+			case SmartcontractPackage.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT:
+				return constructorParametersContract != null && !constructorParametersContract.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

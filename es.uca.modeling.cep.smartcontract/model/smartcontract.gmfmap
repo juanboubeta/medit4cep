@@ -21,9 +21,30 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="smartcontract.gmftool#//@palette/@tools.0/@tools.3"/>
+          href="smartcontract.gmftool#//@palette/@tools.0/@tools.4"/>
       <diagramNode
           href="smartcontract.gmfgraph#SmartContract"/>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="smartcontract.ecore#//SmartContract/ConstructorParametersContract"/>
+        <ownedChild>
+          <domainMetaElement
+              href="smartcontract.ecore#//ConstructorParameter"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="smartcontract.gmfgraph#ConstructorParameterLabel"/>
+            <features
+                href="smartcontract.ecore#//Parameter/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="smartcontract.gmftool#//@palette/@tools.0/@tools.0"/>
+          <diagramNode
+              href="smartcontract.gmfgraph#ConstructorParameter"/>
+        </ownedChild>
+      </children>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -41,11 +62,11 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="smartcontract.gmftool#//@palette/@tools.0/@tools.0"/>
+              href="smartcontract.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="smartcontract.gmfgraph#ContractFunction"/>
           <children
-              compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
+              compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
             <containmentFeature
                 href="smartcontract.ecore#//ContractFunction/InputParametersFunction"/>
             <ownedChild>
@@ -60,13 +81,13 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="smartcontract.gmftool#//@palette/@tools.0/@tools.1"/>
+                  href="smartcontract.gmftool#//@palette/@tools.0/@tools.2"/>
               <diagramNode
                   href="smartcontract.gmfgraph#InputParameter"/>
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.1">
+              compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@compartments.1">
             <containmentFeature
                 href="smartcontract.ecore#//ContractFunction/OutputParametersFunction"/>
             <ownedChild>
@@ -81,27 +102,32 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="smartcontract.gmftool#//@palette/@tools.0/@tools.2"/>
+                  href="smartcontract.gmftool#//@palette/@tools.0/@tools.3"/>
               <diagramNode
                   href="smartcontract.gmfgraph#OutputParameter"/>
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0">
+              children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.0">
             <compartment
                 href="smartcontract.gmfgraph#ContractFunctionInputParametersFunctionCompartment"/>
           </compartments>
           <compartments
-              children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1">
+              children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.1">
             <compartment
                 href="smartcontract.gmfgraph#ContractFunctionOutputParametersFunctionCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0">
+          children="//@nodes.0/@ownedChild/@children.1">
         <compartment
             href="smartcontract.gmfgraph#SmartContractSmartContractPropertiesCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.0">
+        <compartment
+            href="smartcontract.gmfgraph#SmartContractConstructorParametersContractCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>

@@ -27,6 +27,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//SmartContract/contractAddress"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//SmartContract/contractfunctions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//SmartContract/SmartContractProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smartcontract.ecore#//SmartContract/ConstructorParametersContract"/>
     </genClasses>
     <genClasses ecoreClass="smartcontract.ecore#//ContractFunction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//ContractFunction/name"/>
@@ -45,6 +46,10 @@
     </genClasses>
     <genClasses ecoreClass="smartcontract.ecore#//OutputParameter">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smartcontract.ecore#//OutputParameter/OutputReferencedFunction"/>
+    </genClasses>
+    <genClasses ecoreClass="smartcontract.ecore#//ConstructorParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartcontract.ecore#//ConstructorParameter/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smartcontract.ecore#//ConstructorParameter/ConstructorParameterReferencedContract"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

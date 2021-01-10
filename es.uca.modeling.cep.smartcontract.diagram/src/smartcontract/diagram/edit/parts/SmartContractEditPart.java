@@ -134,6 +134,13 @@ public class SmartContractEditPart extends ShapeNodeEditPart {
 					((SmartContractSmartContractSmartContractPropertiesCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
+		if (childEditPart instanceof SmartContractSmartContractConstructorParametersContractCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getSmartContractConstructorParametersContractCompartmentFigure();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((SmartContractSmartContractConstructorParametersContractCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -148,6 +155,12 @@ public class SmartContractEditPart extends ShapeNodeEditPart {
 			IFigure pane = getPrimaryShape().getSmartContractSmartContractPropertiesCompartmentFigure();
 			pane.remove(
 					((SmartContractSmartContractSmartContractPropertiesCompartmentEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof SmartContractSmartContractConstructorParametersContractCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getSmartContractConstructorParametersContractCompartmentFigure();
+			pane.remove(((SmartContractSmartContractConstructorParametersContractCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -179,6 +192,9 @@ public class SmartContractEditPart extends ShapeNodeEditPart {
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof SmartContractSmartContractSmartContractPropertiesCompartmentEditPart) {
 			return getPrimaryShape().getSmartContractSmartContractPropertiesCompartmentFigure();
+		}
+		if (editPart instanceof SmartContractSmartContractConstructorParametersContractCompartmentEditPart) {
+			return getPrimaryShape().getSmartContractConstructorParametersContractCompartmentFigure();
 		}
 		return getContentPane();
 	}
@@ -300,6 +316,10 @@ public class SmartContractEditPart extends ShapeNodeEditPart {
 				return getChildBySemanticHint(SmartcontractVisualIDRegistry
 						.getType(SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID));
 			}
+			if (type == SmartcontractElementTypes.ConstructorParameter_3012) {
+				return getChildBySemanticHint(SmartcontractVisualIDRegistry
+						.getType(SmartContractSmartContractConstructorParametersContractCompartmentEditPart.VISUAL_ID));
+			}
 		}
 		return super.getTargetEditPart(request);
 	}
@@ -331,8 +351,13 @@ public class SmartContractEditPart extends ShapeNodeEditPart {
 		private RectangleFigure fSmartContractSmartContractPropertiesCompartmentFigure;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		private RectangleFigure fSmartContractConstructorParametersContractCompartmentFigure;
+
+		/**
+			 * @generated
+			 */
 		public SmartContractFigure() {
 			this.setForegroundColor(THIS_FORE);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
@@ -359,6 +384,12 @@ public class SmartContractEditPart extends ShapeNodeEditPart {
 
 			this.add(fSmartContractSmartContractPropertiesCompartmentFigure);
 
+			fSmartContractConstructorParametersContractCompartmentFigure = new RectangleFigure();
+
+			fSmartContractConstructorParametersContractCompartmentFigure.setOutline(false);
+
+			this.add(fSmartContractConstructorParametersContractCompartmentFigure);
+
 		}
 
 		/**
@@ -373,6 +404,13 @@ public class SmartContractEditPart extends ShapeNodeEditPart {
 		 */
 		public RectangleFigure getSmartContractSmartContractPropertiesCompartmentFigure() {
 			return fSmartContractSmartContractPropertiesCompartmentFigure;
+		}
+
+		/**
+		* @generated
+		*/
+		public RectangleFigure getSmartContractConstructorParametersContractCompartmentFigure() {
+			return fSmartContractConstructorParametersContractCompartmentFigure;
 		}
 
 	}

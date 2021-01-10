@@ -12,6 +12,9 @@
     <compartmentTraces
         visualID="7007"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7010"
+        queryText="true"/>
   </nodeTraces>
   <childNodeTraces
       visualID="3009"
@@ -38,6 +41,13 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'OutputParameter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'ContractFunction') and _containmentMF_.name = 'OutputParametersFunction')">
     <nodeLabelTraces
         visualID="5012"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3012"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'ConstructorParameter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'www.uca.es/modeling/cep/smartcontract' and _eClass_.name = 'SmartContract') and _containmentMF_.name = 'ConstructorParametersContract')">
+    <nodeLabelTraces
+        visualID="5015"
         queryText="true"/>
   </childNodeTraces>
 </trace:TraceModel>

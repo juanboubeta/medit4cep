@@ -62,6 +62,7 @@ public class SmartcontractFactoryImpl extends EFactoryImpl implements Smartcontr
 			case SmartcontractPackage.CONTRACT_FUNCTION: return createContractFunction();
 			case SmartcontractPackage.INPUT_PARAMETER: return createInputParameter();
 			case SmartcontractPackage.OUTPUT_PARAMETER: return createOutputParameter();
+			case SmartcontractPackage.CONSTRUCTOR_PARAMETER: return createConstructorParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -145,6 +146,16 @@ public class SmartcontractFactoryImpl extends EFactoryImpl implements Smartcontr
 	public OutputParameter createOutputParameter() {
 		OutputParameterImpl outputParameter = new OutputParameterImpl();
 		return outputParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConstructorParameter createConstructorParameter() {
+		ConstructorParameterImpl constructorParameter = new ConstructorParameterImpl();
+		return constructorParameter;
 	}
 
 	/**

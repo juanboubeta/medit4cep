@@ -34,6 +34,12 @@ public class SmartcontractEditPartFactory implements EditPartFactory {
 			case SmartContractTypeNameEditPart.VISUAL_ID:
 				return new SmartContractTypeNameEditPart(view);
 
+			case ConstructorParameterEditPart.VISUAL_ID:
+				return new ConstructorParameterEditPart(view);
+
+			case ConstructorParameterNameEditPart.VISUAL_ID:
+				return new ConstructorParameterNameEditPart(view);
+
 			case ContractFunctionEditPart.VISUAL_ID:
 				return new ContractFunctionEditPart(view);
 
@@ -54,6 +60,9 @@ public class SmartcontractEditPartFactory implements EditPartFactory {
 
 			case SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID:
 				return new SmartContractSmartContractSmartContractPropertiesCompartmentEditPart(view);
+
+			case SmartContractSmartContractConstructorParametersContractCompartmentEditPart.VISUAL_ID:
+				return new SmartContractSmartContractConstructorParametersContractCompartmentEditPart(view);
 
 			case ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID:
 				return new ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart(view);

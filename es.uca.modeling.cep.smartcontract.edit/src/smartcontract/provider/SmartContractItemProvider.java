@@ -173,6 +173,7 @@ public class SmartContractItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SmartcontractPackage.Literals.SMART_CONTRACT__CONTRACTFUNCTIONS);
 			childrenFeatures.add(SmartcontractPackage.Literals.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES);
+			childrenFeatures.add(SmartcontractPackage.Literals.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT);
 		}
 		return childrenFeatures;
 	}
@@ -236,6 +237,7 @@ public class SmartContractItemProvider
 				return;
 			case SmartcontractPackage.SMART_CONTRACT__CONTRACTFUNCTIONS:
 			case SmartcontractPackage.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES:
+			case SmartcontractPackage.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -262,6 +264,11 @@ public class SmartContractItemProvider
 			(createChildParameter
 				(SmartcontractPackage.Literals.SMART_CONTRACT__SMART_CONTRACT_PROPERTIES,
 				 SmartcontractFactory.eINSTANCE.createContractFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmartcontractPackage.Literals.SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT,
+				 SmartcontractFactory.eINSTANCE.createConstructorParameter()));
 	}
 
 	/**

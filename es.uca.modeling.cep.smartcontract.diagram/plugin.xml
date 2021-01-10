@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Smartcontract"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3009,3010,3011"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3012,3009,3010,3011"/>
       </viewProvider>
    </extension>
 
@@ -270,16 +270,16 @@
             <method name="getType()" value="Smartcontract"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2003,3009,3010,3011"/>
+            <method name="getType()" value="2003,3012,3009,3010,3011"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5014,5013,5011,5012"/>
+            <method name="getType()" value="5014,5015,5013,5011,5012"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7007,7008,7009"/>
+            <method name="getType()" value="7007,7010,7008,7009"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -297,6 +297,11 @@
          <Priority name="Lowest"/>
          <object class="smartcontract.diagram.edit.parts.SmartContractEditPart" id="SmartContract_2003"/>
          <context elements="SmartContract_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="smartcontract.diagram.providers.assistants.SmartcontractModelingAssistantProviderOfConstructorParameterEditPart">
+         <Priority name="Lowest"/>
+         <object class="smartcontract.diagram.edit.parts.ConstructorParameterEditPart" id="ConstructorParameter_3012"/>
+         <context elements="ConstructorParameter_3012"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="smartcontract.diagram.providers.assistants.SmartcontractModelingAssistantProviderOfContractFunctionEditPart">
          <Priority name="Lowest"/>
@@ -366,6 +371,16 @@
       </metamodel>
       <metamodel nsURI="www.uca.es/modeling/cep/smartcontract">
          <metamodelType
+               id="es.uca.modeling.cep.smartcontract.diagram.ConstructorParameter_3012"
+               name="%metatype.name.ConstructorParameter_3012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConstructorParameter"
+               edithelper="smartcontract.diagram.edit.helpers.ConstructorParameterEditHelper">
+            <param name="semanticHint" value="3012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="www.uca.es/modeling/cep/smartcontract">
+         <metamodelType
                id="es.uca.modeling.cep.smartcontract.diagram.ContractFunction_3009"
                name="%metatype.name.ContractFunction_3009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -408,6 +423,7 @@
       <binding context="es.uca.modeling.cep.smartcontract.diagram.TypeContext">
          <elementType ref="es.uca.modeling.cep.smartcontract.diagram.SmartContracts_1000"/>
          <elementType ref="es.uca.modeling.cep.smartcontract.diagram.SmartContract_2003"/>
+         <elementType ref="es.uca.modeling.cep.smartcontract.diagram.ConstructorParameter_3012"/>
          <elementType ref="es.uca.modeling.cep.smartcontract.diagram.ContractFunction_3009"/>
          <elementType ref="es.uca.modeling.cep.smartcontract.diagram.InputParameter_3010"/>
          <elementType ref="es.uca.modeling.cep.smartcontract.diagram.OutputParameter_3011"/>

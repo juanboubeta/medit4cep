@@ -21,6 +21,8 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import smartcontract.SmartContracts;
+import smartcontract.diagram.edit.parts.ConstructorParameterEditPart;
+import smartcontract.diagram.edit.parts.ConstructorParameterNameEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionNameEditPart;
 import smartcontract.diagram.edit.parts.InputParameterEditPart;
@@ -112,6 +114,9 @@ public class SmartcontractNavigatorLabelProvider extends LabelProvider
 		case OutputParameterEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?www.uca.es/modeling/cep/smartcontract?OutputParameter", //$NON-NLS-1$
 					SmartcontractElementTypes.OutputParameter_3011);
+		case ConstructorParameterEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?www.uca.es/modeling/cep/smartcontract?ConstructorParameter", //$NON-NLS-1$
+					SmartcontractElementTypes.ConstructorParameter_3012);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -180,6 +185,8 @@ public class SmartcontractNavigatorLabelProvider extends LabelProvider
 			return getInputParameter_3010Text(view);
 		case OutputParameterEditPart.VISUAL_ID:
 			return getOutputParameter_3011Text(view);
+		case ConstructorParameterEditPart.VISUAL_ID:
+			return getConstructorParameter_3012Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -258,6 +265,22 @@ public class SmartcontractNavigatorLabelProvider extends LabelProvider
 					ParserOptions.NONE.intValue());
 		} else {
 			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5012); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getConstructorParameter_3012Text(View view) {
+		IParser parser = SmartcontractParserProvider.getParser(SmartcontractElementTypes.ConstructorParameter_3012,
+				view.getElement() != null ? view.getElement() : view,
+				SmartcontractVisualIDRegistry.getType(ConstructorParameterNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			SmartcontractDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5015); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

@@ -12,6 +12,8 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import smartcontract.SmartContracts;
 import smartcontract.SmartcontractPackage;
+import smartcontract.diagram.edit.parts.ConstructorParameterEditPart;
+import smartcontract.diagram.edit.parts.ConstructorParameterNameEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionEditPart;
@@ -21,6 +23,7 @@ import smartcontract.diagram.edit.parts.InputParameterNameEditPart;
 import smartcontract.diagram.edit.parts.OutputParameterEditPart;
 import smartcontract.diagram.edit.parts.OutputParameterNameEditPart;
 import smartcontract.diagram.edit.parts.SmartContractEditPart;
+import smartcontract.diagram.edit.parts.SmartContractSmartContractConstructorParametersContractCompartmentEditPart;
 import smartcontract.diagram.edit.parts.SmartContractSmartContractSmartContractPropertiesCompartmentEditPart;
 import smartcontract.diagram.edit.parts.SmartContractTypeNameEditPart;
 import smartcontract.diagram.edit.parts.SmartContractsEditPart;
@@ -136,6 +139,11 @@ public class SmartcontractVisualIDRegistry {
 				return ContractFunctionEditPart.VISUAL_ID;
 			}
 			break;
+		case SmartContractSmartContractConstructorParametersContractCompartmentEditPart.VISUAL_ID:
+			if (SmartcontractPackage.eINSTANCE.getConstructorParameter().isSuperTypeOf(domainElement.eClass())) {
+				return ConstructorParameterEditPart.VISUAL_ID;
+			}
+			break;
 		case ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID:
 			if (SmartcontractPackage.eINSTANCE.getInputParameter().isSuperTypeOf(domainElement.eClass())) {
 				return InputParameterEditPart.VISUAL_ID;
@@ -181,6 +189,14 @@ public class SmartcontractVisualIDRegistry {
 			if (SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (SmartContractSmartContractConstructorParametersContractCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ConstructorParameterEditPart.VISUAL_ID:
+			if (ConstructorParameterNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ContractFunctionEditPart.VISUAL_ID:
 			if (ContractFunctionNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -205,6 +221,11 @@ public class SmartcontractVisualIDRegistry {
 			break;
 		case SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID:
 			if (ContractFunctionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case SmartContractSmartContractConstructorParametersContractCompartmentEditPart.VISUAL_ID:
+			if (ConstructorParameterEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -260,6 +281,7 @@ public class SmartcontractVisualIDRegistry {
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
 		case SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID:
+		case SmartContractSmartContractConstructorParametersContractCompartmentEditPart.VISUAL_ID:
 		case ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart.VISUAL_ID:
 		case ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart.VISUAL_ID:
 			return true;
@@ -278,6 +300,7 @@ public class SmartcontractVisualIDRegistry {
 			return false;
 		case InputParameterEditPart.VISUAL_ID:
 		case OutputParameterEditPart.VISUAL_ID:
+		case ConstructorParameterEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

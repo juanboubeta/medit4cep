@@ -92,6 +92,10 @@ public class SmartcontractAdapterFactory extends AdapterFactoryImpl {
 				return createOutputParameterAdapter();
 			}
 			@Override
+			public Adapter caseConstructorParameter(ConstructorParameter object) {
+				return createConstructorParameterAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -192,6 +196,20 @@ public class SmartcontractAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOutputParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smartcontract.ConstructorParameter <em>Constructor Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smartcontract.ConstructorParameter
+	 * @generated
+	 */
+	public Adapter createConstructorParameterAdapter() {
 		return null;
 	}
 

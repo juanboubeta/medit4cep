@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link smartcontract.SmartContract#getContractAddress <em>Contract Address</em>}</li>
  *   <li>{@link smartcontract.SmartContract#getContractfunctions <em>Contractfunctions</em>}</li>
  *   <li>{@link smartcontract.SmartContract#getSmartContractProperties <em>Smart Contract Properties</em>}</li>
+ *   <li>{@link smartcontract.SmartContract#getConstructorParametersContract <em>Constructor Parameters Contract</em>}</li>
  * </ul>
  *
  * @see smartcontract.SmartcontractPackage#getSmartContract()
@@ -166,5 +167,24 @@ public interface SmartContract extends EObject {
 	 * @generated
 	 */
 	EList<ContractFunction> getSmartContractProperties();
+
+	/**
+	 * Returns the value of the '<em><b>Constructor Parameters Contract</b></em>' containment reference list.
+	 * The list contents are of type {@link smartcontract.ConstructorParameter}.
+	 * It is bidirectional and its opposite is '{@link smartcontract.ConstructorParameter#getConstructorParameterReferencedContract <em>Constructor Parameter Referenced Contract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Constructor Parameters Contract</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Constructor Parameters Contract</em>' containment reference list.
+	 * @see smartcontract.SmartcontractPackage#getSmartContract_ConstructorParametersContract()
+	 * @see smartcontract.ConstructorParameter#getConstructorParameterReferencedContract
+	 * @model opposite="ConstructorParameterReferencedContract" containment="true"
+	 *        annotation="gmf.compartment layout='list'"
+	 * @generated
+	 */
+	EList<ConstructorParameter> getConstructorParametersContract();
 
 } // SmartContract

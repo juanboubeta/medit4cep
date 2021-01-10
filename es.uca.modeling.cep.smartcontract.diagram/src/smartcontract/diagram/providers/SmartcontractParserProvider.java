@@ -17,6 +17,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import smartcontract.SmartcontractPackage;
+import smartcontract.diagram.edit.parts.ConstructorParameterNameEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionNameEditPart;
 import smartcontract.diagram.edit.parts.InputParameterNameEditPart;
 import smartcontract.diagram.edit.parts.OutputParameterNameEditPart;
@@ -44,6 +45,23 @@ public class SmartcontractParserProvider extends AbstractProvider implements IPa
 			smartContractTypeName_5014Parser = parser;
 		}
 		return smartContractTypeName_5014Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser constructorParameterName_5015Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getConstructorParameterName_5015Parser() {
+		if (constructorParameterName_5015Parser == null) {
+			EAttribute[] features = new EAttribute[] { SmartcontractPackage.eINSTANCE.getParameter_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			constructorParameterName_5015Parser = parser;
+		}
+		return constructorParameterName_5015Parser;
 	}
 
 	/**
@@ -104,6 +122,8 @@ public class SmartcontractParserProvider extends AbstractProvider implements IPa
 		switch (visualID) {
 		case SmartContractTypeNameEditPart.VISUAL_ID:
 			return getSmartContractTypeName_5014Parser();
+		case ConstructorParameterNameEditPart.VISUAL_ID:
+			return getConstructorParameterName_5015Parser();
 		case ContractFunctionNameEditPart.VISUAL_ID:
 			return getContractFunctionName_5013Parser();
 		case InputParameterNameEditPart.VISUAL_ID:

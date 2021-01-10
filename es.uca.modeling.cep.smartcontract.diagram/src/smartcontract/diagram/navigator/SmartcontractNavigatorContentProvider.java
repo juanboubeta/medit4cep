@@ -28,12 +28,14 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
+import smartcontract.diagram.edit.parts.ConstructorParameterEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionEditPart;
 import smartcontract.diagram.edit.parts.InputParameterEditPart;
 import smartcontract.diagram.edit.parts.OutputParameterEditPart;
 import smartcontract.diagram.edit.parts.SmartContractEditPart;
+import smartcontract.diagram.edit.parts.SmartContractSmartContractConstructorParametersContractCompartmentEditPart;
 import smartcontract.diagram.edit.parts.SmartContractSmartContractSmartContractPropertiesCompartmentEditPart;
 import smartcontract.diagram.edit.parts.SmartContractsEditPart;
 import smartcontract.diagram.part.SmartcontractVisualIDRegistry;
@@ -245,6 +247,11 @@ public class SmartcontractNavigatorContentProvider implements ICommonContentProv
 			LinkedList<SmartcontractAbstractNavigatorItem> result = new LinkedList<SmartcontractAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv), SmartcontractVisualIDRegistry
+					.getType(SmartContractSmartContractConstructorParametersContractCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					SmartcontractVisualIDRegistry.getType(ConstructorParameterEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv), SmartcontractVisualIDRegistry
 					.getType(SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,

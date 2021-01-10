@@ -18,6 +18,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 import smartcontract.SmartcontractPackage;
+import smartcontract.diagram.edit.parts.ConstructorParameterEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionEditPart;
 import smartcontract.diagram.edit.parts.InputParameterEditPart;
 import smartcontract.diagram.edit.parts.OutputParameterEditPart;
@@ -62,6 +63,12 @@ public class SmartcontractElementTypes {
 	*/
 	public static final IElementType SmartContract_2003 = getElementType(
 			"es.uca.modeling.cep.smartcontract.diagram.SmartContract_2003"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType ConstructorParameter_3012 = getElementType(
+			"es.uca.modeling.cep.smartcontract.diagram.ConstructorParameter_3012"); //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -123,6 +130,8 @@ public class SmartcontractElementTypes {
 
 			elements.put(SmartContract_2003, SmartcontractPackage.eINSTANCE.getSmartContract());
 
+			elements.put(ConstructorParameter_3012, SmartcontractPackage.eINSTANCE.getConstructorParameter());
+
 			elements.put(ContractFunction_3009, SmartcontractPackage.eINSTANCE.getContractFunction());
 
 			elements.put(InputParameter_3010, SmartcontractPackage.eINSTANCE.getInputParameter());
@@ -147,6 +156,7 @@ public class SmartcontractElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(SmartContracts_1000);
 			KNOWN_ELEMENT_TYPES.add(SmartContract_2003);
+			KNOWN_ELEMENT_TYPES.add(ConstructorParameter_3012);
 			KNOWN_ELEMENT_TYPES.add(ContractFunction_3009);
 			KNOWN_ELEMENT_TYPES.add(InputParameter_3010);
 			KNOWN_ELEMENT_TYPES.add(OutputParameter_3011);
@@ -163,6 +173,8 @@ public class SmartcontractElementTypes {
 			return SmartContracts_1000;
 		case SmartContractEditPart.VISUAL_ID:
 			return SmartContract_2003;
+		case ConstructorParameterEditPart.VISUAL_ID:
+			return ConstructorParameter_3012;
 		case ContractFunctionEditPart.VISUAL_ID:
 			return ContractFunction_3009;
 		case InputParameterEditPart.VISUAL_ID:

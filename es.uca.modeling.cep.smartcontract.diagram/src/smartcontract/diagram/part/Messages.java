@@ -251,47 +251,62 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String ContractFunction1CreationTool_title;
+	public static String ConstructorParameter1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String ContractFunction1CreationTool_desc;
+	public static String ConstructorParameter1CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String InputParameter2CreationTool_title;
+	public static String ContractFunction2CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String InputParameter2CreationTool_desc;
+	public static String ContractFunction2CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String OutputParameter3CreationTool_title;
+	public static String InputParameter3CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String OutputParameter3CreationTool_desc;
+	public static String InputParameter3CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String SmartContract4CreationTool_title;
+	public static String OutputParameter4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String SmartContract4CreationTool_desc;
+	public static String OutputParameter4CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String SmartContract5CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String SmartContract5CreationTool_desc;
 
 	/**
 	* @generated
 	*/
 	public static String SmartContractSmartContractSmartContractPropertiesCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String SmartContractSmartContractConstructorParametersContractCompartmentEditPart_title;
 
 	/**
 	* @generated

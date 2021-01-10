@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import smartcontract.ConstructorParameter;
 import smartcontract.ContractFunction;
 import smartcontract.InputParameter;
 import smartcontract.OutputParameter;
@@ -68,6 +69,13 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 	 * @generated
 	 */
 	private EClass outputParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass constructorParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,6 +258,15 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSmartContract_ConstructorParametersContract() {
+		return (EReference)smartContractEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getContractFunction() {
 		return contractFunctionEClass;
 	}
@@ -376,6 +393,33 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConstructorParameter() {
+		return constructorParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstructorParameter_Value() {
+		return (EAttribute)constructorParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstructorParameter_ConstructorParameterReferencedContract() {
+		return (EReference)constructorParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPropertyTypeValue() {
 		return propertyTypeValueEEnum;
 	}
@@ -421,6 +465,7 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 		createEAttribute(smartContractEClass, SMART_CONTRACT__CONTRACT_ADDRESS);
 		createEReference(smartContractEClass, SMART_CONTRACT__CONTRACTFUNCTIONS);
 		createEReference(smartContractEClass, SMART_CONTRACT__SMART_CONTRACT_PROPERTIES);
+		createEReference(smartContractEClass, SMART_CONTRACT__CONSTRUCTOR_PARAMETERS_CONTRACT);
 
 		contractFunctionEClass = createEClass(CONTRACT_FUNCTION);
 		createEAttribute(contractFunctionEClass, CONTRACT_FUNCTION__NAME);
@@ -439,6 +484,10 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 
 		outputParameterEClass = createEClass(OUTPUT_PARAMETER);
 		createEReference(outputParameterEClass, OUTPUT_PARAMETER__OUTPUT_REFERENCED_FUNCTION);
+
+		constructorParameterEClass = createEClass(CONSTRUCTOR_PARAMETER);
+		createEAttribute(constructorParameterEClass, CONSTRUCTOR_PARAMETER__VALUE);
+		createEReference(constructorParameterEClass, CONSTRUCTOR_PARAMETER__CONSTRUCTOR_PARAMETER_REFERENCED_CONTRACT);
 
 		// Create enums
 		propertyTypeValueEEnum = createEEnum(PROPERTY_TYPE_VALUE);
@@ -474,6 +523,7 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 		// Add supertypes to classes
 		inputParameterEClass.getESuperTypes().add(this.getParameter());
 		outputParameterEClass.getESuperTypes().add(this.getParameter());
+		constructorParameterEClass.getESuperTypes().add(this.getParameter());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(smartContractsEClass, SmartContracts.class, "SmartContracts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -489,6 +539,7 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 		initEAttribute(getSmartContract_ContractAddress(), ecorePackage.getEString(), "contractAddress", null, 0, 1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSmartContract_Contractfunctions(), this.getContractFunction(), null, "contractfunctions", null, 0, -1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSmartContract_SmartContractProperties(), this.getContractFunction(), this.getContractFunction_ReferencedSmartContract(), "SmartContractProperties", null, 0, -1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSmartContract_ConstructorParametersContract(), this.getConstructorParameter(), this.getConstructorParameter_ConstructorParameterReferencedContract(), "ConstructorParametersContract", null, 0, -1, SmartContract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contractFunctionEClass, ContractFunction.class, "ContractFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContractFunction_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContractFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -507,6 +558,10 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 
 		initEClass(outputParameterEClass, OutputParameter.class, "OutputParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOutputParameter_OutputReferencedFunction(), this.getContractFunction(), this.getContractFunction_OutputParametersFunction(), "OutputReferencedFunction", null, 0, 1, OutputParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constructorParameterEClass, ConstructorParameter.class, "ConstructorParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConstructorParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, ConstructorParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstructorParameter_ConstructorParameterReferencedContract(), this.getSmartContract(), this.getSmartContract_ConstructorParametersContract(), "ConstructorParameterReferencedContract", null, 0, 1, ConstructorParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(propertyTypeValueEEnum, PropertyTypeValue.class, "PropertyTypeValue");
@@ -599,6 +654,17 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 			   "tool.description", "Add an Output Parameter",
 			   "resizable", "false"
 		   });
+		addAnnotation
+		  (constructorParameterEClass,
+		   source,
+		   new String[] {
+			   "figure", "rectangle",
+			   "label", "name",
+			   "border.color", "110,110,110",
+			   "tool.name", "Constructor Parameter",
+			   "tool.description", "Add an Constructor Parameter",
+			   "resizable", "false"
+		   });
 	}
 
 	/**
@@ -611,6 +677,12 @@ public class SmartcontractPackageImpl extends EPackageImpl implements Smartcontr
 		String source = "gmf.compartment";
 		addAnnotation
 		  (getSmartContract_SmartContractProperties(),
+		   source,
+		   new String[] {
+			   "layout", "list"
+		   });
+		addAnnotation
+		  (getSmartContract_ConstructorParametersContract(),
 		   source,
 		   new String[] {
 			   "layout", "list"

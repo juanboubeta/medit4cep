@@ -38,6 +38,8 @@ import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
+import smartcontract.diagram.edit.parts.ConstructorParameterEditPart;
+import smartcontract.diagram.edit.parts.ConstructorParameterNameEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionContractFunctionInputParametersFunctionCompartmentEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionContractFunctionOutputParametersFunctionCompartmentEditPart;
 import smartcontract.diagram.edit.parts.ContractFunctionEditPart;
@@ -47,6 +49,7 @@ import smartcontract.diagram.edit.parts.InputParameterNameEditPart;
 import smartcontract.diagram.edit.parts.OutputParameterEditPart;
 import smartcontract.diagram.edit.parts.OutputParameterNameEditPart;
 import smartcontract.diagram.edit.parts.SmartContractEditPart;
+import smartcontract.diagram.edit.parts.SmartContractSmartContractConstructorParametersContractCompartmentEditPart;
 import smartcontract.diagram.edit.parts.SmartContractSmartContractSmartContractPropertiesCompartmentEditPart;
 import smartcontract.diagram.edit.parts.SmartContractTypeNameEditPart;
 import smartcontract.diagram.edit.parts.SmartContractsEditPart;
@@ -136,6 +139,7 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 				}
 				switch (visualID) {
 				case SmartContractEditPart.VISUAL_ID:
+				case ConstructorParameterEditPart.VISUAL_ID:
 				case ContractFunctionEditPart.VISUAL_ID:
 				case InputParameterEditPart.VISUAL_ID:
 				case OutputParameterEditPart.VISUAL_ID:
@@ -149,8 +153,9 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 				}
 			}
 		}
-		return SmartContractEditPart.VISUAL_ID == visualID || ContractFunctionEditPart.VISUAL_ID == visualID
-				|| InputParameterEditPart.VISUAL_ID == visualID || OutputParameterEditPart.VISUAL_ID == visualID;
+		return SmartContractEditPart.VISUAL_ID == visualID || ConstructorParameterEditPart.VISUAL_ID == visualID
+				|| ContractFunctionEditPart.VISUAL_ID == visualID || InputParameterEditPart.VISUAL_ID == visualID
+				|| OutputParameterEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -202,6 +207,8 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 		switch (visualID) {
 		case SmartContractEditPart.VISUAL_ID:
 			return createSmartContract_2003(domainElement, containerView, index, persisted, preferencesHint);
+		case ConstructorParameterEditPart.VISUAL_ID:
+			return createConstructorParameter_3012(domainElement, containerView, index, persisted, preferencesHint);
 		case ContractFunctionEditPart.VISUAL_ID:
 			return createContractFunction_3009(domainElement, containerView, index, persisted, preferencesHint);
 		case InputParameterEditPart.VISUAL_ID:
@@ -264,6 +271,45 @@ public class SmartcontractViewProvider extends AbstractProvider implements IView
 				SmartcontractVisualIDRegistry
 						.getType(SmartContractSmartContractSmartContractPropertiesCompartmentEditPart.VISUAL_ID),
 				true, false, true, true);
+		createCompartment(node,
+				SmartcontractVisualIDRegistry
+						.getType(SmartContractSmartContractConstructorParametersContractCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createConstructorParameter_3012(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(SmartcontractVisualIDRegistry.getType(ConstructorParameterEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5015 = createLabel(node,
+				SmartcontractVisualIDRegistry.getType(ConstructorParameterNameEditPart.VISUAL_ID));
 		return node;
 	}
 

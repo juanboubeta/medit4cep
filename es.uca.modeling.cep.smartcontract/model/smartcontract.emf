@@ -30,7 +30,10 @@ class SmartContract {
    val ContractFunction[*] contractfunctions;   
     
    @gmf.compartment(layout="list")
-   val ContractFunction[*]#referencedSmartContract SmartContractProperties;  
+   val ContractFunction[*]#referencedSmartContract SmartContractProperties;
+   
+   @gmf.compartment(layout="list")
+   val ConstructorParameter[*]#ConstructorParameterReferencedContract ConstructorParametersContract;  
 }
 
 @gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
@@ -64,6 +67,13 @@ class InputParameter extends Parameter{
 tool.name="Output Parameter", tool.description="Add an Output Parameter", resizable="false")
 class OutputParameter extends Parameter{
    ref ContractFunction#OutputParametersFunction OutputReferencedFunction;
+}
+
+@gmf.node(figure="rectangle", label="name", border.color="110,110,110", 
+tool.name="Constructor Parameter", tool.description="Add an Constructor Parameter", resizable="false")
+class ConstructorParameter extends Parameter{
+	attr String value;
+   ref SmartContract#ConstructorParametersContract ConstructorParameterReferencedContract;
 }
 
 enum PropertyTypeValue {
