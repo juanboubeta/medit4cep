@@ -212,8 +212,8 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 							
 							//modificar a partir de aqui la lectura del ABI						
 							for (int i = 0; i < jsonArray.size(); i++) {
-	
-								JSONObject functionsArray = (JSONObject) jsonArray.get(i);
+								
+								JSONObject functionsArray = (JSONObject) jsonArray.get(i);								
 								if(functionsArray.get("name") != null) {
 								smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
 								
@@ -322,6 +322,61 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 										OutputParameter.setOutputReferencedFunction(ContractFunction);
 										ContractFunction.setOutputParametersFunction(OutputParameter);	
 										
+									}
+								} else if (functionsArray.get("type").equals("constructor")) {
+									
+									inputsArray = (JSONArray) functionsArray.get("inputs");
+									for (int j = 0; j < inputsArray.size(); j++) {
+										smartcontract.ConstructorParameter ConstructorParameter = factory.createConstructorParameter();
+										inputParameter = (JSONObject) inputsArray.get(j);
+											
+										String ConstructorParameterName = (String) inputParameter.get("name");
+												
+										smartcontract.PropertyTypeValue ConstructorParameterType;
+										switch((String) inputParameter.get("type")) {
+										case "bool":
+											ConstructorParameterType = PropertyTypeValue.BOOLEAN;
+											break;
+										case "integer":
+											ConstructorParameterType = PropertyTypeValue.INTEGER;
+											break;
+										case "long":
+											ConstructorParameterType = PropertyTypeValue.LONG;
+											break;
+										case "double":
+											ConstructorParameterType = PropertyTypeValue.DOUBLE;
+											break;
+										case "float":
+											ConstructorParameterType = PropertyTypeValue.FLOAT;
+											break;
+										case "string":
+											ConstructorParameterType = PropertyTypeValue.STRING;
+											break;
+										case "address":
+											ConstructorParameterType = PropertyTypeValue.STRING;
+											break;
+										default:
+											Pattern p = Pattern.compile("int\\d{0,3}");
+										    Matcher mat = p.matcher((String) inputParameter.get("type"));
+											if(mat.matches()) {
+												ConstructorParameterType = PropertyTypeValue.INTEGER;
+											} else {
+												p = Pattern.compile("uint\\d{0,3}");
+												mat = p.matcher((String) inputParameter.get("type"));
+												if(mat.matches()) {
+													ConstructorParameterType = PropertyTypeValue.INTEGER;
+												} else {
+													ConstructorParameterType = PropertyTypeValue.UNKNOWN;
+												}
+											}
+										}
+										
+										// put the name and type of the constructor parameter and add into the
+										// ConstructorParameter List
+										ConstructorParameter.setName(ConstructorParameterName);
+										ConstructorParameter.setType(ConstructorParameterType);
+										ConstructorParameter.setConstructorParameterReferencedContract(SmartContract);
+										SmartContract.getConstructorParametersContract().add(ConstructorParameter);
 									}
 								}
 							} // Fin for
