@@ -91,11 +91,21 @@ for (eAttr in eAttributes8) {
 	}
 }
 
--- Disable property "type" of Parameters 
+-- Disable property "value" of InputParameter
 var eAttributes9 = Ecore!EAttribute.all.select(as|as.name="value" );
 
 for (eAttr in eAttributes9) {	
 	if (eAttr.eContainingClass.name == 'InputParameter') {
+		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
+		feature.property = GenModel!GenPropertyKind#Readonly;
+	}
+}
+
+-- Disable property "value" of ConstructorParameter
+var eAttributes9 = Ecore!EAttribute.all.select(as|as.name="value" );
+
+for (eAttr in eAttributes9) {	
+	if (eAttr.eContainingClass.name == 'ConstructorParameter') {
 		var feature = GenModel!GenFeature.all.selectOne(as|as.ecoreFeature=eAttr);
 		feature.property = GenModel!GenPropertyKind#Readonly;
 	}
