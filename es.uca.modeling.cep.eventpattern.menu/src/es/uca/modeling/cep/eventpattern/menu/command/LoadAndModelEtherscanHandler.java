@@ -104,6 +104,8 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 		
 		String contractAddress = "";
 		
+		String APISelected;
+		
 		try {
 			if (!domainProject.exists()) {
 	        	MessageDialog.openError(shell, "Load and Model from Etherscan", "A CEP domain must be previously created or imported.");
@@ -114,7 +116,20 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 		        	return null;	
 				}
 				else {
-				
+					
+					String[] options = new String[3];
+					options[0]="Main";options[1]="Ropsten";options[2]="Rinkeby";
+				   	
+					//Dialog for select what model are going to be modeled
+				   	APISelected = (String)JOptionPane.showInputDialog(
+		            					null,
+		                                "Select the API you want to use",
+		                                "Selection of Etherscan API",
+		                                JOptionPane.PLAIN_MESSAGE,
+		                                null,
+		                                options,
+		                                options[0]);
+					
 					LoadAndModelEtherscanDialog dialog = new LoadAndModelEtherscanDialog(shell);
 					dialog.create();
 					
@@ -122,10 +137,21 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 						
 						contractAddress = dialog.getAddress();
 						
-						EtherscanAddress = "https://api.etherscan.io/api?module=contract&action=getsourcecode&address=" + contractAddress + "&apikey=V4NAYD81I26SR7JJM8PYJKK56EB2FUVAJE";
+						switch(APISelected) {
+							case "Main":
+								EtherscanAddress = "https://api.etherscan.io/api?module=contract&action=getsourcecode&address=" + contractAddress + "&apikey=V4NAYD81I26SR7JJM8PYJKK56EB2FUVAJE";
+								break;
+							case "Ropsten":
+								EtherscanAddress = "https://api-ropsten.etherscan.io/api?module=contract&action=getsourcecode&address=" + contractAddress + "&apikey=V4NAYD81I26SR7JJM8PYJKK56EB2FUVAJE";
+								break;
+							case "Rinkeby":
+								EtherscanAddress = "https://api-rinkeby.etherscan.io/api?module=contract&action=getsourcecode&address=" + contractAddress + "&apikey=V4NAYD81I26SR7JJM8PYJKK56EB2FUVAJE";
+								break;
+						}
 					} 		
 				}
-				
+				System.out.println(APISelected);
+				System.out.println(EtherscanAddress);
 				//Connect to the API and get the models
 				URL url = new URL(EtherscanAddress);
 	            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -227,14 +253,14 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 		
 							JSONObject functionsArray = (JSONObject) jsonArray.get(i);
 							if(functionsArray.get("name") != null) {
-							smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
-							
-							String ContractFunctionName = (String) functionsArray.get("name");
+								smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
 								
-							// put the name of the contract function and add into the SmartContract List
-							ContractFunction.setName(ContractFunctionName);
-							SmartContract.getSmartContractProperties().add(ContractFunction);
-							ContractFunction.setReferencedSmartContract(SmartContract);
+								String ContractFunctionName = (String) functionsArray.get("name");
+									
+								// put the name of the contract function and add into the SmartContract List
+								ContractFunction.setName(ContractFunctionName);
+								SmartContract.getSmartContractProperties().add(ContractFunction);
+								ContractFunction.setReferencedSmartContract(SmartContract);
 								
 								inputsArray = (JSONArray) functionsArray.get("inputs");
 								if(inputsArray != null) {
@@ -337,6 +363,61 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 										ContractFunction.setOutputParametersFunction(OutputParameter);	
 											
 									}
+								}
+							} else if (functionsArray.get("type").equals("constructor")) {
+								
+								inputsArray = (JSONArray) functionsArray.get("inputs");
+								for (int j = 0; j < inputsArray.size(); j++) {
+									smartcontract.ConstructorParameter ConstructorParameter = factory.createConstructorParameter();
+									inputParameter = (JSONObject) inputsArray.get(j);
+										
+									String ConstructorParameterName = (String) inputParameter.get("name");
+											
+									smartcontract.PropertyTypeValue ConstructorParameterType;
+									switch((String) inputParameter.get("type")) {
+									case "bool":
+										ConstructorParameterType = PropertyTypeValue.BOOLEAN;
+										break;
+									case "integer":
+										ConstructorParameterType = PropertyTypeValue.INTEGER;
+										break;
+									case "long":
+										ConstructorParameterType = PropertyTypeValue.LONG;
+										break;
+									case "double":
+										ConstructorParameterType = PropertyTypeValue.DOUBLE;
+										break;
+									case "float":
+										ConstructorParameterType = PropertyTypeValue.FLOAT;
+										break;
+									case "string":
+										ConstructorParameterType = PropertyTypeValue.STRING;
+										break;
+									case "address":
+										ConstructorParameterType = PropertyTypeValue.STRING;
+										break;
+									default:
+										Pattern p = Pattern.compile("int\\d{0,3}");
+									    Matcher mat = p.matcher((String) inputParameter.get("type"));
+										if(mat.matches()) {
+											ConstructorParameterType = PropertyTypeValue.INTEGER;
+										} else {
+											p = Pattern.compile("uint\\d{0,3}");
+											mat = p.matcher((String) inputParameter.get("type"));
+											if(mat.matches()) {
+												ConstructorParameterType = PropertyTypeValue.INTEGER;
+											} else {
+												ConstructorParameterType = PropertyTypeValue.UNKNOWN;
+											}
+										}
+									}
+									
+									// put the name and type of the constructor parameter and add into the
+									// ConstructorParameter List
+									ConstructorParameter.setName(ConstructorParameterName);
+									ConstructorParameter.setType(ConstructorParameterType);
+									ConstructorParameter.setConstructorParameterReferencedContract(SmartContract);
+									SmartContract.getConstructorParametersContract().add(ConstructorParameter);
 								}
 							}
 						} // Fin for
