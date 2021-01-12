@@ -215,14 +215,14 @@ public class LoadAndModelSolidityFileHandler extends AbstractHandler {
 								
 								JSONObject functionsArray = (JSONObject) jsonArray.get(i);								
 								if(functionsArray.get("name") != null) {
-								smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
-								
-								String ContractFunctionName = (String) functionsArray.get("name");
-								
-								// put the name of the contract function and add into the SmartContract List
-								ContractFunction.setName(ContractFunctionName);
-								SmartContract.getSmartContractProperties().add(ContractFunction);
-								ContractFunction.setReferencedSmartContract(SmartContract);
+									smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
+									
+									String ContractFunctionName = (String) functionsArray.get("name");
+									
+									// put the name of the contract function and add into the SmartContract List
+									ContractFunction.setName(ContractFunctionName);
+									SmartContract.getSmartContractProperties().add(ContractFunction);
+									ContractFunction.setReferencedSmartContract(SmartContract);
 								
 									inputsArray = (JSONArray) functionsArray.get("inputs");
 									for (int j = 0; j < inputsArray.size(); j++) {
