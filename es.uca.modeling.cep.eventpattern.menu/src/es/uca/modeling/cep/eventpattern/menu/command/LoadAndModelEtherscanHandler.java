@@ -117,14 +117,14 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 				}
 				else {
 					
-					String[] options = new String[3];
-					options[0]="Main";options[1]="Ropsten";options[2]="Rinkeby";
+					String[] options = new String[5];
+					options[0]="Main";options[1]="Ropsten";options[2]="Rinkeby";options[3]="Kovan";options[4]="Goerli";
 				   	
 					//Dialog for select what model are going to be modeled
 				   	APISelected = (String)JOptionPane.showInputDialog(
 		            					null,
-		                                "Select the API you want to use",
-		                                "Selection of Etherscan API",
+		                                "Select the API that you want to use",
+		                                "Selection of Ethereum Network",
 		                                JOptionPane.PLAIN_MESSAGE,
 		                                null,
 		                                options,
@@ -146,6 +146,12 @@ public class LoadAndModelEtherscanHandler extends AbstractHandler {
 								break;
 							case "Rinkeby":
 								EtherscanAddress = "https://api-rinkeby.etherscan.io/api?module=contract&action=getsourcecode&address=" + contractAddress + "&apikey=V4NAYD81I26SR7JJM8PYJKK56EB2FUVAJE";
+								break;
+							case "Kovan":
+								EtherscanAddress = "https://api-kovan.etherscan.io/api?module=contract&action=getsourcecode&address=" + contractAddress + "&apikey=V4NAYD81I26SR7JJM8PYJKK56EB2FUVAJE";
+								break;
+							case "Goerli":
+								EtherscanAddress = "https://api-goerli.etherscan.io/api?module=contract&action=getsourcecode&address=" + contractAddress + "&apikey=V4NAYD81I26SR7JJM8PYJKK56EB2FUVAJE";
 								break;
 						}
 					} 		
