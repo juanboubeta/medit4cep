@@ -742,4 +742,22 @@ context ConstructorParameter {
 
         message : "'ConstructorParameter' name must be unique."
     } 
+    
+    constraint HasConstructorParameterValue {
+    
+        check : self.value.isDefined() and self.name.trim().length() > 0
+
+        message : "ConstructorParameter Value must be defined."
+
+        fix {
+        
+            title : "Set a value for 'Value'."
+            
+            do {
+                var value : String;
+                value = UserInput.prompt("Please enter a value for 'Value':");
+                self.value = value;
+            }
+        }      
+    } 
 }
