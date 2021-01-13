@@ -297,14 +297,14 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 		
 								JSONObject functionsArray = (JSONObject) jsonArray.get(i);
 								if(functionsArray.get("name") != null) {
-								smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
-								
-								String ContractFunctionName = (String) functionsArray.get("name");
-								
-								// put the name of the contract function and add into the SmartContract List
-								ContractFunction.setName(ContractFunctionName);
-								SmartContract.getSmartContractProperties().add(ContractFunction);
-								ContractFunction.setReferencedSmartContract(SmartContract);
+									smartcontract.ContractFunction ContractFunction = factory.createContractFunction();
+									
+									String ContractFunctionName = (String) functionsArray.get("name");
+									
+									// put the name of the contract function and add into the SmartContract List
+									ContractFunction.setName(ContractFunctionName);
+									SmartContract.getSmartContractProperties().add(ContractFunction);
+									ContractFunction.setReferencedSmartContract(SmartContract);
 								
 									inputsArray = (JSONArray) functionsArray.get("inputs");
 									if(inputsArray != null) {
@@ -407,6 +407,61 @@ public class LoadAndModelCaterpillarHandler extends AbstractHandler {
 											ContractFunction.setOutputParametersFunction(OutputParameter);	
 											
 										}
+									}
+								} else if (functionsArray.get("type").equals("constructor")) {
+									
+									inputsArray = (JSONArray) functionsArray.get("inputs");
+									for (int j = 0; j < inputsArray.size(); j++) {
+										smartcontract.ConstructorParameter ConstructorParameter = factory.createConstructorParameter();
+										inputParameter = (JSONObject) inputsArray.get(j);
+											
+										String ConstructorParameterName = (String) inputParameter.get("name");
+												
+										smartcontract.PropertyTypeValue ConstructorParameterType;
+										switch((String) inputParameter.get("type")) {
+										case "bool":
+											ConstructorParameterType = PropertyTypeValue.BOOLEAN;
+											break;
+										case "integer":
+											ConstructorParameterType = PropertyTypeValue.INTEGER;
+											break;
+										case "long":
+											ConstructorParameterType = PropertyTypeValue.LONG;
+											break;
+										case "double":
+											ConstructorParameterType = PropertyTypeValue.DOUBLE;
+											break;
+										case "float":
+											ConstructorParameterType = PropertyTypeValue.FLOAT;
+											break;
+										case "string":
+											ConstructorParameterType = PropertyTypeValue.STRING;
+											break;
+										case "address":
+											ConstructorParameterType = PropertyTypeValue.STRING;
+											break;
+										default:
+											Pattern p = Pattern.compile("int\\d{0,3}");
+										    Matcher mat = p.matcher((String) inputParameter.get("type"));
+											if(mat.matches()) {
+												ConstructorParameterType = PropertyTypeValue.INTEGER;
+											} else {
+												p = Pattern.compile("uint\\d{0,3}");
+												mat = p.matcher((String) inputParameter.get("type"));
+												if(mat.matches()) {
+													ConstructorParameterType = PropertyTypeValue.INTEGER;
+												} else {
+													ConstructorParameterType = PropertyTypeValue.UNKNOWN;
+												}
+											}
+										}
+										
+										// put the name and type of the constructor parameter and add into the
+										// ConstructorParameter List
+										ConstructorParameter.setName(ConstructorParameterName);
+										ConstructorParameter.setType(ConstructorParameterType);
+										ConstructorParameter.setConstructorParameterReferencedContract(SmartContract);
+										SmartContract.getConstructorParametersContract().add(ConstructorParameter);
 									}
 								}
 							} // Fin for
