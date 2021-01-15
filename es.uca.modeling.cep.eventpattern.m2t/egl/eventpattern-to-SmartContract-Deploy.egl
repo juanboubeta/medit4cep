@@ -1,5 +1,5 @@
 [%
-var caterpillar = false;
+var count;
 var s;
 if(SmartContract.allInstances().size() == 1){
 	s = SmartContract.allInstances().get(0);
@@ -46,13 +46,7 @@ public class [%=s.typeName%]_deploy {
 	}
 	
 	public [%=s.typeName%]_deploy() throws Exception {
-		
-		[%for(cf: ContractFunction in s.SmartContractProperties) {
-			if(cf.name == "startExecution" or cf.name == "handleEvent" or cf.name == "killProcess" or cf.name == "broadcastSignal" or cf.name == "getWorklistAddress" or cf.name == "getInstanceIndex"){
-				caterpillar = true;
-			}
-		}%]
-		
+				
 		Web3j web3j = Web3j.build(new HttpService());
 		Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();
 		System.out.println(web3ClientVersion.getWeb3ClientVersion());
@@ -81,6 +75,7 @@ public class [%=s.typeName%]_deploy {
 	}
 	
 	private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
+		
 		[%if(s.typeName == "Voting") {%]
 			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT,"Candidato 1","Candidato 2","Candidato 3")
 			.send()
@@ -93,8 +88,9 @@ public class [%=s.typeName%]_deploy {
 			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, BigInteger.valueOf(86400L), credentials.getAddress())
 			.send()
 			.getContractAddress();
-		[%} else if(caterpillar == true) {%]
-			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, credentials.getAddress(), credentials.getAddress(), credentials.getAddress())
+		[%} else if(s.ConstructorParametersContract.size() > 0){
+		count = s.ConstructorParametersContract.size();%]
+			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, [%for(cp: ConstructorParameter in s.ConstructorParametersContract) { if(count > 1){%][%=cp.value%], [%count -= 1;} else {%][%=cp.value%][% count -= 1;}}%])
 			.send()
 			.getContractAddress();
 		[%} else {%]
