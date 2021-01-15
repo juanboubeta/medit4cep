@@ -22,6 +22,9 @@
 		{"name":"StopTimeToVote",
 		"inputs":[],
 		"output": null}
+	],
+	"constructor":[
+	{"inputs":[{"name":"_Candidate1","type":"string"}, {"name":"_Candidate2","type":"string"}, {"name":"_Candidate3","type":"string"}]}
 	]
 },
 {
@@ -44,6 +47,9 @@
 		{"name":"confirmReceived",
 		"inputs":[],
 		"output": null}
+	],
+	"constructor":[
+	{"inputs":[{"name":"_initialWeiValue","type":"integer"}]}
 	]
 },
 {
@@ -58,5 +64,8 @@
 		{"name":"auctionEnd",
 		"inputs":[],
 		"output": null }
+	],
+	"constructor":[
+	{"inputs":[{"name":"_biddingTime","type":"integer"}, {"name":"_beneficiary","type":"string"}]}
 	]
 }]

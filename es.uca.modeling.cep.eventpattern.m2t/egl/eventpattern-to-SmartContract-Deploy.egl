@@ -76,19 +76,7 @@ public class [%=s.typeName%]_deploy {
 	
 	private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
 		
-		[%if(s.typeName == "Voting") {%]
-			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT,"Candidato 1","Candidato 2","Candidato 3")
-			.send()
-			.getContractAddress();
-		[%} else if(s.typeName == "Purchase") {%]
-			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, BigInteger.valueOf(0L))
-			.send()
-			.getContractAddress();
-		[%} else if(s.typeName == "Auction") {%]
-			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, BigInteger.valueOf(86400L), credentials.getAddress())
-			.send()
-			.getContractAddress();
-		[%} else if(s.ConstructorParametersContract.size() > 0){
+		[%if(s.ConstructorParametersContract.size() > 0){
 		count = s.ConstructorParametersContract.size();%]
 			return [%=s.typeName%].deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT, [%for(cp: ConstructorParameter in s.ConstructorParametersContract) { if(count > 1){if(cp.type->toString()=="String"){%]"[%=cp.value%]", [%} else if (cp.type->toString()="Integer"){%]BigInteger.valueOf([%=cp.value%]L), [%} else {%][%=cp.value%], [%}%] [%count -= 1;} else { if(cp.type->toString()=="String"){%]"[%=cp.value%]"[%} else if (cp.type->toString()="Integer"){%]BigInteger.valueOf([%=cp.value%]L)[%} else {%][%=cp.value%][%}%][% count -= 1;}}%])
 			.send()

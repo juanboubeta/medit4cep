@@ -66,6 +66,7 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 				// Create local variables
 				JSONObject contractsArray;
 				JSONArray functionsArray;
+				JSONArray constructorArray;
 				JSONObject outputParameter;
 				JSONArray inputsParameter;
 				JSONObject inputParameter;
@@ -111,8 +112,6 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 						smartcontracts.setCreationDate(new Date());
 						smartcontracts.setDescription(description);
 
-						
-
 						for (int i = 0; i < jsonArray.size(); i++) {
 							
 							// Get the default factory singleton
@@ -122,13 +121,62 @@ public class AutoinitializeSmartContractHandler extends AbstractHandler {
 							
 							contractsArray = (JSONObject) jsonArray.get(i);
 							functionsArray = (JSONArray) contractsArray.get("functions");
-
+							constructorArray = 	(JSONArray) contractsArray.get("constructor");
+							
 							String SmartContractName = (String) contractsArray.get("name");
 							
 							// put the name of the smart contract and add into the SmartContracts List
 							SmartContract.setTypeName(SmartContractName);
 							smartcontracts.getSmartcontracts().add(SmartContract);
 
+							if(constructorArray != null) {
+								Iterator<JSONObject> constructorIterator = constructorArray.iterator();
+								while (constructorIterator.hasNext()) {
+									
+									aux = constructorIterator.next();
+									
+									inputsParameter = (JSONArray) aux.get("inputs");
+									
+									for (int j = 0; j < inputsParameter.size(); j++) {
+										smartcontract.ConstructorParameter ConstructorParameter = factory.createConstructorParameter();
+										inputParameter = (JSONObject) inputsParameter.get(j);
+										String ConstructorParameterName = (String) inputParameter.get("name");
+										
+										smartcontract.PropertyTypeValue ConstructorParameterType;
+										switch((String) inputParameter.get("type")) {
+										case "boolean":
+											ConstructorParameterType = PropertyTypeValue.BOOLEAN;
+											break;
+										case "integer":
+											ConstructorParameterType = PropertyTypeValue.INTEGER;
+											break;
+										case "long":
+											ConstructorParameterType = PropertyTypeValue.LONG;
+											break;
+										case "double":
+											ConstructorParameterType = PropertyTypeValue.DOUBLE;
+											break;
+										case "float":
+											ConstructorParameterType = PropertyTypeValue.FLOAT;
+											break;
+										case "string":
+											ConstructorParameterType = PropertyTypeValue.STRING;
+											break;
+										default:
+											ConstructorParameterType = PropertyTypeValue.UNKNOWN;
+										}
+									
+										// put the name and type of the input parameter and add into the
+										// ContractFunction List
+										ConstructorParameter.setName(ConstructorParameterName);
+										ConstructorParameter.setType(ConstructorParameterType);
+										ConstructorParameter.setConstructorParameterReferencedContract(SmartContract);
+										SmartContract.getConstructorParametersContract().add(ConstructorParameter);
+									}
+									
+								}
+							}
+							
 							Iterator<JSONObject> iterator = functionsArray.iterator();
 
 							while (iterator.hasNext()) {
