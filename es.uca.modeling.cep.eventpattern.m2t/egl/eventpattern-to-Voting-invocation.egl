@@ -1,6 +1,16 @@
 [%
 var smartcontracts : Sequence = SmartContract.allInstances();
 
+var networks : Sequence;
+networks.add("Ganache");
+networks.add("Goerli");
+networks.add("Kovan");
+networks.add("Mainnet");
+networks.add("Rinkeby");
+networks.add("Ropsten");
+
+var network = System.user.choose("Select the Ethereum network where you want to deploy the smart contract", networks);
+
 	for (sc : SmartContract in smartcontracts) {	%]
 		[%if (sc.typeName == 'Voting') {%]
 package es.uca.modeling.cep.smartcontract.code;
@@ -61,7 +71,23 @@ public class [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).p
 	
 	public [%=sc.typeName%]_invocation_[%=CEPEventPattern.allInstances.at(0).patternName%]() throws Exception {
 		
+		[%switch(network){
+		case "Ganache":%]
 		Web3j web3j = Web3j.build(new HttpService());
+		[%break;
+		case "Goerli":%]
+		Web3j web3j = Web3j.build(new HttpService("https://goerli.infura.io/v3/06ec613b421b4f118b06204feda6db41"));
+		[%case "Kovan":%]
+		Web3j web3j = Web3j.build(new HttpService("https://kovan.infura.io/v3/06ec613b421b4f118b06204feda6db41"));
+		[%case "Mainnet":%]
+		Web3j web3j = Web3j.build(new HttpService("https://mainnet.infura.io/v3/06ec613b421b4f118b06204feda6db41"));
+		[%case "Rinkeby":%]
+		Web3j web3j = Web3j.build(new HttpService("https://rinkeby.infura.io/v3/06ec613b421b4f118b06204feda6db41"));
+		[%case "Ropsten":%]
+		Web3j web3j = Web3j.build(new HttpService("https://ropsten.infura.io/v3/06ec613b421b4f118b06204feda6db41"));
+		[%default:%]
+		Web3j web3j = Web3j.build(new HttpService());
+		[%}%]
 		Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();
 		System.out.println(web3ClientVersion.getWeb3ClientVersion());
 		
